@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ListDropdown from './ListDropdown.js'
-// import './App.css';
 
-export default class Navbar extends Component {
+export default class ListDropdown extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      // message: 'Click the button to load data!'
-      showMenu: false
-    }
-    this.showMenu = this.showMenu.bind(this);
-
+    // this.state = {}
   }
 
   fetchData = () => {
@@ -27,23 +20,15 @@ export default class Navbar extends Component {
     }) 
   }
 
-  showMenu(event) {
-    event.preventDefault();
-    
-    this.setState({
-      showMenu: true,
-    });
-  }
+  //for list in wishlist
 
   render() {
     return (
-      <div className="navbar">
-        <h1>latercart</h1>
-        <wrapper>
-        < ListDropdown />
-        < ListDropdown />
-        </wrapper>
-       
+      <div className="dropdown">
+        <button className = "dropbtn">My Lists</button>
+        <div className="dropdown-content">
+        <a href="#">My First Wishlist </a>
+        </div>
       </div>
     );
   }
