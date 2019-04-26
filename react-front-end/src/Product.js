@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './App.css';
-import Wishlist from './Wishlist.js';
-import Navbar from './Navbar.js';
+// import './App.css';
 
-
-class App extends Component {
+export default class Product extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -28,12 +25,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-      < Navbar />
-      <Wishlist />
+      <div className="Product">     
       </div>
     );
   }
 }
-
-export default App;
