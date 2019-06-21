@@ -1,5 +1,5 @@
 {
-  "name": "React Rails Boilerplate",
+  "name": "stigma",
   "version": "1.0.0",
   "description": "A boilerplate project for anyone interested in making a project that uses React and Rails.",
   "main": "index.js",
@@ -15,7 +15,15 @@
     "deploy": "cp -a client/build/. public/",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NimaBoscarino/stigma.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NimaBoscarino/stigma/issues"
+  },
+  "homepage": "https://github.com/NimaBoscarino/stigma#readme"
 }
