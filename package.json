@@ -1,0 +1,21 @@
+{
+  "name": "React Rails Boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate project for anyone interested in making a project that uses React and Rails.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "engines": {
+    "node": "6.3.1"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
