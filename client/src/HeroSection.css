@@ -4,3 +4,9 @@
   background-size: contain;
   background-position: 100;
 }*/
+.hero-shape {
+  position: absolute;
+  top: -78px;
+  left: -7px;
+  z-index: -1;
+}
