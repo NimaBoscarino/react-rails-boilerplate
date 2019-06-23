@@ -1,5 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700,900&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Merriweather', serif;
 }
 
 .App-logo {
