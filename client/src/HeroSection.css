@@ -4,9 +4,37 @@
   background-size: contain;
   background-position: 100;
 }*/
+
 .hero-shape {
   position: absolute;
   top: -78px;
   left: -7px;
+  z-index: 0;
+}
+
+.hero-text {
+  align-self: center;
+  margin-top: 5%;
+}
+
+.blurb-text {
+  width: 55%;
+  text-align: center;
+  margin: 7% auto;
+}
+
+.home-why {
+  margin-top: 25%;
+}
+
+.home-collective {
+  width: 85%;
+}
+
+.bean-img {
   z-index: -1;
+}
+
+.collective-img {
+  z-index: 1;
 }
