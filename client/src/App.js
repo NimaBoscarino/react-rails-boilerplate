@@ -53,15 +53,13 @@ class App extends Component {
         password_confirmation: this.state.password_confirmation
       }
     })
-    .then(function (response) {
+    .then(response => {
+      this.setState({isLoggedIn: response.data.email})
        console.log("response data", response.data)
     })
   };
 
   handleInputChange = (e) => {
-    console.log(e)
-    console.log(e.target.name)
-    console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     })
