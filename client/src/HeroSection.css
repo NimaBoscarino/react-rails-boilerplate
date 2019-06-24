@@ -18,13 +18,14 @@
 }
 
 .blurb-text {
-  width: 55%;
+  width: 60%;
   text-align: center;
   margin: 7% auto;
 }
 
 .home-why {
-  margin-top: 25%;
+  margin-top: 20%;
+  align-items: center;
 }
 
 .home-collective {
@@ -33,8 +34,14 @@
 
 .bean-img {
   z-index: -1;
+  position: absolute;
+  left: 0;
+  max-width: 1450px;
+  width: 100%;
 }
 
 .collective-img {
   z-index: 1;
+  position: absolute;
+  left: 0;
 }

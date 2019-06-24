@@ -3,8 +3,6 @@ import axios from 'axios';
 import './App.css';
 import NavBar from './components/NavBar.js'
 import HeroSection from './components/HeroSection.js'
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
 
 
 
