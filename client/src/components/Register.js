@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Component } from 'react';
 import loginImg from "./login.svg";
+import NavBar from './NavBar.js'
 
-export class Register extends React.Component {
+
+class Register extends Component {
   constructor(props) {
     super(props);
   }
@@ -9,6 +11,7 @@ export class Register extends React.Component {
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
+      <NavBar />
       <form onSubmit={this.props.handleSubmit} >
         <div className="header">Register</div>
         <div className="content">
@@ -48,3 +51,5 @@ export class Register extends React.Component {
     );
   }
 }
+
+export default Register;

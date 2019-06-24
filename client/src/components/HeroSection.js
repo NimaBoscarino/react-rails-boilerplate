@@ -43,13 +43,24 @@ const HeroSection = props => (
     <Row className="home-collective" id="home-collective">
       <Col>
         <div>
-<img src={'https://i.imgur.com/Kih1TFy.png'} alt="" className="bean-img"/>
+          <img src={'https://i.imgur.com/Kih1TFy.png'} alt="" className="bean-img"/>
           <img src={'https://i.imgur.com/lQozyZl.png'} alt="Donate" className="collective-img"/>
         </div>
       </Col>
       <Col>
         <div>
           <h2>Heading Here</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in uienply voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat norin proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </Col>
+    </Row>
+        <Row className="home-charities" id="home-charities">
+      <Col>
+        <p>Hello</p>
+      </Col>
+      <Col>
+        <div>
+          <h2>Image</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in uienply voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat norin proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </Col>
