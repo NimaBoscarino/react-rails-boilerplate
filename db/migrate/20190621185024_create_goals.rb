@@ -5,7 +5,7 @@ class CreateGoals < ActiveRecord::Migration[5.2]
       t.string :desc
       t.float :cost
       t.boolean :completed
-      t.references :charities, foreign_key: true
+      t.references :charity, foreign_key: true
     end
   end
 end

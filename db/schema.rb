@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2019_06_21_185730) do
     t.string "desc"
     t.float "cost"
     t.boolean "completed"
-    t.bigint "charities_id"
-    t.index ["charities_id"], name: "index_goals_on_charities_id"
+    t.bigint "charity_id"
+    t.index ["charity_id"], name: "index_goals_on_charity_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,5 +52,5 @@ ActiveRecord::Schema.define(version: 2019_06_21_185730) do
   end
 
   add_foreign_key "donations", "charities"
-  add_foreign_key "goals", "charities", column: "charities_id"
+  add_foreign_key "goals", "charities"
 end
