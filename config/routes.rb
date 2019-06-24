@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  # devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :api do # /api/data
 
-    get '/data', to: 'tests#index'
-    
-    resources :dogs
+    get '/data', to: 'users#index'
+    get '/users', to: 'users#index'
+
+
+    resources :users
+    resources :sessions, only: [:create, :destroy]
 
   end
 
