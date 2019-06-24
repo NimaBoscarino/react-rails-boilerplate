@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import loginImg from './login.svg'
+import NavBar from './NavBar.js'
 
-export class Login extends React.Component {
+
+class Login extends Component {
 
 
   render() {
     return (
       <div className="base.container">
+      <NavBar />
         <form onSubmit={this.props.handleSubmit} >
           <div className="header">Login</div>
           <div className="content">
@@ -34,3 +37,5 @@ export class Login extends React.Component {
     );
   }
 }
+
+export default Login;

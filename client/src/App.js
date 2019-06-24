@@ -6,8 +6,8 @@ import NavBar from './components/NavBar.js'
 import HeroSection from './components/HeroSection.js'
 
 
-import {Login} from './login/index'
-import {Register} from './login/index'
+import Login from './components/Login.js'
+import Register from './components/Register.js'
 
 
 
@@ -73,11 +73,6 @@ class App extends Component {
       <div className="App">
         <NavBar user={this.state.isLoggedin} />
         <HeroSection />
-
-        { this.state.isLoggedIn ?
-        <Login handleChange={this.handleInputChange} handleSubmit={this.handleLogin}/> :
-        <Register handleChange={this.handleInputChange} handleSubmit={this.handleLogin}/>
-      }
       </div>
     );
   }
