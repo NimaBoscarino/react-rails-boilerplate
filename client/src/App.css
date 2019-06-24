@@ -1,12 +1,14 @@
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700,900&display=swap');
 
 .App {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Merriweather', serif;
+
 }
 
 .App-logo {

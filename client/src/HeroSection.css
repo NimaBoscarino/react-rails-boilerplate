@@ -1,0 +1,47 @@
+/*.hero-section {
+  background-image: url('https://i.imgur.com/PQK9FOC.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 100;
+}*/
+
+.hero-shape {
+  position: absolute;
+  top: -78px;
+  left: -7px;
+  z-index: 0;
+}
+
+.hero-text {
+  align-self: center;
+  margin-top: 5%;
+}
+
+.blurb-text {
+  width: 60%;
+  text-align: center;
+  margin: 7% auto;
+}
+
+.home-why {
+  margin-top: 20%;
+  align-items: center;
+}
+
+.home-collective {
+  width: 85%;
+}
+
+.bean-img {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  max-width: 1450px;
+  width: 100%;
+}
+
+.collective-img {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+}

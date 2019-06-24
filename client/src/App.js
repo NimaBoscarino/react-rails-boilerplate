@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+
+import NavBar from './components/NavBar.js'
+import HeroSection from './components/HeroSection.js'
+
+
 import {Login} from './login/index'
 import {Register} from './login/index'
+
 
 
 class App extends Component {
@@ -17,8 +23,10 @@ class App extends Component {
       last_name: "",
       password_confirmation: "",
       data: ""
+
     }
   }
+
 
   fetchData = () => {
     axios.get('/api/users') // You can simply make your requests to "/api/whatever you want"
@@ -31,6 +39,7 @@ class App extends Component {
         message: response.data.users[0].email
       });
     })
+
   }
 
   handleLogin = (e) =>  {
@@ -56,11 +65,15 @@ class App extends Component {
     this.setState({
       [e.target.name]: e.target.value
     })
+
   }
 
   render() {
     return (
       <div className="App">
+        <NavBar user={this.state.isLoggedin} />
+        <HeroSection />
+
         { this.state.isLoggedIn ?
         <Login handleChange={this.handleInputChange} handleSubmit={this.handleLogin}/> :
         <Register handleChange={this.handleInputChange} handleSubmit={this.handleLogin}/>
