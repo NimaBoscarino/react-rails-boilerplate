@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
+import { Redirect } from 'react-router';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
 import Nav from 'react-bootstrap/Nav';
 import {Link} from 'react-router-dom';
@@ -8,7 +9,12 @@ import { HashLink as Links } from 'react-router-hash-link';
 
 
 class NavBar extends Component {
-  render(){
+  render() {
+    const {
+      mainState: user,
+      handleLogout,
+    } = this.props;
+
     return(
       <Nav className="justify-content-end m-3" activeKey="/home">
         <Nav.Item>
@@ -24,11 +30,16 @@ class NavBar extends Component {
           <Nav.Link><Links to="/#home-charities">Charities</Links></Nav.Link>
         </Nav.Item>
         <Nav.Item>
-        { this.props.user ?
+        {user.isLoggedIn ?
           <ButtonToolbar>
-            <Button className='mr-1' variant="outline-dark">Logout</Button>
-            </ButtonToolbar>:
+            <Redirect to='/'/>
+            <form onSubmit={handleLogout} >
+            <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
+            </form>
+            <Button className='mr-1' variant="outline-dark">Settings</Button>
+          </ButtonToolbar>:
           <ButtonToolbar>
+            <Redirect to='/'/>
             <Button className='mr-1' variant="outline-dark"><Link to="/login">Login</Link></Button>
             <Button className='mr-1' variant="outline-dark"><Link to="/register">Register</Link></Button>
           </ButtonToolbar>
