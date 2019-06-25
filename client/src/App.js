@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, cloneElement } from 'react';
+import { Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 
-import NavBar from './components/NavBar.js'
-import HeroSection from './components/HeroSection.js'
+// import Router from './components/Router.js';
+
+import NavBar from './components/NavBar.js';
+import HeroSection from './components/HeroSection.js';
 
 
-import {Login} from './login/index'
-import {Register} from './login/index'
-
+import Login from './components/Login.js';
+import Register from './components/Register.js';
 
 
 class App extends Component {
@@ -22,11 +24,10 @@ class App extends Component {
       first_name: "",
       last_name: "",
       password_confirmation: "",
-      data: ""
-
+      data: "",
+      charities: []
     }
-  }
-
+  };
 
   fetchData = () => {
     axios.get('/api/users') // You can simply make your requests to "/api/whatever you want"
@@ -40,44 +41,100 @@ class App extends Component {
       });
     })
 
-  }
+  };
+ componentDidMount() {
 
-  handleLogin = (e) =>  {
-    e.preventDefault()
+    axios.get('/api/charities')
+    .then((response) => {
+      this.setState({
+        charities: response.data.charities
+      })
+      console.log(response.data)
+    })
+
+}
+
+  handleRegister = (e) =>  {
+    e.preventDefault();
     axios.post('/api/users', {
       user: {
         email: this.state.email,
         password: this.state.password,
         first_name: this.state.first_name,
         last_name: this.state.last_name,
-        password_confirmation: this.state.password_confirmation
+        password_confirmation: this.state.password_confirmation,
+        currentUser: "",
+        isLoggedIn: false,
+        authentication_token: ""
       }
     })
-    .then(function (response) {
-       console.log("response data", response.data)
+    .then(response => {
+      this.setState({
+        isLoggedIn: true,
+        currentUser: response.data.first_name,
+      })
     })
   };
 
   handleInputChange = (e) => {
-    console.log(e)
-    console.log(e.target.name)
-    console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     })
+  };
 
-  }
+  handleLogin = (e) => {
+    e.preventDefault();
+    axios.post('/api/sessions', {
+        email: this.state.email,
+        password: this.state.password,
+    })
+    .then(response => {
+      this.setState({
+        isLoggedIn: true,
+        authentication_token: response.data.authentication_token,
+      })
+    })
+  };
+
+  handleLogout = (e) => {
+    e.preventDefault();
+      this.setState({
+        isLoggedIn: false,
+        authentication_token: "",
+    })
+  };
+
+  withRoute = child => (
+    <Route
+      exact={child.props.exact || !!child.props.path}
+      key={child.name}
+      path={child.props.path || '/'}
+      render={routeProps => cloneElement(
+        child,
+        {
+          mainState: this.state,
+          handleLogin: this.handleLogin,
+          handleRegister: this.handleRegister,
+          handleInputChange: this.handleInputChange,
+          ...routeProps
+        }
+        )}
+      />);
+
 
   render() {
+    const {
+      children
+    } = this.props;
+
+    const enhancedChildren =
+      Array.isArray(children)
+        ? children.map(this.withRoute)
+        : this.withRoute(children);
+
     return (
       <div className="App">
-        <NavBar user={this.state.isLoggedin} />
-        <HeroSection />
-
-        { this.state.isLoggedIn ?
-        <Login handleChange={this.handleInputChange} handleSubmit={this.handleLogin}/> :
-        <Register handleChange={this.handleInputChange} handleSubmit={this.handleLogin}/>
-      }
+        {enhancedChildren}
       </div>
     );
   }
