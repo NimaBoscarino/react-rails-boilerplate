@@ -16,7 +16,7 @@ class App extends Component {
     super(props)
     this.state = {
       message: 'Click the button to load data!',
-      isLoggedIn: false,
+      isLoggedIn: true,
       email: "",
       password: "",
       first_name: "",

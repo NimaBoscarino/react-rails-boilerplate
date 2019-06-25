@@ -23,11 +23,18 @@ class NavBar extends Component {
         <Nav.Item>
         { this.props.user ?
           <ButtonToolbar>
-            <Button className='mr-1' variant="outline-dark">Logout</Button>
-            </ButtonToolbar>:
+            <Redirect to='/dashboard'/>
+            <form onSubmit={handleLogout} >
+              <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
+            </form>
+            <Button className='mr-1' variant="outline-dark"><Link to="/dashboard">Dashboard</Link></Button>
+            <Button className='mr-1' variant="outline-dark">Settings</Button>
+          </ButtonToolbar>:
           <ButtonToolbar>
-            <Button className='mr-1' variant="outline-dark">Login</Button>
-            <Button className='mr-1' variant="outline-dark">Register</Button>
+            <Redirect to='/'/>
+
+            <Button className='mr-1' variant="outline-dark"><Link to="/login">Login</Link></Button>
+            <Button className='mr-1' variant="outline-dark"><Link to="/register">Register</Link></Button>
           </ButtonToolbar>
         }
         </Nav.Item>
