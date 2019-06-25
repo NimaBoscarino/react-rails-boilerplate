@@ -10,6 +10,7 @@ import Charity from './Charity';
 
 
 
+
 const Routes = () => (
   <App>
     <NavBar />
@@ -17,8 +18,7 @@ const Routes = () => (
     <Login path="/login" />
     <Register path="/register" />
     <Charity path="/charities" />
-    {/*<CharitySettings path="/users/:id/:charity-settings" />*/}
-    {/*<Dashboard path="/users/:id" />*/}
+    <Dashboard path="/dashboard" />
   </App>
 );
 
