@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
     get '/data', to: 'users#index'
     get '/users', to: 'users#index'
+    get '/charities', to:'charities#show'
 
+    resources :charities, only: [:show]
 
     resources :users
     resources :sessions, only: [:create, :destroy]

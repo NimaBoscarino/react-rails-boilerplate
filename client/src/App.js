@@ -24,7 +24,8 @@ class App extends Component {
       first_name: "",
       last_name: "",
       password_confirmation: "",
-      data: ""
+      data: "",
+      charities: []
     }
   };
 
@@ -41,6 +42,17 @@ class App extends Component {
     })
 
   };
+ componentDidMount() {
+
+    axios.get('/api/charities')
+    .then((response) => {
+      this.setState({
+        charities: response.data.charities
+      })
+      console.log(response.data)
+    })
+
+}
 
   handleRegister = (e) =>  {
     e.preventDefault();
