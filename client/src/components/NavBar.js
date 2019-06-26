@@ -36,7 +36,7 @@ class NavBar extends Component {
           </ButtonToolbar>
         {user.isLoggedIn ?
           <ButtonToolbar>
-            <Redirect to='/'/>
+            <Redirect to='/charities'/>
             <form onSubmit={handleLogout} >
             <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
             </form>

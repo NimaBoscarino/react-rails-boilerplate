@@ -17,15 +17,17 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      message: 'Click the button to load data!',
       isLoggedIn: true,
-      email: "",
-      password: "",
       first_name: "",
       last_name: "",
+      email: "",
+      password: "",
       password_confirmation: "",
       data: "",
-      cookie: "",
+      current_roundup_balance: 0,
+      balance_date: null,
+      plaid_token: "",
+      votes: [],
       charities: [],
     }
   };
@@ -100,9 +102,15 @@ class App extends Component {
     })
   };
 
-  getUser = () => {
-    e.preventDefault();
-    axios.get('api/users', {
+  getDashboardInfo = () => {
+    axios.get('api/users')
+    .then(response => {
+      this.setState({
+        current_roundup_balance: response.data.user.current_roundup_balance,
+        balance_date: response.data.user.balance_date,
+        plaid_token: response.data.user.plaid_token,
+        votes: response.data.user.votes,
+      })
     })
   }
 
@@ -119,7 +127,7 @@ class App extends Component {
           handleRegister: this.handleRegister,
           handleInputChange: this.handleInputChange,
           isLoggedIn: this.isLoggedIn,
-          getUser: this.getUser,
+          getDashboardInfo: this.getDashboardInfo,
           ...routeProps
         }
         )}
