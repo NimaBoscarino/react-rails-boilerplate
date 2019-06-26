@@ -6,17 +6,19 @@ import CharitySettings from './CharitySettings.js';
 import Dashboard from './Dashboard.js';
 import HeroSection from './HeroSection.js';
 import NavBar from './NavBar';
+import Charity from './Charity';
+
 
 
 
 const Routes = () => (
   <App>
     <NavBar />
-    <HeroSection path="/" />
+    <HeroSection exact path="/" />
     <Login path="/login" />
     <Register path="/register" />
-    {/*<CharitySettings path="/users/:id/:charity-settings" />*/}
-    {/*<Dashboard path="/users/:id" />*/}
+    <Charity path="/charities" />
+    <Dashboard path="/dashboard" />
   </App>
 );
 

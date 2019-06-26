@@ -37,6 +37,7 @@ class NavBar extends Component {
             <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
             </form>
             <Button className='mr-1' variant="outline-dark">Settings</Button>
+            <Button className='mr-1' variant="outline-dark"><Link to="/charities">Charities</Link></Button>
           </ButtonToolbar>:
           <ButtonToolbar>
             <Redirect to='/'/>
