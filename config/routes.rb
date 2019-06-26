@@ -4,14 +4,17 @@ Rails.application.routes.draw do
 
   namespace :api do # /api/data
 
-    get '/data', to: 'users#index'
+    get '/session', to: 'sessions#show'
+    post '/session', to: 'sessions#create'
+    delete '/session', to: 'sessions#destroy'
     get '/users', to: 'users#index'
 
 
     resources :users
-    resources :sessions, only: [:create, :destroy]
+    resources :session, only: [:create, :destroy, :show]
 
   end
+
 
   get '*path', to: "static_pages#fallback_index_html", constraints: ->(request) do
     !request.xhr? && request.format.html?

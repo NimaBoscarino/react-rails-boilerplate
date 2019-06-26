@@ -24,20 +24,23 @@ class App extends Component {
       first_name: "",
       last_name: "",
       password_confirmation: "",
-      data: ""
+      data: "",
+      cookie: "",
     }
   };
 
-  fetchData = () => {
-    axios.get('/api/users') // You can simply make your requests to "/api/whatever you want"
+  fetchData = (e) => {
+    e.preventDefault();
+    debugger;
+    axios.get('/api/users', {withCredentials: true}) // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
       // handle success
-      console.log(response.data) // The entire response from the Rails API
+      console.log("response:", response.data) // The entire response from the Rails API
 
-      console.log(response.data.users) // Just the message
-      this.setState({
-        message: response.data.users[0].email
-      });
+      // console.log(response.data.users) // Just the message
+      // this.setState({
+      //   message: response.data.users[0].email
+      // });
     })
 
   };
@@ -61,7 +64,16 @@ class App extends Component {
         isLoggedIn: true,
         currentUser: response.data.first_name,
       })
-    })
+    }).then(axios.get('/api/users', {withCredentials: true}) // You can simply make your requests to "/api/whatever you want"
+    .then((response) => {
+      // handle success
+      console.log(response.data) // The entire response from the Rails API
+
+      console.log(response.data.users) // Just the message
+      // this.setState({
+      //   message: response.data.users[0].email
+      // });
+    }))
   };
 
   handleInputChange = (e) => {
@@ -104,6 +116,7 @@ class App extends Component {
           handleLogin: this.handleLogin,
           handleRegister: this.handleRegister,
           handleInputChange: this.handleInputChange,
+          fetchData: this.fetchData,
           ...routeProps
         }
         )}
