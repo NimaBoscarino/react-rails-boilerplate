@@ -2,6 +2,8 @@ import React, { Component, cloneElement } from 'react';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import PlaidLink from 'react-plaid-link'
+
 
 // import Router from './components/Router.js';
 
@@ -47,7 +49,7 @@ class App extends Component {
   };
  componentDidMount() {
 
-    axios.get('/api/charities')
+    axios.get('/api/charities', {withCredentials: true})
     .then((response) => {
       this.setState({
         charities: response.data.charities
@@ -134,6 +136,14 @@ class App extends Component {
         )}
       />);
 
+  handleOnSuccess(token, metadata) {
+    // send token to client server
+    console.log(token)
+  }
+  handleOnExit(err) {
+    // handle the case when your user exits Link
+    console.log(err)
+  }
 
   render() {
     const {
@@ -147,6 +157,15 @@ class App extends Component {
 
     return (
       <div className="App">
+        <PlaidLink
+          clientName="Change Collective"
+          env="sandbox"
+          product={["auth", "transactions"]}
+          publicKey="1d43b9e5858da3ef902e49151f1374"
+          onExit={this.handleOnExit}
+          onSuccess={this.handleOnSuccess}>
+          Open Link and connect your bank!
+        </PlaidLink>
         {enhancedChildren}
       </div>
     );

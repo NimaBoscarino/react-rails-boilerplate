@@ -38,6 +38,7 @@ class NavBar extends Component {
             </form>
             <Button className='mr-1' variant="outline-dark">Settings</Button>
             <Button className='mr-1' variant="outline-dark"><Link to="/charities">Charities</Link></Button>
+            <Button className='mr-1' variant="outline-dark"><Link to="/dashboard">Dashboard</Link></Button>
           </ButtonToolbar>:
           <ButtonToolbar>
             <Redirect to='/'/>

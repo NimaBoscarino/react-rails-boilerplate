@@ -7,8 +7,21 @@ import Card from 'react-bootstrap/Card'
 import ReactMinimalPieChart from 'react-minimal-pie-chart';
 import '../dashboard.css'
 
+const charityList = (charities) => {
+  return charities.map( charity =>
+    <ul>
+      <li>{charity.name}</li>
+    </ul>
+  )
+}
+
+
 class Dashboard extends Component {
   render() {
+
+    const {
+      mainState: state,
+    } = this.props
     return(
       <div>
         <Container>
@@ -36,6 +49,7 @@ class Dashboard extends Component {
             </Col>
             <Col>
               <p>Collective Achievements</p>
+                {charityList(state.charities)}
             </Col>
 
           </Row>
