@@ -30,6 +30,10 @@ class NavBar extends Component {
           <Nav.Link><Links to="/#home-charities">Charities</Links></Nav.Link>
         </Nav.Item>
         <Nav.Item>
+        <ButtonToolbar>
+            <Button className='mr-1' variant="outline-dark"><Link to="/dashboard">Dashboard</Link></Button>
+            <Button className='mr-1' variant="outline-dark"><Link to="/register">Register</Link></Button>
+          </ButtonToolbar>
         {user.isLoggedIn ?
           <ButtonToolbar>
             <Redirect to='/'/>

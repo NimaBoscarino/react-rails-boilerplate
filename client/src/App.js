@@ -30,23 +30,7 @@ class App extends Component {
     }
   };
 
-  fetchData = (e) => {
-    e.preventDefault();
-    debugger;
-    axios.get('/api/users', {withCredentials: true}) // You can simply make your requests to "/api/whatever you want"
-    .then((response) => {
-      // handle success
-      console.log("response:", response.data) // The entire response from the Rails API
-
-      // console.log(response.data.users) // Just the message
-      // this.setState({
-      //   message: response.data.users[0].email
-      // });
-    })
-
-  };
  componentDidMount() {
-
     axios.get('/api/charities')
     .then((response) => {
       this.setState({
@@ -54,8 +38,7 @@ class App extends Component {
       })
       console.log(response.data)
     })
-
-}
+  }
 
   handleRegister = (e) =>  {
     e.preventDefault();
@@ -96,7 +79,7 @@ class App extends Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    axios.post('/api/sessions', {
+    axios.post('/api/session', {
         email: this.state.email,
         password: this.state.password,
     })
@@ -110,15 +93,22 @@ class App extends Component {
 
   handleLogout = (e) => {
     e.preventDefault();
-      this.setState({
+    axios.delete('/api/session')
+    this.setState({
         isLoggedIn: false,
         authentication_token: "",
     })
   };
 
+  getUser = () => {
+    e.preventDefault();
+    axios.get('api/users', {
+    })
+  }
+
   withRoute = child => (
     <Route
-      exact={child.props.exact || !!child.props.path}
+      exact={child.props.exact || !child.props.path}
       key={child.name}
       path={child.props.path || '/'}
       render={routeProps => cloneElement(
@@ -128,7 +118,8 @@ class App extends Component {
           handleLogin: this.handleLogin,
           handleRegister: this.handleRegister,
           handleInputChange: this.handleInputChange,
-          fetchData: this.fetchData,
+          isLoggedIn: this.isLoggedIn,
+          getUser: this.getUser,
           ...routeProps
         }
         )}

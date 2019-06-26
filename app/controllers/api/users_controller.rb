@@ -11,6 +11,13 @@ class Api::UsersController < ApplicationController
     }
   end
 
+  def show
+    @user = User.find_by_id(sesssoin[:user_id])
+    render :json => {
+      user: @user
+    }
+  end
+
   def create
     @user = User.new(user_params)
 
