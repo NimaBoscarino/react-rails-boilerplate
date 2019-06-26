@@ -18,7 +18,7 @@ class App extends Component {
     super(props)
     this.state = {
       message: 'Click the button to load data!',
-      isLoggedIn: false,
+      isLoggedIn: true,
       email: "",
       password: "",
       first_name: "",
@@ -26,6 +26,7 @@ class App extends Component {
       password_confirmation: "",
       data: "",
       cookie: "",
+      charities: [],
     }
   };
 
@@ -44,6 +45,17 @@ class App extends Component {
     })
 
   };
+ componentDidMount() {
+
+    axios.get('/api/charities')
+    .then((response) => {
+      this.setState({
+        charities: response.data.charities
+      })
+      console.log(response.data)
+    })
+
+}
 
   handleRegister = (e) =>  {
     e.preventDefault();

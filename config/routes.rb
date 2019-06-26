@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     post '/session', to: 'sessions#create'
     delete '/session', to: 'sessions#destroy'
     get '/users', to: 'users#index'
+    get '/charities', to:'charities#show'
 
+    resources :charities, only: [:show]
 
     resources :users
     resources :session, only: [:create, :destroy, :show]
