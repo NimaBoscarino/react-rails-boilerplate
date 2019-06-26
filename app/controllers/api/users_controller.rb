@@ -1,6 +1,10 @@
 class Api::UsersController < ApplicationController
   def index
     @users = User.all
+    puts "users:"
+    puts @users
+    puts "credentials:"
+    puts session[:user_id]
 
     render :json => {
       users: @users
@@ -11,9 +15,12 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user, status: :created
+      session[:user_id] = @user.id
+      render :json => {
+        success: true
+      }
     else
-      head(:unprocessable_entity)
+      render :json => {message: "account not created"}
     end
   end
 
