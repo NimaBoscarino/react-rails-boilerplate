@@ -11,7 +11,8 @@ class Api::SessionsController < ApplicationController
   end
 
   def show
-    render :json => {session: session}
+
+    render :json => {session: session[:user_id]}
   end
 
   def destroy
