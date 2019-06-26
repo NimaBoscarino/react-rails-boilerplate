@@ -44,7 +44,7 @@ class App extends Component {
   };
  componentDidMount() {
 
-    axios.get('/api/charities')
+    axios.get('/api/charities', {withCredentials: true})
     .then((response) => {
       this.setState({
         charities: response.data.charities
