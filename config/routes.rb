@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     delete '/session', to: 'sessions#destroy'
     get '/users', to: 'users#index'
     get '/charities', to:'charities#show'
+    get '/goals', to:'goals#show'
 
     resources :charities, only: [:show]
+    resources :goals, only: [:show]
 
     resources :users
     resources :session, only: [:create, :destroy, :show]
