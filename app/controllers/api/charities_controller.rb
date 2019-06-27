@@ -1,11 +1,10 @@
 class Api::CharitiesController < ApplicationController
   def show
     @charities = Charity.all
-    @test = Charity.joins(:goals).select('charities.name, goals.objective')
+    @tests = Charity.joins(:goals).select('charities.id, charities.name, charities.desc, goals.objective, charities.image')
     render :json => {
       charities: @charities,
-      test: @test
+      tests: @tests
     }
   end
-
 end
