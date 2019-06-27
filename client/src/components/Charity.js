@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar.js'
-import Carousel from 'react-bootstrap/Carousel';
+import {Carousel, Container, Row, Col} from 'react-bootstrap';
 
 
 const printChars = (charities) => {
   return charities.map( charity =>
-
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://placekitten.com/300/300"
+            src={charity.image}
             alt="First slide"
           />
           <Carousel.Caption>
@@ -27,12 +26,16 @@ class Charity extends Component {
       mainState: state,
     } = this.props
     return (
-      <div>
-      <h1>hi</h1>
-      <Carousel>
-        {printChars(state.charities)}
-      </Carousel>
-      </div>
+      <Container>
+        <Row>
+          <Col className="col-xl-8 col-md-9 col-12">
+            <h1>hi</h1>
+            <Carousel>
+              {printChars(state.charities)}
+            </Carousel>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }
