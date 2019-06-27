@@ -17,17 +17,21 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isLoggedIn: true,
+      newLoggedIn: false,
+      isLoggedIn: false,
       first_name: "",
       last_name: "",
       email: "",
       password: "",
       password_confirmation: "",
       data: "",
+      currentUserId: 0,
+      currentUser: null,
       current_roundup_balance: 0,
       balance_date: null,
       plaid_token: "",
-      votes: [],
+      user_votes: [],
+      collective_votes: [],
       charities: [],
     }
   };
@@ -89,6 +93,8 @@ class App extends Component {
       this.setState({
         isLoggedIn: true,
         authentication_token: response.data.authentication_token,
+        currentUser: response.data.user.id,
+        first_name: response.data.user.first_name
       })
     })
   };
@@ -103,15 +109,19 @@ class App extends Component {
   };
 
   getDashboardInfo = () => {
-    axios.get('api/users')
+    axios.get('api/session')
     .then(response => {
       this.setState({
-        current_roundup_balance: response.data.user.current_roundup_balance,
-        balance_date: response.data.user.balance_date,
-        plaid_token: response.data.user.plaid_token,
-        votes: response.data.user.votes,
+        current_roundup_balance: response.data.currentUser.current_roundup_balance,
+        balance_date: response.data.currentUser.balance_date,
+        plaid_token: response.data.currentUser.plaid_token,
+        user_votes: response.data.currentUser.votes,
       })
     })
+  }
+
+  changeLoggedIn = () => {
+    this.setState({newLoggedIn: true})
   }
 
   withRoute = child => (
@@ -128,6 +138,7 @@ class App extends Component {
           handleInputChange: this.handleInputChange,
           isLoggedIn: this.isLoggedIn,
           getDashboardInfo: this.getDashboardInfo,
+          changeLoggedIn: this.changeLoggedIn,
           ...routeProps
         }
         )}
@@ -143,6 +154,8 @@ class App extends Component {
       Array.isArray(children)
         ? children.map(this.withRoute)
         : this.withRoute(children);
+
+        console.log(enhancedChildren)
 
     return (
       <div className="App">

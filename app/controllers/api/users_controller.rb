@@ -47,6 +47,7 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find_by_id(session[:user_id])
     @user.update_attributes(user_params)
+    render :json => {currentUser: @user}
   end
 
 

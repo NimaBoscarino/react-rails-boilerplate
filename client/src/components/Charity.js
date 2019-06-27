@@ -28,7 +28,7 @@ class Charity extends Component {
     } = this.props
     return (
       <div>
-      <h1>hi</h1>
+      <NavBar mainState={this.props.mainState} />
       <Carousel>
         {printChars(state.charities)}
       </Carousel>

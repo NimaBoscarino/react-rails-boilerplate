@@ -34,21 +34,22 @@ class NavBar extends Component {
             <Button className='mr-1' variant="outline-dark"><Link to="/dashboard">Dashboard</Link></Button>
             <Button className='mr-1' variant="outline-dark"><Link to="/register">Register</Link></Button>
           </ButtonToolbar>
-        {user.isLoggedIn ?
+        {/*{user.isLoggedIn ?*/}
           <ButtonToolbar>
-            <Redirect to='/charities'/>
+            {/*<Redirect to='/charities'/>*/}
             <form onSubmit={handleLogout} >
             <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
             </form>
             <Button className='mr-1' variant="outline-dark">Settings</Button>
             <Button className='mr-1' variant="outline-dark"><Link to="/charities">Charities</Link></Button>
-          </ButtonToolbar>:
+          </ButtonToolbar>
+          {/*:*/}
           <ButtonToolbar>
-            <Redirect to='/'/>
+            {/*<Redirect to='/'/>*/}
             <Button className='mr-1' variant="outline-dark"><Link to="/login">Login</Link></Button>
             <Button className='mr-1' variant="outline-dark"><Link to="/register">Register</Link></Button>
           </ButtonToolbar>
-        }
+        {/*}*/}
         </Nav.Item>
       </Nav>
     )

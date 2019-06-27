@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col';
 import NavBar from './NavBar';
 
 const HeroSection = props => (
+  <div>
+    {/*<NavBar mainState={this.props.mainState} />*/}
   <div className='App'>
     <Container fluid className="hero-section">
       <Row className="hero-background-color" id="home">
@@ -68,6 +70,7 @@ const HeroSection = props => (
         </Col>
       </Row>
     </Container>
+  </div>
   </div>
 );
 

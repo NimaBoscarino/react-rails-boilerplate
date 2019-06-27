@@ -12,6 +12,8 @@ class Login extends Component {
       handleLogin,
     } = this.props;
     return (
+      <div>
+      {/*<NavBar mainState={this.props.mainState} />*/}
       <div className="base.container">
         <form onSubmit={handleLogin} >
           <div className="header">Login</div>
@@ -36,6 +38,7 @@ class Login extends Component {
             </button>
           </div>
         </form>
+      </div>
       </div>
     );
   }

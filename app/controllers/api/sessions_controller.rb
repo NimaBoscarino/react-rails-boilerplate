@@ -4,14 +4,26 @@ class Api::SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      render :json => {success: true}
+      render :json => {
+        success: true,
+        current_user: user.id,
+        first_name: user.first_name
+      }
     else
       head(:unauthorized)
     end
   end
 
   def show
-    render :json => {isLoggedIn: session[:user_id]}
+    flag = false
+    currentUser = nil
+    if session[:user_id]
+      flag = true
+      currentUser = User.find_by_id(session[:user_id])
+    end
+    render :json => {
+      isLoggedIn: flag,
+      currentUser: currentUser}
   end
 
   def destroy
