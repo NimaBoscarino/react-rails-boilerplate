@@ -45,9 +45,11 @@ class Dashboard extends Component {
     const v3 = user_votes[2]
     const v4 = user_votes[3]
     const v5 = user_votes[4]
-    
+
     return(
+
       <div>
+      <Switch>
         <Container>
 
             <p pull-right> Hello, {this.props.mainState.first_name} </p>
