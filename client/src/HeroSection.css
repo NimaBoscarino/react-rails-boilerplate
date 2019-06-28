@@ -8,7 +8,7 @@
 .hero-shape {
   position: absolute;
   top: -78px;
-  left: -47px;
+  left: -57px;
   z-index: 0;
 }
 
@@ -25,20 +25,22 @@
 
 .home-why {
   margin: 10% auto;
-  text-align: center;
+  text-align: right;
   width: 60%;
   justify-content: center;
 }
 
 .home-collective {
+  margin-top: -2%;
   background: url(https://i.imgur.com/Kih1TFy.png);
-  background-size: 129%;
+  background-size: 125%;
   background-repeat: no-repeat;
   background-position: 50%;
-  height:  600px;
+  height:  670px;
   align-items: center;
   justify-content: space-around;
   text-align: left;
+
 }
 
 .collective-img {
