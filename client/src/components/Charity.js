@@ -1,38 +1,48 @@
 import React, { Component } from 'react';
+
 import NavBar from './NavBar.js'
-import Carousel from 'react-bootstrap/Carousel';
+import {Carousel, Container, Row, Col} from 'react-bootstrap';
 
+const style =  {
+  color: 'black'
+}
 
-const printChars = (charities) => {
-  return charities.map( charity =>
-
+const printChars = (tests) => {
+  return tests.map( test =>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://placekitten.com/300/300"
+            src={test.image}
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>{charity.name}</h3>
-            <p>{charity.desc}</p>
+            <h3 style={style}>{test.name}</h3>
+            <p style={style}>{test.desc}</p>
+            <p style={style}>{test.objective}</p>
           </Carousel.Caption>
         </Carousel.Item>
       )
+
 }
 
 class Charity extends Component {
-
   render(){
     const {
       mainState: state,
     } = this.props
     return (
-      <div>
-      <NavBar mainState={this.props.mainState} />
-      <Carousel>
-        {printChars(state.charities)}
-      </Carousel>
-      </div>
+      <Container>
+        <Row>
+          <Col sm={8}>
+            <Carousel>
+              {printChars(state.tests)}
+            </Carousel>
+          </Col>
+         {/* <Col>
+            {printGoals(state.goals)}
+          </Col>*/}
+        </Row>
+      </Container>
     )
   }
 }

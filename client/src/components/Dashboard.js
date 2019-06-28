@@ -21,14 +21,23 @@ import { Switch } from 'react-router-dom';
 //   })
 // };
 
+const charityList = (charities) => {
+  return charities.map(charity =>
+    <ul>
+      <li>{charity.name}</li>
+    </ul>
+  )
+}
+
+
 class Dashboard extends Component {
   componentDidMount() {
     this.props.getDashboardInfo()
   }
   render() {
-
     const {
       user_votes,
+      mainState: state,
     } = this.props.mainState;
 
     const v1 = user_votes[0]
@@ -36,13 +45,9 @@ class Dashboard extends Component {
     const v3 = user_votes[2]
     const v4 = user_votes[3]
     const v5 = user_votes[4]
-
-    return (
-    <div>
-      <NavBar mainState={this.props.mainState} />
-      {this.props.mainState.isLoggedIn ? (
-      <Switch>
-        <div>
+    
+    return(
+      <div>
         <Container>
 
             <p pull-right> Hello, {this.props.mainState.first_name} </p>
@@ -68,6 +73,7 @@ class Dashboard extends Component {
             </Col>
             <Col>
               <p>Collective Achievements</p>
+                {charityList(state.charities)}
             </Col>
 
           </Row>

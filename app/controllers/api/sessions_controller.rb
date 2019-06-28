@@ -6,13 +6,14 @@ class Api::SessionsController < ApplicationController
       session[:user_id] = user.id
       render :json => {
         success: true,
-        current_user: user.id,
-        first_name: user.first_name
+        first_name: user.first_name,
+        user_id: user.id
       }
     else
       head(:unauthorized)
     end
   end
+
 
   def show
     flag = false
@@ -25,6 +26,7 @@ class Api::SessionsController < ApplicationController
       isLoggedIn: flag,
       currentUser: currentUser}
   end
+
 
   def destroy
     session[:user_id] = nil

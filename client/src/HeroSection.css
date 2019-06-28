@@ -8,7 +8,7 @@
 .hero-shape {
   position: absolute;
   top: -78px;
-  left: -7px;
+  left: -57px;
   z-index: 0;
 }
 
@@ -24,24 +24,26 @@
 }
 
 .home-why {
-  margin-top: 20%;
-  align-items: center;
+  margin: 10% auto;
+  text-align: right;
+  width: 60%;
+  justify-content: center;
 }
 
 .home-collective {
-  width: 85%;
-}
+  margin-top: -2%;
+  background: url(https://i.imgur.com/Kih1TFy.png);
+  background-size: 125%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height:  670px;
+  align-items: center;
+  justify-content: space-around;
+  text-align: left;
 
-.bean-img {
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  max-width: 1450px;
-  width: 100%;
 }
 
 .collective-img {
-  z-index: 1;
-  position: absolute;
-  left: 0;
+  max-width: 700px;
+  width: 100%;
 }

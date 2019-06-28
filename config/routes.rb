@@ -6,12 +6,15 @@ Rails.application.routes.draw do
 
     get '/users', to: 'users#index'
     get '/charities', to:'charities#show'
+    get '/goals', to:'goals#show'
 
     resources :charities, only: [:show]
 
-    resources :users do
-      resource :dashboard
-    end
+    resources :goals, only: [:show]
+
+    resources :items
+
+    resources :users
     resource :session, only: [:create, :destroy, :show]
 
   end

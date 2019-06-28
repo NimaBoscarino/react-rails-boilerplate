@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 2019_06_26_185058) do
     t.index ["charity_id"], name: "index_goals_on_charity_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.text "public_token"
+    t.text "access_token"
+    t.text "institution_name"
+    t.text "institution_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -56,4 +67,5 @@ ActiveRecord::Schema.define(version: 2019_06_26_185058) do
 
   add_foreign_key "donations", "charities"
   add_foreign_key "goals", "charities"
+  add_foreign_key "items", "users"
 end

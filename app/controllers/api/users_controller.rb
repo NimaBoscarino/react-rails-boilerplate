@@ -24,7 +24,8 @@ class Api::UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       render :json => {
-        success: true
+        success: true,
+        user: @user.id
       }
     else
       render :json => {message: "account not created"}

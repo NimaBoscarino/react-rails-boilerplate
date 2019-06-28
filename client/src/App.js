@@ -1,24 +1,17 @@
-import React, { Component, cloneElement } from 'react';
+import React, { Component, Children, cloneElement } from 'react';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-
-// import Router from './components/Router.js';
-
-import NavBar from './components/NavBar.js';
-import HeroSection from './components/HeroSection.js';
-
-
-import Login from './components/Login.js';
-import Register from './components/Register.js';
-
+import PlaidLink from 'react-plaid-link';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      newLoggedIn: false,
       isLoggedIn: false,
+      email: "",
+      password: "",
+      currentUser: 0,
       first_name: "",
       last_name: "",
       email: "",
@@ -33,14 +26,27 @@ class App extends Component {
       user_votes: [],
       collective_votes: [],
       charities: [],
+      goals: [],
+      tests: []
+
     }
   };
 
  componentDidMount() {
-    axios.get('/api/charities')
+    axios.get('/api/charities', {withCredentials: true})
+
     .then((response) => {
       this.setState({
-        charities: response.data.charities
+        charities: response.data.charities,
+        tests: response.data.tests
+      })
+      console.log(response.data)
+    })
+
+    axios.get('/api/goals', {withCredentials: true})
+    .then((response) => {
+      this.setState({
+        goals: response.data.goals
       })
       console.log(response.data)
     })
@@ -55,7 +61,7 @@ class App extends Component {
         first_name: this.state.first_name,
         last_name: this.state.last_name,
         password_confirmation: this.state.password_confirmation,
-        currentUser: "",
+        currentUser: 0,
         isLoggedIn: false,
         authentication_token: ""
       }
@@ -76,6 +82,8 @@ class App extends Component {
       // });
     }))
   };
+
+
 
   handleInputChange = (e) => {
     this.setState({
@@ -108,6 +116,7 @@ class App extends Component {
     })
   };
 
+
   getDashboardInfo = () => {
     axios.get('api/session')
     .then(response => {
@@ -120,46 +129,81 @@ class App extends Component {
     })
   }
 
-  changeLoggedIn = () => {
-    this.setState({newLoggedIn: true})
+  withRoute = child => {
+    return (
+      <Route
+        exact={child.props.exact || !!child.props.path}
+        key={child.name}
+        path={child.props.path || '/'}
+        render={routeProps => cloneElement(
+          child,
+          {
+            mainState: this.state,
+            handleLogin: this.handleLogin,
+            handleRegister: this.handleRegister,
+            handleInputChange: this.handleInputChange,
+            isLoggedIn: this.isLoggedIn,
+            getDashboardInfo: this.getDashboardInfo,
+            changeLoggedIn: this.changeLoggedIn,
+            ...routeProps
+          }
+          )}
+        />);
   }
 
-  withRoute = child => (
-    <Route
-      exact={child.props.exact || !child.props.path}
-      key={child.name}
-      path={child.props.path || '/'}
-      render={routeProps => cloneElement(
-        child,
-        {
-          mainState: this.state,
-          handleLogin: this.handleLogin,
-          handleRegister: this.handleRegister,
-          handleInputChange: this.handleInputChange,
-          isLoggedIn: this.isLoggedIn,
-          getDashboardInfo: this.getDashboardInfo,
-          changeLoggedIn: this.changeLoggedIn,
-          ...routeProps
-        }
-        )}
-      />);
+   handleOnSuccess = (token, metadata) => {
+    // send token to client server
+    console.log(token)
+    console.log(metadata)
 
+    // client.exchangePublicToken(token, (err, res) => {
+    //   if(err != null){
+    //     console.log("Could not exchange token!");
+    //     return res.json({error: msg});
+    //   }
+    //  var access_token = res.access_token;
+    //  var item_id = res.item_id
+    // })
+    axios.post('/api/items', {
+      item: {
+      public_token: token,
+      //access_token: access_token,
+      institution_name: metadata.institution.name,
+      institution_id: metadata.institution.institution_id,
+      user_id: this.state.currentUser
+    }
+    })
+    .then(res => {
+      console.log(res.data)
+    })
+  }
+
+
+
+
+  handleOnExit(err) {
+    // handle the case when your user exits Link
+    console.log(err)
+  }
 
   render() {
     const {
       children
     } = this.props;
 
-    const enhancedChildren =
-      Array.isArray(children)
-        ? children.map(this.withRoute)
-        : this.withRoute(children);
-
-        console.log(enhancedChildren)
-
     return (
       <div className="App">
-        {enhancedChildren}
+        {Children.map(children, this.withRoute)}
+        <PlaidLink
+          clientName="Change Collective"
+          env="sandbox"
+          product={["auth", "transactions"]}
+          publicKey="a165568792fe5fd82ba0f4ecbef6da"
+          onExit={this.handleOnExit}
+          onSuccess={this.handleOnSuccess}>
+          Open Link and connect your bank!
+        </PlaidLink>
+
       </div>
     );
   }
