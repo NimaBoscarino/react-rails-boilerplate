@@ -38,13 +38,12 @@ class Register extends Component {
               <input type="password" name="password_confirmation" placeholder="confirm password" onChange={handleChange}/>
             </div>
           </div>
-        </div>
-        <div className="footer">
-          <button type="submit" className="btn">
-            Register
-          </button>
-        </div>
-        </form>
+          <div className="footer">
+            <button type="submit" className="btn">
+              Register
+            </button>
+          </div>
+          </form>
       </div>
     );
   }

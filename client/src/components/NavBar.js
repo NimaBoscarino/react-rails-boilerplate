@@ -29,7 +29,11 @@ class NavBar extends Component {
           <Nav.Link><Links to="/#home-charities">Charities</Links></Nav.Link>
         </Nav.Item>
         <Nav.Item>
-        {user.isLoggedIn ?
+        <ButtonToolbar>
+            <Button className='mr-1' variant="outline-dark"><Link to="/dashboard">Dashboard</Link></Button>
+            <Button className='mr-1' variant="outline-dark"><Link to="/register">Register</Link></Button>
+          </ButtonToolbar>
+        {/*{user.isLoggedIn ?*/}
           <ButtonToolbar>
             <form onSubmit={handleLogout} >
             <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
@@ -39,11 +43,11 @@ class NavBar extends Component {
             <Button className='mr-1' variant="outline-dark"><Link to="/dashboard">Dashboard</Link></Button>
           </ButtonToolbar>:
           <ButtonToolbar>
-            <Redirect to='/'/>
+            {/*<Redirect to='/'/>*/}
             <Button className='mr-1' variant="outline-dark"><Link to="/login">Login</Link></Button>
             <Button className='mr-1' variant="outline-dark"><Link to="/register">Register</Link></Button>
           </ButtonToolbar>
-        }
+        {/*}*/}
         </Nav.Item>
       </Nav>
     )

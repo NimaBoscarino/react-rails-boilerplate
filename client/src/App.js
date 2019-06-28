@@ -8,16 +8,23 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      message: 'Click the button to load data!',
       isLoggedIn: false,
       email: "",
       password: "",
       currentUser: 0,
       first_name: "",
       last_name: "",
+      email: "",
+      password: "",
       password_confirmation: "",
       data: "",
-      cookie: "",
+      currentUserId: 0,
+      currentUser: null,
+      current_roundup_balance: 0,
+      balance_date: null,
+      plaid_token: "",
+      user_votes: [],
+      collective_votes: [],
       charities: [],
       goals: [],
       tests: []
@@ -25,24 +32,9 @@ class App extends Component {
     }
   };
 
-  fetchData = (e) => {
-    e.preventDefault();
-    debugger;
-    axios.get('/api/users', {withCredentials: true}) // You can simply make your requests to "/api/whatever you want"
-    .then((response) => {
-      // handle success
-      console.log("response:", response.data) // The entire response from the Rails API
-
-      // console.log(response.data.users) // Just the message
-      // this.setState({
-      //   message: response.data.users[0].email
-      // });
-    })
-
-  };
  componentDidMount() {
-
     axios.get('/api/charities', {withCredentials: true})
+
     .then((response) => {
       this.setState({
         charities: response.data.charities,
@@ -108,22 +100,36 @@ class App extends Component {
     .then(response => {
       this.setState({
         isLoggedIn: true,
-        currentUser: response.data.user_id
+        authentication_token: response.data.authentication_token,
+        currentUser: response.data.user.id,
+        first_name: response.data.user.first_name
       })
     })
   };
 
   handleLogout = (e) => {
     e.preventDefault();
-      this.setState({
+    axios.delete('/api/session')
+    this.setState({
         isLoggedIn: false,
         authentication_token: "",
     })
   };
 
 
+  getDashboardInfo = () => {
+    axios.get('api/session')
+    .then(response => {
+      this.setState({
+        current_roundup_balance: response.data.currentUser.current_roundup_balance,
+        balance_date: response.data.currentUser.balance_date,
+        plaid_token: response.data.currentUser.plaid_token,
+        user_votes: response.data.currentUser.votes,
+      })
+    })
+  }
+
   withRoute = child => {
-    console.log('stuff', child)
     return (
       <Route
         exact={child.props.exact || !!child.props.path}
@@ -136,7 +142,9 @@ class App extends Component {
             handleLogin: this.handleLogin,
             handleRegister: this.handleRegister,
             handleInputChange: this.handleInputChange,
-            fetchData: this.fetchData,
+            isLoggedIn: this.isLoggedIn,
+            getDashboardInfo: this.getDashboardInfo,
+            changeLoggedIn: this.changeLoggedIn,
             ...routeProps
           }
           )}
@@ -169,6 +177,7 @@ class App extends Component {
       console.log(res.data)
     })
   }
+
 
 
 

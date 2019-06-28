@@ -6,6 +6,20 @@ import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import ReactMinimalPieChart from 'react-minimal-pie-chart';
 import '../dashboard.css'
+import Login from './Login.js';
+import NavBar from './NavBar';
+import axios from 'axios';
+import { Redirect } from 'react-router';
+import { Switch } from 'react-router-dom';
+
+
+// const isAuth = () => {
+//   axios.get('/api/session')
+//   .then((response) => {
+//     console.log(response.data.isLoggedIn)
+//       return response.data.isLoggedIn
+//   })
+// };
 
 const charityList = (charities) => {
   return charities.map(charity =>
@@ -17,22 +31,32 @@ const charityList = (charities) => {
 
 
 class Dashboard extends Component {
+  componentDidMount() {
+    this.props.getDashboardInfo()
+  }
   render() {
     const {
+      user_votes,
       mainState: state,
-    } = this.props;
+    } = this.props.mainState;
 
+    const v1 = user_votes[0]
+    const v2 = user_votes[1]
+    const v3 = user_votes[2]
+    const v4 = user_votes[3]
+    const v5 = user_votes[4]
+    
     return(
       <div>
         <Container>
 
-            <p pull-right> Hello Current User State </p>
+            <p pull-right> Hello, {this.props.mainState.first_name} </p>
 
           <Row>
             <Col>
               <p>Your Current Round Ups</p>
               <div className="roundup-bg">
-                <p>$50</p>
+                <p>${this.props.mainState.current_roundup_balance}</p>
               </div>
               <div>
                 <Accordion defaultActiveKey="0">
@@ -61,27 +85,27 @@ class Dashboard extends Component {
                   data={[
                     {
                       title: 'Sick Kids',
-                      value: 1,
+                      value: v1,
                       color: '#3D348B'
                     },
                     {
                       title: 'Habitat for Humanity',
-                      value: 1,
+                      value: v2,
                       color: '#F7B801'
                     },
                     {
                       title: 'Daily Food Bank',
-                      value: 1,
+                      value: v3,
                       color: '#9895F7'
                     },
                     {
                       title: 'Princess Margaret Foundation',
-                      value: 1,
+                      value: v4,
                       color: '#F18701'
                     },
                     {
                       title: 'Parkinson Canada',
-                      value: 1,
+                      value: v5,
                       color: '#F35B04'
                     }
                   ]}
@@ -121,6 +145,15 @@ class Dashboard extends Component {
           </Row>
         </Container>
       </div>
+      </Switch>
+      )
+      : (
+      <Switch>
+      <Redirect to='/login'/>
+        //<Login exact path ="/login" />
+      </Switch>
+      )}
+    </div>
     )
   }
 }

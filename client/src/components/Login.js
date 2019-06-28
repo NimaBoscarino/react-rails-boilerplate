@@ -9,6 +9,8 @@ class Login extends Component {
     } = this.props;
 
     return (
+      <div>
+      {/*<NavBar mainState={this.props.mainState} />*/}
       <div className="base.container">
         <form onSubmit={handleLogin} >
           <div className="header">Login</div>
@@ -33,6 +35,7 @@ class Login extends Component {
             </button>
           </div>
         </form>
+      </div>
       </div>
     );
   }
