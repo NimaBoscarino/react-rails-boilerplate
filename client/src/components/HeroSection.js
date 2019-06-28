@@ -29,8 +29,8 @@ const HeroSection = props => (
           <p>Excepteur sint occaecat cupidatat non proident,sunt in culpa qui officia deserunt </p>
         </Col>
       </Row>
-      <Row className="home-why" id="home-why">
-        <Col >
+      <Row className="home-why " id="home-why">
+        <Col sm={10}>
           <h2>Why?</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in uienply voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat norin proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <p>

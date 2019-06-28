@@ -24,7 +24,7 @@
 }
 
 .home-why {
-  margin-top: 20%;
+  margin: 10% auto;
   text-align: center;
   width: 60%;
   justify-content: center;
@@ -35,7 +35,7 @@
   background-size: 129%;
   background-repeat: no-repeat;
   background-position: 50%;
-  height: 600px;
+  height:  600px;
   align-items: center;
   justify-content: space-around;
   text-align: left;
