@@ -9,9 +9,10 @@ class App extends Component {
     super(props)
     this.state = {
       message: 'Click the button to load data!',
-      isLoggedIn: true,
+      isLoggedIn: false,
       email: "",
       password: "",
+      currentUser: 0,
       first_name: "",
       last_name: "",
       password_confirmation: "",
@@ -45,8 +46,7 @@ class App extends Component {
       })
       console.log(response.data)
     })
-
-}
+  }
 
   handleRegister = (e) =>  {
     e.preventDefault();
@@ -57,7 +57,7 @@ class App extends Component {
         first_name: this.state.first_name,
         last_name: this.state.last_name,
         password_confirmation: this.state.password_confirmation,
-        currentUser: "",
+        currentUser: 0,
         isLoggedIn: false,
         authentication_token: ""
       }
@@ -79,6 +79,8 @@ class App extends Component {
     }))
   };
 
+
+
   handleInputChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -87,14 +89,14 @@ class App extends Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    axios.post('/api/sessions', {
+    axios.post('/api/session', {
         email: this.state.email,
         password: this.state.password,
     })
     .then(response => {
       this.setState({
         isLoggedIn: true,
-        authentication_token: response.data.authentication_token,
+        currentUser: response.data.user_id
       })
     })
   };
@@ -106,6 +108,7 @@ class App extends Component {
         authentication_token: "",
     })
   };
+
 
   withRoute = child => {
     console.log('stuff', child)
@@ -127,10 +130,36 @@ class App extends Component {
           )}
         />);
   }
-  handleOnSuccess(token, metadata) {
+
+   handleOnSuccess = (token, metadata) => {
     // send token to client server
     console.log(token)
+    console.log(metadata)
+
+    // client.exchangePublicToken(token, (err, res) => {
+    //   if(err != null){
+    //     console.log("Could not exchange token!");
+    //     return res.json({error: msg});
+    //   }
+    //  var access_token = res.access_token;
+    //  var item_id = res.item_id
+    // })
+    axios.post('/api/items', {
+      item: {
+      public_token: token,
+      //access_token: access_token,
+      institution_name: metadata.institution.name,
+      institution_id: metadata.institution.institution_id,
+      user_id: this.state.currentUser
+    }
+    })
+    .then(res => {
+      console.log(res.data)
+    })
   }
+
+
+
   handleOnExit(err) {
     // handle the case when your user exits Link
     console.log(err)
@@ -148,7 +177,7 @@ class App extends Component {
           clientName="Change Collective"
           env="sandbox"
           product={["auth", "transactions"]}
-          publicKey="1d43b9e5858da3ef902e49151f1374"
+          publicKey="a165568792fe5fd82ba0f4ecbef6da"
           onExit={this.handleOnExit}
           onSuccess={this.handleOnSuccess}>
           Open Link and connect your bank!
