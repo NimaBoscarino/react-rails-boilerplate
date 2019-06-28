@@ -101,8 +101,8 @@ class App extends Component {
       this.setState({
         isLoggedIn: true,
         authentication_token: response.data.authentication_token,
-        currentUser: response.data.user.id,
-        first_name: response.data.user.first_name
+        currentUser: response.data.user_id,
+        first_name: response.data.first_name
       })
     })
   };
