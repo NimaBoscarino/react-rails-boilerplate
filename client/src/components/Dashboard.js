@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion'
+import Table from 'react-bootstrap/Table'
 import Card from 'react-bootstrap/Card'
 import ReactMinimalPieChart from 'react-minimal-pie-chart';
 import '../dashboard.css'
@@ -51,7 +52,8 @@ class Dashboard extends Component {
     // const v3 = user_votes[2]
     // const v4 = user_votes[3]
     // const v5 = user_votes[4]
-
+    console.log(this.props.mainState.transactions)
+    const trans = this.props.mainState.transactions
     return(
 
       <div>
@@ -73,7 +75,26 @@ class Dashboard extends Component {
                       Transactions
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="0">
-                      <Card.Body>Hello! I'm the body</Card.Body>
+                      <Card.Body>
+                      <Table striped bordered hover size="sm">
+                        <thead>
+                          <tr>
+                            <th>Store Name</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                          </tr>
+                        </thead>
+                        {trans.length > 0 ?
+                        trans.map ( tran =>
+                        <tbody>
+                          <tr>
+                            <td>{tran.name}</td>
+                            <td>{tran.amount}</td>
+                            <td>{tran.date}</td>
+                          </tr>
+                        </tbody>) : null}
+                      </Table>
+                      </Card.Body>
                     </Accordion.Collapse>
                   </Card>
                 </Accordion>

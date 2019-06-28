@@ -32,7 +32,9 @@ class App extends Component {
       vote2:"",
       vote3:"",
       vote4:"",
-      vote5:""
+      vote5:"",
+      transactions: []
+
     }
   };
 
@@ -87,8 +89,6 @@ class App extends Component {
     }))
   };
 
-
-
   handleInputChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -131,6 +131,7 @@ class App extends Component {
     })
   }
 
+
   handleVoteSelection = (e) => {
     e.preventDefault();
     let v1 = Number(this.state.vote1)
@@ -170,6 +171,19 @@ class App extends Component {
       [e.target.name]: e.currentTarget.value
     });
   }
+  
+  getTransactions = (e) => {
+    e.preventDefault();
+    axios.post('api/transactions', {
+      user_id: this.state.currentUser
+    })
+    .then(response => {
+      console.log(response.data)
+      this.setState({
+        transactions: response.data.transaction
+      })
+    })
+  }
 
 
   withRoute = child => {
@@ -190,6 +204,7 @@ class App extends Component {
             changeLoggedIn: this.changeLoggedIn,
             handleVoteSelection: this.handleVoteSelection,
             onVoteChanged: this.onVoteChanged,
+            getTransactions: this.getTransactions,
             ...routeProps
           }
           )}
@@ -201,18 +216,9 @@ class App extends Component {
     console.log(token)
     console.log(metadata)
 
-    // client.exchangePublicToken(token, (err, res) => {
-    //   if(err != null){
-    //     console.log("Could not exchange token!");
-    //     return res.json({error: msg});
-    //   }
-    //  var access_token = res.access_token;
-    //  var item_id = res.item_id
-    // })
     axios.post('/api/items', {
       item: {
       public_token: token,
-      //access_token: access_token,
       institution_name: metadata.institution.name,
       institution_id: metadata.institution.institution_id,
       user_id: this.state.currentUser
