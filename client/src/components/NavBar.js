@@ -12,6 +12,7 @@ class NavBar extends Component {
     const {
       mainState: user,
       handleLogout,
+      handleVoteSelection
     } = this.props;
 
     return(
@@ -35,6 +36,9 @@ class NavBar extends Component {
             </form>
             <form onSubmit={handleLogout} >
             <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
+            </form>
+            <form onSubmit={handleVoteSelection} >
+              <Button type="submit" className='mr-1' variant="outline-dark">Votes</Button>
             </form>
             <Button className='mr-1' variant="outline-dark">Settings</Button>
             <Button className='mr-1' variant="outline-dark"><Link to="/charities">Charities</Link></Button>

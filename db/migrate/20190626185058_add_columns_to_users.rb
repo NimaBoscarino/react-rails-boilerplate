@@ -5,6 +5,6 @@ class AddColumnsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :stripe_token, :string
     add_column :users, :current_roundup_balance, :float
     add_column :users, :balance_date, :datetime
-    add_column :users, :votes, :integer, array: true, default: []
+    add_column :users, :votes, :integer, array: true, default: [0,0,0,0,0]
   end
 end

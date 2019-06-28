@@ -19,15 +19,20 @@ class App extends Component {
       password_confirmation: "",
       data: "",
       currentUserId: 0,
-      currentUser: null,
+      currentUser: 0,
       current_roundup_balance: 0,
       balance_date: null,
       plaid_token: "",
-      user_votes: [],
+      user_votes: [0,0,0,0,0],
       collective_votes: [],
       charities: [],
       goals: [],
       tests: [],
+      vote1:"",
+      vote2:"",
+      vote3:"",
+      vote4:"",
+      vote5:"",
       transactions: []
 
     }
@@ -99,7 +104,6 @@ class App extends Component {
     .then(response => {
       this.setState({
         isLoggedIn: true,
-        authentication_token: response.data.authentication_token,
         currentUser: response.data.user_id,
         first_name: response.data.first_name
       })
@@ -115,7 +119,6 @@ class App extends Component {
     })
   };
 
-
   getDashboardInfo = () => {
     axios.get('api/session')
     .then(response => {
@@ -128,6 +131,47 @@ class App extends Component {
     })
   }
 
+
+  handleVoteSelection = (e) => {
+    e.preventDefault();
+    let v1 = Number(this.state.vote1)
+    let v2 = Number(this.state.vote2)
+    let v3 = Number(this.state.vote3)
+    let v4 = Number(this.state.vote4)
+    let v5 = Number(this.state.vote5)
+
+    let arr1 = this.state.user_votes
+    arr1[v1] += 1
+    arr1[v2] += 1
+    arr1[v3] += 1
+    arr1[v4] += 1
+    arr1[v5] += 1
+
+    this.setState({
+      votes: arr1
+    })
+
+    let user_votes = [];
+    this.state.user_votes.forEach(vote => {
+     user_votes.push(vote * vote)
+    })
+    axios.put('api/users/3', {
+      user: {
+      votes: this.state.user_votes
+    }
+    }).then(response => {
+      this.setState({
+        user_votes: response.data.votes
+      });
+    })
+  }
+
+  onVoteChanged = (e) => {
+    this.setState({
+      [e.target.name]: e.currentTarget.value
+    });
+  }
+  
   getTransactions = (e) => {
     e.preventDefault();
     axios.post('api/transactions', {
@@ -140,6 +184,7 @@ class App extends Component {
       })
     })
   }
+
 
   withRoute = child => {
     return (
@@ -157,6 +202,8 @@ class App extends Component {
             isLoggedIn: this.isLoggedIn,
             getDashboardInfo: this.getDashboardInfo,
             changeLoggedIn: this.changeLoggedIn,
+            handleVoteSelection: this.handleVoteSelection,
+            onVoteChanged: this.onVoteChanged,
             getTransactions: this.getTransactions,
             ...routeProps
           }
