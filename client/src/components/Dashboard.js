@@ -9,6 +9,7 @@ import '../dashboard.css'
 import Login from './Login.js';
 import NavBar from './NavBar';
 import axios from 'axios';
+import { Redirect } from 'react-router';
 import { Switch } from 'react-router-dom';
 
 
@@ -142,7 +143,8 @@ class Dashboard extends Component {
       )
       : (
       <Switch>
-        <Login exact path ="/login" />
+      <Redirect to='/login'/>
+        //<Login exact path ="/login" />
       </Switch>
       )}
     </div>
