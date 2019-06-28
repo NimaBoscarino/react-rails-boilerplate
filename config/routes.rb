@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
     resources :items
 
+    resource :transactions
+
     resources :users
     resource :session, only: [:create, :destroy, :show]
 
