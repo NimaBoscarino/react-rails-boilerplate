@@ -20,6 +20,7 @@ const printChars = (tests) => {
             <p style={style}>{test.desc}</p>
             <p style={style}>{test.objective}</p>
 
+
           </Carousel.Caption>
         </Carousel.Item>
       )
