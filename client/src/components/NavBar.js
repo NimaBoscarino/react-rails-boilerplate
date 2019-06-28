@@ -30,6 +30,9 @@ class NavBar extends Component {
         </Nav.Item>
         <Nav.Item>
           <ButtonToolbar>
+            <form onSubmit={this.props.getTransactions} >
+            <button className='mr-1' variant="outline-dark">Transactions</button>
+            </form>
             <form onSubmit={handleLogout} >
             <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
             </form>

@@ -27,7 +27,8 @@ class App extends Component {
       collective_votes: [],
       charities: [],
       goals: [],
-      tests: []
+      tests: [],
+      transactions: []
 
     }
   };
@@ -83,8 +84,6 @@ class App extends Component {
     }))
   };
 
-
-
   handleInputChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -101,8 +100,8 @@ class App extends Component {
       this.setState({
         isLoggedIn: true,
         authentication_token: response.data.authentication_token,
-        currentUser: response.data.user.id,
-        first_name: response.data.user.first_name
+        currentUser: response.data.user_id,
+        first_name: response.data.first_name
       })
     })
   };
@@ -129,6 +128,19 @@ class App extends Component {
     })
   }
 
+  getTransactions = (e) => {
+    e.preventDefault();
+    axios.post('api/transactions', {
+      user_id: this.state.currentUser
+    })
+    .then(response => {
+      console.log(response.data)
+      this.setState({
+        transactions: response.data.transaction
+      })
+    })
+  }
+
   withRoute = child => {
     return (
       <Route
@@ -145,6 +157,7 @@ class App extends Component {
             isLoggedIn: this.isLoggedIn,
             getDashboardInfo: this.getDashboardInfo,
             changeLoggedIn: this.changeLoggedIn,
+            getTransactions: this.getTransactions,
             ...routeProps
           }
           )}
@@ -156,18 +169,9 @@ class App extends Component {
     console.log(token)
     console.log(metadata)
 
-    // client.exchangePublicToken(token, (err, res) => {
-    //   if(err != null){
-    //     console.log("Could not exchange token!");
-    //     return res.json({error: msg});
-    //   }
-    //  var access_token = res.access_token;
-    //  var item_id = res.item_id
-    // })
     axios.post('/api/items', {
       item: {
       public_token: token,
-      //access_token: access_token,
       institution_name: metadata.institution.name,
       institution_id: metadata.institution.institution_id,
       user_id: this.state.currentUser
