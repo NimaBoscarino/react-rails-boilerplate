@@ -40,9 +40,6 @@ class Charity extends Component {
               {printChars(state.tests)}
             </Carousel>
           </Col>
-         {/* <Col>
-            {printGoals(state.goals)}
-          </Col>*/}
         </Row>
       </Container>
     )
