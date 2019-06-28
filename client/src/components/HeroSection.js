@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../HeroSection.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import NavBar from './NavBar';
 
 const HeroSection = props => (
   <div className='App'>

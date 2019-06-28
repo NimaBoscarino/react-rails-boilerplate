@@ -1,19 +1,8 @@
-import React, { Component, cloneElement } from 'react';
+import React, { Component, Children, cloneElement } from 'react';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-import PlaidLink from 'react-plaid-link'
-
-
-// import Router from './components/Router.js';
-
-import NavBar from './components/NavBar.js';
-import HeroSection from './components/HeroSection.js';
-
-
-import Login from './components/Login.js';
-import Register from './components/Register.js';
-
+import PlaidLink from 'react-plaid-link';
 
 class App extends Component {
   constructor(props) {
@@ -118,24 +107,26 @@ class App extends Component {
     })
   };
 
-  withRoute = child => (
-    <Route
-      exact={child.props.exact || !!child.props.path}
-      key={child.name}
-      path={child.props.path || '/'}
-      render={routeProps => cloneElement(
-        child,
-        {
-          mainState: this.state,
-          handleLogin: this.handleLogin,
-          handleRegister: this.handleRegister,
-          handleInputChange: this.handleInputChange,
-          fetchData: this.fetchData,
-          ...routeProps
-        }
-        )}
-      />);
-
+  withRoute = child => {
+    console.log('stuff', child)
+    return (
+      <Route
+        exact={child.props.exact || !!child.props.path}
+        key={child.name}
+        path={child.props.path || '/'}
+        render={routeProps => cloneElement(
+          child,
+          {
+            mainState: this.state,
+            handleLogin: this.handleLogin,
+            handleRegister: this.handleRegister,
+            handleInputChange: this.handleInputChange,
+            fetchData: this.fetchData,
+            ...routeProps
+          }
+          )}
+        />);
+  }
   handleOnSuccess(token, metadata) {
     // send token to client server
     console.log(token)
@@ -150,11 +141,6 @@ class App extends Component {
       children
     } = this.props;
 
-    const enhancedChildren =
-      Array.isArray(children)
-        ? children.map(this.withRoute)
-        : this.withRoute(children);
-
     return (
       <div className="App">
         <PlaidLink
@@ -166,7 +152,7 @@ class App extends Component {
           onSuccess={this.handleOnSuccess}>
           Open Link and connect your bank!
         </PlaidLink>
-        {enhancedChildren}
+        {Children.map(children, this.withRoute)}
       </div>
     );
   }
