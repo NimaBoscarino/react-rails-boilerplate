@@ -4,18 +4,20 @@ Rails.application.routes.draw do
 
   namespace :api do # /api/data
 
-    get '/session', to: 'sessions#show'
-    post '/session', to: 'sessions#create'
-    delete '/session', to: 'sessions#destroy'
+
     get '/users', to: 'users#index'
     get '/charities', to:'charities#show'
     get '/goals', to:'goals#show'
 
     resources :charities, only: [:show]
+
     resources :goals, only: [:show]
 
+    resources :items
+
+
     resources :users
-    resources :session, only: [:create, :destroy, :show]
+    resource :session, only: [:create, :destroy, :show]
 
   end
 

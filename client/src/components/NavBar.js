@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom';
 import { HashLink as Links } from 'react-router-hash-link';
 
 
-
 class NavBar extends Component {
   render() {
     const {
@@ -32,7 +31,6 @@ class NavBar extends Component {
         <Nav.Item>
         {user.isLoggedIn ?
           <ButtonToolbar>
-            <Redirect to='/'/>
             <form onSubmit={handleLogout} >
             <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
             </form>

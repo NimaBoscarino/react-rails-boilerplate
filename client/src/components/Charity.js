@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import NavBar from './NavBar.js'
 import {Carousel, Container, Row, Col} from 'react-bootstrap';
 
@@ -21,10 +22,10 @@ const printChars = (tests) => {
           </Carousel.Caption>
         </Carousel.Item>
       )
+
 }
 
 class Charity extends Component {
-
   render(){
     const {
       mainState: state,

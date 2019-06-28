@@ -1,28 +1,18 @@
-import React, { Component, cloneElement } from 'react';
+import React, { Component, Children, cloneElement } from 'react';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-import PlaidLink from 'react-plaid-link'
-
-
-// import Router from './components/Router.js';
-
-import NavBar from './components/NavBar.js';
-import HeroSection from './components/HeroSection.js';
-
-
-import Login from './components/Login.js';
-import Register from './components/Register.js';
-
+import PlaidLink from 'react-plaid-link';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       message: 'Click the button to load data!',
-      isLoggedIn: true,
+      isLoggedIn: false,
       email: "",
       password: "",
+      currentUser: 0,
       first_name: "",
       last_name: "",
       password_confirmation: "",
@@ -68,8 +58,7 @@ class App extends Component {
       })
       console.log(response.data)
     })
-
-}
+  }
 
   handleRegister = (e) =>  {
     e.preventDefault();
@@ -80,7 +69,7 @@ class App extends Component {
         first_name: this.state.first_name,
         last_name: this.state.last_name,
         password_confirmation: this.state.password_confirmation,
-        currentUser: "",
+        currentUser: 0,
         isLoggedIn: false,
         authentication_token: ""
       }
@@ -102,6 +91,8 @@ class App extends Component {
     }))
   };
 
+
+
   handleInputChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -110,14 +101,14 @@ class App extends Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    axios.post('/api/sessions', {
+    axios.post('/api/session', {
         email: this.state.email,
         password: this.state.password,
     })
     .then(response => {
       this.setState({
         isLoggedIn: true,
-        authentication_token: response.data.authentication_token,
+        currentUser: response.data.user_id
       })
     })
   };
@@ -130,28 +121,57 @@ class App extends Component {
     })
   };
 
-  withRoute = child => (
-    <Route
-      exact={child.props.exact || !!child.props.path}
-      key={child.name}
-      path={child.props.path || '/'}
-      render={routeProps => cloneElement(
-        child,
-        {
-          mainState: this.state,
-          handleLogin: this.handleLogin,
-          handleRegister: this.handleRegister,
-          handleInputChange: this.handleInputChange,
-          fetchData: this.fetchData,
-          ...routeProps
-        }
-        )}
-      />);
 
-  handleOnSuccess(token, metadata) {
+  withRoute = child => {
+    console.log('stuff', child)
+    return (
+      <Route
+        exact={child.props.exact || !!child.props.path}
+        key={child.name}
+        path={child.props.path || '/'}
+        render={routeProps => cloneElement(
+          child,
+          {
+            mainState: this.state,
+            handleLogin: this.handleLogin,
+            handleRegister: this.handleRegister,
+            handleInputChange: this.handleInputChange,
+            fetchData: this.fetchData,
+            ...routeProps
+          }
+          )}
+        />);
+  }
+
+   handleOnSuccess = (token, metadata) => {
     // send token to client server
     console.log(token)
+    console.log(metadata)
+
+    // client.exchangePublicToken(token, (err, res) => {
+    //   if(err != null){
+    //     console.log("Could not exchange token!");
+    //     return res.json({error: msg});
+    //   }
+    //  var access_token = res.access_token;
+    //  var item_id = res.item_id
+    // })
+    axios.post('/api/items', {
+      item: {
+      public_token: token,
+      //access_token: access_token,
+      institution_name: metadata.institution.name,
+      institution_id: metadata.institution.institution_id,
+      user_id: this.state.currentUser
+    }
+    })
+    .then(res => {
+      console.log(res.data)
+    })
   }
+
+
+
   handleOnExit(err) {
     // handle the case when your user exits Link
     console.log(err)
@@ -162,23 +182,19 @@ class App extends Component {
       children
     } = this.props;
 
-    const enhancedChildren =
-      Array.isArray(children)
-        ? children.map(this.withRoute)
-        : this.withRoute(children);
-
     return (
       <div className="App">
+        {Children.map(children, this.withRoute)}
         <PlaidLink
           clientName="Change Collective"
           env="sandbox"
           product={["auth", "transactions"]}
-          publicKey="1d43b9e5858da3ef902e49151f1374"
+          publicKey="a165568792fe5fd82ba0f4ecbef6da"
           onExit={this.handleOnExit}
           onSuccess={this.handleOnSuccess}>
           Open Link and connect your bank!
         </PlaidLink>
-        {enhancedChildren}
+
       </div>
     );
   }
