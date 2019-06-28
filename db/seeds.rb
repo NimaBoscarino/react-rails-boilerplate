@@ -28,35 +28,35 @@ Charity.create!({
   name: 'SickKids Hospital',
   desc: 'Foundation dedicated to youth health research',
   donated_balance: 0,
-  image: open_asset('sickKids.png')
+  image: 'https://i.imgur.com/8mO4p7w.png'
 })
 
 Charity.create!({
   name: 'Princess Margaret Foundation',
   desc: 'Foundation dedicated to cancer research',
   donated_balance: 0,
-  image: open_asset('princessM.png')
+  image: 'https://i.imgur.com/HGj2mrR.png'
 })
 
 Charity.create!({
   name: 'Parkinson Canada',
   desc: 'Foundation dedicated to Parkinson research',
   donated_balance: 0,
-  image: open_asset('Parkinsons.png')
+  image: 'https://i.imgur.com/KI4Xl6q.png'
 })
 
 Charity.create!({
   name: 'Habitat for Humanity',
   desc: 'Foundation dedicated to the building of affordable homes to low-income families',
   donated_balance: 0,
-  image: open_asset('habitat.png')
+  image: 'https://i.imgur.com/PdnVWGx.png'
 })
 
 Charity.create!({
   name: 'Daily Bread Foodbank',
   desc: 'Foundation dedicated to supplying basic food necessities to low-income individuals',
   donated_balance: 0,
-  image: open_asset('dailybread.png')
+  image: 'https://i.imgur.com/7BkiXTN.png'
 })
 
 ##Goals (Testing goals so I only created 2 goals per)

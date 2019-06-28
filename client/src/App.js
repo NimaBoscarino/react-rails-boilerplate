@@ -19,6 +19,9 @@ class App extends Component {
       data: "",
       cookie: "",
       charities: [],
+      goals: [],
+      tests: []
+
     }
   };
 
@@ -42,7 +45,16 @@ class App extends Component {
     axios.get('/api/charities', {withCredentials: true})
     .then((response) => {
       this.setState({
-        charities: response.data.charities
+        charities: response.data.charities,
+        tests: response.data.tests
+      })
+      console.log(response.data)
+    })
+
+    axios.get('/api/goals', {withCredentials: true})
+    .then((response) => {
+      this.setState({
+        goals: response.data.goals
       })
       console.log(response.data)
     })
