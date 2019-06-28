@@ -27,7 +27,8 @@ class App extends Component {
       collective_votes: [],
       charities: [],
       goals: [],
-      tests: []
+      tests: [],
+      transactions: []
 
     }
   };
@@ -134,6 +135,9 @@ class App extends Component {
     })
     .then(response => {
       console.log(response.data)
+      this.setState({
+        transactions: response.data.transaction
+      })
     })
   }
 
