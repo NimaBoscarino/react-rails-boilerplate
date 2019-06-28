@@ -33,7 +33,7 @@ class Charity extends Component {
     return (
       <Container>
         <Row>
-          <Col sm={8}>
+          <Col sm={6}>
             <Carousel>
               {printChars(state.tests)}
             </Carousel>
