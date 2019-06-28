@@ -143,6 +143,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        {Children.map(children, this.withRoute)}
         <PlaidLink
           clientName="Change Collective"
           env="sandbox"
@@ -152,7 +153,7 @@ class App extends Component {
           onSuccess={this.handleOnSuccess}>
           Open Link and connect your bank!
         </PlaidLink>
-        {Children.map(children, this.withRoute)}
+
       </div>
     );
   }

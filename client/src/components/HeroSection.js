@@ -30,11 +30,8 @@ const HeroSection = props => (
         </Col>
       </Row>
       <Row className="home-why" id="home-why">
-        <Col>
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </Col>
         <Col >
-          <h2>Excepteur sint occaeuiecat cupidatat.</h2>
+          <h2>Why?</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in uienply voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat norin proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <p>
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -44,18 +41,17 @@ const HeroSection = props => (
       <Row className="home-collective" id="home-collective">
         <Col>
           <div>
-            <img src={'https://i.imgur.com/Kih1TFy.png'} alt="" className="bean-img"/>
             <img src={'https://i.imgur.com/lQozyZl.png'} alt="Donate" className="collective-img"/>
           </div>
         </Col>
         <Col>
           <div>
-            <h2>Heading Here</h2>
+            <h2>The Collective</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in uienply voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat norin proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
         </Col>
       </Row>
-          <Row className="home-charities" id="home-charities">
+      {/*<Row className="home-charities" id="home-charities">
         <Col>
           <p>Hello</p>
         </Col>
@@ -65,7 +61,7 @@ const HeroSection = props => (
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in uienply voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat norin proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
         </Col>
-      </Row>
+      </Row>*/}
     </Container>
   </div>
 );
