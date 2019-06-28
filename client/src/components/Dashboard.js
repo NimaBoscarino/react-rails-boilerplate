@@ -38,18 +38,24 @@ class Dashboard extends Component {
     const {
       user_votes,
       mainState: state,
-    } = this.props.mainState;
+    } = this.props
 
-    const v1 = user_votes[0]
-    const v2 = user_votes[1]
-    const v3 = user_votes[2]
-    const v4 = user_votes[3]
-    const v5 = user_votes[4]
+    const v1 = 0
+    const v2 = 1
+    const v3 = 2
+    const v4 = 3
+    const v5 = 4
+
+    // const v1 = user_votes[0]
+    // const v2 = user_votes[1]
+    // const v3 = user_votes[2]
+    // const v4 = user_votes[3]
+    // const v5 = user_votes[4]
 
     return(
 
       <div>
-      <Switch>
+      {/*<Switch>*/}
         <Container>
 
             <p pull-right> Hello, {this.props.mainState.first_name} </p>
@@ -146,15 +152,14 @@ class Dashboard extends Component {
             </Col>
           </Row>
         </Container>
-      </div>
-      </Switch>
+{/*      </Switch>
       )
       : (
       <Switch>
       <Redirect to='/login'/>
         //<Login exact path ="/login" />
       </Switch>
-      )}
+      )}*/}
     </div>
     )
   }
