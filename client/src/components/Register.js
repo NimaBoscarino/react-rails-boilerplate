@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import loginImg from "./login.svg";
-import NavBar from './NavBar.js'
-
 
 class Register extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {
       handleInputChange: handleChange,
@@ -20,7 +14,7 @@ class Register extends Component {
         <div className="header">Register</div>
         <div className="content">
           <div className="image">
-            <img src={loginImg} />
+            <img src={loginImg} alt="" />
           </div>
           <div className="form">
             <div className="form-group">

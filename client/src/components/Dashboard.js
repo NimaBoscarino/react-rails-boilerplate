@@ -8,7 +8,7 @@ import ReactMinimalPieChart from 'react-minimal-pie-chart';
 import '../dashboard.css'
 
 const charityList = (charities) => {
-  return charities.map( charity =>
+  return charities.map(charity =>
     <ul>
       <li>{charity.name}</li>
     </ul>
@@ -18,10 +18,10 @@ const charityList = (charities) => {
 
 class Dashboard extends Component {
   render() {
-
     const {
       mainState: state,
-    } = this.props
+    } = this.props;
+
     return(
       <div>
         <Container>
