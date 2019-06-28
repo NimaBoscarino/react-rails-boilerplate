@@ -12,7 +12,7 @@ const Routes = () => (
   <App>
     <NavBar />
     <HeroSection exact path="/" />
-    <Login path="/login" />
+    <Login  exact path="/login" />
     <Register path="/register" />
     <Charity path="/charities" />
     <Dashboard path="/dashboard" />

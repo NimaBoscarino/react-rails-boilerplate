@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_27_221601) do
+ActiveRecord::Schema.define(version: 2019_06_26_185058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,12 @@ ActiveRecord::Schema.define(version: 2019_06_27_221601) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_admin"
+    t.string "plaid_token"
+    t.string "stripe_token"
+    t.float "current_roundup_balance"
+    t.datetime "balance_date"
+    t.integer "votes", default: [], array: true
   end
 
   add_foreign_key "donations", "charities"
