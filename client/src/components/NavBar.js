@@ -10,9 +10,10 @@ import { HashLink as Links } from 'react-router-hash-link';
 class NavBar extends Component {
   render() {
     const {
-      mainState: user,
+      mainState: state,
       handleLogout,
-      handleVoteSelection
+      handleVoteSelection,
+      getTransactions,
     } = this.props;
 
     return(
@@ -30,9 +31,10 @@ class NavBar extends Component {
           <Nav.Link><Links to="/#home-charities">Charities</Links></Nav.Link>
         </Nav.Item>
         <Nav.Item>
+        {state.isLoggedIn ? (
           <ButtonToolbar>
-            <form onSubmit={this.props.getTransactions} >
-            <button className='mr-1' variant="outline-dark">Transactions</button>
+            <form onSubmit={getTransactions} >
+            <Button type="submit" className='mr-1' variant="outline-dark">Transactions</Button>
             </form>
             <form onSubmit={handleLogout} >
             <Button type="submit" className='mr-1' variant="outline-dark">Logout</Button>
@@ -41,13 +43,15 @@ class NavBar extends Component {
               <Button type="submit" className='mr-1' variant="outline-dark">Votes</Button>
             </form>
             <Button className='mr-1' variant="outline-dark">Settings</Button>
-            <Button className='mr-1' variant="outline-dark"><Link to="/charities">Charities</Link></Button>
             <Button className='mr-1' variant="outline-dark"><Link to="/dashboard">Dashboard</Link></Button>
           </ButtonToolbar>
+            ) : (
           <ButtonToolbar>
+            <Button className='mr-1' variant="outline-dark"><Link to="/charities">More About Charities</Link></Button>
             <Button className='mr-1' variant="outline-dark"><Link to="/login">Login</Link></Button>
             <Button className='mr-1' variant="outline-dark"><Link to="/register">Register</Link></Button>
           </ButtonToolbar>
+        )}
         </Nav.Item>
       </Nav>
     )

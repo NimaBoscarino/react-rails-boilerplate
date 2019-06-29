@@ -77,8 +77,8 @@ class Api::UsersController < ApplicationController
 
     render :json => {
       currentUser: user,
-      admin: admin,
-      votes: user.votes
+      admin_votes: admin.votes,
+      user_votes: user.votes
     }
 
   end
