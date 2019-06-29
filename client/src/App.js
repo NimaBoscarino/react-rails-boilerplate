@@ -72,16 +72,7 @@ class App extends Component {
         currentUser: response.data.user_id,
         first_name: response.data.first_name,
       })
-    }).then(axios.get('/api/users', {withCredentials: true}) // You can simply make your requests to "/api/whatever you want"
-    .then((response) => {
-      // handle success
-      console.log(response.data) // The entire response from the Rails API
-
-      console.log(response.data.users) // Just the message
-      // this.setState({
-      //   message: response.data.users[0].email
-      // });
-    }))
+    })
   };
 
   handleInputChange = (e) => {
