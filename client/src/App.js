@@ -69,7 +69,8 @@ class App extends Component {
     .then(response => {
       this.setState({
         isLoggedIn: true,
-        currentUser: response.data.first_name,
+        currentUser: response.data.user_id,
+        first_name: response.data.first_name,
       })
     }).then(axios.get('/api/users', {withCredentials: true}) // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
