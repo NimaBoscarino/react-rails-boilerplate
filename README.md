@@ -6,7 +6,20 @@ Note! This boilerplate has _no fluff_! That means that there's nothing set up fo
 
 The main important bit is that the React project has `proxy` set to `localhost:3001` in the `package.json` file. Take a look!
 
-## Running the projects
+## Hall of Fame
+
+Here are some projects that have been built using this boilerplate.
+
+- [latercart](https://github.com/bonitac/latercart)
+- [Cards-Against-the-Internet](https://github.com/csx773/Cards-Against-the-Internet)
+- [Jetify](https://github.com/shadeying/Jetify)
+- [watchpoll](https://github.com/grey275/watchpoll)
+- [StartDuck](https://github.com/JerChuang/StartDuck)
+- [Change-App](https://github.com/ZHShang/Change-App)
+
+## Using the boilerplate
+
+First, fork this boilerplate so you get your own copy of it. Once you have done that, you can clone your new repo to your machine, and get started.
 
 You need **TWO** terminals for this.
 
@@ -55,8 +68,8 @@ Once you've done that, you can run `git push heroku master` to deploy your proje
 
 Once it's deployed, you can run the following commands to manage your app:
 
-- `heroku run rake db:setup` to set up your database (i.e. creating it, migrating, seeding)
-- `heroku run rake db:migrate` for migrations
+- `heroku run rake db:schema:load` to set up your database the first time
+- `heroku run rake db:migrate` for any additional migrations
 - `heroku run rake db:seed` for seeds
 - `heroku run rake db:rollback` to rollback a migration
 
