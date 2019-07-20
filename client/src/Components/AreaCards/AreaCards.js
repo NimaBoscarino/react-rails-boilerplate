@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import GastownTest from "../images/irish-heather-gastown.jpg";
+import GastownTest from "./assets/irish-heather-gastown.jpg";
 
 class AreaCards extends Component {
   render() {

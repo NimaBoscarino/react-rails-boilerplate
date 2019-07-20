@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Nav from "./Header";
-import Intro from "./Intro";
-import AreaCards from "./AreaCards";
-import Map from "./Map";
+import Intro from "../Components/Intro/Intro";
+import AreaCards from "../Components/AreaCards/AreaCards";
+import Map from "../Components/Map/Map";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 

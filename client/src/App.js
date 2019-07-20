@@ -1,10 +1,21 @@
 import React, { Component } from "react";
 import "./styles.css";
-import Nav from "./home_page/Header";
+import Nav from "./Components/NavBar/Nav";
 import Main from "./home_page/Main";
 import Areas from "./home_page/Areas";
+import Background from "./global-assets/irish-heather-gastown.png"
 //include this import if the component uses routes & links
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+var sectionStyle = {
+  width: "100%",
+  height: "400px",
+  backgroundImage: `url(${Background})`,
+  backgroundAttachment: "fixed",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "ConvolverNode",
+};
 
 class App extends Component {
   constructor(props) {
@@ -13,11 +24,15 @@ class App extends Component {
 
   render() {
     return (
+      
       <Router>
+      <section style={ sectionStyle } >
         <Nav />
         <Route path='/' exact component={Main} />
         <Route path='/areas' exact component={Areas} />
+         </section>
       </Router>
+     
     );
   }
 }

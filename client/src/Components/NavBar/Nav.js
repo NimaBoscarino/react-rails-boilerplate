@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import Logo from "../images/hotspot-logo.png";
-
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Logo from "./assets/hotspot-logo.png";
 
 class Nav extends Component {
   render() {

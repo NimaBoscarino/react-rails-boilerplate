@@ -1,16 +1,5 @@
-body {
+body * {
   font-family: "Roboto", sans-serif;
-  background-color: black;
-  background-image: url("./images/irish-heather-gastown.png");
-  /* Set a specific height */
-  height: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-* {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -245,175 +234,19 @@ nav .logo {
   margin-right: 0;
 }
 
-.area-header {
-  margin-top: 40px;
-}
-
-.area-header .area-sector {
+#map {
   display: inline-block;
-  width: 40%;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-
-.area-header button {
-  display: inline-block;
-  border: none;
-  margin: 0;
-  text-decoration: none;
-  background: none;
-  color: #ffffff;
-  font-family: "Roboto Condensed", sans-serif;
-  font-size: calc(35px + 1.4vw);
-  cursor: pointer;
-  text-align: center;
-  -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
-  transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
-  border-bottom: white solid 4px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: 25px;
-}
-
-.area-header button:hover,
-.area-header button:focus {
-  background: none;
-}
-
-.area-header button:focus {
-  outline-offset: -4px;
-}
-
-.area-header button:active {
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
-}
-
-.area-details {
-  text-align: center;
-}
-
-.area-details .areas-summary {
-  color: white;
-  padding: 0 10%;
-}
-
-.tab-selector {
   width: 100%;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-size: calc(8px + 0.8vw);
-  text-transform: uppercase;
+  padding-bottom: 5vh;
 }
 
-.tab-selector > li {
-  float: none;
-  display: inline-block;
-  color: #9ea2a8;
-}
-
-.tab-selector a {
-  color: #d6e5e3;
-}
-
-.tab-selector a:active {
-  color: #9ea2a8;
-}
-
-.starter-template {
-  padding: 40px 15px;
-}
-
-.area-details {
-  margin: 10px 0;
-}
-
-.area-details .place-details {
-  width: 100%;
-  background-color: #fffffc;
-}
-
-.area-details .card-place {
+#map .map-picture-placeholder {
   width: 100%;
 }
 
-.area-details .place-image {
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-
-.area-details .place-main-col {
-  text-align: left;
-}
-
-.area-details .place-main-col .place-title {
-  font-family: "Roboto Condensed", sans-serif;
-  font-weight: 700;
-  font-size: calc(18px + 1vw);
-  line-height: 1;
-  margin-bottom: 1;
-}
-
-.area-details .place-main-col .place-details {
-  font-size: calc(10px + 0.3vw);
-  line-height: 1;
-  margin-top: 0;
-  margin-left: 4px;
-  color: #9ea2a8;
-}
-
-.area-details .place-main-col .place-summary {
-  font-family: "Roboto", sans-serif;
-  font-size: calc(10px + 0.3vw);
-}
-
-.area-details .busy-col {
-  text-align: left;
-}
-
-.area-details .busy-col .busy-details {
-  display: inline-block;
-  width: 45px;
-  height: 45px;
-  border-radius: 45px;
-  background-color: green;
-  float: right;
-  text-align: center;
-  color: white;
-  font-family: "Roboto Condensed", sans-serif;
-  font-weight: 700;
-  font-size: calc(18px + 1vw);
-}
-
-.area-details .busy-col .busy-score {
-  margin-top: -2px;
-}
-
-.area-details .busy-col .wait-time {
-  font-size: calc(9px + 0.2vw);
-}
-
-.area-details .more-details-section {
-  background-color: #fffffc;
-  border: none;
-  text-align: left;
-  border-top: black 1px solid;
-  margin-top: 15px;
-  padding-top: 15px;
-}
-
-.area-details .more-details-section .review-col .review-title {
-  font-size: calc(10px + 0.3vw);
-}
-
-.container-full {
+#map .map-container-full {
   margin: 0 auto;
   width: 100%;
-  background-color: green;
+  display: inline-block;
 }
 /*# sourceMappingURL=styles.css.map */
