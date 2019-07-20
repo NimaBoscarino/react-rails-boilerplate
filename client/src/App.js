@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles.css';
 import Header from './home_page/Header';
 import Main from './home_page/Main'
 import Areas from './home_page/Areas'
@@ -19,7 +19,10 @@ class App extends Component {
       <Route path="/areas" exact component={Areas} />
 
       </Router>
-    );
+
+ 
+
+    ); 
   }
 }
 

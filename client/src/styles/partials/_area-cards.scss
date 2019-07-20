@@ -1,0 +1,164 @@
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}
+
+.area-card {
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.area-section {
+  margin-top: 1vh;
+  text-align: left;
+  margin-bottom: 60px;
+
+  .area-picture {
+    max-height: 140px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    background-color: $card-color-background;
+    border-color: $card-color-background;
+  }
+
+  .area-title {
+    font-family: $title-font;
+    font-size: $font-size-title;
+    padding: 0;
+    margin: 0;
+  }
+
+  .area-wait-time {
+    font-size: $font-size-small;
+    padding: 0;
+    margin: 0;
+  }
+
+  .wait-time-average {
+    font-weight: 500;
+    color: red;
+  }
+
+  .busy-score-number {
+    font-family: $title-font;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border-radius: 50px;
+    padding-top: 10px;
+    color: white;
+    animation: shadow-pulse 1s infinite;
+  }
+
+  .area-description {
+    font-family: $body-font;
+    font-size: $font-size-body;
+    font-weight: 300;
+    padding-top: 15px;
+  }
+
+  .small-list-main {
+    background-color: $card-color-background;
+
+    h4.current-busy-list-title {
+      font-size: $font-size-small;
+      text-transform: uppercase;
+      color: $quick-silver;
+    }
+
+    .small-list-section {
+      margin: 5px 0;
+    }
+
+    .small-list-title {
+      font-size: $font-size-body;
+      margin-top: 15px;
+      line-height: 0.2;
+    }
+
+    .small-list-type {
+      font-size: $font-size-small;
+      font-family: $title-font;
+      line-height: 0.2;
+    }
+
+    .busy-score-small-div {
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .busy-score-small {
+      font-family: $title-font;
+      font-size: $font-size-busy-small;
+      text-align: center;
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background-color: green;
+      border-radius: 25px;
+      padding-top: 2px;
+      color: white;
+    }
+
+    .busy-score-small:hover {
+      animation: shadow-pulse 1s infinite;
+    }
+
+    .area-small {
+      display: inline-block;
+      width: 70%;
+    }
+
+    .wait-time-small {
+      margin-top: 10px;
+      display: inline-block;
+      width: 30%;
+      float: right;
+    }
+
+    .wait-minute-small {
+      text-align: left;
+    }
+
+    .wait-minute-min {
+      font-family: $title-font;
+      font-size: $font-size-busy-small;
+      line-height: 0.7;
+      font-size: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .small-min {
+      font-family: $title-font;
+      font-size: 12px;
+    }
+
+    .wait-minute-small-text {
+      font-family: $title-font;
+      font-size: $font-size-busy-xs;
+      line-height: 1.2;
+      margin-top: 4px;
+      color: $gunmetal;
+    }
+
+    .card-footer-link {
+      text-align: right;
+    }
+
+    .card-link {
+      font-family: $title-font;
+      padding-bottom: 5px;
+      margin-right: 0;
+    }
+  }
+}

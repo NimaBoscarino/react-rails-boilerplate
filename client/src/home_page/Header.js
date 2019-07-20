@@ -1,15 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Logo from "../images/hotspot-logo.png";
 
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class Header extends Component{
-  render(){
+class Header extends Component {
+  render() {
     return (
-    <div>
-    <h1>This is a header</h1>
-    <h2><Link to="/">Home Page</Link></h2>
-    </div>
-    )
+      <nav className='navbar navbar-default navbar-fixed-top'>
+        <div className='container'>
+          <div className='logo-box'>
+            <img className='logo' src={Logo} />
+          </div>
+        </div>
+      </nav>
+    );
   }
 }
 

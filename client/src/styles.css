@@ -1,0 +1,413 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: black;
+  background-image: url("./images/irish-heather-gastown.png");
+  /* Set a specific height */
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  overflow: hidden;
+  background-color: #070707;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: 100%;
+  border-bottom: #ffce00 solid 2px;
+}
+
+nav .logo-box {
+  display: inline-block;
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+nav .logo {
+  padding: 8px 0;
+  width: 70%;
+}
+
+.title-section {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.title-section .main-title {
+  font-size: calc(35px + 1.4vw);
+  color: white;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.title-section .sub-title {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.title-section .intro-summary {
+  margin-top: 20px;
+  padding: 0 20%;
+  font-size: calc(18px + 0.2vw);
+  color: white;
+}
+
+@-webkit-keyframes shadow-pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes shadow-pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}
+
+.area-card {
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.area-section {
+  margin-top: 1vh;
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.area-section .area-picture {
+  max-height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.area-section .card-body {
+  background-color: #fffffc;
+  border-color: #fffffc;
+}
+
+.area-section .area-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: calc(18px + 1vw);
+  padding: 0;
+  margin: 0;
+}
+
+.area-section .area-wait-time {
+  font-size: calc(9px + 0.2vw);
+  padding: 0;
+  margin: 0;
+}
+
+.area-section .wait-time-average {
+  font-weight: 500;
+  color: red;
+}
+
+.area-section .busy-score-number {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50px;
+  padding-top: 10px;
+  color: white;
+  -webkit-animation: shadow-pulse 1s infinite;
+          animation: shadow-pulse 1s infinite;
+}
+
+.area-section .area-description {
+  font-family: "Roboto", sans-serif;
+  font-size: calc(10px + 0.3vw);
+  font-weight: 300;
+  padding-top: 15px;
+}
+
+.area-section .small-list-main {
+  background-color: #fffffc;
+}
+
+.area-section .small-list-main h4.current-busy-list-title {
+  font-size: calc(9px + 0.2vw);
+  text-transform: uppercase;
+  color: #9ea2a8;
+}
+
+.area-section .small-list-main .small-list-section {
+  margin: 5px 0;
+}
+
+.area-section .small-list-main .small-list-title {
+  font-size: calc(10px + 0.3vw);
+  margin-top: 15px;
+  line-height: 0.2;
+}
+
+.area-section .small-list-main .small-list-type {
+  font-size: calc(9px + 0.2vw);
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 0.2;
+}
+
+.area-section .small-list-main .busy-score-small-div {
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.area-section .small-list-main .busy-score-small {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: calc(12px + 0.2vw);
+  text-align: center;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: green;
+  border-radius: 25px;
+  padding-top: 2px;
+  color: white;
+}
+
+.area-section .small-list-main .busy-score-small:hover {
+  -webkit-animation: shadow-pulse 1s infinite;
+          animation: shadow-pulse 1s infinite;
+}
+
+.area-section .small-list-main .area-small {
+  display: inline-block;
+  width: 70%;
+}
+
+.area-section .small-list-main .wait-time-small {
+  margin-top: 10px;
+  display: inline-block;
+  width: 30%;
+  float: right;
+}
+
+.area-section .small-list-main .wait-minute-small {
+  text-align: left;
+}
+
+.area-section .small-list-main .wait-minute-min {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: calc(12px + 0.2vw);
+  line-height: 0.7;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.area-section .small-list-main .small-min {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 12px;
+}
+
+.area-section .small-list-main .wait-minute-small-text {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: calc(7px + 0.2vw);
+  line-height: 1.2;
+  margin-top: 4px;
+  color: #1f363d;
+}
+
+.area-section .small-list-main .card-footer-link {
+  text-align: right;
+}
+
+.area-section .small-list-main .card-link {
+  font-family: "Roboto Condensed", sans-serif;
+  padding-bottom: 5px;
+  margin-right: 0;
+}
+
+.area-header {
+  margin-top: 40px;
+}
+
+.area-header .area-sector {
+  display: inline-block;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.area-header button {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  background: none;
+  color: #ffffff;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: calc(35px + 1.4vw);
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  border-bottom: white solid 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 25px;
+}
+
+.area-header button:hover,
+.area-header button:focus {
+  background: none;
+}
+
+.area-header button:focus {
+  outline-offset: -4px;
+}
+
+.area-header button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.area-details {
+  text-align: center;
+}
+
+.area-details .areas-summary {
+  color: white;
+  padding: 0 10%;
+}
+
+.tab-selector {
+  width: 100%;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: calc(8px + 0.8vw);
+  text-transform: uppercase;
+}
+
+.tab-selector > li {
+  float: none;
+  display: inline-block;
+  color: #9ea2a8;
+}
+
+.tab-selector a {
+  color: #d6e5e3;
+}
+
+.tab-selector a:active {
+  color: #9ea2a8;
+}
+
+.starter-template {
+  padding: 40px 15px;
+}
+
+.area-details {
+  margin: 10px 0;
+}
+
+.area-details .place-details {
+  width: 100%;
+  background-color: #fffffc;
+}
+
+.area-details .card-place {
+  width: 100%;
+}
+
+.area-details .place-image {
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.area-details .place-main-col {
+  text-align: left;
+}
+
+.area-details .place-main-col .place-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: calc(18px + 1vw);
+  line-height: 1;
+  margin-bottom: 1;
+}
+
+.area-details .place-main-col .place-details {
+  font-size: calc(10px + 0.3vw);
+  line-height: 1;
+  margin-top: 0;
+  margin-left: 4px;
+  color: #9ea2a8;
+}
+
+.area-details .place-main-col .place-summary {
+  font-family: "Roboto", sans-serif;
+  font-size: calc(10px + 0.3vw);
+}
+
+.area-details .busy-col {
+  text-align: left;
+}
+
+.area-details .busy-col .busy-details {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+  background-color: green;
+  float: right;
+  text-align: center;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: calc(18px + 1vw);
+}
+
+.area-details .busy-col .busy-score {
+  margin-top: -2px;
+}
+
+.area-details .busy-col .wait-time {
+  font-size: calc(9px + 0.2vw);
+}
+
+.area-details .more-details-section {
+  background-color: #fffffc;
+  border: none;
+  text-align: left;
+  border-top: black 1px solid;
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+.area-details .more-details-section .review-col .review-title {
+  font-size: calc(10px + 0.3vw);
+}
+/*# sourceMappingURL=styles.css.map */

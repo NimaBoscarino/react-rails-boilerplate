@@ -1,0 +1,20 @@
+nav {
+  overflow: hidden;
+  background-color: #070707;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  border-bottom: #ffce00 solid 2px;
+
+  .logo-box {
+    display: inline-block;
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .logo {
+    padding: 8px 0;
+    width: 70%;
+  }
+}
