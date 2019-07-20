@@ -410,4 +410,10 @@ nav .logo {
 .area-details .more-details-section .review-col .review-title {
   font-size: calc(10px + 0.3vw);
 }
+
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+  background-color: green;
+}
 /*# sourceMappingURL=styles.css.map */

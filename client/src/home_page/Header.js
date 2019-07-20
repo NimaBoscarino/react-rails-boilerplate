@@ -3,7 +3,7 @@ import Logo from "../images/hotspot-logo.png";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class Header extends Component {
+class Nav extends Component {
   render() {
     return (
       <nav className='navbar navbar-default navbar-fixed-top'>
@@ -17,4 +17,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Nav;
