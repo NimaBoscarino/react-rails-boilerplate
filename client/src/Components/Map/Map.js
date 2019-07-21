@@ -1,15 +1,19 @@
 import React, { Component } from "react";
-import VancouverMapPlaceHolder from "./assets/vancouver-map-placeholder.png";
+import HoodSidebar from "./HoodSidebar";
+import TripSidebar from "./TripSidebar";
+import CurrentSelectionCard from "./CurrentSelectionCard";
 
 class Map extends Component {
   render() {
     return (
-      <div id='map'>
-        <div className='map-container map-container-full'>
-          <img
-            className='map-picture-placeholder'
-            src={VancouverMapPlaceHolder}
-          />
+      <div id='Map'>
+        <div className='map-container'>
+          <h1 className='hood-main-title'>Gastown</h1>
+          <div className='d-flex justify-content-between h-100 w-100'>
+            <HoodSidebar />
+            <CurrentSelectionCard />
+            <TripSidebar />
+          </div>
         </div>
       </div>
     );

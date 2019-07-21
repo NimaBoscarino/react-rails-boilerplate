@@ -1,17 +1,37 @@
 $title-font: "Roboto Condensed", sans-serif;
 $body-font: "Roboto", sans-serif;
 
-$font-size-main-title: calc(35px + 1.4vw);
+$font-size-main-title: calc(28px + 1.4vw);
 $font-size-title-intro: calc(18px + 0.2vw);
 $font-size-title: calc(18px + 1vw);
 $font-size-nav-tabs: calc(8px + 0.8vw);
 $font-size-body: calc(10px + 0.3vw);
+$font-size-xxl: calc(16px + 0.4vw);
+$font-size-xl: calc(14px + 0.4vw);
+$font-size-large: calc(12px + 0.4vw);
+$font-size-medium: calc(10px + 0.3vw);
 $font-size-small: calc(9px + 0.2vw);
 $font-size-busy-small: calc(12px + 0.2vw);
 $font-size-busy-xs: calc(7px + 0.2vw);
+
+// Text Colors ------
 
 $gunmetal: #1f363d;
 $accent-grey: #d6e5e3;
 $card-color-background: #fffffc;
 $smoky-black: #070707;
 $quick-silver: #9ea2a8;
+
+// Brand Colors -------
+
+$bright-yellow: #ffe80a;
+$medium-yellow: #ffce00;
+$orange: #ff9a02;
+$orange-red: #ff5a00;
+$red: #ff0000;
+
+// Cool Colors -------
+
+$tiffany-blue: #17bebb;
+$blue-lagoon: #b5e2fa;
+$blue-green: #0fa3b1;

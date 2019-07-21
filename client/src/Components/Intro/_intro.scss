@@ -1,25 +1,27 @@
-.title-section {
-  text-align: center;
-  margin-top: 80px;
-  margin-bottom: 80px;
+#Intro {
+  .title-section {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 15px;
 
-  .main-title {
-    font-size: $font-size-main-title;
-    color: white;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
+    .intro-title {
+      font-size: $font-size-main-title;
+      color: white;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-  .sub-title {
-    font-family: $body-font;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
+    .intro-subtitle {
+      font-family: $body-font;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-  .intro-summary {
-    margin-top: 20px;
-    padding: 0 20%;
-    font-size: $font-size-title-intro;
-    color: white;
+    .intro-summary {
+      margin-top: 15px;
+      padding: 0 18%;
+      font-size: $font-size-title-intro;
+      color: white;
+    }
   }
 }

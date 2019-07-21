@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Intro from "../Components/Intro/Intro";
+import NightOutBuilder from "../Components/NightOutBuilder/NightOutBuilder"
 import AreaCards from "../Components/AreaCards/AreaCards";
 import Map from "../Components/Map/Map";
 
@@ -32,6 +33,7 @@ class Main extends Component {
     return (
       <div className='App'>
         <Intro />
+        <NightOutBuilder />
         <Map />
         <div className="container">
         <section className='row area-section d-flex p-2'>

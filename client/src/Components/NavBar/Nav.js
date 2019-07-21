@@ -7,7 +7,7 @@ class Nav extends Component {
       <nav className='navbar navbar-default navbar-fixed-top'>
         <div className='container'>
           <div className='logo-box'>
-            <img className='logo' src={Logo} />
+            <img className='logo' src={Logo} alt='' />
           </div>
         </div>
       </nav>
