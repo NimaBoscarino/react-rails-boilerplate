@@ -4,6 +4,11 @@ body * {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+}
+
 nav {
   overflow: hidden;
   background-color: #070707;
@@ -82,10 +87,12 @@ nav .logo {
 #Map {
   display: block;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   margin-bottom: 5vh;
   background-color: darkgrey;
   text-align: center;
+  position: relative;
+  scroll-snap-align: start;
 }
 
 #Map .hood-main-title {
