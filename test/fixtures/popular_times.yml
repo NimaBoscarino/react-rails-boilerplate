@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  google_id: MyString
+  name: MyString
+  address: MyString
+  types: MyString
+  lat: 1.5
+  long: 1.5
+  rating: 1.5
+  rating_n: 1
+  phone_number: MyString
+  current_popularity: 1
+  popular_times: MyString
+  time_wait: MyString
+  time_spent_min: 1
+  time_spent_max: 1
+
+two:
+  google_id: MyString
+  name: MyString
+  address: MyString
+  types: MyString
+  lat: 1.5
+  long: 1.5
+  rating: 1.5
+  rating_n: 1
+  phone_number: MyString
+  current_popularity: 1
+  popular_times: MyString
+  time_wait: MyString
+  time_spent_min: 1
+  time_spent_max: 1
