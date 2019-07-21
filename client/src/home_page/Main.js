@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Intro from "../Components/Intro/Intro";
-import NightOutBuilder from "../Components/NightOutBuilder/NightOutBuilder"
-import AreaCards from "../Components/AreaCards/AreaCards";
+import NightOutBuilder from "../Components/NightOutBuilder/NightOutBuilder";
 import Map from "../Components/Map/Map";
+import AreaSelector from "../Components/AreaSelector/AreaSelector";
+import AreaCards from "../Components/AreaCards/AreaCards";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -35,15 +36,16 @@ class Main extends Component {
         <Intro />
         <NightOutBuilder />
         <Map />
-        <div className="container">
-        <section className='row area-section d-flex p-2'>
-          <AreaCards />
-          <AreaCards />
-          <AreaCards />
-          <AreaCards />
-          <AreaCards />
-          <AreaCards />
-        </section>
+        <AreaSelector />
+        <div className='container'>
+          <section className='row area-section d-flex p-2'>
+            <AreaCards />
+            <AreaCards />
+            <AreaCards />
+            <AreaCards />
+            <AreaCards />
+            <AreaCards />
+          </section>
         </div>
 
         <h1>This is the Main</h1>

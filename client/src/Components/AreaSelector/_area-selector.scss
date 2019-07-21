@@ -1,0 +1,19 @@
+#AreaSelector {
+  display: inline-block;
+  min-height: 10vh;
+  width: 100%;
+
+  .area-selector {
+    padding: 2vh 30vh 3vh 30vh;
+    text-align: center;
+  }
+
+  .area-selector-hood {
+    font-family: $title-font;
+    font-weight: 700;
+  }
+
+  .area-selector-description {
+    font-size: $font-size-body;
+  }
+}
