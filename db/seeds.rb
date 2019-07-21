@@ -5,3 +5,62 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require_relative 'mount-pleasant-data.rb'
+require 'json'
+
+# weird thing with escape characters is that if I add a few more characters to
+# the end of a slice, it will do it correctly. This is to get rid of a \n
+datamod = @data.concat("ice")
+datamod.slice! "\nice"
+
+jsonarr = JSON.parse(datamod)
+
+arrnum = 0
+
+PopularTime.destroy_all
+
+jsonarr.each do |obj|
+  toSave = PopularTime.new()
+  if obj.key?("google_id")
+    toSave.google_id = obj["google_id"]
+  end
+  if obj.key?("name")
+    toSave.name = obj["name"]
+  end
+  if obj.key?("address")
+    toSave.address = obj["address"]
+  end
+  if obj.key?("types")
+    toSave.types = obj["types"]
+  end
+  if obj.key?("coordinates")
+    toSave.lat = obj["coordinates"][0]
+    toSave.long = obj["coordinates"][1]
+  end
+  if obj.key?("rating")
+    toSave.rating = obj["rating"]
+  end
+  if obj.key?("rating_n")
+    toSave.rating_n = obj["rating_n"]
+  end
+  if obj.key?("international_phone_number")
+    toSave.phone_number = obj["phone_number"]
+  end
+  if obj.key?("current_popularity")
+    toSave.current_popularity = obj["current_popularity"]
+  end
+  if obj.key?("populartimes")
+    toSave.populartimes = obj["populartimes"]
+  end
+  if obj.key?("time_wait")
+    toSave.time_wait = obj["time_wait"]
+  end
+  if obj.key?("time_spent")
+    toSave.time_spent_min = obj["time_spent"][0]
+    toSave.time_spent_max = obj["time_spent"][1]
+  end
+  toSave.save
+  arrnum += 1
+  puts arrnum
+end
