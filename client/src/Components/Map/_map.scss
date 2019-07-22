@@ -12,7 +12,6 @@
   width: 100%;
   height: 100vh;
   text-align: center;
-  scroll-snap-align: start;
 
   .hood-main-title {
     font-family: $title-font;
@@ -34,6 +33,7 @@
     border-bottom: 1px $medium-yellow solid;
     height: 100vh;
     position: absolute;
+    scroll-snap-align: start;
   }
 
   .map-sidebar {
