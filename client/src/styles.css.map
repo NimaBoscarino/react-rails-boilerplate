@@ -9,8 +9,8 @@
         "Components/NightOutBuilder/_night-out-builder.scss",
         "Components/Intro/_intro.scss",
         "Components/Map/_map.scss",
-        "Components/Map/_planner-sidebar.scss",
-        "Components/Map/_hood-sidebar.scss",
+        "Components/Map/TripSidebar/_trip-sidebar.scss",
+        "Components/Map/HoodSidebar/_hood-sidebar.scss",
         "Components/Map/_current-selection-card.scss",
         "Components/AreaCards/_area-cards.scss",
         "Components/AreaSelector/_area-selector.scss"

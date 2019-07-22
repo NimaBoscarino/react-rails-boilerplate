@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import HoodSidebar from "./HoodSidebar";
-import TripSidebar from "./TripSidebar";
+import HoodSidebar from "./HoodSidebar/HoodSidebar";
+import TripSidebar from "./TripSidebar/TripSidebar";
 import CurrentSelectionCard from "./CurrentSelectionCard";
 import GoogleMap from "./GoogleMap";
 

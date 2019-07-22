@@ -1,5 +1,5 @@
 import React from "react";
-import HotSpotIcon from "../../global-assets/hotspot-score-icon-small.png";
+import HotSpotIcon from "../../../global-assets/hotspot-score-icon-small.png";
 
 function HoodList() {
     return (
