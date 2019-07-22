@@ -85,13 +85,12 @@ nav .logo {
 }
 
 #Map {
-  display: block;
+  display: inline-block;
   width: 100%;
   height: 100vh;
   margin-bottom: 5vh;
   background-color: darkgrey;
   text-align: center;
-  position: relative;
   scroll-snap-align: start;
 }
 
@@ -109,14 +108,17 @@ nav .logo {
 }
 
 #Map .map-container {
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
   border-top: 1px #ffce00 solid;
   border-bottom: 1px #ffce00 solid;
-  height: 100%;
+  height: 100vh;
+  position: absolute;
 }
 
 #Map .map-sidebar {
+  position: absolute;
+  left: 0;
   width: 15%;
   height: 100%;
   border-right: 1px solid #9ea2a8;
@@ -167,16 +169,26 @@ nav .logo {
 #Map .planner-sidebar {
   width: 15%;
   height: 100%;
-  background-color: yellow;
+  color: white;
+  position: absolute;
+  right: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
+  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
 }
 
 #Map .current-selection-card {
-  width: 100%;
-  bottom: 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  position: absolute;
+  width: 60%;
+  left: 0;
   right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
   height: 20vh;
   text-align: left;
-  border-top: 1px solid #9ea2a8;
+  border: 1px solid #9ea2a8;
   background: -webkit-gradient(linear, left top, left bottom, from(#fffffc), to(rgba(255, 255, 252, 0.6)));
   background: linear-gradient(to bottom, #fffffc, rgba(255, 255, 252, 0.6));
 }
@@ -420,6 +432,7 @@ nav .logo {
   display: inline-block;
   min-height: 10vh;
   width: 100%;
+  margin-top: 20px;
 }
 
 #AreaSelector .area-selector {

@@ -37,18 +37,15 @@ class Main extends Component {
         <NightOutBuilder />
         <Map />
         <AreaSelector />
-        <div className='container'>
-          <section className='row area-section d-flex p-2'>
-            <AreaCards />
-            <AreaCards />
-            <AreaCards />
-            <AreaCards />
-            <AreaCards />
-            <AreaCards />
-          </section>
-        </div>
-
-        <h1>This is the Main</h1>
+        <section className='row area-section d-flex justify-content-between w-80'>
+          <AreaCards />
+          <AreaCards />
+          <AreaCards />
+          <AreaCards />
+          <AreaCards />
+          <AreaCards />
+        </section>
+        =<h1>This is the Main</h1>
         <h2>{this.state.message}</h2>
         <button onClick={this.fetchData}>Fetch Data</button>
       </div>
