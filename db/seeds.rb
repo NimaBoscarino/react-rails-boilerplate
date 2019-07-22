@@ -65,3 +65,49 @@ jsonarr.each do |obj|
   arrnum += 1
   puts arrnum
 end
+
+jsonarr.each do |obj|
+  toSave = Place.new()
+  if obj.key?("google_id")
+    toSave.google_id = obj["google_id"]
+  end
+  if obj.key?("name")
+    toSave.name = obj["name"]
+  end
+  if obj.key?("address")
+    toSave.address = obj["address"]
+  end
+  # if obj.key?("types")
+  #   toSave.types = obj["types"]
+  # end
+  if obj.key?("coordinates")
+    toSave.lat = obj["coordinates"]["lat"]
+    toSave.long = obj["coordinates"]["lng"]
+  end
+  if obj.key?("rating")
+    toSave.rating = obj["rating"]
+  end
+  if obj.key?("rating_n")
+    toSave.rating_n = obj["rating_n"]
+  end
+  #maybe take it out
+  if obj.key?("international_phone_number")
+    toSave.phone_number = obj["phone_number"]
+  end
+  if obj.key?("current_popularity")
+    toSave.current_popularity = obj["current_popularity"]
+  end
+  # if obj.key?("populartimes")
+  #   toSave.populartimes = obj["populartimes"]
+  # end
+  if obj.key?("time_wait")
+    toSave.time_wait = obj["time_wait"]
+  end
+  if obj.key?("time_spent")
+    toSave.time_spent_min = obj["time_spent"][0]
+    toSave.time_spent_max = obj["time_spent"][1]
+  end
+  toSave.save
+  arrnum += 1
+  puts arrnum
+end
