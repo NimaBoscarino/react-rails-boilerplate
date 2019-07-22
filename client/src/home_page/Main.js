@@ -18,14 +18,14 @@ class Main extends Component {
 
   fetchData = () => {
     axios
-      .get("/places") // You can simply make your requests to "/api/whatever you want"
+      .get("/places/1") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
         // handle success
         console.log(response.data); // The entire response from the Rails API
 
-        console.log(response.data.places); // Just the message
+        console.log(response.data.place); // Just the message
         this.setState({
-          message: JSON.stringify(response.data.places)
+          message: JSON.stringify(response.data.place)
         });
       });
   };
