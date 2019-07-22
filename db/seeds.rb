@@ -35,8 +35,8 @@ jsonarr.each do |obj|
     toSave.types = obj["types"]
   end
   if obj.key?("coordinates")
-    toSave.lat = obj["coordinates"][0]
-    toSave.long = obj["coordinates"][1]
+    toSave.lat = obj["coordinates"]["lat"]
+    toSave.long = obj["coordinates"]["lng"]
   end
   if obj.key?("rating")
     toSave.rating = obj["rating"]
@@ -44,6 +44,7 @@ jsonarr.each do |obj|
   if obj.key?("rating_n")
     toSave.rating_n = obj["rating_n"]
   end
+  #maybe take it out
   if obj.key?("international_phone_number")
     toSave.phone_number = obj["phone_number"]
   end
