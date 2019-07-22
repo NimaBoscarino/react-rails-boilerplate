@@ -20,13 +20,27 @@ class GoogleMap extends Component {
       .then(response => {
         // handle success
         console.log(response.data.places); // Just the message
+        const places=this.processDataPlaces(response.data.places);
         this.setState({
-          center: {
-            lat:response.data.places.lat,
-            lng:response.data.places.long},
-          zoom:15
+          places:places,
+          center: places[0].coordinates,
+          zoom:13
         });
       });
+  }
+  
+  processDataPlaces(placesData){
+    let places = placesData.map(place=>{
+      return { 
+        id:place.id,
+        name:place.name,
+        coordinates: {
+          lat:place.lat, 
+          lng:place.long},
+        address:place.address
+      }
+    });
+    return places;
   }
   
   render() {
@@ -37,7 +51,15 @@ class GoogleMap extends Component {
           zoom={this.state.zoom}
           initialCenter={this.state.initialCenter}
           center={this.state.center}>
-          <Marker position={this.state.center} />
+          
+          { this.state.places && 
+            this.state.places.map((place)=>{
+              return (
+                <Marker position={place.coordinates} key={place.id} />
+              )
+            })
+          }
+          
         </Map>
         <CurrentSelectionCard />
       </div>
@@ -48,3 +70,4 @@ class GoogleMap extends Component {
 export default GoogleApiWrapper({
   apiKey: `${process.env.REACT_APP_GOOGLE_MAP_APIKEY}`
 })(GoogleMap);
+

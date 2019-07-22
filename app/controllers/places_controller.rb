@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
     def index
         render :json=>{
-            places: Place.first
+            places: Place.all
         }
     end
 end
