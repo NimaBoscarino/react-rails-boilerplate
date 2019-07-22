@@ -4,7 +4,7 @@ import GastownTest from "./assets/irish-heather-gastown.jpg";
 class AreaCards extends Component {
   render() {
     return (
-      <div id='AreaCards'>
+      <div id='AreaCards' className='card-container'>
         <div className='card area-card' style={{ width: "18rem" }}>
           <img
             className='card-img-top area-picture'

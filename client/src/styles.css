@@ -269,6 +269,10 @@ nav .logo {
   }
 }
 
+.card-container {
+  margin: 0 auto;
+}
+
 .area-card {
   margin: 0 auto;
   margin-bottom: 15px;
