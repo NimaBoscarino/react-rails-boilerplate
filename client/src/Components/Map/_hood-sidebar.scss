@@ -1,0 +1,56 @@
+#Map {
+  .hood-sidebar {
+    position: absolute;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    border-right: 1px solid #9ea2a8;
+    background: linear-gradient(
+      to bottom,
+      $smoky-black,
+      rgba($smoky-black, 0.6)
+    );
+
+    .hood-list {
+      width: 100%;
+      text-align: left;
+    }
+
+    .hood-title {
+      font-family: $title-font;
+      font-weight: 700;
+    }
+
+    .hood-name {
+      font-family: $title-font;
+      color: white;
+      border-top: #9ea2a8 solid 1px;
+      background: linear-gradient(
+        to bottom,
+        $smoky-black,
+        rgba($smoky-black, 0.9)
+      );
+    }
+
+    .hotspot-score {
+      display: inline-block;
+      width: 30%;
+
+      .hotspot-score-icon {
+        width: 30%;
+        padding: 0;
+        margin-top: -4px;
+        animation: shadow-pulse s infinite;
+      }
+
+      .hotspot-score-number {
+        display: inline-block;
+        width: 50%;
+        font-family: $title-font;
+        font-weight: 700;
+        margin-bottom: 0;
+        margin-left: 8px;
+      }
+    }
+  }
+}
