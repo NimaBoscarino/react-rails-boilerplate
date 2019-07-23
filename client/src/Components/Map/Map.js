@@ -44,17 +44,10 @@ class Map extends Component {
 
           <TripSidebar />
 
-          <div id='CurrentSelectionCard'>
-            <div className='container'>
-              <div className='d-flex'>
-                <div className='align-items-baseline'>
-                  <CurrentSelectionCard
+          <CurrentSelectionCard
                     currentSelection={this.state.currentSelection}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          />
+ 
         </div>
       </div>
     );
