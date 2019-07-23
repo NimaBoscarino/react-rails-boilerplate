@@ -70,8 +70,8 @@ Place.destroy_all
 
 jsonarr.each do |obj|
   toSave = Place.new()
-  if obj.key?("google_id")
-    toSave.google_id = obj["google_id"]
+  if obj.key?("id")
+    toSave.google_id = obj["id"]
   end
   if obj.key?("name")
     toSave.name = obj["name"]
