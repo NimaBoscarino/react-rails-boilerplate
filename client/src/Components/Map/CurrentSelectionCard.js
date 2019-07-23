@@ -16,7 +16,7 @@ class CurrentSelectionCard extends Component {
               Google Score: {this.props.currentSelection.googleReviewScore}{" "}
               based on {this.props.currentSelection.googleReviewNumber} reviews
             </p>
-            <button className='btn btn-primary'>Add to my night</button>
+            <button className='btn btn-primary' onClick={()=>{this.props.addSelection(this.props.currentSelection.id)}}>Add to my night</button>
           </div>
         </div>
       </div>

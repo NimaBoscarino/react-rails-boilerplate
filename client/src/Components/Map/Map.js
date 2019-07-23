@@ -19,22 +19,32 @@ class Map extends Component {
     }
     this.updateCurrentSelection=this.updateCurrentSelection.bind(this);
     this.deleteSelectedPlace=this.deleteSelectedPlace.bind(this);
+    this.addCurrentSelection=this.addCurrentSelection.bind(this);
   }
   updateCurrentSelection(id) {
     axios
       .get(`/places/${id}`) // You can simply make your requests to "/api/whatever you want"
       .then(response => {
         const newSelection = {
+          id:id,
           name: response.data.place.name,
           googleReviewNumber: response.data.place.rating_n,
           googleReviewScore:response.data.place.rating,
           address: response.data.place.address
         }
+        this.setState({
+          currentSelection:newSelection
+        });
+      });
+  }
+  addCurrentSelection(id){
+    axios
+      .get(`/places/${id}`) // You can simply make your requests to "/api/whatever you want"
+      .then(response => {
         if (!this.state.selectionList.filter(element=>element.id===id).length) {
           this.state.selectionList.push(response.data.place)
         }
         this.setState({
-          currentSelection:newSelection,
           selectionList: this.state.selectionList
         });
       });
@@ -62,6 +72,7 @@ class Map extends Component {
                 <div className='align-items-baseline'>
                   <CurrentSelectionCard
                     currentSelection={this.state.currentSelection}
+                    addSelection={this.addCurrentSelection}
                   />
                 </div>
               </div>

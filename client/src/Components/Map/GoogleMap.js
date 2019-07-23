@@ -1,7 +1,6 @@
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import axios from 'axios';
 import React, { Component } from "react";
-import CurrentSelectionCard from "./CurrentSelectionCard";
 
 class GoogleMap extends Component {
   constructor(props){
