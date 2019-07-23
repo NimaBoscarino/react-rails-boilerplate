@@ -7,6 +7,7 @@ body * {
 body {
   -ms-scroll-snap-type: y proximity;
       scroll-snap-type: y proximity;
+  background-color: #ffe80a;
 }
 
 nav {

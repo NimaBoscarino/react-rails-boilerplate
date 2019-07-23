@@ -17,7 +17,10 @@ var sectionStyle = {
   backgroundAttachment: "fixed",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
-  backgroundSize: "ConvolverNode"
+  WebkitBackgroundSize: "cover",
+  MozBackgroundSize: "cover",
+  OBackgroundSize: "cover",
+  BackgroundSize: "cover"
 };
 
 class Main extends Component {
