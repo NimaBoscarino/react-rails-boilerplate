@@ -14,9 +14,11 @@ class Map extends Component {
       googleReviewScore:87
     }
     this.state={
-      currentSelection:currentSelection
+      currentSelection:currentSelection,
+      selectionList:[]
     }
     this.updateCurrentSelection=this.updateCurrentSelection.bind(this);
+    this.deleteSelectedPlace=this.deleteSelectedPlace.bind(this);
   }
   updateCurrentSelection(id){
     axios
@@ -27,10 +29,20 @@ class Map extends Component {
           googleReviewNumber: response.data.place.rating_n,
           googleReviewScore:response.data.place.rating
         }
+        if (!this.state.selectionList.filter(element=>element.id===id).length) {
+          this.state.selectionList.push(response.data.place)
+        }
         this.setState({
-          currentSelection:newSelection
+          currentSelection:newSelection,
+          selectionList: this.state.selectionList
         });
       });
+  }
+  deleteSelectedPlace(id){
+    // const list=this.state.selectionList.filter(element=>element.id!==id)
+    // this.setState({
+    //   selectionList:list
+    // })
   }
   componentDidMount() {
   }
@@ -41,7 +53,7 @@ class Map extends Component {
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap />
           <HoodSidebar updateSelection={this.updateCurrentSelection}/>
-          <TripSidebar />
+          <TripSidebar selectionList={this.state.selectionList} delete={this.deleteSelectedPlace}/>
           <CurrentSelectionCard currentSelection={this.state.currentSelection} />
 
         </div>
