@@ -1,66 +1,27 @@
-import React, {Component} from "react";
-import PlaceholderPic from "../../global-assets/gastown.jpg";
+import React, { Component } from "react";
 
 class CurrentSelectionCard extends Component {
-  render(){
-  return (
-    <div className='d-flex align-items-end w-100'>
-      <div className='d-flex current-selection-card'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col'>
-              <img
-                className='current-selection-pic'
-                src={PlaceholderPic}
-                alt=''
-              />
-            </div>
-            <div className='col-6'>
-              <div className='row'>
-                <div className='col-8'>
-                  {" "}
-                  <h1 className='current-selection-title'>{this.props.currentSelection.name}</h1>
-                  <h2 className='current-selection-details'>
-                    Pub / Restaurant
-                  </h2>
-                </div>
-                <div className='col-4 '>
-                  <p className='wait-time'>Current Wait Time 25 mins</p>
-                </div>
-              </div>
-
-              <p className='current-selection-description'>
-                This lively gastropub offers shared plates & a wide selection of
-                beer & spirits in a historic space.
-              </p>
-            </div>
-            <div className='col p-0 m-0'>
-              <ul className='current-selection-hotspot-score-list'>
-                <li className='list-group-item current-selection-report-card'>
-                  <p className='hotspot-report-card'>Hotspot Score</p>
-                  <div className='hotspot-score float-right'>
-                    <p className='hotspot-score-number'>87</p>
-                  </div>
-                </li>
-                <li className='list-group-item current-selection-report-card'>
-                  Google Score ({this.props.currentSelection.googleReviewNumber} Reviews)
-                  <div className='hotspot-score float-right'>
-                    <p className='google-score-number'>{this.props.currentSelection.googleReviewScore}</p>
-                  </div>
-                </li>
-                <li className='list-group-item current-selection-report-card'>
-                  Yelp Score (120 Reviews)
-                  <div className='hotspot-score float-right'>
-                    <p className='yelp-score-number'>87</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+  render() {
+    return (
+      <div className='align-items-baseline current-selection-card-div'>
+        <div className='card current-card'>
+          <h5 className='card-header current-card-title'>
+            {this.props.currentSelection.name}
+          </h5>
+          <div className='card-body'>
+            <h5 className='card-title'>{this.props.currentSelection.address}</h5>
+            <p className='card-text'>
+              Google Score: {this.props.currentSelection.googleReviewScore}{" "}
+              based on {this.props.currentSelection.googleReviewNumber} reviews
+            </p>
+            <a href='#' class='btn btn-primary'>
+              Add to my night
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  );}
+    );
+  }
 }
 
 export default CurrentSelectionCard;
