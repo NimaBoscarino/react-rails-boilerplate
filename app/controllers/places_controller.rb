@@ -4,4 +4,10 @@ class PlacesController < ApplicationController
             places: Place.all
         }
     end
+
+    def show
+        render :json=>{
+            place: Place.find(params[:id])
+        }
+    end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_201309) do
+ActiveRecord::Schema.define(version: 2019_07_22_234914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2019_07_22_201309) do
     t.integer "rating_n"
     t.string "phone_number"
     t.integer "current_popularity"
-    t.string "time_wait"
     t.integer "time_spent_min"
     t.integer "time_spent_max"
     t.datetime "created_at", null: false
@@ -33,22 +32,34 @@ ActiveRecord::Schema.define(version: 2019_07_22_201309) do
   end
 
   create_table "popular_times", force: :cascade do |t|
-    t.string "google_id"
-    t.string "name"
-    t.string "address"
-    t.string "types"
-    t.float "lat"
-    t.float "long"
-    t.float "rating"
-    t.integer "rating_n"
-    t.string "phone_number"
-    t.integer "current_popularity"
-    t.string "populartimes"
-    t.string "time_wait"
-    t.integer "time_spent_min"
-    t.integer "time_spent_max"
+    t.integer "day_id"
+    t.integer "hour_id"
+    t.integer "busy_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_popular_times_on_place_id"
   end
 
+  create_table "time_waits", force: :cascade do |t|
+    t.integer "day_id"
+    t.integer "hour_id"
+    t.integer "wait_minutes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_time_waits_on_place_id"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_types_on_place_id"
+  end
+
+  add_foreign_key "popular_times", "places"
+  add_foreign_key "time_waits", "places"
+  add_foreign_key "types", "places"
 end
