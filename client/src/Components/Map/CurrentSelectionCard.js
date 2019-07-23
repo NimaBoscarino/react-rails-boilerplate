@@ -9,14 +9,14 @@ class CurrentSelectionCard extends Component {
             {this.props.currentSelection.name}
           </h5>
           <div className='card-body'>
-            <h5 className='card-title'>{this.props.currentSelection.address}</h5>
+            <h5 className='card-title'>
+              {this.props.currentSelection.address}
+            </h5>
             <p className='card-text'>
               Google Score: {this.props.currentSelection.googleReviewScore}{" "}
               based on {this.props.currentSelection.googleReviewNumber} reviews
             </p>
-            <a href='#' class='btn btn-primary'>
-              Add to my night
-            </a>
+            <button className='btn btn-primary'>Add to my night</button>
           </div>
         </div>
       </div>

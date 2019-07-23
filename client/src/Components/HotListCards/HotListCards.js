@@ -41,8 +41,8 @@ class HotListCards extends Component {
 
                     <div className='row'>
                       <p className='card-text hot-list-description'>
-                        <p>Time Spent Max: {this.props.place.time_spent_max}</p>
-                        <p>Time Spent Min: {this.props.place.time_spent_min}</p>
+                       Time Spent Max: {this.props.place.time_spent_max}
+                       Time Spent Min: {this.props.place.time_spent_min}
                         Heritage building with 50 taps of local & imported craft
                         beers, plus a menu of locally sourced food.Heritage
                         building with 50 taps of local & imported craft beers,
