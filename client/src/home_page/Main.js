@@ -6,7 +6,7 @@ import Map from "../Components/Map/Map";
 import AreaSelector from "../Components/AreaSelector/AreaSelector";
 import HotListCards from "../Components/HotListCards/HotListCards";
 import AreaCards from "../Components/AreaCards/AreaCards";
-import Background from "../global-assets/irish-heather-gastown.png";
+import Background from "../global-assets/vancouver-main-background.png";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 

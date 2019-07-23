@@ -5,7 +5,7 @@ function AreaSelector() {
     <div id='AreaSelector'>
       <div className='area-selector'>
         <h1 className='area-selector-hood'>Gastown</h1>
-        <p className='area-selector-hood-description'>
+        <h5 className='area-selector-hood-description'>
           Lively Gastown is known for its whistling Steam Clock and mix of
           souvenir shops, indie art galleries and decor stores in Victorian
           buildings. A trendy food and drink scene includes chic cocktail
@@ -13,7 +13,7 @@ function AreaSelector() {
           local seafood. Hip eateries also dot the neighboring Downtown Eastside
           area, while the up-and-coming Railtown district is home to edgy
           fashion studios.
-        </p>
+        </h5>
       </div>
     </div>
   );

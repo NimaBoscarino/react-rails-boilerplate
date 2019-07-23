@@ -2,11 +2,21 @@
   margin: 0 auto;
   width: 80%;
   text-align: left;
+  
+  .card {
+    border-color: $quick-silver;
+    background: linear-gradient(
+      to bottom,
+      $card-color-background,
+      rgba($card-color-background, 0.6)
+    );
+  }
 
   .hot-list-card-container {
     display: inline-block;
     width: 100%;
     margin-bottom: 2.5vh;
+
   }
 
   .hot-list-image-box {

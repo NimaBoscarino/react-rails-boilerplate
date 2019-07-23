@@ -3,18 +3,18 @@ import "./styles.css";
 import Nav from "./Components/NavBar/Nav";
 import Main from "./home_page/Main";
 import Areas from "./home_page/Areas";
-import Background from "./global-assets/irish-heather-gastown.png"
+import Background from "./global-assets/background-bottom.png";
 //include this import if the component uses routes & links
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 var sectionStyle = {
   width: "100%",
-  height: "400px",
+  height: "100vh",
   backgroundImage: `url(${Background})`,
   backgroundAttachment: "fixed",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
-  backgroundSize: "ConvolverNode",
+  backgroundSize: "cover"
 };
 
 class App extends Component {
@@ -24,15 +24,13 @@ class App extends Component {
 
   render() {
     return (
-      
       <Router>
-      <section style={ sectionStyle } >
-        <Nav />
-        <Route path='/' exact component={Main} />
-        <Route path='/areas' exact component={Areas} />
-         </section>
+        <section style={sectionStyle}>
+          <Nav />
+          <Route path='/' exact component={Main} />
+          <Route path='/areas' exact component={Areas} />
+        </section>
       </Router>
-     
     );
   }
 }

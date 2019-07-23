@@ -18,6 +18,8 @@ nav {
   /* Position the navbar at the top of the page */
   width: 100%;
   border-bottom: #ffce00 solid 2px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 nav .logo-box {
@@ -38,8 +40,8 @@ nav .logo {
 
 #Intro .title-section {
   text-align: center;
-  margin-top: 80px;
-  margin-bottom: 15px;
+  margin-top: 15vh;
+  margin-bottom: 10vh;
 }
 
 #Intro .title-section .intro-title {
@@ -525,27 +527,41 @@ nav .logo {
   display: inline-block;
   min-height: 10vh;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 #AreaSelector .area-selector {
   padding: 2vh 30vh 3vh 30vh;
   text-align: center;
+  color: white;
 }
 
 #AreaSelector .area-selector-hood {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 700;
+  font-size: calc(28px + 1.4vw);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-#AreaSelector .area-selector-description {
-  font-size: calc(10px + 0.3vw);
+#AreaSelector .area-selector-hood-description {
+  margin-top: 15px;
+  padding: 0 2%;
+  font-size: calc(18px + 0.2vw);
+  color: white;
+  line-height: 1.4;
 }
 
 .HotListCards {
   margin: 0 auto;
   width: 80%;
   text-align: left;
+}
+
+.HotListCards .card {
+  border-color: #9ea2a8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fffffc), to(rgba(255, 255, 252, 0.6)));
+  background: linear-gradient(to bottom, #fffffc, rgba(255, 255, 252, 0.6));
 }
 
 .HotListCards .hot-list-card-container {

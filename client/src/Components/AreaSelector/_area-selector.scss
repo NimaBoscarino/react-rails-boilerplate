@@ -2,19 +2,27 @@
   display: inline-block;
   min-height: 10vh;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 
   .area-selector {
     padding: 2vh 30vh 3vh 30vh;
     text-align: center;
+    color: white;
   }
 
   .area-selector-hood {
     font-family: $title-font;
     font-weight: 700;
+    font-size: $font-size-main-title;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
-  .area-selector-description {
-    font-size: $font-size-body;
+  .area-selector-hood-description {
+    margin-top: 15px;
+    padding: 0 2%;
+    font-size: $font-size-title-intro;
+    color: white;
+    line-height: 1.4;
   }
 }
