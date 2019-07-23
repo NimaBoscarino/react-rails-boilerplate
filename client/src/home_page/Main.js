@@ -4,6 +4,7 @@ import Intro from "../Components/Intro/Intro";
 import NightOutBuilder from "../Components/NightOutBuilder/NightOutBuilder";
 import Map from "../Components/Map/Map";
 import AreaSelector from "../Components/AreaSelector/AreaSelector";
+import HotListCards from "../Components/HotListCards/HotListCards";
 import AreaCards from "../Components/AreaCards/AreaCards";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -37,16 +38,17 @@ class Main extends Component {
         <NightOutBuilder />
         <Map />
         <AreaSelector />
-        <div className='container'>
-          <section className='row area-section d-flex justify-content-between'>
-            <AreaCards />
-            <AreaCards />
-            <AreaCards />
-            <AreaCards />
-            <AreaCards />
-            <AreaCards />
-          </section>
-        </div>
+
+        <section className=''>
+          <HotListCards />
+          <HotListCards />
+          <HotListCards />
+        </section>
+
+        <section className='row area-section d-flex justify-content-between'>
+          <AreaCards />
+        </section>
+
         <h1>This is the Main</h1>
         <h2>{this.state.message}</h2>
         <button onClick={this.fetchData}>Fetch Data</button>

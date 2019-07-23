@@ -1,0 +1,107 @@
+.HotListCards {
+  margin: 0 auto;
+  width: 80%;
+  text-align: left;
+
+  .hot-list-card-container {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2.5vh;
+  }
+
+  .hot-list-image-box {
+    background-color: green;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+  }
+
+  .hot-list-image {
+    width: 100%;
+  }
+
+  .hot-list-title {
+    font-family: $title-font;
+    font-weight: 700;
+  }
+
+  .hot-list-description {
+    font-weight: 300;
+    font-size: $font-size-medium;
+  }
+
+  .hot-list-user-reviews-title {
+    font-family: $title-font;
+    font-size: $font-size-medium;
+    font-weight: 700;
+  }
+
+  .hot-list-user-reviews {
+    font-family: $body-font;
+    font-size: $font-size-large;
+    margin-left: 2px;
+  }
+
+  .badge {
+    margin-left: 4px;
+  }
+
+  .hot-list-score-col {
+    font-family: $title-font;
+  }
+
+  .review-icons {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .hotspot-review {
+    display: inline-block;
+    font-weight: 700;
+    font-size: $font-size-busy-report-large;
+  }
+
+  .hotspot-review-score {
+    display: inline-block;
+    font-weight: 700;
+    float: right;
+    font-size: $font-size-busy-report-large;
+  }
+
+  .google-review {
+    display: inline-block;
+    
+    font-size: $font-size-busy-report-small;
+  }
+
+  .google-review-score {
+    display: inline-block;
+    float: right;
+    font-size: $font-size-busy-report-small;
+  }
+
+  .yelp-review {
+    display: inline-block;
+    
+    font-size: $font-size-busy-report-small;
+  }
+
+  .yelp-review-score {
+    display: inline-block;
+    float: right;
+    font-size: $font-size-busy-report-small;
+  }
+
+  .review-stats {
+    font-size: $font-size-busy-report-xs;
+    margin: 2px 0 0 0;
+    display: block;
+    color: $quick-silver;
+  }
+
+  .hot-list-score-card {
+  }
+
+  .hot-list-cards-list {
+  }
+}
