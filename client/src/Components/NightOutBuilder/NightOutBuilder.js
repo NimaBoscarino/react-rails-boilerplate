@@ -5,6 +5,7 @@ class NightOutBuilder extends Component {
     return (
       <div id='NightOutBuilder'>
         <div className='d-flex justify-content-center'>
+        
           <button className='btn btn-outline-light'>Suggest a Night Out</button>
         </div>
       </div>

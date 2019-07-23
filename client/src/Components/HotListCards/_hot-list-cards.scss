@@ -10,7 +10,6 @@
   }
 
   .hot-list-image-box {
-    background-color: green;
     width: 100%;
     height: 100%;
     display: inline-block;
@@ -18,6 +17,7 @@
 
   .hot-list-image {
     width: 100%;
+    object-fit: cover;
   }
 
   .hot-list-title {
@@ -70,7 +70,7 @@
 
   .google-review {
     display: inline-block;
-    
+
     font-size: $font-size-busy-report-small;
   }
 
@@ -82,7 +82,7 @@
 
   .yelp-review {
     display: inline-block;
-    
+
     font-size: $font-size-busy-report-small;
   }
 

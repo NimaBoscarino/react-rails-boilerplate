@@ -520,7 +520,6 @@ nav .logo {
 }
 
 .HotListCards .hot-list-image-box {
-  background-color: green;
   width: 100%;
   height: 100%;
   display: inline-block;
@@ -528,6 +527,8 @@ nav .logo {
 
 .HotListCards .hot-list-image {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .HotListCards .hot-list-title {
