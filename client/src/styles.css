@@ -130,12 +130,13 @@ nav .logo {
 
 #Map .hood-sidebar {
   position: absolute;
+  overflow: scroll;
   left: 0;
   width: 15%;
   height: 100%;
   border-right: 1px solid #9ea2a8;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.1)));
+  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.1));
 }
 
 #Map .hood-sidebar .hood-list {
@@ -146,19 +147,23 @@ nav .logo {
 #Map .hood-sidebar .hood-title {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 700;
+  display: inline-block;
+  margin: 0;
 }
 
 #Map .hood-sidebar .hood-name {
   font-family: "Roboto Condensed", sans-serif;
   color: white;
   border-top: #9ea2a8 solid 1px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#9ea2a8), to(rgba(214, 229, 227, 0.5)));
+  background: linear-gradient(to bottom, #9ea2a8, rgba(214, 229, 227, 0.5));
 }
 
 #Map .hood-sidebar .hotspot-score {
   display: inline-block;
   width: 30%;
+  font-size: calc(14px + 0.4vw);
+  padding-left: 10px;
 }
 
 #Map .hood-sidebar .hotspot-score .hotspot-score-icon {
@@ -176,6 +181,36 @@ nav .logo {
   font-weight: 700;
   margin-bottom: 0;
   margin-left: 8px;
+}
+
+#Map .hood-place-list-item {
+  color: #d6e5e3;
+  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.6));
+}
+
+#Map .hood-place-name {
+  display: inline-block;
+  font-size: calc(9px + 0.2vw);
+}
+
+#Map .hood-place-hotspot-score {
+  display: inline-block;
+  font-size: calc(9px + 0.2vw);
+  font-weight: 700;
+  float: right;
+  margin-top: 4px;
+  margin-left: 0;
+  text-align: right;
+}
+
+#Map .icon {
+  color: #ff5a00;
+}
+
+#Map .hood-place-hotspot-icon {
+  display: inline-block;
+  float: right;
 }
 
 #Map .current-selection-card {

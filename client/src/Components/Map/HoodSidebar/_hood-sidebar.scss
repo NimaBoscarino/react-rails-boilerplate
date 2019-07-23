@@ -1,6 +1,7 @@
 #Map {
   .hood-sidebar {
     position: absolute;
+    overflow: scroll;
     left: 0;
     width: 15%;
     height: 100%;
@@ -8,7 +9,7 @@
     background: linear-gradient(
       to bottom,
       $smoky-black,
-      rgba($smoky-black, 0.6)
+      rgba($smoky-black, 0.1)
     );
 
     .hood-list {
@@ -19,6 +20,9 @@
     .hood-title {
       font-family: $title-font;
       font-weight: 700;
+      display: inline-block;
+      margin: 0;
+
     }
 
     .hood-name {
@@ -27,14 +31,16 @@
       border-top: #9ea2a8 solid 1px;
       background: linear-gradient(
         to bottom,
-        $smoky-black,
-        rgba($smoky-black, 0.9)
+        $quick-silver,
+        rgba($accent-grey, 0.5)
       );
     }
 
     .hotspot-score {
       display: inline-block;
       width: 30%;
+      font-size: $font-size-xl;
+      padding-left: 10px;
 
       .hotspot-score-icon {
         width: 30%;
@@ -52,5 +58,38 @@
         margin-left: 8px;
       }
     }
+  }
+
+  .hood-place-list-item {
+    color: $accent-grey;
+    background: linear-gradient(
+      to bottom,
+      $smoky-black,
+      rgba($smoky-black, 0.6)
+    );
+  }
+
+  .hood-place-name {
+    display: inline-block;
+    font-size: $font-size-small;
+  }
+
+  .hood-place-hotspot-score {
+    display: inline-block;
+    font-size: $font-size-small;
+    font-weight: 700;
+    float: right;
+    margin-top: 4px;
+    margin-left: 0;
+    text-align: right;
+  }
+
+  .icon {
+    color: #ff5a00;
+  }
+
+  .hood-place-hotspot-icon {
+    display: inline-block;
+    float: right;
   }
 }

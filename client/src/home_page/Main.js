@@ -6,8 +6,19 @@ import Map from "../Components/Map/Map";
 import AreaSelector from "../Components/AreaSelector/AreaSelector";
 import HotListCards from "../Components/HotListCards/HotListCards";
 import AreaCards from "../Components/AreaCards/AreaCards";
+import Background from "../global-assets/irish-heather-gastown.png";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+var sectionStyle = {
+  width: "100%",
+  height: "100%",
+  backgroundImage: `url(${Background})`,
+  backgroundAttachment: "fixed",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "ConvolverNode"
+};
 
 class Main extends Component {
   constructor(props) {
@@ -17,7 +28,7 @@ class Main extends Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     axios
       .get("/places") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
@@ -26,10 +37,10 @@ class Main extends Component {
 
         console.log(response.data.places); // Just the message
         this.setState({
-          places:response.data.places
+          places: response.data.places
         });
       });
-  };
+  }
 
   render() {
     return (
@@ -37,25 +48,24 @@ class Main extends Component {
         <Intro />
         <NightOutBuilder />
         <Map />
-        <AreaSelector />
+        <section style={sectionStyle}>
+          <AreaSelector />
 
-        <section className=''>
-          { this.state.places &&
-            this.state.places.map(place=>{
-              return (
-                <HotListCards place={place}/>
-              )
-            })
-          }
+          <section className=''>
+            {this.state.places &&
+              this.state.places.map(place => {
+                return <HotListCards place={place} />;
+              })}
+          </section>
+
+          <section className='row area-section d-flex justify-content-between'>
+            <AreaCards />
+          </section>
+
+          <h1>This is the Main</h1>
+          <h2>{this.state.message}</h2>
+          <button onClick={this.fetchData}>Fetch Data</button>
         </section>
-
-        <section className='row area-section d-flex justify-content-between'>
-          <AreaCards />
-        </section>
-
-        <h1>This is the Main</h1>
-        <h2>{this.state.message}</h2>
-        <button onClick={this.fetchData}>Fetch Data</button>
       </div>
     );
   }
