@@ -12,7 +12,7 @@ class HoodPlaceList extends Component {
   componentDidMount() {}
   render() {
     return (
-      <li className='list-group-item hood-place-list-item'>
+      <li className='list-group-item hood-place-list-item' onClick={()=>{this.props.onClick(this.props.place.id)}}>
         <div className='hood-place-name-div'>
           <p className='hood-place-name'>{this.props.place.name}</p>
         </div>

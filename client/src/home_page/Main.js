@@ -35,10 +35,6 @@ class Main extends Component {
     axios
       .get("/places") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
-        // handle success
-        console.log(response.data); // The entire response from the Rails API
-
-        console.log(response.data.places); // Just the message
         this.setState({
           places: response.data.places
         });
@@ -57,7 +53,7 @@ class Main extends Component {
           <section className=''>
             {this.state.places &&
               this.state.places.map(place => {
-                return <HotListCards place={place} />;
+                return <HotListCards place={place} key={place.id}/>;
               })}
           </section>
 

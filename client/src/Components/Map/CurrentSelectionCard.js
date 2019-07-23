@@ -1,7 +1,8 @@
-import React from "react";
+import React, {Component} from "react";
 import PlaceholderPic from "../../global-assets/gastown.jpg";
 
-function CurrentSelectionCard() {
+class CurrentSelectionCard extends Component {
+  render(){
   return (
     <div className='d-flex align-items-end w-100'>
       <div className='d-flex current-selection-card'>
@@ -18,7 +19,7 @@ function CurrentSelectionCard() {
               <div className='row'>
                 <div className='col-8'>
                   {" "}
-                  <h1 className='current-selection-title'>The Gastown Pub</h1>
+                  <h1 className='current-selection-title'>{this.props.currentSelection.name}</h1>
                   <h2 className='current-selection-details'>
                     Pub / Restaurant
                   </h2>
@@ -42,9 +43,9 @@ function CurrentSelectionCard() {
                   </div>
                 </li>
                 <li className='list-group-item current-selection-report-card'>
-                  Google Score (264 Reviews)
+                  Google Score ({this.props.currentSelection.googleReviewNumber} Reviews)
                   <div className='hotspot-score float-right'>
-                    <p className='google-score-number'>87</p>
+                    <p className='google-score-number'>{this.props.currentSelection.googleReviewScore}</p>
                   </div>
                 </li>
                 <li className='list-group-item current-selection-report-card'>
@@ -59,7 +60,7 @@ function CurrentSelectionCard() {
         </div>
       </div>
     </div>
-  );
+  );}
 }
 
 export default CurrentSelectionCard;
