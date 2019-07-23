@@ -66,18 +66,10 @@ class Map extends Component {
           <HoodSidebar updateSelection={this.updateCurrentSelection}/>
           <TripSidebar selectionList={this.state.selectionList} delete={this.deleteSelectedPlace}/>
 
-          <div id='CurrentSelectionCard'>
-            <div className='container'>
-              <div className='d-flex'>
-                <div className='align-items-baseline'>
-                  <CurrentSelectionCard
-                    currentSelection={this.state.currentSelection}
-                    addSelection={this.addCurrentSelection}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          <CurrentSelectionCard
+            currentSelection={this.state.currentSelection}
+            addSelection={this.addCurrentSelection}
+          />
         </div>
       </div>
     );
