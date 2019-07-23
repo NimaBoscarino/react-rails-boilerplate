@@ -3,15 +3,25 @@ import PlaceHolderPic from "../../global-assets/irish-heather-gastown.png";
 import { FaRegClock } from "react-icons/fa";
 import { FaYelp } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
+import axios from "axios";
 
 class HotListCards extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      message:"loading data"
+    }
+  }
+
+  componentDidMount(){
+  }
   render() {
     return (
       <div className='HotListCards'>
         <div className='card hot-list-card-container'>
           <div className='card-container'>
             <div className='card'>
-              <h5 className='card-header hot-list-title'>Alibi Room</h5>
+              <h5 className='card-header hot-list-title'>{this.props.place.name}</h5>
               <div className='card-body'>
                 <div className='row'>
                   <div className='col-sm'>
@@ -69,9 +79,9 @@ class HotListCards extends Component {
                             <FaGoogle />
                           </div>
                           <div className='google-review'>Google Review:</div>
-                          <div className='google-review-score'>4/5</div>
+                          <div className='google-review-score'>{this.props.place.rating}</div>
                           <div className='review-stats'>
-                            (Based on 453 reviews)
+                            (Based on {this.props.place.rating_n} reviews)
                           </div>
                         </li>
                         <li className='list-group-item'>

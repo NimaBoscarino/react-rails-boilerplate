@@ -17,16 +17,16 @@ class Main extends Component {
     };
   }
 
-  fetchData = () => {
+  componentDidMount(){
     axios
-      .get("/places/1") // You can simply make your requests to "/api/whatever you want"
+      .get("/places") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
         // handle success
         console.log(response.data); // The entire response from the Rails API
 
-        console.log(response.data.place); // Just the message
+        console.log(response.data.places); // Just the message
         this.setState({
-          message: JSON.stringify(response.data.place)
+          places:response.data.places
         });
       });
   };
@@ -40,9 +40,13 @@ class Main extends Component {
         <AreaSelector />
 
         <section className=''>
-          <HotListCards />
-          <HotListCards />
-          <HotListCards />
+          { this.state.places &&
+            this.state.places.map(place=>{
+              return (
+                <HotListCards place={place}/>
+              )
+            })
+          }
         </section>
 
         <section className='row area-section d-flex justify-content-between'>
