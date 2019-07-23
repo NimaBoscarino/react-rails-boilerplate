@@ -6,7 +6,7 @@ import GoogleMap from "./GoogleMap";
 import axios from "axios";
 
 class Map extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     const currentSelection = {
       name: 'The Gastown Pub',
@@ -20,14 +20,15 @@ class Map extends Component {
     this.updateCurrentSelection=this.updateCurrentSelection.bind(this);
     this.deleteSelectedPlace=this.deleteSelectedPlace.bind(this);
   }
-  updateCurrentSelection(id){
+  updateCurrentSelection(id) {
     axios
       .get(`/places/${id}`) // You can simply make your requests to "/api/whatever you want"
       .then(response => {
         const newSelection = {
           name: response.data.place.name,
           googleReviewNumber: response.data.place.rating_n,
-          googleReviewScore:response.data.place.rating
+          googleReviewScore:response.data.place.rating,
+          address: response.data.place.address
         }
         if (!this.state.selectionList.filter(element=>element.id===id).length) {
           this.state.selectionList.push(response.data.place)
@@ -54,8 +55,18 @@ class Map extends Component {
           <GoogleMap />
           <HoodSidebar updateSelection={this.updateCurrentSelection}/>
           <TripSidebar selectionList={this.state.selectionList} delete={this.deleteSelectedPlace}/>
-          <CurrentSelectionCard currentSelection={this.state.currentSelection} />
 
+          <div id='CurrentSelectionCard'>
+            <div className='container'>
+              <div className='d-flex'>
+                <div className='align-items-baseline'>
+                  <CurrentSelectionCard
+                    currentSelection={this.state.currentSelection}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
