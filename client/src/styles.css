@@ -250,15 +250,27 @@ nav .logo {
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 90vh;
+  width: 60%;
   height: 20vh;
   position: absolute;
   bottom: 0;
+<<<<<<< HEAD
+=======
+  border-bottom: 5px #ffce00 solid;
+>>>>>>> design/map
 }
 
 #CurrentSelectionCard .current-card {
   width: 100%;
   height: 100%;
+}
+
+#CurrentSelectionCard .current-card-description {
+  text-align: left;
+}
+
+#CurrentSelectionCard .current-card-info {
+  text-align: left;
 }
 
 @-webkit-keyframes shadow-pulse {
