@@ -5,6 +5,7 @@ import CurrentSelectionCard from "./CurrentSelectionCard";
 import GoogleMap from "./GoogleMap";
 
 class Map extends Component {
+  componentDidMount() {}
   render() {
     return (
       <div id='Map'>

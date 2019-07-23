@@ -1,5 +1,7 @@
 #Map {
   .hood-sidebar {
+    border-top: 5px $medium-yellow solid;
+    border-bottom: 5px $medium-yellow solid;
     position: absolute;
     overflow: scroll;
     left: 0;
@@ -26,6 +28,7 @@
 
     .hood-name {
       font-family: $title-font;
+      font-weight: 700;
       color: white;
       border-top: #9ea2a8 solid 1px;
       background: linear-gradient(
@@ -70,14 +73,16 @@
 
   .hood-place-name-div {
     display: inline-block;
-    font-size: $font-size-small;
+
     width: 70%;
   }
 
   .hood-place-name {
+    font-family: $title-font;
     display: inline-block;
-    font-size: $font-size-small;
+    font-size: $font-size-medium;
     word-break: normal;
+    margin: 0;
   }
 
   .hood-place-hotspot-score {
