@@ -13,7 +13,9 @@ class HoodPlaceList extends Component {
   render() {
     return (
       <li className='list-group-item hood-place-list-item'>
-        <div className='hood-place-name'>{this.props.place.name}</div>
+        <div className='hood-place-name-div'>
+          <p className='hood-place-name'>{this.props.place.name}</p>
+        </div>
         <div className='hood-place-hotspot-score'>
           <p className='hotspot-score-number'>
             {this.props.place.rating}{" "}

@@ -102,8 +102,9 @@ nav .logo {
 }
 
 #Map .trip-button {
-  width: 95%;
+  width: 100%;
   margin: 30px auto 0 auto;
+  background: none;
 }
 
 #Map .hotspot-stat-box {
@@ -191,12 +192,20 @@ nav .logo {
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.6));
 }
 
+#Map .hood-place-name-div {
+  display: inline-block;
+  font-size: calc(9px + 0.2vw);
+  width: 70%;
+}
+
 #Map .hood-place-name {
   display: inline-block;
   font-size: calc(9px + 0.2vw);
+  word-break: normal;
 }
 
 #Map .hood-place-hotspot-score {
+  width: 30%;
   display: inline-block;
   font-size: calc(9px + 0.2vw);
   font-weight: 700;
