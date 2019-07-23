@@ -7,6 +7,7 @@ import Background from "./global-assets/background-bottom.png";
 //include this import if the component uses routes & links
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+
 var sectionStyle = {
   width: "100%",
   height: "100vh",
