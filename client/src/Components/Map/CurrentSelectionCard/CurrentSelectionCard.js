@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CurrentSelectionModal from "./CurrentSelectionModal";
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 class CurrentSelectionCard extends Component {
@@ -49,7 +50,7 @@ class CurrentSelectionCard extends Component {
                     <h5 className='card-title'>
                       {this.props.currentSelection.address}
                     </h5>
-                    <p className='card-text' />
+                    <CurrentSelectionModal />
                   </div>
                 </div>
               </div>

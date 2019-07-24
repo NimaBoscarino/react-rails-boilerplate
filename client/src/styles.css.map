@@ -11,7 +11,7 @@
         "Components/Map/_map.scss",
         "Components/Map/TripSidebar/_trip-sidebar.scss",
         "Components/Map/HoodSidebar/_hood-sidebar.scss",
-        "Components/Map/_current-selection-card.scss",
+        "Components/Map/CurrentSelectionCard/_current-selection-card.scss",
         "Components/AreaCards/_area-cards.scss",
         "Components/AreaSelector/_area-selector.scss",
         "Components/AreaSelector/_carousel.scss",
