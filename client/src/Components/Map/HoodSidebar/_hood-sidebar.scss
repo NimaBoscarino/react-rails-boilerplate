@@ -7,7 +7,6 @@
     left: 0;
     width: 18%;
     height: 100%;
-    border-right: 1px solid #9ea2a8;
     background: rgba($smoky-black, 0.1);
 
     .hood-list {
@@ -88,6 +87,9 @@
 
   .hood-place-list-item {
     color: $accent-grey;
+    border-top: 1px solid rgba($smoky-black, 0.5);
+    border-right: 1px solid rgba($smoky-black, 0.5);
+    border-left: 1px solid rgba($smoky-black, 0.5);
     border-bottom: 1px solid $quick-silver;
     padding: 0.6vh 0 0 0.6vh;
     margin: 0;
@@ -98,11 +100,19 @@
     );
   }
 
+  .hood-place-list-item:hover {
+    border: 1px solid $medium-yellow;
+    border-right: 2px solid $medium-yellow;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+  }
+
   .hood-place-name-div {
     display: inline-block;
     width: 60%;
     height: 100%;
     margin-left: 6%;
+    padding-right: 6px;
+    padding-left: 18px;
   }
 
   .hood-place-name {
@@ -166,9 +176,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding-right: 10px;
-    margin-top: 7px;
-    margin-left: -4px;
+    padding-right: 15px;
+    margin-top: 6px;
+    margin-left: -5px;
   }
 
   .index-number {

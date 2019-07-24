@@ -145,7 +145,6 @@ nav .logo {
   left: 0;
   width: 18%;
   height: 100%;
-  border-right: 1px solid #9ea2a8;
   background: rgba(7, 7, 7, 0.1);
 }
 
@@ -227,6 +226,9 @@ nav .logo {
 
 #Map .hood-place-list-item {
   color: #d6e5e3;
+  border-top: 1px solid rgba(7, 7, 7, 0.5);
+  border-right: 1px solid rgba(7, 7, 7, 0.5);
+  border-left: 1px solid rgba(7, 7, 7, 0.5);
   border-bottom: 1px solid #9ea2a8;
   padding: 0.6vh 0 0 0.6vh;
   margin: 0;
@@ -234,11 +236,20 @@ nav .logo {
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
 }
 
+#Map .hood-place-list-item:hover {
+  border: 1px solid #ffce00;
+  border-right: 2px solid #ffce00;
+  -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+}
+
 #Map .hood-place-name-div {
   display: inline-block;
   width: 60%;
   height: 100%;
   margin-left: 6%;
+  padding-right: 6px;
+  padding-left: 18px;
 }
 
 #Map .hood-place-name {
@@ -303,9 +314,9 @@ nav .logo {
   position: absolute;
   top: 0;
   left: 0;
-  padding-right: 10px;
-  margin-top: 7px;
-  margin-left: -4px;
+  padding-right: 15px;
+  margin-top: 6px;
+  margin-left: -5px;
 }
 
 #Map .index-number {
