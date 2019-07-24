@@ -41,4 +41,25 @@
     position: absolute;
     scroll-snap-align: start;
   }
+
+  .map-header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    z-index: 1;
+    padding-top: 2vh;
+
+    .hood-header-box {
+      width: 100%;
+      text-align: center;
+    }
+
+    h4.selected-hood {
+      font-family: $title-font;
+      font-size: $font-size-title;
+      font-weight: 700;
+    }
+  }
 }
