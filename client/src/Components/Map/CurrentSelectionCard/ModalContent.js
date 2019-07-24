@@ -1,4 +1,5 @@
 import React from "react";
+
 import PlaceHolderPic from "../../../global-assets/yaletown.jpg";
 
 function ModalContent() {

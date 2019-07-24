@@ -1,6 +1,7 @@
 @import "./TripSidebar/trip-sidebar";
 @import "./HoodSidebar/hood-sidebar";
 @import "./CurrentSelectionCard/current-selection-card";
+@import "./MapHeader/map-header";
 
 @keyframes shadow-pulse {
   0% {
@@ -40,28 +41,5 @@
     height: 100vh;
     position: absolute;
     scroll-snap-align: start;
-  }
-
-  .map-header {
-    width: 30%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    height: 10vh;
-    z-index: 1;
-    padding-top: 2vh;
-
-    .hood-header-box {
-      width: 100%;
-      text-align: center;
-    }
-
-    h4.selected-hood {
-      font-family: $title-font;
-      font-size: $font-size-xxxxl;
-      font-weight: 700;
-    }
   }
 }
