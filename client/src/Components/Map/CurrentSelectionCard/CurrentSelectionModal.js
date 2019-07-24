@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import ModalContent from "./ModalContent";
+import { FiImage } from "react-icons/fi";
 
 export default class CurrentSelectionModal extends React.Component {
   constructor(props) {
@@ -24,8 +25,8 @@ export default class CurrentSelectionModal extends React.Component {
   render() {
     return (
       <div>
-        <Button color='success' onClick={this.toggle}>
-          See More Images
+        <Button variant='primary' size='sm' block onClick={this.toggle}>
+          <FiImage /> See More Images
         </Button>
         <Modal isOpen={this.state.modal}>
           <ModalHeader>

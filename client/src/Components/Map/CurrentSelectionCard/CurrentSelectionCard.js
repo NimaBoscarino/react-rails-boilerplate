@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CurrentSelectionModal from "./CurrentSelectionModal";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import PlaceHolderPic from "../../../global-assets/eastvan.jpeg";
 
 class CurrentSelectionCard extends Component {
   render() {
@@ -16,13 +17,15 @@ class CurrentSelectionCard extends Component {
                   </h5>
                   <div className='card-body'>
                     <div className='row'>
-                      <div className='col current-card-description'>
+                      <div className='col current-card-pic-col'>
+                        <img className='current-card-pic' src={PlaceHolderPic} alt={""} />
+                        <CurrentSelectionModal />
+                      </div>
+                      <div className='col current-card-info'>
                         <p>
                           Airy, contemporary pub & eatery offering classic &
                           modern Canadian fare, live music & trivia nights.
                         </p>
-                      </div>
-                      <div className='col current-card-info'>
                         <p>{this.props.currentSelection.address}</p>
                       </div>
                       <div className='col score-col'>
@@ -46,11 +49,6 @@ class CurrentSelectionCard extends Component {
                         <FaAngleDoubleRight />
                       </span>
                     </button>
-
-                    <h5 className='card-title'>
-                      {this.props.currentSelection.address}
-                    </h5>
-                    <CurrentSelectionModal />
                   </div>
                 </div>
               </div>

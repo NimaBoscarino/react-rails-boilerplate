@@ -237,6 +237,7 @@ nav .logo {
 }
 
 #Map .hood-place-list-item:hover {
+  color: white;
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
 }
@@ -348,13 +349,24 @@ nav .logo {
 
 #CurrentSelectionCard .current-card {
   width: 100%;
-  height: 25vh;
+  min-height: 25vh;
   background: -webkit-gradient(linear, left top, left bottom, from(#fffffc), to(rgba(255, 255, 252, 0.6)));
   background: linear-gradient(to bottom, #fffffc, rgba(255, 255, 252, 0.6));
 }
 
-#CurrentSelectionCard .current-card-description {
-  text-align: left;
+#CurrentSelectionCard .current-card-pic-col {
+  width: 100%;
+}
+
+#CurrentSelectionCard .current-card-pic-col img {
+  height: 120px;
+}
+
+#CurrentSelectionCard .current-card-pic-col .current-card-pic {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 5px;
 }
 
 #CurrentSelectionCard .current-card-info {
