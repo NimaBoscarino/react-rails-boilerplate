@@ -33,20 +33,21 @@ class HoodList extends Component {
   render() {
     return (
       <div>
-        <li className='list-group-item hood-name'>
-        <div className='hood-title'>
-        <h4  className='hood-title'>Gastown</h4>
+        <li className='list-group-item hood-name-li'>
+        <div className='col hood-col'>
+        <h4  className='hood-title-text'>Gastown</h4>
+        </div>
+
+        <div className='col hotspot-score float-right'>
+        <img className='hotspot-score-icon' src={HotSpotIcon} alt={""}/>
+            <p className='hotspot-score-number'>87</p>
         </div>
         
-          <div className='hotspot-score float-right'>
-            <img className='hotspot-score-icon' src={HotSpotIcon} alt={""}/>
-            <p className='hotspot-score-number'>87</p>
-          </div>
         </li>
         { this.state.places &&
-            this.state.places.map(place=>{
+            this.state.places.map((place,index)=>{
               return (
-                <HoodPlaceList place={place} key={place.id} onClick={this.handleClick}/>
+                <HoodPlaceList place={place} index={index+1} key={place.id} onClick={this.handleClick}/>
               )
             })
           }

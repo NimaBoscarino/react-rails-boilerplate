@@ -6,15 +6,16 @@
 
     .intro-title {
       font-size: $font-size-main-title;
-      color: white;
+      font-family: $title-font;
+      color: $white;
       font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      text-shadow: $text-shadow-title;
     }
 
     .intro-subtitle {
       font-family: $body-font;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      color: $white;
+      text-shadow: $text-shadow-title;
     }
 
     .intro-summary {

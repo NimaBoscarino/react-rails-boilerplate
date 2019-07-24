@@ -1,11 +1,11 @@
 #Map {
   .planner-sidebar {
-    border-top: 5px $medium-yellow solid;
+    margin-top: 7vh;
     border-bottom: 5px $medium-yellow solid;
     position: absolute;
     right: 0;
-    width: 15%;
-    height: 100%;
+    width: 18%;
+    height: 93vh;
     border-left: 1px solid #9ea2a8;
     background: linear-gradient(
       to bottom,
@@ -51,7 +51,8 @@
   }
 
   .hotspot-stat-box {
-    border-top: white solid 1px;
+    border-top: white solid 2px;
+    height: 25vh;
     width: 100%;
     bottom: 0;
     text-align: center;
@@ -71,6 +72,7 @@
     font-size: 50px;
     font-family: $title-font;
     font-weight: 700;
-    font-size: $font-size-hotspot-number;
+    font-size: $font-size-hotspot-number-large;
+    text-shadow: 8px 8px 4px black;
   }
 }

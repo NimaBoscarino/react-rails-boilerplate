@@ -1,0 +1,87 @@
+#CurrentSelectionCard {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  .card-container {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .current-selection-card-div {
+    display: inline-block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 60%;
+    position: absolute;
+    bottom: 0;
+    border-bottom: 5px $medium-yellow solid;
+  }
+
+  .current-card {
+    width: 100%;
+    min-height: 25vh;
+    background: linear-gradient(
+      to bottom,
+      $card-color-background,
+      rgba($card-color-background, 0.6)
+    );
+  }
+
+  .current-card-pic-col {
+    width: 100%;
+
+    img {
+      height: 120px;
+    }
+
+    .current-card-pic {
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 5px;
+    }
+  }
+
+  .current-card-info {
+    text-align: left;
+  }
+
+  .current-card-title {
+    color: white;
+    font-family: $title-font;
+    font-size: $font-size-xxxl;
+    background: linear-gradient(
+      to bottom,
+      $smoky-black,
+      rgba($smoky-black, 0.8)
+    );
+  }
+
+  .add-to-night-button {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    margin: auto 0;
+    font-family: $title-font;
+    font-size: $font-size-large;
+    border-color: $medium-yellow;
+  }
+
+  .icon-arrows {
+    color: $medium-yellow;
+  }
+}
+
+.modal-box {
+  .modal-content {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-picture {
+    width: 100%;
+  }
+}

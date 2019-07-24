@@ -1,12 +1,13 @@
-$title-font: "Roboto Condensed", sans-serif;
+$title-font: "Fira Sans Extra Condensed", sans-serif;
 $body-font: "Roboto", sans-serif;
 
-$font-size-main-title: calc(28px + 1.4vw);
+$font-size-main-title: calc(38px + 1.4vw);
 $font-size-title-intro: calc(18px + 0.2vw);
-$font-size-hotspot-number: calc(50px + 1.5vw);
 $font-size-title: calc(18px + 1vw);
 $font-size-nav-tabs: calc(8px + 0.8vw);
 $font-size-body: calc(10px + 0.3vw);
+$font-size-xxxxl: calc(30px + 0.8vw);
+$font-size-xxxl: calc(20px + 0.4vw);
 $font-size-xxl: calc(16px + 0.4vw);
 $font-size-xl: calc(14px + 0.4vw);
 $font-size-large: calc(12px + 0.4vw);
@@ -15,11 +16,23 @@ $font-size-small: calc(9px + 0.2vw);
 $font-size-busy-small: calc(12px + 0.2vw);
 $font-size-busy-xs: calc(7px + 0.2vw);
 
-// Report Card Summary ------
+// Report Card Summary Font Sizes------
 
 $font-size-busy-report-large: calc(14px + 0.2vw);
 $font-size-busy-report-small: calc(10px + 0.2vw);
 $font-size-busy-report-xs: calc(7px + 0.2vw);
+
+// Button Font Sizes------
+
+$font-size-icons: calc(20px + 0.2vw);
+
+// Font Styles------
+
+$text-shadow-title: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+// Trip Planner Sidebar Font Sizes ------
+
+$font-size-hotspot-number-large: 8vw;
 
 // Text Colors ------
 
@@ -28,6 +41,7 @@ $accent-grey: #d6e5e3;
 $card-color-background: #fffffc;
 $smoky-black: #070707;
 $quick-silver: #9ea2a8;
+$white: white;
 
 // Brand Colors -------
 
