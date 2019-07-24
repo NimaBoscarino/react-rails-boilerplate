@@ -254,6 +254,7 @@ nav .logo {
   height: 20vh;
   position: absolute;
   bottom: 0;
+  border-bottom: 5px #ffce00 solid;
 }
 
 #CurrentSelectionCard .current-card {
@@ -321,6 +322,27 @@ nav .logo {
   height: 100vh;
   position: absolute;
   scroll-snap-align: start;
+}
+
+#Map .map-header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10vh;
+  z-index: 1;
+  padding-top: 2vh;
+}
+
+#Map .map-header .hood-header-box {
+  width: 100%;
+  text-align: center;
+}
+
+#Map .map-header h4.selected-hood {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: calc(18px + 1vw);
+  font-weight: 700;
 }
 
 @keyframes shadow-pulse {

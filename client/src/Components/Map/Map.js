@@ -3,6 +3,7 @@ import HoodSidebar from "./HoodSidebar/HoodSidebar";
 import TripSidebar from "./TripSidebar/TripSidebar";
 import CurrentSelectionCard from "./CurrentSelectionCard";
 import GoogleMap from "./GoogleMap";
+import MapHeader from "./MapHeader";
 import axios from "axios";
 
 class Map extends Component {
@@ -60,7 +61,7 @@ class Map extends Component {
   render() {
     return (
       <div id='Map'>
-        <h1 className='hood-main-title'>Gastown</h1>
+      <MapHeader />
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap />
           <HoodSidebar updateSelection={this.updateCurrentSelection}/>
