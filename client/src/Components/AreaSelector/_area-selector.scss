@@ -1,12 +1,15 @@
+@import "./carousel";
+
 #AreaSelector {
-  display: inline-block;
   min-height: 10vh;
   width: 100%;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  padding: 0;
+  margin: -2px auto;
 
   .area-selector {
-    padding: 2vh 30vh 3vh 30vh;
+    width: 95%;
+    margin: 0 auto;
+    padding: 4vh 5vh 4vh 5vh;
     text-align: center;
     color: white;
   }

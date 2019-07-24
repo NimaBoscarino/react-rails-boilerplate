@@ -13,20 +13,21 @@ class HoodList extends Component {
     this.state = {
       message: "Click the button to load data!"
     };
+    this.handleClick=this.handleClick.bind(this);
   }
 
   componentDidMount() {
     axios
       .get("/places") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
-        // handle success
-        console.log(response.data); // The entire response from the Rails API
-
-        console.log(response.data.places); // Just the message
         this.setState({
           places: response.data.places
         });
       });
+  }
+
+  handleClick(id){
+    this.props.updateSelection(id);
   }
 
   render() {
@@ -38,14 +39,14 @@ class HoodList extends Component {
         </div>
         
           <div className='hotspot-score float-right'>
-            <img className='hotspot-score-icon' src={HotSpotIcon} />
+            <img className='hotspot-score-icon' src={HotSpotIcon} alt={""}/>
             <p className='hotspot-score-number'>87</p>
           </div>
         </li>
         { this.state.places &&
             this.state.places.map(place=>{
               return (
-                <HoodPlaceList place={place}/>
+                <HoodPlaceList place={place} key={place.id} onClick={this.handleClick}/>
               )
             })
           }

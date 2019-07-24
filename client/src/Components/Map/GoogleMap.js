@@ -1,7 +1,6 @@
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import axios from 'axios';
 import React, { Component } from "react";
-import CurrentSelectionCard from "./CurrentSelectionCard";
 
 class GoogleMap extends Component {
   constructor(props){
@@ -18,8 +17,6 @@ class GoogleMap extends Component {
     axios
       .get("/places") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
-        // handle success
-        console.log(response.data.places); // Just the message
         const places=this.processDataPlaces(response.data.places);
         this.setState({
           places:places,
@@ -61,7 +58,6 @@ class GoogleMap extends Component {
           }
           
         </Map>
-        <CurrentSelectionCard />
       </div>
     );
   }

@@ -3,7 +3,6 @@ import PlaceHolderPic from "../../global-assets/yaletown.jpg";
 import { FaRegClock } from "react-icons/fa";
 import { FaYelp } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
-import axios from "axios";
 
 class HotListCards extends Component {
   constructor(props) {
@@ -22,12 +21,13 @@ class HotListCards extends Component {
             <div className='card'>
               <h5 className='card-header hot-list-title'>
                 {this.props.place.name}
+                <p>{this.props.place.address}</p>
               </h5>
               <div className='card-body'>
                 <div className='row'>
                   <div className='col-sm'>
                     <div className='hot-list-image-box'>
-                      <img className='hot-list-image' src={PlaceHolderPic} />
+                      <img className='hot-list-image' src={PlaceHolderPic} alt={""}/>
                     </div>
                   </div>
 
@@ -40,6 +40,8 @@ class HotListCards extends Component {
 
                     <div className='row'>
                       <p className='card-text hot-list-description'>
+                       Time Spent Max: {this.props.place.time_spent_max}
+                       Time Spent Min: {this.props.place.time_spent_min}
                         Heritage building with 50 taps of local & imported craft
                         beers, plus a menu of locally sourced food.Heritage
                         building with 50 taps of local & imported craft beers,

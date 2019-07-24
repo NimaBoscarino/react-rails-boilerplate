@@ -5,7 +5,8 @@ import Main from "./home_page/Main";
 import Areas from "./home_page/Areas";
 import Background from "./global-assets/background-bottom.png";
 //include this import if the component uses routes & links
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 
 var sectionStyle = {
   width: "100%",
@@ -18,10 +19,6 @@ var sectionStyle = {
 };
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Router>
