@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MyNightPlanCards from './MyNightPlanCards';
+import Charts from '../Charts/Charts'
 
 class MyNightPlan extends Component {
   render() {
@@ -19,10 +20,7 @@ class MyNightPlan extends Component {
                   <h5 className='card-title'>Your Night Stats</h5>
                   <div className='stats-box'>
                     
-                  <p>Here's where you can put some stats!</p>
-                  <p>Here's where you can put some stats!</p>
-                  <p>Here's where you can put some stats!</p>
-                  <p>Here's where you can put some stats!</p>
+                  <Charts data={this.props.data} />
                   </div>
                 </div>
               </div>
