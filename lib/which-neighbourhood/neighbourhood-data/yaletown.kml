@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Untitled layer</name>
+    <Style id="poly-000000-1200-77-nodesc-normal">
+      <LineStyle>
+        <color>ff000000</color>
+        <width>1.2</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>4d000000</color>
+        <fill>1</fill>
+        <outline>1</outline>
+      </PolyStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="poly-000000-1200-77-nodesc-highlight">
+      <LineStyle>
+        <color>ff000000</color>
+        <width>1.8</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>4d000000</color>
+        <fill>1</fill>
+        <outline>1</outline>
+      </PolyStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="poly-000000-1200-77-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#poly-000000-1200-77-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#poly-000000-1200-77-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+
+        <Placemark>
+            <name>Yaletown</name>
+            <styleUrl>#poly-000000-1200-77-nodesc</styleUrl>
+            <Polygon>
+                <outerBoundaryIs>
+                    <LinearRing>
+                        <tessellate>1</tessellate>
+                        <coordinates>
+                            -123.1275,49.2737014,0
+                            -123.1270064,49.2734074,0
+                            -123.1264056,49.2731834,0
+                            -123.1259121,49.2730294,0
+                            -123.1252684,49.2730854,0
+                            -123.1244959,49.2731694,0
+                            -123.1238951,49.2733374,0
+                            -123.1235947,49.2733654,0
+                            -123.1212772,49.2719514,0
+                            -123.1199683,49.2729454,0
+                            -123.1197752,49.2728894,0
+                            -123.119625,49.2729454,0
+                            -123.1195392,49.2730434,0
+                            -123.119625,49.2731554,0
+                            -123.1191744,49.2733094,0
+                            -123.1187023,49.2734774,0
+                            -123.1192388,49.2744994,0
+                            -123.1183805,49.2745414,0
+                            -123.1176938,49.2744154,0
+                            -123.117093,49.2744294,0
+                            -123.1165995,49.2745274,0
+                            -123.1162132,49.2747374,0
+                            -123.1160416,49.2748354,0
+                            -123.1171788,49.2755074,0
+                            -123.1139387,49.2776072,0
+                            -123.1159343,49.2788391,0
+                            -123.1175221,49.2777472,0
+                            -123.1195606,49.2790771,0
+                            -123.1275,49.2737014,0
+                        </coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+
+      </Document>
+</kml>

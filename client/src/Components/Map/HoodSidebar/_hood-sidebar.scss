@@ -5,7 +5,7 @@
     position: absolute;
     overflow: scroll;
     left: 0;
-    width: 15%;
+    width: 18%;
     height: 100%;
     border-right: 1px solid #9ea2a8;
     background: linear-gradient(
@@ -20,35 +20,61 @@
       cursor: pointer;
     }
 
-    .hood-title {
+    .hood-title-select {
       font-family: $title-font;
+      font-size: $font-size-xxl;
       font-weight: 700;
       display: inline-block;
+      border-bottom: 1px solid $orange;
       margin: 0;
     }
 
-    .hood-name {
+    .hood-title-box {
       font-family: $title-font;
+      font-size: $font-size-xxl;
       font-weight: 700;
-      color: white;
-      border-top: #9ea2a8 solid 1px;
-      background: linear-gradient(
-        to bottom,
-        $quick-silver,
-        rgba($accent-grey, 0.5)
-      );
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hood-title-text {
+      font-family: $title-font;
+      font-size: $font-size-xxxl;
+      font-weight: 700;
+      display: inline-block;
+      color: $card-color-background;
+      margin: 0;
+      padding: 1vh 0 1vh 0;
+    }
+
+    .hood-name-li {
+      font-family: $title-font;
+      width: 100%;
+      font-weight: 700;
+      background-color: black;
+      border-bottom: 1px solid $orange;
+    }
+
+    .hood-col {
+      display: inline-block;
+      width: 70%;
+      padding: 0;
     }
 
     .hotspot-score {
       display: inline-block;
       width: 30%;
-      font-size: $font-size-xl;
-      padding-left: 10px;
+      font-size: $font-size-xxxl;
+      text-align: right;
+      padding: 1vh 0 1vh 0;
+      margin-top: -6px;
 
       .hotspot-score-icon {
-        width: 30%;
-        padding: 0;
-        margin-top: -4px;
+        margin-top: 9px;
+        margin-left: 4px;
+        width: 25%;
+        float: right;
         animation: shadow-pulse s infinite;
       }
 
@@ -59,12 +85,15 @@
         font-weight: 700;
         margin-bottom: 0;
         margin-left: 8px;
+        color: white;
       }
     }
   }
 
   .hood-place-list-item {
     color: $accent-grey;
+    padding: 0.6vh 0 0 0.6vh;
+    margin: 0;
     background: linear-gradient(
       to bottom,
       $smoky-black,
@@ -74,35 +103,56 @@
 
   .hood-place-name-div {
     display: inline-block;
-
     width: 70%;
+    height: 100%;
   }
 
   .hood-place-name {
     font-family: $title-font;
     display: inline-block;
-    font-size: $font-size-medium;
+    font-size: $font-size-large;
     word-break: normal;
     margin: 0;
+    font-weight: 700;
+    padding-bottom: 0.1vh;
   }
 
-  .hood-place-hotspot-score {
+  .hood-place-hotspot-score-div {
+    height: 100%;
     width: 30%;
     display: inline-block;
-    font-size: $font-size-small;
     font-weight: 700;
-    float: right;
-    margin-top: 4px;
+    text-align: right;
+    vertical-align: text-top;
+    position: absolute;
+    top: 0;
+    margin-top: 8px;
+  }
+
+  .hood-place-type {
+    font-family: $title-font;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0 0 1.5vh 0;
+  }
+
+  .hotspot-score-number-small {
+    font-size: $font-size-large;
+    font-weight: 700;
     margin-left: 0;
     text-align: right;
+    vertical-align: text-top;
   }
 
   .icon {
     color: #ff5a00;
   }
 
-  .hood-place-hotspot-icon {
-    display: inline-block;
+  .hotspot-score-icon-small {
+    margin-top: 6px;
+    margin-left: 4px;
+    width: 20%;
     float: right;
+    animation: shadow-pulse s infinite;
   }
 }
