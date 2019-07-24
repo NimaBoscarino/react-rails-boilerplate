@@ -119,15 +119,16 @@ def whichNeighbourhood(lat, long)
 
 end
 
-puts "Should return Coal Harbour"
-puts whichNeighbourhood(49.288875, -123.125221)
-puts "Should return nothing"
-puts whichNeighbourhood(49.299213, -123.129840)
-puts "Should return Chinatown"
-puts whichNeighbourhood(49.280297, -123.105474)
-puts "Should return Gastown"
-puts whichNeighbourhood(49.284636, -123.108584)
-puts "Should return UBC"
-puts whichNeighbourhood(49.264083, -123.243338)
-puts "I'm not really sure what this should return."
-puts whichNeighbourhood(49.237740, -123.062446)
+# A few simple tests
+# puts "Should return Coal Harbour"
+# puts whichNeighbourhood(49.288875, -123.125221)
+# puts "Should return nothing"
+# puts whichNeighbourhood(49.299213, -123.129840)
+# puts "Should return Chinatown"
+# puts whichNeighbourhood(49.280297, -123.105474)
+# puts "Should return Gastown"
+# puts whichNeighbourhood(49.284636, -123.108584)
+# puts "Should return UBC"
+# puts whichNeighbourhood(49.264083, -123.243338)
+# puts "I'm not really sure what this should return."
+# puts whichNeighbourhood(49.237740, -123.062446)
