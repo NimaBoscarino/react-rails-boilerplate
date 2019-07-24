@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document>
+        <name>Untitled layer</name>
+        <Style id="poly-000000-1200-77-nodesc-normal">
+        <LineStyle><color>ff000000</color><width>1.2</width></LineStyle><PolyStyle><color>4d000000</color><fill>1</fill><outline>1</outline></PolyStyle><BalloonStyle><text>< ![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+        </Style>
+        <Style id="poly-000000-1200-77-nodesc-highlight">
+        <LineStyle><color>ff000000</color><width>1.8</width></LineStyle><PolyStyle><color>4d000000</color><fill>1</fill><outline>1</outline></PolyStyle><BalloonStyle><text>< ![CDATA[<h3>$[name]</h3>]]></text></BalloonStyle>
+        </Style>
+        <StyleMap id="poly-000000-1200-77-nodesc">
+            <Pair>
+                <key>normal</key>
+                <styleUrl>#poly-000000-1200-77-nodesc-normal</styleUrl>
+            </Pair>
+            <Pair>
+                <key>highlight</key>
+                <styleUrl>#poly-000000-1200-77-nodesc-highlight</styleUrl>
+            </Pair>
+        </StyleMap>
+        <Placemark>
+            <name>Downtown Eastside</name>
+            <styleUrl>#poly-000000-1200-77-nodesc</styleUrl>
+            <Polygon>
+                <outerBoundaryIs>
+                    <LinearRing>
+                        <tessellate>1</tessellate>
+                        <coordinates>
+                            -123.1103423,49.2856492,0
+                            -123.1085398,49.2848934,0
+                            -123.1038192,49.2840815,0
+                            -123.0999568,49.2846414,0
+                            -123.0994418,49.2840815,0
+                            -123.0995705,49.28131,0
+                            -123.0975535,49.281338,0
+                            -123.0975089,49.2793223,0
+                            -123.0770812,49.2789864,0
+                            -123.0770812,49.2829618,0
+                            -123.0771671,49.2913595,0
+                            -123.1002555,49.2917513,0
+                            -123.1103423,49.2856492,0
+                        </coordinates>
+                    </LinearRing>
+                </outerBoundaryIs>
+            </Polygon>
+        </Placemark>
+    </Document>
+</kml>
