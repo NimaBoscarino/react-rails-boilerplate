@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { IoMdStarOutline } from "react-icons/io";
 import HotSpotIcon from "../../../global-assets/hotspot-score-icon-small.png";
 
 class HoodPlaceList extends Component {
