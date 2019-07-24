@@ -3,7 +3,6 @@ $body-font: "Roboto", sans-serif;
 
 $font-size-main-title: calc(38px + 1.4vw);
 $font-size-title-intro: calc(18px + 0.2vw);
-$font-size-hotspot-number: calc(160px + 1.5vw);
 $font-size-title: calc(18px + 1vw);
 $font-size-nav-tabs: calc(8px + 0.8vw);
 $font-size-body: calc(10px + 0.3vw);
@@ -17,11 +16,15 @@ $font-size-small: calc(9px + 0.2vw);
 $font-size-busy-small: calc(12px + 0.2vw);
 $font-size-busy-xs: calc(7px + 0.2vw);
 
-// Report Card Summary ------
+// Report Card Summary Font Sizes------
 
 $font-size-busy-report-large: calc(14px + 0.2vw);
 $font-size-busy-report-small: calc(10px + 0.2vw);
 $font-size-busy-report-xs: calc(7px + 0.2vw);
+
+// Trip Planner Sidebar Font Sizes ------
+
+$font-size-hotspot-number-large: 8vw;
 
 // Text Colors ------
 

@@ -133,7 +133,7 @@ nav .logo {
   font-size: 50px;
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-weight: 700;
-  font-size: calc(160px + 1.5vw);
+  font-size: 8vw;
   text-shadow: 8px 8px 4px black;
 }
 
