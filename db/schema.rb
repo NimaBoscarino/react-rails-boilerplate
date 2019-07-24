@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_234914) do
+ActiveRecord::Schema.define(version: 2019_07_24_192709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "border_points", force: :cascade do |t|
+    t.float "lat"
+    t.float "long"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "neighbourhood_id"
+    t.index ["neighbourhood_id"], name: "index_border_points_on_neighbourhood_id"
+  end
+
+  create_table "neighbourhoods", force: :cascade do |t|
+    t.string "name"
+    t.float "centerlat"
+    t.float "centerlong"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "places", force: :cascade do |t|
     t.string "google_id"
@@ -29,6 +46,8 @@ ActiveRecord::Schema.define(version: 2019_07_22_234914) do
     t.integer "time_spent_max"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "neighbourhood_id"
+    t.index ["neighbourhood_id"], name: "index_places_on_neighbourhood_id"
   end
 
   create_table "popular_times", force: :cascade do |t|
@@ -59,6 +78,8 @@ ActiveRecord::Schema.define(version: 2019_07_22_234914) do
     t.index ["place_id"], name: "index_types_on_place_id"
   end
 
+  add_foreign_key "border_points", "neighbourhoods"
+  add_foreign_key "places", "neighbourhoods"
   add_foreign_key "popular_times", "places"
   add_foreign_key "time_waits", "places"
   add_foreign_key "types", "places"

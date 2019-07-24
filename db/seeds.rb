@@ -9,62 +9,72 @@
 require_relative 'mount-pleasant-data.rb'
 require 'json'
 
+start = Time.now
+=begin
+# Seed Neighbourhoods --------------------------------------------------------------------------------------------
+puts "Seeding neighbourhoods"
+
+require 'nokogiri'
+require 'geocoder'
+
+allfiles = Dir[Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", "*.kml")]
+
+puts "Destroying border points..."
+BorderPoint.destroy_all
+puts "Destroying neighbourhoods..."
+Neighbourhood.destroy_all
+
+allfilesLength = allfiles.length
+allfileN = 0
+
+allfiles.each do |file|
+  allfileN += 1
+
+  doc = Nokogiri::XML(File.open(file))
+  thisName = doc.at_css("Placemark").at_css("name").to_s[6..-8]
+
+  puts "Working on location file " << thisName << " " << allfileN.to_s << " of " << allfilesLength.to_s
+
+
+  coordinates = doc.at_css("coordinates")
+  coordinatesArray = coordinates.to_s.split
+
+  coordinatesArray.delete_at(0)
+  coordinatesArray.delete_at(coordinatesArray.length - 1)
+
+  coordinatesArray.map! { |set| set.split(",") }
+  coordinatesArray.map! {
+    |set| set[0], set[1] = set[1], set[0]
+  }
+
+  centerCoordinates = Geocoder::Calculations.geographic_center(coordinatesArray)
+
+  nbh = Neighbourhood.find_or_create_by!(
+    :name => thisName,
+    :centerlat => centerCoordinates[0],
+    :centerlong => centerCoordinates[1]
+  )
+
+  coordinatesArray.each do |coord|
+    nbh.border_points.create!({
+      lat: coord[0],
+      long: coord[1]
+    })
+  end
+
+end
+=end
+# Seed Places ----------------------------------------------------------------------------------------------------
+
 # weird thing with escape characters is that if I add a few more characters to
 # the end of a slice, it will do it correctly. This is to get rid of a \n
+=begin
 datamod = @data.concat("ice")
 datamod.slice! "\nice"
 
 jsonarr = JSON.parse(datamod)
 
 arrnum = 0
-
-# PopularTime.destroy_all
-
-# jsonarr.each do |obj|
-#   toSave = PopularTime.new()
-#   if obj.key?("google_id")
-#     toSave.google_id = obj["google_id"]
-#   end
-#   if obj.key?("name")
-#     toSave.name = obj["name"]
-#   end
-#   if obj.key?("address")
-#     toSave.address = obj["address"]
-#   end
-#   if obj.key?("types")
-#     toSave.types = obj["types"]
-#   end
-#   if obj.key?("coordinates")
-#     toSave.lat = obj["coordinates"]["lat"]
-#     toSave.long = obj["coordinates"]["lng"]
-#   end
-#   if obj.key?("rating")
-#     toSave.rating = obj["rating"]
-#   end
-#   if obj.key?("rating_n")
-#     toSave.rating_n = obj["rating_n"]
-#   end
-#   #maybe take it out
-#   if obj.key?("international_phone_number")
-#     toSave.phone_number = obj["phone_number"]
-#   end
-#   if obj.key?("current_popularity")
-#     toSave.current_popularity = obj["current_popularity"]
-#   end
-#   if obj.key?("populartimes")
-#     toSave.populartimes = obj["populartimes"]
-#   end
-#   if obj.key?("time_wait")
-#     toSave.time_wait = obj["time_wait"]
-#   end
-#   if obj.key?("time_spent")
-#     toSave.time_spent_min = obj["time_spent"][0]
-#     toSave.time_spent_max = obj["time_spent"][1]
-#   end
-#   toSave.save
-#   arrnum += 1
-#   puts arrnum
-# end
 
 Place.destroy_all
 
@@ -133,3 +143,9 @@ jsonarr.each do |obj|
   arrnum += 1
   puts arrnum
 end
+=end
+endTime = Time.now
+totalTime = endTime - start
+puts BorderPoint.count.to_s << " BorderPoints created"
+puts Neighbourhood.count.to_s << " Neighbourhoods created"
+puts "It took " << totalTime.to_s << " seconds to do everything."
