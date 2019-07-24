@@ -1,0 +1,68 @@
+#MyNightPlan {
+  position: relative;
+  text-align: center;
+  padding-top: 5vh;
+  padding-bottom: 2vh;
+  color: $white;
+
+  .my-night-title-row {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .my-night-title {
+    font-family: $title-font;
+    font-size: $font-size-main-title;
+    text-shadow: $text-shadow-title;
+    color: $white;
+    font-weight: 700;
+    padding-bottom: 2vh;
+  }
+
+  .night-out-div {
+    width: 100%;
+  }
+
+  .stat-div {
+    .stats-card {
+      width: 100%;
+      height: 100%;
+    }
+
+    .card-title {
+      font-family: $title-font;
+      color: black;
+      border-bottom: 1px solid $smoky-black;
+      padding-bottom: 0.5vh;
+    }
+
+    .card-text {
+      font-family: $title-font;
+      color: $smoky-black;
+    }
+    .stats-box {
+      font-family: $title-font;
+      color: $smoky-black;
+      border-bottom: 1px solid $smoky-black;
+      padding-bottom: 0.5vh;
+    }
+  }
+
+  .night-out-card-div {
+    .my-night-out-title {
+      font-family: $title-font;
+      font-size: $font-size-large;
+      color: $smoky-black;
+      text-align: left;
+    }
+
+    .my-night-out-details {
+      text-align: left;
+      color: $smoky-black;
+    }
+
+    .my-night-bottom-controls {
+      text-align: right;
+    }
+  }
+}

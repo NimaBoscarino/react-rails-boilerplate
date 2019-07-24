@@ -5,6 +5,7 @@ import NightOutBuilder from "../Components/NightOutBuilder/NightOutBuilder";
 import Map from "../Components/Map/Map";
 import AreaSelector from "../Components/AreaSelector/AreaSelector";
 import HotListCards from "../Components/HotListCards/HotListCards";
+import MyNightPlan from "../Components/MyNightPlan/MyNightPlan";
 import AreaCards from "../Components/AreaCards/AreaCards";
 import Background from "../global-assets/vancouver-main-background.png";
 
@@ -35,7 +36,7 @@ class Main extends Component {
     axios
       .get("/places") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
-        console.log(response.data.places)
+        console.log(response.data.places);
         this.setState({
           places: response.data.places
         });
@@ -48,13 +49,15 @@ class Main extends Component {
         <Intro />
         <NightOutBuilder />
         <Map />
+
         <section style={sectionStyle}>
+          <MyNightPlan />
           <AreaSelector />
 
           <section className=''>
             {this.state.places &&
               this.state.places.map(place => {
-                return <HotListCards place={place} key={place.id}/>;
+                return <HotListCards place={place} key={place.id} />;
               })}
           </section>
 
