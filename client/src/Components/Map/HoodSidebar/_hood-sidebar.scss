@@ -101,9 +101,11 @@
   }
 
   .hood-place-list-item:hover {
-    border: 1px solid $medium-yellow;
-    border-right: 2px solid $medium-yellow;
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+    background: linear-gradient(
+      to bottom,
+      rgba($smoky-black, 1),
+      rgba($smoky-black, 0.9)
+    );
   }
 
   .hood-place-name-div {
