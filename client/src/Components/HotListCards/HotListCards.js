@@ -3,7 +3,6 @@ import PlaceHolderPic from "../../global-assets/yaletown.jpg";
 import { FaRegClock } from "react-icons/fa";
 import { FaYelp } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
-import axios from "axios";
 
 class HotListCards extends Component {
   constructor(props) {
@@ -28,7 +27,7 @@ class HotListCards extends Component {
                 <div className='row'>
                   <div className='col-sm'>
                     <div className='hot-list-image-box'>
-                      <img className='hot-list-image' src={PlaceHolderPic} />
+                      <img className='hot-list-image' src={PlaceHolderPic} alt={""}/>
                     </div>
                   </div>
 

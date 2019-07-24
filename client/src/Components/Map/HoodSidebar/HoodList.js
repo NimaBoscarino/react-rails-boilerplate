@@ -39,7 +39,7 @@ class HoodList extends Component {
         </div>
         
           <div className='hotspot-score float-right'>
-            <img className='hotspot-score-icon' src={HotSpotIcon} />
+            <img className='hotspot-score-icon' src={HotSpotIcon} alt={""}/>
             <p className='hotspot-score-number'>87</p>
           </div>
         </li>

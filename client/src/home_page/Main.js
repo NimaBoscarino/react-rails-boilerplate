@@ -8,7 +8,7 @@ import HotListCards from "../Components/HotListCards/HotListCards";
 import AreaCards from "../Components/AreaCards/AreaCards";
 import Background from "../global-assets/vancouver-main-background.png";
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 var sectionStyle = {
   width: "100%",

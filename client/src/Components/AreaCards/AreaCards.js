@@ -9,7 +9,7 @@ class AreaCards extends Component {
           <img
             className='card-img-top area-picture'
             src={GastownTest}
-            alt='Card image cap'
+            alt='Card cap'
           />
           <div className='card-body'>
             <div className='row'>
@@ -97,7 +97,7 @@ class AreaCards extends Component {
           </div>
 
           <div className='card-body card-footer-link'>
-            <a href='#' className='card-link'>
+            <a href='/' className='card-link'>
               See All Gastown
             </a>
           </div>
