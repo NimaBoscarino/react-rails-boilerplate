@@ -5,12 +5,12 @@ class MyNightPlanCards extends Component {
     return (
       <div className='p-2'>
         <div className='card'>
-          <div className='card-header my-night-out-title'>The Gastown Pub</div>
+          <div className='card-header my-night-out-title'>{this.props.place.name}</div>
           <div className='card-body'>
             <div className='card-body my-night-out-details'>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                posuere erat a ante.
+                Google Review Score: {this.props.place.rating} <br/>
+                Google Review Number: {this.props.place.rating_n}
               </p>
             </div>
 

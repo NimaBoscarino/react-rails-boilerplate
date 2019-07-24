@@ -34,9 +34,10 @@ class Main extends Component {
     this.showMyNight=this.showMyNight.bind(this);
   }
 
-  showMyNight(){
+  showMyNight(selectionList){
     this.setState({
-      showMyNightPlan:true
+      showMyNightPlan:true,
+      nightList:selectionList
     })
   }
 
@@ -60,7 +61,7 @@ class Main extends Component {
 
         <section style={sectionStyle}>
           {this.state.showMyNightPlan &&
-            (<MyNightPlan data={this.state.places}/>)
+            (<MyNightPlan nightList={this.state.nightList}/>)
           }
           <AreaSelector />
 

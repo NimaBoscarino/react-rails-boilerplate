@@ -19,7 +19,6 @@ class TripSidebar extends Component {
       this.setState({
         selectionList: this.props.selectionList
       });
-      console.log(this.state.selectionList);
     }
   }
   render() {
@@ -43,7 +42,7 @@ class TripSidebar extends Component {
             <TripButton />
           </ul>
 
-          <Button variant='primary' block onClick={()=>{this.props.showMyNight()}}>Generate Night</Button>
+          <Button variant='primary' block onClick={()=>{this.state.selectionList.length && this.props.showMyNight(this.state.selectionList)}}>Generate Night</Button>
           <Button variant='primary' block>See On Map</Button>
           <Button variant='primary' block>Create Plan</Button>
 

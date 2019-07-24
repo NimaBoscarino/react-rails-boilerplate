@@ -23,16 +23,18 @@ class MyNightPlan extends Component {
                   <h5 className='card-title'>Your Night Stats</h5>
                   <div className='stats-box'>
                     
-                  <Charts data={this.props.data} />
+                  <Charts data={this.props.nightList} />
                   </div>
                 </div>
               </div>
             </div>
 
             <div className='col-8 d-flex flex-column night-out-card-div'>
-              <MyNightPlanCards />
-              <MyNightPlanCards />
-              <MyNightPlanCards />
+              {
+                this.props.nightList.map(place=>{
+                  return (<MyNightPlanCards key={place.id} place={place}/>)
+                })
+              }
             </div>
           </div>
         </div>
