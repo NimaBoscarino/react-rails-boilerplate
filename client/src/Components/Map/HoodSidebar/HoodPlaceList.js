@@ -20,8 +20,8 @@ class HoodPlaceList extends Component {
           this.props.onClick(this.props.place.id);
         }}>
         <div className='col hood-place-name-div'>
-          <p className='hood-place-name'>{this.props.place.name}</p>
-          <p className='hood-place-type'>Pub / Restaurant</p>
+          <p className='hood-place-name'>{`${this.props.index}. ${this.props.place.name}`}</p>
+          <p className='hood-place-type'>{this.props.place.types.filter(element=>(["bar","restaurant","night_club"].includes(element))).join(" / ")}</p>
         </div>
         <div className='col hood-place-hotspot-score-div'>
           <p className='hotspot-score-number-small'>

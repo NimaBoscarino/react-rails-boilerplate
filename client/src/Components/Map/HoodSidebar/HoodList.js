@@ -45,9 +45,9 @@ class HoodList extends Component {
         
         </li>
         { this.state.places &&
-            this.state.places.map(place=>{
+            this.state.places.map((place,index)=>{
               return (
-                <HoodPlaceList place={place} key={place.id} onClick={this.handleClick}/>
+                <HoodPlaceList place={place} index={index+1} key={place.id} onClick={this.handleClick}/>
               )
             })
           }
