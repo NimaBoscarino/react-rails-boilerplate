@@ -7,7 +7,7 @@ class HoodSidebar extends Component {
     return (
       <div className='d-flex align-items-stretch hood-sidebar'>
         <ul className='list-group list-group-flush hood-list'>
-          <li className='list-group-item hood-title'>Select Area</li>
+          <li className='list-group-item hood-title-select'>Select Area</li>
           <HoodList updateSelection={this.props.updateSelection}/>
         </ul>
       </div>

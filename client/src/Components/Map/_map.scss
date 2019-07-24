@@ -43,10 +43,12 @@
   }
 
   .map-header {
-    width: 100%;
+    width: 30%;
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    margin: 0 auto;
     height: 10vh;
     z-index: 1;
     padding-top: 2vh;
@@ -58,7 +60,7 @@
 
     h4.selected-hood {
       font-family: $title-font;
-      font-size: $font-size-title;
+      font-size: $font-size-xxxxl;
       font-weight: 700;
     }
   }
