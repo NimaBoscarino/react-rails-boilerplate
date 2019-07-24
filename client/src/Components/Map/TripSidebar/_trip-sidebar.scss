@@ -51,7 +51,8 @@
   }
 
   .hotspot-stat-box {
-    border-top: white solid 1px;
+    border-top: white solid 2px;
+    height: 25vh;
     width: 100%;
     bottom: 0;
     text-align: center;
@@ -72,5 +73,6 @@
     font-family: $title-font;
     font-weight: 700;
     font-size: $font-size-hotspot-number;
+    text-shadow: 8px 8px 4px black;
   }
 }

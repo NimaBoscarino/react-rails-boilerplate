@@ -112,7 +112,8 @@ nav .logo {
 }
 
 #Map .hotspot-stat-box {
-  border-top: white solid 1px;
+  border-top: white solid 2px;
+  height: 25vh;
   width: 100%;
   bottom: 0;
   text-align: center;
@@ -132,7 +133,8 @@ nav .logo {
   font-size: 50px;
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-weight: 700;
-  font-size: calc(50px + 1.5vw);
+  font-size: calc(160px + 1.5vw);
+  text-shadow: 8px 8px 4px black;
 }
 
 #Map .hood-sidebar {
@@ -144,8 +146,7 @@ nav .logo {
   width: 18%;
   height: 100%;
   border-right: 1px solid #9ea2a8;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.1)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.1));
+  background: rgba(7, 7, 7, 0.1);
 }
 
 #Map .hood-sidebar .hood-list {
@@ -226,16 +227,18 @@ nav .logo {
 
 #Map .hood-place-list-item {
   color: #d6e5e3;
+  border-bottom: 1px solid #9ea2a8;
   padding: 0.6vh 0 0 0.6vh;
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
 }
 
 #Map .hood-place-name-div {
   display: inline-block;
-  width: 70%;
+  width: 60%;
   height: 100%;
+  margin-left: 6%;
 }
 
 #Map .hood-place-name {
@@ -246,6 +249,7 @@ nav .logo {
   margin: 0;
   font-weight: 700;
   padding-bottom: 0.1vh;
+  text-shadow: 1px 1px 1px black;
 }
 
 #Map .hood-place-hotspot-score-div {
@@ -273,6 +277,7 @@ nav .logo {
   margin-left: 0;
   text-align: right;
   vertical-align: text-top;
+  text-shadow: 1px 1px 1px black;
 }
 
 #Map .icon {
@@ -286,6 +291,27 @@ nav .logo {
   float: right;
   -webkit-animation: shadow-pulse s infinite;
           animation: shadow-pulse s infinite;
+}
+
+#Map .hood-place-index-div {
+  height: 100%;
+  width: 14%;
+  display: inline-block;
+  font-weight: 700;
+  text-align: right;
+  vertical-align: text-top;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-right: 10px;
+  margin-top: 7px;
+  margin-left: -4px;
+}
+
+#Map .index-number {
+  font-size: calc(12px + 0.4vw);
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgba(7, 7, 7, 0.5);
 }
 
 #CurrentSelectionCard {
@@ -313,7 +339,9 @@ nav .logo {
 
 #CurrentSelectionCard .current-card {
   width: 100%;
-  height: 100%;
+  height: 25vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fffffc), to(rgba(255, 255, 252, 0.6)));
+  background: linear-gradient(to bottom, #fffffc, rgba(255, 255, 252, 0.6));
 }
 
 #CurrentSelectionCard .current-card-description {
@@ -322,6 +350,28 @@ nav .logo {
 
 #CurrentSelectionCard .current-card-info {
   text-align: left;
+}
+
+#CurrentSelectionCard .current-card-title {
+  color: white;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(20px + 0.4vw);
+  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.8)));
+  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.8));
+}
+
+#CurrentSelectionCard .add-to-night-button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  margin: auto 0;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(12px + 0.4vw);
+  border-color: #ffce00;
+}
+
+#CurrentSelectionCard .icon-arrows {
+  color: #ffce00;
 }
 
 @-webkit-keyframes shadow-pulse {

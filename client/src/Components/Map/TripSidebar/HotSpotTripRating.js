@@ -4,7 +4,7 @@ function HotSpotTripRating() {
   return (
     <div className='hotspot-stat-box'>
       <h2 className='hotspot-title'>Your Rating</h2>
-      <p className='hotspot-stat-number'>44</p>
+      <h1 className='hotspot-stat-number glow'>44</h1>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { FaAngleDoubleRight } from "react-icons/fa";
 
 class CurrentSelectionCard extends Component {
   render() {
@@ -34,11 +35,15 @@ class CurrentSelectionCard extends Component {
                     </div>
 
                     <button
-                      className='btn btn-outline-dark btn-block'
+                      className='btn btn-outline-light add-to-night-button'
                       onClick={() => {
                         this.props.addSelection(this.props.currentSelection.id);
                       }}>
-                      Add to my night
+                      Add To Plan{" "}
+                      <span className='icon-arrows'>
+                        {" "}
+                        <FaAngleDoubleRight />
+                      </span>
                     </button>
 
                     <h5 className='card-title'>
