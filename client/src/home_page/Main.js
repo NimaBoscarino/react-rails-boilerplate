@@ -8,6 +8,8 @@ import HotListCards from "../Components/HotListCards/HotListCards";
 import AreaCards from "../Components/AreaCards/AreaCards";
 import Background from "../global-assets/vancouver-main-background.png";
 
+import Charts from "../Components/Charts/Charts";
+
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 var sectionStyle = {
@@ -63,6 +65,7 @@ class Main extends Component {
           </section>
 
           <h1>This is the Main</h1>
+          <Charts data={this.state.places}/>
           <h2>{this.state.message}</h2>
           <button onClick={this.fetchData}>Fetch Data</button>
         </section>
