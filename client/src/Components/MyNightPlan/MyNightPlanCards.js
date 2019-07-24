@@ -14,7 +14,7 @@ class MyNightPlanCards extends Component {
               </p>
             </div>
 
-            <footer class='blockquote-footer my-night-bottom-controls'>
+            <footer className='blockquote-footer my-night-bottom-controls'>
               <p>this is where controls will go</p>
             </footer>
           </div>

@@ -3,6 +3,9 @@ import MyNightPlanCards from './MyNightPlanCards';
 import Charts from '../Charts/Charts'
 
 class MyNightPlan extends Component {
+  componentDidMount(){
+    document.getElementById('MyNightPlan').scrollIntoView({behavior: 'smooth'});
+  }
   render() {
     return (
       <div className='container w-100'>

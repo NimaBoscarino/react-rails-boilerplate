@@ -69,6 +69,7 @@ class Map extends Component {
           <TripSidebar
             selectionList={this.state.selectionList}
             delete={this.deleteSelectedPlace}
+            showMyNight={this.props.showMyNight}
           />
 
           <CurrentSelectionCard

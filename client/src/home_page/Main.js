@@ -28,8 +28,16 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: "Click the button to load data!"
+      message: "Click the button to load data!",
+      showMyNightPlan:false
     };
+    this.showMyNight=this.showMyNight.bind(this);
+  }
+
+  showMyNight(){
+    this.setState({
+      showMyNightPlan:true
+    })
   }
 
   componentDidMount() {
@@ -48,10 +56,12 @@ class Main extends Component {
       <div className='App'>
         <Intro />
         <NightOutBuilder />
-        <Map />
+        <Map showMyNight={this.showMyNight}/>
 
         <section style={sectionStyle}>
-          <MyNightPlan data={this.state.places}/>
+          {this.state.showMyNightPlan &&
+            (<MyNightPlan data={this.state.places}/>)
+          }
           <AreaSelector />
 
           <section className=''>

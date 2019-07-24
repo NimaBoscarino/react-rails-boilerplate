@@ -43,7 +43,7 @@ class TripSidebar extends Component {
             <TripButton />
           </ul>
 
-          <Button variant='primary' block>Generate Night</Button>
+          <Button variant='primary' block onClick={()=>{this.props.showMyNight()}}>Generate Night</Button>
           <Button variant='primary' block>See On Map</Button>
           <Button variant='primary' block>Create Plan</Button>
 
