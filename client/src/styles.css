@@ -239,7 +239,6 @@ nav .logo {
 }
 
 #CurrentSelectionCard .card-container {
-  height: 40vh;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -251,7 +250,6 @@ nav .logo {
   right: 0;
   margin: 0 auto;
   width: 60%;
-  height: 20vh;
   position: absolute;
   bottom: 0;
   border-bottom: 5px #ffce00 solid;
