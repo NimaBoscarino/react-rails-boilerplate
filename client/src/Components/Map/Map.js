@@ -3,7 +3,7 @@ import HoodSidebar from "./HoodSidebar/HoodSidebar";
 import TripSidebar from "./TripSidebar/TripSidebar";
 import CurrentSelectionCard from "./CurrentSelectionCard/CurrentSelectionCard";
 import GoogleMap from "./GoogleMap";
-import MapHeader from "./MapHeader";
+import MapHeader from "./MapHeader/MapHeader";
 import axios from "axios";
 
 class Map extends Component {

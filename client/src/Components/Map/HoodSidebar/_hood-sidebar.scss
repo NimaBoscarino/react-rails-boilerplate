@@ -1,12 +1,12 @@
 #Map {
   .hood-sidebar {
-    border-top: 5px $medium-yellow solid;
     border-bottom: 5px $medium-yellow solid;
     position: absolute;
     overflow: scroll;
+    margin-top: 7vh;
     left: 0;
     width: 18%;
-    height: 100%;
+    height: 93vh;
     background: rgba($smoky-black, 0.1);
 
     .hood-list {
