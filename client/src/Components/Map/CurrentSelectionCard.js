@@ -15,26 +15,36 @@ class CurrentSelectionCard extends Component {
                   <div className='card-body'>
                     <div className='row'>
                       <div className='col current-card-description'>
-                        <p>col 1</p>
+                        <p>
+                          Airy, contemporary pub & eatery offering classic &
+                          modern Canadian fare, live music & trivia nights.
+                        </p>
                       </div>
                       <div className='col current-card-info'>
-                        <p>col 2</p>
+                        <p>{this.props.currentSelection.address}</p>
                       </div>
-                      <div className='col'>
-                        <button className='btn btn-outline-dark btn-block' onClick={()=>{this.props.addSelection(this.props.currentSelection.id)}}>
-                          Add to my night
-                        </button>
+                      <div className='col score-col'>
+                        <p>
+                          Google Score:{"  "}
+                          {this.props.currentSelection.googleReviewScore} based
+                          on {this.props.currentSelection.googleReviewNumber}{" "}
+                          reviews
+                        </p>
                       </div>
                     </div>
+
+                    <button
+                      className='btn btn-outline-dark btn-block'
+                      onClick={() => {
+                        this.props.addSelection(this.props.currentSelection.id);
+                      }}>
+                      Add to my night
+                    </button>
 
                     <h5 className='card-title'>
                       {this.props.currentSelection.address}
                     </h5>
-                    <p className='card-text'>
-                      Google Score:{" "}
-                      {this.props.currentSelection.googleReviewScore} based on{" "}
-                      {this.props.currentSelection.googleReviewNumber} reviews
-                    </p>
+                    <p className='card-text' />
                   </div>
                 </div>
               </div>
