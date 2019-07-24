@@ -1086,4 +1086,70 @@ nav .logo {
   display: block;
   color: #9ea2a8;
 }
+
+#MyNightPlan {
+  position: relative;
+  text-align: center;
+  padding-top: 5vh;
+  padding-bottom: 2vh;
+  color: white;
+}
+
+#MyNightPlan .my-night-title-row {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#MyNightPlan .my-night-title {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(38px + 1.4vw);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: 700;
+  padding-bottom: 2vh;
+}
+
+#MyNightPlan .night-out-div {
+  width: 100%;
+}
+
+#MyNightPlan .stat-div .stats-card {
+  width: 100%;
+  height: 100%;
+}
+
+#MyNightPlan .stat-div .card-title {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  color: black;
+  border-bottom: 1px solid #070707;
+  padding-bottom: 0.5vh;
+}
+
+#MyNightPlan .stat-div .card-text {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  color: #070707;
+}
+
+#MyNightPlan .stat-div .stats-box {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  color: #070707;
+  border-bottom: 1px solid #070707;
+  padding-bottom: 0.5vh;
+}
+
+#MyNightPlan .night-out-card-div .my-night-out-title {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(12px + 0.4vw);
+  color: #070707;
+  text-align: left;
+}
+
+#MyNightPlan .night-out-card-div .my-night-out-details {
+  text-align: left;
+  color: #070707;
+}
+
+#MyNightPlan .night-out-card-div .my-night-bottom-controls {
+  text-align: right;
+}
 /*# sourceMappingURL=styles.css.map */
