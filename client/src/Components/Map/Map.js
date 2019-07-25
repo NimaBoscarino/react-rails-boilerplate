@@ -33,10 +33,10 @@ class Map extends Component {
     });
   }
   deleteSelectedPlace(id) {
-    // const list=this.state.selectionList.filter(element=>element.id!==id)
-    // this.setState({
-    //   selectionList:list
-    // })
+    const list=this.state.selectionList.filter(element=>element.id!==id)
+    this.setState({
+      selectionList:list
+    })
   }
   componentDidMount() {}
   render() {
