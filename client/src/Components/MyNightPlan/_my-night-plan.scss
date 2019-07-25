@@ -28,8 +28,125 @@
     padding-bottom: 2vh;
   }
 
+  .my-night-title-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .night-out-div {
     width: 100%;
+  }
+
+  .summary-row {
+    width: 100%;
+    display: relative;
+  }
+
+  .my-card-summary-div {
+    padding: 0;
+    margin: 0;
+  }
+
+  .my-card-summary-row {
+    background: $background-gradient-medium;
+    width: 95%;
+    text-align: left;
+    position: relative;
+    margin: 0 auto;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    min-height: 18vh;
+
+    .score-number-col {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      margin-top: 1vh;
+      width: 20vh;
+      height: 100%;
+      float: left;
+      text-align: center;
+      padding-top: 1vh;
+      font-family: $title-font;
+      text-shadow: $text-shadow-title;
+
+      .hotspot-score-title {
+        padding: 0;
+        margin: 0;
+      }
+
+      .hotspot-score-number {
+        font-weight: 700;
+        font-size: $font-size-hotspot-number-my-night;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .details-col {
+      display: inline-block;
+      top: 0;
+      width: 30vh;
+      height: 100%;
+      float: left;
+    }
+
+    .my-card-summary-summary-div {
+      margin-top: 2vh;
+
+      .my-card-summary-summary-row {
+        margin: 0 auto;
+      }
+
+      .my-card-summary-title {
+        display: block;
+        font-family: $title-font;
+        font-size: $font-size-xxxl;
+        margin-left: 1.5vh;
+        margin-top: 1.5vh;
+        padding: 0;
+        margin-top: 5px;
+      }
+      .my-card-summary-address {
+        display: block;
+        font-family: $title-font;
+        font-size: $font-size-large;
+        margin-left: 1.5vh;
+        margin-top: 1.5vh;
+        padding: 0;
+        margin-top: 5px;
+      }
+    }
+
+    .my-card-summary-button-div {
+      margin-top: 10px;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .my-card-summary-button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding-top: 20px;
+      padding-right: 5vh;
+      font-family: $title-font;
+      background-color: transparent;
+      border: none;
+
+      width: 4vh;
+    }
+
+    .button-icon {
+      font-size: $font-size-xxxl;
+      text-align: center;
+      padding-left: 2px;
+      margin-left: 5px;
+    }
   }
 
   .night-out-card-div {
@@ -47,6 +164,57 @@
 
     .my-night-bottom-controls {
       text-align: right;
+    }
+  }
+
+  .best-times-card {
+    background: $background-gradient-medium;
+    width: 95%;
+    text-align: left;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    min-height: 18vh;
+
+    .best-times-title {
+      font-family: $title-font;
+      font-size: $font-size-xxl;
+    }
+
+    .clock-icon {
+      margin: 0;
+      padding: 0;
+    }
+
+    .times-title {
+      font-size: $font-size-medium;
+      text-transform: uppercase;
+      color: $quick-silver;
+    }
+  }
+
+  .hidden-card {
+    background: $background-gradient-dark;
+
+    text-align: left;
+    position: relative;
+    margin: 0 auto;
+    border-top-right-radius: none;
+    border-top-left-radius: none;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    min-height: 18vh;
+
+    .hidden-card {
+      margin: 0;
     }
   }
 }

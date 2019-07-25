@@ -1355,8 +1355,126 @@ nav .logo {
   padding-bottom: 2vh;
 }
 
+#MyNightPlan .my-night-title-card {
+  width: 100%;
+  margin: 0 auto;
+}
+
 #MyNightPlan .night-out-div {
   width: 100%;
+}
+
+#MyNightPlan .summary-row {
+  width: 100%;
+  display: relative;
+}
+
+#MyNightPlan .my-card-summary-div {
+  padding: 0;
+  margin: 0;
+}
+
+#MyNightPlan .my-card-summary-row {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  width: 95%;
+  text-align: left;
+  position: relative;
+  margin: 0 auto;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  min-height: 18vh;
+}
+
+#MyNightPlan .my-card-summary-row .score-number-col {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-top: 1vh;
+  width: 20vh;
+  height: 100%;
+  float: left;
+  text-align: center;
+  padding-top: 1vh;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#MyNightPlan .my-card-summary-row .score-number-col .hotspot-score-title {
+  padding: 0;
+  margin: 0;
+}
+
+#MyNightPlan .my-card-summary-row .score-number-col .hotspot-score-number {
+  font-weight: 700;
+  font-size: 5.5vw;
+  padding: 0;
+  margin: 0;
+}
+
+#MyNightPlan .my-card-summary-row .details-col {
+  display: inline-block;
+  top: 0;
+  width: 30vh;
+  height: 100%;
+  float: left;
+}
+
+#MyNightPlan .my-card-summary-row .my-card-summary-summary-div {
+  margin-top: 2vh;
+}
+
+#MyNightPlan .my-card-summary-row .my-card-summary-summary-div .my-card-summary-summary-row {
+  margin: 0 auto;
+}
+
+#MyNightPlan .my-card-summary-row .my-card-summary-summary-div .my-card-summary-title {
+  display: block;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(20px + 0.4vw);
+  margin-left: 1.5vh;
+  margin-top: 1.5vh;
+  padding: 0;
+  margin-top: 5px;
+}
+
+#MyNightPlan .my-card-summary-row .my-card-summary-summary-div .my-card-summary-address {
+  display: block;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(12px + 0.4vw);
+  margin-left: 1.5vh;
+  margin-top: 1.5vh;
+  padding: 0;
+  margin-top: 5px;
+}
+
+#MyNightPlan .my-card-summary-row .my-card-summary-button-div {
+  margin-top: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+#MyNightPlan .my-card-summary-row .my-card-summary-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-top: 20px;
+  padding-right: 5vh;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  background-color: transparent;
+  border: none;
+  width: 4vh;
+}
+
+#MyNightPlan .my-card-summary-row .button-icon {
+  font-size: calc(20px + 0.4vw);
+  text-align: center;
+  padding-left: 2px;
+  margin-left: 5px;
 }
 
 #MyNightPlan .night-out-card-div .my-night-out-title {
@@ -1373,5 +1491,57 @@ nav .logo {
 
 #MyNightPlan .night-out-card-div .my-night-bottom-controls {
   text-align: right;
+}
+
+#MyNightPlan .best-times-card {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  width: 95%;
+  text-align: left;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 20px;
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  min-height: 18vh;
+}
+
+#MyNightPlan .best-times-card .best-times-title {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(16px + 0.4vw);
+}
+
+#MyNightPlan .best-times-card .clock-icon {
+  margin: 0;
+  padding: 0;
+}
+
+#MyNightPlan .best-times-card .times-title {
+  font-size: calc(10px + 0.3vw);
+  text-transform: uppercase;
+  color: #9ea2a8;
+}
+
+#MyNightPlan .hidden-card {
+  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
+  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  text-align: left;
+  position: relative;
+  margin: 0 auto;
+  border-top-right-radius: none;
+  border-top-left-radius: none;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  min-height: 18vh;
+}
+
+#MyNightPlan .hidden-card .hidden-card {
+  margin: 0;
 }
 /*# sourceMappingURL=styles.css.map */
