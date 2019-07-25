@@ -1229,10 +1229,17 @@ nav .logo {
 }
 
 #MyNightPlan {
-  position: relative;
+  min-height: 10vh;
+  width: 100%;
+  padding: 0;
+  margin: -2px auto;
+}
+
+#MyNightPlan .my-night-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 4vh 5vh 4vh 5vh;
   text-align: center;
-  padding-top: 5vh;
-  padding-bottom: 2vh;
   color: white;
 }
 
