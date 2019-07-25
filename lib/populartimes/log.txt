@@ -1,0 +1,41 @@
+Making night_club API calls in square 7, 8
+36 calls to make.
+Making call # 1 of 36
+Making call # 2 of 36
+Making call # 3 of 36
+Making call # 4 of 36
+Making call # 5 of 36
+Making call # 6 of 36
+Making call # 7 of 36
+Making call # 8 of 36
+Making call # 9 of 36
+Making call # 10 of 36
+Making call # 11 of 36
+Making call # 12 of 36
+Making call # 13 of 36
+Making call # 14 of 36
+Making call # 15 of 36
+Making call # 16 of 36
+Making call # 17 of 36
+Making call # 18 of 36
+Making call # 19 of 36
+Making call # 20 of 36
+Making call # 21 of 36
+Making call # 22 of 36
+Making call # 23 of 36
+Making call # 24 of 36
+Making call # 25 of 36
+Making call # 26 of 36
+Making call # 27 of 36
+Making call # 28 of 36
+Making call # 29 of 36
+Making call # 30 of 36
+Making call # 31 of 36
+Making call # 32 of 36
+Making call # 33 of 36
+Making call # 34 of 36
+Making call # 35 of 36
+Making call # 36 of 36
+Completed read in 11.867821913 seconds
+ 36
+Completed read in 29.82424676 seconds

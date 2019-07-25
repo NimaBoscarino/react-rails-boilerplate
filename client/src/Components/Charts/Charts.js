@@ -46,27 +46,37 @@ class Charts extends Component {
 
   render() {
     const options = {
+      backgroundColor: "transparent",
       animationEnabled: true,
       exportEnabled: true,
       theme: "light2", // "light1", "dark1", "dark2"
-      title: {
-        text: "Popular Times"
+      title: {},
+      legend: {
+        fontColor: "white"
       },
       toolTip: {
         shared: true
       },
       axisY: {
-        title: "Busy level",
-        includeZero: true
+        title: "Time of Day",
+        includeZero: true,
+        titleFontColor: "white",
+        labelFontColor: "white",
+        titleFontWeight: "bold",
+        gridColor: "white",
+        gridThickness: 1
       },
       axisX: {
-        title: "Hour of the Day"
+        title: "Busy Times",
+        titleFontWeight: "bold",
+        titleFontColor: "white",
+        labelFontColor: "white"
       },
       data: this.state.chartData
     };
 
     return (
-      <div>
+      <div className='chart-container'>
         <CanvasJSChart
           options={options}
           /* onRef={ref => this.chart = ref} */

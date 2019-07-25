@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MyNightPlanCards from "./MyNightPlanCards";
+import { FaChartLine } from "react-icons/fa";
 
 import Charts from "../Charts/Charts";
 
@@ -11,58 +12,49 @@ class MyNightPlan extends Component {
   }
   render() {
     return (
-      <div className='container w-100'>
-        <div id='MyNightPlan'>
-          <div className='row my-night-title-row'>
-            <div className='col'>
-              <h1 className='my-night-title'>My Night</h1>
-            </div>
-          </div>
-
-          <div className='d-inline-flex p-2 night-out-div w-100'>
-            <div className='col d-flex flex-column night-out-card-div'>
-              {this.props.nightList.map(place => {
-                return <MyNightPlanCards key={place.id} place={place} />;
-              })}
-
-              <div className='p-2 stat-div'>
-                <div className='card stats-card'>
-                  <div className='card-header stats-title'>
-                    <h5 className='stats-title'>Your Night Stats</h5>
-                  </div>
-                  <div className='card-body'>
-                    <div className='card-body card-text'>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Integer posuere erat a ante.
-                      </p>
-                    </div>
-
-                    <footer className='blockquote-footer my-night-bottom-controls'>
-                      <p>this is where controls will go</p>
-                    </footer>
-                  </div>
-                </div>
+      <div id='MyNightPlan'>
+        <div className='container-fluid my-night-container w-100 p-0 m-0'>
+          <div className='my-night-container'>
+            <div className='row my-night-title-row'>
+              <div className='col'>
+                <h1 className='my-night-title'>My Night</h1>
               </div>
+            </div>
 
-              <div className='card stats-card'>
-                <div className='card-body'>
-                  <h5 className='card-title'>Night Stats</h5>
+            <div className='d-inline-flex p-2 night-out-div w-100'>
+              <div className='col d-flex flex-column night-out-card-div'>
+                {this.props.nightList.map(place => {
+                  return <MyNightPlanCards key={place.id} place={place} />;
+                })}
 
-                  <div className='flex stats-box'>
-                    <div className='row justify-content-md-center'>
-                      <div className='col-md-auto y-title-col'>
-                        <h6 className='y-axis-label'>Busy Level</h6>
-                      </div>
-
-                      <div className='col chart-col'>
-                        <Charts data={this.props.nightList} />
-                      </div>
+                <div className='p-2 stat-div'>
+                  <div className='card stats-card'>
+                    <div className='card-header stats-title'>
+                      <h5 className='stats-title-text'>
+                        <span className='stats-icon'>
+                          <FaChartLine />
+                        </span>{" "}
+                        Your Night Stats
+                      </h5>
                     </div>
+                    <div className='card-body'>
+                      <div className='card-body card-text'>
+                        <div className='row'>
+                          <div className='col-4 chart-col'>
+                            <div className='col hotspot-score-col d-flex align-items-stretch'>
+                              <div className='row w-100'>
+                                <h5 className='hotspot-score-title '>
+                                  Your Night's HotSpot Score
+                                </h5>
 
-                    <div className='row justify-content-md-center'>
-                      <div className='col x-title-col'>
-                        <h6 className='x-axis-label'>Time of Day</h6>
+                                <p className='hotspot-score-number'>54</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className='col-8 chart-col'>
+                            <Charts data={this.props.nightList} />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

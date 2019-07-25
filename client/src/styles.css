@@ -324,6 +324,21 @@ nav .logo {
   text-shadow: 1px 1px 1px rgba(7, 7, 7, 0.5);
 }
 
+#CurrentSelectionCard .modal-box {
+  background-color: pink;
+}
+
+#CurrentSelectionCard .modal-box .modal-content {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+#CurrentSelectionCard .modal-box .modal-picture {
+  width: 100%;
+}
+
 #CurrentSelectionCard {
   position: absolute;
   bottom: 0;
@@ -393,16 +408,6 @@ nav .logo {
 
 #CurrentSelectionCard .icon-arrows {
   color: #ffce00;
-}
-
-.modal-box .modal-content {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-}
-
-.modal-box .modal-picture {
-  width: 100%;
 }
 
 #Map .map-header {
@@ -1107,84 +1112,104 @@ nav .logo {
 
 #MyNightPlan .stat-div {
   position: relative;
+  margin-top: 4vh;
 }
 
 #MyNightPlan .stat-div .stats-card {
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
 }
 
 #MyNightPlan .stat-div h5.stats-title {
+  padding: 0;
   color: white;
 }
 
-#MyNightPlan .stat-div .card-title {
+#MyNightPlan .stat-div .stats-title {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(20px + 0.4vw);
   color: white;
-  border-bottom: 1px solid #9ea2a8;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   padding-bottom: 1vh;
+  padding-top: 1.5vh;
+}
+
+#MyNightPlan .stat-div .stats-title-text {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(20px + 0.4vw);
+  color: white;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding-bottom: 1.5vh;
   height: 3vh;
 }
 
 #MyNightPlan .stat-div .card-text {
   font-family: "Fira Sans Extra Condensed", sans-serif;
-  color: #070707;
+  color: white;
 }
 
 #MyNightPlan .stat-div .stats-box {
   top: 0;
   font-family: "Fira Sans Extra Condensed", sans-serif;
-  color: #070707;
+  color: white;
   border-bottom: 1px solid #9ea2a8;
   padding-bottom: 0.5vh;
   width: 100%;
   margin-top: 8vh;
 }
 
-#MyNightPlan .stat-div .stats-title {
-  color: black;
+#MyNightPlan .stat-div .hotspot-score-col {
+  display: inline-block;
+  width: 100%;
 }
 
-#MyNightPlan .stat-div .y-title-col {
-  padding: 0;
-  margin: 0;
-  max-width: 25%;
+#MyNightPlan .stat-div .hotspot-score-col h5.hotspot-score-title {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 
-#MyNightPlan .stat-div .y-axis-label {
-  position: absolute;
+#MyNightPlan .stat-div .hotspot-score-col p.hotspot-score-number {
+  display: block;
+  margin: 0 auto;
   color: white;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  font-size: calc(16px + 0.4vw);
-  padding-top: 10%;
-  margin: 0;
+  font-size: 50px;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 10vw;
+  text-shadow: 8px 8px 4px black;
 }
 
-#MyNightPlan .stat-div .x-axis-label {
-  color: white;
-  font-size: calc(16px + 0.4vw);
-  padding-left: 20%;
+#MyNightPlan .stat-div .chart-container-div {
+  display: inline-block;
+  margin: 0 auto;
+  width: 80%;
 }
 
 #MyNightPlan .stat-div .chart-col {
-  display: inline-block;
-  left: 0;
-  top: 2;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+#MyNightPlan .stat-div .stats-icon {
+  color: #ffe80a;
+  font-size: calc(16px + 0.4vw);
+  padding-left: 5px;
 }
 
 #MyNightPlan .stat-div .canvasjs-chart-canvas {
-  background-color: transparent;
-  position: absolute;
-  right: 0;
+  background-color: transparent !important;
+  display: inline-block;
+  width: 50%;
 }
 
 #MyNightPlan .stat-div .canvasjs-chart-container {
-  background-color: transparent;
-  position: absolute;
+  background-color: transparent !important;
   right: 0;
 }
 
@@ -1196,11 +1221,30 @@ nav .logo {
   display: none;
 }
 
+#MyNightPlan .time-stats-card {
+  width: 100%;
+}
+
+#MyNightPlan .time-stats-card .time-stats-card-body {
+  color: #070707;
+}
+
+#MyNightPlan .time-stats-card .time-stats-card-text {
+  color: #070707;
+}
+
 #MyNightPlan {
-  position: relative;
+  min-height: 10vh;
+  width: 100%;
+  padding: 0;
+  margin: -2px auto;
+}
+
+#MyNightPlan .my-night-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 4vh 5vh 4vh 5vh;
   text-align: center;
-  padding-top: 5vh;
-  padding-bottom: 2vh;
   color: white;
 }
 

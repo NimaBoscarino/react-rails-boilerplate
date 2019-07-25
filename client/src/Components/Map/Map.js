@@ -6,6 +6,7 @@ import GoogleMap from "./GoogleMap";
 import MapHeader from "./MapHeader/MapHeader";
 import axios from "axios";
 
+
 class Map extends Component {
   constructor(props) {
     super(props);
