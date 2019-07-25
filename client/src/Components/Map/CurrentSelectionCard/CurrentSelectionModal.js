@@ -28,7 +28,7 @@ export default class CurrentSelectionModal extends React.Component {
         <Button variant='primary' size='sm' block onClick={this.toggle}>
           <FiImage /> See More Images
         </Button>
-        <Modal isOpen={this.state.modal} className='modal-container' centeredgi>
+        <Modal isOpen={this.state.modal} className='modal-container' centered>
           <ModalHeader>Gastown Pub</ModalHeader>
           <ModalBody className='modal-box'>
             <Carousel />
