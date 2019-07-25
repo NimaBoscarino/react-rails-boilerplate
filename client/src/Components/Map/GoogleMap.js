@@ -1,4 +1,4 @@
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import { Map, GoogleApiWrapper, Polygon } from "google-maps-react";
 import axios from 'axios';
 import React, { Component } from "react";
 
@@ -8,22 +8,34 @@ class GoogleMap extends Component {
     this.state={
       message:"loading data",
       zoom:8,
-      initialCenter:{ lat: 47.444, lng: -122.176 },
+      initialCenter:{ lat: 49.2827, lng: -123.1207 },
       center:null
     };
   }
 
   componentDidMount(){
     axios
-      .get("/places") // You can simply make your requests to "/api/whatever you want"
+      .get("/neighbourhoods") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
-        const places=this.processDataPlaces(response.data.places);
+        const neighbourhoods=this.processDataNeighbourhoods(response.data.neighbourhoods);
         this.setState({
-          places:places,
-          center: places[0].coordinates,
-          zoom:13
+          neighbourhoods: neighbourhoods,
+          // center: {lat: neighbourhoods[0].centerlat, lng:neighbourhoods[0].centerlng},
+          zoom:12
         });
       });
+  }
+  processDataNeighbourhoods(neighbourhoodData){
+    return neighbourhoodData.map(element=>{
+      return { 
+        id:element.id,
+        name:element.name,
+        center: {
+          lat:element.centerlat, 
+          lng:element.centerlong},
+        borderPoints:element.border_points
+      }
+    });
   }
   
   processDataPlaces(placesData){
@@ -49,13 +61,26 @@ class GoogleMap extends Component {
           initialCenter={this.state.initialCenter}
           center={this.state.center}>
           
-          { this.state.places && 
-            this.state.places.map((place)=>{
+          { this.state.neighbourhoods && 
+            this.state.neighbourhoods.map((element)=>{
               return (
-                <Marker position={place.coordinates} key={place.id} />
+                <Polygon
+                  paths={element.borderPoints}
+                  key={element.id}
+                  options={{
+                      fillColor: "#000",
+                      fillOpacity: 0.4,
+                      strokeColor: "#000",
+                      strokeOpacity: 1,
+                      strokeWeight: 1
+                  }}
+                  onClick={() => {
+                      console.log("ahmet")
+                  }}/>
               )
             })
           }
+      
           
         </Map>
       </div>

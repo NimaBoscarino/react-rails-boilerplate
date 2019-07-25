@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :places, only: [:index, :show]
+  resources :neighbourhoods, only: [:index] 
 
   get '*path', to: "static_pages#fallback_index_html", constraints: ->(request) do
     !request.xhr? && request.format.html?
