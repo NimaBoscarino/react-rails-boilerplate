@@ -19,14 +19,6 @@ require 'geocoder'
 
 allfiles = Dir[Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", "*.kml")]
 
-#puts "Destroying border points..."
-#BorderPoint.destroy_all
-#puts "Destroying types..."
-#Type.destroy_all
-#puts "Destroying populartimes"
-#PopularTime.destroy_all
-#puts "Destroying places..."
-#Place.destroy_all
 puts "Destroying neighbourhoods..."
 Neighbourhood.destroy_all
 
