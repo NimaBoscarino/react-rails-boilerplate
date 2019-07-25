@@ -1,0 +1,91 @@
+#MyNightPlan {
+  .stat-div {
+    position: relative;
+
+    .stats-card {
+      background: $background-gradient-dark;
+    }
+
+    h5.stats-title {
+      color: $white;
+    }
+
+    .card-title {
+      font-family: $title-font;
+      font-size: $font-size-xxxl;
+      color: $white;
+      border-bottom: 1px solid $quick-silver;
+      padding-bottom: 1vh;
+      height: 3vh;
+    }
+
+    .card-text {
+      font-family: $title-font;
+      color: $smoky-black;
+    }
+
+    .stats-box {
+      top: 0;
+      font-family: $title-font;
+      color: $smoky-black;
+      border-bottom: 1px solid $quick-silver;
+      padding-bottom: 0.5vh;
+      width: 100%;
+
+      margin-top: 8vh;
+    }
+
+    .stats-title {
+      color: black;
+    }
+
+    .y-title-col {
+      padding: 0;
+      margin: 0;
+      max-width: 25%;
+    }
+
+    .y-axis-label {
+      position: absolute;
+      color: white;
+      transform: rotate(-90deg);
+      font-size: $font-size-xxl;
+      padding-top: 10%;
+      margin: 0;
+    }
+
+    .x-axis-label {
+      color: white;
+      font-size: $font-size-xxl;
+      padding-left: 20%;
+    }
+
+    .chart-col {
+      display: inline-block;
+      left: 0;
+      top: 2;
+      padding: 0;
+      margin: 0;
+    }
+
+    .canvasjs-chart-canvas {
+      background-color: transparent;
+      position: absolute;
+      right: 0;
+    }
+
+    .canvasjs-chart-container {
+      background-color: transparent;
+      position: absolute;
+      right: 0;
+    }
+
+    .canvasjs-chart-credit {
+      display: none;
+    }
+
+    .canvasjs-chart-toolbar {
+      display: none;
+    }
+  }
+}
