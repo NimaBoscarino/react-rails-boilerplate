@@ -6,36 +6,35 @@ import HoodPlaceList from "./HoodPlaceList";
 
 
 class HoodList extends Component {
-
-
   constructor(props) {
     super(props);
     this.state = {
-      message: "Click the button to load data!"
+      message: "Click the button to load data!",
+      showListPlaces:false
     };
     this.handleClick=this.handleClick.bind(this);
+    this.clickTogglePlaces=this.clickTogglePlaces.bind(this);
   }
 
   componentDidMount() {
-    axios
-      .get("/places") // You can simply make your requests to "/api/whatever you want"
-      .then(response => {
-        this.setState({
-          places: response.data.places
-        });
-      });
   }
 
   handleClick(id){
     this.props.updateSelection(id);
   }
 
+  clickTogglePlaces(){
+    this.setState({
+      showListPlaces: !this.state.showListPlaces
+    })
+  }
+
   render() {
     return (
-      <div>
+      <div onClick={()=>{this.clickTogglePlaces()}}>
         <li className='list-group-item hood-name-li'>
         <div className='col hood-col'>
-        <h4  className='hood-title-text'>Gastown</h4>
+        <h4  className='hood-title-text'>{this.props.neighbourhood.name}</h4>
         </div>
 
         <div className='col hotspot-score float-right'>
@@ -44,8 +43,8 @@ class HoodList extends Component {
         </div>
         
         </li>
-        { this.state.places &&
-            this.state.places.map((place,index)=>{
+        { this.state.showListPlaces &&
+            this.props.places.map((place,index)=>{
               return (
                 <HoodPlaceList place={place} index={index+1} key={place.id} onClick={this.handleClick}/>
               )

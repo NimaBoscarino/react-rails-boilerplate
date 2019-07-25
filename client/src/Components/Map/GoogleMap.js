@@ -7,23 +7,21 @@ class GoogleMap extends Component {
     super(props);
     this.state={
       message:"loading data",
-      zoom:8,
+      zoom:12,
       initialCenter:{ lat: 49.2827, lng: -123.1207 },
       center:null
     };
   }
 
   componentDidMount(){
-    axios
-      .get("/neighbourhoods") // You can simply make your requests to "/api/whatever you want"
-      .then(response => {
-        const neighbourhoods=this.processDataNeighbourhoods(response.data.neighbourhoods);
-        this.setState({
-          neighbourhoods: neighbourhoods,
-          // center: {lat: neighbourhoods[0].centerlat, lng:neighbourhoods[0].centerlng},
-          zoom:12
-        });
-      });
+    // axios
+    //   .get("/neighbourhoods") // You can simply make your requests to "/api/whatever you want"
+    //   .then(response => {
+    //     const neighbourhoods=this.processDataNeighbourhoods(response.data.neighbourhoods);
+    //     this.setState({
+    //       neighbourhoods: neighbourhoods
+    //     });
+    //   });
   }
   processDataNeighbourhoods(neighbourhoodData){
     return neighbourhoodData.map(element=>{

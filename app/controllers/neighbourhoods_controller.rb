@@ -3,8 +3,10 @@ class NeighbourhoodsController < ApplicationController
         nbh=Neighbourhood.all
         array = []
         nbh.each{|element|
-            hash=formatData(element)
-            array.push(hash)
+            if element.places.count!=0
+                hash=formatData(element)
+                array.push(hash)
+            end
         }
         render :json=>{
             neighbourhoods: array

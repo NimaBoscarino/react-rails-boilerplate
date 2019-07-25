@@ -45,11 +45,31 @@ class Main extends Component {
     axios
       .get("/places") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
-        console.log(response.data.places);
         this.setState({
           places: response.data.places
         });
       });
+    axios
+      .get("/neighbourhoods") // You can simply make your requests to "/api/whatever you want"
+      .then(response => {
+        const neighbourhoods=this.processDataNeighbourhoods(response.data.neighbourhoods);
+        this.setState({
+          neighbourhoods: neighbourhoods
+        });
+      });
+  }
+
+  processDataNeighbourhoods(neighbourhoodData){
+    return neighbourhoodData.map(element=>{
+      return { 
+        id:element.id,
+        name:element.name,
+        center: {
+          lat:element.centerlat, 
+          lng:element.centerlong},
+        borderPoints:element.border_points
+      }
+    });
   }
 
   render() {
@@ -57,7 +77,7 @@ class Main extends Component {
       <div className='App'>
         <Intro />
         <NightOutBuilder />
-        <Map showMyNight={this.showMyNight} />
+        <Map showMyNight={this.showMyNight} places={this.state.places} neighbourhoods={this.state.neighbourhoods}/>
 
         <section style={sectionStyle}>
           {this.state.showMyNightPlan && (
