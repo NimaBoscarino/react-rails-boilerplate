@@ -1,0 +1,16 @@
+#CurrentSelectionCard {
+  .modal-box {
+    background-color: pink;
+
+    .modal-content {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .modal-picture {
+      width: 100%;
+    }
+  }
+}
