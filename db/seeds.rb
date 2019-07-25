@@ -10,7 +10,7 @@ require_relative 'mount-pleasant-data.rb'
 require 'json'
 
 start = Time.now
-=begin
+
 # Seed Neighbourhoods --------------------------------------------------------------------------------------------
 puts "Seeding neighbourhoods"
 
@@ -19,8 +19,14 @@ require 'geocoder'
 
 allfiles = Dir[Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", "*.kml")]
 
-puts "Destroying border points..."
-BorderPoint.destroy_all
+#puts "Destroying border points..."
+#BorderPoint.destroy_all
+#puts "Destroying types..."
+#Type.destroy_all
+#puts "Destroying populartimes"
+#PopularTime.destroy_all
+#puts "Destroying places..."
+#Place.destroy_all
 puts "Destroying neighbourhoods..."
 Neighbourhood.destroy_all
 
@@ -63,12 +69,14 @@ allfiles.each do |file|
   end
 
 end
-=end
+
 # Seed Places ----------------------------------------------------------------------------------------------------
 
 # weird thing with escape characters is that if I add a few more characters to
 # the end of a slice, it will do it correctly. This is to get rid of a \n
-=begin
+
+require Rails.root.join("lib", "which-neighbourhood", "whichNeighbourhood.rb")
+
 datamod = @data.concat("ice")
 datamod.slice! "\nice"
 
@@ -76,10 +84,11 @@ jsonarr = JSON.parse(datamod)
 
 arrnum = 0
 
-Place.destroy_all
-
 jsonarr.each do |obj|
-  toSave = Place.new()
+  neighbourhood = whichNeighbourhood(obj["coordinates"]["lat"], obj["coordinates"]["lng"])
+  nbh = Neighbourhood.find_or_create_by!(name: neighbourhood)
+
+  toSave = nbh.places.new()
   if obj.key?("id")
     toSave.google_id = obj["id"]
   end
@@ -143,9 +152,10 @@ jsonarr.each do |obj|
   arrnum += 1
   puts arrnum
 end
-=end
+
 endTime = Time.now
 totalTime = endTime - start
+puts Place.count.to_s << "Places created"
 puts BorderPoint.count.to_s << " BorderPoints created"
 puts Neighbourhood.count.to_s << " Neighbourhoods created"
 puts "It took " << totalTime.to_s << " seconds to do everything."
