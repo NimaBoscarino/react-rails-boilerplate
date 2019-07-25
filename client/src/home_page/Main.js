@@ -6,8 +6,8 @@ import Map from "../Components/Map/Map";
 import AreaSelector from "../Components/AreaSelector/AreaSelector";
 import HotListCards from "../Components/HotListCards/HotListCards";
 import MyNightPlan from "../Components/MyNightPlan/MyNightPlan";
-import AreaCards from "../Components/AreaCards/AreaCards";
 import Background from "../global-assets/vancouver-main-background.png";
+
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -29,16 +29,16 @@ class Main extends Component {
     super(props);
     this.state = {
       message: "Click the button to load data!",
-      showMyNightPlan:false
+      showMyNightPlan: false
     };
-    this.showMyNight=this.showMyNight.bind(this);
+    this.showMyNight = this.showMyNight.bind(this);
   }
 
-  showMyNight(selectionList){
+  showMyNight(selectionList) {
     this.setState({
-      showMyNightPlan:true,
-      nightList:selectionList
-    })
+      showMyNightPlan: true,
+      nightList: selectionList
+    });
   }
 
   componentDidMount() {
@@ -57,12 +57,12 @@ class Main extends Component {
       <div className='App'>
         <Intro />
         <NightOutBuilder />
-        <Map showMyNight={this.showMyNight}/>
+        <Map showMyNight={this.showMyNight} />
 
         <section style={sectionStyle}>
-          {this.state.showMyNightPlan &&
-            (<MyNightPlan nightList={this.state.nightList}/>)
-          }
+          {this.state.showMyNightPlan && (
+            <MyNightPlan nightList={this.state.nightList} />
+          )}
           <AreaSelector />
 
           <section className=''>
@@ -70,10 +70,6 @@ class Main extends Component {
               this.state.places.map(place => {
                 return <HotListCards place={place} key={place.id} />;
               })}
-          </section>
-
-          <section className='row area-section d-flex justify-content-between'>
-            <AreaCards />
           </section>
 
           <h1>This is the Main</h1>

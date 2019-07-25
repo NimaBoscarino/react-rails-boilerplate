@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import ModalContent from "./ModalContent";
 import { FiImage } from "react-icons/fi";
+import Carousel from "./CarouselModal";
 
 export default class CurrentSelectionModal extends React.Component {
   constructor(props) {
@@ -28,23 +28,10 @@ export default class CurrentSelectionModal extends React.Component {
         <Button variant='primary' size='sm' block onClick={this.toggle}>
           <FiImage /> See More Images
         </Button>
-        <Modal isOpen={this.state.modal}>
-          <ModalHeader>
-            Gastown Pub
-            <Button color='danger' onClick={this.toggle}>
-              Close
-            </Button>
-          </ModalHeader>
+        <Modal isOpen={this.state.modal} className='modal-container' centered>
+          <ModalHeader>Gastown Pub</ModalHeader>
           <ModalBody className='modal-box'>
-            <div className='row'>
-              <ModalContent />
-            </div>
-            <div className='row'>
-              <ModalContent />
-            </div>
-            <div className='row'>
-              <ModalContent />
-            </div>
+            <Carousel />
           </ModalBody>
           <ModalFooter>
             <Button color='danger' onClick={this.toggle}>

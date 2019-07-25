@@ -1,82 +1,101 @@
 #MyNightPlan {
   .stat-div {
     position: relative;
+    margin-top: 4vh;
 
     .stats-card {
-      background: $background-gradient-dark;
+      width: 100%;
+      background: $background-gradient-light;
     }
 
     h5.stats-title {
+      padding: 0;
       color: $white;
     }
 
-    .card-title {
+    .stats-title {
       font-family: $title-font;
       font-size: $font-size-xxxl;
       color: $white;
-      border-bottom: 1px solid $quick-silver;
+      background: $background-gradient-light;
       padding-bottom: 1vh;
+      padding-top: 1.5vh;
+    }
+
+    .stats-title-text {
+      font-family: $title-font;
+      font-size: $font-size-xxxl;
+      color: $white;
+      font-weight: 700;
+      text-shadow: $text-shadow-title;
+      padding-bottom: 1.5vh;
       height: 3vh;
     }
 
     .card-text {
       font-family: $title-font;
-      color: $smoky-black;
+      color: $white;
     }
 
     .stats-box {
       top: 0;
       font-family: $title-font;
-      color: $smoky-black;
+      color: $white;
       border-bottom: 1px solid $quick-silver;
       padding-bottom: 0.5vh;
       width: 100%;
-
       margin-top: 8vh;
     }
 
-    .stats-title {
-      color: black;
+    .hotspot-score-col {
+      display: inline-block;
+      width: 100%;
+
+      h5.hotspot-score-title {
+        font-family: $title-font;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      p.hotspot-score-number {
+        display: block;
+        margin: 0 auto;
+        color: $white;
+        font-size: 50px;
+        font-family: $title-font;
+        font-weight: 700;
+        font-size: $font-size-hotspot-number-stat-box;
+        text-shadow: 8px 8px 4px black;
+      }
     }
 
-    .y-title-col {
-      padding: 0;
-      margin: 0;
-      max-width: 25%;
-    }
-
-    .y-axis-label {
-      position: absolute;
-      color: white;
-      transform: rotate(-90deg);
-      font-size: $font-size-xxl;
-      padding-top: 10%;
-      margin: 0;
-    }
-
-    .x-axis-label {
-      color: white;
-      font-size: $font-size-xxl;
-      padding-left: 20%;
+    .chart-container-div {
+      display: inline-block;
+      margin: 0 auto;
+      width: 80%;
     }
 
     .chart-col {
-      display: inline-block;
-      left: 0;
-      top: 2;
-      padding: 0;
       margin: 0;
+      padding: 0;
+    }
+
+    .stats-icon {
+      color: $bright-yellow;
+      font-size: $font-size-xxl;
+      padding-left: 5px;
     }
 
     .canvasjs-chart-canvas {
-      background-color: transparent;
-      position: absolute;
-      right: 0;
+      background-color: transparent !important;
+      display: inline-block;
+      width: 50%;
     }
 
     .canvasjs-chart-container {
-      background-color: transparent;
-      position: absolute;
+      background-color: transparent !important;
       right: 0;
     }
 
@@ -86,6 +105,18 @@
 
     .canvasjs-chart-toolbar {
       display: none;
+    }
+  }
+
+  .time-stats-card {
+    width: 100%;
+
+    .time-stats-card-body {
+      color: $smoky-black;
+    }
+
+    .time-stats-card-text {
+      color: $smoky-black;
     }
   }
 }

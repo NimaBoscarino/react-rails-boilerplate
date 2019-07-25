@@ -1,11 +1,18 @@
 @import "./my-night-stats";
 
 #MyNightPlan {
-  position: relative;
-  text-align: center;
-  padding-top: 5vh;
-  padding-bottom: 2vh;
-  color: $white;
+  min-height: 10vh;
+  width: 100%;
+  padding: 0;
+  margin: -2px auto;
+
+  .my-night-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 4vh 5vh 4vh 5vh;
+    text-align: center;
+    color: white;
+  }
 
   .my-night-title-row {
     width: 100%;
@@ -41,6 +48,5 @@
     .my-night-bottom-controls {
       text-align: right;
     }
-
   }
 }

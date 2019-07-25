@@ -1,3 +1,5 @@
+@import "./current-selection-modal";
+
 #CurrentSelectionCard {
   position: absolute;
   bottom: 0;
@@ -71,17 +73,5 @@
 
   .icon-arrows {
     color: $medium-yellow;
-  }
-}
-
-.modal-box {
-  .modal-content {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .modal-picture {
-    width: 100%;
   }
 }
