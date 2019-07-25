@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import HotSpotIcon from "../../../global-assets/hotspot-score-icon-small.png";
 import HoodPlaceList from "./HoodPlaceList";
 
@@ -31,9 +31,9 @@ class HoodList extends Component {
 
   render() {
     return (
-      <div onClick={()=>{this.clickTogglePlaces()}}>
+      <div>
         <li className='list-group-item hood-name-li'>
-        <div className='col hood-col'>
+        <div className='col hood-col' onClick={()=>{this.clickTogglePlaces()}}>
         <h4  className='hood-title-text'>{this.props.neighbourhood.name}</h4>
         </div>
 
@@ -44,7 +44,9 @@ class HoodList extends Component {
         
         </li>
         { this.state.showListPlaces &&
-            this.props.places.map((place,index)=>{
+            this.props.places.filter(place=>place.neighbourhood_id===this.props.neighbourhood.id)
+              .map((place,index)=>{
+
               return (
                 <HoodPlaceList place={place} index={index+1} key={place.id} onClick={this.handleClick}/>
               )

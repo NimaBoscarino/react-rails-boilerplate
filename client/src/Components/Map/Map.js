@@ -65,7 +65,7 @@ class Map extends Component {
       <div id='Map'>
         <MapHeader />
         <div className='d-flex justify-content-between h-100 w-100'>
-          <GoogleMap />
+          <GoogleMap neighbourhoods={this.props.neighbourhoods}/>
           <HoodSidebar updateSelection={this.updateCurrentSelection} places={this.props.places} neighbourhoods={this.props.neighbourhoods} />
           <TripSidebar
             selectionList={this.state.selectionList}

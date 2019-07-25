@@ -43,18 +43,18 @@ class Main extends Component {
 
   componentDidMount() {
     axios
-      .get("/places") // You can simply make your requests to "/api/whatever you want"
-      .then(response => {
-        this.setState({
-          places: response.data.places
-        });
-      });
-    axios
       .get("/neighbourhoods") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
         const neighbourhoods=this.processDataNeighbourhoods(response.data.neighbourhoods);
         this.setState({
           neighbourhoods: neighbourhoods
+        });
+      });
+    axios
+      .get("/places") // You can simply make your requests to "/api/whatever you want"
+      .then(response => {
+        this.setState({
+          places: response.data.places
         });
       });
   }
