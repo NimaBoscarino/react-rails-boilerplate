@@ -43,21 +43,40 @@ class Main extends Component {
 
   componentDidMount() {
     axios
+      .get("/neighbourhoods") // You can simply make your requests to "/api/whatever you want"
+      .then(response => {
+        const neighbourhoods=this.processDataNeighbourhoods(response.data.neighbourhoods);
+        this.setState({
+          neighbourhoods: neighbourhoods
+        });
+      });
+    axios
       .get("/places") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
-        console.log(response.data.places);
         this.setState({
           places: response.data.places
         });
       });
   }
 
+  processDataNeighbourhoods(neighbourhoodData){
+    return neighbourhoodData.map(element=>{
+      return { 
+        id:element.id,
+        name:element.name,
+        center: {
+          lat:element.centerlat, 
+          lng:element.centerlong},
+        borderPoints:element.border_points
+      }
+    });
+  }
+
   render() {
     return (
       <div className='App'>
         <Intro />
-
-        <Map showMyNight={this.showMyNight} />
+        <Map showMyNight={this.showMyNight} places={this.state.places} neighbourhoods={this.state.neighbourhoods}/>
 
         <section style={sectionStyle}>
           {this.state.showMyNightPlan && (
@@ -69,7 +88,7 @@ class Main extends Component {
           <AreaSelector />
 
           {this.state.places &&
-            this.state.places.map(place => {
+            this.state.places.slice(0,5).map(place => {
               return <HotListCards place={place} key={place.id} />;
             })}
 

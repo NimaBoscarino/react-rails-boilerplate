@@ -31,8 +31,8 @@ class CurrentSelectionCard extends Component {
                       <div className='col score-col'>
                         <p>
                           Google Score:{"  "}
-                          {this.props.currentSelection.googleReviewScore} based
-                          on {this.props.currentSelection.googleReviewNumber}{" "}
+                          {this.props.currentSelection.rating} based
+                          on {this.props.currentSelection.rating_n}{" "}
                           reviews
                         </p>
                       </div>
