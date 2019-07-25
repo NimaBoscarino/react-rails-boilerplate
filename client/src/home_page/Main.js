@@ -84,7 +84,7 @@ class Main extends Component {
           <AreaSelector />
 
           {this.state.places &&
-            this.state.places.map(place => {
+            this.state.places.slice(0,5).map(place => {
               return <HotListCards place={place} key={place.id} />;
             })}
 
