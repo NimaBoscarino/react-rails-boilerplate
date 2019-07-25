@@ -4,54 +4,33 @@ import TripSidebar from "./TripSidebar/TripSidebar";
 import CurrentSelectionCard from "./CurrentSelectionCard/CurrentSelectionCard";
 import GoogleMap from "./GoogleMap";
 import MapHeader from "./MapHeader/MapHeader";
-import axios from "axios";
-
 
 class Map extends Component {
   constructor(props) {
     super(props);
-    const currentSelection = {
-      name: "The Gastown Pub",
-      googleReviewNumber: 264,
-      googleReviewScore: 87
-    };
     this.state = {
-      currentSelection: currentSelection,
-      selectionList: []
+      currentSelection: null,
+      selectionList: [],
+      showSelectionCard:false,
     };
     this.updateCurrentSelection = this.updateCurrentSelection.bind(this);
     this.deleteSelectedPlace = this.deleteSelectedPlace.bind(this);
     this.addCurrentSelection = this.addCurrentSelection.bind(this);
   }
   updateCurrentSelection(id) {
-    axios
-      .get(`/places/${id}`) // You can simply make your requests to "/api/whatever you want"
-      .then(response => {
-        const newSelection = {
-          id: id,
-          name: response.data.place.name,
-          googleReviewNumber: response.data.place.rating_n,
-          googleReviewScore: response.data.place.rating,
-          address: response.data.place.address
-        };
-        this.setState({
-          currentSelection: newSelection
-        });
-      });
+    this.setState({
+      currentSelection: this.props.places.filter(place=>place.id===id)[0],
+      showSelectionCard:true
+    });
   }
   addCurrentSelection(id) {
-    axios
-      .get(`/places/${id}`) // You can simply make your requests to "/api/whatever you want"
-      .then(response => {
-        if (
-          !this.state.selectionList.filter(element => element.id === id).length
-        ) {
-          this.state.selectionList.push(response.data.place);
-        }
-        this.setState({
-          selectionList: this.state.selectionList
-        });
-      });
+    if (!this.state.selectionList.filter(element => element.id === id).length
+    ) {
+      this.state.selectionList.push(this.props.places.filter(element=>element.id===id)[0]);
+    }
+    this.setState({
+      selectionList: this.state.selectionList
+    });
   }
   deleteSelectedPlace(id) {
     // const list=this.state.selectionList.filter(element=>element.id!==id)
@@ -73,10 +52,14 @@ class Map extends Component {
             showMyNight={this.props.showMyNight}
           />
 
-          <CurrentSelectionCard
-            currentSelection={this.state.currentSelection}
-            addSelection={this.addCurrentSelection}
-          />
+          {
+            this.state.showSelectionCard && 
+            <CurrentSelectionCard
+              currentSelection={this.state.currentSelection}
+              addSelection={this.addCurrentSelection}
+            />
+          }
+          
         </div>
       </div>
     );
