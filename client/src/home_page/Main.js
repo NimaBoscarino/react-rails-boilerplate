@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Intro from "../Components/Intro/Intro";
-import NightOutBuilder from "../Components/NightOutBuilder/NightOutBuilder";
+
 import Map from "../Components/Map/Map";
 import AreaSelector from "../Components/AreaSelector/AreaSelector";
 import HotListCards from "../Components/HotListCards/HotListCards";
 import MyNightPlan from "../Components/MyNightPlan/MyNightPlan";
 import Background from "../global-assets/vancouver-main-background.png";
-
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -56,7 +55,7 @@ class Main extends Component {
     return (
       <div className='App'>
         <Intro />
-        <NightOutBuilder />
+
         <Map showMyNight={this.showMyNight} />
 
         <section style={sectionStyle}>
@@ -65,12 +64,10 @@ class Main extends Component {
           )}
           <AreaSelector />
 
-          <section className=''>
-            {this.state.places &&
-              this.state.places.map(place => {
-                return <HotListCards place={place} key={place.id} />;
-              })}
-          </section>
+          {this.state.places &&
+            this.state.places.map(place => {
+              return <HotListCards place={place} key={place.id} />;
+            })}
 
           <h1>This is the Main</h1>
           <h2>{this.state.message}</h2>

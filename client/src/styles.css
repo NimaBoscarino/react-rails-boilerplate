@@ -39,6 +39,10 @@ nav .logo {
   margin-bottom: 5vh;
 }
 
+#Intro {
+  height: 100vh;
+}
+
 #Intro .title-section {
   text-align: center;
   margin-top: 15vh;
@@ -64,6 +68,95 @@ nav .logo {
   padding: 0 18%;
   font-size: calc(18px + 0.2vw);
   color: white;
+}
+
+#Intro .intro-carousel-div {
+  padding: 6vh 2vh;
+  color: white;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#Intro .intro-carousel-div .intro-feature-card {
+  margin: 0 auto;
+  height: 20vh;
+  width: 60%;
+  border-color: #9ea2a8;
+  border-bottom: 2px solid #9ea2a8;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  border-radius: 10px;
+}
+
+#Intro .intro-carousel-div .shadow {
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;
+}
+
+#Intro .intro-carousel-div .card-img-overlay {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-color: #9ea2a8;
+  border-bottom: 1px solid #9ea2a8;
+  border-radius: 10px;
+  width: 100%;
+}
+
+#Intro .intro-carousel-div img {
+  height: 20vh;
+  width: 100%;
+  opacity: 0.8;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  -ms-flex-line-pack: middle;
+      align-content: middle;
+}
+
+#Intro .intro-carousel-div .featured-card-pic {
+  vertical-align: middle;
+}
+
+#Intro .intro-carousel-div .card-info-col {
+  display: inline-block;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  width: 80vw;
+  height: 15vh;
+  border-right: 1px solid white;
+}
+
+#Intro .intro-carousel-div .card-info-col .card-title {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(20px + 0.4vw);
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-left: 3vh;
+}
+
+#Intro .intro-carousel-div .card-info-col .card-text {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(16px + 0.4vw);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 1.5vh 2vh 0 3vh;
+}
+
+#Intro .intro-carousel-div .hotspot-col {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 80vw;
+}
+
+#Intro .intro-carousel-div .hotspot-col h4 {
+  font-size: calc(16px + 0.4vw);
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+}
+
+#Intro .intro-carousel-div .hotspot-col h5 {
+  font-size: calc(16px + 0.4vw);
+  font-size: 6vw;
 }
 
 #Map .planner-sidebar {
