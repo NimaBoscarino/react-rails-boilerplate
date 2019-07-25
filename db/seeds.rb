@@ -64,8 +64,6 @@ end
 
 require Rails.root.join("lib", "which-neighbourhood", "whichNeighbourhood.rb")
 
-Place.destroy_all
-
 alldata = Dir[Rails.root.join("lib", "populartimes", "popular-times-data", "*.txt")]
 fileNum = 0
 fileTotal = alldata.length
