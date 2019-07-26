@@ -10,7 +10,7 @@ import {
 import { FiArrowDownCircle } from "react-icons/fi";
 import { FiClock } from "react-icons/fi";
 
-class MyNightPlanCards extends Component {
+class MyNightPlanCardsDesign extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -20,6 +20,7 @@ class MyNightPlanCards extends Component {
   toggle() {
     this.setState(state => ({ collapse: !state.collapse }));
   }
+
   render() {
     return (
       <div className='container-fluid'>
@@ -56,7 +57,7 @@ class MyNightPlanCards extends Component {
                   <div className='details-col'>
                     <div className='my-card-summary-summary-div'>
                       <CardTitle className='my-card-summary-title'>
-                        {this.props.place.name}
+                        Gastown Pub
                       </CardTitle>
                       <CardTitle className='my-card-summary-address'>
                         1245 West Main St.
@@ -81,10 +82,10 @@ class MyNightPlanCards extends Component {
                 <Card className='hidden-card w-100 p-2 bd-highlight'>
                   <CardBody>
                     <CardText>
-                      <p>
-                        Google Review Score: {this.props.place.rating} <br />
-                        Google Review Number: {this.props.place.rating_n}
-                      </p>
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life
+                      accusamus terry richardson ad squid. Nihil anim keffiyeh
+                      helvetica, craft beer labore wes anderson cred nesciunt
+                      sapiente ea proident.
                     </CardText>
                   </CardBody>
                 </Card>
@@ -97,4 +98,4 @@ class MyNightPlanCards extends Component {
   }
 }
 
-export default MyNightPlanCards;
+export default MyNightPlanCardsDesign;

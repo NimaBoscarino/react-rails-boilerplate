@@ -7,6 +7,7 @@ import AreaSelector from "../Components/AreaSelector/AreaSelector";
 import HotListCards from "../Components/HotListCards/HotListCards";
 import MyNightPlan from "../Components/MyNightPlan/MyNightPlan";
 import Background from "../global-assets/vancouver-main-background.png";
+// import MyNightPlanDesign from "../Components/MyNightPlan/MyNightPlanDesign";
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -81,6 +82,9 @@ class Main extends Component {
           {this.state.showMyNightPlan && (
             <MyNightPlan nightList={this.state.nightList} />
           )}
+
+          {/* <MyNightPlanDesign /> */}
+
           <AreaSelector />
 
           {this.state.places &&
