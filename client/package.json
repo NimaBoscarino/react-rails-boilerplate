@@ -5,11 +5,11 @@
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
-    "google-maps-react": "^2.0.2",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-google-maps": "^9.4.5",
     "react-icons": "^3.7.0",
     "react-responsive-carousel": "^3.1.49",
     "react-router-dom": "^5.0.1",

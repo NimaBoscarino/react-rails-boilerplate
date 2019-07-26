@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import HoodSidebar from "./HoodSidebar/HoodSidebar";
 import TripSidebar from "./TripSidebar/TripSidebar";
 import CurrentSelectionCard from "./CurrentSelectionCard/CurrentSelectionCard";
-import GoogleMap from "./GoogleMap";
+import GoogleMap from "./ReactGoogleMap";
 import MapHeader from "./MapHeader/MapHeader";
 
 class Map extends Component {
