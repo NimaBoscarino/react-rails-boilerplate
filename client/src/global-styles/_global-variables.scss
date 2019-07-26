@@ -19,6 +19,10 @@ $font-size-busy-xs: calc(7px + 0.2vw);
 
 // Report Card Summary Font Sizes------
 
+$font-size-map-header-filters: calc(7px + 0.3vw);
+
+// Report Card Summary Font Sizes------
+
 $font-size-busy-report-large: calc(14px + 0.2vw);
 $font-size-busy-report-small: calc(10px + 0.2vw);
 $font-size-busy-report-xs: calc(7px + 0.2vw);
@@ -83,4 +87,3 @@ $background-gradient-light: linear-gradient(
   rgba($smoky-black, 0.7),
   rgba($smoky-black, 0.6)
 );
-

@@ -25,26 +25,27 @@ class TripSidebar extends Component {
         </ul>
 
         <div className='bottom-div'>
-        <div className='button-div'>
-          <Button
-            className='sidebar-button'
-            variant='primary'
-            block
-            onClick={() => {
-              this.props.selectionList.length &&
-                this.props.showMyNight(this.props.selectionList);
-            }}>
-            <FaCloudMoon className='icon-buttons' />
-            Generate My Night
-          </Button>
-          <Button variant='primary' block className='sidebar-button'>
-            <FaMapMarkedAlt className='icon-buttons' />
-            See On Map
-          </Button>
-        </div>
+          <div className='button-div'>
+            <Button
+              className='sidebar-button'
+              outline
+              color='light'
+              block
+              onClick={() => {
+                this.props.selectionList.length &&
+                  this.props.showMyNight(this.props.selectionList);
+              }}>
+              <FaCloudMoon className='icon-buttons' />
+              Generate My Night
+            </Button>
+            <Button outline color='light' block className='sidebar-button'>
+              <FaMapMarkedAlt className='icon-buttons' />
+              See On Map
+            </Button>
+          </div>
 
-        <HotSpotTripRating />
-      </div>
+          <HotSpotTripRating />
+        </div>
       </div>
     );
   }

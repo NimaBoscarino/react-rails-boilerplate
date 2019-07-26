@@ -29,36 +29,45 @@ class MapHeader extends Component {
         <div className='col hood-header-box'>
           <h4 className='selected-hood'>Mt. Pleasant</h4>
         </div>
-        <div className='col d-flex align-items-center filter-toolbar-div'>
-          <ButtonToolbar aria-label='Toolbar with button groups'>
-            <ButtonGroup
-              className='mr-2 filter-toolbar'
-              aria-label='First group'>
-              <span
-                style={{ textDecoration: "underline", color: "blue" }}
-                href='#'
-                id='Restaurants'>
-                <Button className='filter-buttons restaurant-filter-button'>
-                  <FaPizzaSlice />
+        <div className='col d-flex align-items-center filter-toolbar'>
+
+          <div className='row button-row'>
+            
+            <ButtonToolbar
+              className='button-toolbar'
+              aria-label='Toolbar with button groups'>
+              <ButtonGroup
+                className='mr-2 filter-toolbar'
+                aria-label='First group'>
+                <span
+                  style={{ textDecoration: "underline", color: "blue" }}
+                  href='#'
+                  id='Restaurants'>
+                  <Button className='filter-buttons restaurant-filter-button'>
+                    <FaPizzaSlice className='filter-icons' />
+                    Restaurants
+                  </Button>
+                </span>
+
+                <Tooltip
+                  placement='top'
+                  isOpen={this.state.tooltipOpen}
+                  target='Restaurants'
+                  toggle={this.toggle}>
+                  Restaurants
+                </Tooltip>
+
+                <Button className='filter-buttons bar-filter-button'>
+                  <FaMusic className='filter-icons' />
+                  Night Clubs
                 </Button>
-              </span>
-
-              <Tooltip
-                placement='top'
-                isOpen={this.state.tooltipOpen}
-                target='Restaurants'
-                toggle={this.toggle}>
-                Restaurants
-              </Tooltip>
-
-              <Button className='filter-buttons bar-filter-button'>
-                <FaMusic />
-              </Button>
-              <Button className='filter-buttons club-filter-button'>
-                <FaGlassCheers />
-              </Button>
-            </ButtonGroup>
-          </ButtonToolbar>
+                <Button className='filter-buttons club-filter-button'>
+                  <FaGlassCheers className='filter-icons' />
+                  Bars
+                </Button>
+              </ButtonGroup>
+            </ButtonToolbar>
+          </div>
         </div>
       </div>
     );

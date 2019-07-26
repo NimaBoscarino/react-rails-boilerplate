@@ -301,7 +301,7 @@ nav .logo {
 
 #Map .sidebar-button {
   margin-top: 1vh;
-  font-size: calc(10px + 0.3vw);
+  font-size: calc(11px + 0.3vw);
 }
 
 #Map .icon-buttons {
@@ -367,8 +367,6 @@ nav .logo {
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
   border-bottom: 1px solid #9ea2a8;
   padding-left: 0.8vh;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 #Map .hood-sidebar .down-arrow-icon {
@@ -630,12 +628,11 @@ nav .logo {
   border-top: 1px #ffce00 solid;
   -webkit-box-shadow: 0 8px 6px -6px black;
   box-shadow: 0px 8px 6px -6px black;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  background-color: #070707;
 }
 
 #Map .map-header .hood-header-box {
-  width: 100%;
+  width: 80vh;
   text-align: center;
 }
 
@@ -646,17 +643,35 @@ nav .logo {
   color: white;
 }
 
-#Map .map-header .filter-toolbar {
-  font-size: "Fira Sans Extra Condensed", sans-serif;
+#Map .map-header .filter-title {
+  font-family: "Roboto", sans-serif;
+  margin: 0 0 0.2vh 0;
+  padding: 0;
+  color: #d6e5e3;
+  font-size: calc(7px + 0.3vw);
 }
 
-#Map .map-header .filter-buttons {
-  margin-right: 40px;
-  width: 4vh;
-  height: 4vh;
-  border-radius: 4vh;
-  font-size: calc(20px + 0.2vw);
-  padding-left: 0.8vh;
+#Map .map-header .button-toolbar {
+  margin-top: 0;
+}
+
+#Map .map-header .button-row {
+  margin-top: -8px;
+  display: block;
+}
+
+#Map .map-header .filter-toolbar {
+  padding: 0;
+  margin: 0;
+}
+
+#Map .map-header .filter-toolbar {
+  font-size: calc(12px + 0.4vw);
+}
+
+#Map .map-header .filter-icons {
+  margin-right: 0.5vh;
+  font-size: calc(12px + 0.4vw);
 }
 
 @-webkit-keyframes shadow-pulse {

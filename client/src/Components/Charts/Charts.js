@@ -46,7 +46,7 @@ class Charts extends Component {
         shared: true
       },
       axisY: {
-        title: "Time of Day",
+        title: "Busy Levels",
         includeZero: true,
         titleFontColor: "white",
         labelFontColor: "white",
@@ -55,7 +55,7 @@ class Charts extends Component {
         gridThickness: 1
       },
       axisX: {
-        title: "Busy Times",
+        title: "Time of Day",
         titleFontWeight: "bold",
         titleFontColor: "white",
         labelFontColor: "white"

@@ -23,7 +23,7 @@ class HoodSidebar extends Component {
       <div className='d-flex align-items-stretch hood-sidebar'>
         <ul className='list-group list-group-flush hood-list'>
           <li className='list-group-item hood-title-select'>
-            Select Area <FiChevronDown className='down-arrow-icon' />
+            Explore Areas <FiChevronDown className='down-arrow-icon' />
           </li>
           {this.props.neighbourhoods &&
             this.props.neighbourhoods.map(element => {
