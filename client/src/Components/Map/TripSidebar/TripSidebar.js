@@ -10,7 +10,17 @@ import { FaCloudMoon, FaMapMarkedAlt } from "react-icons/fa";
 class TripSidebar extends Component {
   render() {
     return (
+
+
+
+
       <div className='planner-sidebar'>
+
+<div className='trip-title-intro-div'>
+  <h5 className='trip-title-text'>Saved List</h5>
+</div>
+
+
         <ul className='list-group list-group-flush trip-list'>
           {this.props.selectionList &&
             this.props.selectionList.map(place => {

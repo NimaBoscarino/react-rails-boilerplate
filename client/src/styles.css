@@ -12,21 +12,22 @@ body {
 
 nav {
   overflow: hidden;
-  background-color: #070707;
   position: fixed;
   /* Set the navbar to fixed position */
   top: 0;
   /* Position the navbar at the top of the page */
   width: 100%;
-  border-bottom: #ffce00 solid 2px;
+  border-bottom: #f4f2f3 solid 1px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 nav .logo-box {
   display: inline-block;
-  width: 20%;
-  margin: 0 auto;
+  width: 25%;
+  margin: 0.1vh auto;
   text-align: center;
 }
 
@@ -172,13 +173,28 @@ nav .logo {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 7vh;
-  border-bottom: 5px #ffce00 solid;
+  border-bottom: 5px #7cddbd solid;
   position: absolute;
   right: 0;
   width: 18%;
   height: 93vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.6)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.6) rgba(5, 31, 52, 0.4));
+}
+
+#Map .planner-sidebar .trip-title-intro-div {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#Map .planner-sidebar .trip-title-intro-div .trip-title-text {
+  color: white;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(12px + 0.4vw);
 }
 
 #Map .planner-sidebar .list-group-item {
@@ -214,8 +230,20 @@ nav .logo {
   border: #9ea2a8 solid 1px;
   width: 90%;
   margin: 0.5vh auto;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fffffc), to(rgba(255, 255, 252, 0.9)));
-  background: linear-gradient(to bottom, #fffffc, rgba(255, 255, 252, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  border: #ff5165 solid 1px;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#Map .planner-sidebar .trip-name:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#Map .planner-sidebar .trip-name:hover .icon-buttons-close {
+  color: #f4f2f3;
 }
 
 #Map .planner-sidebar .place-name {
@@ -223,12 +251,16 @@ nav .logo {
   font-size: calc(12px + 0.4vw);
   font-weight: 700;
   display: block;
+  color: white;
+  width: 80%;
+  line-height: 1.3;
 }
 
 #Map .planner-sidebar .place-type {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(10px + 0.3vw);
-  text-transform: uppercase;
+  color: white;
+  text-transform: capitalize;
   margin: 0;
   padding: 0;
   display: block;
@@ -248,7 +280,7 @@ nav .logo {
 
 #Map .planner-sidebar .icon-buttons-close {
   display: inline-block;
-  color: black;
+  color: rgba(244, 242, 243, 0.5);
   font-size: calc(16px + 0.4vw);
 }
 
@@ -259,13 +291,15 @@ nav .logo {
 }
 
 #Map .hotspot-stat-box {
-  border-top: #9ea2a8 solid 1px;
-  height: 25vh;
+  border-top: rgba(124, 221, 189, 0.6) solid 1px;
   width: 100%;
+  padding: 2vh 0;
   text-align: center;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
 }
 
 #Map .hotspot-title {
@@ -300,17 +334,35 @@ nav .logo {
 }
 
 #Map .sidebar-button {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
   margin-top: 1vh;
-  font-size: calc(11px + 0.3vw);
+  font-size: calc(12px + 0.4vw);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
+  display: inline-block;
+  height: 4vh;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px rgba(255, 81, 101, 0.4) solid;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#Map .sidebar-button:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px #ff5165 solid;
+  color: white;
 }
 
 #Map .icon-buttons {
-  color: #ffce00;
+  color: #ff5165;
   margin-right: 5px;
+  margin-top: -4px;
 }
 
 #Map .hood-sidebar {
-  border-bottom: 5px #ffce00 solid;
+  border-bottom: 5px #7cddbd solid;
   border-right: 1px solid rgba(7, 7, 7, 0.6);
   position: absolute;
   overflow: scroll;
@@ -318,7 +370,7 @@ nav .logo {
   left: 0;
   width: 18%;
   height: 93vh;
-  background: rgba(7, 7, 7, 0.1);
+  background: transparent;
 }
 
 #Map .hood-sidebar .hood-list {
@@ -331,10 +383,10 @@ nav .logo {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(14px + 0.4vw);
   display: inline-block;
-  border-bottom: 1px solid #9ea2a8;
+  border-bottom: 1px solid rgba(244, 242, 243, 0.4);
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
   color: white;
   padding: 0.8vh 0 0.8vh 0.8vh;
   text-transform: uppercase;
@@ -351,26 +403,30 @@ nav .logo {
 
 #Map .hood-sidebar .hood-title-text {
   font-family: "Fira Sans Extra Condensed", sans-serif;
-  font-size: calc(14px + 0.4vw);
+  font-size: calc(12px + 0.4vw);
   font-weight: 700;
   display: inline-block;
-  color: #d6e5e3;
+  color: #f4f2f3;
   margin: 0;
   padding: 1vh 0 1vh 0;
+  padding-left: 1vh;
 }
 
 #Map .hood-sidebar .hood-name-li {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   width: 100%;
   font-weight: 700;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
-  border-bottom: 1px solid #9ea2a8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  border-bottom: 1px solid rgba(244, 242, 243, 0.3);
   padding-left: 0.8vh;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-#Map .hood-sidebar .down-arrow-icon {
-  color: #ff9a02;
+#Map .hood-sidebar .arrow-icon {
+  color: #7cddbd;
+  font-size: calc(12px + 0.4vw);
+  margin-left: 4px;
 }
 
 #Map .hood-sidebar .hood-col {
@@ -382,37 +438,34 @@ nav .logo {
 #Map .hood-sidebar .hotspot-score {
   display: inline-block;
   width: 30%;
-  font-size: calc(20px + 0.4vw);
   text-align: right;
   padding: 1vh 0 1vh 0;
   margin-top: -6px;
 }
 
 #Map .hood-sidebar .hotspot-score .hotspot-score-icon {
-  margin-top: 12px;
-  margin-left: 4px;
-  width: 15%;
+  margin-top: 4px;
+  margin-left: 2px;
+  margin-right: 4px;
+  width: 25%;
   float: right;
   -webkit-animation: shadow-pulse s infinite;
           animation: shadow-pulse s infinite;
 }
 
-#Map .hood-sidebar .hotspot-score .percent-sign {
-  font-size: calc(10px + 0.3vw);
-  font-weight: 300;
-  color: #9ea2a8;
-  padding-left: 0.2vh;
-  padding-right: 0.4vh;
-}
-
 #Map .hood-sidebar .hotspot-score .hotspot-score-number {
   display: inline-block;
   width: 50%;
+  font-size: calc(12px + 0.4vw);
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-weight: 700;
   margin-bottom: 0;
-  margin-left: 8px;
-  color: white;
+  margin-top: 0;
+  margin-right: 0;
+  padding: 0;
+  color: #f4f2f3;
+  letter-spacing: 0.1vh;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   float: right;
 }
 
@@ -421,21 +474,21 @@ nav .logo {
 }
 
 #Map .hood-place-list-item {
-  color: #d6e5e3;
-  border-top: 1px solid rgba(7, 7, 7, 0.5);
-  border-right: 1px solid rgba(7, 7, 7, 0.5);
-  border-left: 1px solid rgba(7, 7, 7, 0.5);
-  border-bottom: 1px solid #9ea2a8;
+  color: #f4f2f3;
+  border-top: 1px solid rgba(244, 242, 243, 0.1);
+  border-right: 1px solid rgba(244, 242, 243, 0.1);
+  border-left: 1px solid rgba(244, 242, 243, 0.1);
+  border-bottom: 1px solid rgba(244, 242, 243, 0.1);
   padding: 0.6vh 0 0 0.6vh;
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.9) rgba(5, 31, 52, 0.8));
 }
 
 #Map .hood-place-list-item:hover {
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
 }
 
 #Map .hood-place-name-div {
@@ -472,10 +525,11 @@ nav .logo {
 
 #Map .hood-place-type {
   font-family: "Fira Sans Extra Condensed", sans-serif;
-  text-transform: uppercase;
+  font-size: calc(10px + 0.2vw);
+  text-transform: capitalize;
   margin: 0;
   padding: 0 0 1.5vh 0;
-  color: #9ea2a8;
+  color: #f4f2f3;
 }
 
 #Map .hotspot-score-number-small {
@@ -492,9 +546,9 @@ nav .logo {
 }
 
 #Map .hotspot-score-icon-small {
-  margin-top: 6px;
+  margin-top: 0;
   margin-left: 4px;
-  width: 15%;
+  width: 25%;
   float: right;
   -webkit-animation: shadow-pulse s infinite;
           animation: shadow-pulse s infinite;
@@ -512,7 +566,7 @@ nav .logo {
   left: 0;
   padding-right: 15px;
   margin-top: 6px;
-  margin-left: -5px;
+  margin-left: 5px;
 }
 
 #Map .index-number {
@@ -522,19 +576,31 @@ nav .logo {
   font-size: calc(11px + 0.3vw);
 }
 
-#CurrentSelectionCard .modal-box {
-  background-color: pink;
+.modal-container .modal-body {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
 }
 
-#CurrentSelectionCard .modal-box .modal-content {
+.modal-container .modal-header-box {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
+  color: white;
+  border-bottom: 1px solid rgba(124, 221, 189, 0.4);
+}
+
+.modal-container .modal-content {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
   display: inline-block;
-  width: 100%;
-  height: 100%;
-  display: none;
 }
 
-#CurrentSelectionCard .modal-box .modal-picture {
+.modal-container .modal-picture {
   width: 100%;
+}
+
+.modal-container .modal-footer-div {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(124, 221, 189, 0.4);
 }
 
 #CurrentSelectionCard {
@@ -557,17 +623,22 @@ nav .logo {
   width: 60%;
   position: absolute;
   bottom: 0;
-  border-bottom: 5px #ffce00 solid;
+  border-bottom: 5px #7cddbd solid;
+}
+
+#CurrentSelectionCard .card-header {
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
 }
 
 #CurrentSelectionCard .current-card {
   width: 100%;
   border-radius: 1vh;
   min-height: 25vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.9) rgba(5, 31, 52, 0.8));
   margin-bottom: 2vh;
-  border: 1px solid #9ea2a8;
+  border: 1px solid rgba(244, 242, 243, 0.2);
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   color: white;
@@ -598,22 +669,42 @@ nav .logo {
   color: white;
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(20px + 0.4vw);
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  border-bottom: 1px solid rgba(124, 221, 189, 0.4);
 }
 
 #CurrentSelectionCard .add-to-night-button {
   position: absolute;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
   top: 7px;
   right: 7px;
   margin: auto 0;
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(12px + 0.4vw);
   border-color: #ffce00;
+  border: none;
 }
 
-#CurrentSelectionCard .icon-arrows {
-  color: #ffce00;
+#CurrentSelectionCard .add-to-night-button:hover {
+  color: white;
+  background: #ff5165;
+}
+
+#CurrentSelectionCard .add-to-night-button:hover .icon-plus {
+  color: #051f34;
+}
+
+#CurrentSelectionCard .icon-plus {
+  color: #ff5165;
+  font-size: calc(16px + 0.4vw);
+  margin-top: -5px;
+}
+
+#CurrentSelectionCard .see-images-button {
+  margin-top: 5px;
 }
 
 #Map .map-header {
@@ -625,10 +716,12 @@ nav .logo {
   margin: 0 auto;
   height: 7vh;
   z-index: 1;
-  border-top: 1px #ffce00 solid;
-  -webkit-box-shadow: 0 8px 6px -6px black;
-  box-shadow: 0px 8px 6px -6px black;
-  background-color: #070707;
+  border-top: 2px solid rgba(124, 221, 189, 0.7);
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  border-bottom: 1px solid rgba(39, 96, 152, 0.1);
 }
 
 #Map .map-header .hood-header-box {
@@ -721,8 +814,8 @@ nav .logo {
 #Map .map-container {
   margin: 0;
   width: 100%;
-  border-top: 5px #ffce00 solid;
-  border-bottom: 5px #ffce00 solid;
+  border-top: 5px #7cddbd solid;
+  border-bottom: 5px #7cddbd solid;
   height: 100vh;
   position: absolute;
   scroll-snap-align: start;
