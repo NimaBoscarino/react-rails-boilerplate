@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ButtonToolbar, ButtonGroup, Button, Tooltip } from "reactstrap";
+import MapDayFilter from "./MapHeaderDropDown";
 import { FaGlassCheers } from "react-icons/fa";
 import { FaPizzaSlice } from "react-icons/fa";
 import { FaMusic } from "react-icons/fa";
@@ -24,15 +25,13 @@ class MapHeader extends Component {
     return (
       <div className='d-inline-flex p-2 justify-content-center map-header'>
         <div className='col hood-header-box'>
-          <h5 className='selected-hood'>placeholder-text</h5>
+          <MapDayFilter />
         </div>
         <div className='col hood-header-box'>
           <h4 className='selected-hood'>Mt. Pleasant</h4>
         </div>
         <div className='col d-flex align-items-center filter-toolbar'>
-
           <div className='row button-row'>
-            
             <ButtonToolbar
               className='button-toolbar'
               aria-label='Toolbar with button groups'>

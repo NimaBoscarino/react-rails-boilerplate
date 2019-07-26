@@ -16,17 +16,18 @@
       width: 100%;
       text-align: center;
       display: inline-block;
-      justify-content: flex-start;
+      flex-wrap: wrap;
 
       .trip-title-text {
         color: $white;
         font-family: $title-font;
         font-size: $font-size-large;
       }
-
     }
 
-
+    .trip-list-div {
+      
+    }
 
     .list-group-item {
       text-align: left;
@@ -45,6 +46,7 @@
       font-weight: 700;
       padding: 0;
       font-size: 20px;
+      align-self: flex-start;
     }
 
     .trip-list {

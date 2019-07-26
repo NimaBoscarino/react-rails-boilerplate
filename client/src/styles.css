@@ -186,9 +186,8 @@ nav .logo {
   width: 100%;
   text-align: center;
   display: inline-block;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #Map .planner-sidebar .trip-title-intro-div .trip-title-text {
@@ -214,6 +213,8 @@ nav .logo {
   font-weight: 700;
   padding: 0;
   font-size: 20px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 #Map .planner-sidebar .trip-list {
