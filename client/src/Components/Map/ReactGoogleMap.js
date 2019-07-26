@@ -1,6 +1,7 @@
-import { withScriptjs, withGoogleMap,GoogleMap, Polygon } from "react-google-maps";
+import { withScriptjs, withGoogleMap,GoogleMap, Polygon, Marker } from "react-google-maps";
 import React, { Component } from "react";
 import mapStyles from "./google-map-style.json"
+import { FaThemeisle } from "react-icons/fa";
 
 class ReactGoogleMap extends Component {
   constructor(props){
@@ -59,6 +60,16 @@ class ReactGoogleMap extends Component {
                 
             }}
           />
+          {
+            this.props.places.filter(el=>el.neighbourhood_id===this.props.centerNeighbourhood.id)
+              .map(place=>{
+                return (
+                <Marker 
+                  position={{lat: place.lat, lng: place.long}}
+                  onClick={()=>{console.log(place.name)}}
+                />)
+              })
+          }
         </GoogleMap>
      ));
     }

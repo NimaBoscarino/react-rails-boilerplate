@@ -58,6 +58,7 @@ class Map extends Component {
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap 
             neighbourhoods={this.props.neighbourhoods} 
+            places={this.props.places}
             clickNeighbourhood={this.clickNeighbourhood} 
             mapCenterNeighbourhood = {this.state.mapCenterNeighbourhood}
             centerNeighbourhood = {this.state.centerNeighbourhood}
