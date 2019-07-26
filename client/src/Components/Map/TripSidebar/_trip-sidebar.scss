@@ -12,6 +12,22 @@
     height: 93vh;
     background: $background-gradient-very-light-blue;
 
+    .trip-title-intro-div {
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+      justify-content: flex-start;
+
+      .trip-title-text {
+        color: $white;
+        font-family: $title-font;
+        font-size: $font-size-large;
+      }
+
+    }
+
+
+
     .list-group-item {
       text-align: left;
     }
@@ -45,11 +61,16 @@
       border: #9ea2a8 solid 1px;
       width: 90%;
       margin: 0.5vh auto;
-      background: linear-gradient(
-        to bottom,
-        $card-color-background,
-        rgba($card-color-background, 0.9)
-      );
+      background: $background-gradient-blue-dark-map-header;
+      border: $bright-pink solid 1px;
+      box-shadow: $button-shadows;
+    }
+
+    .trip-name:hover {
+      box-shadow: none;
+      .icon-buttons-close {
+        color: $very-light-grey;
+      }
     }
 
     .place-name {
@@ -57,12 +78,16 @@
       font-size: $font-size-large;
       font-weight: 700;
       display: block;
+      color: $white;
+      width: 80%;
+      line-height: 1.3;
     }
 
     .place-type {
       font-family: $title-font;
       font-size: $font-size-medium;
-      text-transform: uppercase;
+      color: $white;
+      text-transform: capitalize;
       margin: 0;
       padding: 0;
       display: block;
@@ -82,7 +107,7 @@
 
     .icon-buttons-close {
       display: inline-block;
-      color: black;
+      color: $super-light-grey;
       font-size: $font-size-xxl;
     }
   }
@@ -94,11 +119,12 @@
   }
 
   .hotspot-stat-box {
-    border-top: $quick-silver solid 1px;
-    height: 25vh;
+    border-top: $light-powder-blue solid 1px;
     width: 100%;
+    padding: 2vh 0;
     text-align: center;
     justify-content: flex-end;
+    background: $background-gradient-blue-light;
   }
 
   .hotspot-title {
@@ -129,12 +155,27 @@
   }
 
   .sidebar-button {
+    font-family: $title-font;
     margin-top: 1vh;
-    font-size: $font-size-between-medium-and-large;
+    font-size: $font-size-large;
+    background: $background-gradient-blue-light;
+    display: inline-block;
+    height: 4vh;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 1px $light-bright-pink solid;
+    box-shadow: $button-shadows;
+  }
+
+  .sidebar-button:hover {
+    box-shadow: none;
+    border: 1px $bright-pink solid;
+    color: $white;
   }
 
   .icon-buttons {
-    color: $medium-yellow;
+    color: $bright-pink;
     margin-right: 5px;
+    margin-top: -4px;
   }
 }
