@@ -1,6 +1,7 @@
 #Map {
   .hood-sidebar {
     border-bottom: 5px $medium-yellow solid;
+    border-right: 1px solid $light-smoky-black;
     position: absolute;
     overflow: scroll;
     margin-top: 7vh;
@@ -41,7 +42,7 @@
       font-size: $font-size-xl;
       font-weight: 700;
       display: inline-block;
-      color: $card-color-background;
+      color: $accent-grey;
       margin: 0;
       padding: 1vh 0 1vh 0;
     }
@@ -101,6 +102,10 @@
         float: right;
       }
     }
+  }
+
+  .list-group-item:hover {
+    color: $white;
   }
 
   .hood-place-list-item {
@@ -168,7 +173,7 @@
   }
 
   .hotspot-score-number-small {
-    font-size: $font-size-large;
+    font-size: $font-size-medium;
     font-weight: 700;
     margin-left: 0;
     text-align: right;
@@ -183,7 +188,7 @@
   .hotspot-score-icon-small {
     margin-top: 6px;
     margin-left: 4px;
-    width: 20%;
+    width: 15%;
     float: right;
     animation: shadow-pulse s infinite;
   }

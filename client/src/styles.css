@@ -160,15 +160,33 @@ nav .logo {
 }
 
 #Map .planner-sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 2vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-top: 7vh;
   border-bottom: 5px #ffce00 solid;
   position: absolute;
   right: 0;
   width: 18%;
   height: 93vh;
-  border-left: 1px solid #9ea2a8;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+}
+
+#Map .planner-sidebar .list-group-item {
+  text-align: left;
+}
+
+#Map .planner-sidebar .list-group-item:hover {
+  color: #1f363d;
 }
 
 #Map .planner-sidebar .trip-title {
@@ -188,14 +206,50 @@ nav .logo {
 }
 
 #Map .planner-sidebar .trip-name {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  display: inline-block;
+  position: relative;
+  font-size: calc(12px + 0.4vw);
   border-radius: 5px;
-  color: white;
+  color: #070707;
   border: #9ea2a8 solid 1px;
-  width: 95%;
-  margin: 5px auto;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  width: 90%;
+  margin: 0.5vh auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fffffc), to(rgba(255, 255, 252, 0.9)));
+  background: linear-gradient(to bottom, #fffffc, rgba(255, 255, 252, 0.9));
+}
+
+#Map .planner-sidebar .place-name {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(12px + 0.4vw);
+  font-weight: 700;
+  display: block;
+}
+
+#Map .planner-sidebar .place-type {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(10px + 0.3vw);
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+#Map .planner-sidebar .close-button-box {
+  color: #1f363d;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#Map .planner-sidebar .sidebar-button-close {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#Map .planner-sidebar .icon-buttons-close {
+  display: inline-block;
+  color: black;
+  font-size: calc(16px + 0.4vw);
 }
 
 #Map .trip-button {
@@ -205,13 +259,13 @@ nav .logo {
 }
 
 #Map .hotspot-stat-box {
-  border-top: white solid 2px;
+  border-top: #9ea2a8 solid 1px;
   height: 25vh;
   width: 100%;
-  bottom: 0;
   text-align: center;
-  position: absolute;
-  bottom: 0;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 #Map .hotspot-title {
@@ -230,8 +284,34 @@ nav .logo {
   text-shadow: 8px 8px 4px black;
 }
 
+#Map .button-div {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#Map .button-div {
+  margin: 0 auto;
+  width: 90%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 3vh;
+}
+
+#Map .sidebar-button {
+  margin-top: 1vh;
+  font-size: calc(10px + 0.3vw);
+}
+
+#Map .icon-buttons {
+  color: #ffce00;
+  margin-right: 5px;
+}
+
 #Map .hood-sidebar {
   border-bottom: 5px #ffce00 solid;
+  border-right: 1px solid rgba(7, 7, 7, 0.6);
   position: absolute;
   overflow: scroll;
   margin-top: 7vh;
@@ -274,7 +354,7 @@ nav .logo {
   font-size: calc(14px + 0.4vw);
   font-weight: 700;
   display: inline-block;
-  color: #fffffc;
+  color: #d6e5e3;
   margin: 0;
   padding: 1vh 0 1vh 0;
 }
@@ -338,6 +418,10 @@ nav .logo {
   float: right;
 }
 
+#Map .list-group-item:hover {
+  color: white;
+}
+
 #Map .hood-place-list-item {
   color: #d6e5e3;
   border-top: 1px solid rgba(7, 7, 7, 0.5);
@@ -397,7 +481,7 @@ nav .logo {
 }
 
 #Map .hotspot-score-number-small {
-  font-size: calc(12px + 0.4vw);
+  font-size: calc(10px + 0.3vw);
   font-weight: 700;
   margin-left: 0;
   text-align: right;
@@ -412,7 +496,7 @@ nav .logo {
 #Map .hotspot-score-icon-small {
   margin-top: 6px;
   margin-left: 4px;
-  width: 20%;
+  width: 15%;
   float: right;
   -webkit-animation: shadow-pulse s infinite;
           animation: shadow-pulse s infinite;
