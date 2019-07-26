@@ -173,7 +173,7 @@ nav .logo {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 7vh;
-  border-bottom: 5px #ffce00 solid;
+  border-bottom: 5px #7cddbd solid;
   position: absolute;
   right: 0;
   width: 18%;
@@ -311,7 +311,7 @@ nav .logo {
 }
 
 #Map .hood-sidebar {
-  border-bottom: 5px #ffce00 solid;
+  border-bottom: 5px #7cddbd solid;
   border-right: 1px solid rgba(7, 7, 7, 0.6);
   position: absolute;
   overflow: scroll;
@@ -515,7 +515,7 @@ nav .logo {
   left: 0;
   padding-right: 15px;
   margin-top: 6px;
-  margin-left: 1px;
+  margin-left: 5px;
 }
 
 #Map .index-number {
@@ -525,19 +525,31 @@ nav .logo {
   font-size: calc(11px + 0.3vw);
 }
 
-#CurrentSelectionCard .modal-box {
-  background-color: pink;
+.modal-container .modal-body {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
 }
 
-#CurrentSelectionCard .modal-box .modal-content {
+.modal-container .modal-header-box {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
+  color: white;
+  border-bottom: 1px solid rgba(124, 221, 189, 0.4);
+}
+
+.modal-container .modal-content {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
   display: inline-block;
-  width: 100%;
-  height: 100%;
-  display: none;
 }
 
-#CurrentSelectionCard .modal-box .modal-picture {
+.modal-container .modal-picture {
   width: 100%;
+}
+
+.modal-container .modal-footer-div {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(124, 221, 189, 0.4);
 }
 
 #CurrentSelectionCard {
@@ -560,17 +572,22 @@ nav .logo {
   width: 60%;
   position: absolute;
   bottom: 0;
-  border-bottom: 5px #ffce00 solid;
+  border-bottom: 5px #7cddbd solid;
+}
+
+#CurrentSelectionCard .card-header {
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
 }
 
 #CurrentSelectionCard .current-card {
   width: 100%;
   border-radius: 1vh;
   min-height: 25vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.9) rgba(5, 31, 52, 0.8));
   margin-bottom: 2vh;
-  border: 1px solid #9ea2a8;
+  border: 1px solid rgba(244, 242, 243, 0.2);
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   color: white;
@@ -601,22 +618,42 @@ nav .logo {
   color: white;
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(20px + 0.4vw);
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  border-bottom: 1px solid rgba(124, 221, 189, 0.4);
 }
 
 #CurrentSelectionCard .add-to-night-button {
   position: absolute;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
   top: 7px;
   right: 7px;
   margin: auto 0;
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(12px + 0.4vw);
   border-color: #ffce00;
+  border: none;
 }
 
-#CurrentSelectionCard .icon-arrows {
-  color: #ffce00;
+#CurrentSelectionCard .add-to-night-button:hover {
+  color: white;
+  background: #ff5165;
+}
+
+#CurrentSelectionCard .add-to-night-button:hover .icon-plus {
+  color: #051F34;
+}
+
+#CurrentSelectionCard .icon-plus {
+  color: #ff5165;
+  font-size: calc(16px + 0.4vw);
+  margin-top: -5px;
+}
+
+#CurrentSelectionCard .see-images-button {
+  margin-top: 5px;
 }
 
 #Map .map-header {
@@ -628,7 +665,7 @@ nav .logo {
   margin: 0 auto;
   height: 7vh;
   z-index: 1;
-  border-top: 2px solid rgba(251, 151, 29, 0.7);
+  border-top: 2px solid rgba(124, 221, 189, 0.7);
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
@@ -726,8 +763,8 @@ nav .logo {
 #Map .map-container {
   margin: 0;
   width: 100%;
-  border-top: 5px #ffce00 solid;
-  border-bottom: 5px #ffce00 solid;
+  border-top: 5px #7cddbd solid;
+  border-bottom: 5px #7cddbd solid;
   height: 100vh;
   position: absolute;
   scroll-snap-align: start;

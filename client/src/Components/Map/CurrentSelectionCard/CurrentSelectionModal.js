@@ -25,16 +25,22 @@ export default class CurrentSelectionModal extends React.Component {
   render() {
     return (
       <div>
-        <Button variant='primary' size='sm' block onClick={this.toggle}>
+        <Button
+          className='see-images-button'
+          outline
+          color='light'
+          size='sm'
+          block
+          onClick={this.toggle}>
           <FiImage /> See More Images
         </Button>
         <Modal isOpen={this.state.modal} className='modal-container' centered>
-          <ModalHeader>Gastown Pub</ModalHeader>
-          <ModalBody className='modal-box'>
+          <ModalHeader className='modal-header-box'>Gastown Pub</ModalHeader>
+          <ModalBody className='modal-body'>
             <Carousel />
           </ModalBody>
-          <ModalFooter>
-            <Button color='danger' onClick={this.toggle}>
+          <ModalFooter className='modal-footer-div'>
+            <Button outline color="light" onClick={this.toggle}>
               Close
             </Button>
           </ModalFooter>
