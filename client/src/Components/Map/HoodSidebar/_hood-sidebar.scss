@@ -17,11 +17,14 @@
 
     .hood-title-select {
       font-family: $title-font;
-      font-size: $font-size-xxl;
-      font-weight: 700;
+      font-size: $font-size-xl;
       display: inline-block;
-      border-bottom: 1px solid $orange;
+      border-bottom: 1px solid $quick-silver;
       margin: 0;
+      background: $background-gradient-dark;
+      color: white;
+      padding: 0.8vh 0 0.8vh 0.8vh;
+      text-transform: uppercase;
     }
 
     .hood-title-box {
@@ -35,7 +38,7 @@
 
     .hood-title-text {
       font-family: $title-font;
-      font-size: $font-size-xxxl;
+      font-size: $font-size-xl;
       font-weight: 700;
       display: inline-block;
       color: $card-color-background;
@@ -47,8 +50,14 @@
       font-family: $title-font;
       width: 100%;
       font-weight: 700;
-      background-color: black;
-      border-bottom: 1px solid $orange;
+      background: $background-gradient-dark;
+      border-bottom: 1px solid $quick-silver;
+      padding-left: 0.8vh;
+      box-shadow: $text-shadow-box;
+    }
+
+    .down-arrow-icon {
+      color: $orange;
     }
 
     .hood-col {
@@ -66,11 +75,19 @@
       margin-top: -6px;
 
       .hotspot-score-icon {
-        margin-top: 9px;
+        margin-top: 12px;
         margin-left: 4px;
-        width: 25%;
+        width: 15%;
         float: right;
         animation: shadow-pulse s infinite;
+      }
+
+      .percent-sign {
+        font-size: $font-size-medium;
+        font-weight: 300;
+        color: $quick-silver;
+        padding-left: 0.2vh;
+        padding-right: 0.4vh;
       }
 
       .hotspot-score-number {
@@ -81,6 +98,7 @@
         margin-bottom: 0;
         margin-left: 8px;
         color: white;
+        float: right;
       }
     }
   }
@@ -121,7 +139,7 @@
   .hood-place-name {
     font-family: $title-font;
     display: inline-block;
-    font-size: $font-size-large;
+    font-size: $font-size-between-medium-and-large;
     word-break: normal;
     margin: 0;
     font-weight: 700;
@@ -146,6 +164,7 @@
     text-transform: uppercase;
     margin: 0;
     padding: 0 0 1.5vh 0;
+    color: $quick-silver;
   }
 
   .hotspot-score-number-small {
@@ -188,5 +207,6 @@
     font-size: $font-size-large;
     font-weight: 700;
     text-shadow: 1px 1px 1px rgba($smoky-black, 0.5);
+    font-size: $font-size-between-medium-and-large;
   }
 }
