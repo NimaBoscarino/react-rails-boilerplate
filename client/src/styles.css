@@ -249,11 +249,15 @@ nav .logo {
 
 #Map .hood-sidebar .hood-title-select {
   font-family: "Fira Sans Extra Condensed", sans-serif;
-  font-size: calc(16px + 0.4vw);
-  font-weight: 700;
+  font-size: calc(14px + 0.4vw);
   display: inline-block;
-  border-bottom: 1px solid #ff9a02;
+  border-bottom: 1px solid #9ea2a8;
   margin: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
+  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  color: white;
+  padding: 0.8vh 0 0.8vh 0.8vh;
+  text-transform: uppercase;
 }
 
 #Map .hood-sidebar .hood-title-box {
@@ -267,7 +271,7 @@ nav .logo {
 
 #Map .hood-sidebar .hood-title-text {
   font-family: "Fira Sans Extra Condensed", sans-serif;
-  font-size: calc(20px + 0.4vw);
+  font-size: calc(14px + 0.4vw);
   font-weight: 700;
   display: inline-block;
   color: #fffffc;
@@ -279,8 +283,16 @@ nav .logo {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   width: 100%;
   font-weight: 700;
-  background-color: black;
-  border-bottom: 1px solid #ff9a02;
+  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
+  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  border-bottom: 1px solid #9ea2a8;
+  padding-left: 0.8vh;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+#Map .hood-sidebar .down-arrow-icon {
+  color: #ff9a02;
 }
 
 #Map .hood-sidebar .hood-col {
@@ -299,12 +311,20 @@ nav .logo {
 }
 
 #Map .hood-sidebar .hotspot-score .hotspot-score-icon {
-  margin-top: 9px;
+  margin-top: 12px;
   margin-left: 4px;
-  width: 25%;
+  width: 15%;
   float: right;
   -webkit-animation: shadow-pulse s infinite;
           animation: shadow-pulse s infinite;
+}
+
+#Map .hood-sidebar .hotspot-score .percent-sign {
+  font-size: calc(10px + 0.3vw);
+  font-weight: 300;
+  color: #9ea2a8;
+  padding-left: 0.2vh;
+  padding-right: 0.4vh;
 }
 
 #Map .hood-sidebar .hotspot-score .hotspot-score-number {
@@ -315,6 +335,7 @@ nav .logo {
   margin-bottom: 0;
   margin-left: 8px;
   color: white;
+  float: right;
 }
 
 #Map .hood-place-list-item {
@@ -347,7 +368,7 @@ nav .logo {
 #Map .hood-place-name {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   display: inline-block;
-  font-size: calc(12px + 0.4vw);
+  font-size: calc(11px + 0.3vw);
   word-break: normal;
   margin: 0;
   font-weight: 700;
@@ -372,6 +393,7 @@ nav .logo {
   text-transform: uppercase;
   margin: 0;
   padding: 0 0 1.5vh 0;
+  color: #9ea2a8;
 }
 
 #Map .hotspot-score-number-small {
@@ -415,6 +437,7 @@ nav .logo {
   font-size: calc(12px + 0.4vw);
   font-weight: 700;
   text-shadow: 1px 1px 1px rgba(7, 7, 7, 0.5);
+  font-size: calc(11px + 0.3vw);
 }
 
 #CurrentSelectionCard .modal-box {
@@ -457,9 +480,15 @@ nav .logo {
 
 #CurrentSelectionCard .current-card {
   width: 100%;
+  border-radius: 1vh;
   min-height: 25vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fffffc), to(rgba(255, 255, 252, 0.6)));
-  background: linear-gradient(to bottom, #fffffc, rgba(255, 255, 252, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  margin-bottom: 2vh;
+  border: 1px solid #9ea2a8;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 #CurrentSelectionCard .current-card-pic-col {
@@ -482,6 +511,8 @@ nav .logo {
 }
 
 #CurrentSelectionCard .current-card-title {
+  border-top-right-radius: 1vh;
+  border-top-left-radius: 1vh;
   color: white;
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(20px + 0.4vw);

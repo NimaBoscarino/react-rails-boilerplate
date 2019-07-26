@@ -24,12 +24,13 @@
 
   .current-card {
     width: 100%;
+    border-radius: 1vh;
     min-height: 25vh;
-    background: linear-gradient(
-      to bottom,
-      $card-color-background,
-      rgba($card-color-background, 0.6)
-    );
+    background: $background-gradient-medium;
+    margin-bottom: 2vh;
+    border: 1px solid $quick-silver;
+    box-shadow: $text-shadow-box;
+    color: white;
   }
 
   .current-card-pic-col {
@@ -51,6 +52,8 @@
   }
 
   .current-card-title {
+    border-top-right-radius: 1vh;
+    border-top-left-radius: 1vh;
     color: white;
     font-family: $title-font;
     font-size: $font-size-xxxl;
