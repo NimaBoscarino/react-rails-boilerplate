@@ -65,8 +65,41 @@ class ReactGoogleMap extends Component {
               .map(place=>{
                 return (
                 <Marker 
+                  key={place.id}
                   position={{lat: place.lat, lng: place.long}}
-                  onClick={()=>{console.log(place.name)}}
+                  onClick={()=>{this.props.updateSelection(place.id)}}
+                />)
+              })
+          }
+        </GoogleMap>
+     ));
+    }
+     if (this.props.mapCenterPlace) {
+      const currentSelection = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+      const onTheList = 'http://iconshow.me/media/images/Application/Map-Markers-icons/png/256/MapMarker_Marker_Inside_Chartreuse.png';
+      GoogleMapExample = withGoogleMap(props => (
+        <GoogleMap
+          defaultCenter = {{lat: this.props.centerPlace.lat, lng: this.props.centerPlace.long}  }
+          defaultZoom = { 17 }
+          defaultOptions = {{styles:mapStyles}}
+        >
+          {
+            this.props.places.filter(el=>el.neighbourhood_id===this.props.centerNeighbourhood.id)
+              .map(place=>{
+                let image=null;
+                if (place.id===this.props.centerPlace.id) {
+                  image=currentSelection
+                }
+                if (this.props.selectionList.map(el=>el.id).includes(place.id)) {
+                  image=onTheList
+                }
+                return (
+                <Marker 
+                  key={place.id}
+                  position={{lat: place.lat, lng: place.long}}
+                  icon={image && image}
+                  label={`${place.rating}`}
+                  onClick={()=>{this.props.updateSelection(place.id)}}
                 />)
               })
           }

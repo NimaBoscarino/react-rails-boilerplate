@@ -14,6 +14,8 @@ class Map extends Component {
       showSelectionCard:false,
       centerNeighbourhood:null,
       mapCenterNeighbourhood:false,
+      centerPlace:null,
+      mapCenterPlace:false,
     };
     this.updateCurrentSelection = this.updateCurrentSelection.bind(this);
     this.deleteSelectedPlace = this.deleteSelectedPlace.bind(this);
@@ -21,9 +23,13 @@ class Map extends Component {
     this.clickNeighbourhood = this.clickNeighbourhood.bind(this);
   }
   updateCurrentSelection(id) {
+    const currentPlace=this.props.places.filter(place=>place.id===id)[0]
     this.setState({
-      currentSelection: this.props.places.filter(place=>place.id===id)[0],
-      showSelectionCard:true
+      currentSelection: currentPlace,
+      showSelectionCard:true,
+      mapCenterPlace:true,
+      centerPlace: currentPlace,
+      mapCenterNeighbourhood:false,
     });
   }
   addCurrentSelection(id) {
@@ -46,7 +52,9 @@ class Map extends Component {
     if (!this.state.centerNeighbourhood || this.state.centerNeighbourhood.id!==id){
       this.setState({
         mapCenterNeighbourhood:true,
-        centerNeighbourhood:this.props.neighbourhoods.filter(element=>element.id===id)[0]
+        centerNeighbourhood:this.props.neighbourhoods.filter(element=>element.id===id)[0],
+        mapCenterPlace: false,
+        centerPlace: null,
       })
     }
   }
@@ -62,6 +70,10 @@ class Map extends Component {
             clickNeighbourhood={this.clickNeighbourhood} 
             mapCenterNeighbourhood = {this.state.mapCenterNeighbourhood}
             centerNeighbourhood = {this.state.centerNeighbourhood}
+            updateSelection = {this.updateCurrentSelection}
+            mapCenterPlace = {this.state.mapCenterPlace}
+            centerPlace = {this.state.centerPlace}
+            selectionList = {this.state.selectionList}
           />
           <HoodSidebar 
             updateSelection={this.updateCurrentSelection} 
