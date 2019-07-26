@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import HoodList from "./HoodList";
 import { FiChevronDown } from "react-icons/fi";
+import { FiChevronUp } from "react-icons/fi";
 
 class HoodSidebar extends Component {
   constructor(props) {
@@ -23,8 +24,11 @@ class HoodSidebar extends Component {
       <div className='d-flex align-items-stretch hood-sidebar'>
         <ul className='list-group list-group-flush hood-list'>
           <li className='list-group-item hood-title-select'>
-            Explore Areas <FiChevronDown className='down-arrow-icon' />
+            Explore Areas 
           </li>
+
+
+
           {this.props.neighbourhoods &&
             this.props.neighbourhoods.map(element => {
               return (

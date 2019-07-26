@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Logo from "./assets/hotspot-logo4.png";
+import Logo from "../../global-assets/hotspot-logo.png";
 
 class Nav extends Component {
   render() {

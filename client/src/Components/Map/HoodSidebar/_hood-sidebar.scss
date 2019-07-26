@@ -8,7 +8,7 @@
     left: 0;
     width: 18%;
     height: 93vh;
-    background: rgba($smoky-black, 0.1);
+    background: transparent;
 
     .hood-list {
       width: 100%;
@@ -20,9 +20,9 @@
       font-family: $title-font;
       font-size: $font-size-xl;
       display: inline-block;
-      border-bottom: 1px solid $quick-silver;
+      border-bottom: 1px solid rgba($very-light-grey, 0.4);
       margin: 0;
-      background: $background-gradient-dark;
+      background: $background-gradient-blue-dark;
       color: white;
       padding: 0.8vh 0 0.8vh 0.8vh;
       text-transform: uppercase;
@@ -39,25 +39,29 @@
 
     .hood-title-text {
       font-family: $title-font;
-      font-size: $font-size-xl;
+      font-size: $font-size-large;
       font-weight: 700;
       display: inline-block;
-      color: $accent-grey;
+      color: $very-light-grey;
       margin: 0;
       padding: 1vh 0 1vh 0;
+      padding-left: 1vh;
     }
 
     .hood-name-li {
       font-family: $title-font;
       width: 100%;
       font-weight: 700;
-      background: $background-gradient-dark;
-      border-bottom: 1px solid $quick-silver;
+      background: $background-gradient-blue-dark;
+      border-bottom: 1px solid rgba($very-light-grey, 0.3);
       padding-left: 0.8vh;
+      text-shadow: $text-shadow-subtle;
     }
 
-    .down-arrow-icon {
-      color: $orange;
+    .arrow-icon {
+      color: $powder-blue;
+      font-size: $font-size-large;
+      margin-left: 4px;
     }
 
     .hood-col {
@@ -69,35 +73,32 @@
     .hotspot-score {
       display: inline-block;
       width: 30%;
-      font-size: $font-size-xxxl;
       text-align: right;
       padding: 1vh 0 1vh 0;
       margin-top: -6px;
 
       .hotspot-score-icon {
-        margin-top: 12px;
-        margin-left: 4px;
-        width: 15%;
+        margin-top: 4px;
+        margin-left: 2px;
+        margin-right: 4px;
+        width: 25%;
         float: right;
         animation: shadow-pulse s infinite;
-      }
-
-      .percent-sign {
-        font-size: $font-size-medium;
-        font-weight: 300;
-        color: $quick-silver;
-        padding-left: 0.2vh;
-        padding-right: 0.4vh;
       }
 
       .hotspot-score-number {
         display: inline-block;
         width: 50%;
+        font-size: $font-size-large;
         font-family: $title-font;
         font-weight: 700;
         margin-bottom: 0;
-        margin-left: 8px;
-        color: white;
+        margin-top: 0;
+        margin-right: 0;
+        padding: 0;
+        color: $very-light-grey;
+        letter-spacing: 0.1vh;
+        text-shadow: $text-shadow-subtle;
         float: right;
       }
     }
@@ -108,27 +109,19 @@
   }
 
   .hood-place-list-item {
-    color: $accent-grey;
-    border-top: 1px solid rgba($smoky-black, 0.5);
-    border-right: 1px solid rgba($smoky-black, 0.5);
-    border-left: 1px solid rgba($smoky-black, 0.5);
-    border-bottom: 1px solid $quick-silver;
+    color: $very-light-grey;
+    border-top: 1px solid rgba($very-light-grey, 0.1);
+    border-right: 1px solid rgba($very-light-grey, 0.1);
+    border-left: 1px solid rgba($very-light-grey, 0.1);
+    border-bottom: 1px solid rgba($very-light-grey, 0.1);
     padding: 0.6vh 0 0 0.6vh;
     margin: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba($smoky-black, 0.8),
-      rgba($smoky-black, 0.7)
-    );
+    background: $background-gradient-blue-medium;
   }
 
   .hood-place-list-item:hover {
     color: white;
-    background: linear-gradient(
-      to bottom,
-      rgba($smoky-black, 1),
-      rgba($smoky-black, 0.9)
-    );
+    background: $background-gradient-blue-light;
   }
 
   .hood-place-name-div {
@@ -165,10 +158,11 @@
 
   .hood-place-type {
     font-family: $title-font;
-    text-transform: uppercase;
+    font-size: $font-size-small-type;
+    text-transform: capitalize;
     margin: 0;
     padding: 0 0 1.5vh 0;
-    color: $quick-silver;
+    color: $very-light-grey;
   }
 
   .hotspot-score-number-small {
@@ -185,9 +179,9 @@
   }
 
   .hotspot-score-icon-small {
-    margin-top: 6px;
+    margin-top: 0;
     margin-left: 4px;
-    width: 15%;
+    width: 25%;
     float: right;
     animation: shadow-pulse s infinite;
   }
@@ -204,7 +198,7 @@
     left: 0;
     padding-right: 15px;
     margin-top: 6px;
-    margin-left: -5px;
+    margin-left: 1px;
   }
 
   .index-number {

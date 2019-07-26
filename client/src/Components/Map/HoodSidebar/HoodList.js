@@ -2,11 +2,14 @@ import React, { Component } from "react";
 // import axios from "axios";
 import HotSpotIcon from "../../../global-assets/hotspot-score-icon-small.png";
 import HoodPlaceList from "./HoodPlaceList";
+import { FiChevronDown } from "react-icons/fi";
+import { FiChevronUp } from "react-icons/fi";
 
 class HoodList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isCardView: false,
       message: "Click the button to load data!",
       showListPlaces: false
     };
@@ -36,6 +39,17 @@ class HoodList extends Component {
               this.clickTogglePlaces();
             }}>
             <h4 className='hood-title-text'>{this.props.neighbourhood.name}</h4>
+
+            <a
+              onClick={() =>
+                this.setState({ isCardView: !this.state.isCardView })
+              }>
+              {this.state.isCardView ? (
+                <FiChevronUp className='arrow-icon' />
+              ) : (
+                <FiChevronDown className='arrow-icon' />
+              )}
+            </a>
           </div>
 
           <div className='col hotspot-score float-right'>

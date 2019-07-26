@@ -12,21 +12,22 @@ body {
 
 nav {
   overflow: hidden;
-  background-color: #070707;
   position: fixed;
   /* Set the navbar to fixed position */
   top: 0;
   /* Position the navbar at the top of the page */
   width: 100%;
-  border-bottom: #ffce00 solid 2px;
+  border-bottom: #f4f2f3 solid 1px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 nav .logo-box {
   display: inline-block;
-  width: 20%;
-  margin: 0 auto;
+  width: 25%;
+  margin: 0.1vh auto;
   text-align: center;
 }
 
@@ -177,8 +178,8 @@ nav .logo {
   right: 0;
   width: 18%;
   height: 93vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.6)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.6) rgba(5, 31, 52, 0.4));
 }
 
 #Map .planner-sidebar .list-group-item {
@@ -318,7 +319,7 @@ nav .logo {
   left: 0;
   width: 18%;
   height: 93vh;
-  background: rgba(7, 7, 7, 0.1);
+  background: transparent;
 }
 
 #Map .hood-sidebar .hood-list {
@@ -331,10 +332,10 @@ nav .logo {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(14px + 0.4vw);
   display: inline-block;
-  border-bottom: 1px solid #9ea2a8;
+  border-bottom: 1px solid rgba(244, 242, 243, 0.4);
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
   color: white;
   padding: 0.8vh 0 0.8vh 0.8vh;
   text-transform: uppercase;
@@ -351,26 +352,30 @@ nav .logo {
 
 #Map .hood-sidebar .hood-title-text {
   font-family: "Fira Sans Extra Condensed", sans-serif;
-  font-size: calc(14px + 0.4vw);
+  font-size: calc(12px + 0.4vw);
   font-weight: 700;
   display: inline-block;
-  color: #d6e5e3;
+  color: #f4f2f3;
   margin: 0;
   padding: 1vh 0 1vh 0;
+  padding-left: 1vh;
 }
 
 #Map .hood-sidebar .hood-name-li {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   width: 100%;
   font-weight: 700;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
-  border-bottom: 1px solid #9ea2a8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  border-bottom: 1px solid rgba(244, 242, 243, 0.3);
   padding-left: 0.8vh;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-#Map .hood-sidebar .down-arrow-icon {
-  color: #ff9a02;
+#Map .hood-sidebar .arrow-icon {
+  color: #7cddbd;
+  font-size: calc(12px + 0.4vw);
+  margin-left: 4px;
 }
 
 #Map .hood-sidebar .hood-col {
@@ -382,37 +387,34 @@ nav .logo {
 #Map .hood-sidebar .hotspot-score {
   display: inline-block;
   width: 30%;
-  font-size: calc(20px + 0.4vw);
   text-align: right;
   padding: 1vh 0 1vh 0;
   margin-top: -6px;
 }
 
 #Map .hood-sidebar .hotspot-score .hotspot-score-icon {
-  margin-top: 12px;
-  margin-left: 4px;
-  width: 15%;
+  margin-top: 4px;
+  margin-left: 2px;
+  margin-right: 4px;
+  width: 25%;
   float: right;
   -webkit-animation: shadow-pulse s infinite;
           animation: shadow-pulse s infinite;
 }
 
-#Map .hood-sidebar .hotspot-score .percent-sign {
-  font-size: calc(10px + 0.3vw);
-  font-weight: 300;
-  color: #9ea2a8;
-  padding-left: 0.2vh;
-  padding-right: 0.4vh;
-}
-
 #Map .hood-sidebar .hotspot-score .hotspot-score-number {
   display: inline-block;
   width: 50%;
+  font-size: calc(12px + 0.4vw);
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-weight: 700;
   margin-bottom: 0;
-  margin-left: 8px;
-  color: white;
+  margin-top: 0;
+  margin-right: 0;
+  padding: 0;
+  color: #f4f2f3;
+  letter-spacing: 0.1vh;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   float: right;
 }
 
@@ -421,21 +423,21 @@ nav .logo {
 }
 
 #Map .hood-place-list-item {
-  color: #d6e5e3;
-  border-top: 1px solid rgba(7, 7, 7, 0.5);
-  border-right: 1px solid rgba(7, 7, 7, 0.5);
-  border-left: 1px solid rgba(7, 7, 7, 0.5);
-  border-bottom: 1px solid #9ea2a8;
+  color: #f4f2f3;
+  border-top: 1px solid rgba(244, 242, 243, 0.1);
+  border-right: 1px solid rgba(244, 242, 243, 0.1);
+  border-left: 1px solid rgba(244, 242, 243, 0.1);
+  border-bottom: 1px solid rgba(244, 242, 243, 0.1);
   padding: 0.6vh 0 0 0.6vh;
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.9) rgba(5, 31, 52, 0.8));
 }
 
 #Map .hood-place-list-item:hover {
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
+  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
 }
 
 #Map .hood-place-name-div {
@@ -472,10 +474,11 @@ nav .logo {
 
 #Map .hood-place-type {
   font-family: "Fira Sans Extra Condensed", sans-serif;
-  text-transform: uppercase;
+  font-size: calc(10px + 0.2vw);
+  text-transform: capitalize;
   margin: 0;
   padding: 0 0 1.5vh 0;
-  color: #9ea2a8;
+  color: #f4f2f3;
 }
 
 #Map .hotspot-score-number-small {
@@ -492,9 +495,9 @@ nav .logo {
 }
 
 #Map .hotspot-score-icon-small {
-  margin-top: 6px;
+  margin-top: 0;
   margin-left: 4px;
-  width: 15%;
+  width: 25%;
   float: right;
   -webkit-animation: shadow-pulse s infinite;
           animation: shadow-pulse s infinite;
@@ -512,7 +515,7 @@ nav .logo {
   left: 0;
   padding-right: 15px;
   margin-top: 6px;
-  margin-left: -5px;
+  margin-left: 1px;
 }
 
 #Map .index-number {
@@ -625,10 +628,12 @@ nav .logo {
   margin: 0 auto;
   height: 7vh;
   z-index: 1;
-  border-top: 1px #ffce00 solid;
-  -webkit-box-shadow: 0 8px 6px -6px black;
-  box-shadow: 0px 8px 6px -6px black;
-  background-color: #070707;
+  border-top: 2px solid rgba(251, 151, 29, 0.7);
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  border-bottom: 1px solid rgba(39, 96, 152, 0.1);
 }
 
 #Map .map-header .hood-header-box {
