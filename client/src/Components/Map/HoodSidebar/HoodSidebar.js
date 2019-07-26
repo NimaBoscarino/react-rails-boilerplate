@@ -33,6 +33,7 @@ class HoodSidebar extends Component {
                   updateSelection={this.props.updateSelection}
                   neighbourhood={element}
                   places={this.state.places}
+                  clickNeighbourhood = {this.props.clickNeighbourhood}
                 />
               );
             })}

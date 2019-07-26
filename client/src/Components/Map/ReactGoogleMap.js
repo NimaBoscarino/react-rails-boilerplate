@@ -11,7 +11,7 @@ class ReactGoogleMap extends Component {
   }
   
   render() {
-    const GoogleMapExample = withGoogleMap(props => (
+    let GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
         defaultCenter = { { lat: 49.2827, lng: -123.1207 } }
         defaultZoom = { 12 }
@@ -31,14 +31,37 @@ class ReactGoogleMap extends Component {
                       strokeWeight: 1
                   }}
                   onClick={() => {
-                      console.log("ahmet")
+                      this.props.clickNeighbourhood(element.id)
                   }}/>
               )
             })
         }
       </GoogleMap>
    ));
-
+    if (this.props.mapCenterNeighbourhood) {
+      GoogleMapExample = withGoogleMap(props => (
+        <GoogleMap
+          defaultCenter = { this.props.centerNeighbourhood.center }
+          defaultZoom = { 14 }
+          defaultOptions = {{styles:mapStyles}}
+        >
+          <Polygon
+            paths={this.props.centerNeighbourhood.borderPoints}
+            key={this.props.centerNeighbourhood.id}
+            options={{
+                fillColor: "#000",
+                fillOpacity: 0.4,
+                strokeColor: "#000",
+                strokeOpacity: 1,
+                strokeWeight: 1
+            }}
+            onClick={() => {
+                
+            }}
+          />
+        </GoogleMap>
+     ));
+    }
     return (
       <div className='map-container'>
         <GoogleMapExample

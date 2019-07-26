@@ -34,6 +34,7 @@ class HoodList extends Component {
             className='col hood-col'
             onClick={() => {
               this.clickTogglePlaces();
+              this.props.clickNeighbourhood(this.props.neighbourhood.id)
             }}>
             <h4 className='hood-title-text'>{this.props.neighbourhood.name}</h4>
           </div>
