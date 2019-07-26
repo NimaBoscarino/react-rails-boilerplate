@@ -27,7 +27,7 @@ class MapHeader extends Component {
           <h5 className='selected-hood'>placeholder-text</h5>
         </div>
         <div className='col hood-header-box'>
-          <h4 className='selected-hood'>Mt. Pleasant</h4>
+          <h4 className='selected-hood'>{this.props.currentNeighbourhood ? this.props.currentNeighbourhood.name : 'Vancouver'}</h4>
         </div>
         <div className='col d-flex align-items-center filter-toolbar'>
 
@@ -43,7 +43,7 @@ class MapHeader extends Component {
                   style={{ textDecoration: "underline", color: "blue" }}
                   href='#'
                   id='Restaurants'>
-                  <Button className='filter-buttons restaurant-filter-button'>
+                  <Button className='filter-buttons restaurant-filter-button' onClick={()=>{this.props.filterPlaces('restaurant')}}>
                     <FaPizzaSlice className='filter-icons' />
                     Restaurants
                   </Button>
@@ -57,11 +57,11 @@ class MapHeader extends Component {
                   Restaurants
                 </Tooltip>
 
-                <Button className='filter-buttons bar-filter-button'>
+                <Button className='filter-buttons bar-filter-button' onClick={()=>{this.props.filterPlaces('night_club')}}>
                   <FaMusic className='filter-icons' />
                   Night Clubs
                 </Button>
-                <Button className='filter-buttons club-filter-button'>
+                <Button className='filter-buttons club-filter-button' onClick={()=>{this.props.filterPlaces('bar')}}>
                   <FaGlassCheers className='filter-icons' />
                   Bars
                 </Button>
