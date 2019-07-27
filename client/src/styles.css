@@ -728,7 +728,6 @@ nav .logo {
 }
 
 #Map .map-header .hood-header-box {
-  width: 30%;
   text-align: center;
 }
 
@@ -737,7 +736,6 @@ nav .logo {
   color: white;
   padding: 0;
   margin: 0 auto;
-  width: 30%;
   font-size: calc(7px + 0.2vw);
 }
 
