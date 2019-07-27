@@ -730,14 +730,37 @@ nav .logo {
   text-align: center;
 }
 
-#Map .map-header h4.selected-hood {
+#Map .map-header .filter-box-div {
+  display: inline-block;
+  color: white;
+  padding: 0;
+  margin: 0 auto;
+}
+
+#Map .map-header .filter-box-div .form-group {
+  color: white;
+}
+
+#Map .map-header .filter-box-div .form-div .start-time-div {
+  display: inline-block;
+}
+
+#Map .map-header .filter-box-div .form-div .end-time-div {
+  display: inline-block;
+}
+
+#Map .map-header .filter-box-div .form-div .weekday-selector-div {
+  display: inline-block;
+}
+
+#Map .map-header .filter-box-div h4.selected-hood {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(30px + 0.8vw);
   font-weight: 700;
   color: white;
 }
 
-#Map .map-header .filter-title {
+#Map .map-header .filter-box-div .filter-title {
   font-family: "Roboto", sans-serif;
   margin: 0 0 0.2vh 0;
   padding: 0;
@@ -745,25 +768,25 @@ nav .logo {
   font-size: calc(7px + 0.3vw);
 }
 
-#Map .map-header .button-toolbar {
+#Map .map-header .filter-box-div .button-toolbar {
   margin-top: 0;
 }
 
-#Map .map-header .button-row {
+#Map .map-header .filter-box-div .button-row {
   margin-top: -8px;
   display: block;
 }
 
-#Map .map-header .filter-toolbar {
+#Map .map-header .filter-box-div .filter-toolbar {
   padding: 0;
   margin: 0;
 }
 
-#Map .map-header .filter-toolbar {
+#Map .map-header .filter-box-div .filter-toolbar {
   font-size: calc(12px + 0.4vw);
 }
 
-#Map .map-header .filter-icons {
+#Map .map-header .filter-box-div .filter-icons {
   margin-right: 0.5vh;
   font-size: calc(12px + 0.4vw);
 }

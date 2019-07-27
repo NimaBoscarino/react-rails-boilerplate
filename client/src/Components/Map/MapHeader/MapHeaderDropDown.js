@@ -30,40 +30,51 @@ export default class Example extends React.Component {
 
   render() {
     return (
-      <div className='filter'>
-        <Form>
-          <FormGroup>
-            <Label for='exampleEmail'>Email</Label>
-            <Input
-              type='email'
-              name='email'
-              id='exampleEmail'
-              placeholder='start-time'
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for='examplePassword'>Password</Label>
-            <Input
-              type=''
-              name='password'
-              id='examplePassword'
-              placeholder='end-time'
-            />
-          </FormGroup>
-        </Form>
-
-        <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <DropdownToggle caret>Days of Week</DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem>Sunday</DropdownItem>
-            <DropdownItem>Monday</DropdownItem>
-            <DropdownItem>Tuesday</DropdownItem>
-            <DropdownItem>Wednesday</DropdownItem>
-            <DropdownItem>Thursday</DropdownItem>
-            <DropdownItem>Friday</DropdownItem>
-            <DropdownItem>Saturday</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+      <div className='filter-div'>
+        <div className='form-div'>
+          <Form>
+            <div className='start-time-div'>
+              <FormGroup>
+                <Label for='start-time'>Start Time</Label>
+                <Input
+                  type=''
+                  name='start-time'
+                  id='start-time'
+                  placeholder='start-time'
+                />
+              </FormGroup>
+            </div>
+            <div className='start-time-div'>
+              <FormGroup>
+                <Label for='end-time'>End Time</Label>
+                <Input
+                  type=''
+                  name='password'
+                  id='end-time'
+                  placeholder='end-time'
+                />
+              </FormGroup>
+            </div>
+            <div className='weekday-selector-div'>
+              <Dropdown
+                isOpen={this.state.dropdownOpen}
+                toggle={this.toggle}
+                className='weekday-selector-div'>
+                <DropdownToggle caret>Day of Week</DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem>Sunday</DropdownItem>
+                  <DropdownItem>Monday</DropdownItem>
+                  <DropdownItem>Tuesday</DropdownItem>
+                  <DropdownItem>Wednesday</DropdownItem>
+                  <DropdownItem>Thursday</DropdownItem>
+                  <DropdownItem>Friday</DropdownItem>
+                  <DropdownItem>Saturday</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+            <Button color='secondary'>Submit</Button>{" "}
+          </Form>
+        </div>
       </div>
     );
   }

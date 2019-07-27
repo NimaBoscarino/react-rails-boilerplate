@@ -24,7 +24,7 @@ class MapHeader extends Component {
   render() {
     return (
       <div className='d-inline-flex p-2 justify-content-center map-header'>
-        <div className='col hood-header-box'>
+        <div className='col filter-box-div'>
           <MapDayFilter />
         </div>
         <div className='col hood-header-box'>

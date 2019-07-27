@@ -20,42 +20,65 @@
       text-align: center;
     }
 
-    h4.selected-hood {
-      font-family: $title-font;
-      font-size: $font-size-xxxxl;
-      font-weight: 700;
+    .filter-box-div {
+      display: inline-block;
       color: $white;
-    }
-
-    .filter-title {
-      font-family: $body-font;
-      margin: 0 0 0.2vh 0;
       padding: 0;
-      color: $accent-grey;
-      font-size: $font-size-map-header-filters;
-    }
+      margin: 0 auto;
 
-    .button-toolbar {
-      margin-top: 0;
-    }
+      .form-group {
+        color: white;
+      }
 
-    .button-row {
-      margin-top: -8px;
-      display: block;
-    }
+      .form-div {
+        .start-time-div {
+          display: inline-block;
+        }
+        .end-time-div {
+          display: inline-block;
+        }
+        .weekday-selector-div {
+          display: inline-block;
+        }
+      }
 
-    .filter-toolbar {
-      padding: 0;
-      margin: 0;
-    }
+      h4.selected-hood {
+        font-family: $title-font;
+        font-size: $font-size-xxxxl;
+        font-weight: 700;
+        color: $white;
+      }
 
-    .filter-toolbar {
-      font-size: $font-size-large;
-    }
+      .filter-title {
+        font-family: $body-font;
+        margin: 0 0 0.2vh 0;
+        padding: 0;
+        color: $accent-grey;
+        font-size: $font-size-map-header-filters;
+      }
 
-    .filter-icons {
-      margin-right: 0.5vh;
-      font-size: $font-size-large;
+      .button-toolbar {
+        margin-top: 0;
+      }
+
+      .button-row {
+        margin-top: -8px;
+        display: block;
+      }
+
+      .filter-toolbar {
+        padding: 0;
+        margin: 0;
+      }
+
+      .filter-toolbar {
+        font-size: $font-size-large;
+      }
+
+      .filter-icons {
+        margin-right: 0.5vh;
+        font-size: $font-size-large;
+      }
     }
   }
 }
