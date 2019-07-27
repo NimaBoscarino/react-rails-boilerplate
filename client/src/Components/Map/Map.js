@@ -50,6 +50,7 @@ class Map extends Component {
   }
 
   clickNeighbourhood(id){
+    if (this.props.places) {
     if (!this.state.centerNeighbourhood || this.state.centerNeighbourhood.id!==id){
       this.setState({
         mapCenterNeighbourhood:true,
@@ -57,6 +58,8 @@ class Map extends Component {
         mapCenterPlace: false,
         centerPlace: null,
       })
+    }} else {
+      console.log("Loading data");
     }
   }
 
