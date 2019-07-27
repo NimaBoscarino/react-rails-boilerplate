@@ -21,10 +21,10 @@ class CurrentSelectionCard extends Component {
                       <div className='col current-card-pic-col'>
                         <img
                           className='current-card-pic'
-                          src={PlaceHolderPic}
+                          src={this.props.currentSelection.yelp_photos[0]}
                           alt={""}
                         />
-                        <CurrentSelectionModal />
+                        <CurrentSelectionModal place={this.props.currentSelection}/>
                       </div>
                       <div className='col current-card-info'>
                         <p>

@@ -35,9 +35,9 @@ export default class CurrentSelectionModal extends React.Component {
           <FiImage /> See More Images
         </Button>
         <Modal isOpen={this.state.modal} className='modal-container' centered>
-          <ModalHeader className='modal-header-box'>Gastown Pub</ModalHeader>
+          <ModalHeader className='modal-header-box'>{this.props.place.name}</ModalHeader>
           <ModalBody className='modal-body'>
-            <Carousel />
+            <Carousel images={this.props.place.yelp_photos}/>
           </ModalBody>
           <ModalFooter className='modal-footer-div'>
             <Button outline color="light" onClick={this.toggle}>

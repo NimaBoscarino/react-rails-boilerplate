@@ -23,12 +23,19 @@ class PlacesController < ApplicationController
         all_types=place.types.select(:name)
         all_types_array=[]
         all_types.each {|each_type| all_types_array.push(each_type[:name])}
+
         all_popular_times=place.popular_times.all
         all_popular_times_array=[]
         all_popular_times.each{|each_popular_time| all_popular_times_array.push(each_popular_time.attributes)}
+
+        all_yelp_photos=place.yelp_photos.select(:url)
+        all_yelp_photos_array=[]
+        all_yelp_photos.each{|each_photo| all_yelp_photos_array.push(each_photo[:url])}
+
         hash=place.attributes
         hash["types"]=all_types_array
         hash["popular_times"]=all_popular_times_array
+        hash["yelp_photos"]=all_yelp_photos_array
         hash
     end
 end
