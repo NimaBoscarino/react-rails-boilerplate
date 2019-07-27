@@ -1,16 +1,26 @@
-#CurrentSelectionCard {
-  .modal-box {
-    background-color: pink;
+.modal-container {
+  .modal-body {
+    background: $background-gradient-blue-light;
+  }
 
-    .modal-content {
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-      display: none;
-    }
+  .modal-header-box {
+    background: $background-gradient-blue-light;
+    color: $white;
+    border-bottom: 1px solid rgba($powder-blue, 0.4);
+  }
 
-    .modal-picture {
-      width: 100%;
-    }
+  .modal-content {
+    background: $background-gradient-blue-light;
+    display: inline-block;
+  }
+
+  .modal-picture {
+    width: 100%;
+  }
+
+  .modal-footer-div {
+    background-color: transparent !important;
+    border-top: 1px solid rgba($powder-blue, 0.4);
+    
   }
 }

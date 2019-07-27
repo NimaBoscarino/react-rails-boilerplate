@@ -1,17 +1,39 @@
 #Map {
   .planner-sidebar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2vh;
+    flex-direction: column;
     margin-top: 7vh;
-    border-bottom: 5px $medium-yellow solid;
+    border-bottom: 5px $powder-blue solid;
     position: absolute;
     right: 0;
     width: 18%;
     height: 93vh;
-    border-left: 1px solid #9ea2a8;
-    background: linear-gradient(
-      to bottom,
-      $smoky-black,
-      rgba($smoky-black, 0.6)
-    );
+    background: $background-gradient-very-light-blue;
+
+    .trip-title-intro-div {
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+      flex-wrap: wrap;
+
+      .trip-title-text {
+        color: $white;
+        font-family: $title-font;
+        font-size: $font-size-large;
+      }
+    }
+
+ 
+
+    .list-group-item {
+      text-align: left;
+    }
+
+    .list-group-item:hover {
+      color: $gunmetal;
+    }
 
     .trip-title {
       display: inline-block;
@@ -22,6 +44,7 @@
       font-weight: 700;
       padding: 0;
       font-size: 20px;
+      align-self: flex-start;
     }
 
     .trip-list {
@@ -30,17 +53,62 @@
     }
 
     .trip-name {
-      font-family: $title-font;
+      display: inline-block;
+      position: relative;
+      font-size: $font-size-large;
       border-radius: 5px;
-      color: white;
+      color: $smoky-black;
       border: #9ea2a8 solid 1px;
-      width: 95%;
-      margin: 5px auto;
-      background: linear-gradient(
-        to bottom,
-        $smoky-black,
-        rgba($smoky-black, 0.9)
-      );
+      width: 90%;
+      margin: 0.5vh auto;
+      background: $background-gradient-blue-dark-map-header;
+      border: $bright-pink solid 1px;
+      box-shadow: $button-shadows;
+    }
+
+    .trip-name:hover {
+      box-shadow: none;
+      .icon-buttons-close {
+        color: $very-light-grey;
+      }
+    }
+
+    .place-name {
+      font-family: $title-font;
+      font-size: $font-size-large;
+      font-weight: 700;
+      display: block;
+      color: $white;
+      width: 80%;
+      line-height: 1.3;
+    }
+
+    .place-type {
+      font-family: $title-font;
+      font-size: $font-size-medium;
+      color: $white;
+      text-transform: capitalize;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+
+    .close-button-box {
+      color: $gunmetal;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .sidebar-button-close {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    .icon-buttons-close {
+      display: inline-block;
+      color: $super-light-grey;
+      font-size: $font-size-xxl;
     }
   }
 
@@ -51,13 +119,12 @@
   }
 
   .hotspot-stat-box {
-    border-top: white solid 2px;
-    height: 25vh;
+    border-top: $light-powder-blue solid 1px;
     width: 100%;
-    bottom: 0;
+    padding: 2vh 0;
     text-align: center;
-    position: absolute;
-    bottom: 0;
+    justify-content: flex-end;
+    background: $background-gradient-blue-light;
   }
 
   .hotspot-title {
@@ -74,5 +141,42 @@
     font-weight: 700;
     font-size: $font-size-hotspot-number-large;
     text-shadow: 8px 8px 4px black;
+  }
+
+  .button-div {
+    justify-content: flex-end;
+  }
+
+  .button-div {
+    margin: 0 auto;
+    width: 90%;
+    justify-content: flex-end;
+    padding-bottom: 3vh;
+  }
+
+  .sidebar-button {
+    font-family: $title-font;
+    margin-top: 1vh;
+    font-size: $font-size-large;
+    background: $background-gradient-blue-light;
+    display: inline-block;
+    height: 4vh;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 1px $light-bright-pink solid;
+    box-shadow: $button-shadows;
+  }
+
+  .sidebar-button:hover {
+    box-shadow: none;
+    border: 1px $bright-pink solid;
+    color: $white;
+    background: $background-gradient-blue-dark;
+  }
+
+  .icon-buttons {
+    color: $bright-pink;
+    margin-right: 5px;
+    margin-top: -4px;
   }
 }

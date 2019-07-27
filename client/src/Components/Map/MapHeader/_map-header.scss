@@ -1,7 +1,6 @@
 #Map {
   .map-header {
     width: 100%;
-
     position: absolute;
     top: 0;
     left: 0;
@@ -9,19 +8,40 @@
     margin: 0 auto;
     height: 7vh;
     z-index: 1;
-    border-top: 1px $medium-yellow solid;
-    -webkit-box-shadow: 0 8px 6px -6px black;
-    -moz-box-shadow: 0 8px 6px -6px black;
-    box-shadow: 0px 8px 6px -6px black;
-    background: linear-gradient(
-      to bottom,
-      rgba($smoky-black, 0.9),
-      rgba($smoky-black, 0.8)
-    );
+    border-top: 2px solid rgba($powder-blue, 0.7);
+    -webkit-box-shadow: $map-shadow-header;
+    -moz-box-shadow: $map-shadow-header;
+    box-shadow: $map-shadow-header;
+    background: $background-gradient-blue-dark-map-header;
+    border-bottom: 1px solid rgba($dark-blue, 0.1);
 
     .hood-header-box {
-      width: 100%;
+      width: 80vh;
       text-align: center;
+    }
+
+    .filter-box-div {
+      display: inline-block;
+      color: $white;
+      padding: 0;
+      margin: 0 auto;
+
+      .form-group {
+        display: inline-block;
+        color: white;
+      }
+
+      .form-div {
+        .start-time-div {
+          display: inline-block;
+        }
+        .end-time-div {
+          display: inline-block;
+        }
+        .weekday-selector-div {
+          display: inline-block;
+        }
+      }
     }
 
     h4.selected-hood {
@@ -31,17 +51,35 @@
       color: $white;
     }
 
-    .filter-toolbar {
-      font-size: $title-font;
+    .filter-title {
+      font-family: $body-font;
+      margin: 0 0 0.2vh 0;
+      padding: 0;
+      color: $accent-grey;
+      font-size: $font-size-map-header-filters;
     }
 
-    .filter-buttons {
-      margin-right: 40px;
-      width: 4vh;
-      height: 4vh;
-      border-radius: 4vh;
-      font-size: $font-size-icons;
-      padding-left: 0.8vh;
+    .button-toolbar {
+      margin-top: 0;
+    }
+
+    .button-row {
+      margin-top: -8px;
+      display: block;
+    }
+
+    .filter-toolbar {
+      padding: 0;
+      margin: 0;
+    }
+
+    .filter-toolbar {
+      font-size: $font-size-large;
+    }
+
+    .filter-icons {
+      margin-right: 0.5vh;
+      font-size: $font-size-large;
     }
   }
 }

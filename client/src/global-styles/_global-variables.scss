@@ -11,10 +11,19 @@ $font-size-xxxl: calc(20px + 0.4vw);
 $font-size-xxl: calc(16px + 0.4vw);
 $font-size-xl: calc(14px + 0.4vw);
 $font-size-large: calc(12px + 0.4vw);
+$font-size-between-medium-and-large: calc(11px + 0.3vw);
 $font-size-medium: calc(10px + 0.3vw);
 $font-size-small: calc(9px + 0.2vw);
 $font-size-busy-small: calc(12px + 0.2vw);
 $font-size-busy-xs: calc(7px + 0.2vw);
+
+$font-size-small-type: calc(10px + 0.2vw);
+
+$font-size-hotspot-hood-large: calc(16px + 0.8vw);
+
+// Report Card Summary Font Sizes------
+
+$font-size-map-header-filters: calc(7px + 0.3vw);
 
 // Report Card Summary Font Sizes------
 
@@ -26,15 +35,22 @@ $font-size-busy-report-xs: calc(7px + 0.2vw);
 
 $font-size-icons: calc(20px + 0.2vw);
 
-// Font Styles------
+// Shadows------
+
+$map-shadow-header: 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+$text-shadow-subtle: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
 $text-shadow-title: 2px 2px 4px rgba(0, 0, 0, 0.5);
+$text-shadow-box: 0px 4px 4px rgba(0, 0, 0, 0.5);
+$button-shadows: 0px 1px 2px rgba(0, 0, 0, 0.5);
 
 // Trip Planner Sidebar Font Sizes ------
 
 $font-size-hotspot-number-intro-box: 6vw;
 $font-size-hotspot-number-large: 8vw;
 $font-size-hotspot-number-stat-box: 10vw;
+$font-size-hotspot-number-my-night: 5.5vw;
 
 // Text Colors ------
 
@@ -42,7 +58,9 @@ $gunmetal: #1f363d;
 $accent-grey: #d6e5e3;
 $card-color-background: #fffffc;
 $smoky-black: #070707;
+$light-smoky-black: rgba($smoky-black, 0.6);
 $quick-silver: #9ea2a8;
+$dark-quick-silver: rgba($quick-silver, 0.6);
 $white: white;
 
 // Brand Colors -------
@@ -52,6 +70,26 @@ $medium-yellow: #ffce00;
 $orange: #ff9a02;
 $orange-red: #ff5a00;
 $red: #ff0000;
+
+// Color Swatches -------
+
+$bright-pink: #ff5165;
+$light-bright-pink: rgba($bright-pink, 0.4);
+$sky-blue: #017dcd;
+$powder-blue: #7cddbd;
+$light-powder-blue: rgba($powder-blue, 0.6);
+$very-light-powder-blue: rgba($powder-blue, 0.2);
+$happy-blue: #37b1f2;
+$dark-blue: #276098;
+$medium-orange: #fb971d;
+$brick-pink: #de8586;
+$very-light-grey: #f4f2f3;
+$super-light-grey: rgba($very-light-grey, 0.5);
+
+// Blue Grandient Colors -------
+
+$dark-blue-gradient-top: #051f34;
+$dark-blue-gradient-bottom: #051f34;
 
 // Cool Colors -------
 
@@ -77,4 +115,31 @@ $background-gradient-light: linear-gradient(
   to bottom,
   rgba($smoky-black, 0.7),
   rgba($smoky-black, 0.6)
+);
+
+$background-gradient-blue-dark-map-header: linear-gradient(
+  to bottom,
+  rgba($dark-blue-gradient-top, 1),
+  rgba($dark-blue-gradient-top, 0.9)
+);
+
+$background-gradient-blue-dark: linear-gradient(
+  to bottom,
+  rgba($dark-blue-gradient-top, 1),
+  rgba($dark-blue-gradient-bottom, 0.9)
+);
+
+$background-gradient-blue-medium: linear-gradient(
+  to bottom,
+  rgba($dark-blue-gradient-top, 0.9) rgba($dark-blue-gradient-bottom, 0.8)
+);
+
+$background-gradient-blue-light: linear-gradient(
+  to bottom,
+  rgba($dark-blue-gradient-top, 0.7) rgba($dark-blue-gradient-bottom, 0.6)
+);
+
+$background-gradient-very-light-blue: linear-gradient(
+  to bottom,
+  rgba($dark-blue-gradient-top, 0.6) rgba($dark-blue-gradient-bottom, 0.4)
 );

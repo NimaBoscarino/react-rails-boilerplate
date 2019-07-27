@@ -3,48 +3,52 @@ import { Button } from "reactstrap";
 
 import TripList from "./TripList";
 import HotSpotTripRating from "./HotSpotTripRating";
-import TripButton from "./TripButton";
+// import TripButton from "./TripButton";
 
-import { FaWineGlassAlt } from "react-icons/fa";
+import { FaCloudMoon, FaMapMarkedAlt } from "react-icons/fa";
 
 class TripSidebar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectionList: []
-    };
-  }
-  componentDidUpdate(prevProps) {
-    if (prevProps.selectionList.length !== this.state.selectionList.length) {
-      this.setState({
-        selectionList: this.props.selectionList
-      });
-    }
-  }
   render() {
     return (
-      <div className='d-flex'>
-        <div className='align-items-stretch planner-sidebar'>
+      <div className='planner-sidebar'>
+        <div className='trip-title-intro-div'>
+          <h5 className='trip-title-text'>Saved List</h5>
+        </div>
+
+        <div className='trip-list-div'>
           <ul className='list-group list-group-flush trip-list'>
-            <li className='list-group-item trip-title'>
-              <FaWineGlassAlt /> Your Night
-            </li>
-            {this.state.selectionList.map(place => {
-              return (
-                <TripList
-                  key={place.id}
-                  place={place}
-                  onClick={this.props.delete}
-                />
-              );
-            })}
-
-            <TripButton />
+            {this.props.selectionList &&
+              this.props.selectionList.map(place => {
+                return (
+                  <TripList
+                    key={place.id}
+                    place={place}
+                    onClick={this.props.delete}
+                  />
+                );
+              })}
           </ul>
+        </div>
 
-          <Button variant='primary' block onClick={()=>{this.state.selectionList.length && this.props.showMyNight(this.state.selectionList)}}>Generate Night</Button>
-          <Button variant='primary' block>See On Map</Button>
-          <Button variant='primary' block>Create Plan</Button>
+        <div className='bottom-div'>
+          <div className='button-div'>
+            <Button
+              className='sidebar-button'
+              outline
+              color='light'
+              block
+              onClick={() => {
+                this.props.selectionList.length &&
+                  this.props.showMyNight(this.props.selectionList);
+              }}>
+              <FaCloudMoon className='icon-buttons' />
+              Generate My Night
+            </Button>
+            <Button outline color='light' block className='sidebar-button'>
+              <FaMapMarkedAlt className='icon-buttons' />
+              See On Map
+            </Button>
+          </div>
 
           <HotSpotTripRating />
         </div>

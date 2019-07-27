@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CurrentSelectionModal from "./CurrentSelectionModal";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import { IoMdAdd } from "react-icons/io";
 import PlaceHolderPic from "../../../global-assets/eastvan.jpeg";
 
 class CurrentSelectionCard extends Component {
@@ -18,7 +19,11 @@ class CurrentSelectionCard extends Component {
                   <div className='card-body'>
                     <div className='row'>
                       <div className='col current-card-pic-col'>
-                        <img className='current-card-pic' src={PlaceHolderPic} alt={""} />
+                        <img
+                          className='current-card-pic'
+                          src={PlaceHolderPic}
+                          alt={""}
+                        />
                         <CurrentSelectionModal />
                       </div>
                       <div className='col current-card-info'>
@@ -31,9 +36,8 @@ class CurrentSelectionCard extends Component {
                       <div className='col score-col'>
                         <p>
                           Google Score:{"  "}
-                          {this.props.currentSelection.googleReviewScore} based
-                          on {this.props.currentSelection.googleReviewNumber}{" "}
-                          reviews
+                          {this.props.currentSelection.rating} based on{" "}
+                          {this.props.currentSelection.rating_n} reviews
                         </p>
                       </div>
                     </div>
@@ -43,11 +47,7 @@ class CurrentSelectionCard extends Component {
                       onClick={() => {
                         this.props.addSelection(this.props.currentSelection.id);
                       }}>
-                      Add To Plan{" "}
-                      <span className='icon-arrows'>
-                        {" "}
-                        <FaAngleDoubleRight />
-                      </span>
+                      Save Place <IoMdAdd className='icon-plus' />
                     </button>
                   </div>
                 </div>

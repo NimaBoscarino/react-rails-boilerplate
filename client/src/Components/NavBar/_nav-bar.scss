@@ -1,16 +1,16 @@
 nav {
   overflow: hidden;
-  background-color: #070707;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%;
-  border-bottom: #ffce00 solid 2px;
+  border-bottom: $powder-blue solid 2px;
+  background: $background-gradient-blue-dark;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   .logo-box {
     display: inline-block;
-    width: 20%;
-    margin: 0 auto;
+    width: 25%;
+    margin: 0.1vh auto;
     text-align: center;
   }
 

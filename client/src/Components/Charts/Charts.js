@@ -5,15 +5,12 @@ const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 class Charts extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      popularTimes: false,
-      chartData: this.processData()
-    };
+    this.processData=this.processData.bind(this);
   }
 
-  processData() {
+  processData(propsData) {
     const result = [];
-    this.props.data.forEach(element => {
+    propsData.forEach(element => {
       const arr = element.popular_times.reverse();
       let data = arr
         .filter(element => element.day_id === 1)
@@ -35,15 +32,6 @@ class Charts extends Component {
     return result;
   }
 
-  // componentDidUpdate(){
-  //     if (!this.state.popularTimes) {
-  //         this.setState({
-  //             popularTimes:true,
-  //             dataPoints:this.processData()
-  //         })
-  //     }
-  // }
-
   render() {
     const options = {
       backgroundColor: "transparent",
@@ -58,7 +46,7 @@ class Charts extends Component {
         shared: true
       },
       axisY: {
-        title: "Time of Day",
+        title: "Busy Levels",
         includeZero: true,
         titleFontColor: "white",
         labelFontColor: "white",
@@ -67,12 +55,12 @@ class Charts extends Component {
         gridThickness: 1
       },
       axisX: {
-        title: "Busy Times",
+        title: "Time of Day",
         titleFontWeight: "bold",
         titleFontColor: "white",
         labelFontColor: "white"
       },
-      data: this.state.chartData
+      data: this.processData(this.props.data)
     };
 
     return (

@@ -19,17 +19,22 @@
     width: 60%;
     position: absolute;
     bottom: 0;
-    border-bottom: 5px $medium-yellow solid;
+    border-bottom: 5px $powder-blue solid;
+  }
+
+  .card-header {
+    background: $background-gradient-blue-dark;
   }
 
   .current-card {
     width: 100%;
+    border-radius: 1vh;
     min-height: 25vh;
-    background: linear-gradient(
-      to bottom,
-      $card-color-background,
-      rgba($card-color-background, 0.6)
-    );
+    background: $background-gradient-blue-medium;
+    margin-bottom: 2vh;
+    border: 1px solid rgba($very-light-grey, 0.2);
+    box-shadow: $text-shadow-box;
+    color: white;
   }
 
   .current-card-pic-col {
@@ -51,27 +56,45 @@
   }
 
   .current-card-title {
+    border-top-right-radius: 1vh;
+    border-top-left-radius: 1vh;
     color: white;
     font-family: $title-font;
     font-size: $font-size-xxxl;
-    background: linear-gradient(
-      to bottom,
-      $smoky-black,
-      rgba($smoky-black, 0.8)
-    );
+    background: $background-gradient-blue-dark;
+    border-bottom: 1px solid rgba($powder-blue, 0.4);
   }
 
   .add-to-night-button {
     position: absolute;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
     top: 7px;
     right: 7px;
     margin: auto 0;
     font-family: $title-font;
     font-size: $font-size-large;
     border-color: $medium-yellow;
+    border: none;
   }
 
-  .icon-arrows {
-    color: $medium-yellow;
+  .add-to-night-button:hover {
+    color: $white;
+    background: $bright-pink;
+
+    .icon-plus {
+      color: $dark-blue-gradient-top;
+    }
+  }
+
+  .icon-plus {
+    color: $bright-pink;
+    font-size: $font-size-xxl;
+    margin-top: -5px;
+  }
+
+  .see-images-button {
+    margin-top: 5px;
   }
 }
