@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_192709) do
+ActiveRecord::Schema.define(version: 2019_07_26_033530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,40 @@ ActiveRecord::Schema.define(version: 2019_07_24_192709) do
     t.datetime "updated_at", null: false
     t.bigint "neighbourhood_id"
     t.index ["neighbourhood_id"], name: "index_border_points_on_neighbourhood_id"
+  end
+
+  create_table "google_opening_hours", force: :cascade do |t|
+    t.integer "open_day"
+    t.string "open_time"
+    t.integer "close_day"
+    t.string "close_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_google_opening_hours_on_place_id"
+  end
+
+  create_table "google_photos", force: :cascade do |t|
+    t.integer "height"
+    t.integer "width"
+    t.string "photo_reference"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_google_photos_on_place_id"
+  end
+
+  create_table "google_reviews", force: :cascade do |t|
+    t.string "author_name"
+    t.string "author_url"
+    t.integer "rating"
+    t.string "relative_time_description"
+    t.string "text"
+    t.integer "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_google_reviews_on_place_id"
   end
 
   create_table "neighbourhoods", force: :cascade do |t|
@@ -44,6 +78,15 @@ ActiveRecord::Schema.define(version: 2019_07_24_192709) do
     t.integer "current_popularity"
     t.integer "time_spent_min"
     t.integer "time_spent_max"
+    t.string "postal_code"
+    t.integer "google_price_level"
+    t.string "yelp_id"
+    t.string "yelp_url"
+    t.string "yelp_phone"
+    t.string "yelp_display_phone"
+    t.integer "yelp_review_count"
+    t.integer "yelp_rating"
+    t.string "yelp_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "neighbourhood_id"
@@ -78,9 +121,59 @@ ActiveRecord::Schema.define(version: 2019_07_24_192709) do
     t.index ["place_id"], name: "index_types_on_place_id"
   end
 
+  create_table "yelp_categories", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_yelp_categories_on_place_id"
+  end
+
+  create_table "yelp_opening_hours", force: :cascade do |t|
+    t.boolean "is_overnight"
+    t.string "start"
+    t.string "end"
+    t.integer "day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_yelp_opening_hours_on_place_id"
+  end
+
+  create_table "yelp_photos", force: :cascade do |t|
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_yelp_photos_on_place_id"
+  end
+
+  create_table "yelp_reviews", force: :cascade do |t|
+    t.string "review_id"
+    t.string "url"
+    t.string "text"
+    t.integer "rating"
+    t.string "time_made"
+    t.string "user_id"
+    t.string "user_profile"
+    t.string "user_image"
+    t.string "user_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_yelp_reviews_on_place_id"
+  end
+
   add_foreign_key "border_points", "neighbourhoods"
+  add_foreign_key "google_opening_hours", "places"
+  add_foreign_key "google_photos", "places"
+  add_foreign_key "google_reviews", "places"
   add_foreign_key "places", "neighbourhoods"
   add_foreign_key "popular_times", "places"
   add_foreign_key "time_waits", "places"
   add_foreign_key "types", "places"
+  add_foreign_key "yelp_categories", "places"
+  add_foreign_key "yelp_opening_hours", "places"
+  add_foreign_key "yelp_photos", "places"
+  add_foreign_key "yelp_reviews", "places"
 end

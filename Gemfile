@@ -27,6 +27,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'geocoder', '~> 1.3', '>= 1.3.7'
 gem 'border_patrol', '~> 0.2.1'
+gem 'http', '~> 4.1.1'
+
+gem 'dotenv', '~> 2.1', '>= 2.1.1'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
