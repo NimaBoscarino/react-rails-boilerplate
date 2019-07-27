@@ -27,6 +27,7 @@
       margin: 0 auto;
 
       .form-group {
+        display: inline-block;
         color: white;
       }
 
@@ -41,44 +42,44 @@
           display: inline-block;
         }
       }
+    }
 
-      h4.selected-hood {
-        font-family: $title-font;
-        font-size: $font-size-xxxxl;
-        font-weight: 700;
-        color: $white;
-      }
+    h4.selected-hood {
+      font-family: $title-font;
+      font-size: $font-size-xxxxl;
+      font-weight: 700;
+      color: $white;
+    }
 
-      .filter-title {
-        font-family: $body-font;
-        margin: 0 0 0.2vh 0;
-        padding: 0;
-        color: $accent-grey;
-        font-size: $font-size-map-header-filters;
-      }
+    .filter-title {
+      font-family: $body-font;
+      margin: 0 0 0.2vh 0;
+      padding: 0;
+      color: $accent-grey;
+      font-size: $font-size-map-header-filters;
+    }
 
-      .button-toolbar {
-        margin-top: 0;
-      }
+    .button-toolbar {
+      margin-top: 0;
+    }
 
-      .button-row {
-        margin-top: -8px;
-        display: block;
-      }
+    .button-row {
+      margin-top: -8px;
+      display: block;
+    }
 
-      .filter-toolbar {
-        padding: 0;
-        margin: 0;
-      }
+    .filter-toolbar {
+      padding: 0;
+      margin: 0;
+    }
 
-      .filter-toolbar {
-        font-size: $font-size-large;
-      }
+    .filter-toolbar {
+      font-size: $font-size-large;
+    }
 
-      .filter-icons {
-        margin-right: 0.5vh;
-        font-size: $font-size-large;
-      }
+    .filter-icons {
+      margin-right: 0.5vh;
+      font-size: $font-size-large;
     }
   }
 }

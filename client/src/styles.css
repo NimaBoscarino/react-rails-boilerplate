@@ -17,7 +17,7 @@ nav {
   top: 0;
   /* Position the navbar at the top of the page */
   width: 100%;
-  border-bottom: #f4f2f3 solid 1px;
+  border-bottom: #7cddbd solid 2px;
   background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
   background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -354,6 +354,8 @@ nav .logo {
           box-shadow: none;
   border: 1px #ff5165 solid;
   color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
+  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
 }
 
 #Map .icon-buttons {
@@ -419,7 +421,7 @@ nav .logo {
   font-weight: 700;
   background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
   background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
-  border-bottom: 1px solid rgba(244, 242, 243, 0.3);
+  border-bottom: 1px solid rgba(124, 221, 189, 0.5);
   padding-left: 0.8vh;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
@@ -738,6 +740,7 @@ nav .logo {
 }
 
 #Map .map-header .filter-box-div .form-group {
+  display: inline-block;
   color: white;
 }
 
@@ -753,14 +756,14 @@ nav .logo {
   display: inline-block;
 }
 
-#Map .map-header .filter-box-div h4.selected-hood {
+#Map .map-header h4.selected-hood {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(30px + 0.8vw);
   font-weight: 700;
   color: white;
 }
 
-#Map .map-header .filter-box-div .filter-title {
+#Map .map-header .filter-title {
   font-family: "Roboto", sans-serif;
   margin: 0 0 0.2vh 0;
   padding: 0;
@@ -768,25 +771,25 @@ nav .logo {
   font-size: calc(7px + 0.3vw);
 }
 
-#Map .map-header .filter-box-div .button-toolbar {
+#Map .map-header .button-toolbar {
   margin-top: 0;
 }
 
-#Map .map-header .filter-box-div .button-row {
+#Map .map-header .button-row {
   margin-top: -8px;
   display: block;
 }
 
-#Map .map-header .filter-box-div .filter-toolbar {
+#Map .map-header .filter-toolbar {
   padding: 0;
   margin: 0;
 }
 
-#Map .map-header .filter-box-div .filter-toolbar {
+#Map .map-header .filter-toolbar {
   font-size: calc(12px + 0.4vw);
 }
 
-#Map .map-header .filter-box-div .filter-icons {
+#Map .map-header .filter-icons {
   margin-right: 0.5vh;
   font-size: calc(12px + 0.4vw);
 }

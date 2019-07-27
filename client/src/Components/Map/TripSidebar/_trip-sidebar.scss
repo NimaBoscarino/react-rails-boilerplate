@@ -25,9 +25,7 @@
       }
     }
 
-    .trip-list-div {
-      
-    }
+ 
 
     .list-group-item {
       text-align: left;
@@ -173,6 +171,7 @@
     box-shadow: none;
     border: 1px $bright-pink solid;
     color: $white;
+    background: $background-gradient-blue-dark;
   }
 
   .icon-buttons {

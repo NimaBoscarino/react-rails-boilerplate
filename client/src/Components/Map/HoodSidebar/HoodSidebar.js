@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import HoodList from "./HoodList";
-import { FiChevronDown } from "react-icons/fi";
-import { FiChevronUp } from "react-icons/fi";
+
 
 class HoodSidebar extends Component {
   constructor(props) {
