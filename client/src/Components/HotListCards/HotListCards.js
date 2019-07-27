@@ -27,7 +27,7 @@ class HotListCards extends Component {
                 <div className='row'>
                   <div className='col-sm'>
                     <div className='hot-list-image-box'>
-                      <img className='hot-list-image' src={PlaceHolderPic} alt={""}/>
+                      <img className='hot-list-image' src={this.props.place.yelp_photos[0] || PlaceHolderPic} alt={""}/>
                     </div>
                   </div>
 

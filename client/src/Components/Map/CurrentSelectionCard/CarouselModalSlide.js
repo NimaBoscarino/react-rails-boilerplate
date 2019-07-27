@@ -1,11 +1,11 @@
 import React from "react";
 import PlaceHolderPic from "../../../global-assets/yaletown.jpg";
 
-function CarouselModalSlide() {
+function CarouselModalSlide(props) {
   return (
     <div>
       <div>
-        <img src={PlaceHolderPic} alt={" "} />
+        <img src={props.url || PlaceHolderPic} alt={" "} />
       </div>
     </div>
   );
