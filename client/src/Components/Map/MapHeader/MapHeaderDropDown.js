@@ -46,7 +46,7 @@ export default class Example extends React.Component {
             </div>
             <div className='start-time-div'>
               <FormGroup>
-                <Label for='end-time'>End Time</Label>
+                <Label for='end-time'>End</Label>
                 <Input
                   type=''
                   name='password'
