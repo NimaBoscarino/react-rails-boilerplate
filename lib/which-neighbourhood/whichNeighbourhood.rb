@@ -2,6 +2,10 @@ require 'border_patrol'
 
 def whichNeighbourhood(lat, long)
 
+  yaletown = BorderPatrol.parse_kml(File.read(Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", 'yaletown.kml')))
+  if yaletown.contains_point?(long, lat)
+    return "Yaletown"
+  end
   coal_harbour = BorderPatrol.parse_kml(File.read(Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", 'coal-harbour.kml')))
   if coal_harbour.contains_point?(long, lat)
     return "Coal Harbour"
@@ -30,10 +34,6 @@ def whichNeighbourhood(lat, long)
   if downtown.contains_point?(long, lat)
     return "Downtown"
   end
-  yaletown = BorderPatrol.parse_kml(File.read(Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", 'yaletown.kml')))
-  if yaletown.contains_point?(long, lat)
-    return "Yaletown"
-  end
   dunbar_southlands = BorderPatrol.parse_kml(File.read(Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", 'dunbar-southlands.kml')))
   if dunbar_southlands.contains_point?(long, lat)
     return "Dunbar Southlands"
@@ -44,7 +44,7 @@ def whichNeighbourhood(lat, long)
   end
   grandview_woodland = BorderPatrol.parse_kml(File.read(Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", 'grandview-woodland.kml')))
   if grandview_woodland.contains_point?(long, lat)
-    return "Grandview Woodland"
+    return "Grandview-Woodland"
   end
   hastings_sunrise = BorderPatrol.parse_kml(File.read(Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", 'hastings-sunrise.kml')))
   if hastings_sunrise.contains_point?(long, lat)
@@ -52,7 +52,7 @@ def whichNeighbourhood(lat, long)
   end
   kensington_cedar_college = BorderPatrol.parse_kml(File.read(Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", 'kensington-cedar-college.kml')))
   if kensington_cedar_college.contains_point?(long, lat)
-    return "Kensignton Cedar College"
+    return "Kensington-Cedar Cottage"
   end
   kerrisdale = BorderPatrol.parse_kml(File.read(Rails.root.join("lib", "which-neighbourhood", "neighbourhood-data", 'kerrisdale.kml')))
   if kerrisdale.contains_point?(long,lat)
