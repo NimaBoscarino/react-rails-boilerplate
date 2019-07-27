@@ -42,23 +42,19 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get("/neighbourhoods") // You can simply make your requests to "/api/whatever you want"
-      .then(response => {
-        const neighbourhoods = this.processDataNeighbourhoods(
-          response.data.neighbourhoods
-        );
-        this.setState({
-          neighbourhoods: neighbourhoods
-        });
+    axios.get("/neighbourhoods").then(response => {
+      const neighbourhoods = this.processDataNeighbourhoods(
+        response.data.neighbourhoods
+      );
+      this.setState({
+        neighbourhoods: neighbourhoods
       });
-    axios
-      .get("/places") // You can simply make your requests to "/api/whatever you want"
-      .then(response => {
-        this.setState({
-          places: response.data.places
-        });
+    });
+    axios.get("/places").then(response => {
+      this.setState({
+        places: response.data.places
       });
+    });
   }
 
   processDataNeighbourhoods(neighbourhoodData) {
@@ -100,11 +96,8 @@ class Main extends Component {
           {this.state.places &&
             this.state.places.slice(0, 5).map(place => {
               return <HotListCards place={place} key={place.id} />;
-            })}
+            })} */}
 
-          <h1>This is the Main</h1>
-          <h2>{this.state.message}</h2>
-          <button onClick={this.fetchData}>Fetch Data</button>
         </section>
       </div>
     );

@@ -16,9 +16,13 @@ class IntroCarousel extends Component {
       transitionTime={1200}
       showArrows={false}
       showIndicators={false}>
+
+{this.props.places &&
+            this.props.places.slice(0, 2).map(place => {
+              return <IntroCarouselSlide place={place} key={place.id} />;
+            })}
   
-      <IntroCarouselSlide />
-      <IntroCarouselSlide />
+
   
     </Carousel>
     );

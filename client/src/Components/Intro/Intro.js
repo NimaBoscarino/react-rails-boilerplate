@@ -25,17 +25,17 @@ class Intro extends Component {
             <div className='row title-section'>
               <div className='col'>
                 <h1 className='intro-title'>
-                  Vancouver's Most Happenin' Places
+                  Vancouver's Most Popular Places
                 </h1>
                 <p className='intro-summary'>
                   Discover restaurants, clubs and bars that are both
                   consistently busy (based on real time data) and highly rated
                   (according to Google and Yelp) in Vancouver's most popular
-                  neighbourhoods.
+                  areas.
                 </p>
               </div>
               <div className='container-fluid intro-carousel-div'>
-                <Carousel />
+                <Carousel places={this.props.places} />
               </div>
             </div>
           </div>

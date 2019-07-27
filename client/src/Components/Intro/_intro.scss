@@ -35,14 +35,25 @@
     width: 100%;
 
     .intro-feature-card {
+      text-align: center;
+      display: block;
       margin: 0 auto;
-      height: 20vh;
-      width: 60%;
+      height: 40vh;
+      width: 40vh;
       border-color: $quick-silver;
       border-bottom: 2px solid $quick-silver;
       background: $background-gradient-medium;
       border-radius: 10px;
+
+      .card-title {
+        display: block;
+        font-family: $title-font;
+        font-size: $font-size-xxxl;
+      }
+
     }
+
+
 
     .shadow {
       -moz-box-shadow: inset 0 0 10px #000000;
@@ -59,8 +70,8 @@
     }
 
     img {
-      height: 20vh;
-      width: 100%;
+      height: 40vh;
+      width: 40vh;
       opacity: 0.8;
       object-fit: cover;
       border-radius: 10px;
@@ -68,7 +79,7 @@
     }
 
     .featured-card-pic {
-      vertical-align: middle;
+      
     }
 
     .card-info-col {
@@ -78,15 +89,8 @@
       margin: 0;
       width: 80vw;
       height: 15vh;
-      border-right: 1px solid white;
 
-      .card-title {
-        font-family: $title-font;
-        font-size: $font-size-xxxl;
-        font-weight: 700;
-        text-shadow: $text-shadow-title;
-        margin-left: 3vh;
-      }
+
 
       .card-text {
         font-family: $title-font;

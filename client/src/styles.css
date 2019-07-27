@@ -18,8 +18,8 @@ nav {
   /* Position the navbar at the top of the page */
   width: 100%;
   border-bottom: #7cddbd solid 2px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
-  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#020e18), to(rgba(3, 19, 32, 0.9)));
+  background: linear-gradient(to bottom, #020e18, rgba(3, 19, 32, 0.9));
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -79,14 +79,22 @@ nav .logo {
 }
 
 #Intro .intro-carousel-div .intro-feature-card {
+  text-align: center;
+  display: block;
   margin: 0 auto;
-  height: 20vh;
-  width: 60%;
+  height: 40vh;
+  width: 40vh;
   border-color: #9ea2a8;
   border-bottom: 2px solid #9ea2a8;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
   border-radius: 10px;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .card-title {
+  display: block;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: calc(20px + 0.4vw);
 }
 
 #Intro .intro-carousel-div .shadow {
@@ -104,18 +112,14 @@ nav .logo {
 }
 
 #Intro .intro-carousel-div img {
-  height: 20vh;
-  width: 100%;
+  height: 40vh;
+  width: 40vh;
   opacity: 0.8;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
   -ms-flex-line-pack: middle;
       align-content: middle;
-}
-
-#Intro .intro-carousel-div .featured-card-pic {
-  vertical-align: middle;
 }
 
 #Intro .intro-carousel-div .card-info-col {
@@ -125,15 +129,6 @@ nav .logo {
   margin: 0;
   width: 80vw;
   height: 15vh;
-  border-right: 1px solid white;
-}
-
-#Intro .intro-carousel-div .card-info-col .card-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
-  font-size: calc(20px + 0.4vw);
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-left: 3vh;
 }
 
 #Intro .intro-carousel-div .card-info-col .card-text {
@@ -178,8 +173,8 @@ nav .logo {
   right: 0;
   width: 18%;
   height: 93vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.6)));
-  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.6) rgba(5, 31, 52, 0.4));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 14, 24, 0.6)));
+  background: linear-gradient(to bottom, rgba(2, 14, 24, 0.6) rgba(3, 19, 32, 0.4));
 }
 
 #Map .planner-sidebar .trip-title-intro-div {
@@ -231,8 +226,8 @@ nav .logo {
   border: #9ea2a8 solid 1px;
   width: 90%;
   margin: 0.5vh auto;
-  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
-  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#020e18), to(rgba(2, 14, 24, 0.9)));
+  background: linear-gradient(to bottom, #020e18, rgba(2, 14, 24, 0.9));
   border: #ff5165 solid 1px;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
@@ -299,8 +294,8 @@ nav .logo {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
-  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 14, 24, 0.7)));
+  background: linear-gradient(to bottom, rgba(2, 14, 24, 0.7) rgba(3, 19, 32, 0.6));
 }
 
 #Map .hotspot-title {
@@ -338,8 +333,8 @@ nav .logo {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   margin-top: 1vh;
   font-size: calc(12px + 0.4vw);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
-  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 14, 24, 0.7)));
+  background: linear-gradient(to bottom, rgba(2, 14, 24, 0.7) rgba(3, 19, 32, 0.6));
   display: inline-block;
   height: 4vh;
   text-transform: uppercase;
@@ -354,8 +349,8 @@ nav .logo {
           box-shadow: none;
   border: 1px #ff5165 solid;
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
-  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#020e18), to(rgba(3, 19, 32, 0.9)));
+  background: linear-gradient(to bottom, #020e18, rgba(3, 19, 32, 0.9));
 }
 
 #Map .icon-buttons {
@@ -388,8 +383,8 @@ nav .logo {
   display: inline-block;
   border-bottom: 1px solid rgba(244, 242, 243, 0.4);
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
-  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#020e18), to(rgba(3, 19, 32, 0.9)));
+  background: linear-gradient(to bottom, #020e18, rgba(3, 19, 32, 0.9));
   color: white;
   padding: 0.8vh 0 0.8vh 0.8vh;
   text-transform: uppercase;
@@ -419,8 +414,8 @@ nav .logo {
   font-family: "Fira Sans Extra Condensed", sans-serif;
   width: 100%;
   font-weight: 700;
-  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
-  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#020e18), to(rgba(3, 19, 32, 0.9)));
+  background: linear-gradient(to bottom, #020e18, rgba(3, 19, 32, 0.9));
   border-bottom: 1px solid rgba(124, 221, 189, 0.5);
   padding-left: 0.8vh;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -484,14 +479,14 @@ nav .logo {
   border-bottom: 1px solid rgba(244, 242, 243, 0.1);
   padding: 0.6vh 0 0 0.6vh;
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.9)));
-  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.9) rgba(5, 31, 52, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 14, 24, 0.9)));
+  background: linear-gradient(to bottom, rgba(2, 14, 24, 0.9) rgba(3, 19, 32, 0.8));
 }
 
 #Map .hood-place-list-item:hover {
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
-  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 14, 24, 0.7)));
+  background: linear-gradient(to bottom, rgba(2, 14, 24, 0.7) rgba(3, 19, 32, 0.6));
 }
 
 #Map .hood-place-name-div {
@@ -580,20 +575,20 @@ nav .logo {
 }
 
 .modal-container .modal-body {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
-  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 14, 24, 0.7)));
+  background: linear-gradient(to bottom, rgba(2, 14, 24, 0.7) rgba(3, 19, 32, 0.6));
 }
 
 .modal-container .modal-header-box {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
-  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 14, 24, 0.7)));
+  background: linear-gradient(to bottom, rgba(2, 14, 24, 0.7) rgba(3, 19, 32, 0.6));
   color: white;
   border-bottom: 1px solid rgba(124, 221, 189, 0.4);
 }
 
 .modal-container .modal-content {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.7)));
-  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.7) rgba(5, 31, 52, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 14, 24, 0.7)));
+  background: linear-gradient(to bottom, rgba(2, 14, 24, 0.7) rgba(3, 19, 32, 0.6));
   display: inline-block;
 }
 
@@ -630,16 +625,16 @@ nav .logo {
 }
 
 #CurrentSelectionCard .card-header {
-  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
-  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#020e18), to(rgba(3, 19, 32, 0.9)));
+  background: linear-gradient(to bottom, #020e18, rgba(3, 19, 32, 0.9));
 }
 
 #CurrentSelectionCard .current-card {
   width: 100%;
   border-radius: 1vh;
   min-height: 25vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 31, 52, 0.9)));
-  background: linear-gradient(to bottom, rgba(5, 31, 52, 0.9) rgba(5, 31, 52, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 14, 24, 0.9)));
+  background: linear-gradient(to bottom, rgba(2, 14, 24, 0.9) rgba(3, 19, 32, 0.8));
   margin-bottom: 2vh;
   border: 1px solid rgba(244, 242, 243, 0.2);
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
@@ -672,8 +667,8 @@ nav .logo {
   color: white;
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-size: calc(20px + 0.4vw);
-  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
-  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#020e18), to(rgba(3, 19, 32, 0.9)));
+  background: linear-gradient(to bottom, #020e18, rgba(3, 19, 32, 0.9));
   border-bottom: 1px solid rgba(124, 221, 189, 0.4);
 }
 
@@ -697,7 +692,7 @@ nav .logo {
 }
 
 #CurrentSelectionCard .add-to-night-button:hover .icon-plus {
-  color: #051f34;
+  color: #020e18;
 }
 
 #CurrentSelectionCard .icon-plus {
@@ -722,8 +717,8 @@ nav .logo {
   border-top: 2px solid rgba(124, 221, 189, 0.7);
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  background: -webkit-gradient(linear, left top, left bottom, from(#051f34), to(rgba(5, 31, 52, 0.9)));
-  background: linear-gradient(to bottom, #051f34, rgba(5, 31, 52, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#020e18), to(rgba(2, 14, 24, 0.9)));
+  background: linear-gradient(to bottom, #020e18, rgba(2, 14, 24, 0.9));
   border-bottom: 1px solid rgba(39, 96, 152, 0.1);
 }
 
