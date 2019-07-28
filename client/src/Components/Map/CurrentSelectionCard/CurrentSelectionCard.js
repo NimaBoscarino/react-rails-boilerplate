@@ -24,7 +24,9 @@ class CurrentSelectionCard extends Component {
                           src={this.props.currentSelection.yelp_photos[0]}
                           alt={""}
                         />
-                        <CurrentSelectionModal place={this.props.currentSelection}/>
+                        <CurrentSelectionModal
+                          place={this.props.currentSelection}
+                        />
                       </div>
                       <div className='col current-card-info'>
                         <p>

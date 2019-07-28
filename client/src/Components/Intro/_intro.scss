@@ -29,10 +29,14 @@
   }
 
   .intro-carousel-div {
-    padding: 6vh 2vh;
+    padding: 8vh 6vh 1vh 8vh;
     color: white;
     margin: 0 auto;
     width: 100%;
+
+    .card {
+      box-shadow: $text-shadow-box !important;
+    }
 
     .intro-feature-card {
       text-align: center;
@@ -40,81 +44,122 @@
       margin: 0 auto;
       height: 40vh;
       width: 40vh;
-      border-color: $quick-silver;
-      border-bottom: 2px solid $quick-silver;
       background: $background-gradient-medium;
       border-radius: 10px;
+      position: relative;
 
       .card-title {
         display: block;
         font-family: $title-font;
-        font-size: $font-size-xxxl;
+        font-size: $font-size-xxxxl;
+        width: 100%;
+        padding-bottom: 1vh;
+        border-bottom: solid $powder-blue 1px;
+        text-shadow: $text-shadow-subtle;
       }
 
+      .card-img-overlay {
+        object-fit: cover;
+        border-color: $quick-silver;
+        border-radius: 10px;
+        width: 100%;
+        background: $background-gradient-very-light;
+        box-shadow: $text-shadow-box !important;
+      }
+
+      img {
+        height: 40vh;
+        width: 40vh;
+        opacity: 0.8;
+        object-fit: cover;
+        border-radius: 10px;
+        align-content: middle;
+      }
+
+      .card-text {
+        width: 100%;
+
+    
+
+        .type-and-price {
+          font-family: $body-font;
+          font-weight: 500;
+          font-size: $font-size-medium;
+          text-transform: capitalize;
+          padding: 0;
+        }
+
+        .address {
+          font-family: $body-font;
+          font-weight: 700;
+          font-size: $font-size-large;
+          padding: 0;
+        }
+
+        .avg-time-spent {
+          font-family: $body-font;
+          font-weight: 700;
+          font-size: $font-size-xxl;
+        }
+      }
+
+      .hotspot-div {
+        border-top: 3px solid $powder-blue;
+        background: $background-gradient-blue-dark;
+        width: 99%;
+        height: 25%;
+        position: absolute;
+        display: inline-block;
+        padding: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: left;
+        border-bottom-right-radius: 0.8vh;
+        border-bottom-left-radius: 0.8vh;
+
+        .hotspot-title {
+          display: inline-block;
+          left: 0;
+          padding: 2vh;
+          font-size: $font-size-xl;
+          font-family: $title-font;
+        }
+      }
+
+      .hotspot-number-div {
+        display: inline-block;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        text-align: right;
+
+        .hotspot-score {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 0.8vh 2vh 2.2vh 2vh;
+          font-size: $font-size-intro-card;
+          font-family: $title-font;
+        }
+
+        .total-reviews {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          padding: 1.2vh 2vh 0vh 2vh;
+
+          font-size: $font-size-intro-card-review-number;
+          font-family: $title-font;
+        }
+      }
     }
-
-
 
     .shadow {
       -moz-box-shadow: inset 0 0 10px #000000;
       -webkit-box-shadow: inset 0 0 10px #000000;
       box-shadow: inset 0 0 10px #000000;
-    }
-
-    .card-img-overlay {
-      object-fit: cover;
-      border-color: $quick-silver;
-      border-bottom: 1px solid $quick-silver;
-      border-radius: 10px;
-      width: 100%;
-    }
-
-    img {
-      height: 40vh;
-      width: 40vh;
-      opacity: 0.8;
-      object-fit: cover;
-      border-radius: 10px;
-      align-content: middle;
-    }
-
-    .featured-card-pic {
-      
-    }
-
-    .card-info-col {
-      display: inline-block;
-      text-align: left;
-      padding: 0;
-      margin: 0;
-      width: 80vw;
-      height: 15vh;
-
-
-
-      .card-text {
-        font-family: $title-font;
-        font-size: $font-size-xxl;
-        text-shadow: $text-shadow-title;
-        margin: 1.5vh 2vh 0 3vh;
-      }
-    }
-
-    .hotspot-col {
-      text-align: center;
-      padding: 0;
-      margin: 0;
-      width: 80vw;
-
-      h4 {
-        font-size: $font-size-xxl;
-        font-family: $title-font;
-      }
-
-      h5 {
-        font-size: $font-size-xxl;
-        font-size: $font-size-hotspot-number-intro-box;
-      }
     }
   }
 }

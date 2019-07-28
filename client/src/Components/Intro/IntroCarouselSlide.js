@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import PlaceholderPic from "../../global-assets/irish-heather-gastown.png";
+import PlaceHolderPic from "../../global-assets/yaletown.jpg";
 
 function sum(a, b) {
   return a + b;
@@ -23,30 +23,43 @@ class IntroCarouselSlide extends Component {
         <div className='card bg-dark text-white intro-feature-card shadow'>
           <img
             className='card-img featured-card-pic'
-            src={PlaceholderPic}
-            alt={" "}
+            src={this.props.place.yelp_photos[0] || PlaceHolderPic} alt={""}
           />
           <div className='card-img-overlay'>
-            <div className='row'>
+            <div className='row m-0 p-0'>
             
                 <h5 className='card-title'>{this.props.place.name}</h5>
-                <p className='card-text'>
-                {this.props.place.address}<br />
-                {this.props.place.types
+                <div className='card-text'>
+          
+                <p className="address">{this.props.place.address}</p>
+
+                <p className="type-and-price">{this.props.place.types
               .filter(element =>
                 ["bar", "restaurant", "night_club"].includes(element)
               )
-              .join(" / ")} <br />
-                {this.props.place.yelp_price} <br />
-                Average Time Spent: {average(this.props.place.time_spent_max, this.props.place.time_spent_min)} <br />
+              .join(" / ")} | Price: {this.props.place.yelp_price}</p>
+               
               
-                </p>
+
+ 
+
+              <div className='hotspot-div'>
+
+              <h4 className='hotspot-title'>HotSpot Score</h4>
+
+              <div className='hotspot-number-div'>
+                <h6 className='hotspot-score'>{this.props.place.rating}%</h6>
+                <p className='total-reviews'> Total Reviews: {sum(this.props.place.rating_n, this.props.place.yelp_review_count)}</p>
+                </div>
+
+                </div>
+
+               
+               
+              
+                </div>
             
-             
-                <h4>HotSpot Score</h4>
-                <h5>{this.props.place.rating}</h5>
-                <p>Total Reviews: {sum(this.props.place.rating_n, this.props.place.yelp_review_count)}</p>
-           
+   
             </div>
           </div>
         </div>

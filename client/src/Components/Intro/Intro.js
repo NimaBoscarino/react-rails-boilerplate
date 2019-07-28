@@ -39,8 +39,10 @@ class Intro extends Component {
               </div>
             </div>
           </div>
+
           <NightOutBuilder />
         </div>
+
       </section>
     );
   }
