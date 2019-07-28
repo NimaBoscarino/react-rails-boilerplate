@@ -103,8 +103,7 @@ nav .logo {
   text-align: center;
   display: block;
   margin: 0 auto;
-  height: 40vh;
-  width: 40vh;
+  width: 50vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
   border-radius: 10px;
@@ -114,32 +113,33 @@ nav .logo {
 #Intro .intro-carousel-div .intro-feature-card .card-title {
   display: block;
   font-family: "Fira Sans Extra Condensed", sans-serif;
-  font-size: calc(30px + 0.8vw);
+  font-size: calc(20px + 0.4vw);
+  font-weight: 700;
   width: 100%;
   padding-bottom: 1vh;
-  border-bottom: solid #7cddbd 1px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-#Intro .intro-carousel-div .intro-feature-card .card-img-overlay {
+#Intro .intro-carousel-div .intro-feature-card .card-img-top {
   -o-object-fit: cover;
      object-fit: cover;
   border-color: #9ea2a8;
-  border-radius: 10px;
+  height: 20vh;
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
+  -ms-flex-line-pack: middle;
+      align-content: middle;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
 #Intro .intro-carousel-div .intro-feature-card img {
-  height: 40vh;
+  height: 25vh;
   width: 40vh;
   opacity: 0.8;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
   -ms-flex-line-pack: middle;
       align-content: middle;
 }
@@ -148,75 +148,17 @@ nav .logo {
   width: 100%;
 }
 
-#Intro .intro-carousel-div .intro-feature-card .card-text .type-and-price {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: calc(10px + 0.3vw);
-  text-transform: capitalize;
-  padding: 0;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .card-text .address {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-size: calc(12px + 0.4vw);
-  padding: 0;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .card-text .avg-time-spent {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-size: calc(16px + 0.4vw);
-}
-
-#Intro .intro-carousel-div .intro-feature-card .hotspot-div {
-  border-top: 3px solid #7cddbd;
-  background: -webkit-gradient(linear, left top, left bottom, from(#020e18), to(rgba(3, 19, 32, 0.9)));
-  background: linear-gradient(to bottom, #020e18, rgba(3, 19, 32, 0.9));
-  width: 99%;
-  height: 25%;
-  position: absolute;
-  display: inline-block;
-  padding: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: left;
-  border-bottom-right-radius: 0.8vh;
-  border-bottom-left-radius: 0.8vh;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .hotspot-div .hotspot-title {
-  display: inline-block;
-  left: 0;
-  padding: 2vh;
-  font-size: calc(14px + 0.4vw);
-  font-family: "Fira Sans Extra Condensed", sans-serif;
-}
-
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div {
   display: inline-block;
   width: 100%;
-  right: 0;
-  bottom: 0;
-  text-align: right;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div .hotspot-score {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 0.8vh 2vh 2.2vh 2vh;
   font-size: calc(18px + 2.5vw);
   font-family: "Fira Sans Extra Condensed", sans-serif;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div .total-reviews {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 1.2vh 2vh 0vh 2vh;
   font-size: calc(8px + 0.5vw);
   font-family: "Fira Sans Extra Condensed", sans-serif;
 }
