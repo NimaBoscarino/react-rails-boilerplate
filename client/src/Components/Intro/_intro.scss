@@ -12,7 +12,7 @@
 
   .title-section {
     text-align: center;
-    margin-top: 5vh;
+    margin-top: 10vh;
 
     .intro-title {
       font-size: $font-size-main-title;
@@ -20,7 +20,7 @@
       font-family: $title-font;
       color: $white;
       text-shadow: $text-shadow-title;
-      margin-bottom: 0.4vh;
+      margin-bottom: 1.5vh;
 
     }
 
@@ -42,12 +42,12 @@
   }
 
   .hotspot-logo-number {
-    width: 6vh;
+    width: 8vh;
     margin-bottom: 1vh;
   }
 
   .intro-carousel-div {
-    padding: 1vh 6vh 1vh 6vh;
+    padding: 4vh 8vh 1vh 8vh;
     color: white;
     margin: 5vh auto 8vh auto;
     width: 100%;
@@ -59,7 +59,7 @@
       color: $white;
       font-weight: 400;
       text-shadow: $text-shadow-title;
-      margin-bottom: 2vh;
+      margin-bottom: 2.5vh;
     }
 
     .live-icon {
@@ -73,13 +73,14 @@
     .card {
       border: 1px solid $medium-yellow;
       box-shadow: $text-shadow-box !important;
+      min-height: 20vh;
     }
 
     .intro-feature-card {
       text-align: center;
       display: block;
       margin: 0 auto;
-      width: 50vh;
+      width: 25vh;
       background: $background-gradient-medium;
 
       position: relative;
@@ -97,7 +98,7 @@
       .card-img-top {
         object-fit: cover;
         border-color: $quick-silver;
-        height: 20vh;
+        height: 10vh;
         width: 100%;
         background: $background-gradient-very-light;
         align-content: middle;

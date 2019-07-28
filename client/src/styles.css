@@ -120,7 +120,7 @@ nav .logo {
 
 #Intro .title-section {
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 10vh;
 }
 
 #Intro .title-section .intro-title {
@@ -129,7 +129,7 @@ nav .logo {
   font-family: "Fira Sans", sans-serif;
   color: white;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
-  margin-bottom: 0.4vh;
+  margin-bottom: 1.5vh;
 }
 
 #Intro .title-section .intro-summary {
@@ -149,12 +149,12 @@ nav .logo {
 }
 
 #Intro .hotspot-logo-number {
-  width: 6vh;
+  width: 8vh;
   margin-bottom: 1vh;
 }
 
 #Intro .intro-carousel-div {
-  padding: 1vh 6vh 1vh 6vh;
+  padding: 4vh 8vh 1vh 8vh;
   color: white;
   margin: 5vh auto 8vh auto;
   width: 100%;
@@ -166,7 +166,7 @@ nav .logo {
   color: white;
   font-weight: 400;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
-  margin-bottom: 2vh;
+  margin-bottom: 2.5vh;
 }
 
 #Intro .intro-carousel-div .live-icon {
@@ -182,13 +182,14 @@ nav .logo {
   border: 1px solid #ffce00;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
+  min-height: 20vh;
 }
 
 #Intro .intro-carousel-div .intro-feature-card {
   text-align: center;
   display: block;
   margin: 0 auto;
-  width: 50vh;
+  width: 25vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
   position: relative;
@@ -208,7 +209,7 @@ nav .logo {
   -o-object-fit: cover;
      object-fit: cover;
   border-color: #9ea2a8;
-  height: 20vh;
+  height: 10vh;
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
