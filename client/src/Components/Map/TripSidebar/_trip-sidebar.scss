@@ -5,12 +5,12 @@
     padding-top: 2vh;
     flex-direction: column;
     margin-top: 7vh;
-    border-bottom: 5px $powder-blue solid;
+    border-bottom: 5px $bright-yellow solid;
     position: absolute;
     right: 0;
     width: 18%;
     height: 93vh;
-    background: $background-gradient-very-light-blue;
+    background: $background-gradient-very-light;
 
     .trip-title-intro-div {
       width: 100%;
@@ -24,8 +24,6 @@
         font-size: $font-size-large;
       }
     }
-
- 
 
     .list-group-item {
       text-align: left;
@@ -55,14 +53,15 @@
     .trip-name {
       display: inline-block;
       position: relative;
+      font-family: $body-font;
       font-size: $font-size-large;
       border-radius: 5px;
       color: $smoky-black;
       border: #9ea2a8 solid 1px;
       width: 90%;
       margin: 0.5vh auto;
-      background: $background-gradient-blue-dark-map-header;
-      border: $bright-pink solid 1px;
+      background: $background-gradient-dark;
+      border: $orange-red solid 1px;
       box-shadow: $button-shadows;
     }
 
@@ -119,12 +118,12 @@
   }
 
   .hotspot-stat-box {
-    border-top: $light-powder-blue solid 1px;
+    border-top: $bright-yellow solid 1px;
     width: 100%;
     padding: 2vh 0;
     text-align: center;
     justify-content: flex-end;
-    background: $background-gradient-blue-light;
+    background: $background-gradient-light;
   }
 
   .hotspot-title {
@@ -155,27 +154,27 @@
   }
 
   .sidebar-button {
-    font-family: $title-font;
+    font-family: $body-font;
+    font-weight: 300;
     margin-top: 1vh;
-    font-size: $font-size-large;
-    background: $background-gradient-blue-light;
+    font-size: $font-size-medium;
+    background: $background-gradient-light;
     display: inline-block;
     height: 4vh;
-    text-transform: uppercase;
     font-weight: 700;
-    border: 1px $light-bright-pink solid;
+    border: 1px $bright-yellow solid;
     box-shadow: $button-shadows;
   }
 
   .sidebar-button:hover {
     box-shadow: none;
-    border: 1px $bright-pink solid;
+    border: 1px $bright-yellow solid;
     color: $white;
-    background: $background-gradient-blue-dark;
+    background: $background-gradient-dark;
   }
 
   .icon-buttons {
-    color: $bright-pink;
+    color: $bright-yellow;
     margin-right: 5px;
     margin-top: -4px;
   }

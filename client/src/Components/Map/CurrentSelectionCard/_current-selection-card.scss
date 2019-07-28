@@ -19,18 +19,18 @@
     width: 60%;
     position: absolute;
     bottom: 0;
-    border-bottom: 5px $powder-blue solid;
+    border-bottom: 5px $bright-yellow solid;
   }
 
   .card-header {
-    background: $background-gradient-blue-dark;
+    background: $background-gradient-dark;
   }
 
   .current-card {
     width: 100%;
     border-radius: 1vh;
     min-height: 25vh;
-    background: $background-gradient-blue-medium;
+    background: $background-gradient-medium;
     margin-bottom: 2vh;
     border: 1px solid rgba($very-light-grey, 0.2);
     box-shadow: $text-shadow-box;
@@ -62,15 +62,16 @@
     font-family: $title-font;
     font-size: $font-size-xxxl;
     background: $background-gradient-blue-dark;
-    border-bottom: 1px solid rgba($powder-blue, 0.4);
+    border-bottom: 1px solid rgba($bright-yellow, 0.8);
   }
 
   .add-to-night-button {
     position: absolute;
-    color: white;
-    text-transform: uppercase;
+    color: black;
+    background-color: $bright-yellow;
+
     font-weight: 700;
-    top: 7px;
+    top: 0.6vh;
     right: 7px;
     margin: auto 0;
     font-family: $title-font;
@@ -81,7 +82,7 @@
 
   .add-to-night-button:hover {
     color: $white;
-    background: $bright-pink;
+    background: $bright-yellow;
 
     .icon-plus {
       color: $dark-blue-gradient-top;
@@ -89,7 +90,7 @@
   }
 
   .icon-plus {
-    color: $bright-pink;
+    color: black;
     font-size: $font-size-xxl;
     margin-top: -5px;
   }

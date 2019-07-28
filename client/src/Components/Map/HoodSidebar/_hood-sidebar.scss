@@ -1,6 +1,6 @@
 #Map {
   .hood-sidebar {
-    border-bottom: 5px $powder-blue solid;
+    border-bottom: 5px $bright-yellow solid;
     border-right: 1px solid $light-smoky-black;
     position: absolute;
     overflow: scroll;
@@ -20,9 +20,9 @@
       font-family: $title-font;
       font-size: $font-size-xl;
       display: inline-block;
-      border-bottom: 1px solid rgba($very-light-grey, 0.4);
+      border-bottom: 1px solid rgba($quick-silver, 0.4);
       margin: 0;
-      background: $background-gradient-blue-dark;
+      background: $background-gradient-dark;
       color: white;
       padding: 0.8vh 0 0.8vh 0.8vh;
       text-transform: uppercase;
@@ -52,14 +52,14 @@
       font-family: $title-font;
       width: 100%;
       font-weight: 700;
-      background: $background-gradient-blue-dark;
-      border-bottom: 1px solid rgba($powder-blue, 0.5);
+      background: $background-gradient-dark;
+      border-bottom: 1px solid rgba($quick-silver, 0.5);
       padding-left: 0.8vh;
       text-shadow: $text-shadow-subtle;
     }
 
     .arrow-icon {
-      color: $powder-blue;
+      color: $accent-grey;
       font-size: $font-size-large;
       margin-left: 4px;
     }
@@ -116,12 +116,12 @@
     border-bottom: 1px solid rgba($very-light-grey, 0.1);
     padding: 0.6vh 0 0 0.6vh;
     margin: 0;
-    background: $background-gradient-blue-medium;
+    background: $background-gradient-medium;
   }
 
   .hood-place-list-item:hover {
     color: white;
-    background: $background-gradient-blue-light;
+    background: $background-gradient-light;
   }
 
   .hood-place-name-div {
@@ -175,7 +175,7 @@
   }
 
   .icon {
-    color: #ff5a00;
+    color: $accent-grey;
   }
 
   .hotspot-score-icon-small {

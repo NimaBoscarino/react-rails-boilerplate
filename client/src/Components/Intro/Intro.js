@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Carousel from "./IntroCarousel";
 import NightOutBuilder from "../NightOutBuilder/NightOutBuilder";
-import Background from "../../global-assets/vancouver-main-background.png";
+import Background from "../../global-assets/background-parallex.png";
 
 var sectionStyle = {
   width: "100%",
@@ -19,13 +19,13 @@ var sectionStyle = {
 class Intro extends Component {
   render() {
     return (
-      <section style={sectionStyle}>
+      
         <div id='Intro'>
           <div className='container-fluid intro-box-div'>
             <div className='row title-section'>
               <div className='col'>
                 <h1 className='intro-title'>
-                  Vancouver's Most Popular Places
+                  Popular + Good Reviews = HotSpots
                 </h1>
                 <p className='intro-summary'>
                   Discover restaurants, clubs and bars that are both
@@ -42,8 +42,6 @@ class Intro extends Component {
 
           <NightOutBuilder />
         </div>
-
-      </section>
     );
   }
 }

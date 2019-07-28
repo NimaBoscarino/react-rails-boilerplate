@@ -8,11 +8,11 @@
     margin: 0 auto;
     height: 7vh;
     z-index: 1;
-    border-top: 2px solid rgba($powder-blue, 0.7);
+    border-top: 2px solid rgba($bright-yellow, 0.7);
     -webkit-box-shadow: $map-shadow-header;
     -moz-box-shadow: $map-shadow-header;
     box-shadow: $map-shadow-header;
-    background: $background-gradient-blue-dark-map-header;
+    background: $background-gradient-dark;
     border-bottom: 1px solid rgba($dark-blue, 0.1);
 
     .hood-header-box {
