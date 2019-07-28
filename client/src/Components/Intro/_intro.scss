@@ -12,8 +12,7 @@
 
   .title-section {
     text-align: center;
-    margin-top: 8vh;
-    margin-bottom: 10vh;
+    margin-top: 5vh;
 
     .intro-title {
       font-size: $font-size-main-title;
@@ -21,11 +20,12 @@
       font-family: $title-font;
       color: $white;
       text-shadow: $text-shadow-title;
-      margin-bottom: 2vh;
+      margin-bottom: 0.4vh;
+
     }
 
     .intro-summary {
-      margin-top: 0.9vh;
+      margin-top: 0.6vh;
       font-family: $title-font;
       font-weight: 500;
       padding: 0 15%;
@@ -42,14 +42,14 @@
   }
 
   .hotspot-logo-number {
-    width: 8vh;
-    margin-bottom: 2vh;
+    width: 6vh;
+    margin-bottom: 1vh;
   }
 
   .intro-carousel-div {
-    padding: 3vh 6vh 3vh 3vh;
+    padding: 1vh 6vh 1vh 6vh;
     color: white;
-    margin: 4vh auto 4vh auto;
+    margin: 5vh auto 8vh auto;
     width: 100%;
 
 
@@ -57,14 +57,15 @@
       font-size: $font-size-title-popular-now;
       font-family: $title-font;
       color: $white;
+      font-weight: 400;
       text-shadow: $text-shadow-title;
-      margin-bottom: 2.8vh;
+      margin-bottom: 2vh;
     }
 
     .live-icon {
       background: $orange;
       text-shadow: none;
-      font-size: $font-size-busy-small;
+      font-size: $font-size-small-icon;
       animation: shadow-pulse-live 1.5s infinite;
       margin-right: 0.5vh;
     }

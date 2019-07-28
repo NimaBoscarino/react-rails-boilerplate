@@ -47,22 +47,49 @@ nav .logo {
 
 #NightOutBuilder {
   width: 100%;
-  padding: 0;
+  padding: 2vh 0 0 0;
   margin: 0 auto;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
 }
 
 #NightOutBuilder .night-out-intro-div {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
-  padding: 2vh 4vh 2vh 4vh;
+  padding: 0vh 2vh 2vh 2vh;
 }
 
 #NightOutBuilder .night-out-intro-div .night-out-intro {
-  font-size: calc(20px + 0.4vw);
-  font-family: "Roboto", sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  padding: 0 5%;
+  font-size: calc(12px + 0.6vw);
   color: white;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+  line-height: 1.5;
+}
+
+#NightOutBuilder .build-night-button {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(10px + 0.6vw);
+  font-weight: 500;
+  border: none;
+  padding: 0.5vh 4vh;
+}
+
+#NightOutBuilder .hotspot-button-icon {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 5%;
+}
+
+#NightOutBuilder .map-icon {
+  color: #ffce00;
+  margin-right: 10px;
 }
 
 #Intro {
@@ -93,25 +120,24 @@ nav .logo {
 
 #Intro .title-section {
   text-align: center;
-  margin-top: 8vh;
-  margin-bottom: 10vh;
+  margin-top: 5vh;
 }
 
 #Intro .title-section .intro-title {
-  font-size: calc(32px + 1.9vw);
+  font-size: calc(32px + 1.7vw);
   font-weight: 700;
   font-family: "Fira Sans", sans-serif;
   color: white;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
-  margin-bottom: 2vh;
+  margin-bottom: 0.4vh;
 }
 
 #Intro .title-section .intro-summary {
-  margin-top: 0.9vh;
+  margin-top: 0.6vh;
   font-family: "Fira Sans", sans-serif;
   font-weight: 500;
   padding: 0 15%;
-  font-size: calc(16px + 0.7vw);
+  font-size: calc(14px + 0.7vw);
   color: white;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   line-height: 1.5;
@@ -123,29 +149,30 @@ nav .logo {
 }
 
 #Intro .hotspot-logo-number {
-  width: 8vh;
-  margin-bottom: 2vh;
+  width: 6vh;
+  margin-bottom: 1vh;
 }
 
 #Intro .intro-carousel-div {
-  padding: 3vh 6vh 3vh 3vh;
+  padding: 1vh 6vh 1vh 6vh;
   color: white;
-  margin: 4vh auto 4vh auto;
+  margin: 5vh auto 8vh auto;
   width: 100%;
 }
 
 #Intro .intro-carousel-div .popular-now-title {
-  font-size: calc(16px + 0.4vw);
+  font-size: calc(12px + 0.4vw);
   font-family: "Fira Sans", sans-serif;
   color: white;
+  font-weight: 400;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
-  margin-bottom: 2.8vh;
+  margin-bottom: 2vh;
 }
 
 #Intro .intro-carousel-div .live-icon {
   background: #ff9a02;
   text-shadow: none;
-  font-size: calc(12px + 0.2vw);
+  font-size: calc(9px + 0.2vw);
   -webkit-animation: shadow-pulse-live 1.5s infinite;
           animation: shadow-pulse-live 1.5s infinite;
   margin-right: 0.5vh;
@@ -1395,14 +1422,14 @@ nav .logo {
 #AreaSelector .area-selector-hood {
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
-  font-size: calc(32px + 1.9vw);
+  font-size: calc(32px + 1.7vw);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #AreaSelector .area-selector-hood-description {
   margin-top: 15px;
   padding: 0 2%;
-  font-size: calc(16px + 0.7vw);
+  font-size: calc(14px + 0.7vw);
   color: white;
   line-height: 1.4;
 }
@@ -1659,7 +1686,7 @@ nav .logo {
 
 #MyNightPlan .my-night-title {
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(32px + 1.9vw);
+  font-size: calc(32px + 1.7vw);
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   color: white;
   font-weight: 700;

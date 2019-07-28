@@ -1,19 +1,44 @@
 #NightOutBuilder {
   width: 100%;
-  padding: 0;
+  padding: 2vh 0 0 0;
   margin: 0 auto;
+  align-self: baseline;
 
   .night-out-intro-div {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
-    padding: 2vh 4vh 2vh 4vh;
+    padding: 0vh 2vh 2vh 2vh;
 
     .night-out-intro {
-      font-size: $font-size-xxxl;
-      font-family: $body-font;
-      color: $white;
+      font-family: $title-font;
+      font-weight: 400;
+      padding: 0 5%;
+      font-size: $font-size-night-out-prompt;
+      color: white;
       text-shadow: $text-shadow-title;
+      line-height: 1.5;
     }
+  }
+
+  .build-night-button {
+    background: $background-gradient-build-night-button;
+    font-family: $title-font;
+    font-size: $font-size-night-out-button;
+    font-weight: 500;
+    border: none;
+    padding: 0.5vh 4vh;
+  }
+
+  .hotspot-button-icon {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    width: 5%;
+  }
+
+  .map-icon {
+    color: $medium-yellow;
+    margin-right: 10px;
   }
 }
