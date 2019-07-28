@@ -1,38 +1,73 @@
 #Intro {
-  height: 100vh;
+  @keyframes shadow-pulse-live {
+    0% {
+      box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
+    }
+  }
+
+  min-height: 100vh;
 
   .title-section {
     text-align: center;
-    margin-top: 15vh;
+    margin-top: 8vh;
     margin-bottom: 10vh;
 
     .intro-title {
       font-size: $font-size-main-title;
+      font-weight: 700;
       font-family: $title-font;
       color: $white;
-      font-weight: 700;
       text-shadow: $text-shadow-title;
-    }
-
-    .intro-subtitle {
-      font-family: $body-font;
-      color: $white;
-      text-shadow: $text-shadow-title;
+      margin-bottom: 2vh;
     }
 
     .intro-summary {
-      margin-top: 15px;
-      padding: 0 18%;
+      margin-top: 0.9vh;
+      font-family: $title-font;
+      font-weight: 500;
+      padding: 0 15%;
       font-size: $font-size-title-intro;
       color: white;
+      text-shadow: $text-shadow-title;
+      line-height: 1.5;
     }
   }
 
-  .intro-carousel-div {
-    padding: 8vh 6vh 1vh 8vh;
-    color: white;
+  .hotspot-logo-div {
     margin: 0 auto;
+    margin-bottom: 1vh;
+  }
+
+  .hotspot-logo-number {
+    width: 8vh;
+    margin-bottom: 2vh;
+  }
+
+  .intro-carousel-div {
+    padding: 3vh 6vh 3vh 3vh;
+    color: white;
+    margin: 4vh auto 4vh auto;
     width: 100%;
+
+
+    .popular-now-title {
+      font-size: $font-size-title-popular-now;
+      font-family: $title-font;
+      color: $white;
+      text-shadow: $text-shadow-title;
+      margin-bottom: 2.8vh;
+    }
+
+    .live-icon {
+      background: $orange;
+      text-shadow: none;
+      font-size: $font-size-busy-small;
+      animation: shadow-pulse-live 1.5s infinite;
+      margin-right: 0.5vh;
+    }
 
     .card {
       border: 1px solid $medium-yellow;

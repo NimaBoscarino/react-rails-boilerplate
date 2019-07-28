@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Logo from "../../global-assets/hotspots-logo.png";
-import IntroCarouselSlide from "../Intro/IntroCarouselSlide";
+
 
 class Nav extends Component {
   render() {

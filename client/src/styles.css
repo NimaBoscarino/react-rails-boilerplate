@@ -29,18 +29,20 @@ nav {
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-height: 5vh;
 }
 
 nav .logo-box {
   display: inline-block;
-  width: 25%;
+  height: 80%;
   margin: 0.1vh auto;
   text-align: center;
 }
 
 nav .logo {
-  padding: 8px 0;
-  width: 70%;
+  display: inline-block;
+  width: 15vh;
+  padding: 0.5vh 0;
 }
 
 #NightOutBuilder {
@@ -60,45 +62,93 @@ nav .logo {
   font-size: calc(20px + 0.4vw);
   font-family: "Roboto", sans-serif;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 #Intro {
-  height: 100vh;
+  min-height: 100vh;
+}
+
+@-webkit-keyframes shadow-pulse-live {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.5);
+            box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.5);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
+            box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
+  }
+}
+
+@keyframes shadow-pulse-live {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.5);
+            box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.5);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
+            box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
+  }
 }
 
 #Intro .title-section {
   text-align: center;
-  margin-top: 15vh;
+  margin-top: 8vh;
   margin-bottom: 10vh;
 }
 
 #Intro .title-section .intro-title {
-  font-size: calc(38px + 1.4vw);
-  font-family: "Fira Sans Extra Condensed", sans-serif;
-  color: white;
+  font-size: calc(32px + 1.9vw);
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-#Intro .title-section .intro-subtitle {
-  font-family: "Roboto", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2vh;
 }
 
 #Intro .title-section .intro-summary {
-  margin-top: 15px;
-  padding: 0 18%;
-  font-size: calc(18px + 0.2vw);
+  margin-top: 0.9vh;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  padding: 0 15%;
+  font-size: calc(16px + 0.7vw);
   color: white;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+  line-height: 1.5;
+}
+
+#Intro .hotspot-logo-div {
+  margin: 0 auto;
+  margin-bottom: 1vh;
+}
+
+#Intro .hotspot-logo-number {
+  width: 8vh;
+  margin-bottom: 2vh;
 }
 
 #Intro .intro-carousel-div {
-  padding: 8vh 6vh 1vh 8vh;
+  padding: 3vh 6vh 3vh 3vh;
   color: white;
-  margin: 0 auto;
+  margin: 4vh auto 4vh auto;
   width: 100%;
+}
+
+#Intro .intro-carousel-div .popular-now-title {
+  font-size: calc(16px + 0.4vw);
+  font-family: "Fira Sans", sans-serif;
+  color: white;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2.8vh;
+}
+
+#Intro .intro-carousel-div .live-icon {
+  background: #ff9a02;
+  text-shadow: none;
+  font-size: calc(12px + 0.2vw);
+  -webkit-animation: shadow-pulse-live 1.5s infinite;
+          animation: shadow-pulse-live 1.5s infinite;
+  margin-right: 0.5vh;
 }
 
 #Intro .intro-carousel-div .card {
@@ -119,7 +169,7 @@ nav .logo {
 
 #Intro .intro-carousel-div .intro-feature-card .card-title {
   display: block;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
   font-weight: 700;
   width: 100%;
@@ -160,12 +210,12 @@ nav .logo {
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div .hotspot-score {
   font-size: calc(18px + 2.5vw);
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div .total-reviews {
   font-size: calc(8px + 0.5vw);
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 #Intro .intro-carousel-div .shadow {
@@ -205,7 +255,7 @@ nav .logo {
 
 #Map .planner-sidebar .trip-title-intro-div .trip-title-text {
   color: white;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
 }
 
@@ -222,7 +272,7 @@ nav .logo {
   width: 100%;
   background-color: white;
   color: #070707;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   padding: 0;
   font-size: 20px;
@@ -262,7 +312,7 @@ nav .logo {
 }
 
 #Map .planner-sidebar .place-name {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
   font-weight: 700;
   display: block;
@@ -272,7 +322,7 @@ nav .logo {
 }
 
 #Map .planner-sidebar .place-type {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(10px + 0.3vw);
   color: white;
   text-transform: capitalize;
@@ -319,7 +369,7 @@ nav .logo {
 
 #Map .hotspot-title {
   color: white;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   margin: 0;
   padding: 10px 0 0 0;
 }
@@ -327,7 +377,7 @@ nav .logo {
 #Map .hotspot-stat-number {
   color: white;
   font-size: 50px;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   font-size: 8vw;
   text-shadow: 8px 8px 4px black;
@@ -397,7 +447,7 @@ nav .logo {
 }
 
 #Map .hood-sidebar .hood-title-select {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(14px + 0.4vw);
   display: inline-block;
   border-bottom: 1px solid rgba(158, 162, 168, 0.4);
@@ -410,7 +460,7 @@ nav .logo {
 }
 
 #Map .hood-sidebar .hood-title-box {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(16px + 0.4vw);
   font-weight: 700;
   display: inline-block;
@@ -419,7 +469,7 @@ nav .logo {
 }
 
 #Map .hood-sidebar .hood-title-text {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
   font-weight: 700;
   display: inline-block;
@@ -430,7 +480,7 @@ nav .logo {
 }
 
 #Map .hood-sidebar .hood-name-li {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   width: 100%;
   font-weight: 700;
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
@@ -474,7 +524,7 @@ nav .logo {
   display: inline-block;
   width: 50%;
   font-size: calc(12px + 0.4vw);
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   margin-bottom: 0;
   margin-top: 0;
@@ -518,7 +568,7 @@ nav .logo {
 }
 
 #Map .hood-place-name {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   display: inline-block;
   font-size: calc(11px + 0.3vw);
   word-break: normal;
@@ -541,7 +591,7 @@ nav .logo {
 }
 
 #Map .hood-place-type {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(10px + 0.2vw);
   text-transform: capitalize;
   margin: 0;
@@ -684,7 +734,7 @@ nav .logo {
   border-top-right-radius: 1vh;
   border-top-left-radius: 1vh;
   color: white;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
@@ -699,7 +749,7 @@ nav .logo {
   top: 0.6vh;
   right: 7px;
   margin: auto 0;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
   border-color: #ffce00;
   border: none;
@@ -768,7 +818,7 @@ nav .logo {
 }
 
 #Map .map-header h4.selected-hood {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(30px + 0.8vw);
   font-weight: 700;
   color: white;
@@ -837,7 +887,7 @@ nav .logo {
 }
 
 #Map .hood-main-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   font-size: calc(18px + 1vw);
   display: block;
@@ -897,7 +947,7 @@ nav .logo {
 }
 
 .area-section .area-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(18px + 1vw);
   padding: 0;
   margin: 0;
@@ -915,7 +965,7 @@ nav .logo {
 }
 
 .area-section .busy-score-number {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 20px;
   text-align: center;
   display: inline-block;
@@ -958,7 +1008,7 @@ nav .logo {
 
 .area-section .small-list-main .small-list-type {
   font-size: calc(9px + 0.2vw);
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   line-height: 0.2;
 }
 
@@ -968,7 +1018,7 @@ nav .logo {
 }
 
 .area-section .small-list-main .busy-score-small {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.2vw);
   text-align: center;
   display: inline-block;
@@ -1002,7 +1052,7 @@ nav .logo {
 }
 
 .area-section .small-list-main .wait-minute-min {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.2vw);
   line-height: 0.7;
   font-size: 20px;
@@ -1011,12 +1061,12 @@ nav .logo {
 }
 
 .area-section .small-list-main .small-min {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 12px;
 }
 
 .area-section .small-list-main .wait-minute-small-text {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(7px + 0.2vw);
   line-height: 1.2;
   margin-top: 4px;
@@ -1028,7 +1078,7 @@ nav .logo {
 }
 
 .area-section .small-list-main .card-link {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   padding-bottom: 5px;
   margin-right: 0;
 }
@@ -1343,16 +1393,16 @@ nav .logo {
 }
 
 #AreaSelector .area-selector-hood {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
-  font-size: calc(38px + 1.4vw);
+  font-size: calc(32px + 1.9vw);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #AreaSelector .area-selector-hood-description {
   margin-top: 15px;
   padding: 0 2%;
-  font-size: calc(18px + 0.2vw);
+  font-size: calc(16px + 0.7vw);
   color: white;
   line-height: 1.4;
 }
@@ -1388,7 +1438,7 @@ nav .logo {
 }
 
 .HotListCards .hot-list-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
 }
 
@@ -1398,7 +1448,7 @@ nav .logo {
 }
 
 .HotListCards .hot-list-user-reviews-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(10px + 0.3vw);
   font-weight: 700;
 }
@@ -1414,7 +1464,7 @@ nav .logo {
 }
 
 .HotListCards .hot-list-score-col {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 .HotListCards .review-icons {
@@ -1481,7 +1531,7 @@ nav .logo {
 }
 
 #MyNightPlan .stat-div .stats-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
   color: white;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
@@ -1491,23 +1541,23 @@ nav .logo {
 }
 
 #MyNightPlan .stat-div .stats-title-text {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
   color: white;
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   padding-bottom: 1.5vh;
   height: 3vh;
 }
 
 #MyNightPlan .stat-div .card-text {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   color: white;
 }
 
 #MyNightPlan .stat-div .stats-box {
   top: 0;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   color: white;
   border-bottom: 1px solid #9ea2a8;
   padding-bottom: 0.5vh;
@@ -1521,7 +1571,7 @@ nav .logo {
 }
 
 #MyNightPlan .stat-div .hotspot-score-col h5.hotspot-score-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   display: block;
   width: 100%;
   text-align: center;
@@ -1533,7 +1583,7 @@ nav .logo {
   margin: 0 auto;
   color: white;
   font-size: 50px;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   font-size: 10vw;
   text-shadow: 8px 8px 4px black;
@@ -1608,9 +1658,9 @@ nav .logo {
 }
 
 #MyNightPlan .my-night-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
-  font-size: calc(38px + 1.4vw);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(32px + 1.9vw);
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   color: white;
   font-weight: 700;
   padding-bottom: 2vh;
@@ -1661,8 +1711,8 @@ nav .logo {
   float: left;
   text-align: center;
   padding-top: 1vh;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Fira Sans", sans-serif;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 #MyNightPlan .my-card-summary-row .score-number-col .hotspot-score-title {
@@ -1695,7 +1745,7 @@ nav .logo {
 
 #MyNightPlan .my-card-summary-row .my-card-summary-summary-div .my-card-summary-title {
   display: block;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
   margin-left: 1.5vh;
   margin-top: 1.5vh;
@@ -1705,7 +1755,7 @@ nav .logo {
 
 #MyNightPlan .my-card-summary-row .my-card-summary-summary-div .my-card-summary-address {
   display: block;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
   margin-left: 1.5vh;
   margin-top: 1.5vh;
@@ -1725,7 +1775,7 @@ nav .logo {
   top: 0;
   padding-top: 20px;
   padding-right: 5vh;
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   background-color: transparent;
   border: none;
   width: 4vh;
@@ -1739,7 +1789,7 @@ nav .logo {
 }
 
 #MyNightPlan .night-out-card-div .my-night-out-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
   color: #070707;
   text-align: left;
@@ -1770,7 +1820,7 @@ nav .logo {
 }
 
 #MyNightPlan .best-times-card .best-times-title {
-  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(16px + 0.4vw);
 }
 
