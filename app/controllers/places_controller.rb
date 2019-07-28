@@ -38,4 +38,23 @@ class PlacesController < ApplicationController
         hash["yelp_photos"]=all_yelp_photos_array
         hash
     end
+
+    def whatDayIsIt(date)
+        day = date.wday
+        if day == 0
+            day += 7
+        end
+        return day
+    end
+
+    def whatHourIsIt(date)
+        hour = date.hour
+        minute = date.minute
+        if minute < 30
+            hour += 1
+        else
+            hour += 2
+        end
+        return hour
+    end
 end

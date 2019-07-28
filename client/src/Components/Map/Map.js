@@ -38,8 +38,7 @@ class Map extends Component {
             this.state.selectionList.push(this.props.places.filter(element => element.id === id)[0]);
         }
         this.setState({
-            selectionList: this.state.selectionList
-        });
+            selectionList: this.state.selectionList        });
     }
     deleteSelectedPlace(id) {
         const list = this.state.selectionList.filter(element => element.id !== id)
@@ -73,7 +72,7 @@ class Map extends Component {
         <MapHeader currentNeighbourhood={this.state.centerNeighbourhood} filterPlaces={this.filterPlaces}/>
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap
-            neighbourhoods={this.props.neighbourhoods}
+            neighbourhoods = { this.props.neighbourhoods }
             places={this.props.places}
             clickNeighbourhood={this.clickNeighbourhood}
             mapCenterNeighbourhood = {this.state.mapCenterNeighbourhood}

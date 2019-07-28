@@ -14,14 +14,30 @@ class NeighbourhoodsController < ApplicationController
     end
 
     def formatData(neighbourhood)
+        yaletown =
         all_border_points=neighbourhood.border_points.all
         all_border_points_array=[]
-        all_border_points.each{|each_border_point| 
+        all_border_points.each{|each_border_point|
             point={}
             point["lat"]=each_border_point[:lat]
             point["lng"]=each_border_point[:long]
             all_border_points_array.push(point)
         }
+        if neighbourhood.name == "Downtown"
+            yaletown = Neighbourhood.where(name: 'Yaletown')[0]
+            all_border_points2 = yaletown.border_points.all
+            all_border_points_array2 = []
+            all_border_points2.each{|more_border_point|
+                point={}
+                point["lat"]=more_border_point[:lat]
+                point["lng"]=more_border_point[:long]
+                all_border_points_array2.push(point)
+            }
+            all_border_points_array3 = []
+            all_border_points_array3.push(all_border_points_array)
+            all_border_points_array3.push(all_border_points_array2.reverse)
+            all_border_points_array = all_border_points_array3
+        end
         hash=neighbourhood.attributes
         hash["border_points"]=all_border_points_array
         hash

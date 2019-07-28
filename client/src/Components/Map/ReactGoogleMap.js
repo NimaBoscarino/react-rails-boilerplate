@@ -1,7 +1,7 @@
 import { withScriptjs, withGoogleMap, GoogleMap, Polygon, Marker } from "react-google-maps";
 import React, { Component } from "react";
 import mapStyles from "./google-map-style.json"
-import {CurrentMapMarker} from '../../global-assets/map-marker.png'
+import { CurrentMapMarker } from '../../global-assets/map-marker.png'
 import { FaThemeisle } from "react-icons/fa";
 
 class ReactGoogleMap extends Component {
@@ -21,14 +21,9 @@ class ReactGoogleMap extends Component {
       >
         { this.props.neighbourhoods &&
             this.props.neighbourhoods.map((element)=>{
-              const considerYaletown = [element.borderPoints];
-              if (element.name === "Downtown") {
-                const yaletownA = this.props.neighbourhoods.filter(neighbourhood => neighbourhood.name === "Yaletown");
-                considerYaletown.push(yaletownA[0].borderPoints.reverse())
-              }
               return (
                 <Polygon
-                  paths={considerYaletown}
+                  paths={element.borderPoints}
                   key={element.id}
                   options={{
                       fillColor: "#000",
@@ -47,12 +42,8 @@ class ReactGoogleMap extends Component {
         }
       </GoogleMap>
         ));
+        console.log(this.props)
         if (this.props.mapCenterNeighbourhood) {
-            const considerYaletown = [this.props.centerNeighbourhood.borderPoints];
-            if (this.props.centerNeighbourhood.name === "Downtown") {
-                const yaletownA = this.props.neighbourhoods.filter(neighbourhood => neighbourhood.name === "Yaletown");
-                considerYaletown.push(yaletownA[0].borderPoints.reverse())
-            }
             GoogleMapExample = withGoogleMap(props => (
                 <GoogleMap
           defaultCenter = { this.props.centerNeighbourhood.center }
@@ -60,7 +51,7 @@ class ReactGoogleMap extends Component {
           defaultOptions = {{styles:mapStyles}}
         >
           <Polygon
-            paths={considerYaletown}
+            paths={this.props.centerNeighbourhood.borderPoints}
             key={this.props.centerNeighbourhood.id}
             options={{
                 fillColor: "#000",
