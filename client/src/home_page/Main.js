@@ -6,8 +6,9 @@ import Map from "../Components/Map/Map";
 import AreaSelector from "../Components/AreaSelector/AreaSelector";
 import HotListCards from "../Components/HotListCards/HotListCards";
 import MyNightPlan from "../Components/MyNightPlan/MyNightPlan";
-import Background from "../global-assets/vancouver-main-background.png";
+import Background from "../global-assets/background-parallex.png";
 import Footer from "../Components/Footer/Footer";
+import Nav from "../Components/NavBar/Nav";
 // import MyNightPlanDesign from "../Components/MyNightPlan/MyNightPlanDesign";
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -50,14 +51,14 @@ class Main extends Component {
       this.setState({
         neighbourhoods: neighbourhoods
       });
-    axios
-      .get("/places") // You can simply make your requests to "/api/whatever you want"
-      .then(response => {
-        console.log(response.data.places[0])
-        this.setState({
-          places: response.data.places
+      axios
+        .get("/places") // You can simply make your requests to "/api/whatever you want"
+        .then(response => {
+          console.log(response.data.places[0]);
+          this.setState({
+            places: response.data.places
+          });
         });
-      });
     });
   }
 
@@ -77,7 +78,8 @@ class Main extends Component {
 
   render() {
     return (
-      <div className='App'>
+      <div className='App' style={sectionStyle}>
+        <Nav />
         <Intro
           places={this.state.places}
           neighbourhoods={this.state.neighbourhoods}
@@ -87,22 +89,16 @@ class Main extends Component {
           places={this.state.places}
           neighbourhoods={this.state.neighbourhoods}
         />
-
-        <section style={sectionStyle}>
-          {this.state.showMyNightPlan && (
-            <MyNightPlan nightList={this.state.nightList} />
-          )}
-
-          {/* <MyNightPlanDesign /> */}
-
-          <AreaSelector />
-
-          {this.state.places &&
-            this.state.places.slice(0, 5).map(place => {
-              return <HotListCards place={place} key={place.id} />;
-            })} */}
-
-        </section>
+        {this.state.showMyNightPlan && (
+          <MyNightPlan nightList={this.state.nightList} />
+        )}
+        {/* <MyNightPlanDesign /> */}
+        <AreaSelector />
+        {this.state.places &&
+          this.state.places.slice(0, 5).map(place => {
+            return <HotListCards place={place} key={place.id} />;
+          })}{" "}
+        */}
         <Footer />
       </div>
     );

@@ -8,25 +8,12 @@ import Background from "./global-assets/background-bottom.png";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
-var sectionStyle = {
-  width: "100%",
-  height: "100vh",
-  backgroundImage: `url(${Background})`,
-  backgroundAttachment: "fixed",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover"
-};
-
 class App extends Component {
   render() {
     return (
       <Router>
-        <section style={sectionStyle}>
-          <Nav />
           <Route path='/' exact component={Main} />
           <Route path='/areas' exact component={Areas} />
-        </section>
       </Router>
     );
   }
