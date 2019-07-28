@@ -20,14 +20,9 @@ class ReactGoogleMap extends Component {
       >
         { this.props.neighbourhoods &&
             this.props.neighbourhoods.map((element)=>{
-              const considerYaletown = [element.borderPoints];
-              if (element.name === "Downtown") {
-                const yaletownA = this.props.neighbourhoods.filter(neighbourhood => neighbourhood.name === "Yaletown");
-                considerYaletown.push(yaletownA[0].borderPoints.reverse())
-              }
               return (
                 <Polygon
-                  paths={considerYaletown}
+                  paths={element.borderPoints}
                   key={element.id}
                   options={{
                       fillColor: "#000",
@@ -47,11 +42,6 @@ class ReactGoogleMap extends Component {
       </GoogleMap>
         ));
         if (this.props.mapCenterNeighbourhood) {
-            const considerYaletown = [this.props.centerNeighbourhood.borderPoints];
-            if (this.props.centerNeighbourhood.name === "Downtown") {
-                const yaletownA = this.props.neighbourhoods.filter(neighbourhood => neighbourhood.name === "Yaletown");
-                considerYaletown.push(yaletownA[0].borderPoints.reverse())
-            }
             GoogleMapExample = withGoogleMap(props => (
                 <GoogleMap
           defaultCenter = { this.props.centerNeighbourhood.center }
@@ -59,7 +49,7 @@ class ReactGoogleMap extends Component {
           defaultOptions = {{styles:mapStyles}}
         >
           <Polygon
-            paths={considerYaletown}
+            paths={this.props.centerNeighbourhood.borderPoints}
             key={this.props.centerNeighbourhood.id}
             options={{
                 fillColor: "#000",

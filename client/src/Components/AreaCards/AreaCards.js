@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import GastownTest from "./assets/irish-heather-gastown.jpg";
 
 class AreaCards extends Component {
+
+  makeScore(propped) {
+    const yelp = propped.place.yelp_rating / 5 * 25
+    const google = propped.place.rating / 5 * 25
+    const busy = propped.place.popular_times[0].busy_value * 0.5
+
+    return Math.ceil(yelp + google + busy)
+  }
+
   render() {
     return (
       <div id='AreaCards' className='card-container'>
