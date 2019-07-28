@@ -7,4 +7,6 @@ body * {
 body {
   scroll-snap-type: y proximity;
   background-color: $gunmetal;
+  display: flex;
+  flex-direction: column;
 }

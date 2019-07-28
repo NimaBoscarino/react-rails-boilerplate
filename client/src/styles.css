@@ -8,6 +8,13 @@ body {
   -ms-scroll-snap-type: y proximity;
       scroll-snap-type: y proximity;
   background-color: #1f363d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 nav {
@@ -434,7 +441,7 @@ nav .logo {
 }
 
 #Map .hood-sidebar .arrow-icon {
-  color: #ffe80a;
+  color: #d6e5e3;
   font-size: calc(12px + 0.4vw);
   margin-left: 4px;
 }
@@ -552,7 +559,7 @@ nav .logo {
 }
 
 #Map .icon {
-  color: #ff5a00;
+  color: #d6e5e3;
 }
 
 #Map .hotspot-score-icon-small {
@@ -1797,5 +1804,66 @@ nav .logo {
 
 #MyNightPlan .hidden-card .hidden-card {
   margin: 0;
+}
+
+#Footer {
+  display: inline-block;
+  padding: 5vh;
+  border-top: #ff9a02 solid 1px;
+  background: #070707;
+  color: #9ea2a8;
+  width: 100%;
+}
+
+#Footer footer-main-div {
+  margin: 0 auto;
+  overflow: hidden;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: 80%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
+  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#Footer .logo-box {
+  display: inline-block;
+  width: 25%;
+  margin: 0.1vh auto;
+  text-align: center;
+}
+
+#Footer .footer-logo-box {
+  width: 40%;
+  float: right;
+}
+
+#Footer .logo-footer {
+  padding: 0;
+  width: 100%;
+}
+
+#Footer .second-h6 {
+  margin-top: 1vh;
+}
+
+#Footer h6 {
+  margin-bottom: 1vh;
+  font-weight: 700;
+}
+
+#Footer .footer-list {
+  margin-top: 0.2vh;
+  margin-bottom: 0.1vh;
+  margin-left: 0.6vh;
+  color: #d6e5e3;
+}
+
+#Footer .footer-list:hover {
+  color: #ff9a02;
+  cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */

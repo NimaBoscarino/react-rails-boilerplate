@@ -25,7 +25,7 @@ class Intro extends Component {
             <div className='row title-section'>
               <div className='col'>
                 <h1 className='intro-title'>
-                  Vancouver's Most Popular Places
+                  Popular + Good Reviews = HotSpots
                 </h1>
                 <p className='intro-summary'>
                   Discover restaurants, clubs and bars that are both
@@ -42,7 +42,6 @@ class Intro extends Component {
 
           <NightOutBuilder />
         </div>
-
       </section>
     );
   }
