@@ -1,28 +1,33 @@
-import { withScriptjs, withGoogleMap,GoogleMap, Polygon, Marker } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Polygon, Marker } from "react-google-maps";
 import React, { Component } from "react";
 import mapStyles from "./google-map-style.json"
 import { FaThemeisle } from "react-icons/fa";
 
 class ReactGoogleMap extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      message:"loading data"
-    };
-  }
-  
-  render() {
-    let GoogleMapExample = withGoogleMap(props => (
-      <GoogleMap
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: "loading data"
+        };
+    }
+
+    render() {
+        let GoogleMapExample = withGoogleMap(props => (
+            <GoogleMap
         defaultCenter = { { lat: 49.2827, lng: -123.1207 } }
         defaultZoom = { 12 }
         defaultOptions = {{styles:mapStyles}}
       >
-        { this.props.neighbourhoods && 
+        { this.props.neighbourhoods &&
             this.props.neighbourhoods.map((element)=>{
+              const considerYaletown = [element.borderPoints];
+              if (element.name === "Downtown") {
+                const yaletownA = this.props.neighbourhoods.filter(neighbourhood => neighbourhood.name === "Yaletown");
+                considerYaletown.push(yaletownA[0].borderPoints.reverse())
+              }
               return (
                 <Polygon
-                  paths={element.borderPoints}
+                  paths={considerYaletown}
                   key={element.id}
                   options={{
                       fillColor: "#000",
@@ -31,23 +36,30 @@ class ReactGoogleMap extends Component {
                       strokeOpacity: 1,
                       strokeWeight: 1
                   }}
+
                   onClick={() => {
                       this.props.clickNeighbourhood(element.id)
-                  }}/>
+                  }}
+                  />
               )
             })
         }
       </GoogleMap>
-   ));
-    if (this.props.mapCenterNeighbourhood) {
-      GoogleMapExample = withGoogleMap(props => (
-        <GoogleMap
+        ));
+        if (this.props.mapCenterNeighbourhood) {
+            const considerYaletown = [this.props.centerNeighbourhood.borderPoints];
+            if (this.props.centerNeighbourhood.name === "Downtown") {
+                const yaletownA = this.props.neighbourhoods.filter(neighbourhood => neighbourhood.name === "Yaletown");
+                considerYaletown.push(yaletownA[0].borderPoints.reverse())
+            }
+            GoogleMapExample = withGoogleMap(props => (
+                <GoogleMap
           defaultCenter = { this.props.centerNeighbourhood.center }
           defaultZoom = { 14 }
           defaultOptions = {{styles:mapStyles}}
         >
           <Polygon
-            paths={this.props.centerNeighbourhood.borderPoints}
+            paths={considerYaletown}
             key={this.props.centerNeighbourhood.id}
             options={{
                 fillColor: "#000",
@@ -57,14 +69,14 @@ class ReactGoogleMap extends Component {
                 strokeWeight: 1
             }}
             onClick={() => {
-                
+
             }}
           />
           {
             this.props.places.filter(el=>el.neighbourhood_id===this.props.centerNeighbourhood.id)
               .map(place=>{
                 return (
-                <Marker 
+                <Marker
                   key={place.id}
                   position={{lat: place.lat, lng: place.long}}
                   onClick={()=>{this.props.updateSelection(place.id)}}
@@ -72,13 +84,13 @@ class ReactGoogleMap extends Component {
               })
           }
         </GoogleMap>
-     ));
-    }
-     if (this.props.mapCenterPlace) {
-      const currentSelection = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-      const onTheList = 'http://iconshow.me/media/images/Application/Map-Markers-icons/png/256/MapMarker_Marker_Inside_Chartreuse.png';
-      GoogleMapExample = withGoogleMap(props => (
-        <GoogleMap
+            ));
+        }
+        if (this.props.mapCenterPlace) {
+            const currentSelection = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+            const onTheList = 'http://iconshow.me/media/images/Application/Map-Markers-icons/png/256/MapMarker_Marker_Inside_Chartreuse.png';
+            GoogleMapExample = withGoogleMap(props => (
+                <GoogleMap
           defaultCenter = {{lat: this.props.centerPlace.lat, lng: this.props.centerPlace.long}  }
           defaultZoom = { 17 }
           defaultOptions = {{styles:mapStyles}}
@@ -94,7 +106,7 @@ class ReactGoogleMap extends Component {
                   image=onTheList
                 }
                 return (
-                <Marker 
+                <Marker
                   key={place.id}
                   position={{lat: place.lat, lng: place.long}}
                   icon={image && image}
@@ -104,18 +116,18 @@ class ReactGoogleMap extends Component {
               })
           }
         </GoogleMap>
-     ));
-    }
-    return (
-      <div className='map-container'>
+            ));
+        }
+        return (
+            <div className='map-container'>
         <GoogleMapExample
           containerElement={ <div style={{ height: `100%`, width: '100%' }} /> }
           mapElement={ <div style={{ height: `100%` }} /> }
           >
         </GoogleMapExample>
       </div>
-    );
-  }
+        );
+    }
 }
 
 export default ReactGoogleMap;
