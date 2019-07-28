@@ -10,6 +10,15 @@ class HoodPlaceList extends Component {
   }
 
   componentDidMount() {}
+
+  makeScore(propped) {
+    const yelp = propped.place.yelp_rating / 5 * 25
+    const google = propped.place.rating / 5 * 25
+    const busy = propped.place.popular_times[0].busy_value * 0.5
+
+    return Math.ceil(yelp + google + busy)
+  }
+
   render() {
     return (
       <li
@@ -33,7 +42,7 @@ class HoodPlaceList extends Component {
         </div>
         <div className='col hood-place-hotspot-score-div'>
           <p className='hotspot-score-number-small'>
-            {this.props.place.rating}{" "}
+            {this.makeScore(this.props)}{" "}
             <span className='icon'>
               <img
                 className='hotspot-score-icon-small'

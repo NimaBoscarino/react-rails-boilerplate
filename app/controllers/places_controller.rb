@@ -24,7 +24,11 @@ class PlacesController < ApplicationController
         all_types_array=[]
         all_types.each {|each_type| all_types_array.push(each_type[:name])}
 
-        all_popular_times=place.popular_times.all
+        time_now = Time.now
+        day = whatDayIsIt(time_now)
+        hour = whatHourIsIt(time_now)
+
+        all_popular_times=place.popular_times.where(day_id: day).where(hour_id: hour)
         all_popular_times_array=[]
         all_popular_times.each{|each_popular_time| all_popular_times_array.push(each_popular_time.attributes)}
 
@@ -49,7 +53,7 @@ class PlacesController < ApplicationController
 
     def whatHourIsIt(date)
         hour = date.hour
-        minute = date.minute
+        minute = date.min
         if minute < 30
             hour += 1
         else

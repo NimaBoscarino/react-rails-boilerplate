@@ -13,6 +13,15 @@ class HotListCards extends Component {
   }
 
   componentDidMount() {}
+
+  makeScore(propped) {
+    const yelp = propped.place.yelp_rating / 5 * 25
+    const google = propped.place.rating / 5 * 25
+    const busy = propped.place.popular_times[0].busy_value * 0.5
+
+    return Math.ceil(yelp + google + busy)
+  }
+
   render() {
     return (
       <div className='HotListCards'>
@@ -77,7 +86,9 @@ class HotListCards extends Component {
                       <ul className='list-group list-group-flush'>
                         <li className='list-group-item'>
                           <div className='hotspot-review'>HotSpot Score</div>
-                          <div className='hotspot-review-score'>87</div>
+                          <div className='hotspot-review-score'>
+                            {this.makeScore(this.props)}
+                          </div>
                         </li>
                         <li className='list-group-item'>
                           <div className='review-icons'>
@@ -96,9 +107,11 @@ class HotListCards extends Component {
                             <FaYelp />
                           </div>
                           <div className='yelp-review'>Yelp Review:</div>
-                          <div className='yelp-review-score'>4/5</div>
+                          <div className='yelp-review-score'>
+                            {this.props.place.yelp_rating}
+                          </div>
                           <div className='review-stats'>
-                            (Based on 453 reviews)
+                            (Based on {this.props.place.yelp_review_count} reviews)
                           </div>
                         </li>
                       </ul>

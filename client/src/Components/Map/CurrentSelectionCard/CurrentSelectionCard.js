@@ -5,6 +5,15 @@ import { IoMdAdd } from "react-icons/io";
 import { FaCloudMoon } from "react-icons/fa";
 
 class CurrentSelectionCard extends Component {
+
+  makeScore(propped) {
+    const yelp = propped.currentSelection.yelp_rating / 5 * 25
+    const google = propped.currentSelection.rating / 5 * 25
+    const busy = propped.currentSelection.popular_times[0].busy_value * 0.5
+
+    return Math.ceil(yelp + google + busy)
+  }
+
   render() {
     return (
       <div id='CurrentSelectionCard'>
@@ -40,6 +49,15 @@ class CurrentSelectionCard extends Component {
                           Google Score:{"  "}
                           {this.props.currentSelection.rating} based on{" "}
                           {this.props.currentSelection.rating_n} reviews
+                        </p>
+                        <p>
+                          Yelp Score:{"  "}
+                          {this.props.currentSelection.yelp_rating} based on{" "}
+                          {this.props.currentSelection.yelp_review_count}
+                        </p>
+                        <p>
+                          Hot Score:{"  "}
+                          {this.makeScore(this.props)}
                         </p>
                       </div>
                     </div>
