@@ -23,6 +23,7 @@ class NeighbourhoodsController < ApplicationController
             point["lng"]=each_border_point[:long]
             all_border_points_array.push(point)
         }
+        # Create ring shape for Downtown Polygon
         if neighbourhood.name == "Downtown"
             yaletown = Neighbourhood.where(name: 'Yaletown')[0]
             all_border_points2 = yaletown.border_points.all

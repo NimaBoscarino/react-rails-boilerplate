@@ -41,7 +41,6 @@ class ReactGoogleMap extends Component {
         }
       </GoogleMap>
         ));
-        console.log(this.props)
         if (this.props.mapCenterNeighbourhood) {
             GoogleMapExample = withGoogleMap(props => (
                 <GoogleMap
