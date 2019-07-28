@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CurrentSelectionModal from "./CurrentSelectionModal";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
-import PlaceHolderPic from "../../../global-assets/eastvan.jpeg";
+import { FaCloudMoon } from "react-icons/fa";
 
 class CurrentSelectionCard extends Component {
   render() {

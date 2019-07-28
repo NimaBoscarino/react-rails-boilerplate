@@ -26,7 +26,6 @@ class IntroCarouselSlide extends Component {
               </p>
               <p className='hood-title'>Hottest Spot in Gastown Right Now</p>
             </div>
-
           </div>
         </div>
       </div>
