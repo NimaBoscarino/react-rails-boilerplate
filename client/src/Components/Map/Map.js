@@ -49,13 +49,17 @@ class Map extends Component {
     }
 
     clickNeighbourhood(id) {
-        if (!this.state.centerNeighbourhood || this.state.centerNeighbourhood.id !== id) {
-            this.setState({
-                mapCenterNeighbourhood: true,
-                centerNeighbourhood: this.props.neighbourhoods.filter(element => element.id === id)[0],
-                mapCenterPlace: false,
-                centerPlace: null,
-            })
+        if (this.props.places) {
+            if (!this.state.centerNeighbourhood || this.state.centerNeighbourhood.id !== id) {
+                this.setState({
+                    mapCenterNeighbourhood: true,
+                    centerNeighbourhood: this.props.neighbourhoods.filter(element => element.id === id)[0],
+                    mapCenterPlace: false,
+                    centerPlace: null,
+                })
+            }
+        } else {
+            console.log("Loading data");
         }
     }
 

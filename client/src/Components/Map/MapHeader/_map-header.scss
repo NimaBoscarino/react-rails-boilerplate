@@ -16,7 +16,6 @@
     border-bottom: 1px solid rgba($dark-blue, 0.1);
 
     .hood-header-box {
-      width: 80vh;
       text-align: center;
     }
 
@@ -25,22 +24,20 @@
       color: $white;
       padding: 0;
       margin: 0 auto;
+      font-size: $font-size-busy-xs;
 
-      .form-group {
+      .heatmap-filter {
         display: inline-block;
-        color: white;
+        padding: 0 0.5vh;
       }
 
-      .form-div {
-        .start-time-div {
-          display: inline-block;
-        }
-        .end-time-div {
-          display: inline-block;
-        }
-        .weekday-selector-div {
-          display: inline-block;
-        }
+      .filter-prompt {
+        display: inline-block;
+      }
+
+      .heatmap-button {
+        display: inline-block;
+        font-size: $font-size-busy-xs;
       }
     }
 

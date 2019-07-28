@@ -728,7 +728,6 @@ nav .logo {
 }
 
 #Map .map-header .hood-header-box {
-  width: 80vh;
   text-align: center;
 }
 
@@ -737,23 +736,21 @@ nav .logo {
   color: white;
   padding: 0;
   margin: 0 auto;
+  font-size: calc(7px + 0.2vw);
 }
 
-#Map .map-header .filter-box-div .form-group {
+#Map .map-header .filter-box-div .heatmap-filter {
   display: inline-block;
-  color: white;
+  padding: 0 0.5vh;
 }
 
-#Map .map-header .filter-box-div .form-div .start-time-div {
-  display: inline-block;
-}
-
-#Map .map-header .filter-box-div .form-div .end-time-div {
+#Map .map-header .filter-box-div .filter-prompt {
   display: inline-block;
 }
 
-#Map .map-header .filter-box-div .form-div .weekday-selector-div {
+#Map .map-header .filter-box-div .heatmap-button {
   display: inline-block;
+  font-size: calc(7px + 0.2vw);
 }
 
 #Map .map-header h4.selected-hood {

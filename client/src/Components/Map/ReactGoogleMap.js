@@ -1,6 +1,7 @@
 import { withScriptjs, withGoogleMap, GoogleMap, Polygon, Marker } from "react-google-maps";
 import React, { Component } from "react";
 import mapStyles from "./google-map-style.json"
+import {CurrentMapMarker} from '../../global-assets/map-marker.png'
 import { FaThemeisle } from "react-icons/fa";
 
 class ReactGoogleMap extends Component {

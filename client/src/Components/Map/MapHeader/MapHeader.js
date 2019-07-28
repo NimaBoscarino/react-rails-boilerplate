@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { ButtonToolbar, ButtonGroup, Button, Tooltip } from "reactstrap";
-import MapDayFilter from "./MapHeaderDropDown";
+import MapDayFilter from "./DropdownDays";
+import MapHourFilter from "./DropdownHours";
+import MapHoodFilter from "./DropdownHood";
 import { FaGlassCheers } from "react-icons/fa";
 import { FaPizzaSlice } from "react-icons/fa";
 import { FaMusic } from "react-icons/fa";
@@ -25,7 +27,15 @@ class MapHeader extends Component {
     return (
       <div className='d-inline-flex p-2 justify-content-center map-header'>
         <div className='col filter-box-div'>
+          <p className='filter-prompt'>Show me</p>
+          <MapHoodFilter />
+          <p className='filter-prompt'>on a</p>
           <MapDayFilter />
+          <p className='filter-prompt'>around</p>
+          <MapHourFilter />
+          <Button className='heatmap-button' outline color='light' size='sm'>
+            Turn off Heatmap
+          </Button>
         </div>
         <div className='col hood-header-box'>
           <h4 className='selected-hood'>

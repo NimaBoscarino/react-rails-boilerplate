@@ -53,6 +53,7 @@ class Main extends Component {
     axios
       .get("/places") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
+        console.log(response.data.places[0])
         this.setState({
           places: response.data.places
         });
