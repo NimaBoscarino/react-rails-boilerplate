@@ -47,7 +47,8 @@ class MyNightPlan extends Component {
                                   Your Night's HotSpot Score
                                 </h5>
 
-                                <p className='hotspot-score-number'>54</p>
+                                <p className='hotspot-score-number'>{this.props.nightList.reduce((acc, cur)=>
+            acc+cur.currentBusyScore,0)}</p>
                               </div>
                             </div>
                           </div>

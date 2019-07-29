@@ -50,7 +50,7 @@ class MyNightPlanCards extends Component {
                 <Card className='my-card-summary-row p-2 bd-highlight'>
                   <div className='score-number-col'>
                     <p className='hotspot-score-title'>HotScore Score</p>
-                    <p className='hotspot-score-number'>45</p>
+                    <p className='hotspot-score-number'>{this.props.place.currentBusyScore}</p>
                   </div>
 
                   <div className='details-col'>
@@ -59,7 +59,7 @@ class MyNightPlanCards extends Component {
                         {this.props.place.name}
                       </CardTitle>
                       <CardTitle className='my-card-summary-address'>
-                        1245 West Main St.
+                        {this.props.place.address}
                       </CardTitle>
                     </div>
                   </div>
