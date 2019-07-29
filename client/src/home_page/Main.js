@@ -55,9 +55,13 @@ class Main extends Component {
       axios
         .get("/places") // You can simply make your requests to "/api/whatever you want"
         .then(response => {
-          console.log(response.data.places[0]);
+          const places = response.data.places;
+          places.forEach(place=>{
+            place.currentBusyScore=Math.ceil(place.yelp_rating * 5+ place.rating * 5 + place.current_busy_value.busy_value * 0.5)
+          })
+          console.log(places[0]);
           this.setState({
-            places: response.data.places
+            places: places
           });
         });
     });

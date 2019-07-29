@@ -6,14 +6,6 @@ import { FaCloudMoon } from "react-icons/fa";
 
 class CurrentSelectionCard extends Component {
 
-  makeScore(propped) {
-    const yelp = propped.currentSelection.yelp_rating / 5 * 25
-    const google = propped.currentSelection.rating / 5 * 25
-    const busy = propped.currentSelection.popular_times[0].busy_value * 0.5
-
-    return Math.ceil(yelp + google + busy)
-  }
-
   render() {
     return (
       <div id='CurrentSelectionCard'>
@@ -57,7 +49,7 @@ class CurrentSelectionCard extends Component {
                         </p>
                         <p>
                           Hot Score:{"  "}
-                          {this.makeScore(this.props)}
+                          {this.props.currentSelection.currentBusyScore}
                         </p>
                       </div>
                     </div>
