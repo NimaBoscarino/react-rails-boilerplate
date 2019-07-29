@@ -7,8 +7,18 @@ $body-font: "Roboto", sans-serif;
 $font-size-main-title: calc(32px + 1.7vw);
 $font-size-title-intro: calc(14px + 0.7vw);
 $font-size-title-popular-now: calc(12px + 0.4vw);
-
 $font-size-small-icon: calc(9px + 0.2vw);
+
+// Intro Card------
+
+$font-size-carousel-header: calc(20px + 1.3vw);
+$font-size-carousel-address: calc(7px + 0.6vw);
+$font-size-carousel-icons: calc(8px + 0.6vw);
+$font-size-intro-hotspot-title: calc(10px + 1vw);
+$font-size-intro-card: calc(20px + 9vw);
+$font-size-intro-card-review-number: calc(8px + 0.5vw);
+
+
 
 $font-size-title: calc(18px + 1vw);
 $font-size-nav-tabs: calc(8px + 0.8vw);
@@ -35,10 +45,6 @@ $font-size-hotspot-hood-large: calc(16px + 0.8vw);
 
 $font-size-map-header-filters: calc(7px + 0.3vw);
 
-// Intro Card------
-
-$font-size-intro-card: calc(20px + 7vw);
-$font-size-intro-card-review-number: calc(8px + 0.5vw);
 
 // Report Card Summary Font Sizes------
 

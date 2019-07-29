@@ -1,12 +1,12 @@
 #Footer {
   display: inline-block;
   padding: 5vh;
+
   border-top: $orange solid 1px;
   background: $smoky-black;
   color: $quick-silver;
   width: 100%;
-  margin-top: 20vh;
-
+  margin-top: -100vh;
 
   footer-main-div {
     margin: 0 auto;
@@ -18,7 +18,10 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-
+  .footer-row {
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
 
   .footer-logo-box {
     width: 40%;
@@ -26,6 +29,7 @@
   }
 
   .logo-footer {
+    margin-top: 5vh;
     padding: 0;
     width: 100%;
   }
@@ -48,5 +52,9 @@
   .footer-list:hover {
     color: $orange;
     cursor: pointer;
+  }
+
+  .copy-text {
+    font-size: calc(8px + 0.3vw);
   }
 }

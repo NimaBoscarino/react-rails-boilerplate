@@ -16,14 +16,26 @@ class Intro extends Component {
                   alt={""}
                 />
               </div>
-              <h1 className='intro-title'>Popular + Highly Rated Places</h1>
-              <div className='container-fluid intro-carousel-div'>
-                <Carousel places={this.props.places} />
-              </div>
+              <h1 className='intro-title'>Vancouver's Hottest Spots</h1>
+           
               <p className='intro-summary'>
                 Discover restaurants, clubs and bars that are consistently busy
-                (based on real time data) and highly rated (according to Google
-                and Yelp) in Vancouver's most popular areas
+                 and highly rated in Vancouver's most popular areas
+              </p>
+              <div className='container-fluid intro-carousel-div'>
+                <Carousel places={this.props.places} />
+                <p className='intro-summary'>
+                <h4 className='popular-now-title'>
+                  <span className='badge badge-pill badge-info live-icon'>
+                    LIVE
+                  </span>{" "}
+                  Popular Right Now
+                </h4>
+              </p>
+
+              </div>
+              <p className='intro-summary'>
+                Explore popular neighbourhoods, find places and learn when to go.
               </p>
             </div>
           </div>
