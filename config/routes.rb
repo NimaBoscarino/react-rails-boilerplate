@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   namespace :api do # /api/data
 
     get '/data', to: 'tests#index'
+
+    get '/popular/:id/:day', to: 'popular#show'
+    get '/popular/:id', to: 'popular#index'
     
     resources :dogs
 

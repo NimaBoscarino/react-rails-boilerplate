@@ -1,19 +1,33 @@
 import React, { Component } from "react";
+import axios from "axios";
 import CanvasJSReact from "../../global-assets/canvasjs-2.3.2/canvasjs.react";
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class Charts extends Component {
   constructor(props) {
     super(props);
+    this.state={
+      data:null
+    }
     this.processData=this.processData.bind(this);
   }
 
-  processData(propsData) {
-    const result = [];
-    propsData.forEach(element => {
-      const arr = element.popular_times.reverse();
+  componentDidMount(){
+    const result=[];
+    this.props.data.forEach(place=>{
+      axios.get(`api/popular/${place.id}`).then(response=>{
+        result.push(this.processData(response.data, place))
+        this.setState({
+          data:result
+        })
+      })
+    })
+    
+  }
+
+  processData(propsData, place) {
+      const arr = propsData.popular_times.reverse();
       let data = arr
-        .filter(element => element.day_id === 1)
         .map(element => {
           return {
             label: `${element.hour_id}`,
@@ -22,14 +36,12 @@ class Charts extends Component {
         });
       const dataSet = {
         type: "line",
-        name: `${element.name}`,
+        name: `${place.name}`,
         showInLegend: true,
         toolTipContent: "At {label}:00 : {y}",
         dataPoints: data.slice(12).concat(data.slice(0, 12))
       };
-      result.push(dataSet);
-    });
-    return result;
+    return dataSet;
   }
 
   render() {
@@ -60,7 +72,7 @@ class Charts extends Component {
         titleFontColor: "white",
         labelFontColor: "white"
       },
-      data: this.processData(this.props.data)
+      data: this.state.data
     };
 
     return (
