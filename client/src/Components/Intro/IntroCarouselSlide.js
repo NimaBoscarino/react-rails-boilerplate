@@ -31,6 +31,7 @@ class IntroCarouselSlide extends Component {
 
               <div className='col info-col'>
                 <p className='card-title'>{this.props.place.name}</p>
+                <p className='card-title'>{this.props.place.neighbourhood_name}</p>
                 <p className='card-address card-info'><FaMapMarkerAlt className='icon-carousel' />{this.props.place.address}</p>
                 <p className='card-phone card-info'><MdPhone className='icon-carousel' />{this.props.place.yelp_display_phone}</p>
                 <p className='card-score card-info'><FaGoogle className='icon-carousel' />Google Rating: {this.props.place.rating} /5</p>
@@ -45,7 +46,7 @@ class IntroCarouselSlide extends Component {
                 <div className='hotspot-number-div'>
                 <h6 className='hotspot-title'>HotSpot Score</h6>
 
-                  <p className='hotspot-score'>87</p>
+                  <p className='hotspot-score'>{this.props.place.currentBusyScore}</p>
                   <p className='total-reviews'>{sum(this.props.place.yelp_review_count, this.props.place.rating_n)}   Total Reviews</p>
                 </div>
                 <div className='hotspot-icon-box'>
