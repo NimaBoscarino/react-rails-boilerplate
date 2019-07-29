@@ -22,7 +22,6 @@ class Map extends Component {
         this.addCurrentSelection = this.addCurrentSelection.bind(this);
         this.clickNeighbourhood = this.clickNeighbourhood.bind(this);
         this.resetNeighbourhood = this.resetNeighbourhood.bind(this);
-        this.filterPlaces = this.filterPlaces.bind(this);
     }
     updateCurrentSelection(id) {
         const currentPlace = this.props.places.filter(place => place.id === id)[0]
@@ -71,16 +70,13 @@ class Map extends Component {
         })
     }
 
-    filterPlaces(type) {
-        console.log(`${type} is clicked`);
-    }
     componentDidMount() {}
     render() {
         return (
             <div id='Map'>
         <MapHeader
         currentNeighbourhood={this.state.centerNeighbourhood}
-        filterPlaces={this.filterPlaces}
+        filterPlaces={this.props.filterPlaces}
         neighbourhoods={this.props.neighbourhoods}
         clickNeighbourhood={this.clickNeighbourhood}
         resetNeighbourhood={this.resetNeighbourhood}/>

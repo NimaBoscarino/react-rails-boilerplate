@@ -30,7 +30,6 @@ class Charts extends Component {
     propsData.forEach(place=>{
       if (place.popularTimes){
       const arr = place.popularTimes.sort((a,b)=>a.hour_id-b.hour_id);
-      console.log(arr);
       let data = arr
         .map(element => {
           return {

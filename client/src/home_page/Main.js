@@ -34,6 +34,8 @@ class Main extends Component {
       showMyNightPlan: false
     };
     this.showMyNight = this.showMyNight.bind(this);
+    this.filterPlaces = this.filterPlaces.bind(this);
+
   }
 
   showMyNight(selectionList) {
@@ -47,6 +49,19 @@ class Main extends Component {
         })
       })
     })
+  }
+
+  filterPlaces(type) {
+    if (type==='reset'){
+      this.setState({
+        places:this.places
+      })
+      return;
+    }
+    this.setState({
+      places:this.places.filter(place=>place.types.includes(type))
+    })
+    console.log(`${type} is clicked`);
   }
 
   componentDidMount() {
@@ -75,6 +90,7 @@ class Main extends Component {
             );
           });
           console.log(places[0]);
+          this.places=places;
           this.setState({
             places: places
           });
@@ -130,6 +146,7 @@ class Main extends Component {
           ref={section => {
             this.Map = section;
           }}
+          filterPlaces={this.filterPlaces}
         />
         {this.state.showMyNightPlan && (
           <MyNightPlan nightList={this.state.nightList} />

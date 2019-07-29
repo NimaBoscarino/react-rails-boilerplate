@@ -30,12 +30,13 @@ class HoodSidebar extends Component {
 
           {this.props.neighbourhoods &&
             this.props.neighbourhoods.map(element => {
+              if (this.props.places && this.props.places.filter(place=>place.neighbourhood_id===element.id).length)
               return (
                 <HoodList
                   key={element.id}
                   updateSelection={this.props.updateSelection}
                   neighbourhood={element}
-                  places={this.state.places}
+                  places={this.props.places}
                   clickNeighbourhood = {this.props.clickNeighbourhood}
                 />
               );

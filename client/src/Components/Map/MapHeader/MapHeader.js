@@ -24,7 +24,6 @@ class MapHeader extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className='d-inline-flex p-2 justify-content-center map-header'>
         <div className='col filter-box-div'>
@@ -95,6 +94,14 @@ class MapHeader extends Component {
                   }}>
                   <FaGlassCheers className='filter-icons' />
                   Bars
+                </Button>
+                <Button
+                  className='filter-buttons club-filter-button'
+                  onClick={() => {
+                    this.props.filterPlaces("reset");
+                  }}>
+                  <FaGlassCheers className='filter-icons' />
+                  Reset filter
                 </Button>
               </ButtonGroup>
             </ButtonToolbar>

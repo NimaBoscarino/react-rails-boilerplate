@@ -27,7 +27,6 @@ export default class DropdownHoods extends React.Component {
     if (this.props.neighbourhoods) {
       toAlphabetize = [...this.props.neighbourhoods]
     }
-      console.log(this.props)
     return (
       <div className='heatmap-filter'>
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
