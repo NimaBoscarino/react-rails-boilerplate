@@ -21,6 +21,7 @@ class Map extends Component {
         this.deleteSelectedPlace = this.deleteSelectedPlace.bind(this);
         this.addCurrentSelection = this.addCurrentSelection.bind(this);
         this.clickNeighbourhood = this.clickNeighbourhood.bind(this);
+        this.resetNeighbourhood = this.resetNeighbourhood.bind(this);
         this.filterPlaces = this.filterPlaces.bind(this);
     }
     updateCurrentSelection(id) {
@@ -62,6 +63,14 @@ class Map extends Component {
         }
     }
 
+    resetNeighbourhood() {
+        this.setState({
+            mapCenterNeighbourhood: false,
+            centerPlace: { lat: 49.2827, long: -123.1207 },
+            centerNeighbourhood: null
+        })
+    }
+
     filterPlaces(type) {
         console.log(`${type} is clicked`);
     }
@@ -69,7 +78,12 @@ class Map extends Component {
     render() {
         return (
             <div id='Map'>
-        <MapHeader currentNeighbourhood={this.state.centerNeighbourhood} filterPlaces={this.filterPlaces}/>
+        <MapHeader
+        currentNeighbourhood={this.state.centerNeighbourhood}
+        filterPlaces={this.filterPlaces}
+        neighbourhoods={this.props.neighbourhoods}
+        clickNeighbourhood={this.clickNeighbourhood}
+        resetNeighbourhood={this.resetNeighbourhood}/>
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap
             neighbourhoods = { this.props.neighbourhoods }

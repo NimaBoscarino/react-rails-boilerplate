@@ -62,7 +62,7 @@ class HoodList extends Component {
             <img className='hotspot-score-icon' src={HotSpotIcon} alt={""} />
             <p className='hotspot-score-number'>
               {
-                this.props.places && 
+                this.props.places &&
                 this.makeScore(this.props.places)
               }
             </p>
