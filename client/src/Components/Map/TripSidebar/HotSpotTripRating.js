@@ -9,7 +9,7 @@ function HotSpotTripRating(props) {
         {
           props.places ?
           props.places.reduce((acc, cur)=>
-            acc+makeScore(cur),0)
+            acc+cur.currentBusyScore,0)
             : 0
         }
       </h1>

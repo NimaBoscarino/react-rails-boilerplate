@@ -17,18 +17,9 @@ class HoodList extends Component {
     this.clickTogglePlaces = this.clickTogglePlaces.bind(this);
   }
 
-  makeScore(propped) {
-    if (propped.places.length === 0) {
-      return "..."
-    }
-
-    let thesePlaces = propped.places.filter(place => place.neighbourhood_id === propped.neighbourhood.id)
-    let totalScore = thesePlaces.reduce((acc, place) =>
-      acc +
-      place.yelp_rating / 5 * 25 +
-      place.rating / 5 * 25 +
-      place.popular_times[0].busy_value * 0.5, 0)
-    return Math.ceil(totalScore / thesePlaces.length);
+  makeScore(places) {
+    let thesePlaces = places.filter(place => place.neighbourhood_id === this.props.neighbourhood.id)
+    return Math.ceil(thesePlaces.reduce((acc,cur)=>acc+cur.currentBusyScore,0)/thesePlaces.length);
   }
 
   componentDidMount() {}
@@ -70,7 +61,10 @@ class HoodList extends Component {
           <div className='col hotspot-score float-right'>
             <img className='hotspot-score-icon' src={HotSpotIcon} alt={""} />
             <p className='hotspot-score-number'>
-              {this.makeScore(this.props)}
+              {
+                this.props.places &&
+                this.makeScore(this.props.places)
+              }
             </p>
           </div>
         </li>

@@ -28,7 +28,20 @@
     font-size: $font-size-night-out-button;
     font-weight: 500;
     border: none;
-    padding: 0.5vh 2vh;
+    margin-top: 2vh;
+    padding: 0.8vh 2.5vh;
+    box-shadow: $map-shadow-header;
+  }
+
+
+  .build-night-button:hover {
+    background: $background-gradient-build-night-button;
+    font-family: $title-font;
+    color: $white;    
+    border: $bright-yellow 1px solid;
+    margin-top: 2vh;
+    padding: 0.8vh 2.5vh;
+    box-shadow: none;
   }
 
   .hotspot-button-icon {

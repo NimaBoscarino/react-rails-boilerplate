@@ -7,7 +7,7 @@ class Nav extends Component {
     return (
       <div id='Footer'>
         <div className='container-fluid footer-main-div'>
-          <div className='row'>
+          <div className='row footer-row'>
    
 
             <div className='col'>
@@ -35,7 +35,7 @@ class Nav extends Component {
             <div className='col'>
               <div className='footer-logo-box'>
                 <img className='logo-footer' src={Logo} alt='' />
-                <p>&copy; 2019 HotSpotsApp.io</p>
+                <p className='copy-text'>&copy; 2019 HotSpotsApp.io</p>
               </div>
             </div>
           </div>

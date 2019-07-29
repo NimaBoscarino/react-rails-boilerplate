@@ -14,7 +14,23 @@ class MyNightPlanCards extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
+    this.findPeakHour=this.findPeakHour.bind(this);
     this.state = { collapse: false };
+  }
+
+  findPeakHour(busyArr){
+    if (busyArr) {
+    let maxBusy=0, hourId=0;
+    busyArr.forEach(element=>{
+      if (element.busy_value>maxBusy){
+        maxBusy=element.busy_value;
+        hourId=element.hour_id;
+      }
+    })
+    if (hourId>=12 && hourId!==24) return `${hourId-12-1} PM`
+    else
+    return `${hourId-1} AM`;
+  }
   }
 
   toggle() {
@@ -33,11 +49,7 @@ class MyNightPlanCards extends Component {
                   </CardTitle>{" "}
                   <CardText>
                     <h5 class='times-title'>Busiest Times</h5>
-                    Between 8PM and 9:30PM
-                  </CardText>
-                  <CardText>
-                    <h5 class='times-title'>Slowest Times</h5>
-                    Between 6PM and 7:30PM
+                    Recommended arrival at {this.findPeakHour(this.props.place.popularTimes)}
                   </CardText>
                 </CardBody>
               </Card>
@@ -50,7 +62,7 @@ class MyNightPlanCards extends Component {
                 <Card className='my-card-summary-row p-2 bd-highlight'>
                   <div className='score-number-col'>
                     <p className='hotspot-score-title'>HotScore Score</p>
-                    <p className='hotspot-score-number'>45</p>
+                    <p className='hotspot-score-number'>{this.props.place.currentBusyScore}</p>
                   </div>
 
                   <div className='details-col'>
@@ -59,7 +71,7 @@ class MyNightPlanCards extends Component {
                         {this.props.place.name}
                       </CardTitle>
                       <CardTitle className='my-card-summary-address'>
-                        1245 West Main St.
+                        {this.props.place.address}
                       </CardTitle>
                     </div>
                   </div>

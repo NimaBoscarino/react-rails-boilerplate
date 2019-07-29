@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Intro from "../Components/Intro/Intro";
-
 import Map from "../Components/Map/Map";
-import AreaSelector from "../Components/AreaSelector/AreaSelector";
-import HotListCards from "../Components/HotListCards/HotListCards";
 import MyNightPlan from "../Components/MyNightPlan/MyNightPlan";
 import Background from "../global-assets/background-parallex.png";
 import Footer from "../Components/Footer/Footer";
 import Nav from "../Components/NavBar/Nav";
-import NightOutBuilder from "../Components/NightOutBuilder/NightOutBuilder";
+import scrollToComponent from "react-scroll-to-component";
+import { FaMapMarked } from "react-icons/fa";
+
 // import MyNightPlanDesign from "../Components/MyNightPlan/MyNightPlanDesign";
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -38,13 +37,25 @@ class Main extends Component {
   }
 
   showMyNight(selectionList) {
-    this.setState({
-      showMyNightPlan: true,
-      nightList: selectionList
-    });
+    selectionList.forEach(place=>{
+      axios.get(`api/popular/${place.id}`).then(response=>{
+        // result.push(this.processData(response.data, place))
+        place.popularTimes=response.data.popular_times;
+        this.setState({
+          showMyNightPlan: true,
+          nightList: selectionList
+        })
+      })
+    })
   }
 
   componentDidMount() {
+    scrollToComponent(this.Map, {
+      offset: 0,
+      align: "top",
+      duration: 1500,
+      ease: "outCirc"
+    });
     axios.get("/neighbourhoods").then(response => {
       const neighbourhoods = this.processDataNeighbourhoods(
         response.data.neighbourhoods
@@ -55,9 +66,17 @@ class Main extends Component {
       axios
         .get("/places") // You can simply make your requests to "/api/whatever you want"
         .then(response => {
-          console.log(response.data.places[0]);
+          const places = response.data.places;
+          places.forEach(place => {
+            place.currentBusyScore = Math.ceil(
+              place.yelp_rating * 5 +
+                place.rating * 5 +
+                place.current_busy_value.busy_value * 0.5
+            );
+          });
+          console.log(places[0]);
           this.setState({
-            places: response.data.places
+            places: places
           });
         });
     });
@@ -85,11 +104,32 @@ class Main extends Component {
           places={this.state.places}
           neighbourhoods={this.state.neighbourhoods}
         />
-        <NightOutBuilder />
+        <div id='NightOutBuilder'>
+          <div className='container-fluid'>
+            <div className='d-flex justify-content-center'>
+              <button
+                className='btn btn-outline-light build-night-button'
+                onClick={() =>
+                  scrollToComponent(this.Map, {
+                    offset: 0,
+                    align: "top",
+                    duration: 1500,
+                    ease: "inCirc"
+                  })
+                }>
+                <FaMapMarked className='map-icon' />
+                See HotSpots Map
+              </button>
+            </div>
+          </div>
+        </div>
         <Map
           showMyNight={this.showMyNight}
           places={this.state.places}
           neighbourhoods={this.state.neighbourhoods}
+          ref={section => {
+            this.Map = section;
+          }}
         />
         {this.state.showMyNightPlan && (
           <MyNightPlan nightList={this.state.nightList} />
@@ -100,7 +140,8 @@ class Main extends Component {
           this.state.places.slice(0, 5).map(place => {
             return <HotListCards place={place} key={place.id} />;
           })}{" "}
-        */} */}
+        */}{" "}
+        */}
         <Footer />
       </div>
     );
