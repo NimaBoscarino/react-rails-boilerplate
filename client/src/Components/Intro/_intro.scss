@@ -27,7 +27,7 @@
       margin-top: 0.6vh;
       font-family: $title-font;
       font-weight: 500;
-      padding: 0 15%;
+      padding: 0 18%;
       font-size: $font-size-title-intro;
       color: white;
       text-shadow: $text-shadow-title;
@@ -57,6 +57,7 @@
       color: $white;
       font-weight: 400;
       text-shadow: $text-shadow-title;
+      padding-top: 0.5vh;
       margin-bottom: 2.5vh;
     }
 
@@ -85,20 +86,73 @@
       .card-title {
         display: block;
         font-family: $title-font;
-        font-size: $font-size-xxxl;
+        font-size: $font-size-carousel-header;
         font-weight: 700;
         width: 100%;
         padding-bottom: 1vh;
         text-shadow: $text-shadow-subtle;
+        line-height: 1;
+        margin-top: 0.8vh;
+        min-height: 11vh;
+      }
+
+      .card-address {
+        font-family: $title-font;
+        font-size: $font-size-carousel-address;
+      }
+
+      .card-phone {
+        font-family: $title-font;
+        font-size: $font-size-carousel-address;
+      }
+
+      .card-score {
+        font-family: $title-font;
+        font-size: $font-size-carousel-address;
+      }
+
+      .icon-carousel {
+        font-size: $font-size-carousel-icons;
+        margin-top: -4px;
+        margin-right: 5px;
+        color: $quick-silver;
+      }
+
+      .info-col {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        max-width: 33%;
+        border-right: 1px solid $dark-quick-silver;
+        border-left: 1px solid $dark-quick-silver;
+        padding-left: 1.5vh;
+        padding-right: 1.5vh;
+
+        .card-info {
+          padding: 0;
+          margin: 0;
+          margin-bottom: 0.5vh;
+        }
+      }
+
+      .hotspot-col {
+        display: inline-block;
+        max-width: 33%;
       }
 
       .image-col {
-        width: 100%;
+        max-width: 33%;
+        display: inline-block;
+
+        padding-left: 3.5%;
 
         .card-image-box {
           object-fit: cover;
           display: inline-block;
           margin: 0 auto;
+          padding-top: 1.5vh;
+          padding-bottom: 1.5vh;
           width: 25vh;
           height: 25vh;
         }
@@ -112,6 +166,15 @@
         width: 100%;
       }
 
+      .hotspot-title {
+        font-family: $title-font;
+        font-size: $font-size-intro-hotspot-title;
+        margin-top: 0.8vh;
+        font-weight: 700;
+        padding-left: 1.8vh;
+        text-shadow: $map-shadow-header;
+      }
+
       .hotspot-number-div {
         display: inline-block;
         width: 100%;
@@ -122,33 +185,35 @@
           font-size: $font-size-intro-card;
           font-family: $title-font;
           font-weight: 700;
-          position: absolute;
-          width: 33vh;
+          margin: 0 auto;
+          padding: 0;
           text-shadow: $map-shadow-header;
           z-index: 2;
+          margin-top: -4vh;
         }
 
         .total-reviews {
           font-size: $font-size-intro-card-review-number;
           font-family: $title-font;
+          padding: 0;
+          margin: 0;
+          margin-top: -4vh;
         }
       }
 
       .hotspot-icon-box {
         position: absolute;
         bottom: 0;
+        top: 0;
         left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: 25vh;
+        width: 4.5vh;
         z-index: 0;
-        
 
         .hotspot-icon {
           width: 100%;
-          margin-left: 20px;
-          padding-bottom: 10px;
-          opacity: .8;
+          margin-left: 4vh;
+          margin-top: 0.5vh;
+          padding-left: 10px;
         }
       }
     }
