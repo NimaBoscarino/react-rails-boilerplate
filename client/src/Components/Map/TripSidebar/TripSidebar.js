@@ -50,7 +50,7 @@ class TripSidebar extends Component {
             </Button>
           </div>
 
-          <HotSpotTripRating />
+          <HotSpotTripRating places={this.props.selectionList}/>
         </div>
       </div>
     );
