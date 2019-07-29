@@ -16,12 +16,15 @@ class Map extends Component {
             mapCenterNeighbourhood: false,
             centerPlace: null,
             mapCenterPlace: false,
+            showOneHood: null
         };
         this.updateCurrentSelection = this.updateCurrentSelection.bind(this);
         this.deleteSelectedPlace = this.deleteSelectedPlace.bind(this);
         this.addCurrentSelection = this.addCurrentSelection.bind(this);
         this.clickNeighbourhood = this.clickNeighbourhood.bind(this);
         this.resetNeighbourhood = this.resetNeighbourhood.bind(this);
+        this.filterPlaces = this.filterPlaces.bind(this);
+        this.changeShowOneHood = this.changeShowOneHood.bind(this);
     }
     updateCurrentSelection(id) {
         const currentPlace = this.props.places.filter(place => place.id === id)[0]
@@ -70,6 +73,15 @@ class Map extends Component {
         })
     }
 
+    changeShowOneHood(bool) {
+        this.setState({
+            showOneHood: bool
+        })
+    }
+
+    filterPlaces(type) {
+        console.log(`${type} is clicked`);
+    }
     componentDidMount() {}
     render() {
         return (
@@ -79,7 +91,8 @@ class Map extends Component {
         filterPlaces={this.props.filterPlaces}
         neighbourhoods={this.props.neighbourhoods}
         clickNeighbourhood={this.clickNeighbourhood}
-        resetNeighbourhood={this.resetNeighbourhood}/>
+        resetNeighbourhood={this.resetNeighbourhood}
+        changeShowOneHood={this.changeShowOneHood}/>
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap
             neighbourhoods = { this.props.neighbourhoods }
@@ -97,6 +110,7 @@ class Map extends Component {
             places={this.props.places}
             neighbourhoods={this.props.neighbourhoods}
             clickNeighbourhood = {this.clickNeighbourhood}
+            showOneHoodSide = {this.state.showOneHood}
           />
           <TripSidebar
             selectionList={this.state.selectionList}

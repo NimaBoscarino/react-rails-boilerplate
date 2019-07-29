@@ -55,6 +55,7 @@ export default class DropdownHoods extends React.Component {
                 <DropdownItem
                   onClick={() =>  {
                     this.props.clickNeighbourhood(neighbourhood.id);
+                    this.props.changeShowOneHood(neighbourhood.id)
                   }}
                 >
                   {neighbourhood.name}
@@ -62,9 +63,10 @@ export default class DropdownHoods extends React.Component {
               );
             })}
             <DropdownItem
-            onClick={() =>
+            onClick={() => {
               this.props.resetNeighbourhood()
-            }
+              this.props.changeShowOneHood(null)
+            }}
             >
               Vancouver Area
             </DropdownItem>
