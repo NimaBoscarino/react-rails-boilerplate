@@ -16,9 +16,7 @@ class Intro extends Component {
                   alt={""}
                 />
               </div>
-              <h1 className='intro-title'>
-                Find Popular + Highly Rated Places
-              </h1>
+              <h1 className='intro-title'>Popular + Highly Rated Places</h1>
               <div className='container-fluid intro-carousel-div'>
                 <Carousel places={this.props.places} />
               </div>

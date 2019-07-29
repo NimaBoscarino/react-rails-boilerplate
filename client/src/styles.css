@@ -183,14 +183,14 @@ nav .logo {
   border: 1px solid #ffce00;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
-  min-height: 20vh;
+  min-height: 30vh;
 }
 
 #Intro .intro-carousel-div .intro-feature-card {
-  text-align: center;
+  text-align: left;
   display: block;
   margin: 0 auto;
-  width: 25vh;
+  width: 100vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
   position: relative;
@@ -206,26 +206,21 @@ nav .logo {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-#Intro .intro-carousel-div .intro-feature-card .card-img-top {
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-color: #9ea2a8;
-  height: 10vh;
+#Intro .intro-carousel-div .intro-feature-card .image-col {
   width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
-  -ms-flex-line-pack: middle;
-      align-content: middle;
 }
 
-#Intro .intro-carousel-div .intro-feature-card img {
-  height: 25vh;
-  width: 40vh;
-  opacity: 0.8;
+#Intro .intro-carousel-div .intro-feature-card .image-col .card-image-box {
   -o-object-fit: cover;
      object-fit: cover;
-  -ms-flex-line-pack: middle;
-      align-content: middle;
+  display: inline-block;
+  margin: 0 auto;
+  width: 25vh;
+  height: 25vh;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .image-col .card-img {
+  height: 100%;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .card-text {
@@ -235,16 +230,40 @@ nav .logo {
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div {
   display: inline-block;
   width: 100%;
+  text-align: center;
+  position: relative;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div .hotspot-score {
-  font-size: calc(18px + 2.5vw);
+  font-size: calc(20px + 7vw);
   font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  position: absolute;
+  width: 33vh;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div .total-reviews {
   font-size: calc(8px + 0.5vw);
   font-family: "Fira Sans", sans-serif;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .hotspot-icon-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 25vh;
+  z-index: 0;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .hotspot-icon-box .hotspot-icon {
+  width: 100%;
+  margin-left: 20px;
+  padding-bottom: 10px;
+  opacity: .8;
 }
 
 #Intro .intro-carousel-div .shadow {

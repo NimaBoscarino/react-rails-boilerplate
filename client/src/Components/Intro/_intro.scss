@@ -21,7 +21,6 @@
       color: $white;
       text-shadow: $text-shadow-title;
       margin-bottom: 1.5vh;
-
     }
 
     .intro-summary {
@@ -52,7 +51,6 @@
     margin: 5vh auto 8vh auto;
     width: 100%;
 
-
     .popular-now-title {
       font-size: $font-size-title-popular-now;
       font-family: $title-font;
@@ -73,16 +71,15 @@
     .card {
       border: 1px solid $medium-yellow;
       box-shadow: $text-shadow-box !important;
-      min-height: 20vh;
+      min-height: 30vh;
     }
 
     .intro-feature-card {
-      text-align: center;
+      text-align: left;
       display: block;
       margin: 0 auto;
-      width: 25vh;
+      width: 100vh;
       background: $background-gradient-medium;
-
       position: relative;
 
       .card-title {
@@ -95,21 +92,20 @@
         text-shadow: $text-shadow-subtle;
       }
 
-      .card-img-top {
-        object-fit: cover;
-        border-color: $quick-silver;
-        height: 10vh;
+      .image-col {
         width: 100%;
-        background: $background-gradient-very-light;
-        align-content: middle;
-      }
 
-      img {
-        height: 25vh;
-        width: 40vh;
-        opacity: 0.8;
-        object-fit: cover;
-        align-content: middle;
+        .card-image-box {
+          object-fit: cover;
+          display: inline-block;
+          margin: 0 auto;
+          width: 25vh;
+          height: 25vh;
+        }
+
+        .card-img {
+          height: 100%;
+        }
       }
 
       .card-text {
@@ -119,15 +115,40 @@
       .hotspot-number-div {
         display: inline-block;
         width: 100%;
+        text-align: center;
+        position: relative;
 
         .hotspot-score {
           font-size: $font-size-intro-card;
           font-family: $title-font;
+          font-weight: 700;
+          position: absolute;
+          width: 33vh;
+          text-shadow: $map-shadow-header;
+          z-index: 2;
         }
 
         .total-reviews {
           font-size: $font-size-intro-card-review-number;
           font-family: $title-font;
+        }
+      }
+
+      .hotspot-icon-box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 25vh;
+        z-index: 0;
+        
+
+        .hotspot-icon {
+          width: 100%;
+          margin-left: 20px;
+          padding-bottom: 10px;
+          opacity: .8;
         }
       }
     }
