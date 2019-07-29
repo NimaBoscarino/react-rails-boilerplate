@@ -73,12 +73,12 @@ class MyNightPlanCardsDesign extends Component {
                     <Button
                       className='my-card-summary-button float-right'
                       variant='light'
-                      onClick={this.toggle}
-                      onClick={() =>
+                      onClick={() => {
+                        this.toggle();
                         this.setState({
                           isCardView: !this.state.isCardView
-                        })
-                      }>
+                        });
+                      }}>
                       {this.state.isCardView ? (
                         <FiChevronUp className='arrow-icon' />
                       ) : (

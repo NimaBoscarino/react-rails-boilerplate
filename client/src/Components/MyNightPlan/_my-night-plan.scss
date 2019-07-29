@@ -28,9 +28,27 @@
     padding-bottom: 2vh;
   }
 
+  .my-night-intro {
+    margin-top: 0.6vh;
+    font-family: $title-font;
+    font-weight: 500;
+    padding: 0 10%;
+    font-size: $font-size-title-intro;
+    color: white;
+    text-shadow: $text-shadow-title;
+    line-height: 1.5;
+    padding-bottom: 1.5vh;
+  }
+
   .my-night-title-card {
     width: 100%;
     margin: 0 auto;
+  }
+
+  .info-circle-icon {
+    margin-top: -5px;
+    margin-right: 5px;
+    color: $bright-yellow;
   }
 
   .night-out-div {
@@ -130,15 +148,16 @@
 
     .my-card-summary-button {
       position: absolute;
+      bottom: 0;
       right: 0;
-      top: 0;
       padding-top: 20px;
       padding-right: 5vh;
+      padding-left: 5vh;
       font-family: $title-font;
       background-color: transparent;
       border: none;
-
       width: 4vh;
+      box-shadow: none;
     }
 
     .button-icon {
@@ -195,6 +214,11 @@
       text-transform: uppercase;
       color: $quick-silver;
     }
+  }
+
+  .arrow-icon {
+    color: $bright-yellow;
+    font-size: $font-arrow-icon;
   }
 
   .hidden-card {

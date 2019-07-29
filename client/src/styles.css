@@ -253,8 +253,8 @@ nav .logo {
   margin: 0;
   text-align: center;
   max-width: 33%;
-  border-right: 1px solid rgba(158, 162, 168, 0.6);
-  border-left: 1px solid rgba(158, 162, 168, 0.6);
+  border-right: 1px solid rgba(158, 162, 168, 0.4);
+  border-left: 1px solid rgba(158, 162, 168, 0.4);
   padding-left: 1.5vh;
   padding-right: 1.5vh;
 }
@@ -1825,9 +1825,27 @@ nav .logo {
   padding-bottom: 2vh;
 }
 
+#MyNightPlan .my-night-intro {
+  margin-top: 0.6vh;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  padding: 0 10%;
+  font-size: calc(14px + 0.7vw);
+  color: white;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+  line-height: 1.5;
+  padding-bottom: 1.5vh;
+}
+
 #MyNightPlan .my-night-title-card {
   width: 100%;
   margin: 0 auto;
+}
+
+#MyNightPlan .info-circle-icon {
+  margin-top: -5px;
+  margin-right: 5px;
+  color: #ffe80a;
 }
 
 #MyNightPlan .night-out-div {
@@ -1930,14 +1948,17 @@ nav .logo {
 
 #MyNightPlan .my-card-summary-row .my-card-summary-button {
   position: absolute;
+  bottom: 0;
   right: 0;
-  top: 0;
   padding-top: 20px;
   padding-right: 5vh;
+  padding-left: 5vh;
   font-family: "Fira Sans", sans-serif;
   background-color: transparent;
   border: none;
   width: 4vh;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 #MyNightPlan .my-card-summary-row .button-icon {
@@ -1992,6 +2013,11 @@ nav .logo {
   font-size: calc(10px + 0.3vw);
   text-transform: uppercase;
   color: #9ea2a8;
+}
+
+#MyNightPlan .arrow-icon {
+  color: #ffe80a;
+  font-size: calc(18px + 1vw);
 }
 
 #MyNightPlan .hidden-card {
