@@ -7,14 +7,18 @@ import {
   Card,
   CardText
 } from "reactstrap";
-import { FiArrowDownCircle } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
+import { FiChevronUp } from "react-icons/fi";
 import { FiClock } from "react-icons/fi";
 
 class MyNightPlanCardsDesign extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.state = { collapse: false };
+    this.state = {
+      collapse: false,
+      isCardView: false
+    };
   }
 
   toggle() {
@@ -69,10 +73,17 @@ class MyNightPlanCardsDesign extends Component {
                     <Button
                       className='my-card-summary-button float-right'
                       variant='light'
-                      onClick={this.toggle}>
-                      <span className='button-icon'>
-                        <FiArrowDownCircle />
-                      </span>
+                      onClick={this.toggle}
+                      onClick={() =>
+                        this.setState({
+                          isCardView: !this.state.isCardView
+                        })
+                      }>
+                      {this.state.isCardView ? (
+                        <FiChevronUp className='arrow-icon' />
+                      ) : (
+                        <FiChevronDown className='arrow-icon' />
+                      )}
                     </Button>
                   </div>
                 </Card>

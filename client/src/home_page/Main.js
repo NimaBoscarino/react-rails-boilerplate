@@ -9,7 +9,7 @@ import Nav from "../Components/NavBar/Nav";
 import scrollToComponent from "react-scroll-to-component";
 import { FaMapMarked } from "react-icons/fa";
 
-// import MyNightPlanDesign from "../Components/MyNightPlan/MyNightPlanDesign";
+import MyNightPlanDesign from "../Components/MyNightPlan/MyNightPlanDesign";
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -128,7 +128,7 @@ class Main extends Component {
         {this.state.showMyNightPlan && (
           <MyNightPlan nightList={this.state.nightList} />
         )}
-        {/* <MyNightPlanDesign /> */}
+        <MyNightPlanDesign />
         {/* <AreaSelector />
         {this.state.places &&
           this.state.places.slice(0, 5).map(place => {
