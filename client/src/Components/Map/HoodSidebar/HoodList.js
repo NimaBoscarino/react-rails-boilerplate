@@ -35,6 +35,9 @@ class HoodList extends Component {
   }
 
   render() {
+    if (this.props.showOneHoodSide) {
+      this.state.showListPlaces = true
+    }
     return (
       <div>
         <li className='list-group-item hood-name-li'>

@@ -19,17 +19,20 @@ class HoodSidebar extends Component {
     }
   }
   render() {
+    console.log(this.props)
+    let hoodsToDraw = this.props.neighbourhoods;
+    if (this.props.showOneHoodSide) {
+      hoodsToDraw = hoodsToDraw.filter(neighbourhood => neighbourhood.id === this.props.showOneHoodSide)
+    }
     return (
       <div className='d-flex align-items-stretch hood-sidebar'>
         <ul className='list-group list-group-flush hood-list'>
           <li className='list-group-item hood-title-select'>
-            Explore Areas 
+            Explore Areas
           </li>
 
-
-
-          {this.props.neighbourhoods &&
-            this.props.neighbourhoods.map(element => {
+          {hoodsToDraw &&
+           hoodsToDraw.map(element => {
               return (
                 <HoodList
                   key={element.id}
@@ -37,6 +40,7 @@ class HoodSidebar extends Component {
                   neighbourhood={element}
                   places={this.state.places}
                   clickNeighbourhood = {this.props.clickNeighbourhood}
+                  showOneHoodSide = {this.props.showOneHoodSide}
                 />
               );
             })}

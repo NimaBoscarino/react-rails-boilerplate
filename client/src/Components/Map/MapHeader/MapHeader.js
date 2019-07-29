@@ -24,7 +24,6 @@ class MapHeader extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className='d-inline-flex p-2 justify-content-center map-header'>
         <div className='col filter-box-div'>
@@ -34,6 +33,7 @@ class MapHeader extends Component {
           clickNeighbourhood={this.props.clickNeighbourhood}
           resetNeighbourhood={this.props.resetNeighbourhood}
           currentNeighbourhood={this.props.currentNeighbourhood}
+          changeShowOneHood={this.props.changeShowOneHood}
           />
           <p className='filter-prompt'>on a</p>
           <MapDayFilter />

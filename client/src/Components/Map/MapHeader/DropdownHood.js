@@ -27,7 +27,6 @@ export default class DropdownHoods extends React.Component {
     if (this.props.neighbourhoods) {
       toAlphabetize = [...this.props.neighbourhoods]
     }
-      console.log(this.props)
     return (
       <div className='heatmap-filter'>
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -56,6 +55,7 @@ export default class DropdownHoods extends React.Component {
                 <DropdownItem
                   onClick={() =>  {
                     this.props.clickNeighbourhood(neighbourhood.id);
+                    this.props.changeShowOneHood(neighbourhood.id)
                   }}
                 >
                   {neighbourhood.name}
@@ -63,9 +63,10 @@ export default class DropdownHoods extends React.Component {
               );
             })}
             <DropdownItem
-            onClick={() =>
+            onClick={() => {
               this.props.resetNeighbourhood()
-            }
+              this.props.changeShowOneHood(null)
+            }}
             >
               Vancouver Area
             </DropdownItem>
