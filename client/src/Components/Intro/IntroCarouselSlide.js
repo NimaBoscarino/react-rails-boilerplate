@@ -25,6 +25,12 @@ class IntroCarouselSlide extends Component {
                 {this.props.place.name} {this.props.place.rating} %
               </p>
               <p className='hood-title'>Hottest Spot in Gastown Right Now</p>
+              <h4 className='popular-now-title'>
+                <span className='badge badge-pill badge-info live-icon'>
+                  LIVE
+                </span>{" "}
+                Popular Right Now
+              </h4>
             </div>
           </div>
         </div>

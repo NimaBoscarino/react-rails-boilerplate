@@ -47,10 +47,11 @@ nav .logo {
 
 #NightOutBuilder {
   width: 100%;
-  padding: 2vh 0 0 0;
+  padding: 0 0 0 0;
   margin: 0 auto;
   -ms-flex-item-align: baseline;
       align-self: baseline;
+  height: 15vh;
 }
 
 #NightOutBuilder .night-out-intro-div {
@@ -77,7 +78,7 @@ nav .logo {
   font-size: calc(10px + 0.6vw);
   font-weight: 500;
   border: none;
-  padding: 0.5vh 4vh;
+  padding: 0.5vh 2vh;
 }
 
 #NightOutBuilder .hotspot-button-icon {
@@ -93,7 +94,7 @@ nav .logo {
 }
 
 #Intro {
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 @-webkit-keyframes shadow-pulse-live {
@@ -120,7 +121,7 @@ nav .logo {
 
 #Intro .title-section {
   text-align: center;
-  margin-top: 10vh;
+  margin-top: 8vh;
 }
 
 #Intro .title-section .intro-title {
@@ -935,6 +936,10 @@ nav .logo {
   height: 100vh;
   position: absolute;
   scroll-snap-align: start;
+}
+
+#Map .gm-style {
+  font-size: 200px !important;
 }
 
 @keyframes shadow-pulse {

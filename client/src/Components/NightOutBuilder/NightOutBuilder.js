@@ -6,12 +6,7 @@ class NightOutBuilder extends Component {
     return (
       <div id='NightOutBuilder'>
         <div className='container-fluid'>
-          <div className='d-flex justify-content-center night-out-intro-div'>
-            <p className='night-out-intro'>
-              Start exploring Vancouver's most popular neighbourhoods, find
-              their HotSpots and when to go.
-            </p>
-          </div>
+
 
           <div className='d-flex justify-content-center'>
             <button className='btn btn-outline-light build-night-button'>

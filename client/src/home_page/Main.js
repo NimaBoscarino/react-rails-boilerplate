@@ -9,6 +9,7 @@ import MyNightPlan from "../Components/MyNightPlan/MyNightPlan";
 import Background from "../global-assets/background-parallex.png";
 import Footer from "../Components/Footer/Footer";
 import Nav from "../Components/NavBar/Nav";
+import NightOutBuilder from "../Components/NightOutBuilder/NightOutBuilder";
 // import MyNightPlanDesign from "../Components/MyNightPlan/MyNightPlanDesign";
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -84,6 +85,7 @@ class Main extends Component {
           places={this.state.places}
           neighbourhoods={this.state.neighbourhoods}
         />
+        <NightOutBuilder />
         <Map
           showMyNight={this.showMyNight}
           places={this.state.places}
