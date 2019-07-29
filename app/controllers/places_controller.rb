@@ -41,6 +41,7 @@ class PlacesController < ApplicationController
         hash=place.attributes
         hash["types"]=all_types_array
         # hash["popular_times"]=all_popular_times_array
+        hash["neighbourhood_name"]=place.neighbourhood.attributes["name"]
         hash["current_busy_value"]=current_busy_value
         hash["yelp_photos"]=all_yelp_photos_array
         hash
