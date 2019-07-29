@@ -95,12 +95,12 @@ class Main extends Component {
           <MyNightPlan nightList={this.state.nightList} />
         )}
         {/* <MyNightPlanDesign /> */}
-        <AreaSelector />
+        {/* <AreaSelector />
         {this.state.places &&
           this.state.places.slice(0, 5).map(place => {
             return <HotListCards place={place} key={place.id} />;
           })}{" "}
-        */}
+        */} */}
         <Footer />
       </div>
     );

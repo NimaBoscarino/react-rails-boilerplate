@@ -45,6 +45,11 @@
       align-self: flex-start;
     }
 
+    .trip-list-div {
+      max-height: 60vh;
+      overflow-y: scroll;
+    }
+
     .trip-list {
       width: 100%;
       text-align: center;
@@ -123,6 +128,7 @@
     padding: 2vh 0;
     text-align: center;
     justify-content: flex-end;
+    position: relative;
     background: $background-gradient-light;
   }
 
@@ -130,7 +136,11 @@
     color: white;
     font-family: $title-font;
     margin: 0;
-    padding: 10px 0 0 0;
+    padding: 10px 0 0 10px;
+    z-index: 1;
+    position: relative;
+    font-weight: 700;
+
   }
 
   .hotspot-stat-number {
@@ -139,7 +149,26 @@
     font-family: $title-font;
     font-weight: 700;
     font-size: $font-size-hotspot-number-large;
-    text-shadow: 8px 8px 4px black;
+    text-shadow: 4px 4px 2px black;
+    position: relative;
+    z-index: 1;
+  }
+
+  .score-icon-div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding-top: 15px;
+
+  }
+
+  .hotspot-score-icon {
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0.8;
+    z-index: -2;
   }
 
   .button-div {
