@@ -13,20 +13,24 @@ class Charts extends Component {
   }
 
   componentDidMount(){
-    const result=[];
-    this.props.data.forEach(place=>{
-      axios.get(`api/popular/${place.id}`).then(response=>{
-        result.push(this.processData(response.data, place))
-        this.setState({
-          data:result
-        })
-      })
-    })
+    // const result=[];
+    // this.props.data.forEach(place=>{
+    //   axios.get(`api/popular/${place.id}`).then(response=>{
+    //     result.push(this.processData(response.data, place))
+    //     this.setState({
+    //       data:result
+    //     })
+    //   })
+    // })
     
   }
 
-  processData(propsData, place) {
-      const arr = propsData.popular_times.reverse();
+  processData(propsData) {
+    const result=[];
+    propsData.forEach(place=>{
+      if (place.popularTimes){
+      const arr = place.popularTimes.sort((a,b)=>a.hour_id-b.hour_id);
+      console.log(arr);
       let data = arr
         .map(element => {
           return {
@@ -41,7 +45,10 @@ class Charts extends Component {
         toolTipContent: "At {label}:00 : {y}",
         dataPoints: data.slice(12).concat(data.slice(0, 12))
       };
-    return dataSet;
+      result.push(dataSet);
+    }
+    })
+    return result;
   }
 
   render() {
@@ -72,7 +79,7 @@ class Charts extends Component {
         titleFontColor: "white",
         labelFontColor: "white"
       },
-      data: this.state.data
+      data: this.processData(this.props.data)
     };
 
     return (

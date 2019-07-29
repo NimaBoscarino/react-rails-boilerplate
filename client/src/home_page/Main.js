@@ -37,10 +37,16 @@ class Main extends Component {
   }
 
   showMyNight(selectionList) {
-    this.setState({
-      showMyNightPlan: true,
-      nightList: selectionList
-    });
+    selectionList.forEach(place=>{
+      axios.get(`api/popular/${place.id}`).then(response=>{
+        // result.push(this.processData(response.data, place))
+        place.popularTimes=response.data.popular_times;
+        this.setState({
+          showMyNightPlan: true,
+          nightList: selectionList
+        })
+      })
+    })
   }
 
   componentDidMount() {
