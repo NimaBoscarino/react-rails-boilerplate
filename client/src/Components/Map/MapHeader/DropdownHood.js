@@ -23,6 +23,11 @@ export default class DropdownHoods extends React.Component {
   }
 
   render() {
+    let toAlphabetize = []
+    if (this.props.neighbourhoods) {
+      toAlphabetize = [...this.props.neighbourhoods]
+    }
+      console.log(this.props)
     return (
       <div className='heatmap-filter'>
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -33,9 +38,37 @@ export default class DropdownHoods extends React.Component {
               : "Vancouver"}
           </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem>Gastown</DropdownItem>
-            <DropdownItem>Yaletown</DropdownItem>
-            <DropdownItem>Downtown</DropdownItem>
+          {toAlphabetize &&
+            toAlphabetize
+            .sort(function(a,b) {
+              var nameA = a.name.toUpperCase();
+              var nameB = b.name.toUpperCase();
+              if (nameA > nameB) {
+                return 1;
+              }
+              if (nameA < nameB) {
+                return -1;
+              }
+              return 0;
+            })
+            .map((neighbourhood) => {
+              return (
+                <DropdownItem
+                  onClick={() =>  {
+                    this.props.clickNeighbourhood(neighbourhood.id);
+                  }}
+                >
+                  {neighbourhood.name}
+                </DropdownItem>
+              );
+            })}
+            <DropdownItem
+            onClick={() =>
+              this.props.resetNeighbourhood()
+            }
+            >
+              Vancouver Area
+            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </div>

@@ -23,7 +23,6 @@ class HoodList extends Component {
     }
 
     let thesePlaces = propped.places.filter(place => place.neighbourhood_id === propped.neighbourhood.id)
-    console.log(thesePlaces[0].name)
     let totalScore = thesePlaces.reduce((acc, place) =>
       acc +
       place.yelp_rating / 5 * 25 +
