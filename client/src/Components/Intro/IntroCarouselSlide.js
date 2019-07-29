@@ -35,6 +35,9 @@ class IntroCarouselSlide extends Component {
                 <p className='card-phone card-info'><MdPhone className='icon-carousel' />{this.props.place.yelp_display_phone}</p>
                 <p className='card-score card-info'><FaGoogle className='icon-carousel' />Google Rating: {this.props.place.rating} /5</p>
                 <p className='card-score card-info'><FaYelp className='icon-carousel' />Yelp Rating: {this.props.place.yelp_rating} /5</p>
+
+          
+  
      
               </div>
 

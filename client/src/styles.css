@@ -244,7 +244,7 @@ nav .logo {
   font-size: calc(8px + 0.6vw);
   margin-top: -4px;
   margin-right: 5px;
-  color: #ffe80a;
+  color: #9ea2a8;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .info-col {
@@ -335,7 +335,7 @@ nav .logo {
   bottom: 0;
   top: 0;
   left: 0;
-  width: 5vh;
+  width: 4.5vh;
   z-index: 0;
 }
 
