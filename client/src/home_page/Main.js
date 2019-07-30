@@ -153,8 +153,6 @@ class Main extends Component {
         .then(response => {
 
           // Hacky way of updating popular data
-          const start_time = Date.now()
-
           let places = [...this.state.places]
           places.sort((a, b) => {return a.id - b.id})
 
