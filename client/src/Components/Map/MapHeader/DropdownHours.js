@@ -39,13 +39,13 @@ export default class DropdownHours extends React.Component {
 
   render() {
     return (
-      <div className='heatmap-filter'>
-        <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <DropdownToggle caret>
+      <div className='dropdown-buttons'>
+        <Dropdown className='drop-down-button' isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+          <DropdownToggle className='drop-down-toggle' caret>
             {this.wordTime(this.props.hour)}
           </DropdownToggle>
-          <DropdownMenu>
-            <TimeKeeper
+          <DropdownMenu className='drop-down-menu time-keeper-dropdown'>
+            <TimeKeeper className='time-keeper'
               time={this.props.hour-1 + ":00"}
               onChange={this.props.setHour}
             />

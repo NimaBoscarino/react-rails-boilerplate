@@ -649,6 +649,47 @@ nav .logo {
   margin-top: -4px;
 }
 
+#Map .heatmap-toggle-button {
+  font-family: "Fira Sans Condensed", sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
+  padding: 0.1vh 2vh 0.1vh 1.8vh;
+  margin-left: 0.5vh;
+  border-radius: 10px;
+  font-size: calc(5px + 0.6vw);
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  white-space: nowrap;
+  border: 1px solid #070707;
+}
+
+#Map .heatmap-filter {
+  display: inline-block;
+  padding: 0 0.5vh;
+}
+
+#Map .heatmap-toggle-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: calc(7px + 0.2vw);
+  font-size: calc(5px + 0.6vw);
+  margin-top: 0vh;
+}
+
+#Map .MuiTypography-body1 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  color: #fffffc;
+  white-space: nowrap;
+}
+
 #Map .hood-sidebar {
   border-bottom: 5px #ffe80a solid;
   border-right: 1px solid rgba(7, 7, 7, 0.6);
@@ -1003,80 +1044,199 @@ nav .logo {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
   margin: 0 auto;
-  height: 7vh;
+  min-height: 7vh;
   z-index: 1;
   border-top: 2px solid rgba(255, 232, 10, 0.7);
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
-  border-bottom: 1px solid rgba(39, 96, 152, 0.1);
-}
-
-#Map .map-header .hood-header-box {
-  text-align: center;
+  border-bottom: 1px solid rgba(158, 162, 168, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-left: 2vh;
 }
 
 #Map .map-header .filter-box-div {
   display: inline-block;
-  color: #fffffc;
-  padding: 0;
-  margin: 0 auto;
-  font-size: calc(7px + 0.2vw);
-}
-
-#Map .map-header .filter-box-div .heatmap-filter {
-  display: inline-block;
-  padding: 0 0.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 #Map .map-header .filter-box-div .filter-prompt {
+  padding-top: 1.5vh;
   display: inline-block;
+  font-size: calc(5px + 0.6vw);
+  color: #fffffc;
+  font-family: "Fira Sans Condensed", sans-serif;
+  white-space: nowrap;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
-#Map .map-header .filter-box-div .heatmap-button {
-  display: inline-block;
-  font-size: calc(7px + 0.2vw);
+#Map .map-header .filter-box-div .btn-secondary {
+  background-color: transparent;
+  border: none;
+  font-family: "Fira Sans Condensed", sans-serif;
+  text-transform: uppercase;
+  font-size: calc(5px + 0.6vw);
+  color: #fffffc;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0vh 0vh 0.1vh 0vh;
+  margin: 0vh 0.8vh 0vh 0.8vh;
+  border-bottom: 1px solid #ff9a02;
+  border-radius: 0;
 }
 
-#Map .map-header h4.selected-hood {
+#Map .map-header .filter-box-div .drop-down-button {
+  background-color: transparent;
+}
+
+#Map .map-header .filter-box-div .drop-down-menu {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(158, 162, 168, 0.9)), to(#9ea2a8));
+  background: linear-gradient(to bottom, rgba(158, 162, 168, 0.9), #9ea2a8);
+}
+
+#Map .map-header .filter-box-div .dropdown-item {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: calc(5px + 0.6vw);
+  color: #070707;
+}
+
+#Map .map-header .filter-box-div .dropdown-item:hover {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: calc(5px + 0.6vw);
+  color: #070707;
+}
+
+#Map .map-header .filter-box-div .drop-down-toggle {
+  background-color: none;
+}
+
+#Map .map-header .filter-box-div .dropdown-buttons {
+  padding: 0vh 0.4vh;
+}
+
+#Map .map-header .filter-box-div .time-keeper-dropdown {
+  margin-left: -8vh;
+}
+
+#Map .map-header .hood-header-box {
+  display: inline-block;
+  text-align: center;
+}
+
+#Map .map-header .hood-header-box h4.selected-hood {
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(30px + 0.8vw);
+  font-size: calc(9px + 1.5vw);
   font-weight: 700;
   color: #fffffc;
-}
-
-#Map .map-header .filter-title {
-  font-family: "Roboto", sans-serif;
-  margin: 0 0 0.2vh 0;
-  padding: 0;
-  color: #d6e5e3;
-  font-size: calc(7px + 0.3vw);
-}
-
-#Map .map-header .button-toolbar {
-  margin-top: 0;
-}
-
-#Map .map-header .button-row {
-  margin-top: -8px;
-  display: block;
-}
-
-#Map .map-header .filter-toolbar {
+  line-height: 1;
   padding: 0;
   margin: 0;
 }
 
-#Map .map-header .filter-toolbar {
-  font-size: calc(12px + 0.4vw);
+#Map .map-header .heatmap-toggle-button {
+  font-family: "Fira Sans Condensed", sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(158, 162, 168, 0.7)), to(rgba(158, 162, 168, 0.6)));
+  background: linear-gradient(to bottom, rgba(158, 162, 168, 0.7), rgba(158, 162, 168, 0.6));
+  padding: 0.1vh 2vh 0.1vh 1.8vh;
+  margin-left: 0.5vh;
+  border-radius: 10px;
+  font-size: calc(5px + 0.6vw);
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  white-space: nowrap;
+}
+
+#Map .map-header .heatmap-filter {
+  display: inline-block;
+  padding: 0 0.5vh;
+}
+
+#Map .map-header .heatmap-toggle-div {
+  display: inline-block;
+  font-size: calc(7px + 0.2vw);
+  font-size: calc(5px + 0.6vw);
+  margin-top: 0.7vh;
+  margin-left: 2px;
+  padding-left: 15px;
+}
+
+#Map .map-header .MuiTypography-body1 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  color: #fffffc;
+  white-space: nowrap;
+}
+
+#Map .map-header .button-row {
+  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-color: #fffffc;
+  color: #fffffc;
+}
+
+#Map .map-header .button-row .filter-icon-funnel {
+  font-size: calc(5px + 0.8vw);
+  color: #9ea2a8;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+#Map .map-header .button-row .filter-icons {
+  font-size: calc(5px + 0.5vw);
+}
+
+#Map .map-header .button-row .filter-buttons:hover {
+  border-color: #d6e5e3;
+}
+
+#Map .map-header .filter-buttons {
+  font-family: "Fira Sans Condensed", sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(158, 162, 168, 0.5)), to(rgba(158, 162, 168, 0.3)));
+  background: linear-gradient(to bottom, rgba(158, 162, 168, 0.5), rgba(158, 162, 168, 0.3));
+  font-size: calc(5px + 0.4vw);
+  text-transform: uppercase;
 }
 
 #Map .map-header .filter-icons {
-  margin-right: 0.5vh;
-  font-size: calc(12px + 0.4vw);
+  margin-right: 4px;
 }
 
 #HeatMapSlider {
