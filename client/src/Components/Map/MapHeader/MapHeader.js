@@ -39,7 +39,7 @@ class MapHeader extends Component {
           <MapDayFilter />
           <p className='filter-prompt'>around</p>
           <MapHourFilter />
-          <Button className='heatmap-button' outline color='light' size='sm'>
+          <Button className='heatmap-button' outline color='light' size='sm' onClick={()=>{this.props.toggleHeatmap()}}>
             Turn off Heatmap
           </Button>
         </div>
