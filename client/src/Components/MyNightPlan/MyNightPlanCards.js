@@ -9,28 +9,40 @@ import {
 } from "reactstrap";
 import { FiArrowDownCircle } from "react-icons/fi";
 import { FiClock } from "react-icons/fi";
+import { MdPhone } from "react-icons/md";
+import {
+  FaMapMarkerAlt,
+  FaGoogle,
+  FaYelp,
+  FaMapMarked,
+  FaCreditCard
+} from "react-icons/fa";
+
+function average(a, b) {
+  return (a + b) / 2;
+}
 
 class MyNightPlanCards extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.findPeakHour=this.findPeakHour.bind(this);
+    this.findPeakHour = this.findPeakHour.bind(this);
     this.state = { collapse: false };
   }
 
-  findPeakHour(busyArr){
+  findPeakHour(busyArr) {
     if (busyArr) {
-    let maxBusy=0, hourId=0;
-    busyArr.forEach(element=>{
-      if (element.busy_value>maxBusy){
-        maxBusy=element.busy_value;
-        hourId=element.hour_id;
-      }
-    })
-    if (hourId>=12 && hourId!==24) return `${hourId-12-1} PM`
-    else
-    return `${hourId-1} AM`;
-  }
+      let maxBusy = 0,
+        hourId = 0;
+      busyArr.forEach(element => {
+        if (element.busy_value > maxBusy) {
+          maxBusy = element.busy_value;
+          hourId = element.hour_id;
+        }
+      });
+      if (hourId >= 12 && hourId !== 24) return `${hourId - 12 - 1} PM`;
+      else return `${hourId - 1} AM`;
+    }
   }
 
   toggle() {
@@ -45,12 +57,26 @@ class MyNightPlanCards extends Component {
               <Card className='best-times-card w-100'>
                 <CardBody>
                   <CardTitle className='best-times-title'>
-                    <FiClock className='clock-icon' /> Recommended Times
+                    <FiClock className='clock-icon' /> Recommended Time
                   </CardTitle>{" "}
+
+                
                   <CardText>
-                    <h5 class='times-title'>Busiest Times</h5>
-                    Recommended arrival at {this.findPeakHour(this.props.place.popularTimes)}
+                    <p className='arrival-time'>
+                      {this.findPeakHour(this.props.place.popularTimes)}
+                    </p>
                   </CardText>
+                  <CardText>
+                    <p className='average-time'>
+                      Average Time Spent:{" "}
+                      {average(
+                        this.props.place.time_spent_max,
+                        this.props.place.time_spent_min
+                      )}{" "}
+                      minutes
+                    </p>
+                  </CardText>
+               
                 </CardBody>
               </Card>
             </div>
@@ -60,47 +86,47 @@ class MyNightPlanCards extends Component {
             <div class='d-flex flex-column bd-highlight mb-3'>
               <div className='summary-row'>
                 <Card className='my-card-summary-row p-2 bd-highlight'>
-                  <div className='score-number-col'>
-                    <p className='hotspot-score-title'>HotScore Score</p>
-                    <p className='hotspot-score-number'>{this.props.place.currentBusyScore}</p>
-                  </div>
-
-                  <div className='details-col'>
-                    <div className='my-card-summary-summary-div'>
+                  <div className='row'>
+                    <div className='title-col col'>
                       <CardTitle className='my-card-summary-title'>
                         {this.props.place.name}
                       </CardTitle>
-                      <CardTitle className='my-card-summary-address'>
-                        {this.props.place.address}
+                      <CardTitle className='my-card-hood-name'>
+                        {this.props.place.neighbourhood_name}
                       </CardTitle>
+                      <a href={this.props.place.yelp_url} target='_blank'>
+                        {" "}
+                        <Button outline color='light' size='sm' block>
+                          <FaYelp className='yelp-icon' /> Read Yelp Reviews
+                        </Button>
+                      </a>
                     </div>
-                  </div>
 
-                  <div className='my-card-summary-button-div'>
-                    <Button
-                      className='my-card-summary-button float-right'
-                      variant='light'
-                      onClick={this.toggle}>
-                      <span className='button-icon'>
-                        <FiArrowDownCircle />
-                      </span>
-                    </Button>
+                    <div className='info-col col'>
+                      <p className='card-price info-p'>
+                        <FaCreditCard className='icon-carousel' />
+                        {this.props.place.yelp_price}
+                      </p>
+                      <p className='card-address info-p'>
+                        <FaMapMarkerAlt className='icon-carousel' />
+                        {this.props.place.address}
+                      </p>
+
+                      <p className='card-phone info-p'>
+                        <MdPhone className='icon-carousel' />
+                        {this.props.place.yelp_display_phone}
+                      </p>
+                    </div>
+
+                    <div className='hotspot-col col'>
+                      <p className='hotspot-score-title'>HotScore Score</p>
+                      <p className='hotspot-score-number'>
+                        {this.props.place.currentBusyScore}
+                      </p>
+                    </div>
                   </div>
                 </Card>
               </div>
-
-              <Collapse isOpen={this.state.collapse}>
-                <Card className='hidden-card w-100 p-2 bd-highlight'>
-                  <CardBody>
-                    <CardText>
-                      <p>
-                        Google Review Score: {this.props.place.rating} <br />
-                        Google Review Number: {this.props.place.rating_n}
-                      </p>
-                    </CardText>
-                  </CardBody>
-                </Card>
-              </Collapse>
             </div>
           </div>
         </div>

@@ -7,9 +7,8 @@ import {
   Card,
   CardText
 } from "reactstrap";
-import { FiChevronDown } from "react-icons/fi";
-import { FiChevronUp } from "react-icons/fi";
-import { FiClock } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp, FiClock } from "react-icons/fi";
+
 
 class MyNightPlanCardsDesign extends Component {
   constructor(props) {

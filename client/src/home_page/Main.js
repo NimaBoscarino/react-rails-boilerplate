@@ -37,16 +37,16 @@ class Main extends Component {
   }
 
   showMyNight(selectionList) {
-    selectionList.forEach(place=>{
-      axios.get(`api/popular/${place.id}`).then(response=>{
+    selectionList.forEach(place => {
+      axios.get(`api/popular/${place.id}`).then(response => {
         // result.push(this.processData(response.data, place))
-        place.popularTimes=response.data.popular_times;
+        place.popularTimes = response.data.popular_times;
         this.setState({
           showMyNightPlan: true,
           nightList: selectionList
-        })
-      })
-    })
+        });
+      });
+    });
   }
 
   componentDidMount() {
@@ -104,7 +104,12 @@ class Main extends Component {
           places={this.state.places}
           neighbourhoods={this.state.neighbourhoods}
         />
-        <div id='NightOutBuilder'>
+        <div id='NightOutBuilder' className="container">
+          <div className='night-out-prompt-div'>
+            <p className='night-out-summary'>
+              Explore popular neighbourhoods, find places and learn when to go.
+            </p>
+          </div>
           <div className='container-fluid'>
             <div className='d-flex justify-content-center'>
               <button
@@ -134,7 +139,7 @@ class Main extends Component {
         {this.state.showMyNightPlan && (
           <MyNightPlan nightList={this.state.nightList} />
         )}
-        <MyNightPlanDesign />
+        {/* <MyNightPlanDesign /> */}
         {/* <AreaSelector />
         {this.state.places &&
           this.state.places.slice(0, 5).map(place => {

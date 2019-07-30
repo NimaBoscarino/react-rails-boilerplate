@@ -66,18 +66,17 @@
   }
 
   .my-card-summary-row {
-    background: $background-gradient-medium;
+    background: $background-gradient-light;
     width: 95%;
     text-align: left;
     position: relative;
     margin: 0 auto;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    border-radius: 20px;
     display: inline-block;
     width: 100%;
     padding: 0;
     margin: 0;
-    min-height: 18vh;
+    min-height: 14vh;
 
     .score-number-col {
       display: inline-block;
@@ -118,25 +117,6 @@
 
       .my-card-summary-summary-row {
         margin: 0 auto;
-      }
-
-      .my-card-summary-title {
-        display: block;
-        font-family: $title-font;
-        font-size: $font-size-xxxl;
-        margin-left: 1.5vh;
-        margin-top: 1.5vh;
-        padding: 0;
-        margin-top: 5px;
-      }
-      .my-card-summary-address {
-        display: block;
-        font-family: $title-font;
-        font-size: $font-size-large;
-        margin-left: 1.5vh;
-        margin-top: 1.5vh;
-        padding: 0;
-        margin-top: 5px;
       }
     }
 
@@ -187,9 +167,9 @@
   }
 
   .best-times-card {
-    background: $background-gradient-medium;
+    background: $background-gradient-light;
     width: 95%;
-    text-align: left;
+    text-align: center;
     position: relative;
     margin: 0 auto;
     border-radius: 20px;
@@ -197,48 +177,138 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    min-height: 18vh;
+    min-height: 14vh;
 
     .best-times-title {
       font-family: $title-font;
-      font-size: $font-size-xxl;
+      font-size: $font-size-best-time-title;
+      margin: 0;
+      margin-bottom: 0.5vh;
+      color: $quick-silver;
     }
 
     .clock-icon {
       margin: 0;
       padding: 0;
+      color: $quick-silver;
     }
 
     .times-title {
       font-size: $font-size-medium;
       text-transform: uppercase;
       color: $quick-silver;
+      margin: 0;
+    }
+
+    .arrival-time {
+      font-family: $title-font;
+      font-size: $font-size-suggested-time-big;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $white;
+      padding: 0;
+      margin: 0;
+      margin-top: -1.5vh;
+      text-shadow: $text-shadow-title;
+    }
+
+    .average-time {
+      font-family: $title-font;
+      font-size: $font-size-average-time;
+      padding: 0;
+      margin-top: -2vh;
+      margin-bottom: -2vh;
     }
   }
 
-  .arrow-icon {
-    color: $bright-yellow;
-    font-size: $font-arrow-icon;
+  .title-col {
+    display: inline-block;
+    margin-left: 1.5vh;
+    margin-top: 1.5vh;
+
+    .my-card-summary-title {
+      display: block;
+      font-family: $title-font;
+      font-weight: 700;
+      font-size: $font-size-title-place;
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    .my-card-hood-name {
+      display: block;
+      font-family: $title-font;
+      font-size: $font-size-hood-large;
+      padding: 0;
+      margin-top: 0.1vh;
+    }
+
+    .yelp-icon {
+      color: #D32322;
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: none;
+    }
   }
 
-  .hidden-card {
-    background: $background-gradient-dark;
-
-    text-align: left;
-    position: relative;
-    margin: 0 auto;
-    border-top-right-radius: none;
-    border-top-left-radius: none;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+  .info-col {
     display: inline-block;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    min-height: 18vh;
+    margin-left: 1.5vh;
+    margin-top: 1.5vh;
 
-    .hidden-card {
+
+    .info-p {
+      color: white;
+      font-family: $title-font;
+      font-weight: 700;
+      line-height: 1.2;
+      font-size: $font-size-place-info;
+    }
+
+    .icon-carousel {
+      color: $quick-silver;
+      margin-right: 0.5vh;
+    }
+
+    .card-address {
+      padding-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    .card-price {
+      margin-top: 0.5vh;
+    }
+  }
+
+  .hotspot-col {
+    display: inline-block;
+    margin-left: 1.5vh;
+    margin-right: 1.5vh;
+    margin-top: 1.5vh;
+    text-align: right;
+
+    .hotspot-score-title {
+      font-size: $font-size-hotspot-score-title;
+      font-family: $title-font;
+      padding: 0;
+      margin: 0;
+      margin-bottom: -1.5vh;
+    }
+
+
+    .hotspot-score-number {
+      font-size: $font-size-hotspot-score;
+      font-family: $title-font;
+      font-weight: 700;
+      padding: 0;
       margin: 0;
     }
   }
+
+
+
 }
+  
+
