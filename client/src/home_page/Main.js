@@ -68,7 +68,6 @@ class Main extends Component {
     this.setState({
       places:this.places.filter(place=>place.types.includes(type))
     })
-    console.log(`${type} is clicked`);
   }
 
   componentDidMount() {

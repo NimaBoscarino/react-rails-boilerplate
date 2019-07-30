@@ -79,9 +79,6 @@ class Map extends Component {
         })
     }
 
-    filterPlaces(type) {
-        console.log(`${type} is clicked`);
-    }
     componentDidMount() {}
     render() {
         return (
