@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(version: 2019_07_30_210440) do
   end
 
   create_table "hot_scores", force: :cascade do |t|
-    t.string "day_id"
-    t.string "hour_id"
-    t.string "hot_score"
+    t.integer "day_id"
+    t.integer "hour_id"
+    t.integer "hot_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "place_id"

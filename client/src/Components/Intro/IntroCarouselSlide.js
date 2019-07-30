@@ -45,7 +45,7 @@ class IntroCarouselSlide extends Component {
                   </div>
 
                   <p className='hotspot-score'>
-                    {this.props.place.currentBusyScore}
+                    {this.props.place.current_hot_score}
                   </p>
                   <p className='total-reviews'>
                     {sum(

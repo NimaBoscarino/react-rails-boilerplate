@@ -32,7 +32,8 @@ class PlacesController < ApplicationController
         # all_popular_times_array=[]
         # all_popular_times.each{|each_popular_time| all_popular_times_array.push(each_popular_time.attributes)}
 
-        current_busy_value=place.popular_times.select(:busy_value).where(day_id: day).where(hour_id: hour).first
+        #current_busy_value=place.popular_times.select(:busy_value).where(day_id: day).where(hour_id: hour).first
+        current_hot_score=place.hot_scores.select(:hot_score).where(day_id: day).where(hour_id: hour).first
 
         all_yelp_photos=place.yelp_photos.select(:url)
         all_yelp_photos_array=[]
@@ -46,7 +47,8 @@ class PlacesController < ApplicationController
         hash["types"]=all_types_array
         # hash["popular_times"]=all_popular_times_array
         hash["neighbourhood_name"]=place.neighbourhood.attributes["name"]
-        hash["current_busy_value"]=current_busy_value
+        #hash["current_busy_value"]=current_busy_value["busy_value"]
+        hash["current_hot_score"]=current_hot_score["hot_score"]
         hash["yelp_photos"]=all_yelp_photos_array
         hash["yelp_categories"]=all_yelp_categories_array
         hash
