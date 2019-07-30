@@ -22,14 +22,38 @@ export default class DropdownDays extends React.Component {
     }));
   }
 
+  getDayFromProp(num) {
+    switch(num) {
+      case 1:
+        return "Monday"
+      case 2:
+        return "Tuesday"
+      case 3:
+        return "Wednesday"
+      case 4:
+        return "Thursday"
+      case 5:
+        return "Friday"
+      case 6:
+        return "Saturday"
+      case 7:
+        return "Sunday"
+      default:
+        return "Monday"
+    }
+  }
+
   render() {
     return (
       <div className='heatmap-filter'>
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <DropdownToggle caret>day</DropdownToggle>
+          <DropdownToggle caret>
+            {this.getDayFromProp(this.props.day)}
+          </DropdownToggle>
           <DropdownMenu>
             <DropdownItem
               onClick={() =>  {
+                this.props.setDay(7)
                 }
               }
             >
@@ -37,6 +61,7 @@ export default class DropdownDays extends React.Component {
             </DropdownItem>
             <DropdownItem
               onClick={() =>  {
+                  this.props.setDay(1)
                 }
               }
             >
@@ -44,6 +69,7 @@ export default class DropdownDays extends React.Component {
             </DropdownItem>
             <DropdownItem
               onClick={() =>  {
+                  this.props.setDay(2)
                 }
               }
             >
@@ -51,6 +77,7 @@ export default class DropdownDays extends React.Component {
             </DropdownItem>
             <DropdownItem
               onClick={() =>  {
+                  this.props.setDay(3)
                 }
               }
             >
@@ -58,6 +85,7 @@ export default class DropdownDays extends React.Component {
             </DropdownItem>
             <DropdownItem
               onClick={() =>  {
+                  this.props.setDay(4)
                 }
               }
             >
@@ -65,6 +93,7 @@ export default class DropdownDays extends React.Component {
             </DropdownItem>
             <DropdownItem
               onClick={() =>  {
+                  this.props.setDay(5)
                 }
               }
             >
@@ -72,6 +101,7 @@ export default class DropdownDays extends React.Component {
             </DropdownItem>
             <DropdownItem
               onClick={() =>  {
+                  this.props.setDay(6)
                 }
               }
             >

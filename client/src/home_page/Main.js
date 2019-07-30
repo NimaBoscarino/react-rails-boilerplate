@@ -32,11 +32,50 @@ class Main extends Component {
     super(props);
     this.state = {
       message: "Click the button to load data!",
-      showMyNightPlan: false
+      showMyNightPlan: false,
+      hour: this.getCurrentHour(),
+      day: this.getCurrentDay()
     };
     this.showMyNight = this.showMyNight.bind(this);
     this.filterPlaces = this.filterPlaces.bind(this);
+    this.setDay = this.setDay.bind(this);
+    this.setHour = this.setHour.bind(this);
+  }
 
+  getCurrentDay() {
+    let day = new Date(Date.now()).getDay();
+    if (day === 0) {
+      return day += 7
+    }
+    return day
+  }
+
+  getCurrentHour() {
+    let hour = new Date(Date.now()).getHours();
+    let minute = new Date(Date.now()).getMinutes();
+
+    if (minute < 30)
+      hour += 1
+    else {
+      hour += 2
+    }
+    if (hour === 25) {
+      hour = 1
+    }
+    return hour
+  }
+
+  setDay(num) {
+    this.setState({day: num})
+  }
+
+  setHour(newTime) {
+    let toPass = newTime.hour24;
+    toPass++
+    if (toPass === 25) {
+      toPass = 1
+    }
+    this.setState({hour: toPass})
   }
 
   showMyNight(selectionList) {
@@ -54,7 +93,6 @@ class Main extends Component {
             duration: 1500,
           })
         })
-
       })
     })
   }
@@ -78,31 +116,33 @@ class Main extends Component {
       duration: 1500,
       ease: "outCirc"
     });
-    axios.get("/neighbourhoods").then(response => {
-      const neighbourhoods = this.processDataNeighbourhoods(
-        response.data.neighbourhoods
-      );
-      this.setState({
-        neighbourhoods: neighbourhoods
-      });
-      axios
-        .get("/places") // You can simply make your requests to "/api/whatever you want"
-        .then(response => {
-          const places = response.data.places;
-          places.forEach(place => {
-            place.currentBusyScore = Math.ceil(
-              place.yelp_rating * 5 +
-                place.rating * 5 +
-                place.current_busy_value.busy_value * 0.5
-            );
-          });
-          console.log(places[0]);
-          this.places=places;
-          this.setState({
-            places: places
-          });
+    if (!this.places) {
+      axios.get("/neighbourhoods").then(response => {
+        const neighbourhoods = this.processDataNeighbourhoods(
+          response.data.neighbourhoods
+        );
+        this.setState({
+          neighbourhoods: neighbourhoods
         });
-    });
+        axios
+          .get("/places") // You can simply make your requests to "/api/whatever you want"
+          .then(response => {
+            const places = response.data.places;
+            places.forEach(place => {
+              place.currentBusyScore = Math.ceil(
+                place.yelp_rating * 5 +
+                  place.rating * 5 +
+                  place.current_busy_value.busy_value * 0.5
+              );
+            });
+            console.log(places[0]);
+            this.places=places;
+            this.setState({
+              places: places
+            });
+          });
+      });
+    }
   }
 
   processDataNeighbourhoods(neighbourhoodData) {
@@ -154,6 +194,10 @@ class Main extends Component {
             this.Map = section;
           }}
           filterPlaces={this.filterPlaces}
+          day = {this.state.day}
+          hour = {this.state.hour}
+          setDay = {this.setDay}
+          setHour = {this.setHour}
         />
         {this.state.showMyNightPlan && (
           <MyNightPlan nightList={this.state.nightList} ref={section => {
