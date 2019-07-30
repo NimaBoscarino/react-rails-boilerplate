@@ -1272,7 +1272,7 @@ nav .logo {
   display: inline-block;
   left: 18.5%;
   top: 8vh;
-  width: 20vh;
+  width: 12%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
   z-index: 1;
@@ -1298,6 +1298,42 @@ nav .logo {
 }
 
 #Map .heatmap-toggle-div .MuiTypography-body1 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  color: #fffffc;
+  white-space: nowrap;
+}
+
+#Map .marker-toggle-div {
+  position: absolute;
+  display: inline-block;
+  right: 18.5%;
+  top: 8vh;
+  width: 12%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
+  z-index: 1;
+  padding: 0.5vh 1.5vh 0.2vh 1.2vh;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#Map .marker-toggle-div .heatmap-toggle-button {
+  font-family: "Fira Sans Condensed", sans-serif;
+  background: transparent;
+  padding: 0.4vh 0.5vh 0vh 1vh;
+  margin-left: 2px;
+  font-size: calc(5px + 0.6vw);
+  text-transform: uppercase;
+  font-weight: 700 !important;
+}
+
+#Map .marker-toggle-div .heatmap-filter {
+  display: inline-block;
+  padding: 0 0.5vh;
+}
+
+#Map .marker-toggle-div .MuiTypography-body1 {
   font-family: "Fira Sans Condensed", sans-serif;
   color: #fffffc;
   white-space: nowrap;
