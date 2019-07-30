@@ -175,7 +175,7 @@ class Map extends Component {
           toggleHeatmap={this.toggleHeatmap}
           removeMapCenterPlace={this.removeMapCenterPlace}
         />
-        <MarkerToggle />
+        <MarkerToggle toggleMarkers = {this.toggleMarkers}/>
         <HeatMapToggle toggleHeatmap={this.toggleHeatmap} />
         <HeatMapSlider handleChange={this.handleSlider} />
 
