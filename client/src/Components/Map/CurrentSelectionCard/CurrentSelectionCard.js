@@ -45,6 +45,9 @@ class CurrentSelectionCard extends Component {
                         <FaCreditCard className='icon-carousel' />
                         {this.props.currentSelection.yelp_price}
                       </p>
+                      <p className='card-price info-p'>
+                        {this.props.currentSelection.yelp_categories.map((category)=>{return category + " "})}
+                      </p>
                       <p className='card-phone info-p'>
                         <MdPhone className='icon-carousel' />
                         {this.props.currentSelection.yelp_display_phone}
@@ -57,7 +60,7 @@ class CurrentSelectionCard extends Component {
                           <FaYelp className='yelp-icon' /> Read Yelp Reviews
                         </Button>
                       </a>
-                        
+
                       </div>
                       <div className='col score-col'>
                       <p classname="hot-score">

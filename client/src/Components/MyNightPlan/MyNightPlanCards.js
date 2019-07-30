@@ -102,6 +102,9 @@ class MyNightPlanCards extends Component {
                         <FaCreditCard className='icon-carousel' />
                         {this.props.place.yelp_price}
                       </p>
+                      <p className='card-price info-p'>
+                        {this.props.place.yelp_categories.map((category)=>{return category + " "})}
+                      </p>
                       <p className='card-address info-p'>
                         <FaMapMarkerAlt className='icon-carousel' />
                         {this.props.place.address}

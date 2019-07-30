@@ -38,12 +38,17 @@ class PlacesController < ApplicationController
         all_yelp_photos_array=[]
         all_yelp_photos.each{|each_photo| all_yelp_photos_array.push(each_photo[:url])}
 
+        all_yelp_categories=place.yelp_categories.select(:category)
+        all_yelp_categories_array=[]
+        all_yelp_categories.each{|each_category| all_yelp_categories_array.push(each_category[:category])}
+
         hash=place.attributes
         hash["types"]=all_types_array
         # hash["popular_times"]=all_popular_times_array
         hash["neighbourhood_name"]=place.neighbourhood.attributes["name"]
         hash["current_busy_value"]=current_busy_value
         hash["yelp_photos"]=all_yelp_photos_array
+        hash["yelp_categories"]=all_yelp_categories_array
         hash
     end
 
