@@ -4,6 +4,7 @@ import TripSidebar from "./TripSidebar/TripSidebar";
 import CurrentSelectionCard from "./CurrentSelectionCard/CurrentSelectionCard";
 import GoogleMap from "./ReactGoogleMap";
 import MapHeader from "./MapHeader/MapHeader";
+import HeatMapSlider from './HeatMapSlider/HeatMapSlider';
 
 class Map extends Component {
     constructor(props) {
@@ -99,6 +100,7 @@ class Map extends Component {
         changeShowOneHood={this.changeShowOneHood}
         toggleHeatmap = {this.toggleHeatmap}
         />
+        <HeatMapSlider />
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap
             neighbourhoods = { this.props.neighbourhoods }

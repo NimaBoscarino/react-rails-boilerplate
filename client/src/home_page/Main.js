@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import axios from "axios";
 import Intro from "../Components/Intro/Intro";
@@ -36,39 +35,40 @@ class Main extends Component {
     };
     this.showMyNight = this.showMyNight.bind(this);
     this.filterPlaces = this.filterPlaces.bind(this);
-
   }
 
   showMyNight(selectionList) {
-    selectionList.forEach(place=>{
-      axios.get(`api/popular/${place.id}`).then(response=>{
+    selectionList.forEach(place => {
+      axios.get(`api/popular/${place.id}`).then(response => {
         // result.push(this.processData(response.data, place))
-        place.popularTimes=response.data.popular_times;
-        this.setState({
-          showMyNightPlan: true,
-          nightList: selectionList
-        }, ()=>{
-          scrollToComponent(this.MyNightPlan, {
-            offset: 0,
-            align: "top",
-            duration: 1500,
-          })
-        })
-
-      })
-    })
+        place.popularTimes = response.data.popular_times;
+        this.setState(
+          {
+            showMyNightPlan: true,
+            nightList: selectionList
+          },
+          () => {
+            scrollToComponent(this.MyNightPlan, {
+              offset: 0,
+              align: "top",
+              duration: 1500
+            });
+          }
+        );
+      });
+    });
   }
 
   filterPlaces(type) {
-    if (type==='reset'){
+    if (type === "reset") {
       this.setState({
-        places:this.places
-      })
+        places: this.places
+      });
       return;
     }
     this.setState({
-      places:this.places.filter(place=>place.types.includes(type))
-    })
+      places: this.places.filter(place => place.types.includes(type))
+    });
   }
 
   componentDidMount() {
@@ -97,7 +97,7 @@ class Main extends Component {
             );
           });
           console.log(places[0]);
-          this.places=places;
+          this.places = places;
           this.setState({
             places: places
           });
@@ -130,19 +130,25 @@ class Main extends Component {
         <div id='NightOutBuilder'>
           <div className='container-fluid'>
             <div className='d-flex justify-content-center'>
-              <button
-                className='btn btn-outline-light build-night-button'
-                onClick={() =>
-                  scrollToComponent(this.Map, {
-                    offset: 0,
-                    align: "top",
-                    duration: 1500,
-                    ease: "inCirc"
-                  })
-                }>
-                <FaMapMarked className='map-icon' />
-                See HotSpots Map
-              </button>
+              <div className='night-out-prompt-div'>
+                <p className='night-out-summary'>
+                  Explore popular neighbourhoods, find the hottest places and when you should go.
+                </p>
+
+                <button
+                  className='btn btn-outline-light build-night-button'
+                  onClick={() =>
+                    scrollToComponent(this.Map, {
+                      offset: 0,
+                      align: "top",
+                      duration: 1500,
+                      ease: "inCirc"
+                    })
+                  }>
+                  <FaMapMarked className='map-icon' />
+                  See HotSpots Map
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -156,9 +162,12 @@ class Main extends Component {
           filterPlaces={this.filterPlaces}
         />
         {this.state.showMyNightPlan && (
-          <MyNightPlan nightList={this.state.nightList} ref={section => {
-            this.MyNightPlan = section;
-          }} />
+          <MyNightPlan
+            nightList={this.state.nightList}
+            ref={section => {
+              this.MyNightPlan = section;
+            }}
+          />
         )}
         {/* <MyNightPlanDesign /> */}
         {/* <AreaSelector />

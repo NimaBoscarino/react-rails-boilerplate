@@ -1,0 +1,39 @@
+#HeatMapSlider {
+  color: $light-weight;
+  font-family: $title-font;
+
+  .heat-map-slider-container {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    left: 0;
+    width: 60vh;
+    top: 8vh;
+    margin: 0 auto;
+    background: $background-gradient-light;
+    z-index: 2;
+    padding: 1vh 1.5vh;
+    border-radius: 10px;
+  }
+
+  .slider-container {
+    width: 90%;
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .slider-style {
+    color: $orange;
+  }
+
+  .slider-title {
+    color: $light-weight;
+    font-size: $font-size-slider-title;
+  }
+
+  .MuiSlider-markLabel {
+    font-family: $title-font;
+    color: $light-weight;
+    font-size: $font-size-slider-label;
+  }
+}
