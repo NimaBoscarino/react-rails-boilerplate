@@ -73,7 +73,7 @@
     .card {
       border: 1px solid $medium-yellow;
       box-shadow: $text-shadow-box !important;
-      min-height: 27vh;
+  
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -198,7 +198,7 @@
           display: inline-block;
           font-family: $title-font;
           font-size: $font-size-intro-hotspot-title;
-          margin-top: 0.8vh;
+          margin-top: 0.6vh;
           font-weight: 700;
           padding-left: 0.5vh;
           text-shadow: $map-shadow-header;
@@ -218,12 +218,14 @@
           padding: 0;
           text-shadow: $map-shadow-header;
           line-height: 0.8;
+          letter-spacing: 2px;
         }
 
         .total-reviews {
           font-size: $font-size-intro-card-review-number;
           font-family: $title-font;
           padding: 0;
+          padding-bottom: 1.5vh;
           margin: 0;
           line-height: 0.5;
           color: $quick-silver;
