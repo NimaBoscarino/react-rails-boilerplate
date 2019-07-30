@@ -19,7 +19,6 @@ class HoodSidebar extends Component {
     }
   }
   render() {
-    console.log(this.props)
     let hoodsToDraw = this.props.neighbourhoods;
     if (this.props.showOneHoodSide) {
       hoodsToDraw = hoodsToDraw.filter(neighbourhood => neighbourhood.id === this.props.showOneHoodSide)

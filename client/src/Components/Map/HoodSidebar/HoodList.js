@@ -11,7 +11,7 @@ class HoodList extends Component {
     this.state = {
       isCardView: false,
       message: "Click the button to load data!",
-      showListPlaces: false
+      showListPlaces: this.props.showOneHoodSide
     };
     this.handleClick = this.handleClick.bind(this);
     this.clickTogglePlaces = this.clickTogglePlaces.bind(this);
@@ -20,6 +20,12 @@ class HoodList extends Component {
   makeScore(places) {
     let thesePlaces = places.filter(place => place.neighbourhood_id === this.props.neighbourhood.id)
     return Math.ceil(thesePlaces.reduce((acc,cur)=>acc+cur.currentBusyScore,0)/thesePlaces.length);
+  }
+
+  componentDidUpdate(oldProps) {
+    if (oldProps.showOneHoodSide != this.props.showOneHoodSide) {
+      this.setState({showListPlaces: this.props.showOneHoodSide})
+    }
   }
 
   componentDidMount() {}
@@ -35,9 +41,6 @@ class HoodList extends Component {
   }
 
   render() {
-    if (this.props.showOneHoodSide) {
-      this.state.showListPlaces = true
-    }
     return (
       <div>
         <li className='list-group-item hood-name-li'>

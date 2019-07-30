@@ -73,9 +73,9 @@ class Map extends Component {
         })
     }
 
-    changeShowOneHood(bool) {
+    changeShowOneHood(val) {
         this.setState({
-            showOneHood: bool
+            showOneHood: val
         })
     }
 
