@@ -6,6 +6,7 @@ import GoogleMap from "./ReactGoogleMap";
 import MapHeader from "./MapHeader/MapHeader";
 import HeatMapSlider from "./HeatMapSlider/HeatMapSlider";
 import HeatMapToggle from "./HeatMapToggle";
+import MarkerToggle from "./MarkerToggle";
 import axios from "axios";
 /*global google*/
 
@@ -92,9 +93,9 @@ class Map extends Component {
 
   removeMapCenterPlace() {
     this.setState({
-        mapCenterPlace: false,
-        showSelectionCard: false
-    })
+      mapCenterPlace: false,
+      showSelectionCard: false
+    });
   }
 
   changeShowOneHood(val) {
@@ -109,48 +110,47 @@ class Map extends Component {
     });
   }
 
-  handleSlider(val){
-      if (val<=70){
-          val=val/10+17
-      } else {
-          val=val/10-7
-      }
+  handleSlider(val) {
+    if (val <= 70) {
+      val = val / 10 + 17;
+    } else {
+      val = val / 10 - 7;
+    }
+    this.setState({
+      updatedHeatmap: this.updatedHeatmap[`${val}`]
+    });
+  }
+
+  componentDidMount() {
+    this.getHeatmapData();
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.day !== this.props.day) {
+      this.getHeatmapData();
       this.setState({
-          updatedHeatmap:this.updatedHeatmap[`${val}`]
-      })
+        updatedHeatmap: null
+      });
+    }
   }
 
-  componentDidMount(){
-    this.getHeatmapData()
+  getHeatmapData() {
+    axios.get(`api/popular/day/${this.props.day}`).then(response => {
+      const updatedPopularTimes = response.data.popular_times;
+      const data = {};
+      updatedPopularTimes.forEach(place => {
+        place.popular_times.forEach(popular => {
+          if (!data[`${popular.hour_id}`]) {
+            data[`${popular.hour_id}`] = [];
+          }
+          data[`${popular.hour_id}`].push({
+            location: new google.maps.LatLng(place.lat, place.long),
+            weight: popular.busy_value
+          });
+        });
+      });
+      this.updatedHeatmap = data;
+    });
   }
-    componentDidUpdate(prevProps) {
-        if (prevProps.day!==this.props.day){
-            this.getHeatmapData();
-            this.setState({
-                updatedHeatmap:null
-            })
-        }
-    }
-
-    getHeatmapData(){
-        axios.get(`api/popular/day/${this.props.day}`).then(response=>{
-            const updatedPopularTimes=response.data.popular_times;
-            const data={};
-            updatedPopularTimes.forEach(place=>{
-                place.popular_times.forEach(popular=>{
-                    if (!data[`${popular.hour_id}`]){
-                        data[`${popular.hour_id}`]=[]
-                    }
-                    data[`${popular.hour_id}`].push( {
-                        location: new google.maps.LatLng(place.lat, place.long),
-                        weight: popular.busy_value
-                    })
-                })
-            })
-            this.updatedHeatmap=data;
-
-        })
-    }
 
     toggleMarkers(){
         this.setState({
@@ -162,21 +162,23 @@ class Map extends Component {
         return (
         <div id='Map'>
         <MapHeader
-            currentNeighbourhood={this.state.centerNeighbourhood}
-            filterPlaces={this.props.filterPlaces}
-            neighbourhoods={this.props.neighbourhoods}
-            clickNeighbourhood={this.clickNeighbourhood}
-            resetNeighbourhood={this.resetNeighbourhood}
-            changeShowOneHood={this.changeShowOneHood}
-            day = {this.props.day}
-            hour = {this.props.hour}
-            setDay = {this.props.setDay}
-            setHour = {this.props.setHour}
-            toggleHeatmap = {this.toggleHeatmap}
-            removeMapCenterPlace={this.removeMapCenterPlace}
+          currentNeighbourhood={this.state.centerNeighbourhood}
+          filterPlaces={this.props.filterPlaces}
+          neighbourhoods={this.props.neighbourhoods}
+          clickNeighbourhood={this.clickNeighbourhood}
+          resetNeighbourhood={this.resetNeighbourhood}
+          changeShowOneHood={this.changeShowOneHood}
+          day={this.props.day}
+          hour={this.props.hour}
+          setDay={this.props.setDay}
+          setHour={this.props.setHour}
+          toggleHeatmap={this.toggleHeatmap}
+          removeMapCenterPlace={this.removeMapCenterPlace}
         />
-        <HeatMapToggle toggleHeatmap = {this.toggleHeatmap}/>
-        <HeatMapSlider handleChange={this.handleSlider}/>
+        <MarkerToggle />
+        <HeatMapToggle toggleHeatmap={this.toggleHeatmap} />
+        <HeatMapSlider handleChange={this.handleSlider} />
+
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap
             neighbourhoods={this.props.neighbourhoods}
