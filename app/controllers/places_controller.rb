@@ -63,6 +63,9 @@ class PlacesController < ApplicationController
         else
             hour += 2
         end
+        if hour == 25
+            hour = 1
+        end
         return hour
     end
 end

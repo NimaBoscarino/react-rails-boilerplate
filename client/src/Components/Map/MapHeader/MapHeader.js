@@ -29,16 +29,22 @@ class MapHeader extends Component {
         <div className='col filter-box-div'>
           <p className='filter-prompt' >Show me</p>
           <MapHoodFilter
-          neighbourhoods = {this.props.neighbourhoods}
-          clickNeighbourhood={this.props.clickNeighbourhood}
-          resetNeighbourhood={this.props.resetNeighbourhood}
-          currentNeighbourhood={this.props.currentNeighbourhood}
-          changeShowOneHood={this.props.changeShowOneHood}
+            neighbourhoods = {this.props.neighbourhoods}
+            clickNeighbourhood={this.props.clickNeighbourhood}
+            resetNeighbourhood={this.props.resetNeighbourhood}
+            currentNeighbourhood={this.props.currentNeighbourhood}
+            changeShowOneHood={this.props.changeShowOneHood}
           />
           <p className='filter-prompt'>on a</p>
-          <MapDayFilter />
+          <MapDayFilter
+            day = {this.props.day}
+            setDay = {this.props.setDay}
+          />
           <p className='filter-prompt'>around</p>
-          <MapHourFilter />
+          <MapHourFilter
+            hour = {this.props.hour}
+            setHour = {this.props.setHour}
+          />
           <Button className='heatmap-button' outline color='light' size='sm' onClick={()=>{this.props.toggleHeatmap()}}>
             Turn off Heatmap
           </Button>

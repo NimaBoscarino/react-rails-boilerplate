@@ -6,7 +6,7 @@ function HotSpotTripRating(props) {
     <div className='hotspot-stat-box'>
      <div className='hotspot-title-div'>
      <img className="hotspot-icon" src={icon} alt={""} />
-      <h2 className='hotspot-title'>HotSpot Score </h2> 
+      <h2 className='hotspot-title'>HotSpot Score </h2>
       </div>
       <h1 className='hotspot-stat-number glow'>
         {
@@ -17,7 +17,7 @@ function HotSpotTripRating(props) {
         }
       </h1>
       <div className='score-icon-div'>
-      
+
       </div>
     </div>
   );

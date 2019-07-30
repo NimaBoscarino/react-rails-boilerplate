@@ -95,18 +95,22 @@ class Map extends Component {
     });
   }
 
-  componentDidMount() {}
-  render() {
-    return (
-      <div id='Map'>
+    componentDidMount() {}
+    render() {
+        return (
+        <div id='Map'>
         <MapHeader
-          currentNeighbourhood={this.state.centerNeighbourhood}
-          filterPlaces={this.props.filterPlaces}
-          neighbourhoods={this.props.neighbourhoods}
-          clickNeighbourhood={this.clickNeighbourhood}
-          resetNeighbourhood={this.resetNeighbourhood}
-          changeShowOneHood={this.changeShowOneHood}
-          toggleHeatmap={this.toggleHeatmap}
+            currentNeighbourhood={this.state.centerNeighbourhood}
+            filterPlaces={this.props.filterPlaces}
+            neighbourhoods={this.props.neighbourhoods}
+            clickNeighbourhood={this.clickNeighbourhood}
+            resetNeighbourhood={this.resetNeighbourhood}
+            changeShowOneHood={this.changeShowOneHood}
+            day = {this.props.day}
+            hour = {this.props.hour}
+            setDay = {this.props.setDay}
+            setHour = {this.props.setHour}
+            toggleHeatmap = {this.toggleHeatmap}
         />
         <HeatMapSlider />
         <div className='d-flex justify-content-between h-100 w-100'>

@@ -3,8 +3,9 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
 } from "reactstrap";
+import TimeKeeper from 'react-timekeeper'
 
 export default class DropdownHours extends React.Component {
   constructor(props) {
@@ -22,21 +23,32 @@ export default class DropdownHours extends React.Component {
     }));
   }
 
+  wordTime(num) {
+    num--
+    if (num === 12) {
+      return 12 + " PM"
+    }
+    if (num === 0) {
+      return 12 + " AM"
+    }
+    if (num > 12) {
+      return num - 12 + " PM"
+    }
+    else return num + " AM"
+  }
+
   render() {
     return (
       <div className='heatmap-filter'>
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <DropdownToggle caret>time</DropdownToggle>
+          <DropdownToggle caret>
+            {this.wordTime(this.props.hour)}
+          </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem>6PM</DropdownItem>
-            <DropdownItem>7PM</DropdownItem>
-            <DropdownItem>8PM</DropdownItem>
-            <DropdownItem>9PM</DropdownItem>
-            <DropdownItem>10PM</DropdownItem>
-            <DropdownItem>11PM</DropdownItem>
-            <DropdownItem>12PM</DropdownItem>
-            <DropdownItem>1AM</DropdownItem>
-            <DropdownItem>2AM</DropdownItem>
+            <TimeKeeper
+              time={this.props.hour-1 + ":00"}
+              onChange={this.props.setHour}
+            />
           </DropdownMenu>
         </Dropdown>
       </div>
