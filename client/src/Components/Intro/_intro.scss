@@ -245,7 +245,7 @@
   margin: 0 auto;
   align-self: baseline;
   height: 15vh;
-  margin-bottom: 10vh;
+  margin-bottom: 15vh;
 
   .night-out-intro-div {
     width: 100%;
@@ -259,12 +259,14 @@
     font-family: $title-font;
     font-size: $font-size-night-out-button;
     border: transparent 1px solid;
+    position: relative;
     font-weight: 300;
     border: none;
-    margin-top: 3vh;
+    margin-top: 5vh;
     padding: 0.8vh 2.5vh;
     box-shadow: $map-shadow-header;
     border-radius: 0.8vh;
+    z-index: 2;
   }
 
   .build-night-button:hover {

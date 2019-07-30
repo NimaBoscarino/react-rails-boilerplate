@@ -9,7 +9,7 @@ class Intro extends Component {
       <div id='Intro'>
         <div className='container-fluid intro-box-div'>
           <div className='row title-section'>
-            <div className='col'>
+            <div className='col intro-col'>
               <div className='hotspot-logo-div'>
                 <img
                   className='hotspot-logo-number'

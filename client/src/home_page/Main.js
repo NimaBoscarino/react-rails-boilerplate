@@ -76,7 +76,7 @@ class Main extends Component {
       offset: 0,
       align: "top",
       duration: 1500,
-      ease: "outCirc"
+      ease: "outSine"
     });
     axios.get("/neighbourhoods").then(response => {
       const neighbourhoods = this.processDataNeighbourhoods(
@@ -131,8 +131,6 @@ class Main extends Component {
           <div className='container-fluid'>
             <div className='d-flex justify-content-center'>
               <div className='night-out-prompt-div'>
-         
-
                 <button
                   className='btn btn-outline-light build-night-button'
                   onClick={() =>
@@ -140,7 +138,7 @@ class Main extends Component {
                       offset: 0,
                       align: "top",
                       duration: 1500,
-                      ease: "inCirc"
+                      ease: "inOutCirc"
                     })
                   }>
                   <FaMapMarked className='map-icon' />
