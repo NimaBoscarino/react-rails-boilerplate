@@ -3,8 +3,8 @@ import PlaceHolderPic from "../../global-assets/yaletown.jpg";
 import Icon from "../../global-assets/hotspot-score-icon-small.png";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdPhone } from "react-icons/md";
-import { FaGoogle } from "react-icons/fa";
-import { FaYelp } from "react-icons/fa";
+import { FaGoogle, FaYelp, FaMapMarked } from "react-icons/fa";
+
 
 
 function sum(a, b) {
@@ -31,11 +31,11 @@ class IntroCarouselSlide extends Component {
 
               <div className='col info-col'>
                 <p className='card-title'>{this.props.place.name}</p>
-                <p className='card-title'>{this.props.place.neighbourhood_name}</p>
+                <p className='card-hood'><FaMapMarked className='icon-carousel hood-icon' />{this.props.place.neighbourhood_name}</p>
                 <p className='card-address card-info'><FaMapMarkerAlt className='icon-carousel' />{this.props.place.address}</p>
                 <p className='card-phone card-info'><MdPhone className='icon-carousel' />{this.props.place.yelp_display_phone}</p>
-                <p className='card-score card-info'><FaGoogle className='icon-carousel' />Google Rating: {this.props.place.rating} /5</p>
-                <p className='card-score card-info'><FaYelp className='icon-carousel' />Yelp Rating: {this.props.place.yelp_rating} /5</p>
+                <p className='card-score card-info'><FaGoogle className='icon-carousel' />Google Rating: {this.props.place.rating}/5</p>
+                <p className='card-score card-info'><FaYelp className='icon-carousel' />Yelp Rating: {this.props.place.yelp_rating}/5</p>
 
           
   

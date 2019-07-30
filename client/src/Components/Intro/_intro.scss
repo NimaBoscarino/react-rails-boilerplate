@@ -8,11 +8,11 @@
     }
   }
 
-  min-height: 70vh;
+  height: 70vh;
 
   .title-section {
     text-align: center;
-    margin-top: 8vh;
+    margin-top: 9vh;
 
     .intro-title {
       font-size: $font-size-main-title;
@@ -46,7 +46,7 @@
   }
 
   .intro-carousel-div {
-    padding: 4vh 8vh 1vh 8vh;
+    padding: 1vh 8vh 1vh 8vh;
     color: white;
     margin: 5vh auto 8vh auto;
     width: 100%;
@@ -73,6 +73,10 @@
       border: 1px solid $medium-yellow;
       box-shadow: $text-shadow-box !important;
       min-height: 30vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
     }
 
     .intro-feature-card {
@@ -80,25 +84,42 @@
       display: block;
       margin: 0 auto;
       width: 100vh;
-      background: $background-gradient-medium;
+      background: $background-gradient-light;
       position: relative;
 
       .card-title {
-        display: block;
+        display: inline-block;
         font-family: $title-font;
         font-size: $font-size-carousel-header;
         font-weight: 700;
         width: 100%;
-        padding-bottom: 1vh;
         text-shadow: $text-shadow-subtle;
         line-height: 1;
         margin-top: 0.8vh;
-        min-height: 11vh;
+        vertical-align: middle;
+      }
+
+      .card-hood {
+        display: block;
+        font-family: $title-font;
+        font-size: $font-size-carousel-hood;
+        font-weight: 500;
+        width: 100%;
+        text-shadow: $text-shadow-subtle;
+        line-height: 1;
+        margin-top: 0.8vh;
+        margin-bottom: 1.8vh;
+      }
+
+      .hood-icon {
+        color: white !important;
+        font-size: $font-size-carousel-hood !important;
       }
 
       .card-address {
         font-family: $title-font;
         font-size: $font-size-carousel-address;
+        line-height: 1;
       }
 
       .card-phone {
@@ -123,7 +144,7 @@
         padding: 0;
         margin: 0;
         text-align: center;
-        max-width: 33%;
+        min-width: 33%;
         border-right: 1px solid $dark-quick-silver;
         border-left: 1px solid $dark-quick-silver;
         padding-left: 1.5vh;
@@ -138,11 +159,11 @@
 
       .hotspot-col {
         display: inline-block;
-        max-width: 33%;
+        min-width: 33%;
       }
 
       .image-col {
-        max-width: 33%;
+        min-width: 33%;
         display: inline-block;
 
         padding-left: 3.5%;

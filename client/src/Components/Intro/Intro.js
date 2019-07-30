@@ -34,9 +34,7 @@ class Intro extends Component {
               </p>
 
               </div>
-              <p className='intro-summary'>
-                Explore popular neighbourhoods, find places and learn when to go.
-              </p>
+        
             </div>
           </div>
         </div>

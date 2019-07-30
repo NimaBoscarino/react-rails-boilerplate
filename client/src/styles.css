@@ -51,7 +51,7 @@ nav .logo {
   margin: 0 auto;
   -ms-flex-item-align: baseline;
       align-self: baseline;
-  height: 15vh;
+  height: 20vh;
 }
 
 #NightOutBuilder .night-out-intro-div {
@@ -62,6 +62,7 @@ nav .logo {
 }
 
 #NightOutBuilder .night-out-intro-div .night-out-intro {
+  display: inline-block;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
   padding: 0 5%;
@@ -108,8 +109,26 @@ nav .logo {
   margin-right: 10px;
 }
 
+#NightOutBuilder .night-out-prompt-div {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#NightOutBuilder .night-out-prompt-div .night-out-summary {
+  margin-top: 0.6vh;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  padding: 0 10%;
+  font-size: calc(14px + 0.7vw);
+  color: white;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+  line-height: 1.5;
+}
+
 #Intro {
-  min-height: 70vh;
+  height: 70vh;
 }
 
 @-webkit-keyframes shadow-pulse-live {
@@ -136,7 +155,7 @@ nav .logo {
 
 #Intro .title-section {
   text-align: center;
-  margin-top: 8vh;
+  margin-top: 9vh;
 }
 
 #Intro .title-section .intro-title {
@@ -170,7 +189,7 @@ nav .logo {
 }
 
 #Intro .intro-carousel-div {
-  padding: 4vh 8vh 1vh 8vh;
+  padding: 1vh 8vh 1vh 8vh;
   color: white;
   margin: 5vh auto 8vh auto;
   width: 100%;
@@ -200,6 +219,17 @@ nav .logo {
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
   min-height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
 }
 
 #Intro .intro-carousel-div .intro-feature-card {
@@ -207,37 +237,54 @@ nav .logo {
   display: block;
   margin: 0 auto;
   width: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   position: relative;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .card-title {
-  display: block;
+  display: inline-block;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(20px + 1.3vw);
+  font-size: calc(18px + 1.3vw);
   font-weight: 700;
   width: 100%;
-  padding-bottom: 1vh;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   line-height: 1;
   margin-top: 0.8vh;
-  min-height: 11vh;
+  vertical-align: middle;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .card-hood {
+  display: block;
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(7px + 1.1vw);
+  font-weight: 500;
+  width: 100%;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  line-height: 1;
+  margin-top: 0.8vh;
+  margin-bottom: 1.8vh;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .hood-icon {
+  color: white !important;
+  font-size: calc(7px + 1.1vw) !important;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .card-address {
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(7px + 0.6vw);
+  font-size: calc(7px + 0.5vw);
+  line-height: 1;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .card-phone {
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(7px + 0.6vw);
+  font-size: calc(7px + 0.5vw);
 }
 
 #Intro .intro-carousel-div .intro-feature-card .card-score {
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(7px + 0.6vw);
+  font-size: calc(7px + 0.5vw);
 }
 
 #Intro .intro-carousel-div .intro-feature-card .icon-carousel {
@@ -252,9 +299,9 @@ nav .logo {
   padding: 0;
   margin: 0;
   text-align: center;
-  max-width: 33%;
-  border-right: 1px solid rgba(158, 162, 168, 0.6);
-  border-left: 1px solid rgba(158, 162, 168, 0.6);
+  min-width: 33%;
+  border-right: 1px solid rgba(158, 162, 168, 0.4);
+  border-left: 1px solid rgba(158, 162, 168, 0.4);
   padding-left: 1.5vh;
   padding-right: 1.5vh;
 }
@@ -267,11 +314,11 @@ nav .logo {
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-col {
   display: inline-block;
-  max-width: 33%;
+  min-width: 33%;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .image-col {
-  max-width: 33%;
+  min-width: 33%;
   display: inline-block;
   padding-left: 3.5%;
 }
@@ -1825,9 +1872,27 @@ nav .logo {
   padding-bottom: 2vh;
 }
 
+#MyNightPlan .my-night-intro {
+  margin-top: 0.6vh;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  padding: 0 10%;
+  font-size: calc(14px + 0.7vw);
+  color: white;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+  line-height: 1.5;
+  padding-bottom: 1.5vh;
+}
+
 #MyNightPlan .my-night-title-card {
   width: 100%;
   margin: 0 auto;
+}
+
+#MyNightPlan .info-circle-icon {
+  margin-top: -5px;
+  margin-right: 5px;
+  color: #ffe80a;
 }
 
 #MyNightPlan .night-out-div {
@@ -1845,19 +1910,18 @@ nav .logo {
 }
 
 #MyNightPlan .my-card-summary-row {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   width: 95%;
   text-align: left;
   position: relative;
   margin: 0 auto;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  border-radius: 20px;
   display: inline-block;
   width: 100%;
   padding: 0;
   margin: 0;
-  min-height: 18vh;
+  min-height: 14vh;
 }
 
 #MyNightPlan .my-card-summary-row .score-number-col {
@@ -1902,26 +1966,6 @@ nav .logo {
   margin: 0 auto;
 }
 
-#MyNightPlan .my-card-summary-row .my-card-summary-summary-div .my-card-summary-title {
-  display: block;
-  font-family: "Fira Sans", sans-serif;
-  font-size: calc(20px + 0.4vw);
-  margin-left: 1.5vh;
-  margin-top: 1.5vh;
-  padding: 0;
-  margin-top: 5px;
-}
-
-#MyNightPlan .my-card-summary-row .my-card-summary-summary-div .my-card-summary-address {
-  display: block;
-  font-family: "Fira Sans", sans-serif;
-  font-size: calc(12px + 0.4vw);
-  margin-left: 1.5vh;
-  margin-top: 1.5vh;
-  padding: 0;
-  margin-top: 5px;
-}
-
 #MyNightPlan .my-card-summary-row .my-card-summary-button-div {
   margin-top: 10px;
   display: inline-block;
@@ -1930,14 +1974,17 @@ nav .logo {
 
 #MyNightPlan .my-card-summary-row .my-card-summary-button {
   position: absolute;
+  bottom: 0;
   right: 0;
-  top: 0;
   padding-top: 20px;
   padding-right: 5vh;
+  padding-left: 5vh;
   font-family: "Fira Sans", sans-serif;
   background-color: transparent;
   border: none;
   width: 4vh;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 #MyNightPlan .my-card-summary-row .button-icon {
@@ -1964,10 +2011,10 @@ nav .logo {
 }
 
 #MyNightPlan .best-times-card {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   width: 95%;
-  text-align: left;
+  text-align: center;
   position: relative;
   margin: 0 auto;
   border-radius: 20px;
@@ -1975,43 +2022,131 @@ nav .logo {
   width: 100%;
   padding: 0;
   margin: 0;
-  min-height: 18vh;
+  min-height: 14vh;
 }
 
 #MyNightPlan .best-times-card .best-times-title {
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(16px + 0.4vw);
+  font-size: calc(10px + 0.4vw);
+  margin: 0;
+  margin-bottom: 0.5vh;
+  color: #9ea2a8;
 }
 
 #MyNightPlan .best-times-card .clock-icon {
   margin: 0;
   padding: 0;
+  color: #9ea2a8;
 }
 
 #MyNightPlan .best-times-card .times-title {
   font-size: calc(10px + 0.3vw);
   text-transform: uppercase;
   color: #9ea2a8;
+  margin: 0;
 }
 
-#MyNightPlan .hidden-card {
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
-  text-align: left;
-  position: relative;
-  margin: 0 auto;
-  border-top-right-radius: none;
-  border-top-left-radius: none;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  display: inline-block;
-  width: 100%;
+#MyNightPlan .best-times-card .arrival-time {
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(10px + 3vw);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
   padding: 0;
   margin: 0;
-  min-height: 18vh;
+  margin-top: -1.5vh;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
-#MyNightPlan .hidden-card .hidden-card {
+#MyNightPlan .best-times-card .average-time {
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(8px + 0.4vw);
+  padding: 0;
+  margin-top: -2vh;
+  margin-bottom: -2vh;
+}
+
+#MyNightPlan .title-col {
+  display: inline-block;
+  margin-left: 1.5vh;
+  margin-top: 1.5vh;
+}
+
+#MyNightPlan .title-col .my-card-summary-title {
+  display: block;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-size: calc(18px + 0.4vw);
+  padding: 0;
+  margin-bottom: 0;
+}
+
+#MyNightPlan .title-col .my-card-hood-name {
+  display: block;
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(8px + 0.7vw);
+  padding: 0;
+  margin-top: 0.1vh;
+}
+
+#MyNightPlan .title-col .yelp-icon {
+  color: #D32322;
+}
+
+#MyNightPlan .title-col a {
+  text-decoration: none;
+  text-transform: none;
+}
+
+#MyNightPlan .info-col {
+  display: inline-block;
+  margin-left: 1.5vh;
+  margin-top: 1.5vh;
+}
+
+#MyNightPlan .info-col .info-p {
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: calc(6px + 0.6vw);
+}
+
+#MyNightPlan .info-col .icon-carousel {
+  color: #9ea2a8;
+  margin-right: 0.5vh;
+}
+
+#MyNightPlan .info-col .card-address {
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+
+#MyNightPlan .info-col .card-price {
+  margin-top: 0.5vh;
+}
+
+#MyNightPlan .hotspot-col {
+  display: inline-block;
+  margin-left: 1.5vh;
+  margin-right: 1.5vh;
+  margin-top: 1.5vh;
+  text-align: right;
+}
+
+#MyNightPlan .hotspot-col .hotspot-score-title {
+  font-size: calc(6px + 0.8vw);
+  font-family: "Fira Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  margin-bottom: -1.5vh;
+}
+
+#MyNightPlan .hotspot-col .hotspot-score-number {
+  font-size: calc(6px + 4vw);
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  padding: 0;
   margin: 0;
 }
 

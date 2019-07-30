@@ -9,7 +9,7 @@ import Nav from "../Components/NavBar/Nav";
 import scrollToComponent from "react-scroll-to-component";
 import { FaMapMarked } from "react-icons/fa";
 
-// import MyNightPlanDesign from "../Components/MyNightPlan/MyNightPlanDesign";
+import MyNightPlanDesign from "../Components/MyNightPlan/MyNightPlanDesign";
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -39,13 +39,14 @@ class Main extends Component {
   }
 
   showMyNight(selectionList) {
-    selectionList.forEach(place=>{
-      axios.get(`api/popular/${place.id}`).then(response=>{
+    selectionList.forEach(place => {
+      axios.get(`api/popular/${place.id}`).then(response => {
         // result.push(this.processData(response.data, place))
-        place.popularTimes=response.data.popular_times;
+        place.popularTimes = response.data.popular_times;
         this.setState({
           showMyNightPlan: true,
           nightList: selectionList
+<<<<<<< HEAD
         }, ()=>{
           scrollToComponent(this.MyNightPlan, {
             offset: 0,
@@ -68,6 +69,11 @@ class Main extends Component {
     this.setState({
       places:this.places.filter(place=>place.types.includes(type))
     })
+=======
+        });
+      });
+    });
+>>>>>>> design/my-night-plan
   }
 
   componentDidMount() {
@@ -126,7 +132,12 @@ class Main extends Component {
           places={this.state.places}
           neighbourhoods={this.state.neighbourhoods}
         />
-        <div id='NightOutBuilder'>
+        <div id='NightOutBuilder' className="container">
+          <div className='night-out-prompt-div'>
+            <p className='night-out-summary'>
+              Explore popular neighbourhoods, find places and learn when to go.
+            </p>
+          </div>
           <div className='container-fluid'>
             <div className='d-flex justify-content-center'>
               <button
