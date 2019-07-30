@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_26_033530) do
+ActiveRecord::Schema.define(version: 2019_07_30_210440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,16 @@ ActiveRecord::Schema.define(version: 2019_07_26_033530) do
     t.datetime "updated_at", null: false
     t.bigint "place_id"
     t.index ["place_id"], name: "index_google_reviews_on_place_id"
+  end
+
+  create_table "hot_scores", force: :cascade do |t|
+    t.string "day_id"
+    t.string "hour_id"
+    t.string "hot_score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_hot_scores_on_place_id"
   end
 
   create_table "neighbourhoods", force: :cascade do |t|
@@ -168,6 +178,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_033530) do
   add_foreign_key "google_opening_hours", "places"
   add_foreign_key "google_photos", "places"
   add_foreign_key "google_reviews", "places"
+  add_foreign_key "hot_scores", "places"
   add_foreign_key "places", "neighbourhoods"
   add_foreign_key "popular_times", "places"
   add_foreign_key "time_waits", "places"

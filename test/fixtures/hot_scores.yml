@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day_id: MyString
+  hour_id: MyString
+  hot_score: MyString
+
+two:
+  day_id: MyString
+  hour_id: MyString
+  hot_score: MyString

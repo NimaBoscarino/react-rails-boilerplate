@@ -177,9 +177,10 @@ YelpCategory.destroy_all
 YelpPhoto.destroy_all
 YelpOpeningHour.destroy_all
 YelpReview.destroy_all
+HotScore.destroy_all
 =end
 
-# Delete franchise (untested)
+# Delete franchise
 Place.where(:name => "Subway").destroy_all
 Place.where(:name => "Burger King").destroy_all
 Place.where("name LIKE 'McDonald%'").destroy_all
@@ -187,6 +188,15 @@ Place.where("name LIKE 'Triple%'").destroy_all
 Place.where(:name => "A&W Canada").destroy_all
 Place.where("name LIKE 'Domino%'").destroy_all
 Place.where(:name => "KFC").destroy_all
+Place.where(:name => "Juice Bar").destroy_all
+
+# Delete neighbourhoods
+Neighbourhood.where(:name => "Dunbar Southlands").destroy_all
+Neighbourhood.where(:name => "Arbutus Ridge").destroy_all
+Neighbourhood.where(:name => "South Cambie").destroy_all
+Neighbourhood.where(:name => "Riley Park").destroy_all
+Neighbourhood.where(:name => "Kensington-Cedar Cottage").destroy_all
+Neighbourhood.where(:name => "Grandview-Woodland").destroy_all
 
 GOOGLEURL = "https://maps.googleapis.com/maps/api/place/details/json?"
 GOOGLEAUTH = "key=" << ENV['GOOGLE_API_KEY']
@@ -323,7 +333,6 @@ def putIntoYelpDB(id, place)
       user_name: review["user"]["name"]
     })
   end
-
 end
 
 options = {}
@@ -484,10 +493,28 @@ Place.find_each do |plac|
 end
 
 #Manual database insertions (failed for various reasons)
+puts "Manual database insertions..."
 
 putIntoYelpDB("a9P_JDakVrbunkghXHM9ug", Place.where("name LIKE 'Cocorico%'").first)
 putIntoYelpDB("s2BLDM9Y6JJ80r8S1tSxcg", Place.where("address LIKE '%Convention%'").first)
 putIntoYelpDB("q_IyyuHYcPNo_ZaTj_6R2A", Place.where("name LIKE 'Jammer%'").first)
+
+puts "Hot score generation"
+
+
+plum2 = 0
+Place.find_each do |plac|
+  plum2 += 1
+  puts "Making hot scores for " << plum2.to_s << " of " << placeCount
+  PopularTime.where(place_id: plac.id).each do |pt|
+    ourHotScore = pt.busy_value * 0.5 + plac.yelp_rating * 5 + plac.rating * 5
+    plac.hot_scores.create!({
+      day_id: pt["day_id"],
+      hour_id: pt["hour_id"],
+      hot_score: ourHotScore.round
+    })
+  end
+end
 
 endTime = Time.now
 totalTime = endTime - start
