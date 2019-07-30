@@ -16,7 +16,8 @@ class Map extends Component {
             mapCenterNeighbourhood: false,
             centerPlace: null,
             mapCenterPlace: false,
-            showOneHood: null
+            showOneHood: null,
+            showHeatmap:false
         };
         this.updateCurrentSelection = this.updateCurrentSelection.bind(this);
         this.deleteSelectedPlace = this.deleteSelectedPlace.bind(this);
@@ -24,6 +25,7 @@ class Map extends Component {
         this.clickNeighbourhood = this.clickNeighbourhood.bind(this);
         this.resetNeighbourhood = this.resetNeighbourhood.bind(this);
         this.changeShowOneHood = this.changeShowOneHood.bind(this);
+        this.toggleHeatmap = this.toggleHeatmap.bind(this);
     }
     updateCurrentSelection(id) {
         const currentPlace = this.props.places.filter(place => place.id === id)[0]
@@ -72,9 +74,15 @@ class Map extends Component {
         })
     }
 
-    changeShowOneHood(bool) {
+    changeShowOneHood(val) {
         this.setState({
-            showOneHood: bool
+            showOneHood: val
+        })
+    }
+
+    toggleHeatmap(){
+        this.setState({
+            showHeatmap:!this.state.showHeatmap
         })
     }
 
@@ -88,7 +96,9 @@ class Map extends Component {
         neighbourhoods={this.props.neighbourhoods}
         clickNeighbourhood={this.clickNeighbourhood}
         resetNeighbourhood={this.resetNeighbourhood}
-        changeShowOneHood={this.changeShowOneHood}/>
+        changeShowOneHood={this.changeShowOneHood}
+        toggleHeatmap = {this.toggleHeatmap}
+        />
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap
             neighbourhoods = { this.props.neighbourhoods }
@@ -100,6 +110,7 @@ class Map extends Component {
             mapCenterPlace = {this.state.mapCenterPlace}
             centerPlace = {this.state.centerPlace}
             selectionList = {this.state.selectionList}
+            showHeatmap = {this.state.showHeatmap}
           />
           <HoodSidebar
             updateSelection={this.updateCurrentSelection}

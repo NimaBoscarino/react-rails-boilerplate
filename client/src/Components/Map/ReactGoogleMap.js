@@ -1,16 +1,16 @@
 import {
-  withScriptjs,
   withGoogleMap,
   GoogleMap,
   Marker,
   Polygon
 } from "react-google-maps";
+import HeatmapLayer from "react-google-maps/lib/components/visualization/HeatmapLayer";
 import React, { Component } from "react";
 import mapStyles from "./google-map-style.json";
 
 // import Marker from "./Marker/Marker";
 // \import CurrentSelection from "../../global-assets/hotspot-score-icon-small.png";
-
+/*global google*/
 class ReactGoogleMap extends Component {
   constructor(props) {
     super(props);
@@ -20,12 +20,20 @@ class ReactGoogleMap extends Component {
   }
 
   render() {
+    const heatMapData = this.props.places && this.props.places.map(place=>{
+      return {
+        location:new google.maps.LatLng(place.lat,place.long),weight:place.currentBusyScore
+      }
+    })
+
+
     let GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
         defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
         defaultZoom={14}
         defaultOptions={{ styles: mapStyles }}>
-        {this.props.neighbourhoods &&
+        { this.props.showHeatmap ? (
+          this.props.neighbourhoods &&
           this.props.neighbourhoods.map(element => {
             return (
               <Polygon
@@ -44,7 +52,13 @@ class ReactGoogleMap extends Component {
                 }}
               />
             );
-          })}
+          })) :
+          this.props.places &&
+          <HeatmapLayer 
+            data={heatMapData}
+            options={{radius:20}}
+          />
+        }
       </GoogleMap>
     ));
     if (this.props.mapCenterNeighbourhood) {
