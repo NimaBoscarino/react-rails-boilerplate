@@ -292,7 +292,7 @@ nav .logo {
   display: inline-block;
   font-family: "Fira Sans", sans-serif;
   font-size: calc(8px + 0.8vw);
-  margin-top: 0.6vh;
+  margin-top: 0.4vh;
   font-weight: 700;
   padding-left: 0.5vh;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
