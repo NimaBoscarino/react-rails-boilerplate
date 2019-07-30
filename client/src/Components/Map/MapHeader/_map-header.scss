@@ -4,79 +4,135 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
     margin: 0 auto;
-    height: 7vh;
-    z-index: 1;
+    min-height: 7vh;
+    z-index: 3;
     border-top: 2px solid rgba($bright-yellow, 0.7);
     -webkit-box-shadow: $map-shadow-header;
     -moz-box-shadow: $map-shadow-header;
     box-shadow: $map-shadow-header;
     background: $background-gradient-dark;
-    border-bottom: 1px solid rgba($dark-blue, 0.1);
-
-    .hood-header-box {
-      text-align: center;
-    }
+    border-bottom: 1px solid rgba($dark-quick-silver, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding-left: 2vh;
 
     .filter-box-div {
       display: inline-block;
-      color: $white;
-      padding: 0;
-      margin: 0 auto;
-      font-size: $font-size-busy-xs;
-
-      .heatmap-filter {
-        display: inline-block;
-        padding: 0 0.5vh;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
 
       .filter-prompt {
+        padding-top: 1.5vh;
         display: inline-block;
+        font-size: $font-size-filter-prompt;
+        color: $light-weight;
+        font-family: $condensed-font;
+        white-space: nowrap;
+        text-transform: uppercase;
+        line-height: 1;
       }
 
-      .heatmap-button {
-        display: inline-block;
-        font-size: $font-size-busy-xs;
+      .btn-secondary {
+        background-color: transparent;
+        border: none;
+        font-family: $condensed-font;
+        text-transform: uppercase;
+        font-size: $font-size-filter-buttons;
+        color: $light-weight;
+        font-weight: 700;
+        line-height: 1;
+        padding: 0vh 0vh 0.1vh 0vh;
+        margin: 0vh 0.8vh 0vh 0.8vh;
+        border-bottom: 1px solid $orange;
+        border-radius: 0;
+      }
+
+      .drop-down-button {
+        background-color: transparent;
+      }
+
+      .drop-down-menu {
+        background: $background-gradient-drop-down;
+      }
+
+      .dropdown-item {
+        font-family: $condensed-font;
+        font-size: $font-size-filter-buttons;
+        color: $smoky-black;
+      }
+
+      .dropdown-item:hover {
+        font-family: $condensed-font;
+        font-size: $font-size-filter-buttons;
+        color: $smoky-black;
+      }
+
+      .drop-down-toggle {
+        background-color: none;
+      }
+
+      .dropdown-buttons {
+        padding: 0vh 0.4vh;
+      }
+
+      .time-keeper-dropdown {
+        margin-left: -8vh;
       }
     }
 
-    h4.selected-hood {
-      font-family: $title-font;
-      font-size: $font-size-xxxxl;
-      font-weight: 700;
-      color: $white;
-    }
+    .hood-header-box {
+      display: inline-block;
+      text-align: center;
 
-    .filter-title {
-      font-family: $body-font;
-      margin: 0 0 0.2vh 0;
-      padding: 0;
-      color: $accent-grey;
-      font-size: $font-size-map-header-filters;
-    }
-
-    .button-toolbar {
-      margin-top: 0;
+      h4.selected-hood {
+        font-family: $title-font;
+        font-size: $font-size-hooder-header;
+        font-weight: 700;
+        color: $white;
+        line-height: 1;
+        padding: 0;
+        margin: 0;
+      }
     }
 
     .button-row {
-      margin-top: -8px;
-      display: block;
+      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      border-color: $light-weight;
+      color: $light-weight;
+
+      .filter-icon-funnel {
+        font-size: $font-size-filter-icon;
+        color: $quick-silver;
+        margin-top: 5px;
+        margin-right: 5px;
+      }
+
+      .filter-icons {
+        font-size: $font-size-filter-icon-button;
+      }
+      .filter-buttons:hover {
+        border-color: $accent-grey;
+      }
     }
 
-    .filter-toolbar {
-      padding: 0;
-      margin: 0;
-    }
-
-    .filter-toolbar {
-      font-size: $font-size-large;
+    .filter-buttons {
+      font-family: $condensed-font;
+      background: $background-gradient-filter-buttons;
+      font-size: $font-size-filter-button-toolbar;
+      text-transform: uppercase;
     }
 
     .filter-icons {
-      margin-right: 0.5vh;
-      font-size: $font-size-large;
+      margin-right: 4px;
     }
   }
 }

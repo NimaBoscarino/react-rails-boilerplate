@@ -23,6 +23,7 @@ class ReactGoogleMap extends Component {
           weight: place.currentBusyScore
         };
       }));
+
     let GoogleMapExample;
     if (this.props.showHeatmap) {
       const icon = {
@@ -36,7 +37,20 @@ class ReactGoogleMap extends Component {
         {this.props.places && (
           <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
         )}
-        
+        {this.props.places &&
+          this.props.places
+          .map(place => {
+            return (
+              <Marker
+                key={place.id}
+                position={{ lat: place.lat, lng: place.long }}
+                icon={icon}
+                onClick={() => {
+                  this.props.updateSelection(place.id);
+                }}
+              />
+            );
+          })}
       </GoogleMap>
     )))} else {
       GoogleMapExample = GoogleMapExample = withScriptjs(withGoogleMap(props => (

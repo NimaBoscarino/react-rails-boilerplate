@@ -5,6 +5,7 @@ import CurrentSelectionCard from "./CurrentSelectionCard/CurrentSelectionCard";
 import GoogleMap from "./ReactGoogleMap";
 import MapHeader from "./MapHeader/MapHeader";
 import HeatMapSlider from "./HeatMapSlider/HeatMapSlider";
+import HeatMapToggle from "./HeatMapToggle";
 import axios from "axios";
 /*global google*/
 
@@ -29,8 +30,8 @@ class Map extends Component {
     this.resetNeighbourhood = this.resetNeighbourhood.bind(this);
     this.changeShowOneHood = this.changeShowOneHood.bind(this);
     this.toggleHeatmap = this.toggleHeatmap.bind(this);
+    this.removeMapCenterPlace = this.removeMapCenterPlace.bind(this);
     this.handleSlider = this.handleSlider.bind(this);
-    // this.getHeatmapData = this.getHeatmapData.bind(this);
   }
   updateCurrentSelection(id) {
     const currentPlace = this.props.places.filter(place => place.id === id)[0];
@@ -85,6 +86,13 @@ class Map extends Component {
       centerPlace: { lat: 49.2827, long: -123.1207 },
       centerNeighbourhood: null
     });
+  }
+
+  removeMapCenterPlace() {
+    this.setState({
+        mapCenterPlace: false,
+        showSelectionCard: false
+    })
   }
 
   changeShowOneHood(val) {
@@ -157,11 +165,10 @@ class Map extends Component {
             setDay = {this.props.setDay}
             setHour = {this.props.setHour}
             toggleHeatmap = {this.toggleHeatmap}
+            removeMapCenterPlace={this.removeMapCenterPlace}
         />
-        {
-            this.state.showHeatmap && !this.state.mapCenterNeighbourhood && !this.state.mapCenterPlace && 
-            <HeatMapSlider handleChange={this.handleSlider}/>
-        }
+        <HeatMapToggle toggleHeatmap = {this.toggleHeatmap}/>
+        <HeatMapSlider handleChange={this.handleSlider}/>
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap
             neighbourhoods={this.props.neighbourhoods}

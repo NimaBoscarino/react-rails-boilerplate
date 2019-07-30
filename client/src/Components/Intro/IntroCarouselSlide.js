@@ -32,8 +32,9 @@ class IntroCarouselSlide extends Component {
                   <FaMapMarkerAlt className='icon-carousel hood-icon' />
                   {this.props.place.neighbourhood_name}
                 </p>
-
-         
+                <p className='card-hood'>
+                  {this.props.place.yelp_categories.map((category)=>{return category + " "})}
+                </p>
               </div>
 
               <div className='col hotspot-col '>
