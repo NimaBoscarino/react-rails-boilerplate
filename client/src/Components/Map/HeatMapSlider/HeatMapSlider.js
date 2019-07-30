@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
-import HeatMapToggle from "../MapHeader/HeatMapToggle";
+import HeatMapToggle from "../HeatMapToggle";
 
 const useStyles = makeStyles(theme => ({
   root: {

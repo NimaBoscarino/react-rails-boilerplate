@@ -14,12 +14,14 @@ export default function SwitchLabels() {
   };
 
   return (
-    <FormGroup row>
-      <FormControlLabel
-        control={<Switch value='checkedA' />}
-        className='heatmap-toggle-button'
-        label='Toggle Heat Map'
-      />
-    </FormGroup>
+    <div className='heatmap-toggle-div'>
+      <FormGroup row>
+        <FormControlLabel
+          control={<Switch value='checkedA' />}
+          className='heatmap-toggle-button'
+          label='Toggle Heat Map'
+        />
+      </FormGroup>
+    </div>
   );
 }

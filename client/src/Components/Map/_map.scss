@@ -20,7 +20,6 @@
   text-align: center;
   margin-bottom: 0;
   position: relative;
-  
 
   .hood-main-title {
     font-family: $title-font;
@@ -47,5 +46,41 @@
 
   .gm-style {
     font-size: 200px !important;
+  }
+
+  .heatmap-toggle-div {
+    position: absolute;
+    display: inline-block;
+    left: 18.5%;
+    top: 8vh;
+    width: 20vh;
+    background: $background-gradient-very-light;
+    z-index: 1;
+    padding: 0.5vh 1.5vh 0.2vh 1.2vh;
+    border-radius: 10px;
+    box-shadow: $map-shadow-header;
+
+
+    .heatmap-toggle-button {
+      font-family: $condensed-font;
+      background: transparent;
+      padding: 0.4vh 0.5vh 0vh 1vh;
+      margin-left: 2px;
+      font-size: $font-size-filter-buttons;
+      text-transform: uppercase;
+      font-weight: 700 !important;
+  
+    }
+
+    .heatmap-filter {
+      display: inline-block;
+      padding: 0 0.5vh;
+    }
+
+    .MuiTypography-body1 {
+      font-family: $condensed-font;
+      color: $light-weight;
+      white-space: nowrap;
+    }
   }
 }

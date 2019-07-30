@@ -6,7 +6,7 @@
     left: 0;
     margin: 0 auto;
     min-height: 7vh;
-    z-index: 1;
+    z-index: 3;
     border-top: 2px solid rgba($bright-yellow, 0.7);
     -webkit-box-shadow: $map-shadow-header;
     -moz-box-shadow: $map-shadow-header;
@@ -25,7 +25,6 @@
       align-items: center;
       justify-content: center;
       flex-direction: row;
-
 
       .filter-prompt {
         padding-top: 1.5vh;
@@ -90,7 +89,6 @@
       display: inline-block;
       text-align: center;
 
-
       h4.selected-hood {
         font-family: $title-font;
         font-size: $font-size-hooder-header;
@@ -102,38 +100,6 @@
       }
     }
 
-    .heatmap-toggle-button {
-      font-family: $condensed-font;
-      background: $background-gradient-heatmap-div-background;
-      padding: 0.1vh 2vh 0.1vh 1.8vh;
-      margin-left: 0.5vh;
-      border-radius: 10px;
-      font-size: $font-size-filter-buttons;
-      text-transform: uppercase;
-      font-weight: 700 !important;
-      white-space: nowrap;
-    }
-
-    .heatmap-filter {
-      display: inline-block;
-      padding: 0 0.5vh;
-    }
-
-    .heatmap-toggle-div {
-      display: inline-block;
-      font-size: $font-size-busy-xs;
-      font-size: $font-size-filter-prompt;
-      margin-top: 0.7vh;
-      margin-left: 2px;
-      padding-left: 15px;
-    }
-
-    .MuiTypography-body1 {
-      font-family: $condensed-font;
-      color: $light-weight;
-      white-space: nowrap;
-    }
-
     .button-row {
       display: inline-block;
       display: flex;
@@ -142,7 +108,6 @@
       flex-direction: row;
       border-color: $light-weight;
       color: $light-weight;
-
 
       .filter-icon-funnel {
         font-size: $font-size-filter-icon;

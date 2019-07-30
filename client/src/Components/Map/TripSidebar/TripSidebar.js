@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import TripList from "./TripList";
 import HotSpotTripRating from "./HotSpotTripRating";
-import HeatMapToggle from '../../Map/MapHeader/HeatMapToggle';
+
 // import TripButton from "./TripButton";
 
 import { FaCloudMoon, FaMapMarkedAlt } from "react-icons/fa";
@@ -14,13 +14,6 @@ class TripSidebar extends Component {
 
     
       <div className='planner-sidebar'>
-            <div className='heatmap-toggle-div'>
-        <HeatMapToggle
-          onClick={() => {
-            this.props.toggleHeatmap();
-          }}
-        />
-      </div>
         <div className='trip-title-intro-div'>
           <h5 className='trip-title-text'>Saved List</h5>
         </div>

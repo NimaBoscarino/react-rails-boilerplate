@@ -5,6 +5,7 @@ import CurrentSelectionCard from "./CurrentSelectionCard/CurrentSelectionCard";
 import GoogleMap from "./ReactGoogleMap";
 import MapHeader from "./MapHeader/MapHeader";
 import HeatMapSlider from "./HeatMapSlider/HeatMapSlider";
+import HeatMapToggle from "./HeatMapToggle";
 
 class Map extends Component {
   constructor(props) {
@@ -112,6 +113,7 @@ class Map extends Component {
             setHour = {this.props.setHour}
             toggleHeatmap = {this.toggleHeatmap}
         />
+        <HeatMapToggle />
         <HeatMapSlider />
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap

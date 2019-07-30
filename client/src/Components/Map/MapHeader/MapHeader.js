@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { ButtonToolbar, ButtonGroup, Button, Tooltip } from "reactstrap";
 import MapDayFilter from "./DropdownDays";
-import MapHourFilter from "./DropdownHours";
+import MapHourFilter from "../DropdownHours";
 import MapHoodFilter from "./DropdownHood";
-import HeatMapToggle from "./HeatMapToggle.js";
 import { FaGlassCheers, FaPizzaSlice, FaMusic } from "react-icons/fa";
 import { FiFilter } from "react-icons/fi";
 
