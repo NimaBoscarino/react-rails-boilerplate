@@ -34,6 +34,7 @@ class MapHeader extends Component {
             resetNeighbourhood={this.props.resetNeighbourhood}
             currentNeighbourhood={this.props.currentNeighbourhood}
             changeShowOneHood={this.props.changeShowOneHood}
+            removeMapCenterPlace={this.props.removeMapCenterPlace}
           />
           <p className='filter-prompt'>on a</p>
           <MapDayFilter

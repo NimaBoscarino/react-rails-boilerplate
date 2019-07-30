@@ -27,6 +27,7 @@ class Map extends Component {
     this.resetNeighbourhood = this.resetNeighbourhood.bind(this);
     this.changeShowOneHood = this.changeShowOneHood.bind(this);
     this.toggleHeatmap = this.toggleHeatmap.bind(this);
+    this.removeMapCenterPlace = this.removeMapCenterPlace.bind(this);
   }
   updateCurrentSelection(id) {
     const currentPlace = this.props.places.filter(place => place.id === id)[0];
@@ -83,6 +84,13 @@ class Map extends Component {
     });
   }
 
+  removeMapCenterPlace() {
+    this.setState({
+        mapCenterPlace: false,
+        showSelectionCard: false
+    })
+  }
+
   changeShowOneHood(val) {
     this.setState({
       showOneHood: val
@@ -111,6 +119,7 @@ class Map extends Component {
             setDay = {this.props.setDay}
             setHour = {this.props.setHour}
             toggleHeatmap = {this.toggleHeatmap}
+            removeMapCenterPlace={this.removeMapCenterPlace}
         />
         <HeatMapSlider />
         <div className='d-flex justify-content-between h-100 w-100'>

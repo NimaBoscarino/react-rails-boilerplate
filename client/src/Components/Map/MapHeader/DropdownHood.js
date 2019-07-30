@@ -64,6 +64,7 @@ export default class DropdownHoods extends React.Component {
             })}
             <DropdownItem
             onClick={() => {
+              this.props.removeMapCenterPlace()
               this.props.resetNeighbourhood()
               this.props.changeShowOneHood(null)
             }}
