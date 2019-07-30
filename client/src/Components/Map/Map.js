@@ -22,7 +22,8 @@ class Map extends Component {
       centerPlace: null,
       mapCenterPlace: false,
       showOneHood: null,
-      showHeatmap: true
+      showHeatmap: true,
+      showMarkers: true,
     };
     this.updateCurrentSelection = this.updateCurrentSelection.bind(this);
     this.deleteSelectedPlace = this.deleteSelectedPlace.bind(this);
@@ -33,6 +34,7 @@ class Map extends Component {
     this.toggleHeatmap = this.toggleHeatmap.bind(this);
     this.removeMapCenterPlace = this.removeMapCenterPlace.bind(this);
     this.handleSlider = this.handleSlider.bind(this);
+    this.toggleMarkers = this.toggleMarkers.bind(this);
   }
   updateCurrentSelection(id) {
     const currentPlace = this.props.places.filter(place => place.id === id)[0];
@@ -150,9 +152,15 @@ class Map extends Component {
     });
   }
 
-  render() {
-    return (
-      <div id='Map'>
+    toggleMarkers(){
+        this.setState({
+            showMarkers: !this.state.showMarkers
+          });
+    }
+
+    render() {
+        return (
+        <div id='Map'>
         <MapHeader
           currentNeighbourhood={this.state.centerNeighbourhood}
           filterPlaces={this.props.filterPlaces}
@@ -169,7 +177,6 @@ class Map extends Component {
         />
         <MarkerToggle />
         <HeatMapToggle toggleHeatmap={this.toggleHeatmap} />
-
         <HeatMapSlider handleChange={this.handleSlider} />
 
         <div className='d-flex justify-content-between h-100 w-100'>
@@ -184,7 +191,8 @@ class Map extends Component {
             centerPlace={this.state.centerPlace}
             selectionList={this.state.selectionList}
             showHeatmap={this.state.showHeatmap}
-            heatmapData={this.state.updatedHeatmap}
+            heatmapData = {this.state.updatedHeatmap}
+            showMarkers = {this.state.showMarkers}
           />
           <HoodSidebar
             updateSelection={this.updateCurrentSelection}
