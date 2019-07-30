@@ -263,6 +263,7 @@ nav .logo {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   line-height: 1;
   margin-top: 0.8vh;
+  text-transform: uppercase;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .card-score {
@@ -274,9 +275,8 @@ nav .logo {
 
 #Intro .intro-carousel-div .intro-feature-card .icon-carousel {
   font-size: calc(8px + 0.6vw);
-  margin-top: -4px;
   margin-right: 5px;
-  color: #ff9a02;
+  color: #fffffc;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .info-col {
@@ -377,6 +377,7 @@ nav .logo {
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-score-title-div .hotspot-icon {
   display: inline-block;
   width: 12%;
+  margin-top: 4px;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-score-title-div .hotspot-title {
@@ -412,22 +413,6 @@ nav .logo {
   margin: 0;
   line-height: 0.5;
   color: #9ea2a8;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .hotspot-icon-box {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  width: 4.5vh;
-  z-index: 0;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .hotspot-icon-box .hotspot-icon {
-  width: 100%;
-  margin-left: 4vh;
-  margin-top: 0.5vh;
-  padding-left: 10px;
 }
 
 #Intro .intro-carousel-div .shadow {

@@ -108,6 +108,7 @@
         text-shadow: $text-shadow-subtle;
         line-height: 1;
         margin-top: 0.8vh;
+        text-transform: uppercase;
       }
 
       .card-score {
@@ -119,9 +120,8 @@
 
       .icon-carousel {
         font-size: $font-size-carousel-icons;
-        margin-top: -4px;
         margin-right: 5px;
-        color: $orange;
+        color: $light-weight;
       }
 
       .info-col {
@@ -180,7 +180,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-
       }
 
       .card-img {
@@ -200,6 +199,7 @@
         .hotspot-icon {
           display: inline-block;
           width: 12%;
+          margin-top: 4px;
         }
 
         .hotspot-title {
@@ -235,22 +235,6 @@
           margin: 0;
           line-height: 0.5;
           color: $quick-silver;
-        }
-      }
-
-      .hotspot-icon-box {
-        position: absolute;
-        bottom: 0;
-        top: 0;
-        left: 0;
-        width: 4.5vh;
-        z-index: 0;
-
-        .hotspot-icon {
-          width: 100%;
-          margin-left: 4vh;
-          margin-top: 0.5vh;
-          padding-left: 10px;
         }
       }
     }
