@@ -1,4 +1,4 @@
-import { withGoogleMap, GoogleMap, Marker, Polygon } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polygon } from "react-google-maps";
 import HeatmapLayer from "react-google-maps/lib/components/visualization/HeatmapLayer";
 import React, { Component } from "react";
 import mapStyles from "./google-map-style.json";
@@ -24,7 +24,7 @@ class ReactGoogleMap extends Component {
         };
       });
 
-    let GoogleMapExample = withGoogleMap(props => (
+    let GoogleMapExample = withScriptjs(withGoogleMap(props => (
       <GoogleMap
         defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
         defaultZoom={14}
@@ -54,7 +54,7 @@ class ReactGoogleMap extends Component {
               <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
             )}
       </GoogleMap>
-    ));
+    )));
     if (this.props.mapCenterNeighbourhood) {
       const icon = {
         url: "https://i.ibb.co/jvB4mBH/marker.png"
@@ -142,9 +142,12 @@ class ReactGoogleMap extends Component {
         </GoogleMap>
       ));
     }
+
     return (
       <div className='map-container'>
         <GoogleMapExample
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_APIKEY}&v=3.exp&libraries=visualization`}
+          loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%`, width: "100%" }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
