@@ -4,7 +4,10 @@ import icon from '../../../global-assets/hotspot-score-icon-small.png';
 function HotSpotTripRating(props) {
   return (
     <div className='hotspot-stat-box'>
+     <div className='hotspot-title-div'>
+     <img className="hotspot-icon" src={icon} alt={""} />
       <h2 className='hotspot-title'>HotSpot Score </h2> 
+      </div>
       <h1 className='hotspot-stat-number glow'>
         {
           props.places ?
@@ -14,7 +17,7 @@ function HotSpotTripRating(props) {
         }
       </h1>
       <div className='score-icon-div'>
-      <img className="hotspot-score-icon" src={icon} alt={""} />
+      
       </div>
     </div>
   );

@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import CurrentSelectionModal from "./CurrentSelectionModal";
-import { FaAngleDoubleRight } from "react-icons/fa";
+import {
+  Button,
+} from "reactstrap";
+
+import { MdPhone } from "react-icons/md";
+import {
+  FaYelp,
+  FaCreditCard
+} from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
-import { FaCloudMoon } from "react-icons/fa";
+
 
 class CurrentSelectionCard extends Component {
 
@@ -30,19 +38,38 @@ class CurrentSelectionCard extends Component {
                         />
                       </div>
                       <div className='col current-card-info'>
-                        <p>
-                          Airy, contemporary pub & eatery offering classic &
-                          modern Canadian fare, live music & trivia nights.
+                        <p className="current-address">
+                        {this.props.currentSelection.address}
                         </p>
-                        <p>{this.props.currentSelection.address}</p>
+                        <p className='card-price info-p'>
+                        <FaCreditCard className='icon-carousel' />
+                        {this.props.currentSelection.yelp_price}
+                      </p>
+                      <p className='card-phone info-p'>
+                        <MdPhone className='icon-carousel' />
+                        {this.props.currentSelection.yelp_display_phone}
+                      </p>
+
+
+                        <a href={this.props.currentSelection.yelp_url} target='_blank'>
+                        {" "}
+                        <Button outline color='light' size='sm' block>
+                          <FaYelp className='yelp-icon' /> Read Yelp Reviews
+                        </Button>
+                      </a>
+                        
                       </div>
                       <div className='col score-col'>
-                        <p>
+                      <p classname="hot-score">
+                          Current Hotspot Score:{"  "}
+                          <span classname="hot-score-number">   {this.props.currentSelection.currentBusyScore}</span>
+                        </p>
+                        <p classname="other-score">
                           Google Score:{"  "}
                           {this.props.currentSelection.rating} based on{" "}
                           {this.props.currentSelection.rating_n} reviews
                         </p>
-                        <p>
+                        <p classname="other-score">
                           Yelp Score:{"  "}
                           {this.props.currentSelection.yelp_rating} based on{" "}
                           {this.props.currentSelection.yelp_review_count}

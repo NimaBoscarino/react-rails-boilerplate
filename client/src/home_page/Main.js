@@ -131,9 +131,7 @@ class Main extends Component {
           <div className='container-fluid'>
             <div className='d-flex justify-content-center'>
               <div className='night-out-prompt-div'>
-                <p className='night-out-summary'>
-                  Explore popular neighbourhoods, find the hottest places and when you should go.
-                </p>
+         
 
                 <button
                   className='btn btn-outline-light build-night-button'

@@ -66,7 +66,7 @@
       width: 90%;
       margin: 0.5vh auto;
       background: $background-gradient-dark;
-      border: $orange-red solid 1px;
+      border: $medium-yellow solid 1px;
       box-shadow: $button-shadows;
     }
 
@@ -130,18 +130,32 @@
     justify-content: flex-end;
     position: relative;
     background: $background-gradient-light;
+
+    .hotspot-title-div {
+      display: inline-block;
+    }
+
+    .hotspot-icon {
+      display: inline-block;
+      width: 13%;
+      margin-top: -6px;
+    }
+
+    .hotspot-title {
+      display: inline-block;
+      color: white;
+      font-family: $title-font;
+      font-size: $font-size-hotspot-hood-title;
+      margin: 0;
+      padding: 10px 0 0 10px;
+      z-index: 1;
+      position: relative;
+      font-weight: 700;
+    }
+
   }
 
-  .hotspot-title {
-    color: white;
-    font-family: $title-font;
-    margin: 0;
-    padding: 10px 0 0 10px;
-    z-index: 1;
-    position: relative;
-    font-weight: 700;
 
-  }
 
   .hotspot-stat-number {
     color: white;
@@ -161,7 +175,6 @@
     left: 0;
     top: 0;
     padding-top: 15px;
-
   }
 
   .hotspot-score-icon {
@@ -191,13 +204,13 @@
     display: inline-block;
     height: 4vh;
     font-weight: 700;
-    border: 1px $bright-yellow solid;
+    border: 1px $gunmetal solid;
     box-shadow: $button-shadows;
   }
 
   .sidebar-button:hover {
     box-shadow: none;
-    border: 1px $bright-yellow solid;
+    border: 1px $gunmetal solid;
     color: $white;
     background: $background-gradient-dark;
   }

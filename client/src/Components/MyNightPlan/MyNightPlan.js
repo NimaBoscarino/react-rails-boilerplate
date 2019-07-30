@@ -16,8 +16,7 @@ class MyNightPlan extends Component {
                 <p className='my-night-intro'>
                   {" "}
                   <FaInfoCircle className="info-circle-icon" />
-                  Your suggested time is provided as an estimate of when to arrive at
-                  the location to avoid excessive wait
+                  Suggested time is provided as an estimate of when to arrive to avoid excessive wait
                   times.
                 </p>
               </div>

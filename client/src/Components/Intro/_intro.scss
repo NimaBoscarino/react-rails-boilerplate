@@ -8,11 +8,11 @@
     }
   }
 
-  height: 70vh;
+  height: 80vh;
 
   .title-section {
     text-align: center;
-    margin-top: 9vh;
+    padding-top: 8vh;
 
     .intro-title {
       font-size: $font-size-main-title;
@@ -20,14 +20,15 @@
       font-family: $title-font;
       color: $light-weight;
       text-shadow: $text-shadow-title;
-      margin-bottom: 1.5vh;
+      margin-bottom: 1vh;
+      line-height: 1;
     }
 
     .intro-summary {
-      margin-top: 0.6vh;
+      margin-top: 0.2vh;
       font-family: $title-font;
       font-weight: 500;
-      padding: 0 18%;
+      padding: 0 22%;
       font-size: $font-size-title-intro;
       color: $light-weight;
       text-shadow: $text-shadow-title;
@@ -42,11 +43,11 @@
 
   .hotspot-logo-number {
     width: 8vh;
-    margin-bottom: 1vh;
+    margin-bottom: 3vh;
   }
 
   .intro-carousel-div {
-    padding: 1vh 10vh 1vh 8vh;
+    padding: 0vh 10vh 1vh 8vh;
     color: $light-weight;
     margin: 5vh auto 5vh auto;
     width: 100%;
@@ -57,6 +58,7 @@
       color: $light-weight;
       font-weight: 400;
       padding-top: 0.5vh;
+      margin-top: 1vh;
       margin-bottom: 2.5vh;
     }
 
@@ -71,7 +73,7 @@
     .card {
       border: 1px solid $medium-yellow;
       box-shadow: $text-shadow-box !important;
-      min-height: 22vh;
+      min-height: 27vh;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -150,14 +152,14 @@
 
       .hotspot-col {
         display: inline-block;
-        min-width: 30%;
+        min-width: 25%;
         display: flex;
         justify-content: center;
         flex-direction: column;
       }
 
       .image-col {
-        min-width: 30%;
+        min-width: 25%;
         padding-left: 5%;
         display: inline-block;
         display: flex;
@@ -170,7 +172,7 @@
         height: 0;
         overflow: hidden;
         padding-top: 591.44px / 1127.34px * 100%;
-        background: white;
+        background: $light-weight;
         position: relative;
       }
 
@@ -180,16 +182,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-      }
-
-      .card-img {
-        max-width: 100%;
-        object-fit: cover;
-        vertical-align: middle;
-      }
-
-      .card-text {
-        width: 100%;
       }
 
       .hotspot-number-score-title-div {
@@ -243,6 +235,74 @@
       -moz-box-shadow: inset 0 0 10px #000000;
       -webkit-box-shadow: inset 0 0 10px #000000;
       box-shadow: inset 0 0 10px #000000;
+    }
+  }
+}
+
+#NightOutBuilder {
+  width: 100%;
+  padding: 0 0 0 0;
+  margin: 0 auto;
+  align-self: baseline;
+  height: 15vh;
+  margin-bottom: 10vh;
+
+  .night-out-intro-div {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0vh 2vh 2vh 2vh;
+  }
+
+  .build-night-button {
+    background: $background-gradient-build-night-button;
+    font-family: $title-font;
+    font-size: $font-size-night-out-button;
+    border: transparent 1px solid;
+    font-weight: 300;
+    border: none;
+    margin-top: 3vh;
+    padding: 0.8vh 2.5vh;
+    box-shadow: $map-shadow-header;
+    border-radius: 0.8vh;
+  }
+
+  .build-night-button:hover {
+    background: $background-gradient-build-night-button;
+    font-family: $title-font;
+    color: $white;
+    border: $bright-yellow 1px solid;
+    padding: 0.8vh 2.5vh;
+    box-shadow: none;
+  }
+
+  .hotspot-button-icon {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    width: 5%;
+  }
+
+  .map-icon {
+    color: $medium-yellow;
+    margin-right: 10px;
+  }
+
+  .night-out-prompt-div {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+
+    .night-out-summary {
+      margin-top: 0.6vh;
+      font-family: $title-font;
+      font-weight: 500;
+      padding: 0 10%;
+      font-size: $font-size-title-intro;
+      color: $light-weight;
+      text-shadow: $text-shadow-title;
+      line-height: 1.5;
     }
   }
 }

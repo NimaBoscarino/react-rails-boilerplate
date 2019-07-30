@@ -45,90 +45,8 @@ nav .logo {
   padding: 0.5vh 0;
 }
 
-#NightOutBuilder {
-  width: 100%;
-  padding: 0 0 0 0;
-  margin: 0 auto;
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
-  height: 20vh;
-}
-
-#NightOutBuilder .night-out-intro-div {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0vh 2vh 2vh 2vh;
-}
-
-#NightOutBuilder .night-out-intro-div .night-out-intro {
-  display: inline-block;
-  font-family: "Fira Sans", sans-serif;
-  font-weight: 400;
-  padding: 0 5%;
-  font-size: calc(12px + 0.6vw);
-  color: white;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
-  line-height: 1.5;
-}
-
-#NightOutBuilder .build-night-button {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
-  font-family: "Fira Sans", sans-serif;
-  font-size: calc(10px + 0.6vw);
-  font-weight: 500;
-  border: none;
-  margin-top: 2vh;
-  padding: 0.8vh 2.5vh;
-  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-#NightOutBuilder .build-night-button:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
-  font-family: "Fira Sans", sans-serif;
-  color: #f9f9f9;
-  border: #ffe80a 1px solid;
-  margin-top: 2vh;
-  padding: 0.8vh 2.5vh;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-#NightOutBuilder .hotspot-button-icon {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  width: 5%;
-}
-
-#NightOutBuilder .map-icon {
-  color: #ffce00;
-  margin-right: 10px;
-}
-
-#NightOutBuilder .night-out-prompt-div {
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  margin: 0 auto;
-}
-
-#NightOutBuilder .night-out-prompt-div .night-out-summary {
-  margin-top: 0.6vh;
-  font-family: "Fira Sans", sans-serif;
-  font-weight: 500;
-  padding: 0 10%;
-  font-size: calc(14px + 0.7vw);
-  color: white;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
-  line-height: 1.5;
-}
-
 #Intro {
-  height: 70vh;
+  height: 80vh;
 }
 
 @-webkit-keyframes shadow-pulse-live {
@@ -155,23 +73,24 @@ nav .logo {
 
 #Intro .title-section {
   text-align: center;
-  margin-top: 9vh;
+  padding-top: 8vh;
 }
 
 #Intro .title-section .intro-title {
-  font-size: calc(32px + 1.7vw);
+  font-size: calc(18px + 6vh);
   font-weight: 700;
   font-family: "Fira Sans", sans-serif;
   color: #fffffc;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
-  margin-bottom: 1.5vh;
+  margin-bottom: 1vh;
+  line-height: 1;
 }
 
 #Intro .title-section .intro-summary {
-  margin-top: 0.6vh;
+  margin-top: 0.2vh;
   font-family: "Fira Sans", sans-serif;
   font-weight: 500;
-  padding: 0 18%;
+  padding: 0 22%;
   font-size: calc(14px + 0.7vw);
   color: #fffffc;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
@@ -185,11 +104,11 @@ nav .logo {
 
 #Intro .hotspot-logo-number {
   width: 8vh;
-  margin-bottom: 1vh;
+  margin-bottom: 3vh;
 }
 
 #Intro .intro-carousel-div {
-  padding: 1vh 10vh 1vh 8vh;
+  padding: 0vh 10vh 1vh 8vh;
   color: #fffffc;
   margin: 5vh auto 5vh auto;
   width: 100%;
@@ -201,6 +120,7 @@ nav .logo {
   color: #fffffc;
   font-weight: 400;
   padding-top: 0.5vh;
+  margin-top: 1vh;
   margin-bottom: 2.5vh;
 }
 
@@ -217,7 +137,7 @@ nav .logo {
   border: 1px solid #ffce00;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
-  min-height: 22vh;
+  min-height: 27vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -245,7 +165,7 @@ nav .logo {
 #Intro .intro-carousel-div .intro-feature-card .card-title {
   display: inline-block;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(10px + 1.3vw);
+  font-size: calc(9px + 1.3vw);
   font-weight: 700;
   width: 100%;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -257,7 +177,7 @@ nav .logo {
 #Intro .intro-carousel-div .intro-feature-card .card-hood {
   display: block;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(9px + 0.8vw);
+  font-size: calc(8px + 0.5vw);
   font-weight: 500;
   width: 100%;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -269,7 +189,7 @@ nav .logo {
 #Intro .intro-carousel-div .intro-feature-card .card-score {
   font-family: "Fira Sans", sans-serif;
   color: #fffffc;
-  font-size: calc(7px + 0.6vw);
+  font-size: calc(7px + 0.4vw);
   font-weight: 500;
 }
 
@@ -312,7 +232,7 @@ nav .logo {
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-col {
   display: inline-block;
-  min-width: 30%;
+  min-width: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,7 +246,7 @@ nav .logo {
 }
 
 #Intro .intro-carousel-div .intro-feature-card .image-col {
-  min-width: 30%;
+  min-width: 25%;
   padding-left: 5%;
   display: inline-block;
   display: -webkit-box;
@@ -346,7 +266,7 @@ nav .logo {
   height: 0;
   overflow: hidden;
   padding-top: 52.46332%;
-  background: white;
+  background: #fffffc;
   position: relative;
 }
 
@@ -356,17 +276,6 @@ nav .logo {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .card-img {
-  max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  vertical-align: middle;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .card-text {
-  width: 100%;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-score-title-div {
@@ -398,7 +307,7 @@ nav .logo {
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div .hotspot-score {
-  font-size: calc(20px + 7vw);
+  font-size: calc(18px + 6vw);
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   padding: 0;
@@ -418,6 +327,79 @@ nav .logo {
 #Intro .intro-carousel-div .shadow {
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow: inset 0 0 10px #000000;
+}
+
+#NightOutBuilder {
+  width: 100%;
+  padding: 0 0 0 0;
+  margin: 0 auto;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+  height: 15vh;
+  margin-bottom: 10vh;
+}
+
+#NightOutBuilder .night-out-intro-div {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0vh 2vh 2vh 2vh;
+}
+
+#NightOutBuilder .build-night-button {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(10px + 0.6vw);
+  border: transparent 1px solid;
+  font-weight: 300;
+  border: none;
+  margin-top: 3vh;
+  padding: 0.8vh 2.5vh;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 0.8vh;
+}
+
+#NightOutBuilder .build-night-button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
+  font-family: "Fira Sans", sans-serif;
+  color: #fffffc;
+  border: #ffe80a 1px solid;
+  padding: 0.8vh 2.5vh;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#NightOutBuilder .hotspot-button-icon {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 5%;
+}
+
+#NightOutBuilder .map-icon {
+  color: #ffce00;
+  margin-right: 10px;
+}
+
+#NightOutBuilder .night-out-prompt-div {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#NightOutBuilder .night-out-prompt-div .night-out-summary {
+  margin-top: 0.6vh;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  padding: 0 10%;
+  font-size: calc(14px + 0.7vw);
+  color: #fffffc;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+  line-height: 1.5;
 }
 
 #Map .planner-sidebar {
@@ -451,7 +433,7 @@ nav .logo {
 }
 
 #Map .planner-sidebar .trip-title-intro-div .trip-title-text {
-  color: #f9f9f9;
+  color: #fffffc;
   font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
 }
@@ -499,7 +481,7 @@ nav .logo {
   margin: 0.5vh auto;
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
-  border: #ff5a00 solid 1px;
+  border: #ffce00 solid 1px;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -518,7 +500,7 @@ nav .logo {
   font-size: calc(12px + 0.4vw);
   font-weight: 700;
   display: block;
-  color: #f9f9f9;
+  color: #fffffc;
   width: 80%;
   line-height: 1.3;
 }
@@ -526,7 +508,7 @@ nav .logo {
 #Map .planner-sidebar .place-type {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(10px + 0.3vw);
-  color: #f9f9f9;
+  color: #fffffc;
   text-transform: capitalize;
   margin: 0;
   padding: 0;
@@ -570,9 +552,21 @@ nav .logo {
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
 }
 
-#Map .hotspot-title {
+#Map .hotspot-stat-box .hotspot-title-div {
+  display: inline-block;
+}
+
+#Map .hotspot-stat-box .hotspot-icon {
+  display: inline-block;
+  width: 13%;
+  margin-top: -6px;
+}
+
+#Map .hotspot-stat-box .hotspot-title {
+  display: inline-block;
   color: white;
   font-family: "Fira Sans", sans-serif;
+  font-size: calc(16px + 0.7vw);
   margin: 0;
   padding: 10px 0 0 10px;
   z-index: 1;
@@ -632,7 +626,7 @@ nav .logo {
   display: inline-block;
   height: 4vh;
   font-weight: 700;
-  border: 1px #ffe80a solid;
+  border: 1px #1f363d solid;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -640,8 +634,8 @@ nav .logo {
 #Map .sidebar-button:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
-  border: 1px #ffe80a solid;
-  color: #f9f9f9;
+  border: 1px #1f363d solid;
+  color: #fffffc;
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
 }
@@ -661,7 +655,8 @@ nav .logo {
   left: 0;
   width: 18%;
   height: 93vh;
-  background: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
 }
 
 #Map .hood-sidebar .hood-list {
@@ -678,7 +673,7 @@ nav .logo {
   margin: 0;
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
-  color: white;
+  color: #fffffc;
   padding: 0.8vh 0 0.8vh 0.8vh;
   text-transform: uppercase;
 }
@@ -761,7 +756,7 @@ nav .logo {
 }
 
 #Map .list-group-item:hover {
-  color: #f9f9f9;
+  color: #fffffc;
 }
 
 #Map .hood-place-list-item {
@@ -777,7 +772,7 @@ nav .logo {
 }
 
 #Map .hood-place-list-item:hover {
-  color: white;
+  color: #fffffc;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
 }
@@ -797,6 +792,7 @@ nav .logo {
   font-size: calc(11px + 0.3vw);
   word-break: normal;
   margin: 0;
+  margin-left: 8px;
   font-weight: 700;
   padding-bottom: 0.1vh;
   text-shadow: 1px 1px 1px black;
@@ -819,6 +815,7 @@ nav .logo {
   font-size: calc(10px + 0.2vw);
   text-transform: capitalize;
   margin: 0;
+  margin-left: 8px;
   padding: 0 0 1.5vh 0;
   color: #f4f2f3;
 }
@@ -875,7 +872,7 @@ nav .logo {
 .modal-container .modal-header-box {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7) rgba(7, 7, 7, 0.6));
-  color: #f9f9f9;
+  color: #fffffc;
   border-bottom: 1px solid rgba(124, 221, 189, 0.4);
 }
 
@@ -932,7 +929,7 @@ nav .logo {
   border: 1px solid rgba(244, 242, 243, 0.2);
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-  color: white;
+  color: #fffffc;
 }
 
 #CurrentSelectionCard .current-card-pic-col {
@@ -957,7 +954,7 @@ nav .logo {
 #CurrentSelectionCard .current-card-title {
   border-top-right-radius: 1vh;
   border-top-left-radius: 1vh;
-  color: white;
+  color: #fffffc;
   font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
@@ -980,7 +977,7 @@ nav .logo {
 }
 
 #CurrentSelectionCard .add-to-night-button:hover {
-  color: #f9f9f9;
+  color: #fffffc;
   background: #ffe80a;
 }
 
@@ -1021,7 +1018,7 @@ nav .logo {
 
 #Map .map-header .filter-box-div {
   display: inline-block;
-  color: #f9f9f9;
+  color: #fffffc;
   padding: 0;
   margin: 0 auto;
   font-size: calc(7px + 0.2vw);
@@ -1045,7 +1042,7 @@ nav .logo {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(30px + 0.8vw);
   font-weight: 700;
-  color: #f9f9f9;
+  color: #fffffc;
 }
 
 #Map .map-header .filter-title {
@@ -1095,8 +1092,11 @@ nav .logo {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   z-index: 2;
-  padding: 1vh 1.5vh;
+  padding: 2vh 1.5vh 1.25vh 1.5vh;
   border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(158, 162, 168, 0.4);
 }
 
 #HeatMapSlider .slider-container {
@@ -1664,7 +1664,7 @@ nav .logo {
 #AreaSelector .area-selector-hood {
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
-  font-size: calc(32px + 1.7vw);
+  font-size: calc(18px + 6vh);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -1796,13 +1796,13 @@ nav .logo {
 
 #MyNightPlan .stat-div h5.stats-title {
   padding: 0;
-  color: #f9f9f9;
+  color: #fffffc;
 }
 
 #MyNightPlan .stat-div .stats-title {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
-  color: #f9f9f9;
+  color: #fffffc;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   padding-bottom: 1vh;
@@ -1812,7 +1812,7 @@ nav .logo {
 #MyNightPlan .stat-div .stats-title-text {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
-  color: #f9f9f9;
+  color: #fffffc;
   font-weight: 700;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   padding-bottom: 1.5vh;
@@ -1821,13 +1821,13 @@ nav .logo {
 
 #MyNightPlan .stat-div .card-text {
   font-family: "Fira Sans", sans-serif;
-  color: #f9f9f9;
+  color: #fffffc;
 }
 
 #MyNightPlan .stat-div .stats-box {
   top: 0;
   font-family: "Fira Sans", sans-serif;
-  color: #f9f9f9;
+  color: #fffffc;
   border-bottom: 1px solid #9ea2a8;
   padding-bottom: 0.5vh;
   width: 100%;
@@ -1850,7 +1850,7 @@ nav .logo {
 #MyNightPlan .stat-div .hotspot-score-col p.hotspot-score-number {
   display: block;
   margin: 0 auto;
-  color: #f9f9f9;
+  color: #fffffc;
   font-size: 50px;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
@@ -1918,7 +1918,7 @@ nav .logo {
   margin: 0 auto;
   padding: 4vh 5vh 4vh 5vh;
   text-align: center;
-  color: white;
+  color: #fffffc;
 }
 
 #MyNightPlan .my-night-title-row {
@@ -1928,9 +1928,9 @@ nav .logo {
 
 #MyNightPlan .my-night-title {
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(32px + 1.7vw);
+  font-size: calc(18px + 6vh);
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
-  color: #f9f9f9;
+  color: #fffffc;
   font-weight: 700;
   padding-bottom: 2vh;
 }
@@ -1939,9 +1939,9 @@ nav .logo {
   margin-top: 0.6vh;
   font-family: "Fira Sans", sans-serif;
   font-weight: 500;
-  padding: 0 10%;
+  padding: 0 5%;
   font-size: calc(14px + 0.7vw);
-  color: white;
+  color: #fffffc;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   line-height: 1.5;
   padding-bottom: 1.5vh;
@@ -2114,7 +2114,7 @@ nav .logo {
   font-size: calc(10px + 3vw);
   font-weight: 700;
   text-transform: uppercase;
-  color: #f9f9f9;
+  color: #fffffc;
   padding: 0;
   margin: 0;
   margin-top: -1.5vh;
@@ -2168,7 +2168,7 @@ nav .logo {
 }
 
 #MyNightPlan .info-col .info-p {
-  color: white;
+  color: #fffffc;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   line-height: 1.2;
@@ -2217,7 +2217,8 @@ nav .logo {
   display: inline-block;
   padding: 5vh;
   border-top: #ff9a02 solid 1px;
-  background: #070707;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
   color: #9ea2a8;
   width: 100%;
   margin-top: -100vh;
@@ -2231,8 +2232,6 @@ nav .logo {
   top: 0;
   /* Position the navbar at the top of the page */
   width: 80%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

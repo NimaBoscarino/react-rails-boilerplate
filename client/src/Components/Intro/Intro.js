@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Carousel from "./IntroCarousel";
-import HotSpotIcon from "../../global-assets/hotspot-score-icon-small.png";
+import HotSpotIcon from "../../global-assets/hotspot-marker.png";
+import { FaBroadcastTower } from "react-icons/fa";
 
 class Intro extends Component {
   render() {
@@ -17,24 +18,22 @@ class Intro extends Component {
                 />
               </div>
               <h1 className='intro-title'>Vancouver's Hottest Spots</h1>
-           
+
               <p className='intro-summary'>
                 Discover restaurants, clubs and bars that are consistently busy
-                 and highly rated in Vancouver's most popular areas
+                and highly rated in Vancouver's most popular areas
               </p>
               <div className='container-fluid intro-carousel-div'>
                 <Carousel places={this.props.places} />
                 <p className='intro-summary'>
-                <h4 className='popular-now-title'>
-                  <span className='badge badge-pill badge-info live-icon'>
-                    LIVE
-                  </span>{" "}
-                  Popular Right Now
-                </h4>
-              </p>
-
+                  <h4 className='popular-now-title'>
+                    <span className='badge badge-pill badge-info live-icon'>
+                     <FaBroadcastTower />  POPULAR RIGHT NOW
+                    </span>{" "}
+                  
+                  </h4>
+                </p>
               </div>
-        
             </div>
           </div>
         </div>

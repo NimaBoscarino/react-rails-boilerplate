@@ -34,7 +34,7 @@
     margin-bottom: 2vh;
     border: 1px solid rgba($very-light-grey, 0.2);
     box-shadow: $text-shadow-box;
-    color: white;
+    color: $light-weight;
   }
 
   .current-card-pic-col {
@@ -58,7 +58,7 @@
   .current-card-title {
     border-top-right-radius: 1vh;
     border-top-left-radius: 1vh;
-    color: white;
+    color: $light-weight;
     font-family: $title-font;
     font-size: $font-size-xxxl;
     background: $background-gradient-blue-dark;
@@ -81,7 +81,7 @@
   }
 
   .add-to-night-button:hover {
-    color: $white;
+    color: $light-weight;
     background: $bright-yellow;
 
     .icon-plus {
