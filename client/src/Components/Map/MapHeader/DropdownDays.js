@@ -45,12 +45,12 @@ export default class DropdownDays extends React.Component {
 
   render() {
     return (
-      <div className='heatmap-filter'>
+      <div className='dropdown-buttons'>
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <DropdownToggle caret>
+          <DropdownToggle className='drop-down-toggle' caret>
             {this.getDayFromProp(this.props.day)}
           </DropdownToggle>
-          <DropdownMenu>
+          <DropdownMenu className='drop-down-menu'>
             <DropdownItem
               onClick={() =>  {
                 this.props.setDay(7)

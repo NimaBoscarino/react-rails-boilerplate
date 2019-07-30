@@ -28,15 +28,15 @@ export default class DropdownHoods extends React.Component {
       toAlphabetize = [...this.props.neighbourhoods]
     }
     return (
-      <div className='heatmap-filter'>
+      <div className='dropdown-buttons'>
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <DropdownToggle caret>
+          <DropdownToggle className='drop-down-toggle' caret>
             {" "}
             {this.props.currentNeighbourhood
               ? this.props.currentNeighbourhood.name
               : "Vancouver"}
           </DropdownToggle>
-          <DropdownMenu>
+          <DropdownMenu className='drop-down-menu'>
           {toAlphabetize &&
             toAlphabetize
             .sort(function(a,b) {

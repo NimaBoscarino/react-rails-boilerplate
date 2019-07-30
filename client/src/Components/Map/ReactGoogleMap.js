@@ -1,4 +1,4 @@
-import { withGoogleMap, GoogleMap, Marker, Polygon } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polygon } from "react-google-maps";
 import HeatmapLayer from "react-google-maps/lib/components/visualization/HeatmapLayer";
 import React, { Component } from "react";
 import mapStyles from "./google-map-style.json";
@@ -15,22 +15,25 @@ class ReactGoogleMap extends Component {
   }
 
   render() {
-    const heatMapData =
+    const heatMapData = this.props.heatmapData || (
       this.props.places &&
       this.props.places.map(place => {
         return {
           location: new google.maps.LatLng(place.lat, place.long),
           weight: place.currentBusyScore
         };
-      });
+      }));
 
-    let GoogleMapExample = withGoogleMap(props => (
-      <GoogleMap
-        defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
-        defaultZoom={14}
-        defaultOptions={{ styles: mapStyles }}>
-        {this.props.showHeatmap
-          ? this.props.neighbourhoods &&
+    let GoogleMapExample;
+      let icon = {
+        url: "https://i.ibb.co/J757PNs/super-small-map-marker.png"
+      };
+      GoogleMapExample = GoogleMapExample = withScriptjs(withGoogleMap(props => (
+        <GoogleMap
+          defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
+          defaultZoom={14}
+          defaultOptions={{ styles: mapStyles }}>
+          {this.props.neighbourhoods &&
             this.props.neighbourhoods.map(element => {
               return (
                 <Polygon
@@ -49,17 +52,32 @@ class ReactGoogleMap extends Component {
                   }}
                 />
               );
-            })
-          : this.props.places && (
-              <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
-            )}
-      </GoogleMap>
-    ));
+            })}
+            {this.props.showMarkers && (this.props.places &&
+          this.props.places
+          .map(place => {
+            return (
+              <Marker
+                key={place.id}
+                position={{ lat: place.lat, lng: place.long }}
+                icon={icon}
+                onClick={() => {
+                  this.props.updateSelection(place.id);
+                }}
+              />
+            );
+          }))}
+          {this.props.showHeatmap && (this.props.places && (
+          <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
+        ))}
+        </GoogleMap>
+      )))
+    
     if (this.props.mapCenterNeighbourhood) {
       const icon = {
         url: "https://i.ibb.co/jvB4mBH/marker.png"
       };
-      GoogleMapExample = withGoogleMap(props => (
+      GoogleMapExample = withScriptjs(withGoogleMap(props => (
         <GoogleMap
           defaultCenter={this.props.centerNeighbourhood.center}
           defaultZoom={14}
@@ -76,7 +94,7 @@ class ReactGoogleMap extends Component {
             }}
             onClick={() => {}}
           />
-          {this.props.places
+          {this.props.showMarkers && (this.props.places
             .filter(
               el => el.neighbourhood_id === this.props.centerNeighbourhood.id
             )
@@ -91,9 +109,12 @@ class ReactGoogleMap extends Component {
                   }}
                 />
               );
-            })}
+            }))}
+            {this.props.showHeatmap && (this.props.places && (
+              <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
+            ))}
         </GoogleMap>
-      ));
+      )));
     }
     if (this.props.mapCenterPlace) {
       const currentSelection = {
@@ -104,7 +125,7 @@ class ReactGoogleMap extends Component {
         url: "https://i.ibb.co/Sdt6P2G/hearted.png"
       };
 
-      GoogleMapExample = withGoogleMap(props => (
+      GoogleMapExample = withScriptjs(withGoogleMap(props => (
         <GoogleMap
           defaultCenter={{
             lat: this.props.centerPlace.lat,
@@ -112,7 +133,7 @@ class ReactGoogleMap extends Component {
           }}
           defaultZoom={14}
           defaultOptions={{ styles: mapStyles }}>
-          {this.props.places
+          {this.props.showMarkers && (this.props.places
             .filter(
               el => el.neighbourhood_id === this.props.centerNeighbourhood.id
             )
@@ -138,13 +159,19 @@ class ReactGoogleMap extends Component {
                   }}
                 />
               );
-            })}
+            }))}
+            {this.props.showHeatmap && (this.props.places && (
+              <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
+            ))}
         </GoogleMap>
-      ));
+      )));
     }
+
     return (
       <div className='map-container'>
         <GoogleMapExample
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_APIKEY}&v=3.exp&libraries=visualization`}
+          loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%`, width: "100%" }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />

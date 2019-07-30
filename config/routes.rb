@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get '/data', to: 'tests#index'
 
     get '/popular/day/:day/hour/:hour', to: 'popular#getnew'
+    get '/popular/day/:day', to: 'popular#getday'
     get '/popular/:id/:day', to: 'popular#show'
     get '/popular/:id', to: 'popular#index'
 

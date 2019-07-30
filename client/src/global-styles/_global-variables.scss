@@ -1,5 +1,6 @@
 $display-font: "Lalezar", cursive;
 $title-font: "Fira Sans", sans-serif;
+$condensed-font: "Fira Sans Condensed", sans-serif;
 $body-font: "Roboto", sans-serif;
 
 // Intro Section------
@@ -24,6 +25,19 @@ $font-size-intro-card-hotspot-number: calc(18px + 6vw);
 
 $font-size-slider-title: calc(9px + 0.5vw);
 $font-size-slider-label: calc(9px + 0.4vw);
+
+
+// Map - Font Sizes ------
+
+$font-size-hooder-header: calc(9px + 1.5vw);
+
+
+$font-size-filter-icon: calc(5px + 0.8vw);
+$font-size-filter-icon-button: calc(5px + 0.5vw);
+$font-size-filter-prompt: calc(5px + 0.6vw);
+$font-size-filter-buttons: calc(5px + 0.6vw);
+$font-size-filter-button-toolbar: calc(5px + 0.4vw);
+
 
 // My Night - Font Sizes ------
 
@@ -193,3 +207,22 @@ $background-gradient-build-night-button: linear-gradient(
   rgba($smoky-black, 0.8),
   rgba($smoky-black, 0.7)
 );
+
+$background-gradient-filter-buttons: linear-gradient(
+  to bottom,
+  rgba($quick-silver, 0.5),
+  rgba($quick-silver, 0.3)
+);
+
+$background-gradient-heatmap-div-background: linear-gradient(
+  to bottom,
+  rgba($quick-silver, 0.7),
+  rgba($quick-silver, 0.6)
+);
+
+$background-gradient-drop-down: linear-gradient(
+  to bottom,
+  rgba($quick-silver, 0.9),
+  rgba($quick-silver, 1)
+);
+

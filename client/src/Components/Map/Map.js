@@ -5,6 +5,9 @@ import CurrentSelectionCard from "./CurrentSelectionCard/CurrentSelectionCard";
 import GoogleMap from "./ReactGoogleMap";
 import MapHeader from "./MapHeader/MapHeader";
 import HeatMapSlider from "./HeatMapSlider/HeatMapSlider";
+import HeatMapToggle from "./HeatMapToggle";
+import axios from "axios";
+/*global google*/
 
 class Map extends Component {
   constructor(props) {
@@ -18,7 +21,8 @@ class Map extends Component {
       centerPlace: null,
       mapCenterPlace: false,
       showOneHood: null,
-      showHeatmap: false
+      showHeatmap: true,
+      showMarkers: true,
     };
     this.updateCurrentSelection = this.updateCurrentSelection.bind(this);
     this.deleteSelectedPlace = this.deleteSelectedPlace.bind(this);
@@ -28,6 +32,8 @@ class Map extends Component {
     this.changeShowOneHood = this.changeShowOneHood.bind(this);
     this.toggleHeatmap = this.toggleHeatmap.bind(this);
     this.removeMapCenterPlace = this.removeMapCenterPlace.bind(this);
+    this.handleSlider = this.handleSlider.bind(this);
+    this.toggleMarkers = this.toggleMarkers.bind(this);
   }
   updateCurrentSelection(id) {
     const currentPlace = this.props.places.filter(place => place.id === id)[0];
@@ -103,7 +109,55 @@ class Map extends Component {
     });
   }
 
-    componentDidMount() {}
+  handleSlider(val){
+      if (val<=70){
+          val=val/10+17
+      } else {
+          val=val/10-7
+      }
+      this.setState({
+          updatedHeatmap:this.updatedHeatmap[`${val}`]
+      })
+  }
+
+  componentDidMount(){
+    this.getHeatmapData()
+  }
+    componentDidUpdate(prevProps) {
+        if (prevProps.day!==this.props.day){
+            this.getHeatmapData();
+            this.setState({
+                updatedHeatmap:null
+            })
+        }
+    }
+
+    getHeatmapData(){
+        axios.get(`api/popular/day/${this.props.day}`).then(response=>{
+            const updatedPopularTimes=response.data.popular_times;
+            const data={};
+            updatedPopularTimes.forEach(place=>{
+                place.popular_times.forEach(popular=>{
+                    if (!data[`${popular.hour_id}`]){
+                        data[`${popular.hour_id}`]=[]
+                    }
+                    data[`${popular.hour_id}`].push( {
+                        location: new google.maps.LatLng(place.lat, place.long),
+                        weight: popular.busy_value
+                    })
+                })
+            })
+            this.updatedHeatmap=data;
+
+        })
+    }
+
+    toggleMarkers(){
+        this.setState({
+            showMarkers: !this.state.showMarkers
+          });
+    }
+
     render() {
         return (
         <div id='Map'>
@@ -121,7 +175,8 @@ class Map extends Component {
             toggleHeatmap = {this.toggleHeatmap}
             removeMapCenterPlace={this.removeMapCenterPlace}
         />
-        <HeatMapSlider />
+        <HeatMapToggle toggleHeatmap = {this.toggleHeatmap}/>
+        <HeatMapSlider handleChange={this.handleSlider}/>
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap
             neighbourhoods={this.props.neighbourhoods}
@@ -134,6 +189,8 @@ class Map extends Component {
             centerPlace={this.state.centerPlace}
             selectionList={this.state.selectionList}
             showHeatmap={this.state.showHeatmap}
+            heatmapData = {this.state.updatedHeatmap}
+            showMarkers = {this.state.showMarkers}
           />
           <HoodSidebar
             updateSelection={this.updateCurrentSelection}

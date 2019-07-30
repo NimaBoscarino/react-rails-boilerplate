@@ -1,7 +1,8 @@
-import React from "react";
+import React, {Component} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
+import HeatMapToggle from "../HeatMapToggle";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -43,7 +44,7 @@ const marks = [
   },
   {
     value: 70,
-    label: "12PM"
+    label: "12AM"
   },
   {
     value: 80,
@@ -67,7 +68,8 @@ function valueLabelFormat(value) {
   return marks.findIndex(mark => mark.value === value) + 1;
 }
 
-export default function DiscreteSlider() {
+export default class DiscreteSlider extends Component {
+  render(){
   return (
     <div id='HeatMapSlider'>
       <div className='heat-map-slider-container'>
@@ -79,9 +81,13 @@ export default function DiscreteSlider() {
             aria-labelledby='discrete-slider-custom'
             step={10}
             marks={marks}
+            onChange={(e, val)=>{this.val=val}}
+            onMouseUp={(e)=>{this.props.handleChange(this.val)}}
           />
         </div>
+
+
       </div>
     </div>
-  );
+  );}
 }
