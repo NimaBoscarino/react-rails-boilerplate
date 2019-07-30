@@ -28,13 +28,55 @@ export default class DropdownDays extends React.Component {
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
           <DropdownToggle caret>day</DropdownToggle>
           <DropdownMenu>
-            <DropdownItem>Sunday</DropdownItem>
-            <DropdownItem>Monday</DropdownItem>
-            <DropdownItem>Tuesday</DropdownItem>
-            <DropdownItem>Wednesday</DropdownItem>
-            <DropdownItem>Thursday</DropdownItem>
-            <DropdownItem>Friday</DropdownItem>
-            <DropdownItem>Saturday</DropdownItem>
+            <DropdownItem
+              onClick={() =>  {
+                }
+              }
+            >
+              Sunday
+            </DropdownItem>
+            <DropdownItem
+              onClick={() =>  {
+                }
+              }
+            >
+              Monday
+            </DropdownItem>
+            <DropdownItem
+              onClick={() =>  {
+                }
+              }
+            >
+              Tuesday
+            </DropdownItem>
+            <DropdownItem
+              onClick={() =>  {
+                }
+              }
+            >
+              Wednesday
+            </DropdownItem>
+            <DropdownItem
+              onClick={() =>  {
+                }
+              }
+            >
+              Thursday
+            </DropdownItem>
+            <DropdownItem
+              onClick={() =>  {
+                }
+              }
+            >
+              Friday
+            </DropdownItem>
+            <DropdownItem
+              onClick={() =>  {
+                }
+              }
+            >
+              Saturday
+            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </div>
