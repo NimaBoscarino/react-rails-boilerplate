@@ -27,7 +27,7 @@ export default function SwitchLabels(props) {
           className='heatmap-toggle-button'
           label='Toggle Markers'
           onChange={() => {
-            props.toggleHeatmap();
+            props.toggleMarkers();
           }}
         />
       </FormGroup>
