@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 import MyNightPlanCards from "./MyNightPlanCards";
-import { FaChartLine } from "react-icons/fa";
+import { FaChartLine, FaInfoCircle } from "react-icons/fa";
 
 import Charts from "../Charts/Charts";
 
 class MyNightPlan extends Component {
-  componentDidMount() {
-    document
-      .getElementById("MyNightPlan")
-      .scrollIntoView({ behavior: "smooth" });
-  }
   render() {
     return (
       <div id='MyNightPlan'>
@@ -18,6 +13,13 @@ class MyNightPlan extends Component {
             <div className='row my-night-title-row'>
               <div className='col'>
                 <h1 className='my-night-title'>My Night</h1>
+                <p className='my-night-intro'>
+                  {" "}
+                  <FaInfoCircle className="info-circle-icon" />
+                  Your suggested time is provided as an estimate of when to arrive at
+                  the location to avoid excessive wait
+                  times.
+                </p>
               </div>
             </div>
 
@@ -47,8 +49,12 @@ class MyNightPlan extends Component {
                                   Your Night's HotSpot Score
                                 </h5>
 
-                                <p className='hotspot-score-number'>{this.props.nightList.reduce((acc, cur)=>
-            acc+cur.currentBusyScore,0)}</p>
+                                <p className='hotspot-score-number'>
+                                  {this.props.nightList.reduce(
+                                    (acc, cur) => acc + cur.currentBusyScore,
+                                    0
+                                  )}
+                                </p>
                               </div>
                             </div>
                           </div>

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import MyNightPlanCardsDesign from "./MyNightPlanCardsDesign";
-import { FaChartLine } from "react-icons/fa";
-
-
+import { FaChartLine, FaInfoCircle } from "react-icons/fa";
 
 class MyNightPlanDesign extends Component {
   componentDidMount() {
@@ -18,15 +16,18 @@ class MyNightPlanDesign extends Component {
             <div className='row my-night-title-row'>
               <div className='col'>
                 <h1 className='my-night-title'>My Night</h1>
+                <p className='my-night-intro'>
+                  {" "}
+                  <FaInfoCircle className='info-circle-icon' />
+                  Your suggested time is provided as an estimate of when to
+                  arrive at the location to avoid excessive wait times.
+                </p>
               </div>
             </div>
 
             <div className='d-inline-flex p-2 night-out-div w-100'>
               <div className='col d-flex flex-column night-out-card-div'>
-          
-              <MyNightPlanCardsDesign  />;
-            
-
+                <MyNightPlanCardsDesign />;
                 <div className='p-2 stat-div'>
                   <div className='card stats-card'>
                     <div className='card-header stats-title'>
@@ -51,9 +52,7 @@ class MyNightPlanDesign extends Component {
                               </div>
                             </div>
                           </div>
-                          <div className='col-8 chart-col'>
-                        
-                          </div>
+                          <div className='col-8 chart-col' />
                         </div>
                       </div>
                     </div>

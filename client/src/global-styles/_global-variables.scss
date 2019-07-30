@@ -11,14 +11,25 @@ $font-size-small-icon: calc(9px + 0.2vw);
 
 // Intro Card------
 
-$font-size-carousel-header: calc(20px + 1.3vw);
-$font-size-carousel-address: calc(7px + 0.6vw);
+$font-size-carousel-header: calc(18px + 1.3vw);
+$font-size-carousel-hood: calc(7px + 1.1vw);
+$font-size-carousel-address: calc(7px + 0.5vw);
 $font-size-carousel-icons: calc(8px + 0.6vw);
 $font-size-intro-hotspot-title: calc(10px + 1vw);
 $font-size-intro-card: calc(20px + 9vw);
 $font-size-intro-card-review-number: calc(8px + 0.5vw);
 
+// My Night - Font Sizes ------
 
+$font-arrow-icon: calc(18px + 1vw);
+$font-size-suggested-time-big: calc(10px + 3vw);
+$font-size-place-info: calc(6px + 0.6vw);
+$font-size-hood-large: calc(8px + 0.7vw);
+$font-size-title-place: calc(18px + 0.4vw);
+$font-size-hotspot-score: calc(6px + 4vw);
+$font-size-hotspot-score-title: calc(6px + 0.8vw);
+$font-size-best-time-title: calc(10px + 0.4vw);
+$font-size-average-time: calc(8px + 0.4vw);
 
 $font-size-title: calc(18px + 1vw);
 $font-size-nav-tabs: calc(8px + 0.8vw);
@@ -44,7 +55,6 @@ $font-size-hotspot-hood-large: calc(16px + 0.8vw);
 // Report Card Summary Font Sizes------
 
 $font-size-map-header-filters: calc(7px + 0.3vw);
-
 
 // Report Card Summary Font Sizes------
 
@@ -79,7 +89,7 @@ $card-color-background: #fffffc;
 $smoky-black: #070707;
 $light-smoky-black: rgba($smoky-black, 0.6);
 $quick-silver: #9ea2a8;
-$dark-quick-silver: rgba($quick-silver, 0.6);
+$dark-quick-silver: rgba($quick-silver, 0.4);
 $white: white;
 
 // Brand Colors -------

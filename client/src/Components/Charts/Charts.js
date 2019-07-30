@@ -42,7 +42,7 @@ class Charts extends Component {
         name: `${place.name}`,
         showInLegend: true,
         toolTipContent: "At {label}:00 : {y}",
-        dataPoints: data.slice(12).concat(data.slice(0, 12))
+        dataPoints: data.slice(5).concat(data.slice(0, 5))
       };
       result.push(dataSet);
     }
