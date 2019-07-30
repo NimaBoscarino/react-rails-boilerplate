@@ -27,9 +27,10 @@ class MyNightPlanCards extends Component {
         hourId=element.hour_id;
       }
     })
-    if (hourId>=12 && hourId!==24) return `${hourId-12-1} PM`
-    else
-    return `${hourId-1} AM`;
+    if (hourId===1) return '12 AM';
+    if (hourId<=12) return `${hourId-1} AM`
+    if (hourId===13) return '12 PM'
+    return `${hourId-13} PM`;
   }
   }
 

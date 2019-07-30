@@ -46,7 +46,14 @@ class Main extends Component {
         this.setState({
           showMyNightPlan: true,
           nightList: selectionList
+        }, ()=>{
+          scrollToComponent(this.MyNightPlan, {
+            offset: 0,
+            align: "top",
+            duration: 1500,
+          })
         })
+
       })
     })
   }
@@ -149,7 +156,9 @@ class Main extends Component {
           filterPlaces={this.filterPlaces}
         />
         {this.state.showMyNightPlan && (
-          <MyNightPlan nightList={this.state.nightList} />
+          <MyNightPlan nightList={this.state.nightList} ref={section => {
+            this.MyNightPlan = section;
+          }} />
         )}
         {/* <MyNightPlanDesign /> */}
         {/* <AreaSelector />
