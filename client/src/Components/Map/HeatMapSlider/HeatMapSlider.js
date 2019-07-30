@@ -72,8 +72,6 @@ export default function DiscreteSlider() {
     <div id='HeatMapSlider'>
       <div className='heat-map-slider-container'>
         <div className='slider-container'>
-          <h4 className='slider-title'>Slide HeatMap</h4>
-
           <Slider
             className='slider-style'
             defaultValue={20}

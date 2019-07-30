@@ -4,21 +4,21 @@ $body-font: "Roboto", sans-serif;
 
 // Intro Section------
 
-$font-size-main-title: calc(32px + 1.7vw);
+$font-size-main-title: calc(18px + 6vh);
 $font-size-title-intro: calc(14px + 0.7vw);
 $font-size-title-popular-now: calc(12px + 0.4vw);
 $font-size-small-icon: calc(9px + 0.2vw);
 
 // Intro Card------
 
-$font-size-carousel-header: calc(10px + 1.3vw);
-$font-size-carousel-hood: calc(9px + 0.8vw);
-$font-size-carousel-address: calc(7px + 0.6vw);
+$font-size-carousel-header: calc(9px + 1.3vw);
+$font-size-carousel-hood: calc(8px + 0.5vw);
+$font-size-carousel-address: calc(7px + 0.4vw);
 $font-size-carousel-icons: calc(8px + 0.6vw);
 $font-size-intro-hotspot-title: calc(8px + 0.8vw);
 $font-size-intro-card: calc(20px + 9vw);
 $font-size-intro-card-review-number: calc(7px + 0.5vw);
-$font-size-intro-card-hotspot-number: calc(20px + 7vw);
+$font-size-intro-card-hotspot-number: calc(18px + 6vw);
 
 // Slider - Font Sizes ------
 
@@ -51,12 +51,14 @@ $font-size-small: calc(9px + 0.2vw);
 $font-size-busy-small: calc(12px + 0.2vw);
 $font-size-busy-xs: calc(7px + 0.2vw);
 
-$font-size-night-out-prompt: calc(12px + 0.6vw);
+$font-size-night-out-prompt: calc(10px + 0.5vw);
 $font-size-night-out-button: calc(10px + 0.6vw);
 
 $font-size-small-type: calc(10px + 0.2vw);
 
 $font-size-hotspot-hood-large: calc(16px + 0.8vw);
+
+$font-size-hotspot-hood-title: calc(16px + 0.7vw);
 
 // Report Card Summary Font Sizes------
 
@@ -97,7 +99,7 @@ $smoky-black: #070707;
 $light-smoky-black: rgba($smoky-black, 0.6);
 $quick-silver: #9ea2a8;
 $dark-quick-silver: rgba($quick-silver, 0.4);
-$white: #f9f9f9;
+$white: #fffffc;
 
 // Brand Colors -------
 

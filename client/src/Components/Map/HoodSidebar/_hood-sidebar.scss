@@ -8,7 +8,7 @@
     left: 0;
     width: 18%;
     height: 93vh;
-    background: transparent;
+    background: $background-gradient-very-light;
 
     .hood-list {
       width: 100%;
@@ -23,7 +23,7 @@
       border-bottom: 1px solid rgba($quick-silver, 0.4);
       margin: 0;
       background: $background-gradient-dark;
-      color: white;
+      color: $light-weight;
       padding: 0.8vh 0 0.8vh 0.8vh;
       text-transform: uppercase;
     }
@@ -105,7 +105,7 @@
   }
 
   .list-group-item:hover {
-    color: $white;
+    color: $light-weight;
   }
 
   .hood-place-list-item {
@@ -120,7 +120,7 @@
   }
 
   .hood-place-list-item:hover {
-    color: white;
+    color: $light-weight;
     background: $background-gradient-light;
   }
 
@@ -139,6 +139,7 @@
     font-size: $font-size-between-medium-and-large;
     word-break: normal;
     margin: 0;
+    margin-left: 8px;
     font-weight: 700;
     padding-bottom: 0.1vh;
     text-shadow: 1px 1px 1px black;
@@ -161,6 +162,7 @@
     font-size: $font-size-small-type;
     text-transform: capitalize;
     margin: 0;
+    margin-left: 8px;
     padding: 0 0 1.5vh 0;
     color: $very-light-grey;
   }

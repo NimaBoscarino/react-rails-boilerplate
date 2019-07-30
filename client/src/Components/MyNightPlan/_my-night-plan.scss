@@ -11,7 +11,7 @@
     margin: 0 auto;
     padding: 4vh 5vh 4vh 5vh;
     text-align: center;
-    color: white;
+    color: $light-weight;
   }
 
   .my-night-title-row {
@@ -23,7 +23,7 @@
     font-family: $title-font;
     font-size: $font-size-main-title;
     text-shadow: $text-shadow-title;
-    color: $white;
+    color: $light-weight;
     font-weight: 700;
     padding-bottom: 2vh;
   }
@@ -32,9 +32,9 @@
     margin-top: 0.6vh;
     font-family: $title-font;
     font-weight: 500;
-    padding: 0 10%;
+    padding: 0 5%;
     font-size: $font-size-title-intro;
-    color: white;
+    color: $light-weight;
     text-shadow: $text-shadow-title;
     line-height: 1.5;
     padding-bottom: 1.5vh;
@@ -205,7 +205,7 @@
       font-size: $font-size-suggested-time-big;
       font-weight: 700;
       text-transform: uppercase;
-      color: $white;
+      color: $light-weight;
       padding: 0;
       margin: 0;
       margin-top: -1.5vh;
@@ -260,7 +260,7 @@
 
 
     .info-p {
-      color: white;
+      color: $light-weight;
       font-family: $title-font;
       font-weight: 700;
       line-height: 1.2;

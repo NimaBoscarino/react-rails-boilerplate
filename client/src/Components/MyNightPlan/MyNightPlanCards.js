@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import {
-  Collapse,
   Button,
   CardBody,
   CardTitle,
   Card,
   CardText
 } from "reactstrap";
-import { FiArrowDownCircle } from "react-icons/fi";
 import { FiClock } from "react-icons/fi";
 import { MdPhone } from "react-icons/md";
 import {
@@ -59,8 +57,6 @@ class MyNightPlanCards extends Component {
                   <CardTitle className='best-times-title'>
                     <FiClock className='clock-icon' /> Recommended Time
                   </CardTitle>{" "}
-
-                
                   <CardText>
                     <p className='arrival-time'>
                       {this.findPeakHour(this.props.place.popularTimes)}
@@ -76,7 +72,6 @@ class MyNightPlanCards extends Component {
                       minutes
                     </p>
                   </CardText>
-               
                 </CardBody>
               </Card>
             </div>

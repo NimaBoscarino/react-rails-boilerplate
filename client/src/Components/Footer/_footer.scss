@@ -3,7 +3,7 @@
   padding: 5vh;
 
   border-top: $orange solid 1px;
-  background: $smoky-black;
+  background: $background-gradient-medium;
   color: $quick-silver;
   width: 100%;
   margin-top: -100vh;
@@ -14,7 +14,6 @@
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 80%;
-    background: $background-gradient-blue-dark;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 

@@ -12,8 +12,10 @@
     margin: 0 auto;
     background: $background-gradient-light;
     z-index: 2;
-    padding: 1vh 1.5vh;
+    padding: 2vh 1.5vh 1.25vh 1.5vh;
     border-radius: 10px;
+    box-shadow: $map-shadow-header;
+    border: 1px solid $dark-quick-silver;
   }
 
   .slider-container {
