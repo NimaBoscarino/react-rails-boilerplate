@@ -23,7 +23,6 @@ class Map extends Component {
         this.addCurrentSelection = this.addCurrentSelection.bind(this);
         this.clickNeighbourhood = this.clickNeighbourhood.bind(this);
         this.resetNeighbourhood = this.resetNeighbourhood.bind(this);
-        this.filterPlaces = this.filterPlaces.bind(this);
         this.changeShowOneHood = this.changeShowOneHood.bind(this);
     }
     updateCurrentSelection(id) {
