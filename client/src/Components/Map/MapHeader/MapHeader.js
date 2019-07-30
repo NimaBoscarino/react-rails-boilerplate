@@ -45,7 +45,7 @@ class MapHeader extends Component {
             hour = {this.props.hour}
             setHour = {this.props.setHour}
           />
-          <Button className='heatmap-button' outline color='light' size='sm'>
+          <Button className='heatmap-button' outline color='light' size='sm' onClick={()=>{this.props.toggleHeatmap()}}>
             Turn off Heatmap
           </Button>
         </div>

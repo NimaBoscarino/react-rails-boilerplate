@@ -5,13 +5,19 @@ class Api::PopularController < ApplicationController
         render :json=>{
             popular_times: popular_times
         }
-        
+
     end
     def show
         render :json => {
             id: params[:id],
             day: params[:day],
             message: "hello!"
+        }
+    end
+    def getnew
+        popular_times = PopularTime.where({day_id: params[:day],hour_id: params[:hour]})
+        render :json => {
+            popular_times: popular_times
         }
     end
     def whatDayIsIt(date)

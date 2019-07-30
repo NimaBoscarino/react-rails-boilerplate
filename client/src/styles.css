@@ -89,7 +89,7 @@ nav .logo {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
   font-family: "Fira Sans", sans-serif;
-  color: white;
+  color: #f9f9f9;
   border: #ffe80a 1px solid;
   margin-top: 2vh;
   padding: 0.8vh 2.5vh;
@@ -162,7 +162,7 @@ nav .logo {
   font-size: calc(32px + 1.7vw);
   font-weight: 700;
   font-family: "Fira Sans", sans-serif;
-  color: white;
+  color: #fffffc;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   margin-bottom: 1.5vh;
 }
@@ -173,7 +173,7 @@ nav .logo {
   font-weight: 500;
   padding: 0 18%;
   font-size: calc(14px + 0.7vw);
-  color: white;
+  color: #fffffc;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   line-height: 1.5;
 }
@@ -189,18 +189,17 @@ nav .logo {
 }
 
 #Intro .intro-carousel-div {
-  padding: 1vh 8vh 1vh 8vh;
-  color: white;
-  margin: 5vh auto 8vh auto;
+  padding: 1vh 10vh 1vh 8vh;
+  color: #fffffc;
+  margin: 5vh auto 5vh auto;
   width: 100%;
 }
 
 #Intro .intro-carousel-div .popular-now-title {
   font-size: calc(12px + 0.4vw);
   font-family: "Fira Sans", sans-serif;
-  color: white;
+  color: #fffffc;
   font-weight: 400;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   padding-top: 0.5vh;
   margin-bottom: 2.5vh;
 }
@@ -218,7 +217,118 @@ nav .logo {
   border: 1px solid #ffce00;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
-  min-height: 30vh;
+  min-height: 22vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+}
+
+#Intro .intro-carousel-div .intro-feature-card {
+  text-align: left;
+  display: block;
+  margin: 0 auto;
+  width: 90vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  position: relative;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .card-title {
+  display: inline-block;
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(10px + 1.3vw);
+  font-weight: 700;
+  width: 100%;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  line-height: 1;
+  margin-top: 0.8vh;
+  vertical-align: middle;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .card-hood {
+  display: block;
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(9px + 0.8vw);
+  font-weight: 500;
+  width: 100%;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  line-height: 1;
+  margin-top: 0.8vh;
+  text-transform: uppercase;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .card-score {
+  font-family: "Fira Sans", sans-serif;
+  color: #fffffc;
+  font-size: calc(7px + 0.6vw);
+  font-weight: 500;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .icon-carousel {
+  font-size: calc(8px + 0.6vw);
+  margin-right: 5px;
+  color: #fffffc;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .info-col {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  min-width: 40%;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .info-col .card-info {
+  color: #fffffc;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.5vh;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .info-col .card-score {
+  color: #fffffc;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .hotspot-col {
+  display: inline-block;
+  min-width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .image-col {
+  min-width: 30%;
+  padding-left: 5%;
+  display: inline-block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,122 +342,51 @@ nav .logo {
   text-align: center;
 }
 
-#Intro .intro-carousel-div .intro-feature-card {
-  text-align: left;
-  display: block;
-  margin: 0 auto;
-  width: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+#Intro .intro-carousel-div .intro-feature-card .card-image-center-box {
+  height: 0;
+  overflow: hidden;
+  padding-top: 52.46332%;
+  background: white;
   position: relative;
 }
 
-#Intro .intro-carousel-div .intro-feature-card .card-title {
-  display: inline-block;
-  font-family: "Fira Sans", sans-serif;
-  font-size: calc(18px + 1.3vw);
-  font-weight: 700;
+#Intro .intro-carousel-div .intro-feature-card .card-image-box {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  line-height: 1;
-  margin-top: 0.8vh;
-  vertical-align: middle;
+  height: 100%;
 }
 
-#Intro .intro-carousel-div .intro-feature-card .card-hood {
-  display: block;
-  font-family: "Fira Sans", sans-serif;
-  font-size: calc(7px + 1.1vw);
-  font-weight: 500;
-  width: 100%;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  line-height: 1;
-  margin-top: 0.8vh;
-  margin-bottom: 1.8vh;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .hood-icon {
-  color: white !important;
-  font-size: calc(7px + 1.1vw) !important;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .card-address {
-  font-family: "Fira Sans", sans-serif;
-  font-size: calc(7px + 0.5vw);
-  line-height: 1;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .card-phone {
-  font-family: "Fira Sans", sans-serif;
-  font-size: calc(7px + 0.5vw);
-}
-
-#Intro .intro-carousel-div .intro-feature-card .card-score {
-  font-family: "Fira Sans", sans-serif;
-  font-size: calc(7px + 0.5vw);
-}
-
-#Intro .intro-carousel-div .intro-feature-card .icon-carousel {
-  font-size: calc(8px + 0.6vw);
-  margin-top: -4px;
-  margin-right: 5px;
-  color: #9ea2a8;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .info-col {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  min-width: 33%;
-  border-right: 1px solid rgba(158, 162, 168, 0.4);
-  border-left: 1px solid rgba(158, 162, 168, 0.4);
-  padding-left: 1.5vh;
-  padding-right: 1.5vh;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .info-col .card-info {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 0.5vh;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .hotspot-col {
-  display: inline-block;
-  min-width: 33%;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .image-col {
-  min-width: 33%;
-  display: inline-block;
-  padding-left: 3.5%;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .image-col .card-image-box {
+#Intro .intro-carousel-div .intro-feature-card .card-img {
+  max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  display: inline-block;
-  margin: 0 auto;
-  padding-top: 1.5vh;
-  padding-bottom: 1.5vh;
-  width: 25vh;
-  height: 25vh;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .image-col .card-img {
-  height: 100%;
+  vertical-align: middle;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .card-text {
   width: 100%;
 }
 
-#Intro .intro-carousel-div .intro-feature-card .hotspot-title {
+#Intro .intro-carousel-div .intro-feature-card .hotspot-number-score-title-div {
+  margin-top: 8px;
+  display: inline-block;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .hotspot-number-score-title-div .hotspot-icon {
+  display: inline-block;
+  width: 12%;
+  margin-top: 4px;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .hotspot-number-score-title-div .hotspot-title {
+  display: inline-block;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(10px + 1vw);
+  font-size: calc(8px + 0.8vw);
   margin-top: 0.8vh;
   font-weight: 700;
-  padding-left: 1.8vh;
+  padding-left: 0.5vh;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -359,38 +398,21 @@ nav .logo {
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div .hotspot-score {
-  font-size: calc(20px + 9vw);
+  font-size: calc(20px + 7vw);
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
-  margin: 0 auto;
   padding: 0;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  z-index: 2;
-  margin-top: -4vh;
+  line-height: 0.8;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div .total-reviews {
-  font-size: calc(8px + 0.5vw);
+  font-size: calc(7px + 0.5vw);
   font-family: "Fira Sans", sans-serif;
   padding: 0;
   margin: 0;
-  margin-top: -4vh;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .hotspot-icon-box {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  width: 4.5vh;
-  z-index: 0;
-}
-
-#Intro .intro-carousel-div .intro-feature-card .hotspot-icon-box .hotspot-icon {
-  width: 100%;
-  margin-left: 4vh;
-  margin-top: 0.5vh;
-  padding-left: 10px;
+  line-height: 0.5;
+  color: #9ea2a8;
 }
 
 #Intro .intro-carousel-div .shadow {
@@ -429,7 +451,7 @@ nav .logo {
 }
 
 #Map .planner-sidebar .trip-title-intro-div .trip-title-text {
-  color: white;
+  color: #f9f9f9;
   font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
 }
@@ -496,7 +518,7 @@ nav .logo {
   font-size: calc(12px + 0.4vw);
   font-weight: 700;
   display: block;
-  color: white;
+  color: #f9f9f9;
   width: 80%;
   line-height: 1.3;
 }
@@ -504,7 +526,7 @@ nav .logo {
 #Map .planner-sidebar .place-type {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(10px + 0.3vw);
-  color: white;
+  color: #f9f9f9;
   text-transform: capitalize;
   margin: 0;
   padding: 0;
@@ -619,7 +641,7 @@ nav .logo {
   -webkit-box-shadow: none;
           box-shadow: none;
   border: 1px #ffe80a solid;
-  color: white;
+  color: #f9f9f9;
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
 }
@@ -739,7 +761,7 @@ nav .logo {
 }
 
 #Map .list-group-item:hover {
-  color: white;
+  color: #f9f9f9;
 }
 
 #Map .hood-place-list-item {
@@ -853,7 +875,7 @@ nav .logo {
 .modal-container .modal-header-box {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7) rgba(7, 7, 7, 0.6));
-  color: white;
+  color: #f9f9f9;
   border-bottom: 1px solid rgba(124, 221, 189, 0.4);
 }
 
@@ -958,7 +980,7 @@ nav .logo {
 }
 
 #CurrentSelectionCard .add-to-night-button:hover {
-  color: white;
+  color: #f9f9f9;
   background: #ffe80a;
 }
 
@@ -999,7 +1021,7 @@ nav .logo {
 
 #Map .map-header .filter-box-div {
   display: inline-block;
-  color: white;
+  color: #f9f9f9;
   padding: 0;
   margin: 0 auto;
   font-size: calc(7px + 0.2vw);
@@ -1023,7 +1045,7 @@ nav .logo {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(30px + 0.8vw);
   font-weight: 700;
-  color: white;
+  color: #f9f9f9;
 }
 
 #Map .map-header .filter-title {
@@ -1055,6 +1077,47 @@ nav .logo {
 #Map .map-header .filter-icons {
   margin-right: 0.5vh;
   font-size: calc(12px + 0.4vw);
+}
+
+#HeatMapSlider {
+  color: #fffffc;
+  font-family: "Fira Sans", sans-serif;
+}
+
+#HeatMapSlider .heat-map-slider-container {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  left: 0;
+  width: 60vh;
+  top: 8vh;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  z-index: 2;
+  padding: 1vh 1.5vh;
+  border-radius: 10px;
+}
+
+#HeatMapSlider .slider-container {
+  width: 90%;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#HeatMapSlider .slider-style {
+  color: #ff9a02;
+}
+
+#HeatMapSlider .slider-title {
+  color: #fffffc;
+  font-size: calc(9px + 0.5vw);
+}
+
+#HeatMapSlider .MuiSlider-markLabel {
+  font-family: "Fira Sans", sans-serif;
+  color: #fffffc;
+  font-size: calc(9px + 0.4vw);
 }
 
 @-webkit-keyframes shadow-pulse {
@@ -1733,13 +1796,13 @@ nav .logo {
 
 #MyNightPlan .stat-div h5.stats-title {
   padding: 0;
-  color: white;
+  color: #f9f9f9;
 }
 
 #MyNightPlan .stat-div .stats-title {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
-  color: white;
+  color: #f9f9f9;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   padding-bottom: 1vh;
@@ -1749,7 +1812,7 @@ nav .logo {
 #MyNightPlan .stat-div .stats-title-text {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
-  color: white;
+  color: #f9f9f9;
   font-weight: 700;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   padding-bottom: 1.5vh;
@@ -1758,13 +1821,13 @@ nav .logo {
 
 #MyNightPlan .stat-div .card-text {
   font-family: "Fira Sans", sans-serif;
-  color: white;
+  color: #f9f9f9;
 }
 
 #MyNightPlan .stat-div .stats-box {
   top: 0;
   font-family: "Fira Sans", sans-serif;
-  color: white;
+  color: #f9f9f9;
   border-bottom: 1px solid #9ea2a8;
   padding-bottom: 0.5vh;
   width: 100%;
@@ -1787,7 +1850,7 @@ nav .logo {
 #MyNightPlan .stat-div .hotspot-score-col p.hotspot-score-number {
   display: block;
   margin: 0 auto;
-  color: white;
+  color: #f9f9f9;
   font-size: 50px;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
@@ -1867,7 +1930,7 @@ nav .logo {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(32px + 1.7vw);
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
-  color: white;
+  color: #f9f9f9;
   font-weight: 700;
   padding-bottom: 2vh;
 }
@@ -2051,7 +2114,7 @@ nav .logo {
   font-size: calc(10px + 3vw);
   font-weight: 700;
   text-transform: uppercase;
-  color: white;
+  color: #f9f9f9;
   padding: 0;
   margin: 0;
   margin-top: -1.5vh;

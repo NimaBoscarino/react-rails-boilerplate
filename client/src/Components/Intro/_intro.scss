@@ -18,7 +18,7 @@
       font-size: $font-size-main-title;
       font-weight: 700;
       font-family: $title-font;
-      color: $white;
+      color: $light-weight;
       text-shadow: $text-shadow-title;
       margin-bottom: 1.5vh;
     }
@@ -29,7 +29,7 @@
       font-weight: 500;
       padding: 0 18%;
       font-size: $font-size-title-intro;
-      color: white;
+      color: $light-weight;
       text-shadow: $text-shadow-title;
       line-height: 1.5;
     }
@@ -46,17 +46,16 @@
   }
 
   .intro-carousel-div {
-    padding: 1vh 8vh 1vh 8vh;
-    color: white;
-    margin: 5vh auto 8vh auto;
+    padding: 1vh 10vh 1vh 8vh;
+    color: $light-weight;
+    margin: 5vh auto 5vh auto;
     width: 100%;
 
     .popular-now-title {
       font-size: $font-size-title-popular-now;
       font-family: $title-font;
-      color: $white;
+      color: $light-weight;
       font-weight: 400;
-      text-shadow: $text-shadow-title;
       padding-top: 0.5vh;
       margin-bottom: 2.5vh;
     }
@@ -72,18 +71,19 @@
     .card {
       border: 1px solid $medium-yellow;
       box-shadow: $text-shadow-box !important;
-      min-height: 30vh;
+      min-height: 22vh;
       display: flex;
       justify-content: center;
       flex-direction: column;
       text-align: center;
+      border-radius: 20px;
     }
 
     .intro-feature-card {
       text-align: left;
       display: block;
       margin: 0 auto;
-      width: 100vh;
+      width: 90vh;
       background: $background-gradient-light;
       position: relative;
 
@@ -108,35 +108,20 @@
         text-shadow: $text-shadow-subtle;
         line-height: 1;
         margin-top: 0.8vh;
-        margin-bottom: 1.8vh;
-      }
-
-      .hood-icon {
-        color: white !important;
-        font-size: $font-size-carousel-hood !important;
-      }
-
-      .card-address {
-        font-family: $title-font;
-        font-size: $font-size-carousel-address;
-        line-height: 1;
-      }
-
-      .card-phone {
-        font-family: $title-font;
-        font-size: $font-size-carousel-address;
+        text-transform: uppercase;
       }
 
       .card-score {
         font-family: $title-font;
+        color: $light-weight;
         font-size: $font-size-carousel-address;
+        font-weight: 500;
       }
 
       .icon-carousel {
         font-size: $font-size-carousel-icons;
-        margin-top: -4px;
         margin-right: 5px;
-        color: $quick-silver;
+        color: $light-weight;
       }
 
       .info-col {
@@ -144,56 +129,88 @@
         padding: 0;
         margin: 0;
         text-align: center;
-        min-width: 33%;
-        border-right: 1px solid $dark-quick-silver;
-        border-left: 1px solid $dark-quick-silver;
+        min-width: 40%;
         padding-left: 1.5vh;
         padding-right: 1.5vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
 
         .card-info {
+          color: $light-weight;
           padding: 0;
           margin: 0;
           margin-bottom: 0.5vh;
+        }
+
+        .card-score {
+          color: $light-weight;
         }
       }
 
       .hotspot-col {
         display: inline-block;
-        min-width: 33%;
+        min-width: 30%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
       }
 
       .image-col {
-        min-width: 33%;
+        min-width: 30%;
+        padding-left: 5%;
         display: inline-block;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
 
-        padding-left: 3.5%;
+      .card-image-center-box {
+        height: 0;
+        overflow: hidden;
+        padding-top: 591.44px / 1127.34px * 100%;
+        background: white;
+        position: relative;
+      }
 
-        .card-image-box {
-          object-fit: cover;
-          display: inline-block;
-          margin: 0 auto;
-          padding-top: 1.5vh;
-          padding-bottom: 1.5vh;
-          width: 25vh;
-          height: 25vh;
-        }
+      .card-image-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
 
-        .card-img {
-          height: 100%;
-        }
+      .card-img {
+        max-width: 100%;
+        object-fit: cover;
+        vertical-align: middle;
       }
 
       .card-text {
         width: 100%;
       }
 
-      .hotspot-title {
-        font-family: $title-font;
-        font-size: $font-size-intro-hotspot-title;
-        margin-top: 0.8vh;
-        font-weight: 700;
-        padding-left: 1.8vh;
-        text-shadow: $map-shadow-header;
+      .hotspot-number-score-title-div {
+        margin-top: 8px;
+        display: inline-block;
+
+        .hotspot-icon {
+          display: inline-block;
+          width: 12%;
+          margin-top: 4px;
+        }
+
+        .hotspot-title {
+          display: inline-block;
+          font-family: $title-font;
+          font-size: $font-size-intro-hotspot-title;
+          margin-top: 0.8vh;
+          font-weight: 700;
+          padding-left: 0.5vh;
+          text-shadow: $map-shadow-header;
+        }
       }
 
       .hotspot-number-div {
@@ -203,14 +220,12 @@
         position: relative;
 
         .hotspot-score {
-          font-size: $font-size-intro-card;
+          font-size: $font-size-intro-card-hotspot-number;
           font-family: $title-font;
           font-weight: 700;
-          margin: 0 auto;
           padding: 0;
           text-shadow: $map-shadow-header;
-          z-index: 2;
-          margin-top: -4vh;
+          line-height: 0.8;
         }
 
         .total-reviews {
@@ -218,23 +233,8 @@
           font-family: $title-font;
           padding: 0;
           margin: 0;
-          margin-top: -4vh;
-        }
-      }
-
-      .hotspot-icon-box {
-        position: absolute;
-        bottom: 0;
-        top: 0;
-        left: 0;
-        width: 4.5vh;
-        z-index: 0;
-
-        .hotspot-icon {
-          width: 100%;
-          margin-left: 4vh;
-          margin-top: 0.5vh;
-          padding-left: 10px;
+          line-height: 0.5;
+          color: $quick-silver;
         }
       }
     }

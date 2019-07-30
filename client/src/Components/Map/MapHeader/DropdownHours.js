@@ -24,11 +24,15 @@ export default class DropdownHours extends React.Component {
   }
 
   wordTime(num) {
+    num--
     if (num === 12) {
       return 12 + " PM"
     }
+    if (num === 0) {
+      return 12 + " AM"
+    }
     if (num > 12) {
-      return num - 13 + " PM"
+      return num - 12 + " PM"
     }
     else return num + " AM"
   }

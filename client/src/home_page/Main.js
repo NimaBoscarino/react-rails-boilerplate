@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import axios from "axios";
 import Intro from "../Components/Intro/Intro";
@@ -79,34 +78,37 @@ class Main extends Component {
   }
 
   showMyNight(selectionList) {
-    selectionList.forEach(place=>{
-      axios.get(`api/popular/${place.id}`).then(response=>{
+    selectionList.forEach(place => {
+      axios.get(`api/popular/${place.id}`).then(response => {
         // result.push(this.processData(response.data, place))
-        place.popularTimes=response.data.popular_times;
-        this.setState({
-          showMyNightPlan: true,
-          nightList: selectionList
-        }, ()=>{
-          scrollToComponent(this.MyNightPlan, {
-            offset: 0,
-            align: "top",
-            duration: 1500,
-          })
-        })
-      })
-    })
+        place.popularTimes = response.data.popular_times;
+        this.setState(
+          {
+            showMyNightPlan: true,
+            nightList: selectionList
+          },
+          () => {
+            scrollToComponent(this.MyNightPlan, {
+              offset: 0,
+              align: "top",
+              duration: 1500
+            });
+          }
+        );
+      });
+    });
   }
 
   filterPlaces(type) {
-    if (type==='reset'){
+    if (type === "reset") {
       this.setState({
-        places:this.places
-      })
+        places: this.places
+      });
       return;
     }
     this.setState({
-      places:this.places.filter(place=>place.types.includes(type))
-    })
+      places: this.places.filter(place => place.types.includes(type))
+    });
   }
 
   componentDidMount() {
@@ -116,32 +118,81 @@ class Main extends Component {
       duration: 1500,
       ease: "outCirc"
     });
-    if (!this.places) {
-      axios.get("/neighbourhoods").then(response => {
-        const neighbourhoods = this.processDataNeighbourhoods(
-          response.data.neighbourhoods
-        );
-        this.setState({
-          neighbourhoods: neighbourhoods
+
+    axios.get("/neighbourhoods").then(response => {
+      const neighbourhoods = this.processDataNeighbourhoods(
+        response.data.neighbourhoods
+      );
+      this.setState({
+        neighbourhoods: neighbourhoods
+      });
+    axios
+      .get("/places") // You can simply make your requests to "/api/whatever you want"
+      .then(response => {
+        const places = response.data.places;
+        places.forEach(place => {
+          place.currentBusyScore = Math.ceil(
+            place.yelp_rating * 5 +
+              place.rating * 5 +
+              place.current_busy_value.busy_value * 0.5
+           );
         });
-        axios
-          .get("/places") // You can simply make your requests to "/api/whatever you want"
-          .then(response => {
-            const places = response.data.places;
-            places.forEach(place => {
-              place.currentBusyScore = Math.ceil(
-                place.yelp_rating * 5 +
-                  place.rating * 5 +
-                  place.current_busy_value.busy_value * 0.5
-              );
-            });
-            console.log(places[0]);
-            this.places=places;
+        console.log(places[0]);
+        this.places = places;
+        this.setState({
+          places: places
+        });
+      });
+    });
+  }
+
+  componentDidUpdate(oldProps, oldStates) {
+    if (oldStates.day !== this.state.day || oldStates.hour !== this.state.hour) {
+      axios
+        .get(`api/popular/day/${this.state.day}/hour/${this.state.hour}`)
+        .then(response => {
+
+          // Hacky way of updating popular data
+          const start_time = Date.now()
+
+          let places = [...this.state.places]
+          places.sort((a, b) => {return a.id - b.id})
+
+          for (let i = 0; i < places.length; i++) {
+            places[i].current_busy_value.busy_value = response.data.popular_times[i].busy_value
+          }
+
+          places.forEach(place => {
+          place.currentBusyScore = Math.ceil(
+            place.yelp_rating * 5 +
+              place.rating * 5 +
+              place.current_busy_value.busy_value * 0.5
+           );
+          });
+
+          this.places = places;
+          this.setState({
+            places: places
+          })
+
+          // The code underneath is to update popular_time properly, but it takes way too long,
+          // 13 seconds on my laptop... gonna cheat instead
+          /*
+          const start_time = Date.now()
+          let places = this.state.places
+          response.data.popular_times.forEach(popular_time => {
+            let index = places.findIndex((place => place.id === popular_time.place_id))
+            places[index].current_busy_value.busy_value = popular_time.busy_value
             this.setState({
               places: places
-            });
+            })
           });
-      });
+          console.log(oldStates.places)
+          console.log(this.state.places)
+          const millis = Date.now() - start_time;
+          console.log("seconds elapsed = " + Math.floor(millis/1000))
+          */
+        });
     }
   }
 
@@ -170,19 +221,25 @@ class Main extends Component {
         <div id='NightOutBuilder'>
           <div className='container-fluid'>
             <div className='d-flex justify-content-center'>
-              <button
-                className='btn btn-outline-light build-night-button'
-                onClick={() =>
-                  scrollToComponent(this.Map, {
-                    offset: 0,
-                    align: "top",
-                    duration: 1500,
-                    ease: "inCirc"
-                  })
-                }>
-                <FaMapMarked className='map-icon' />
-                See HotSpots Map
-              </button>
+              <div className='night-out-prompt-div'>
+                <p className='night-out-summary'>
+                  Explore popular neighbourhoods, find the hottest places and when you should go.
+                </p>
+
+                <button
+                  className='btn btn-outline-light build-night-button'
+                  onClick={() =>
+                    scrollToComponent(this.Map, {
+                      offset: 0,
+                      align: "top",
+                      duration: 1500,
+                      ease: "inCirc"
+                    })
+                  }>
+                  <FaMapMarked className='map-icon' />
+                  See HotSpots Map
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -200,9 +257,12 @@ class Main extends Component {
           setHour = {this.setHour}
         />
         {this.state.showMyNightPlan && (
-          <MyNightPlan nightList={this.state.nightList} ref={section => {
-            this.MyNightPlan = section;
-          }} />
+          <MyNightPlan
+            nightList={this.state.nightList}
+            ref={section => {
+              this.MyNightPlan = section;
+            }}
+          />
         )}
         {/* <MyNightPlanDesign /> */}
         {/* <AreaSelector />
