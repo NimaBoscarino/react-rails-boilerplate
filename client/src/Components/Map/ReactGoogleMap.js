@@ -15,22 +15,36 @@ class ReactGoogleMap extends Component {
   }
 
   render() {
-    const heatMapData =
+    const heatMapData = this.props.heatmapData || (
       this.props.places &&
       this.props.places.map(place => {
         return {
           location: new google.maps.LatLng(place.lat, place.long),
           weight: place.currentBusyScore
         };
-      });
-
-    let GoogleMapExample = withScriptjs(withGoogleMap(props => (
+      }));
+    let GoogleMapExample;
+    if (this.props.showHeatmap) {
+      const icon = {
+        url: "https://i.ibb.co/J757PNs/super-small-map-marker.png"
+      };
+      GoogleMapExample = withScriptjs(withGoogleMap(props => (
       <GoogleMap
         defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
         defaultZoom={14}
         defaultOptions={{ styles: mapStyles }}>
-        {this.props.showHeatmap
-          ? this.props.neighbourhoods &&
+        {this.props.places && (
+          <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
+        )}
+        
+      </GoogleMap>
+    )))} else {
+      GoogleMapExample = GoogleMapExample = withScriptjs(withGoogleMap(props => (
+        <GoogleMap
+          defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
+          defaultZoom={14}
+          defaultOptions={{ styles: mapStyles }}>
+          {this.props.neighbourhoods &&
             this.props.neighbourhoods.map(element => {
               return (
                 <Polygon
@@ -49,17 +63,15 @@ class ReactGoogleMap extends Component {
                   }}
                 />
               );
-            })
-          : this.props.places && (
-              <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
-            )}
-      </GoogleMap>
-    )));
+            })}
+        </GoogleMap>
+      )))
+    }
     if (this.props.mapCenterNeighbourhood) {
       const icon = {
         url: "https://i.ibb.co/jvB4mBH/marker.png"
       };
-      GoogleMapExample = withGoogleMap(props => (
+      GoogleMapExample = withScriptjs(withGoogleMap(props => (
         <GoogleMap
           defaultCenter={this.props.centerNeighbourhood.center}
           defaultZoom={14}
@@ -93,7 +105,7 @@ class ReactGoogleMap extends Component {
               );
             })}
         </GoogleMap>
-      ));
+      )));
     }
     if (this.props.mapCenterPlace) {
       const currentSelection = {
@@ -104,7 +116,7 @@ class ReactGoogleMap extends Component {
         url: "https://i.ibb.co/Sdt6P2G/hearted.png"
       };
 
-      GoogleMapExample = withGoogleMap(props => (
+      GoogleMapExample = withScriptjs(withGoogleMap(props => (
         <GoogleMap
           defaultCenter={{
             lat: this.props.centerPlace.lat,
@@ -140,7 +152,7 @@ class ReactGoogleMap extends Component {
               );
             })}
         </GoogleMap>
-      ));
+      )));
     }
 
     return (
