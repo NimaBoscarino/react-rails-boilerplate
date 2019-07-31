@@ -19,7 +19,6 @@ class HoodList extends Component {
 
   makeScore(places) {
     let thesePlaces = places.filter(place => place.neighbourhood_id === this.props.neighbourhood.id)
-    console.log(typeof thesePlaces[0].current_hot_score)
     return Math.ceil(thesePlaces.reduce((acc,cur)=>acc+cur.current_hot_score,0)/thesePlaces.length);
   }
 

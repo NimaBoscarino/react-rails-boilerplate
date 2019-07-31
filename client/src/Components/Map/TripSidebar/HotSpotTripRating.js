@@ -2,7 +2,6 @@ import React from "react";
 import icon from '../../../global-assets/hotspot-score-icon-small.png';
 
 function HotSpotTripRating(props) {
-  console.log(props.places)
   return (
     <div className='hotspot-stat-box'>
      <div className='hotspot-title-div'>

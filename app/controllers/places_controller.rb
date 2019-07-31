@@ -33,7 +33,7 @@ class PlacesController < ApplicationController
         # all_popular_times.each{|each_popular_time| all_popular_times_array.push(each_popular_time.attributes)}
 
         #current_busy_value=place.popular_times.select(:busy_value).where(day_id: day).where(hour_id: hour).first
-        current_hot_score=place.hot_scores.select(:hot_score).where(day_id: day).where(hour_id: hour).first
+        current_hot_score=place.popular_times.select(:hot_score).where(day_id: day).where(hour_id: hour).first
 
         all_yelp_photos=place.yelp_photos.select(:url)
         all_yelp_photos_array=[]
