@@ -34,7 +34,7 @@ class HoodPlaceList extends Component {
         </div>
         <div className='col hood-place-hotspot-score-div'>
           <p className='hotspot-score-number-small'>
-            {this.props.place.current_hot_score}{" "}
+            {this.props.place.current_hot_score}%
             <span className='icon'>
               <img
                 className='hotspot-score-icon-small'

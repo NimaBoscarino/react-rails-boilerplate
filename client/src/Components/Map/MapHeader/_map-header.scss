@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     right: 0;
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     min-height: 7vh;
     z-index: 3;
@@ -12,7 +12,10 @@
     // -webkit-box-shadow: $map-shadow-header;
     // -moz-box-shadow: $map-shadow-header;
     // box-shadow: $map-shadow-header;
-    // background: $background-gradient-medium;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    background: $background-gradient-medium;
     // border-bottom: 1px solid rgba($dark-quick-silver, 0.5);
     display: flex;
     align-items: center;
@@ -29,18 +32,19 @@
       flex-direction: row;
 
       .filter-prompt {
-        padding-top: 1.5vh;
+        padding-top: 2.6vh;
         display: inline-block;
         font-size: $font-size-map-header-prompt;
         color: $light-weight;
         font-family: $title-font;
         white-space: nowrap;
         line-height: 0.6;
-        font-weight: 700;
-        text-shadow:$map-shadow-header;
+        font-weight: 500;
+        text-shadow: $map-shadow-header;
       }
 
       .btn-secondary {
+        padding-top: 1.9vh;
         background-color: transparent;
         border: none;
         font-family: $title-font;
@@ -49,7 +53,7 @@
         font-weight: 700;
         line-height: 1;
         border-radius: 0;
-        text-shadow:$map-shadow-header;
+        text-shadow: $map-shadow-header;
       }
 
       .drop-down-button {
@@ -96,7 +100,7 @@
         font-weight: 700;
         color: $light-weight;
         line-height: 1;
-        padding: 0;
+        padding: 2vh 0 0 0;
         margin: 0;
       }
     }

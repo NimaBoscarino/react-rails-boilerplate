@@ -112,12 +112,6 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    scrollToComponent(this.Map, {
-      offset: 0,
-      align: "top",
-      duration: 1500,
-      ease: "outSine"
-    });
 
     axios.get("/neighbourhoods").then(response => {
       const neighbourhoods = this.processDataNeighbourhoods(

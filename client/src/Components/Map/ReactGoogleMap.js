@@ -33,14 +33,14 @@ class ReactGoogleMap extends Component {
 
     let GoogleMapExample;
     let icon = {
-      url: "https://i.ibb.co/J757PNs/super-small-map-marker.png"
+      url: "https://i.ibb.co/DfqfvJy/supersmall-icon-resized.png"
     };
     GoogleMapExample = GoogleMapExample = withScriptjs(
       withGoogleMap(props => (
         <GoogleMap
           defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
           defaultZoom={14}
-          
+          mapTypeId={"satellite"}
           defaultOptions={{ styles: mapStyles }}>
           {this.props.neighbourhoods &&
             this.props.neighbourhoods.map(element => {
@@ -83,13 +83,14 @@ class ReactGoogleMap extends Component {
 
     if (this.props.mapCenterNeighbourhood) {
       const icon = {
-        url: "https://i.ibb.co/jvB4mBH/marker.png"
+        url: "https://i.ibb.co/DfqfvJy/supersmall-icon-resized.png"
       };
       GoogleMapExample = withScriptjs(
         withGoogleMap(props => (
           <GoogleMap
             defaultCenter={this.props.centerNeighbourhood.center}
             defaultZoom={16}
+            mapTypeId={"satellite"}
             defaultOptions={{ styles: mapStyles }}>
             <Polygon
               paths={this.props.centerNeighbourhood.borderPoints}
@@ -126,14 +127,14 @@ class ReactGoogleMap extends Component {
     }
     if (this.props.mapCenterPlace) {
       const currentSelection = {
-        url: "https://i.ibb.co/yf1NfV2/current-selection.png"
+        url: "https://i.ibb.co/bPqypzM/selected-map-icon.png"
       };
 
       const onTheList = {
         url: "https://i.ibb.co/Sdt6P2G/hearted.png"
       };
       const defaultIcon = {
-        url: "https://i.ibb.co/jvB4mBH/marker.png"
+        url: "https://i.ibb.co/DfqfvJy/supersmall-icon-resized.png"
       };
       GoogleMapExample = withScriptjs(
         withGoogleMap(props => (
@@ -143,6 +144,7 @@ class ReactGoogleMap extends Component {
               lng: this.props.centerPlace.long
             }}
             defaultZoom={16}
+            mapTypeId={"satellite"}
             defaultOptions={{ styles: mapStyles }}>
             {this.props.showMarkers &&
               this.props.places.map(place => {

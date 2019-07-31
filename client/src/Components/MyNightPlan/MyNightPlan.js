@@ -12,12 +12,12 @@ class MyNightPlan extends Component {
           <div className='my-night-container'>
             <div className='row my-night-title-row'>
               <div className='col'>
-                <h1 className='my-night-title'>My Night</h1>
+                <h1 className='my-night-title'>My Plan</h1>
                 <p className='my-night-intro'>
                   {" "}
-                  <FaInfoCircle className="info-circle-icon" />
-                  Suggested time is provided as an estimate of when to arrive to avoid excessive wait
-                  times.
+                  <FaInfoCircle className='info-circle-icon' />
+                  Suggested time is provided as an estimate of when to arrive to
+                  avoid excessive wait times.
                 </p>
               </div>
             </div>
@@ -35,7 +35,7 @@ class MyNightPlan extends Component {
                         <span className='stats-icon'>
                           <FaChartLine />
                         </span>{" "}
-                        Your Night Stats
+                        Your Plan Stats
                       </h5>
                     </div>
                     <div className='card-body'>
@@ -45,14 +45,16 @@ class MyNightPlan extends Component {
                             <div className='col hotspot-score-col d-flex align-items-stretch'>
                               <div className='row w-100'>
                                 <h5 className='hotspot-score-title '>
-                                  Your Night's HotSpot Score
+                                  Your HotSpot Score
                                 </h5>
 
                                 <p className='hotspot-score-number'>
-                                  {Math.ceil(this.props.nightList.reduce(
-                                    (acc, cur) => acc + cur.current_hot_score,
-                                    0
-                                  )/this.props.nightList.length)}
+                                  {Math.ceil(
+                                    this.props.nightList.reduce(
+                                      (acc, cur) => acc + cur.current_hot_score,
+                                      0
+                                    ) / this.props.nightList.length
+                                  )}
                                 </p>
                               </div>
                             </div>

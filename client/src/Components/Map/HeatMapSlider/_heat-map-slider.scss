@@ -8,13 +8,14 @@
     right: 0;
     left: 0;
     width: 45%;
-    top: 7.5vh;
+    top: 10vh;
     margin: 0 auto;
     min-height: 7.5vh;
-    background: $background-gradient-medium;
+    background: $background-gradient-light;
     z-index: 2;
     padding: 2vh 1.5vh 1vh 1.5vh;
     box-shadow: $map-shadow-header;
+    border-radius: 10px;
 
   }
 
