@@ -51,8 +51,8 @@ nav .logo {
 
 @-webkit-keyframes shadow-pulse-live {
   0% {
-    -webkit-box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.5);
-            box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.5);
+    -webkit-box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.3);
+            box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.3);
   }
   100% {
     -webkit-box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
@@ -62,8 +62,8 @@ nav .logo {
 
 @keyframes shadow-pulse-live {
   0% {
-    -webkit-box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.5);
-            box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.5);
+    -webkit-box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.3);
+            box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.3);
   }
   100% {
     -webkit-box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
@@ -128,13 +128,13 @@ nav .logo {
   background: #ff9a02;
   text-shadow: none;
   font-size: calc(9px + 0.2vw);
-  -webkit-animation: shadow-pulse-live 1.5s infinite;
-          animation: shadow-pulse-live 1.5s infinite;
   margin-right: 0.5vh;
+  max-width: 50%;
+  margin: 0 0 0 auto;
 }
 
 #Intro .intro-carousel-div .card {
-  border: 1px solid #ffce00;
+  border: 1px solid rgba(7, 7, 7, 0.6);
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
   display: -webkit-box;
@@ -155,16 +155,17 @@ nav .logo {
   text-align: left;
   display: block;
   margin: 0 auto;
-  width: 90vh;
+  width: 70vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   position: relative;
+  min-height: 20vh;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .card-title {
   display: inline-block;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(9px + 1.3vw);
+  font-size: calc(9px + 1.2vw);
   font-weight: 700;
   width: 100%;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -173,16 +174,29 @@ nav .logo {
   vertical-align: middle;
 }
 
-#Intro .intro-carousel-div .intro-feature-card .card-hood {
+#Intro .intro-carousel-div .intro-feature-card .card-type {
+  color: #fffffc;
   display: block;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(8px + 0.5vw);
-  font-weight: 500;
+  font-size: calc(8px + 0.7vw);
+  font-weight: 300;
   width: 100%;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   line-height: 1;
   margin-top: 0.8vh;
-  text-transform: uppercase;
+  text-transform: capitalize;
+}
+
+#Intro .intro-carousel-div .intro-feature-card .card-hood {
+  display: block;
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(8px + 0.5vw);
+  font-weight: 300;
+  width: 100%;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  line-height: 1;
+  margin-top: 0.8vh;
+  text-transform: capitalize;
 }
 
 #Intro .intro-carousel-div .intro-feature-card .card-score {
@@ -291,7 +305,7 @@ nav .logo {
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-score-title-div .hotspot-title {
   display: inline-block;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(8px + 0.8vw);
+  font-size: calc(8px + 0.6vw);
   margin-top: 0.4vh;
   font-weight: 700;
   padding-left: 0.5vh;
@@ -306,7 +320,7 @@ nav .logo {
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div .hotspot-score {
-  font-size: calc(18px + 6vw);
+  font-size: calc(14px + 5.5vw);
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   padding: 0;
@@ -929,7 +943,6 @@ nav .logo {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
   margin-bottom: 2vh;
-  border: 1px solid rgba(244, 242, 243, 0.2);
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   color: #fffffc;
@@ -954,6 +967,21 @@ nav .logo {
   text-align: left;
 }
 
+#CurrentSelectionCard .info-p {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 300;
+  font-size: calc(9px + 0.9vh);
+  line-height: 1;
+}
+
+#CurrentSelectionCard .titles {
+  font-size: calc(9px + 0.6vh);
+  font-family: "Fira Sans", sans-serif;
+  text-transform: uppercase;
+  margin-right: 5px;
+  color: #9ea2a8;
+}
+
 #CurrentSelectionCard .current-card-title {
   border-top-right-radius: 1vh;
   border-top-left-radius: 1vh;
@@ -962,7 +990,6 @@ nav .logo {
   font-size: calc(20px + 0.4vw);
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
   background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
-  border-bottom: 1px solid rgba(255, 232, 10, 0.8);
 }
 
 #CurrentSelectionCard .add-to-night-button {
@@ -970,22 +997,26 @@ nav .logo {
   color: black;
   background-color: #ffe80a;
   font-weight: 700;
-  top: 0.6vh;
+  top: 0.4vh;
   right: 7px;
   margin: auto 0;
   font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
-  border-color: #ffce00;
-  border: none;
+  border-color: transparent;
 }
 
 #CurrentSelectionCard .add-to-night-button:hover {
-  color: #fffffc;
+  color: #070707;
   background: #ffe80a;
+  border-color: #d6e5e3;
 }
 
 #CurrentSelectionCard .add-to-night-button:hover .icon-plus {
   color: #070707;
+}
+
+#CurrentSelectionCard .score-col {
+  text-align: left;
 }
 
 #CurrentSelectionCard .icon-plus {

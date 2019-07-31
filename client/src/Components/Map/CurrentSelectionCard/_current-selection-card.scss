@@ -32,7 +32,6 @@
     min-height: 25vh;
     background: $background-gradient-medium;
     margin-bottom: 2vh;
-    border: 1px solid rgba($very-light-grey, 0.2);
     box-shadow: $text-shadow-box;
     color: $light-weight;
   }
@@ -55,6 +54,21 @@
     text-align: left;
   }
 
+  .info-p {
+    font-family: $title-font;
+    font-weight: 300;
+    font-size: $font-size-current-selection-p;
+    line-height: 1;
+  }
+
+  .titles {
+    font-size: $font-size-current-selection-titles;
+    font-family: $title-font;
+    text-transform: uppercase;
+    margin-right: 5px;
+    color: $quick-silver;
+  }
+
   .current-card-title {
     border-top-right-radius: 1vh;
     border-top-left-radius: 1vh;
@@ -62,31 +76,33 @@
     font-family: $title-font;
     font-size: $font-size-xxxl;
     background: $background-gradient-blue-dark;
-    border-bottom: 1px solid rgba($bright-yellow, 0.8);
   }
 
   .add-to-night-button {
     position: absolute;
     color: black;
     background-color: $bright-yellow;
-
     font-weight: 700;
-    top: 0.6vh;
+    top: 0.4vh;
     right: 7px;
     margin: auto 0;
     font-family: $title-font;
     font-size: $font-size-large;
-    border-color: $medium-yellow;
-    border: none;
+    border-color: transparent;
   }
 
   .add-to-night-button:hover {
-    color: $light-weight;
+    color: $smoky-black;
     background: $bright-yellow;
+    border-color: $accent-grey;
 
     .icon-plus {
       color: $dark-blue-gradient-top;
     }
+  }
+
+  .score-col {
+    text-align: left;
   }
 
   .icon-plus {

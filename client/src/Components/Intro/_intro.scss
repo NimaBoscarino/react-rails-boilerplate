@@ -1,7 +1,7 @@
 #Intro {
   @keyframes shadow-pulse-live {
     0% {
-      box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.5);
+      box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.3);
     }
     100% {
       box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
@@ -66,14 +66,14 @@
       background: $orange;
       text-shadow: none;
       font-size: $font-size-small-icon;
-      animation: shadow-pulse-live 1.5s infinite;
       margin-right: 0.5vh;
+      max-width: 50%;
+      margin: 0 0 0 auto;
     }
 
     .card {
-      border: 1px solid $medium-yellow;
+      border: 1px solid $light-smoky-black;
       box-shadow: $text-shadow-box !important;
-  
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -85,9 +85,10 @@
       text-align: left;
       display: block;
       margin: 0 auto;
-      width: 90vh;
+      width: 70vh;
       background: $background-gradient-light;
       position: relative;
+      min-height: 20vh;
 
       .card-title {
         display: inline-block;
@@ -101,16 +102,30 @@
         vertical-align: middle;
       }
 
-      .card-hood {
+      .card-type {
+        color: $light-weight;
         display: block;
         font-family: $title-font;
-        font-size: $font-size-carousel-hood;
-        font-weight: 500;
+        font-size: $font-size-carousel-type;
+        font-weight: 300;
         width: 100%;
         text-shadow: $text-shadow-subtle;
         line-height: 1;
         margin-top: 0.8vh;
-        text-transform: uppercase;
+        text-transform: capitalize;
+      }
+
+
+      .card-hood {
+        display: block;
+        font-family: $title-font;
+        font-size: $font-size-carousel-hood;
+        font-weight: 300;
+        width: 100%;
+        text-shadow: $text-shadow-subtle;
+        line-height: 1;
+        margin-top: 0.8vh;
+        text-transform: capitalize;
       }
 
       .card-score {
