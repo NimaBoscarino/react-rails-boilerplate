@@ -56,7 +56,6 @@ class MyNightPlanCards extends Component {
     this.setState(state => ({ collapse: !state.collapse }));
   }
   render() {
-    console.log(this.props)
     return (
       <div className='container-fluid'>
         <div className='row'>

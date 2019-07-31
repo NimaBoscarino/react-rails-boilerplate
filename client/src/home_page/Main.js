@@ -69,12 +69,16 @@ class Main extends Component {
   }
 
   setHour(newTime) {
-    let toPass = newTime.hour24;
-    toPass++
-    if (toPass === 25) {
-      toPass = 1
+    if (typeof newTime === "object") {
+      let toPass = newTime.hour24;
+      toPass++
+      if (toPass === 25) {
+        toPass = 1
+      }
+      this.setState({hour: toPass})
+    } else {
+      this.setState({hour: newTime})
     }
-    this.setState({hour: toPass})
   }
 
   showMyNight(selectionList) {
@@ -148,9 +152,11 @@ class Main extends Component {
           // Hacky way of updating popular data
           let places = [...this.state.places]
           places.sort((a, b) => {return a.id - b.id})
+          let hot_scoring = [...response.data.hot_scores]
+          hot_scoring.sort((a, b) => {return a.place_id - b.place_id})
 
           for (let i = 0; i < places.length; i++) {
-            places[i].current_hot_score = response.data.hot_scores[i].hot_score
+            places[i].current_hot_score = hot_scoring[i].hot_score
           }
 
           this.places = places;

@@ -29,6 +29,7 @@ class HoodPlaceList extends Component {
               .filter(element =>
                 ["bar", "restaurant", "night_club"].includes(element)
               )
+              .map(element => (element === "night_club") ? element = "Night Club" : element)
               .join(" / ")}
           </p>
         </div>
