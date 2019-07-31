@@ -913,6 +913,17 @@ nav .logo {
   width: 100%;
 }
 
+@keyframes shadow-pulse-live {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(255, 232, 10, 0.8);
+            box-shadow: 0 0 0 0px rgba(255, 232, 10, 0.8);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 232, 10, 0);
+            box-shadow: 0 0 0 10px rgba(255, 232, 10, 0);
+  }
+}
+
 #CurrentSelectionCard .card-container {
   width: 100%;
   position: absolute;
@@ -1020,10 +1031,57 @@ nav .logo {
 
 #CurrentSelectionCard .score-col {
   text-align: center;
+  margin: 0 4vh;
+  display: inline-block;
+  width: 50%;
+}
+
+#CurrentSelectionCard .score-col .hot-score-number {
+  font-size: calc(9px + 10vh);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  padding-top: 0;
+  color: #fffffc;
 }
 
 #CurrentSelectionCard .score-col .hot-score-title {
-  font-size: calc(10px + 20vh);
+  display: inline-block;
+  font-size: calc(8px + 0.9vh);
+  line-height: 1;
+  font-family: "Fira Sans", sans-serif;
+  color: #fffffc;
+}
+
+#CurrentSelectionCard .score-col .title-div {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#CurrentSelectionCard .score-col .titles-tags {
+  margin-top: 0;
+}
+
+#CurrentSelectionCard .score-col .hotspot-icon {
+  display: inline-block;
+  width: 8%;
+  margin-right: 5px;
+}
+
+#CurrentSelectionCard .score-col .live {
+  margin-top: -10px;
+}
+
+#CurrentSelectionCard .score-col .pulse {
+  margin-top: -10px;
+  line-height: 1;
+  -webkit-animation: shadow-pulse 1s infinite;
+          animation: shadow-pulse 1s infinite;
+}
+
+#CurrentSelectionCard .address-tag {
+  margin-top: 20px;
 }
 
 #CurrentSelectionCard .icon-plus {
@@ -1034,11 +1092,6 @@ nav .logo {
 
 #CurrentSelectionCard .see-images-button {
   margin-top: 5px;
-}
-
-#CurrentSelectionCard .hot-score-number {
-  font-size: calc(9px + 5vh);
-  font-family: "Fira Sans", sans-serif;
 }
 
 #Map .map-header {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CurrentSelectionModal from "./CurrentSelectionModal";
+import icon from "../../../global-assets/hotspot-score-icon-small.png";
 import { Button } from "reactstrap";
 
 import { MdPhone } from "react-icons/md";
@@ -31,15 +32,17 @@ class CurrentSelectionCard extends Component {
                         />
                       </div>
                       <div className='col current-card-info'>
-                        <p className='card-type info-p'>
+                        <p className='current-address info-p titles-tag'>
                           <span className='titles'>Tags: </span>
+                        </p>
+                        <p className='current-address types info-p'>
                           {this.props.currentSelection.yelp_categories.map(
                             category => {
                               return category + " ";
                             }
                           )}
                         </p>
-                        <p className='current-address info-p'>
+                        <p className='current-address info-p address-tag'>
                           <span className='titles'>Address: </span>
                         </p>
                         <p className='current-address info-p'>
@@ -54,19 +57,23 @@ class CurrentSelectionCard extends Component {
                           <span className='titles'>Phone: </span>
                           {this.props.currentSelection.yelp_display_phone}
                         </p>
-
-                        <p className='card-average-wait info-p'>
-                          <span className='titles'>Avg Time Spent: </span>
-                          {this.props.currentSelection.time_spent_max} mins.
-                        </p>
                       </div>
                       <div className='col score-col'>
-                        <p classname='hot-score-title'>
-                          Current Hotspot Score:{"  "}{" "}
-                        </p>
-                        <p classname='hot-score-number'>
+                        <p className='hot-score-number'>
                           {this.props.currentSelection.current_hot_score}
                         </p>
+
+                        <div className='title-div'>
+                          <p className='hot-score-title'>
+                            {" "}
+                            Current Hot Score{"  "}{" "}
+                            <img className='hotspot-icon' src={icon} alt={""} />
+                          </p>
+                          <p className="live">
+                            {" "}
+                            <span class='badge badge-light pulse'>LIVE</span>
+                          </p>
+                        </div>
                       </div>
                     </div>
 
