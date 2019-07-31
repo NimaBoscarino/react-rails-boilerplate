@@ -38,7 +38,7 @@ class ReactGoogleMap extends Component {
       withGoogleMap(props => (
         <GoogleMap
           defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
-          defaultZoom={14}
+          defaultZoom={15}
           defaultOptions={{ styles: mapStyles }}>
           {this.props.neighbourhoods &&
             this.props.neighbourhoods.map(element => {
@@ -49,7 +49,7 @@ class ReactGoogleMap extends Component {
                   label={`${element.name}`}
                   options={{
                     fillColor: "#000",
-                    fillOpacity: 0.4,
+                    fillOpacity: 0.1,
                     strokeColor: "#ff5a00",
                     strokeOpacity: 0.4,
                     strokeWeight: 2
@@ -89,7 +89,7 @@ class ReactGoogleMap extends Component {
         withGoogleMap(props => (
           <GoogleMap
             defaultCenter={this.props.centerNeighbourhood.center}
-            defaultZoom={14}
+            defaultZoom={16}
             defaultOptions={{ styles: mapStyles }}>
             <Polygon
               paths={this.props.centerNeighbourhood.borderPoints}
@@ -105,10 +105,7 @@ class ReactGoogleMap extends Component {
             />
             {this.props.showMarkers &&
               this.props.places
-                .filter(
-                  el =>
-                    el.neighbourhood_id === this.props.centerNeighbourhood.id
-                )
+                
                 .map(place => {
                   return (
                     <Marker
