@@ -22,14 +22,14 @@ class Charts extends Component {
     //     })
     //   })
     // })
-    
+
   }
 
   processData(propsData) {
     const result=[];
     propsData.forEach(place=>{
-      if (place.popularTimes){
-      const arr = place.popularTimes.sort((a,b)=>a.hour_id-b.hour_id);
+      if (place.hotScores){
+      const arr = place.hotScores.sort((a,b)=>a.hour_id-b.hour_id);
       let data = arr
         .map(element => {
           return {

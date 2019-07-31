@@ -36,7 +36,6 @@ class HoodList extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <li className='list-group-item hood-name-li'>

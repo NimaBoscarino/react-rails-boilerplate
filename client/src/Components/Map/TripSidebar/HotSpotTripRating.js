@@ -11,8 +11,8 @@ function HotSpotTripRating(props) {
       <h1 className='hotspot-stat-number glow'>
         {
           (props.places.length!==0) ?
-          (props.places.reduce((acc, cur)=>
-            acc+cur.current_hot_score,0))/(props.places.length)
+          Math.ceil((props.places.reduce((acc, cur)=>
+            acc+cur.current_hot_score,0))/(props.places.length))
             : 0
         }
       </h1>
