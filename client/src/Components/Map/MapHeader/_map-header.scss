@@ -18,6 +18,7 @@
     justify-content: center;
     flex-direction: row;
     padding-left: 2vh;
+  
 
     .filter-box-div {
       display: inline-block;
@@ -86,7 +87,6 @@
       text-align: center;
       display: none;
 
-
       h4.selected-hood {
         font-family: $title-font;
         font-size: $font-size-hooder-header;
@@ -120,7 +120,6 @@
     }
 
     .filter-buttons {
-  
       background: transparent;
       font-size: $font-size-filter-button-toolbar;
 
