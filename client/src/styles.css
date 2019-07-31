@@ -431,12 +431,12 @@ nav .logo {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 7vh;
-  border-bottom: 5px #ffe80a solid;
+  margin-top: 12vh;
+  border-bottom: 5px #d6e5e3 solid;
   position: absolute;
   right: 0;
   width: 18%;
-  height: 93vh;
+  height: 88vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.4)), to(rgba(16, 12, 8, 0.2)));
   background: linear-gradient(to bottom, rgba(16, 12, 8, 0.4), rgba(16, 12, 8, 0.2));
 }
@@ -634,8 +634,8 @@ nav .logo {
 }
 
 #Map .sidebar-button {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
   margin-top: 1vh;
   font-size: calc(10px + 0.3vw);
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
@@ -658,19 +658,18 @@ nav .logo {
 }
 
 #Map .icon-buttons {
-  color: #ffe80a;
   margin-right: 5px;
   margin-top: -4px;
 }
 
 #Map .hood-sidebar {
-  border-bottom: 5px #ffe80a solid;
+  border-bottom: 5px #d6e5e3 solid;
   position: absolute;
   overflow: scroll;
-  margin-top: 7vh;
+  margin-top: 12vh;
   left: 0;
   width: 18%;
-  height: 93vh;
+  height: 88vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.4)), to(rgba(16, 12, 8, 0.2)));
   background: linear-gradient(to bottom, rgba(16, 12, 8, 0.4), rgba(16, 12, 8, 0.2));
 }
@@ -931,7 +930,7 @@ nav .logo {
   width: 60%;
   position: absolute;
   bottom: 0;
-  border-bottom: 5px #ffe80a solid;
+  border-bottom: 5px #d6e5e3 solid;
 }
 
 #CurrentSelectionCard .card-header {
@@ -1006,10 +1005,10 @@ nav .logo {
 
 #CurrentSelectionCard .add-to-night-button {
   position: absolute;
-  width: 18vh;
+  width: 20vh;
   font-weight: 800;
-  top: 1vh;
-  right: 0.7vh;
+  top: 1.5vh;
+  right: 2vh;
   margin: auto 0;
   font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
@@ -1055,7 +1054,6 @@ nav .logo {
   font-size: calc(8px + 2.2vh);
   font-weight: 700;
   min-height: 3.5vh;
-  white-space: nowrap;
 }
 
 #CurrentSelectionCard .score-col .hot-score-title {
@@ -1122,19 +1120,15 @@ nav .logo {
 }
 
 #Map .map-header {
-  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  width: 60%;
   margin: 0 auto;
   min-height: 7vh;
   z-index: 3;
-  border-top: 1px solid rgba(255, 255, 252, 0.7);
-  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.9)), to(rgba(16, 12, 8, 0.8)));
-  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.9), rgba(16, 12, 8, 0.8));
-  border-bottom: 1px solid rgba(158, 162, 168, 0.5);
+  border-top: 2px #d6e5e3 solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1148,6 +1142,7 @@ nav .logo {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  justify-self: center;
   padding-left: 2vh;
 }
 
@@ -1171,23 +1166,25 @@ nav .logo {
 #Map .map-header .filter-box-div .filter-prompt {
   padding-top: 1.5vh;
   display: inline-block;
-  font-size: calc(9px + 0.8vw);
+  font-size: calc(9px + 2.5vh);
   color: #fffffc;
   font-family: "Fira Sans", sans-serif;
   white-space: nowrap;
   line-height: 0.6;
   font-weight: 700;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 #Map .map-header .filter-box-div .btn-secondary {
   background-color: transparent;
   border: none;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(9px + 0.8vw);
+  font-size: calc(9px + 2.5vh);
   color: #fffffc;
   font-weight: 700;
   line-height: 1;
   border-radius: 0;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 #Map .map-header .filter-box-div .drop-down-button {
@@ -1289,7 +1286,7 @@ nav .logo {
   right: 0;
   left: 0;
   width: 45%;
-  top: 5.5vh;
+  top: 7.5vh;
   margin: 0 auto;
   min-height: 7.5vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.9)), to(rgba(16, 12, 8, 0.8)));
@@ -1363,8 +1360,8 @@ nav .logo {
 #Map .map-container {
   margin: 0;
   width: 100%;
-  border-top: 5px #ffe80a solid;
-  border-bottom: 5px #ffe80a solid;
+  border-top: 2px #d6e5e3 solid;
+  border-bottom: 5px #d6e5e3 solid;
   height: 100vh;
   position: absolute;
   scroll-snap-align: start;

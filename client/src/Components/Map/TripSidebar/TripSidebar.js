@@ -10,9 +10,6 @@ import { FaCloudMoon, FaMapMarkedAlt } from "react-icons/fa";
 class TripSidebar extends Component {
   render() {
     return (
-    
-
-    
       <div className='planner-sidebar'>
         <div className='trip-title-intro-div'>
           <h5 className='trip-title-text'>Saved List</h5>
@@ -49,7 +46,7 @@ class TripSidebar extends Component {
             </Button>
           </div>
 
-        
+          {/* <HotSpotTripRating /> */}
         </div>
       </div>
     );

@@ -28,7 +28,7 @@
     width: 60%;
     position: absolute;
     bottom: 0;
-    border-bottom: 5px $bright-yellow solid;
+    border-bottom: 5px $accent-grey solid;
   }
 
   .card-header {
@@ -99,10 +99,10 @@
 
   .add-to-night-button {
     position: absolute;
-    width: 18vh;
+    width: 20vh;
     font-weight: 800;
-    top: 1vh;
-    right: 0.7vh;
+    top: 1.5vh;
+    right: 2vh;
     margin: auto 0;
     font-family: $title-font;
     font-size: $font-size-large;
@@ -146,7 +146,7 @@
       font-size: $font-size-current-hotscore-title;
       font-weight: 700;
       min-height: 3.5vh;
-      white-space: nowrap;
+
     }
 
     .hot-score-title {

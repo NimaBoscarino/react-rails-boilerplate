@@ -1,24 +1,25 @@
 #Map {
   .map-header {
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    width: 60%;
     margin: 0 auto;
     min-height: 7vh;
     z-index: 3;
-    border-top: 1px solid rgba($light-weight, 0.7);
-    -webkit-box-shadow: $map-shadow-header;
-    -moz-box-shadow: $map-shadow-header;
-    box-shadow: $map-shadow-header;
-    background: $background-gradient-medium;
-    border-bottom: 1px solid rgba($dark-quick-silver, 0.5);
+    border-top: 2px $accent-grey solid;
+    // -webkit-box-shadow: $map-shadow-header;
+    // -moz-box-shadow: $map-shadow-header;
+    // box-shadow: $map-shadow-header;
+    // background: $background-gradient-medium;
+    // border-bottom: 1px solid rgba($dark-quick-silver, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    justify-self: center;
     padding-left: 2vh;
-  
 
     .filter-box-div {
       display: inline-block;
@@ -36,6 +37,7 @@
         white-space: nowrap;
         line-height: 0.6;
         font-weight: 700;
+        text-shadow:$map-shadow-header;
       }
 
       .btn-secondary {
@@ -47,6 +49,7 @@
         font-weight: 700;
         line-height: 1;
         border-radius: 0;
+        text-shadow:$map-shadow-header;
       }
 
       .drop-down-button {

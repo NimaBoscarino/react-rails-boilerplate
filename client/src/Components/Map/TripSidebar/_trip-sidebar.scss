@@ -4,12 +4,12 @@
     justify-content: space-between;
     padding-top: 2vh;
     flex-direction: column;
-    margin-top: 7vh;
-    border-bottom: 5px $bright-yellow solid;
+    margin-top: 12vh;
+    border-bottom: 5px $accent-grey solid;
     position: absolute;
     right: 0;
     width: 18%;
-    height: 93vh;
+    height: 88vh;
     background: $background-gradient-very-light;
 
     .trip-title-intro-div {
@@ -152,10 +152,7 @@
       position: relative;
       font-weight: 700;
     }
-
   }
-
-
 
   .hotspot-stat-number {
     color: white;
@@ -196,8 +193,8 @@
   }
 
   .sidebar-button {
-    font-family: $body-font;
-    font-weight: 300;
+    font-family: $title-font;
+    font-weight: 500;
     margin-top: 1vh;
     font-size: $font-size-medium;
     background: $background-gradient-light;
@@ -216,7 +213,6 @@
   }
 
   .icon-buttons {
-    color: $bright-yellow;
     margin-right: 5px;
     margin-top: -4px;
   }

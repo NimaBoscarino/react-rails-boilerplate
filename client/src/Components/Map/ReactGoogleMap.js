@@ -40,6 +40,7 @@ class ReactGoogleMap extends Component {
         <GoogleMap
           defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
           defaultZoom={14}
+          
           defaultOptions={{ styles: mapStyles }}>
           {this.props.neighbourhoods &&
             this.props.neighbourhoods.map(element => {
