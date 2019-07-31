@@ -18,8 +18,23 @@ class HoodSidebar extends Component {
       });
     }
   }
+
+  makeScore(propped) {
+    let toPass = [...propped.neighbourhoods]
+    return toPass.map((neighbourhood) => {
+      let thesePlaces = propped.places.filter(place=> place.neighbourhood_id === neighbourhood.id);
+      let calcdAverageHotScore = Math.ceil(thesePlaces.reduce((acc,cur)=>acc+cur.current_hot_score,0)/thesePlaces.length);
+      neighbourhood.averageHotScore = calcdAverageHotScore
+      return neighbourhood
+    })
+  }
+
   render() {
-    let hoodsToDraw = this.props.neighbourhoods;
+    let hoodsToDraw = []
+    if (this.props.places) {
+      hoodsToDraw = this.makeScore(this.props)
+      hoodsToDraw.sort((a,b)=>(b.averageHotScore - a.averageHotScore))
+    }
     if (this.props.showOneHoodSide) {
       hoodsToDraw = hoodsToDraw.filter(neighbourhood => neighbourhood.id === this.props.showOneHoodSide)
     }

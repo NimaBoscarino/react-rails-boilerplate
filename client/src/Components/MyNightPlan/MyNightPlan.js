@@ -49,10 +49,10 @@ class MyNightPlan extends Component {
                                 </h5>
 
                                 <p className='hotspot-score-number'>
-                                  {this.props.nightList.reduce(
+                                  {Math.ceil(this.props.nightList.reduce(
                                     (acc, cur) => acc + cur.current_hot_score,
                                     0
-                                  )/this.props.nightList.length}
+                                  )/this.props.nightList.length)}
                                 </p>
                               </div>
                             </div>

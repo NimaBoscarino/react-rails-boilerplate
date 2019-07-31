@@ -81,7 +81,7 @@ class Main extends Component {
     selectionList.forEach(place => {
       axios.get(`api/popular/${place.id}`).then(response => {
         // result.push(this.processData(response.data, place))
-        place.popularTimes = response.data.popular_times;
+        place.hotScores = response.data.hot_scores;
         this.setState(
           {
             showMyNightPlan: true,

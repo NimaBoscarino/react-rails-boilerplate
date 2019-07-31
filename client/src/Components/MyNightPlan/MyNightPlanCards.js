@@ -38,15 +38,25 @@ class MyNightPlanCards extends Component {
           hourId = element.hour_id;
         }
       });
-      if (hourId >= 12 && hourId !== 24) return `${hourId - 12 - 1} PM`;
-      else return `${hourId - 1} AM`;
-    }
+      hourId--
+      if (hourId=== 12) {
+        return 12 + " PM"
+      }
+      if (hourId === 0) {
+        return 12 + " AM"
+      }
+      if (hourId > 12) {
+        return hourId - 12 + " PM"
+      }
+      else return hourId + " AM"
+      }
   }
 
   toggle() {
     this.setState(state => ({ collapse: !state.collapse }));
   }
   render() {
+    console.log(this.props)
     return (
       <div className='container-fluid'>
         <div className='row'>
@@ -59,7 +69,7 @@ class MyNightPlanCards extends Component {
                   </CardTitle>{" "}
                   <CardText>
                     <p className='arrival-time'>
-                      {this.findPeakHour(this.props.place.popularTimes)}
+                      {this.findPeakHour(this.props.place.hotScores)}
                     </p>
                   </CardText>
                   <CardText>
