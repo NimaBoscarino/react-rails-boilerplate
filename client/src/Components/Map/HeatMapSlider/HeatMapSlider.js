@@ -68,6 +68,8 @@ function valueLabelFormat(value) {
   return marks.findIndex(mark => mark.value === value) + 1;
 }
 
+
+
 export default class DiscreteSlider extends Component {
   render(){
   return (

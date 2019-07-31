@@ -1,6 +1,15 @@
 @import "./current-selection-modal";
 
 #CurrentSelectionCard {
+  @keyframes shadow-pulse-live {
+    0% {
+      box-shadow: 0 0 0 0px rgba($bright-yellow, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 0 10px rgba($bright-yellow, 0);
+    }
+  }
+
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -101,8 +110,64 @@
     }
   }
 
+  .current-address {
+    margin-top: -7px;
+  }
+
   .score-col {
-    text-align: left;
+    text-align: center;
+  
+    margin: 0 4vh;
+    display: inline-block;
+    width: 50%;
+
+    .hot-score-number {
+      font-size: $font-size-current-hotscore-number;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      padding-top: 0;
+      color: $light-weight;
+    }
+
+    .hot-score-title {
+      display: inline-block;
+      font-size: $font-size-current-hotscore-title;
+      line-height: 1;
+      font-family: $title-font;
+      color: $light-weight;
+    }
+
+    .title-div {
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .titles-tags {
+      margin-top: 0;
+
+    }
+
+    .hotspot-icon {
+      display: inline-block;
+      width: 8%;
+      margin-right: 5px;
+    }
+
+    .live {
+      margin-top: -10px;
+    }
+
+    .pulse {
+      margin-top: -10px;
+      line-height: 1;
+      animation: shadow-pulse 1s infinite;
+    }
+  }
+
+  .address-tag {
+    margin-top: 20px;
   }
 
   .icon-plus {

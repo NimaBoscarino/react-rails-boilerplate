@@ -21,14 +21,15 @@ class ReactGoogleMap extends Component {
   }
 
   render() {
-    const heatMapData = this.props.heatmapData || (
-      this.props.places &&
-      this.props.places.map(place => {
-        return {
-          location: new google.maps.LatLng(place.lat, place.long),
-          weight: place.current_hot_score
-        };
-      }));
+    const heatMapData =
+      this.props.heatmapData ||
+      (this.props.places &&
+        this.props.places.map(place => {
+          return {
+            location: new google.maps.LatLng(place.lat, place.long),
+            weight: place.current_hot_score
+          };
+        }));
 
     let GoogleMapExample;
     let icon = {
@@ -49,9 +50,9 @@ class ReactGoogleMap extends Component {
                   label={`${element.name}`}
                   options={{
                     fillColor: "#000",
-                    fillOpacity: 0.1,
+                    fillOpacity: 0,
                     strokeColor: "#ff5a00",
-                    strokeOpacity: 0.4,
+                    strokeOpacity: 0.2,
                     strokeWeight: 2
                   }}
                   onClick={() => {
@@ -79,7 +80,8 @@ class ReactGoogleMap extends Component {
               <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
             ))}
         </GoogleMap>
-      )))
+      ))
+    );
 
     if (this.props.mapCenterNeighbourhood) {
       const icon = {
@@ -104,20 +106,18 @@ class ReactGoogleMap extends Component {
               onClick={() => {}}
             />
             {this.props.showMarkers &&
-              this.props.places
-                
-                .map(place => {
-                  return (
-                    <Marker
-                      key={place.id}
-                      position={{ lat: place.lat, lng: place.long }}
-                      icon={icon}
-                      onClick={() => {
-                        this.props.updateSelection(place.id);
-                      }}
-                    />
-                  );
-                })}
+              this.props.places.map(place => {
+                return (
+                  <Marker
+                    key={place.id}
+                    position={{ lat: place.lat, lng: place.long }}
+                    icon={icon}
+                    onClick={() => {
+                      this.props.updateSelection(place.id);
+                    }}
+                  />
+                );
+              })}
             {this.props.showHeatmap &&
               (this.props.places && (
                 <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />

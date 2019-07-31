@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CurrentSelectionModal from "./CurrentSelectionModal";
+import icon from "../../../global-assets/hotspot-score-icon-small.png";
 import { Button } from "reactstrap";
 
 import { MdPhone } from "react-icons/md";
@@ -31,52 +32,48 @@ class CurrentSelectionCard extends Component {
                         />
                       </div>
                       <div className='col current-card-info'>
-                      <p className='card-type info-p'><span className="titles">Tags: </span>
+                        <p className='current-address info-p titles-tag'>
+                          <span className='titles'>Tags: </span>
+                        </p>
+                        <p className='current-address types info-p'>
                           {this.props.currentSelection.yelp_categories.map(
                             category => {
                               return category + " ";
                             }
                           )}
                         </p>
-                        <p className='current-address info-p'><span className="titles">Address: </span>
+                        <p className='current-address info-p address-tag'>
+                          <span className='titles'>Address: </span>
+                        </p>
+                        <p className='current-address info-p'>
                           {this.props.currentSelection.address}
                         </p>
                         <p className='card-price info-p'>
-                        <span className="titles">Price: </span> 
+                          <span className='titles'>Price: </span>
                           {this.props.currentSelection.yelp_price}
                         </p>
-          
+
                         <p className='card-phone info-p'>
-                        <span className="titles">Phone: </span> 
+                          <span className='titles'>Phone: </span>
                           {this.props.currentSelection.yelp_display_phone}
                         </p>
-
-                        <p className='card-average-wait info-p'>
-                        <span className="titles">Avg Time Spent: </span> 
-                          {this.props.currentSelection.time_spent_max} {" "} mins.
-                        </p>
-
-               
                       </div>
                       <div className='col score-col'>
-                      <p classname="hot-score">
-                          Current Hotspot Score:{"  "}
-                          <span classname="hot-score-number">   {this.props.currentSelection.current_hot_score}</span>
-                        </p>
-                        <p classname="other-score">
-                          Google Score:{"  "}
-                          {this.props.currentSelection.rating} based on{" "}
-                          {this.props.currentSelection.rating_n} reviews
-                        </p>
-                        <p classname="other-score">
-                          Yelp Score:{"  "}
-                          {this.props.currentSelection.yelp_rating} based on{" "}
-                          {this.props.currentSelection.yelp_review_count}
-                        </p>
-                        <p>
-                          Hot Score:{"  "}
+                        <p className='hot-score-number'>
                           {this.props.currentSelection.current_hot_score}
                         </p>
+
+                        <div className='title-div'>
+                          <p className='hot-score-title'>
+                            {" "}
+                            Current Hot Score{"  "}{" "}
+                            <img className='hotspot-icon' src={icon} alt={""} />
+                          </p>
+                          <p className="live">
+                            {" "}
+                            <span class='badge badge-light pulse'>LIVE</span>
+                          </p>
+                        </div>
                       </div>
                     </div>
 

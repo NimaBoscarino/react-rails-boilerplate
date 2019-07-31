@@ -47,10 +47,6 @@ class TripSidebar extends Component {
               <FaCloudMoon className='icon-buttons' />
               Generate My Night
             </Button>
-            <Button outline color='light' block className='sidebar-button'>
-              <FaMapMarkedAlt className='icon-buttons' />
-              See On Map
-            </Button>
           </div>
 
           <HotSpotTripRating places={this.props.selectionList}/>

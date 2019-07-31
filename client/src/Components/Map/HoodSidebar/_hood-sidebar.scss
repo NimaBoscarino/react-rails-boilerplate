@@ -1,7 +1,6 @@
 #Map {
   .hood-sidebar {
     border-bottom: 5px $bright-yellow solid;
-    border-right: 1px solid $light-smoky-black;
     position: absolute;
     overflow: scroll;
     margin-top: 7vh;
@@ -15,6 +14,8 @@
       text-align: left;
       cursor: pointer;
     }
+
+e
 
     .hood-title-select {
       font-family: $title-font;

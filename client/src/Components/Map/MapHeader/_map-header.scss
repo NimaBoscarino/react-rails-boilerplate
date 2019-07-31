@@ -7,7 +7,7 @@
     margin: 0 auto;
     min-height: 7vh;
     z-index: 3;
-    border-top: 2px solid rgba($bright-yellow, 0.7);
+    border-top: 1px solid rgba($light-weight, 0.7);
     -webkit-box-shadow: $map-shadow-header;
     -moz-box-shadow: $map-shadow-header;
     box-shadow: $map-shadow-header;
@@ -25,6 +25,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: row;
+      padding-left: 5%;
 
       .filter-prompt {
         padding-top: 1.5vh;
@@ -33,7 +34,6 @@
         color: $light-weight;
         font-family: $condensed-font;
         white-space: nowrap;
-        text-transform: uppercase;
         line-height: 1;
       }
 
@@ -42,13 +42,13 @@
         border: none;
         font-family: $condensed-font;
         text-transform: uppercase;
-        font-size: $font-size-filter-buttons;
+        font-size: $font-size-filter-prompt;
         color: $light-weight;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 1;
-        padding: 0vh 0vh 0.1vh 0vh;
-        margin: 0vh 0.8vh 0vh 0.8vh;
-        border-bottom: 1px solid $orange;
+        padding: 0vh 0vh 0.6vh 0vh;
+        margin: 0.9vh 0.8vh 0vh 0.8vh;
+        border-bottom: 2px solid $orange;
         border-radius: 0;
       }
 
@@ -57,7 +57,7 @@
       }
 
       .drop-down-menu {
-        background: $background-gradient-drop-down;
+        background: $light-weight;
       }
 
       .dropdown-item {
@@ -93,7 +93,7 @@
         font-family: $title-font;
         font-size: $font-size-hooder-header;
         font-weight: 700;
-        color: $white;
+        color: $light-weight;
         line-height: 1;
         padding: 0;
         margin: 0;
@@ -108,16 +108,11 @@
       flex-direction: row;
       border-color: $light-weight;
       color: $light-weight;
-
-      .filter-icon-funnel {
-        font-size: $font-size-filter-icon;
-        color: $quick-silver;
-        margin-top: 5px;
-        margin-right: 5px;
-      }
+      padding-right: 5%;
 
       .filter-icons {
         font-size: $font-size-filter-icon-button;
+        margin-top: -1px;
       }
       .filter-buttons:hover {
         border-color: $accent-grey;
@@ -126,9 +121,10 @@
 
     .filter-buttons {
       font-family: $condensed-font;
-      background: $background-gradient-filter-buttons;
+      background: transparent;
       font-size: $font-size-filter-button-toolbar;
-      text-transform: uppercase;
+
+      font-weight: 400;
     }
 
     .filter-icons {

@@ -665,7 +665,6 @@ nav .logo {
 
 #Map .hood-sidebar {
   border-bottom: 5px #ffe80a solid;
-  border-right: 1px solid rgba(7, 7, 7, 0.6);
   position: absolute;
   overflow: scroll;
   margin-top: 7vh;
@@ -682,7 +681,8 @@ nav .logo {
   cursor: pointer;
 }
 
-#Map .hood-sidebar .hood-title-select {
+#Map .hood-sidebar e
+.hood-title-select {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(14px + 0.4vw);
   display: inline-block;
@@ -914,6 +914,17 @@ nav .logo {
   width: 100%;
 }
 
+@keyframes shadow-pulse-live {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(255, 232, 10, 0.8);
+            box-shadow: 0 0 0 0px rgba(255, 232, 10, 0.8);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 232, 10, 0);
+            box-shadow: 0 0 0 10px rgba(255, 232, 10, 0);
+  }
+}
+
 #CurrentSelectionCard .card-container {
   width: 100%;
   position: absolute;
@@ -1015,8 +1026,63 @@ nav .logo {
   color: #070707;
 }
 
+#CurrentSelectionCard .current-address {
+  margin-top: -7px;
+}
+
 #CurrentSelectionCard .score-col {
-  text-align: left;
+  text-align: center;
+  margin: 0 4vh;
+  display: inline-block;
+  width: 50%;
+}
+
+#CurrentSelectionCard .score-col .hot-score-number {
+  font-size: calc(9px + 10vh);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  padding-top: 0;
+  color: #fffffc;
+}
+
+#CurrentSelectionCard .score-col .hot-score-title {
+  display: inline-block;
+  font-size: calc(8px + 0.9vh);
+  line-height: 1;
+  font-family: "Fira Sans", sans-serif;
+  color: #fffffc;
+}
+
+#CurrentSelectionCard .score-col .title-div {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#CurrentSelectionCard .score-col .titles-tags {
+  margin-top: 0;
+}
+
+#CurrentSelectionCard .score-col .hotspot-icon {
+  display: inline-block;
+  width: 8%;
+  margin-right: 5px;
+}
+
+#CurrentSelectionCard .score-col .live {
+  margin-top: -10px;
+}
+
+#CurrentSelectionCard .score-col .pulse {
+  margin-top: -10px;
+  line-height: 1;
+  -webkit-animation: shadow-pulse 1s infinite;
+          animation: shadow-pulse 1s infinite;
+}
+
+#CurrentSelectionCard .address-tag {
+  margin-top: 20px;
 }
 
 #CurrentSelectionCard .icon-plus {
@@ -1037,7 +1103,7 @@ nav .logo {
   margin: 0 auto;
   min-height: 7vh;
   z-index: 3;
-  border-top: 2px solid rgba(255, 232, 10, 0.7);
+  border-top: 1px solid rgba(255, 255, 252, 0.7);
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
@@ -1074,16 +1140,16 @@ nav .logo {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding-left: 5%;
 }
 
 #Map .map-header .filter-box-div .filter-prompt {
   padding-top: 1.5vh;
   display: inline-block;
-  font-size: calc(5px + 0.6vw);
+  font-size: calc(5px + 0.8vw);
   color: #fffffc;
   font-family: "Fira Sans Condensed", sans-serif;
   white-space: nowrap;
-  text-transform: uppercase;
   line-height: 1;
 }
 
@@ -1092,13 +1158,13 @@ nav .logo {
   border: none;
   font-family: "Fira Sans Condensed", sans-serif;
   text-transform: uppercase;
-  font-size: calc(5px + 0.6vw);
+  font-size: calc(5px + 0.8vw);
   color: #fffffc;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
-  padding: 0vh 0vh 0.1vh 0vh;
-  margin: 0vh 0.8vh 0vh 0.8vh;
-  border-bottom: 1px solid #ff9a02;
+  padding: 0vh 0vh 0.6vh 0vh;
+  margin: 0.9vh 0.8vh 0vh 0.8vh;
+  border-bottom: 2px solid #ff9a02;
   border-radius: 0;
 }
 
@@ -1107,19 +1173,18 @@ nav .logo {
 }
 
 #Map .map-header .filter-box-div .drop-down-menu {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(158, 162, 168, 0.9)), to(#9ea2a8));
-  background: linear-gradient(to bottom, rgba(158, 162, 168, 0.9), #9ea2a8);
+  background: #fffffc;
 }
 
 #Map .map-header .filter-box-div .dropdown-item {
   font-family: "Fira Sans Condensed", sans-serif;
-  font-size: calc(5px + 0.6vw);
+  font-size: calc(5px + 0.8vw);
   color: #070707;
 }
 
 #Map .map-header .filter-box-div .dropdown-item:hover {
   font-family: "Fira Sans Condensed", sans-serif;
-  font-size: calc(5px + 0.6vw);
+  font-size: calc(5px + 0.8vw);
   color: #070707;
 }
 
@@ -1142,7 +1207,7 @@ nav .logo {
 
 #Map .map-header .hood-header-box h4.selected-hood {
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(9px + 1.5vw);
+  font-size: calc(9px + 2vw);
   font-weight: 700;
   color: #fffffc;
   line-height: 1;
@@ -1167,17 +1232,12 @@ nav .logo {
           flex-direction: row;
   border-color: #fffffc;
   color: #fffffc;
-}
-
-#Map .map-header .button-row .filter-icon-funnel {
-  font-size: calc(5px + 0.8vw);
-  color: #9ea2a8;
-  margin-top: 5px;
-  margin-right: 5px;
+  padding-right: 5%;
 }
 
 #Map .map-header .button-row .filter-icons {
-  font-size: calc(5px + 0.5vw);
+  font-size: calc(5px + 0.6vw);
+  margin-top: -1px;
 }
 
 #Map .map-header .button-row .filter-buttons:hover {
@@ -1186,10 +1246,9 @@ nav .logo {
 
 #Map .map-header .filter-buttons {
   font-family: "Fira Sans Condensed", sans-serif;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(158, 162, 168, 0.5)), to(rgba(158, 162, 168, 0.3)));
-  background: linear-gradient(to bottom, rgba(158, 162, 168, 0.5), rgba(158, 162, 168, 0.3));
-  font-size: calc(5px + 0.4vw);
-  text-transform: uppercase;
+  background: transparent;
+  font-size: calc(5px + 0.6vw);
+  font-weight: 400;
 }
 
 #Map .map-header .filter-icons {
@@ -1206,17 +1265,16 @@ nav .logo {
   display: inline-block;
   right: 0;
   left: 0;
-  width: 60vh;
-  top: 8vh;
+  width: 35%;
+  top: 5.5vh;
   margin: 0 auto;
+  min-height: 7.5vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   z-index: 2;
-  padding: 2vh 1.5vh 1.25vh 1.5vh;
-  border-radius: 10px;
+  padding: 2vh 1.5vh 1vh 1.5vh;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(158, 162, 168, 0.4);
 }
 
 #HeatMapSlider .slider-container {
@@ -1226,18 +1284,13 @@ nav .logo {
 }
 
 #HeatMapSlider .slider-style {
-  color: #ff9a02;
-}
-
-#HeatMapSlider .slider-title {
-  color: #fffffc;
-  font-size: calc(9px + 0.5vw);
+  color: #9ea2a8;
 }
 
 #HeatMapSlider .MuiSlider-markLabel {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   color: #fffffc;
-  font-size: calc(9px + 0.4vw);
+  font-size: calc(9px + 0.6vw);
 }
 
 @-webkit-keyframes shadow-pulse {
@@ -1301,13 +1354,14 @@ nav .logo {
 #Map .heatmap-toggle-div {
   position: absolute;
   display: inline-block;
-  left: 18.5%;
-  top: 8vh;
-  width: 12%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
+  left: 24.75%;
+  top: 5.6vh;
+  width: 5%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   z-index: 1;
-  padding: 0.5vh 1.5vh 0.2vh 1.2vh;
+  padding: 2vh 1.5vh 0.5vh 3vh;
+  min-height: 0.8vh;
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -1315,10 +1369,11 @@ nav .logo {
 
 #Map .heatmap-toggle-div .heatmap-toggle-button {
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
   background: transparent;
-  padding: 0.4vh 0.5vh 0vh 1vh;
+  padding: 0.6vh 0.5vh 0vh 1vh;
   margin-left: 2px;
-  font-size: calc(5px + 0.6vw);
+  font-size: calc(5px + 0.8vw);
   text-transform: uppercase;
   font-weight: 700 !important;
 }
@@ -1332,18 +1387,24 @@ nav .logo {
   font-family: "Fira Sans Condensed", sans-serif;
   color: #fffffc;
   white-space: nowrap;
+  font-weight: 500;
+}
+
+#Map .heatmap-toggle-div .MuiSwitch-switchBase {
+  color: #ffe80a;
 }
 
 #Map .marker-toggle-div {
   position: absolute;
   display: inline-block;
-  right: 18.5%;
-  top: 8vh;
-  width: 12%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
+  left: 18.75%;
+  top: 5.5vh;
+  width: 5%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   z-index: 1;
-  padding: 0.5vh 1.5vh 0.2vh 1.2vh;
+  padding: 2vh 1.5vh 0.5vh 3vh;
+  min-height: 0.8vh;
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -1351,23 +1412,32 @@ nav .logo {
 
 #Map .marker-toggle-div .heatmap-toggle-button {
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
   background: transparent;
-  padding: 0.4vh 0.5vh 0vh 1vh;
+  padding: 0.6vh 0.5vh 0vh 1vh;
   margin-left: 2px;
-  font-size: calc(5px + 0.6vw);
-  text-transform: uppercase;
+  font-size: calc(5px + 0.8vw);
   font-weight: 700 !important;
-}
-
-#Map .marker-toggle-div .heatmap-filter {
-  display: inline-block;
-  padding: 0 0.5vh;
 }
 
 #Map .marker-toggle-div .MuiTypography-body1 {
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
   color: #fffffc;
   white-space: nowrap;
+}
+
+#Map .marker-toggle-div .MuiSwitch-switchBase {
+  color: #ffe80a;
+}
+
+#Map .filter-icons-toggle {
+  color: #fffffc;
+  font-size: calc(20px + 0.2vw);
+  position: absolute;
+  margin-top: 4px;
+  left: 0;
+  margin-left: 1.8vh;
 }
 
 @keyframes shadow-pulse {
