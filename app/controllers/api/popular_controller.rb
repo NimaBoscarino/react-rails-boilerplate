@@ -1,9 +1,9 @@
 class Api::PopularController < ApplicationController
     def index
         day = whatDayIsIt(Time.now)
-        popular_times = Place.find(params[:id]).popular_times.where(day_id:day)
+        hot_scores = Place.find(params[:id]).hot_scores.where(day_id:day)
         render :json=>{
-            popular_times: popular_times
+            hot_scores: hot_scores
         }
 
     end
@@ -15,24 +15,24 @@ class Api::PopularController < ApplicationController
         }
     end
     def getnew
-        popular_times = PopularTime.where({day_id: params[:day],hour_id: params[:hour]})
+        hot_scores = HotScore.where({day_id: params[:day],hour_id: params[:hour]})
         render :json => {
-            popular_times: popular_times
+            hot_scores: hot_scores
         }
     end
     def getday
         places= Place.select(:id, :lat, :long)
         arr=[]
         places.each{|place|
-            popular_times = place.popular_times.select(:busy_value, :hour_id).where(day_id:params[:day]).where("hour_id >= 17 OR hour_id <= 3")
-            popular_times_arr=[]
+            hot_scores = place.hot_scores.select(:hot_score, :hour_id).where(day_id:params[:day]).where("hour_id >= 17 OR hour_id <= 3")
+            hot_scores_arr=[]
             hash=place.attributes
-            popular_times.each{|element| popular_times_arr.push(element.attributes)}
-            hash["popular_times"]=popular_times_arr
+            hot_scores.each{|element| hot_scores_arr.push(element.attributes)}
+            hash["hot_scores"]=hot_scores_arr
             arr.push(hash)
         }
         render :json =>{
-            popular_times: arr
+            hot_scores: arr
         }
     end
     def whatDayIsIt(date)

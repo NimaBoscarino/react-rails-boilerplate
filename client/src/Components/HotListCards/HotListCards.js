@@ -79,7 +79,7 @@ class HotListCards extends Component {
                         <li className='list-group-item'>
                           <div className='hotspot-review'>HotSpot Score</div>
                           <div className='hotspot-review-score'>
-                            {this.props.place.currentBusyScore}
+                            {this.props.place.current_hot_score}
                           </div>
                         </li>
                         <li className='list-group-item'>

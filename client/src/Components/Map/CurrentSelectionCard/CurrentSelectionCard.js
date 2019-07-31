@@ -59,19 +59,23 @@ class CurrentSelectionCard extends Component {
                
                       </div>
                       <div className='col score-col'>
-                      <p className='current-address info-p'><span className="titles">Current Busy Score: </span>
-                      {this.props.currentSelection.currentBusyScore}
-                       </p>
-                        <p className='card-price info-p'>
-                        <span className="titles">Google Rating: </span> 
-                        {this.props.currentSelection.rating}/5 {" "}
-                        based on {this.props.currentSelection.rating_n}
+                      <p classname="hot-score">
+                          Current Hotspot Score:{"  "}
+                          <span classname="hot-score-number">   {this.props.currentSelection.current_hot_score}</span>
                         </p>
-          
-                        <p className='card-phone info-p'>
-                        <span className="titles">Yelp Rating: </span> 
-                        {this.props.currentSelection.yelp_rating}/5 {" "}
-                        based on {this.props.currentSelection.yelp_review_count}
+                        <p classname="other-score">
+                          Google Score:{"  "}
+                          {this.props.currentSelection.rating} based on{" "}
+                          {this.props.currentSelection.rating_n} reviews
+                        </p>
+                        <p classname="other-score">
+                          Yelp Score:{"  "}
+                          {this.props.currentSelection.yelp_rating} based on{" "}
+                          {this.props.currentSelection.yelp_review_count}
+                        </p>
+                        <p>
+                          Hot Score:{"  "}
+                          {this.props.currentSelection.current_hot_score}
                         </p>
                       </div>
                     </div>

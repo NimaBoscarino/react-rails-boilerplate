@@ -21,15 +21,14 @@ class ReactGoogleMap extends Component {
   }
 
   render() {
-    const heatMapData =
-      this.props.heatmapData ||
-      (this.props.places &&
-        this.props.places.map(place => {
-          return {
-            location: new google.maps.LatLng(place.lat, place.long),
-            weight: place.currentBusyScore
-          };
-        }));
+    const heatMapData = this.props.heatmapData || (
+      this.props.places &&
+      this.props.places.map(place => {
+        return {
+          location: new google.maps.LatLng(place.lat, place.long),
+          weight: place.current_hot_score
+        };
+      }));
 
     let GoogleMapExample;
     let icon = {
@@ -80,8 +79,7 @@ class ReactGoogleMap extends Component {
               <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
             ))}
         </GoogleMap>
-      ))
-    );
+      )))
 
     if (this.props.mapCenterNeighbourhood) {
       const icon = {

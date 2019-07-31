@@ -130,13 +130,6 @@ class Main extends Component {
       .get("/places") // You can simply make your requests to "/api/whatever you want"
       .then(response => {
         const places = response.data.places;
-        places.forEach(place => {
-          place.currentBusyScore = Math.ceil(
-            place.yelp_rating * 5 +
-              place.rating * 5 +
-              place.current_busy_value.busy_value * 0.5
-           );
-        });
         console.log(places[0]);
         this.places = places;
         this.setState({
@@ -157,39 +150,13 @@ class Main extends Component {
           places.sort((a, b) => {return a.id - b.id})
 
           for (let i = 0; i < places.length; i++) {
-            places[i].current_busy_value.busy_value = response.data.popular_times[i].busy_value
+            places[i].current_hot_score = response.data.hot_scores[i].hot_score
           }
-
-          places.forEach(place => {
-          place.currentBusyScore = Math.ceil(
-            place.yelp_rating * 5 +
-              place.rating * 5 +
-              place.current_busy_value.busy_value * 0.5
-           );
-          });
 
           this.places = places;
           this.setState({
             places: places
           })
-
-          // The code underneath is to update popular_time properly, but it takes way too long,
-          // 13 seconds on my laptop... gonna cheat instead
-          /*
-          const start_time = Date.now()
-          let places = this.state.places
-          response.data.popular_times.forEach(popular_time => {
-            let index = places.findIndex((place => place.id === popular_time.place_id))
-            places[index].current_busy_value.busy_value = popular_time.busy_value
-            this.setState({
-              places: places
-            })
-          });
-          console.log(oldStates.places)
-          console.log(this.state.places)
-          const millis = Date.now() - start_time;
-          console.log("seconds elapsed = " + Math.floor(millis/1000))
-          */
         });
     }
   }

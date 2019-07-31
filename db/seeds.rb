@@ -12,7 +12,7 @@ require "optparse"
 
 start = Time.now
 # Seed Neighbourhoods --------------------------------------------------------------------------------------------
-
+=begin
 require 'nokogiri'
 require 'geocoder'
 
@@ -179,7 +179,7 @@ YelpOpeningHour.destroy_all
 YelpReview.destroy_all
 HotScore.destroy_all
 =end
-
+=begin
 # Delete franchise
 Place.where(:name => "Subway").destroy_all
 Place.where(:name => "Burger King").destroy_all
@@ -498,9 +498,12 @@ puts "Manual database insertions..."
 putIntoYelpDB("a9P_JDakVrbunkghXHM9ug", Place.where("name LIKE 'Cocorico%'").first)
 putIntoYelpDB("s2BLDM9Y6JJ80r8S1tSxcg", Place.where("address LIKE '%Convention%'").first)
 putIntoYelpDB("q_IyyuHYcPNo_ZaTj_6R2A", Place.where("name LIKE 'Jammer%'").first)
-
+=end
 puts "Hot score generation"
 
+HotScore.destroy_all
+
+placeCount = " 368 something"
 
 plum2 = 0
 Place.find_each do |plac|
