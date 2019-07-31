@@ -150,16 +150,8 @@ class Main extends Component {
           places.sort((a, b) => {return a.id - b.id})
 
           for (let i = 0; i < places.length; i++) {
-            places[i].current_busy_value.busy_value = response.data.popular_times[i].busy_value
+            places[i].current_hot_score = response.data.hot_scores[i].hot_score
           }
-
-          places.forEach(place => {
-          place.currentBusyScore = Math.ceil(
-            place.yelp_rating * 5 +
-              place.rating * 5 +
-              place.current_busy_value.busy_value * 0.5
-           );
-          });
 
           this.places = places;
           this.setState({

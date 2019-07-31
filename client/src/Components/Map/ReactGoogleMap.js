@@ -20,7 +20,7 @@ class ReactGoogleMap extends Component {
       this.props.places.map(place => {
         return {
           location: new google.maps.LatLng(place.lat, place.long),
-          weight: place.currentBusyScore
+          weight: place.current_hot_score
         };
       }));
 
@@ -72,7 +72,7 @@ class ReactGoogleMap extends Component {
         ))}
         </GoogleMap>
       )))
-    
+
     if (this.props.mapCenterNeighbourhood) {
       const icon = {
         url: "https://i.ibb.co/jvB4mBH/marker.png"

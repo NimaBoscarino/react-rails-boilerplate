@@ -119,7 +119,7 @@ class MyNightPlanCards extends Component {
                     <div className='hotspot-col col'>
                       <p className='hotspot-score-title'>HotScore Score</p>
                       <p className='hotspot-score-number'>
-                        {this.props.place.currentBusyScore}
+                        {this.props.place.current_hot_score}
                       </p>
                     </div>
                   </div>

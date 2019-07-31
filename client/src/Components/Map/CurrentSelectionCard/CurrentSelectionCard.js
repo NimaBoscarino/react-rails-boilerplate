@@ -65,7 +65,7 @@ class CurrentSelectionCard extends Component {
                       <div className='col score-col'>
                       <p classname="hot-score">
                           Current Hotspot Score:{"  "}
-                          <span classname="hot-score-number">   {this.props.currentSelection.currentBusyScore}</span>
+                          <span classname="hot-score-number">   {this.props.currentSelection.current_hot_score}</span>
                         </p>
                         <p classname="other-score">
                           Google Score:{"  "}
@@ -79,7 +79,7 @@ class CurrentSelectionCard extends Component {
                         </p>
                         <p>
                           Hot Score:{"  "}
-                          {this.props.currentSelection.currentBusyScore}
+                          {this.props.currentSelection.current_hot_score}
                         </p>
                       </div>
                     </div>

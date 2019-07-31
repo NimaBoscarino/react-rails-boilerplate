@@ -18,13 +18,13 @@ class IntroCarousel extends Component {
       showIndicators={false}>
 
 {this.props.places &&
-            this.props.places.sort((a,b)=>b.currentBusyScore-a.currentBusyScore)
+            this.props.places.sort((a,b)=>b.current_hot_score-a.current_hot_score)
               .slice(0, 5).map(place => {
               return <IntroCarouselSlide place={place} key={place.id} />;
             })}
-  
 
-  
+
+
     </Carousel>
     );
   }

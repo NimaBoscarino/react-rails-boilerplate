@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'hot_scores/index'
+  get 'hot_scores/show'
+  get 'hot_scores/getnew'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :api do # /api/data
