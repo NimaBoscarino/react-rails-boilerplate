@@ -26,7 +26,7 @@ class CurrentSelectionCard extends Component {
                           )}
                         </p>
                         <p className='hot-score-number'>
-                          {this.props.currentSelection.current_hot_score}
+                          {this.props.currentSelection.current_hot_score}%
                         </p>
 
                         <p className='hot-score-title'>

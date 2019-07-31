@@ -19,7 +19,7 @@ class HoodList extends Component {
 
   componentDidUpdate(oldProps) {
     if (oldProps.showOneHoodSide != this.props.showOneHoodSide) {
-      this.setState({showListPlaces: this.props.showOneHoodSide})
+      this.setState({ showListPlaces: this.props.showOneHoodSide });
     }
   }
 
@@ -43,7 +43,7 @@ class HoodList extends Component {
             className='col hood-col'
             onClick={() => {
               this.clickTogglePlaces();
-              this.props.clickNeighbourhood(this.props.neighbourhood.id)
+              this.props.clickNeighbourhood(this.props.neighbourhood.id);
             }}>
             <h4 className='hood-title-text'>{this.props.neighbourhood.name}</h4>
 
@@ -62,10 +62,7 @@ class HoodList extends Component {
           <div className='col hotspot-score float-right'>
             <img className='hotspot-score-icon' src={HotSpotIcon} alt={""} />
             <p className='hotspot-score-number'>
-              {
-                this.props.places &&
-                this.props.neighbourhood.averageHotScore
-              }
+              {this.props.places && this.props.neighbourhood.averageHotScore}%
             </p>
           </div>
         </li>

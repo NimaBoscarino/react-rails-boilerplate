@@ -203,11 +203,11 @@ class Map extends Component {
             clickNeighbourhood={this.clickNeighbourhood}
             showOneHoodSide={this.state.showOneHood}
           />
-          <TripSidebar
+          {this.state.mapCenterPlace && <TripSidebar
             selectionList={this.state.selectionList}
             delete={this.deleteSelectedPlace}
             showMyNight={this.props.showMyNight}
-          />
+          />}
 
           {this.state.showSelectionCard && (
             <CurrentSelectionCard

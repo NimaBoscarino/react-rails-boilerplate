@@ -5,8 +5,6 @@ import HotSpotTripRating from "./HotSpotTripRating";
 
 // import TripButton from "./TripButton";
 
-import { FaCloudMoon, FaMapMarkedAlt } from "react-icons/fa";
-
 class TripSidebar extends Component {
   render() {
     return (
@@ -41,8 +39,7 @@ class TripSidebar extends Component {
                 this.props.selectionList.length &&
                   this.props.showMyNight(this.props.selectionList);
               }}>
-              <FaCloudMoon className='icon-buttons' />
-              Generate My Night
+              Generate Plan
             </Button>
           </div>
 

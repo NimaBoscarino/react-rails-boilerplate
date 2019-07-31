@@ -431,12 +431,12 @@ nav .logo {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 12vh;
+  margin-top: 10vh;
   border-bottom: 5px #d6e5e3 solid;
   position: absolute;
   right: 0;
   width: 18%;
-  height: 88vh;
+  height: 90vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.4)), to(rgba(16, 12, 8, 0.2)));
   background: linear-gradient(to bottom, rgba(16, 12, 8, 0.4), rgba(16, 12, 8, 0.2));
 }
@@ -666,10 +666,10 @@ nav .logo {
   border-bottom: 5px #d6e5e3 solid;
   position: absolute;
   overflow: scroll;
-  margin-top: 12vh;
+  margin-top: 10vh;
   left: 0;
   width: 18%;
-  height: 88vh;
+  height: 90vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.4)), to(rgba(16, 12, 8, 0.2)));
   background: linear-gradient(to bottom, rgba(16, 12, 8, 0.4), rgba(16, 12, 8, 0.2));
 }
@@ -1124,11 +1124,15 @@ nav .logo {
   top: 0;
   left: 0;
   right: 0;
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
   min-height: 7vh;
   z-index: 3;
   border-top: 2px #d6e5e3 solid;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.9)), to(rgba(16, 12, 8, 0.8)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.9), rgba(16, 12, 8, 0.8));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1164,18 +1168,19 @@ nav .logo {
 }
 
 #Map .map-header .filter-box-div .filter-prompt {
-  padding-top: 1.5vh;
+  padding-top: 2.6vh;
   display: inline-block;
   font-size: calc(9px + 2.5vh);
   color: #fffffc;
   font-family: "Fira Sans", sans-serif;
   white-space: nowrap;
   line-height: 0.6;
-  font-weight: 700;
+  font-weight: 500;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 #Map .map-header .filter-box-div .btn-secondary {
+  padding-top: 1.9vh;
   background-color: transparent;
   border: none;
   font-family: "Fira Sans", sans-serif;
@@ -1231,7 +1236,7 @@ nav .logo {
   font-weight: 700;
   color: #fffffc;
   line-height: 1;
-  padding: 0;
+  padding: 2vh 0 0 0;
   margin: 0;
 }
 
@@ -1286,15 +1291,16 @@ nav .logo {
   right: 0;
   left: 0;
   width: 45%;
-  top: 7.5vh;
+  top: 10vh;
   margin: 0 auto;
   min-height: 7.5vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.9)), to(rgba(16, 12, 8, 0.8)));
-  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.9), rgba(16, 12, 8, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
   z-index: 2;
   padding: 2vh 1.5vh 1vh 1.5vh;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 #HeatMapSlider .slider-container {
@@ -1374,8 +1380,8 @@ nav .logo {
 #Map .heatmap-toggle-div {
   position: absolute;
   display: inline-block;
-  left: 24.75%;
-  top: 0.7vh;
+  left: 16%;
+  top: 0.2vh;
   width: 5%;
   z-index: 4;
   padding: 2vh 1.5vh 0.5vh 3vh;
@@ -1413,8 +1419,8 @@ nav .logo {
 #Map .marker-toggle-div {
   position: absolute;
   display: inline-block;
-  left: 18.75%;
-  top: 0.7vh;
+  left: 10.75%;
+  top: 0.2vh;
   width: 5%;
   z-index: 4;
   padding: 2vh 1.5vh 0.5vh 3vh;
