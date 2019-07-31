@@ -135,6 +135,7 @@
 
   .current-address {
     white-space: nowrap;
+    font-weight: 700;
   }
 
   .score-col {
@@ -146,7 +147,6 @@
       font-size: $font-size-current-hotscore-title;
       font-weight: 700;
       min-height: 3.5vh;
-
     }
 
     .hot-score-title {
@@ -184,6 +184,10 @@
       display: inline-block;
       width: 7%;
       margin-right: 5px;
+    }
+
+    .percent-sign {
+      font-size: $font-size-percent-sign;
     }
 
     .live {

@@ -115,7 +115,6 @@
         text-transform: capitalize;
       }
 
-
       .card-hood {
         display: block;
         font-family: $title-font;
@@ -171,6 +170,10 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+
+        .percent-sign {
+          font-size: $font-size-percent-sign;
+        }
       }
 
       .image-col {
@@ -205,8 +208,8 @@
 
         .hotspot-icon {
           display: inline-block;
-          width: 12%;
-          margin-top: 4px;
+          width: 10%;
+          margin-top: 2px;
         }
 
         .hotspot-title {
@@ -216,6 +219,7 @@
           margin-top: 0.4vh;
           font-weight: 700;
           padding-left: 0.5vh;
+          margin-bottom: 0.5vh;
           text-shadow: $map-shadow-header;
         }
       }
@@ -225,15 +229,19 @@
         width: 100%;
         text-align: center;
         position: relative;
+        color: $light-weight;
 
         .hotspot-score {
           font-size: $font-size-intro-card-hotspot-number;
           font-family: $title-font;
           font-weight: 700;
           padding: 0;
+          padding-top: 0.4vh;
+          padding-left: 2.5vh;
           text-shadow: $map-shadow-header;
           line-height: 0.8;
-          letter-spacing: 2px;
+          letter-spacing: 1px;
+          color: $light-weight;
         }
 
         .total-reviews {
@@ -272,12 +280,14 @@
   }
 
   .build-night-button {
-    background: $background-gradient-build-night-button;
+    background: $background-buttons-brand-colors;
     font-family: $title-font;
     font-size: $font-size-night-out-button;
     border: transparent 1px solid;
     position: relative;
-    font-weight: 300;
+    font-weight: 700;
+    color: $light-weight;
+    text-shadow: $button-shadows;
     border: none;
     margin-top: 5vh;
     padding: 0.8vh 2.5vh;
@@ -287,10 +297,8 @@
   }
 
   .build-night-button:hover {
-    background: $background-gradient-build-night-button;
     font-family: $title-font;
     color: $white;
-    border: $bright-yellow 1px solid;
     padding: 0.8vh 2.5vh;
     box-shadow: none;
   }
@@ -303,8 +311,9 @@
   }
 
   .map-icon {
-    color: $medium-yellow;
+    color: $light-weight;
     margin-right: 10px;
+    text-shadow: $button-shadows;
   }
 
   .night-out-prompt-div {

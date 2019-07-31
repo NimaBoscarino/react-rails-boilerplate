@@ -3,7 +3,6 @@ import PlaceHolderPic from "../../global-assets/yaletown.jpg";
 import Icon from "../../global-assets/hotspot-score-icon-small.png";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-
 function sum(a, b) {
   return a + b;
 }
@@ -30,7 +29,9 @@ class IntroCarouselSlide extends Component {
               <div className='col info-col'>
                 <p className='card-title'>{this.props.place.name}</p>
                 <p className='card-type'>
-                  {this.props.place.yelp_categories.map((category)=>{return category + " "})}
+                  {this.props.place.yelp_categories.map(category => {
+                    return category + " ";
+                  })}
                 </p>
                 <p className='card-hood'>
                   <FaMapMarkerAlt className='icon-carousel hood-icon' />
@@ -46,7 +47,7 @@ class IntroCarouselSlide extends Component {
                   </div>
 
                   <p className='hotspot-score'>
-                    {this.props.place.current_hot_score}
+                    {this.props.place.current_hot_score}<span className='percent-sign'>%</span>
                   </p>
                   <p className='total-reviews'>
                     {sum(

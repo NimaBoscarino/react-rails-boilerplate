@@ -1,18 +1,10 @@
 import React, { Component } from "react";
-import {
-  Button,
-  CardBody,
-  CardTitle,
-  Card,
-  CardText
-} from "reactstrap";
+import { Button, CardBody, CardTitle, Card, CardText } from "reactstrap";
 import { FiClock } from "react-icons/fi";
 import { MdPhone } from "react-icons/md";
 import {
   FaMapMarkerAlt,
-  FaGoogle,
   FaYelp,
-  FaMapMarked,
   FaCreditCard
 } from "react-icons/fa";
 
@@ -38,27 +30,26 @@ class MyNightPlanCards extends Component {
           hourId = element.hour_id;
         }
       });
-      hourId--
-      if (hourId=== 12) {
-        return 12 + " PM"
+      hourId--;
+      if (hourId === 12) {
+        return 12 + " PM";
       }
       if (hourId === 0) {
-        return 12 + " AM"
+        return 12 + " AM";
       }
       if (hourId > 12) {
-        return hourId - 12 + " PM"
-      }
-      else return hourId + " AM"
-      }
+        return hourId - 12 + " PM";
+      } else return hourId + " AM";
+    }
   }
 
   toggle() {
     this.setState(state => ({ collapse: !state.collapse }));
   }
   render() {
-    console.log(this.props)
+    console.log(this.props);
     return (
-      <div className='container-fluid'>
+      <div className='container-fluid my-night-card-container'>
         <div className='row'>
           <div className='col-4'>
             <div>
@@ -113,7 +104,9 @@ class MyNightPlanCards extends Component {
                         {this.props.place.yelp_price}
                       </p>
                       <p className='card-price info-p'>
-                        {this.props.place.yelp_categories.map((category)=>{return category + " "})}
+                        {this.props.place.yelp_categories.map(category => {
+                          return category + " ";
+                        })}
                       </p>
                       <p className='card-address info-p'>
                         <FaMapMarkerAlt className='icon-carousel' />
@@ -130,6 +123,7 @@ class MyNightPlanCards extends Component {
                       <p className='hotspot-score-title'>HotScore Score</p>
                       <p className='hotspot-score-number'>
                         {this.props.place.current_hot_score}
+                        <span className='percent-sign'>%</span>
                       </p>
                     </div>
                   </div>

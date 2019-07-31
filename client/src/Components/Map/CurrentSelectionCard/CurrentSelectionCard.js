@@ -26,7 +26,8 @@ class CurrentSelectionCard extends Component {
                           )}
                         </p>
                         <p className='hot-score-number'>
-                          {this.props.currentSelection.current_hot_score}%
+                          {this.props.currentSelection.current_hot_score}
+                          <span className='percent-sign'>%</span>
                         </p>
 
                         <p className='hot-score-title'>
@@ -51,14 +52,15 @@ class CurrentSelectionCard extends Component {
                           {this.props.currentSelection.yelp_display_phone}
                         </p>
                         <p className='other-score info-p'>
-                          Google Score:{"  "}
+                          <span className='titles'>Google Score: </span>
                           {this.props.currentSelection.rating}/5 based on{" "}
                           {this.props.currentSelection.rating_n} reviews
                         </p>
                         <p className='other-score info-p'>
-                          Yelp Score:{"  "}
+                          <span className='titles'>Yelp Score: </span>
                           {this.props.currentSelection.yelp_rating}/5 based on{" "}
-                          {this.props.currentSelection.yelp_review_count}
+                          {this.props.currentSelection.yelp_review_count}{" "}
+                          reviews
                         </p>
                       </div>
 

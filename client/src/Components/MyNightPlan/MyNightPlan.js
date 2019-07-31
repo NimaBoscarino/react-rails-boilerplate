@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import MyNightPlanCards from "./MyNightPlanCards";
 import { FaChartLine, FaInfoCircle } from "react-icons/fa";
+import icon from "../../global-assets/hotspot-score-icon-small.png";
+
 
 import Charts from "../Charts/Charts";
 
@@ -33,7 +35,7 @@ class MyNightPlan extends Component {
                     <div className='card-header stats-title'>
                       <h5 className='stats-title-text'>
                         <span className='stats-icon'>
-                          <FaChartLine />
+                          <FaChartLine className='stats-icon-small' />
                         </span>{" "}
                         Your Plan Stats
                       </h5>
@@ -42,11 +44,14 @@ class MyNightPlan extends Component {
                       <div className='card-body card-text'>
                         <div className='row'>
                           <div className='col-4 chart-col'>
-                            <div className='col hotspot-score-col d-flex align-items-stretch'>
+                            <div className='col hotspot-score-col d-flex align-items-center'>
                               <div className='row w-100'>
+                              <div className='title-div'>
+                              <img className='hotspot-icon-stats' src={icon} alt={""} />
                                 <h5 className='hotspot-score-title '>
                                   Your HotSpot Score
                                 </h5>
+                                </div>
 
                                 <p className='hotspot-score-number'>
                                   {Math.ceil(
@@ -55,6 +60,15 @@ class MyNightPlan extends Component {
                                       0
                                     ) / this.props.nightList.length
                                   )}
+                                  <span className='percent-sign'>%</span>
+                                </p>
+                                <p className='hotspot-small-print '>
+                                  Your HotSpot Score is provided for
+                                  entertainment purposes only and is not a
+                                  guarantee of fun or enjoyment at any location.
+                                  HotSpots Inc. is not responsible for a bad
+                                  time or excessive wait times. Please use this
+                                  information responsibly.
                                 </p>
                               </div>
                             </div>

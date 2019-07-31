@@ -6,6 +6,11 @@
   padding: 0;
   margin: -2px auto;
 
+  .my-night-card-container {
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
+
   .my-night-container {
     width: 90%;
     margin: 0 auto;
@@ -21,11 +26,11 @@
 
   .my-night-title {
     font-family: $title-font;
-    font-size: $font-size-main-title;
+    font-size: $font-size-my-night-title;
     text-shadow: $text-shadow-title;
     color: $light-weight;
     font-weight: 700;
-    padding-bottom: 2vh;
+    padding-bottom: 1vh;
   }
 
   .my-night-intro {
@@ -33,11 +38,44 @@
     font-family: $title-font;
     font-weight: 500;
     padding: 0 5%;
-    font-size: $font-size-title-intro;
+    font-size: $font-size-my-night-intro;
     color: $light-weight;
     text-shadow: $text-shadow-title;
     line-height: 1.5;
     padding-bottom: 1.5vh;
+  }
+
+  .title-div {
+    display: inline-block;
+  }
+
+  .hotspot-icon-stats {
+    display: inline-block;
+    width: 8%;
+  }
+  h5 {
+    display: inline-block;
+  }
+
+  .hotspot-score-title {
+    display: inline-block;
+    font-size: $font-size-hotspot-score-title-large;
+    font-family: $title-font;
+    padding: 0;
+    margin: 0;
+    margin-bottom: -2.5vh;
+    font-weight: 700;
+  }
+
+  .hotspot-small-print {
+    font-size: $font-size-small-print;
+    color: $accent-grey;
+    line-height: 1.2;
+    border-top: 1px $accent-grey solid;
+    padding-top: 0.8vh;
+    margin-right: 0.5vh;
+    margin-left: 0.5vh;
+    margin-top: -3vh;
   }
 
   .my-night-title-card {
@@ -48,7 +86,7 @@
   .info-circle-icon {
     margin-top: -5px;
     margin-right: 5px;
-    color: $bright-yellow;
+    color: $accent-grey;
   }
 
   .night-out-div {
@@ -65,6 +103,19 @@
     margin: 0;
   }
 
+  .stat-div {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .stats-card {
+    border-radius: 15px;
+  }
+
+  .stats-title {
+    border-radius: 15px;
+  }
+
   .my-card-summary-row {
     background: $background-gradient-light;
     width: 95%;
@@ -76,7 +127,7 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    min-height: 14vh;
+    min-height: 18vh;
 
     .score-number-col {
       display: inline-block;
@@ -91,17 +142,17 @@
       font-family: $title-font;
       text-shadow: $text-shadow-title;
 
-      .hotspot-score-title {
-        padding: 0;
-        margin: 0;
-      }
-
       .hotspot-score-number {
+        display: inline-block;
         font-weight: 700;
         font-size: $font-size-hotspot-number-my-night;
         padding: 0;
         margin: 0;
       }
+    }
+
+    .percent-sign {
+      font-size: $font-size-hotspot-percent;
     }
 
     .details-col {
@@ -177,12 +228,14 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    min-height: 14vh;
+    min-height: 18vh;
 
     .best-times-title {
       font-family: $title-font;
       font-size: $font-size-best-time-title;
+
       margin: 0;
+      margin-top: 1.5vh;
       margin-bottom: 0.5vh;
       color: $quick-silver;
     }
@@ -244,7 +297,7 @@
     }
 
     .yelp-icon {
-      color: #D32322;
+      color: #d32322;
     }
 
     a {
@@ -257,7 +310,6 @@
     display: inline-block;
     margin-left: 1.5vh;
     margin-top: 1.5vh;
-
 
     .info-p {
       color: $light-weight;
@@ -282,6 +334,10 @@
     }
   }
 
+  .stats-icon-small {
+    color: $accent-grey;
+  }
+
   .hotspot-col {
     display: inline-block;
     margin-left: 1.5vh;
@@ -295,8 +351,8 @@
       padding: 0;
       margin: 0;
       margin-bottom: -1.5vh;
+      font-weight: 700;
     }
-
 
     .hotspot-score-number {
       font-size: $font-size-hotspot-score;
@@ -304,11 +360,7 @@
       font-weight: 700;
       padding: 0;
       margin: 0;
+      line-height: 1.3;
     }
   }
-
-
-
 }
-  
-

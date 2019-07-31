@@ -19,9 +19,11 @@
       flex-wrap: wrap;
 
       .trip-title-text {
-        color: $white;
+        color: $accent-grey;
         font-family: $title-font;
         font-size: $font-size-large;
+        font-weight: 700;
+        text-transform: uppercase;
       }
     }
 
@@ -194,22 +196,22 @@
 
   .sidebar-button {
     font-family: $title-font;
-    font-weight: 500;
+
     margin-top: 1vh;
-    font-size: $font-size-medium;
-    background: $background-gradient-light;
+    font-size: $font-size-large;
+    background: $background-buttons-brand-colors;
     display: inline-block;
     height: 4vh;
     font-weight: 700;
-    border: 1px $gunmetal solid;
+    border: 1px transparent solid;
     box-shadow: $button-shadows;
+    color: $white;
   }
 
   .sidebar-button:hover {
     box-shadow: none;
-    border: 1px $gunmetal solid;
-    color: $white;
-    background: $background-gradient-dark;
+    border: 1px transparent solid;
+    color: $smoky-black;
   }
 
   .icon-buttons {

@@ -9,6 +9,7 @@ $font-size-main-title: calc(18px + 6vh);
 $font-size-title-intro: calc(14px + 0.7vw);
 $font-size-title-popular-now: calc(12px + 0.4vw);
 $font-size-small-icon: calc(9px + 0.2vw);
+$font-size-percent-sign: calc(9px + 6vh);
 
 // Intro Card------
 
@@ -51,13 +52,19 @@ $font-size-filter-button-toolbar: calc(5px + 0.6vw);
 
 // My Night - Font Sizes ------
 
+$font-size-my-night-title: calc(6px + 4vh);
+$font-size-my-night-intro: calc(6px + 1.5vh);
+$font-size-small-print: calc(6px + .5vh);
+$font-size-hotspot-score-title-large: calc(6px + 2vh);
+$font-size-hotspot-score-title: calc(6px + 0.8vw);
+
+
 $font-arrow-icon: calc(18px + 1vw);
 $font-size-suggested-time-big: calc(10px + 3vw);
 $font-size-place-info: calc(6px + 0.6vw);
 $font-size-hood-large: calc(8px + 0.7vw);
 $font-size-title-place: calc(18px + 0.4vw);
 $font-size-hotspot-score: calc(6px + 4vw);
-$font-size-hotspot-score-title: calc(6px + 0.8vw);
 $font-size-best-time-title: calc(10px + 0.4vw);
 $font-size-average-time: calc(8px + 0.4vw);
 
@@ -100,7 +107,7 @@ $font-size-icons: calc(20px + 0.2vw);
 
 // Shadows------
 
-$map-shadow-header: 2px 2px 2px rgba(0, 0, 0, 0.5);
+$map-shadow-header: 1px 2px 2px rgba(0, 0, 0, 0.5);
 $text-shadow-subtle: 1px 1px 1px rgba(0, 0, 0, 0.5);
 $text-shadow-title: 1px 2px 2px rgba(0, 0, 0, 0.4);
 $text-shadow-box: 0px 4px 4px rgba(0, 0, 0, 0.5);
@@ -112,6 +119,8 @@ $font-size-hotspot-number-intro-box: 6vw;
 $font-size-hotspot-number-large: 8vw;
 $font-size-hotspot-number-stat-box: 10vw;
 $font-size-hotspot-number-my-night: 5.5vw;
+
+$font-size-hotspot-percent: calc(7px + 4vh);
 
 
 // Hood Sidebar Font Sizes ------
@@ -246,3 +255,25 @@ $background-gradient-drop-down: linear-gradient(
   rgba($quick-silver, 0.9),
   rgba($quick-silver, 1)
 );
+
+$background-buttons-brand-colors: linear-gradient(
+  to bottom,
+  rgba($bright-yellow, 1),
+  rgba($orange, 1),
+  rgba($orange-red, 1)
+);
+
+
+
+$background-buttons-brand-colors-hover: linear-gradient(
+  to bottom,
+  rgba($orange-red, 0.8),
+  rgba($orange, 0.8),
+  rgba($bright-yellow, 0.8)
+);
+
+$bright-yellow: #ffe80a;
+$medium-yellow: #ffce00;
+$orange: #ff9a02;
+$orange-red: #ff5a00;
+$red: #ff0000;
