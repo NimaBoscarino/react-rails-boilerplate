@@ -29,18 +29,23 @@ $font-size-slider-label: calc(9px + 0.6vw);
 
 // Current Selection Card ------
 
-$font-size-current-selection-p: calc(9px + 0.9vh);
+$font-size-current-selection-p: calc(9px + 0.7vh);
 $font-size-current-selection-titles: calc(9px + 0.6vh);
-$font-size-current-hotscore-title: calc(8px + 0.9vh);
+$font-size-current-hotscore-title: calc(8px + 2.2vh);
+$font-size-current-hotscore-hotsore-title: calc(8px + 0.9vh);
 $font-size-current-hotscore-number: calc(9px + 10vh);
+$font-size-current-selection-info: calc(9px + 1vh);
+$font-size-current-selection-other-score: calc(9px + 0.7vh);
 
 // Map - Font Sizes ------
+
+$font-size-map-header-prompt: calc(9px + 0.8vw);
 
 $font-size-hooder-header: calc(9px + 2vw);
 
 $font-size-filter-icon: calc(5px + 0.8vw);
 $font-size-filter-icon-button: calc(5px + 0.6vw);
-$font-size-filter-prompt: calc(5px + 0.8vw);
+$font-size-filter-prompt: calc(12px + 1.2vh);
 $font-size-filter-buttons: calc(5px + 0.8vw);
 $font-size-filter-button-toolbar: calc(5px + 0.6vw);
 
@@ -108,13 +113,18 @@ $font-size-hotspot-number-large: 8vw;
 $font-size-hotspot-number-stat-box: 10vw;
 $font-size-hotspot-number-my-night: 5.5vw;
 
+
+// Hood Sidebar Font Sizes ------
+
+$font-size-sidebar-hood: calc(9px + 0.4vw);
+
 // Text Colors ------
 
 $gunmetal: #1f363d;
 $accent-grey: #d6e5e3;
 $light-weight: #fffffc;
 $card-color-background: #fffffc;
-$smoky-black: #070707;
+$smoky-black: #100c08;
 $light-smoky-black: rgba($smoky-black, 0.6);
 $quick-silver: #9ea2a8;
 $dark-quick-silver: rgba($quick-silver, 0.4);
@@ -160,6 +170,12 @@ $background-gradient-dark: linear-gradient(
   to bottom,
   rgba($smoky-black, 1),
   rgba($smoky-black, 0.9)
+);
+
+$background-gradient-black: linear-gradient(
+  to bottom,
+  rgba($smoky-black, 1),
+  rgba($smoky-black, 1)
 );
 
 $background-gradient-medium: linear-gradient(

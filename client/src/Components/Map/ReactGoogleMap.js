@@ -52,11 +52,8 @@ class ReactGoogleMap extends Component {
                     fillColor: "#000",
                     fillOpacity: 0,
                     strokeColor: "#ff5a00",
-                    strokeOpacity: 0.2,
+                    strokeOpacity: 0,
                     strokeWeight: 2
-                  }}
-                  onClick={() => {
-                    this.props.clickNeighbourhood(element.id);
                   }}
                 />
               );
@@ -77,7 +74,7 @@ class ReactGoogleMap extends Component {
               }))}
           {this.props.showHeatmap &&
             (this.props.places && (
-              <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
+              <HeatmapLayer data={heatMapData} options={{ radius: 25 }} />
             ))}
         </GoogleMap>
       ))
@@ -147,30 +144,29 @@ class ReactGoogleMap extends Component {
             defaultZoom={16}
             defaultOptions={{ styles: mapStyles }}>
             {this.props.showMarkers &&
-              this.props.places
-                .map(place => {
-                  let image = defaultIcon;
-                  if (place.id === this.props.centerPlace.id) {
-                    image = currentSelection;
-                  }
-                  if (
-                    this.props.selectionList.map(el => el.id).includes(place.id)
-                  ) {
-                    image = onTheList;
-                  }
-                  return (
-                    <Marker
-                      key={place.id}
-                      position={{ lat: place.lat, lng: place.long }}
-                      icon={image && image}
-                      // label={`${place.rating}`}
-                      labelClass={".label-style"}
-                      onClick={() => {
-                        this.props.updateSelection(place.id);
-                      }}
-                    />
-                  );
-                })}
+              this.props.places.map(place => {
+                let image = defaultIcon;
+                if (place.id === this.props.centerPlace.id) {
+                  image = currentSelection;
+                }
+                if (
+                  this.props.selectionList.map(el => el.id).includes(place.id)
+                ) {
+                  image = onTheList;
+                }
+                return (
+                  <Marker
+                    key={place.id}
+                    position={{ lat: place.lat, lng: place.long }}
+                    icon={image && image}
+                    // label={`${place.rating}`}
+                    labelClass={".label-style"}
+                    onClick={() => {
+                      this.props.updateSelection(place.id);
+                    }}
+                  />
+                );
+              })}
             {this.props.showHeatmap &&
               (this.props.places && (
                 <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />

@@ -15,18 +15,19 @@
       cursor: pointer;
     }
 
-e
+
 
     .hood-title-select {
       font-family: $title-font;
-      font-size: $font-size-xl;
+      font-weight: 500;
+      font-size: $font-size-sidebar-hood;
       display: inline-block;
       border-bottom: 1px solid rgba($quick-silver, 0.4);
       margin: 0;
       background: $background-gradient-dark;
-      color: $light-weight;
-      padding: 0.8vh 0 0.8vh 0.8vh;
-      text-transform: uppercase;
+      color: $accent-grey;
+      padding: 1vh 0 0.8vh 1.4vh;
+  
     }
 
     .hood-title-box {
@@ -40,7 +41,7 @@ e
 
     .hood-title-text {
       font-family: $title-font;
-      font-size: $font-size-large;
+      font-size: $font-size-sidebar-hood;
       font-weight: 700;
       display: inline-block;
       color: $very-light-grey;
@@ -56,7 +57,7 @@ e
       background: $background-gradient-dark;
       border-bottom: 1px solid rgba($quick-silver, 0.5);
       padding-left: 0.8vh;
-      text-shadow: $text-shadow-subtle;
+
     }
 
     .arrow-icon {
@@ -84,7 +85,6 @@ e
         margin-right: 4px;
         width: 25%;
         float: right;
-        animation: shadow-pulse s infinite;
       }
 
       .hotspot-score-number {
@@ -99,7 +99,6 @@ e
         padding: 0;
         color: $very-light-grey;
         letter-spacing: 0.1vh;
-        text-shadow: $text-shadow-subtle;
         float: right;
       }
     }
@@ -143,7 +142,7 @@ e
     margin-left: 8px;
     font-weight: 700;
     padding-bottom: 0.1vh;
-    text-shadow: 1px 1px 1px black;
+
   }
 
   .hood-place-hotspot-score-div {
@@ -174,7 +173,7 @@ e
     margin-left: 0;
     text-align: right;
     vertical-align: text-top;
-    text-shadow: 1px 1px 1px black;
+
   }
 
   .icon {
@@ -207,7 +206,6 @@ e
   .index-number {
     font-size: $font-size-large;
     font-weight: 700;
-    text-shadow: 1px 1px 1px rgba($smoky-black, 0.5);
     font-size: $font-size-between-medium-and-large;
   }
 }

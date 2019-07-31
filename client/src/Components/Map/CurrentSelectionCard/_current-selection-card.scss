@@ -38,7 +38,7 @@
   .current-card {
     width: 100%;
     border-radius: 1vh;
-    min-height: 25vh;
+    min-height: 21vh;
     background: $background-gradient-medium;
     margin-bottom: 2vh;
     box-shadow: $text-shadow-box;
@@ -47,9 +47,10 @@
 
   .current-card-pic-col {
     width: 100%;
+    padding-top: 5vh;
 
     img {
-      height: 120px;
+      height: 140px;
     }
 
     .current-card-pic {
@@ -61,13 +62,31 @@
 
   .current-card-info {
     text-align: left;
+    margin: 0 4vh 0 0vh;
+    padding-top: 4.7vh;
+
+    .info-p {
+      font-family: $title-font;
+      font-weight: 500;
+      font-size: $font-size-current-selection-info;
+      line-height: 1.4;
+      padding-bottom: 0;
+      margin-bottom: 0.5vh;
+      color: $light-weight;
+    }
+
+    .other-score {
+      font-size: $font-size-current-selection-other-score;
+      margin-top: 1vh;
+    }
   }
 
   .info-p {
     font-family: $title-font;
-    font-weight: 300;
+    font-weight: 500;
     font-size: $font-size-current-selection-p;
-    line-height: 1;
+    line-height: 1.5;
+    color: $accent-grey;
   }
 
   .titles {
@@ -78,48 +97,65 @@
     color: $quick-silver;
   }
 
-  .current-card-title {
-    border-top-right-radius: 1vh;
-    border-top-left-radius: 1vh;
-    color: $light-weight;
-    font-family: $title-font;
-    font-size: $font-size-xxxl;
-    background: $background-gradient-blue-dark;
-  }
-
   .add-to-night-button {
     position: absolute;
-    color: black;
-    background-color: $bright-yellow;
-    font-weight: 700;
-    top: 0.4vh;
-    right: 7px;
+    width: 18vh;
+    font-weight: 800;
+    top: 1vh;
+    right: 0.7vh;
     margin: auto 0;
     font-family: $title-font;
     font-size: $font-size-large;
     border-color: transparent;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+
+    .hotspot-icon-button {
+      width: 12%;
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+    }
+    .icon-plus {
+      margin-top: 0.009em;
+      color: $light-weight;
+    }
   }
 
   .add-to-night-button:hover {
-    color: $smoky-black;
-    background: $bright-yellow;
-    border-color: $accent-grey;
+    color: $light-weight;
+    border-color: transparent;
+    background-color: transparent;
 
-    .icon-plus {
-      color: $dark-blue-gradient-top;
+    .hotspot-icon-button {
+      width: 14%;
     }
   }
 
   .current-address {
-    margin-top: -7px;
+    white-space: nowrap;
   }
 
   .score-col {
-    text-align: center;
-  
-    margin: 0 4vh;
+    text-align: left;
+    margin: 0 0vh 0 4vh;
     display: inline-block;
-    width: 50%;
+
+    .current-place-title {
+      font-size: $font-size-current-hotscore-title;
+      font-weight: 700;
+      min-height: 3.5vh;
+      white-space: nowrap;
+    }
+
+    .hot-score-title {
+      display: inline-block;
+      font-size: $font-size-current-hotscore-hotsore-title;
+      line-height: 1;
+      font-family: $title-font;
+      color: $light-weight;
+    }
 
     .hot-score-number {
       font-size: $font-size-current-hotscore-number;
@@ -131,12 +167,8 @@
       color: $light-weight;
     }
 
-    .hot-score-title {
-      display: inline-block;
-      font-size: $font-size-current-hotscore-title;
-      line-height: 1;
-      font-family: $title-font;
-      color: $light-weight;
+    .types {
+      margin-bottom: 0px;
     }
 
     .title-div {
@@ -146,12 +178,11 @@
 
     .titles-tags {
       margin-top: 0;
-
     }
 
     .hotspot-icon {
       display: inline-block;
-      width: 8%;
+      width: 7%;
       margin-right: 5px;
     }
 
@@ -162,6 +193,7 @@
     .pulse {
       margin-top: -10px;
       line-height: 1;
+      font-size: 0.6em;
       animation: shadow-pulse 1s infinite;
     }
   }

@@ -25,8 +25,8 @@ nav {
   /* Position the navbar at the top of the page */
   width: 100%;
   border-bottom: #ffe80a solid 2px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#100c08), to(rgba(16, 12, 8, 0.9)));
+  background: linear-gradient(to bottom, #100c08, rgba(16, 12, 8, 0.9));
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   min-height: 5vh;
@@ -134,7 +134,7 @@ nav .logo {
 }
 
 #Intro .intro-carousel-div .card {
-  border: 1px solid rgba(7, 7, 7, 0.6);
+  border: 1px solid rgba(16, 12, 8, 0.6);
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
   display: -webkit-box;
@@ -155,9 +155,9 @@ nav .logo {
   text-align: left;
   display: block;
   margin: 0 auto;
-  width: 70vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  width: 60%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
   position: relative;
   min-height: 20vh;
 }
@@ -362,8 +362,8 @@ nav .logo {
 }
 
 #NightOutBuilder .build-night-button {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.8)), to(rgba(16, 12, 8, 0.7)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.8), rgba(16, 12, 8, 0.7));
   font-family: "Fira Sans", sans-serif;
   font-size: calc(10px + 0.6vw);
   border: transparent 1px solid;
@@ -379,8 +379,8 @@ nav .logo {
 }
 
 #NightOutBuilder .build-night-button:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.8)), to(rgba(7, 7, 7, 0.7)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.8), rgba(7, 7, 7, 0.7));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.8)), to(rgba(16, 12, 8, 0.7)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.8), rgba(16, 12, 8, 0.7));
   font-family: "Fira Sans", sans-serif;
   color: #fffffc;
   border: #ffe80a 1px solid;
@@ -437,8 +437,8 @@ nav .logo {
   right: 0;
   width: 18%;
   height: 93vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.4)), to(rgba(16, 12, 8, 0.2)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.4), rgba(16, 12, 8, 0.2));
 }
 
 #Map .planner-sidebar .trip-title-intro-div {
@@ -467,7 +467,7 @@ nav .logo {
   display: inline-block;
   width: 100%;
   background-color: white;
-  color: #070707;
+  color: #100c08;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   padding: 0;
@@ -492,12 +492,12 @@ nav .logo {
   font-family: "Roboto", sans-serif;
   font-size: calc(12px + 0.4vw);
   border-radius: 5px;
-  color: #070707;
+  color: #100c08;
   border: #9ea2a8 solid 1px;
   width: 90%;
   margin: 0.5vh auto;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#100c08), to(rgba(16, 12, 8, 0.9)));
+  background: linear-gradient(to bottom, #100c08, rgba(16, 12, 8, 0.9));
   border: #ffce00 solid 1px;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
@@ -565,8 +565,8 @@ nav .logo {
       -ms-flex-pack: end;
           justify-content: flex-end;
   position: relative;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
 }
 
 #Map .hotspot-stat-box .hotspot-title-div {
@@ -638,8 +638,8 @@ nav .logo {
   font-weight: 300;
   margin-top: 1vh;
   font-size: calc(10px + 0.3vw);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
   display: inline-block;
   height: 4vh;
   font-weight: 700;
@@ -653,8 +653,8 @@ nav .logo {
           box-shadow: none;
   border: 1px #1f363d solid;
   color: #fffffc;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#100c08), to(rgba(16, 12, 8, 0.9)));
+  background: linear-gradient(to bottom, #100c08, rgba(16, 12, 8, 0.9));
 }
 
 #Map .icon-buttons {
@@ -671,8 +671,8 @@ nav .logo {
   left: 0;
   width: 18%;
   height: 93vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.4)), to(rgba(16, 12, 8, 0.2)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.4), rgba(16, 12, 8, 0.2));
 }
 
 #Map .hood-sidebar .hood-list {
@@ -681,18 +681,17 @@ nav .logo {
   cursor: pointer;
 }
 
-#Map .hood-sidebar e
-.hood-title-select {
+#Map .hood-sidebar .hood-title-select {
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(14px + 0.4vw);
+  font-weight: 500;
+  font-size: calc(9px + 0.4vw);
   display: inline-block;
   border-bottom: 1px solid rgba(158, 162, 168, 0.4);
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
-  color: #fffffc;
-  padding: 0.8vh 0 0.8vh 0.8vh;
-  text-transform: uppercase;
+  background: -webkit-gradient(linear, left top, left bottom, from(#100c08), to(rgba(16, 12, 8, 0.9)));
+  background: linear-gradient(to bottom, #100c08, rgba(16, 12, 8, 0.9));
+  color: #d6e5e3;
+  padding: 1vh 0 0.8vh 1.4vh;
 }
 
 #Map .hood-sidebar .hood-title-box {
@@ -706,7 +705,7 @@ nav .logo {
 
 #Map .hood-sidebar .hood-title-text {
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(12px + 0.4vw);
+  font-size: calc(9px + 0.4vw);
   font-weight: 700;
   display: inline-block;
   color: #f4f2f3;
@@ -719,11 +718,10 @@ nav .logo {
   font-family: "Fira Sans", sans-serif;
   width: 100%;
   font-weight: 700;
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#100c08), to(rgba(16, 12, 8, 0.9)));
+  background: linear-gradient(to bottom, #100c08, rgba(16, 12, 8, 0.9));
   border-bottom: 1px solid rgba(158, 162, 168, 0.5);
   padding-left: 0.8vh;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 #Map .hood-sidebar .arrow-icon {
@@ -752,8 +750,6 @@ nav .logo {
   margin-right: 4px;
   width: 25%;
   float: right;
-  -webkit-animation: shadow-pulse s infinite;
-          animation: shadow-pulse s infinite;
 }
 
 #Map .hood-sidebar .hotspot-score .hotspot-score-number {
@@ -768,7 +764,6 @@ nav .logo {
   padding: 0;
   color: #f4f2f3;
   letter-spacing: 0.1vh;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   float: right;
 }
 
@@ -784,14 +779,14 @@ nav .logo {
   border-bottom: 1px solid rgba(244, 242, 243, 0.1);
   padding: 0.6vh 0 0 0.6vh;
   margin: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.9)), to(rgba(16, 12, 8, 0.8)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.9), rgba(16, 12, 8, 0.8));
 }
 
 #Map .hood-place-list-item:hover {
   color: #fffffc;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
 }
 
 #Map .hood-place-name-div {
@@ -812,7 +807,6 @@ nav .logo {
   margin-left: 8px;
   font-weight: 700;
   padding-bottom: 0.1vh;
-  text-shadow: 1px 1px 1px black;
 }
 
 #Map .hood-place-hotspot-score-div {
@@ -843,7 +837,6 @@ nav .logo {
   margin-left: 0;
   text-align: right;
   vertical-align: text-top;
-  text-shadow: 1px 1px 1px black;
 }
 
 #Map .icon {
@@ -877,25 +870,24 @@ nav .logo {
 #Map .index-number {
   font-size: calc(12px + 0.4vw);
   font-weight: 700;
-  text-shadow: 1px 1px 1px rgba(7, 7, 7, 0.5);
   font-size: calc(11px + 0.3vw);
 }
 
 .modal-container .modal-body {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7) rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7) rgba(16, 12, 8, 0.6));
 }
 
 .modal-container .modal-header-box {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7) rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7) rgba(16, 12, 8, 0.6));
   color: #fffffc;
   border-bottom: 1px solid rgba(124, 221, 189, 0.4);
 }
 
 .modal-container .modal-content {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7) rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7) rgba(16, 12, 8, 0.6));
   display: inline-block;
 }
 
@@ -943,16 +935,16 @@ nav .logo {
 }
 
 #CurrentSelectionCard .card-header {
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(#100c08), to(rgba(16, 12, 8, 0.9)));
+  background: linear-gradient(to bottom, #100c08, rgba(16, 12, 8, 0.9));
 }
 
 #CurrentSelectionCard .current-card {
   width: 100%;
   border-radius: 1vh;
-  min-height: 25vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  min-height: 21vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.9)), to(rgba(16, 12, 8, 0.8)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.9), rgba(16, 12, 8, 0.8));
   margin-bottom: 2vh;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
@@ -961,10 +953,11 @@ nav .logo {
 
 #CurrentSelectionCard .current-card-pic-col {
   width: 100%;
+  padding-top: 5vh;
 }
 
 #CurrentSelectionCard .current-card-pic-col img {
-  height: 120px;
+  height: 140px;
 }
 
 #CurrentSelectionCard .current-card-pic-col .current-card-pic {
@@ -976,13 +969,31 @@ nav .logo {
 
 #CurrentSelectionCard .current-card-info {
   text-align: left;
+  margin: 0 4vh 0 0vh;
+  padding-top: 4.7vh;
+}
+
+#CurrentSelectionCard .current-card-info .info-p {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  font-size: calc(9px + 1vh);
+  line-height: 1.4;
+  padding-bottom: 0;
+  margin-bottom: 0.5vh;
+  color: #fffffc;
+}
+
+#CurrentSelectionCard .current-card-info .other-score {
+  font-size: calc(9px + 0.7vh);
+  margin-top: 1vh;
 }
 
 #CurrentSelectionCard .info-p {
   font-family: "Fira Sans", sans-serif;
-  font-weight: 300;
-  font-size: calc(9px + 0.9vh);
-  line-height: 1;
+  font-weight: 500;
+  font-size: calc(9px + 0.7vh);
+  line-height: 1.5;
+  color: #d6e5e3;
 }
 
 #CurrentSelectionCard .titles {
@@ -993,48 +1004,66 @@ nav .logo {
   color: #9ea2a8;
 }
 
-#CurrentSelectionCard .current-card-title {
-  border-top-right-radius: 1vh;
-  border-top-left-radius: 1vh;
-  color: #fffffc;
-  font-family: "Fira Sans", sans-serif;
-  font-size: calc(20px + 0.4vw);
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
-}
-
 #CurrentSelectionCard .add-to-night-button {
   position: absolute;
-  color: black;
-  background-color: #ffe80a;
-  font-weight: 700;
-  top: 0.4vh;
-  right: 7px;
+  width: 18vh;
+  font-weight: 800;
+  top: 1vh;
+  right: 0.7vh;
   margin: auto 0;
   font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
   border-color: transparent;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#CurrentSelectionCard .add-to-night-button .hotspot-icon-button {
+  width: 12%;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+#CurrentSelectionCard .add-to-night-button .icon-plus {
+  margin-top: 0.009em;
+  color: #fffffc;
 }
 
 #CurrentSelectionCard .add-to-night-button:hover {
-  color: #070707;
-  background: #ffe80a;
-  border-color: #d6e5e3;
+  color: #fffffc;
+  border-color: transparent;
+  background-color: transparent;
 }
 
-#CurrentSelectionCard .add-to-night-button:hover .icon-plus {
-  color: #070707;
+#CurrentSelectionCard .add-to-night-button:hover .hotspot-icon-button {
+  width: 14%;
 }
 
 #CurrentSelectionCard .current-address {
-  margin-top: -7px;
+  white-space: nowrap;
 }
 
 #CurrentSelectionCard .score-col {
-  text-align: center;
-  margin: 0 4vh;
+  text-align: left;
+  margin: 0 0vh 0 4vh;
   display: inline-block;
-  width: 50%;
+}
+
+#CurrentSelectionCard .score-col .current-place-title {
+  font-size: calc(8px + 2.2vh);
+  font-weight: 700;
+  min-height: 3.5vh;
+  white-space: nowrap;
+}
+
+#CurrentSelectionCard .score-col .hot-score-title {
+  display: inline-block;
+  font-size: calc(8px + 0.9vh);
+  line-height: 1;
+  font-family: "Fira Sans", sans-serif;
+  color: #fffffc;
 }
 
 #CurrentSelectionCard .score-col .hot-score-number {
@@ -1047,12 +1076,8 @@ nav .logo {
   color: #fffffc;
 }
 
-#CurrentSelectionCard .score-col .hot-score-title {
-  display: inline-block;
-  font-size: calc(8px + 0.9vh);
-  line-height: 1;
-  font-family: "Fira Sans", sans-serif;
-  color: #fffffc;
+#CurrentSelectionCard .score-col .types {
+  margin-bottom: 0px;
 }
 
 #CurrentSelectionCard .score-col .title-div {
@@ -1066,7 +1091,7 @@ nav .logo {
 
 #CurrentSelectionCard .score-col .hotspot-icon {
   display: inline-block;
-  width: 8%;
+  width: 7%;
   margin-right: 5px;
 }
 
@@ -1077,6 +1102,7 @@ nav .logo {
 #CurrentSelectionCard .score-col .pulse {
   margin-top: -10px;
   line-height: 1;
+  font-size: 0.6em;
   -webkit-animation: shadow-pulse 1s infinite;
           animation: shadow-pulse 1s infinite;
 }
@@ -1106,8 +1132,8 @@ nav .logo {
   border-top: 1px solid rgba(255, 255, 252, 0.7);
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  background: -webkit-gradient(linear, left top, left bottom, from(#070707), to(rgba(7, 7, 7, 0.9)));
-  background: linear-gradient(to bottom, #070707, rgba(7, 7, 7, 0.9));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.9)), to(rgba(16, 12, 8, 0.8)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.9), rgba(16, 12, 8, 0.8));
   border-bottom: 1px solid rgba(158, 162, 168, 0.5);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1140,31 +1166,27 @@ nav .logo {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding-left: 5%;
 }
 
 #Map .map-header .filter-box-div .filter-prompt {
   padding-top: 1.5vh;
   display: inline-block;
-  font-size: calc(5px + 0.8vw);
+  font-size: calc(9px + 0.8vw);
   color: #fffffc;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   white-space: nowrap;
-  line-height: 1;
+  line-height: 0.6;
+  font-weight: 700;
 }
 
 #Map .map-header .filter-box-div .btn-secondary {
   background-color: transparent;
   border: none;
-  font-family: "Fira Sans Condensed", sans-serif;
-  text-transform: uppercase;
-  font-size: calc(5px + 0.8vw);
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(9px + 0.8vw);
   color: #fffffc;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1;
-  padding: 0vh 0vh 0.6vh 0vh;
-  margin: 0.9vh 0.8vh 0vh 0.8vh;
-  border-bottom: 2px solid #ff9a02;
   border-radius: 0;
 }
 
@@ -1177,15 +1199,15 @@ nav .logo {
 }
 
 #Map .map-header .filter-box-div .dropdown-item {
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(5px + 0.8vw);
-  color: #070707;
+  color: #100c08;
 }
 
 #Map .map-header .filter-box-div .dropdown-item:hover {
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: calc(5px + 0.8vw);
-  color: #070707;
+  color: #100c08;
 }
 
 #Map .map-header .filter-box-div .drop-down-toggle {
@@ -1203,6 +1225,7 @@ nav .logo {
 #Map .map-header .hood-header-box {
   display: inline-block;
   text-align: center;
+  display: none;
 }
 
 #Map .map-header .hood-header-box h4.selected-hood {
@@ -1220,6 +1243,7 @@ nav .logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1245,7 +1269,6 @@ nav .logo {
 }
 
 #Map .map-header .filter-buttons {
-  font-family: "Fira Sans Condensed", sans-serif;
   background: transparent;
   font-size: calc(5px + 0.6vw);
   font-weight: 400;
@@ -1265,12 +1288,12 @@ nav .logo {
   display: inline-block;
   right: 0;
   left: 0;
-  width: 35%;
+  width: 45%;
   top: 5.5vh;
   margin: 0 auto;
   min-height: 7.5vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.9)), to(rgba(16, 12, 8, 0.8)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.9), rgba(16, 12, 8, 0.8));
   z-index: 2;
   padding: 2vh 1.5vh 1vh 1.5vh;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -1355,16 +1378,12 @@ nav .logo {
   position: absolute;
   display: inline-block;
   left: 24.75%;
-  top: 5.6vh;
+  top: 0.7vh;
   width: 5%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
-  z-index: 1;
+  z-index: 4;
   padding: 2vh 1.5vh 0.5vh 3vh;
   min-height: 0.8vh;
   border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 #Map .heatmap-toggle-div .heatmap-toggle-button {
@@ -1387,27 +1406,23 @@ nav .logo {
   font-family: "Fira Sans Condensed", sans-serif;
   color: #fffffc;
   white-space: nowrap;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 #Map .heatmap-toggle-div .MuiSwitch-switchBase {
-  color: #ffe80a;
+  color: #d6e5e3;
 }
 
 #Map .marker-toggle-div {
   position: absolute;
   display: inline-block;
   left: 18.75%;
-  top: 5.5vh;
+  top: 0.7vh;
   width: 5%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
-  z-index: 1;
+  z-index: 4;
   padding: 2vh 1.5vh 0.5vh 3vh;
   min-height: 0.8vh;
   border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 #Map .marker-toggle-div .heatmap-toggle-button {
@@ -1428,7 +1443,11 @@ nav .logo {
 }
 
 #Map .marker-toggle-div .MuiSwitch-switchBase {
-  color: #ffe80a;
+  color: #d6e5e3;
+}
+
+#Map .marker-toggle-div .MuiTouchRipple-root {
+  color: #d6e5e3;
 }
 
 #Map .filter-icons-toggle {
@@ -2052,8 +2071,8 @@ nav .logo {
 
 #MyNightPlan .stat-div .stats-card {
   width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
 }
 
 #MyNightPlan .stat-div h5.stats-title {
@@ -2065,8 +2084,8 @@ nav .logo {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(20px + 0.4vw);
   color: #fffffc;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
   padding-bottom: 1vh;
   padding-top: 1.5vh;
 }
@@ -2161,11 +2180,11 @@ nav .logo {
 }
 
 #MyNightPlan .time-stats-card .time-stats-card-body {
-  color: #070707;
+  color: #100c08;
 }
 
 #MyNightPlan .time-stats-card .time-stats-card-text {
-  color: #070707;
+  color: #100c08;
 }
 
 #MyNightPlan {
@@ -2235,8 +2254,8 @@ nav .logo {
 }
 
 #MyNightPlan .my-card-summary-row {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
   width: 95%;
   text-align: left;
   position: relative;
@@ -2322,13 +2341,13 @@ nav .logo {
 #MyNightPlan .night-out-card-div .my-night-out-title {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(12px + 0.4vw);
-  color: #070707;
+  color: #100c08;
   text-align: left;
 }
 
 #MyNightPlan .night-out-card-div .my-night-out-details {
   text-align: left;
-  color: #070707;
+  color: #100c08;
 }
 
 #MyNightPlan .night-out-card-div .my-night-bottom-controls {
@@ -2336,8 +2355,8 @@ nav .logo {
 }
 
 #MyNightPlan .best-times-card {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
   width: 95%;
   text-align: center;
   position: relative;
@@ -2479,8 +2498,8 @@ nav .logo {
   display: inline-block;
   padding: 5vh;
   border-top: #ff9a02 solid 1px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.9)), to(rgba(7, 7, 7, 0.8)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.9), rgba(7, 7, 7, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.9)), to(rgba(16, 12, 8, 0.8)));
+  background: linear-gradient(to bottom, rgba(16, 12, 8, 0.9), rgba(16, 12, 8, 0.8));
   color: #9ea2a8;
   width: 100%;
   margin-top: -100vh;

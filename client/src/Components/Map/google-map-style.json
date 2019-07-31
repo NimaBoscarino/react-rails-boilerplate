@@ -1,7 +1,25 @@
 [
   {
-    "featureType": "poi",
+    "featureType": "all",
     "elementType": "all",
+    "stylers": [
+      {
+        "saturation": "32"
+      },
+      {
+        "lightness": "-3"
+      },
+      {
+        "visibility": "on"
+      },
+      {
+        "weight": "1.18"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "labels",
     "stylers": [
       {
         "visibility": "on"
@@ -9,7 +27,7 @@
     ]
   },
   {
-    "featureType": "poi",
+    "featureType": "landscape",
     "elementType": "labels",
     "stylers": [
       {
@@ -18,20 +36,32 @@
     ]
   },
   {
-    "featureType": "poi",
-    "elementType": "labels.icon",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "transit",
+    "featureType": "landscape.man_made",
     "elementType": "all",
     "stylers": [
       {
+        "saturation": "-70"
+      },
+      {
+        "lightness": "14"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels",
+    "stylers": [
+      {
         "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "on"
       }
     ]
   },
@@ -45,29 +75,26 @@
     ]
   },
   {
-    "featureType": "transit",
-    "elementType": "labels.text",
+    "featureType": "water",
+    "elementType": "all",
     "stylers": [
       {
-        "visibility": "off"
+        "saturation": "100"
+      },
+      {
+        "lightness": "-14"
       }
     ]
   },
   {
-    "featureType": "transit",
-    "elementType": "labels.icon",
+    "featureType": "water",
+    "elementType": "labels",
     "stylers": [
       {
         "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "transit.station",
-    "elementType": "labels.text",
-    "stylers": [
+      },
       {
-        "visibility": "off"
+        "lightness": "12"
       }
     ]
   }

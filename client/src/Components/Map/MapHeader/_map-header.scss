@@ -11,7 +11,7 @@
     -webkit-box-shadow: $map-shadow-header;
     -moz-box-shadow: $map-shadow-header;
     box-shadow: $map-shadow-header;
-    background: $background-gradient-dark;
+    background: $background-gradient-medium;
     border-bottom: 1px solid rgba($dark-quick-silver, 0.5);
     display: flex;
     align-items: center;
@@ -25,30 +25,26 @@
       align-items: center;
       justify-content: center;
       flex-direction: row;
-      padding-left: 5%;
 
       .filter-prompt {
         padding-top: 1.5vh;
         display: inline-block;
-        font-size: $font-size-filter-prompt;
+        font-size: $font-size-map-header-prompt;
         color: $light-weight;
-        font-family: $condensed-font;
+        font-family: $title-font;
         white-space: nowrap;
-        line-height: 1;
+        line-height: 0.6;
+        font-weight: 700;
       }
 
       .btn-secondary {
         background-color: transparent;
         border: none;
-        font-family: $condensed-font;
-        text-transform: uppercase;
-        font-size: $font-size-filter-prompt;
+        font-family: $title-font;
+        font-size: $font-size-map-header-prompt;
         color: $light-weight;
-        font-weight: 500;
+        font-weight: 700;
         line-height: 1;
-        padding: 0vh 0vh 0.6vh 0vh;
-        margin: 0.9vh 0.8vh 0vh 0.8vh;
-        border-bottom: 2px solid $orange;
         border-radius: 0;
       }
 
@@ -61,13 +57,13 @@
       }
 
       .dropdown-item {
-        font-family: $condensed-font;
+        font-family: $title-font;
         font-size: $font-size-filter-buttons;
         color: $smoky-black;
       }
 
       .dropdown-item:hover {
-        font-family: $condensed-font;
+        font-family: $title-font;
         font-size: $font-size-filter-buttons;
         color: $smoky-black;
       }
@@ -88,6 +84,8 @@
     .hood-header-box {
       display: inline-block;
       text-align: center;
+      display: none;
+
 
       h4.selected-hood {
         font-family: $title-font;
@@ -102,7 +100,9 @@
 
     .button-row {
       display: inline-block;
+
       display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       flex-direction: row;
@@ -120,7 +120,7 @@
     }
 
     .filter-buttons {
-      font-family: $condensed-font;
+  
       background: transparent;
       font-size: $font-size-filter-button-toolbar;
 

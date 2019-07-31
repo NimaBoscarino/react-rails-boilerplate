@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import CurrentSelectionModal from "./CurrentSelectionModal";
 import icon from "../../../global-assets/hotspot-score-icon-small.png";
-import { Button } from "reactstrap";
-
-import { MdPhone } from "react-icons/md";
-import { FaYelp, FaCreditCard } from "react-icons/fa";
-import { IoMdAdd } from "react-icons/io";
+import { FiChevronsRight } from "react-icons/fi";
 
 class CurrentSelectionCard extends Component {
   render() {
@@ -16,25 +12,12 @@ class CurrentSelectionCard extends Component {
             <div className='align-items-baseline'>
               <div className='align-items-baseline current-selection-card-div'>
                 <div className='card current-card'>
-                  <h5 className='card-header current-card-title'>
-                    {this.props.currentSelection.name}
-                  </h5>
                   <div className='card-body'>
                     <div className='row'>
-                      <div className='col current-card-pic-col'>
-                        <img
-                          className='current-card-pic'
-                          src={this.props.currentSelection.yelp_photos[0]}
-                          alt={""}
-                        />
-                        <CurrentSelectionModal
-                          place={this.props.currentSelection}
-                        />
-                      </div>
-                      <div className='col current-card-info'>
-                        <p className='current-address info-p titles-tag'>
-                          <span className='titles'>Tags: </span>
-                        </p>
+                      <div className='col score-col'>
+                        <h5 className='current-place-title'>
+                          {this.props.currentSelection.name}
+                        </h5>
                         <p className='current-address types info-p'>
                           {this.props.currentSelection.yelp_categories.map(
                             category => {
@@ -42,9 +25,19 @@ class CurrentSelectionCard extends Component {
                             }
                           )}
                         </p>
-                        <p className='current-address info-p address-tag'>
-                          <span className='titles'>Address: </span>
+                        <p className='hot-score-number'>
+                          {this.props.currentSelection.current_hot_score}
                         </p>
+
+                        <p className='hot-score-title'>
+                          {" "}
+                          Current Hot Score{"  "}{" "}
+                          <img className='hotspot-icon' src={icon} alt={""} />
+                          <span class='badge badge-light pulse'>LIVE</span>{" "}
+                        </p>
+                      </div>
+
+                      <div className='col current-card-info'>
                         <p className='current-address info-p'>
                           {this.props.currentSelection.address}
                         </p>
@@ -57,35 +50,40 @@ class CurrentSelectionCard extends Component {
                           <span className='titles'>Phone: </span>
                           {this.props.currentSelection.yelp_display_phone}
                         </p>
-                      </div>
-                      <div className='col score-col'>
-                        <p className='hot-score-number'>
-                          {this.props.currentSelection.current_hot_score}
+                        <p className='other-score info-p'>
+                          Google Score:{"  "}
+                          {this.props.currentSelection.rating}/5 based on{" "}
+                          {this.props.currentSelection.rating_n} reviews
                         </p>
+                        <p className='other-score info-p'>
+                          Yelp Score:{"  "}
+                          {this.props.currentSelection.yelp_rating}/5 based on{" "}
+                          {this.props.currentSelection.yelp_review_count}
+                        </p>
+                      </div>
 
-                        <div className='title-div'>
-                          <p className='hot-score-title'>
-                            {" "}
-                            Current Hot Score{"  "}{" "}
-                            <img className='hotspot-icon' src={icon} alt={""} />
-                          </p>
-                          <p className="live">
-                            {" "}
-                            <span class='badge badge-light pulse'>LIVE</span>
-                          </p>
-                        </div>
+                      <div className='col current-card-pic-col'>
+                        <img
+                          className='current-card-pic'
+                          src={this.props.currentSelection.yelp_photos[0]}
+                          alt={""}
+                        />
+                        <CurrentSelectionModal
+                          place={this.props.currentSelection}
+                        />
                       </div>
                     </div>
-
-                    <button
-                      className='btn btn-outline-light add-to-night-button'
-                      onClick={() => {
-                        this.props.addSelection(this.props.currentSelection.id);
-                      }}>
-                      Save Place <IoMdAdd className='icon-plus' />
-                    </button>
                   </div>
                 </div>
+
+                <button
+                  className='btn btn-outline-light add-to-night-button'
+                  onClick={() => {
+                    this.props.addSelection(this.props.currentSelection.id);
+                  }}>
+                  <img className='hotspot-icon-button' src={icon} alt={""} />{" "}
+                  Add to List <FiChevronsRight />
+                </button>
               </div>
             </div>
           </div>

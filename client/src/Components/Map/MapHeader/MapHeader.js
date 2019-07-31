@@ -10,8 +10,15 @@ class MapHeader extends Component {
   render() {
     return (
       <div className='d-inline-flex p-2 justify-content-center map-header'>
-        <div className='col filter-box-div'>
-          <p className='filter-prompt'>Show me</p>
+      <div className='col hood-header-box'>
+          <h4 className='selected-hood'>
+            {this.props.currentNeighbourhood
+              ? this.props.currentNeighbourhood.name
+              : "Vancouver"}
+          </h4>
+        </div>
+
+        <div className='col filter-box-div'> 
           <MapHoodFilter
             className='dropdown-buttons'
             neighbourhoods={this.props.neighbourhoods}
@@ -34,13 +41,7 @@ class MapHeader extends Component {
             setHour={this.props.setHour}
           />
         </div>
-        <div className='col hood-header-box'>
-          <h4 className='selected-hood'>
-            {this.props.currentNeighbourhood
-              ? this.props.currentNeighbourhood.name
-              : "Vancouver"}
-          </h4>
-        </div>
+  
         <div className='col button-row'>
           <ButtonToolbar
             className='button-toolbar'

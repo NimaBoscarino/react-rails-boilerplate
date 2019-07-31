@@ -52,14 +52,12 @@
     position: absolute;
     display: inline-block;
     left: 24.75%;
-    top: 5.6vh;
+    top: 0.7vh;
     width: 5%;
-    background: $background-gradient-light;
-    z-index: 1;
+    z-index: 4;
     padding: 2vh 1.5vh 0.5vh 3vh;
     min-height: 0.8vh;
     border-radius: 10px;
-    box-shadow: $map-shadow-header;
 
     .heatmap-toggle-button {
       font-family: $condensed-font;
@@ -81,11 +79,11 @@
       font-family: $condensed-font;
       color: $light-weight;
       white-space: nowrap;
-      font-weight: 500;
+      font-weight: 700;
     }
 
     .MuiSwitch-switchBase {
-      color: $bright-yellow;
+      color: $accent-grey;
     }
   }
 
@@ -93,14 +91,12 @@
     position: absolute;
     display: inline-block;
     left: 18.75%;
-    top: 5.5vh;
+    top: 0.7vh;
     width: 5%;
-    background: $background-gradient-light;
-    z-index: 1;
+    z-index: 4;
     padding: 2vh 1.5vh 0.5vh 3vh;
     min-height: 0.8vh;
     border-radius: 10px;
-    box-shadow: $map-shadow-header;
 
     .heatmap-toggle-button {
       font-family: $condensed-font;
@@ -109,7 +105,7 @@
       padding: 0.6vh 0.5vh 0vh 1vh;
       margin-left: 2px;
       font-size: $font-size-filter-buttons;
- 
+
       font-weight: 700 !important;
     }
 
@@ -121,7 +117,11 @@
     }
 
     .MuiSwitch-switchBase {
-      color: $bright-yellow;
+      color: $accent-grey;
+    }
+
+    .MuiTouchRipple-root {
+      color: $accent-grey;
     }
   }
 

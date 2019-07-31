@@ -22,7 +22,6 @@ export default function SwitchLabels(props) {
             <Switch
               value='checked'
               color='default'
-              size='small'
               checked={state.checked}
               onClick={handleChange()}
             />
