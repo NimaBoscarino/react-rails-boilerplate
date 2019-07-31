@@ -1354,14 +1354,15 @@ nav .logo {
 #Map .heatmap-toggle-div {
   position: absolute;
   display: inline-block;
-  left: 18.75%;
-  top: 5.5vh;
-  width: 13%;
+  left: 24.75%;
+  top: 5.6vh;
+  width: 5%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   z-index: 1;
-  padding: 2vh 1.5vh 1vh 1.5vh;
-  min-height: 7.5vh;
+  padding: 2vh 1.5vh 0.5vh 3vh;
+  min-height: 0.8vh;
+  border-radius: 10px;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -1370,7 +1371,7 @@ nav .logo {
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 700;
   background: transparent;
-  padding: 0.4vh 0.5vh 0vh 1vh;
+  padding: 0.6vh 0.5vh 0vh 1vh;
   margin-left: 2px;
   font-size: calc(5px + 0.8vw);
   text-transform: uppercase;
@@ -1389,28 +1390,33 @@ nav .logo {
   font-weight: 500;
 }
 
+#Map .heatmap-toggle-div .MuiSwitch-switchBase {
+  color: #ffe80a;
+}
+
 #Map .marker-toggle-div {
   position: absolute;
   display: inline-block;
-  right: 18.75%;
+  left: 18.75%;
   top: 5.5vh;
-  width: 13%;
+  width: 5%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   z-index: 1;
-  padding: 2vh 1.5vh 1vh 1.5vh;
-  min-height: 7.5vh;
+  padding: 2vh 1.5vh 0.5vh 3vh;
+  min-height: 0.8vh;
+  border-radius: 10px;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 #Map .marker-toggle-div .heatmap-toggle-button {
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
   background: transparent;
-  padding: 0.4vh 0.5vh 0vh 1vh;
+  padding: 0.6vh 0.5vh 0vh 1vh;
   margin-left: 2px;
   font-size: calc(5px + 0.8vw);
-  text-transform: uppercase;
   font-weight: 700 !important;
 }
 
@@ -1419,6 +1425,19 @@ nav .logo {
   font-weight: 500;
   color: #fffffc;
   white-space: nowrap;
+}
+
+#Map .marker-toggle-div .MuiSwitch-switchBase {
+  color: #ffe80a;
+}
+
+#Map .filter-icons-toggle {
+  color: #fffffc;
+  font-size: calc(20px + 0.2vw);
+  position: absolute;
+  margin-top: 4px;
+  left: 0;
+  margin-left: 1.8vh;
 }
 
 @keyframes shadow-pulse {

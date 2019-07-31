@@ -51,20 +51,21 @@
   .heatmap-toggle-div {
     position: absolute;
     display: inline-block;
-    left: 18.75%;
-    top: 5.5vh;
-    width: 13%;
+    left: 24.75%;
+    top: 5.6vh;
+    width: 5%;
     background: $background-gradient-light;
     z-index: 1;
-    padding: 2vh 1.5vh 1vh 1.5vh;
-    min-height: 7.5vh;
+    padding: 2vh 1.5vh 0.5vh 3vh;
+    min-height: 0.8vh;
+    border-radius: 10px;
     box-shadow: $map-shadow-header;
 
     .heatmap-toggle-button {
       font-family: $condensed-font;
       font-weight: 700;
       background: transparent;
-      padding: 0.4vh 0.5vh 0vh 1vh;
+      padding: 0.6vh 0.5vh 0vh 1vh;
       margin-left: 2px;
       font-size: $font-size-filter-buttons;
       text-transform: uppercase;
@@ -82,30 +83,35 @@
       white-space: nowrap;
       font-weight: 500;
     }
+
+    .MuiSwitch-switchBase {
+      color: $bright-yellow;
+    }
   }
 
   .marker-toggle-div {
     position: absolute;
     display: inline-block;
-    right: 18.75%;
+    left: 18.75%;
     top: 5.5vh;
-    width: 13%;
+    width: 5%;
     background: $background-gradient-light;
     z-index: 1;
-    padding: 2vh 1.5vh 1vh 1.5vh;
-    min-height: 7.5vh;
+    padding: 2vh 1.5vh 0.5vh 3vh;
+    min-height: 0.8vh;
+    border-radius: 10px;
     box-shadow: $map-shadow-header;
 
     .heatmap-toggle-button {
       font-family: $condensed-font;
+      font-weight: 700;
       background: transparent;
-      padding: 0.4vh 0.5vh 0vh 1vh;
+      padding: 0.6vh 0.5vh 0vh 1vh;
       margin-left: 2px;
       font-size: $font-size-filter-buttons;
-      text-transform: uppercase;
+ 
       font-weight: 700 !important;
     }
-
 
     .MuiTypography-body1 {
       font-family: $condensed-font;
@@ -113,5 +119,18 @@
       color: $light-weight;
       white-space: nowrap;
     }
+
+    .MuiSwitch-switchBase {
+      color: $bright-yellow;
+    }
+  }
+
+  .filter-icons-toggle {
+    color: $light-weight;
+    font-size: $font-size-icons;
+    position: absolute;
+    margin-top: 4px;
+    left: 0;
+    margin-left: 1.8vh;
   }
 }

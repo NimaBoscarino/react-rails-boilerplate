@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_210440) do
     t.integer "day_id"
     t.integer "hour_id"
     t.integer "busy_value"
+    t.integer "hot_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "place_id"
