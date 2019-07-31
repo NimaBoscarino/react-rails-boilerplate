@@ -149,6 +149,8 @@ class Map extends Component {
         });
       });
       this.updatedHeatmap = data;
+      console.log(this.updatedHeatmap)
+
     });
   }
 

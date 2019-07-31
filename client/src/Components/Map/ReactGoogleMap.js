@@ -38,7 +38,7 @@ class ReactGoogleMap extends Component {
       withGoogleMap(props => (
         <GoogleMap
           defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
-          defaultZoom={15}
+          defaultZoom={14}
           defaultOptions={{ styles: mapStyles }}>
           {this.props.neighbourhoods &&
             this.props.neighbourhoods.map(element => {
@@ -148,10 +148,6 @@ class ReactGoogleMap extends Component {
             defaultOptions={{ styles: mapStyles }}>
             {this.props.showMarkers &&
               this.props.places
-                .filter(
-                  el =>
-                    el.neighbourhood_id === this.props.centerNeighbourhood.id
-                )
                 .map(place => {
                   let image = defaultIcon;
                   if (place.id === this.props.centerPlace.id) {
