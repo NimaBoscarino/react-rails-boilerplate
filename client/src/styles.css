@@ -1265,17 +1265,16 @@ nav .logo {
   display: inline-block;
   right: 0;
   left: 0;
-  width: 60vh;
-  top: 8vh;
+  width: 35%;
+  top: 5.5vh;
   margin: 0 auto;
+  min-height: 7.5vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
   background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   z-index: 2;
-  padding: 2vh 1.5vh 1.25vh 1.5vh;
-  border-radius: 10px;
+  padding: 2vh 1.5vh 1vh 1.5vh;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(158, 162, 168, 0.4);
 }
 
 #HeatMapSlider .slider-container {
@@ -1285,18 +1284,13 @@ nav .logo {
 }
 
 #HeatMapSlider .slider-style {
-  color: #ff9a02;
-}
-
-#HeatMapSlider .slider-title {
-  color: #fffffc;
-  font-size: calc(9px + 0.5vw);
+  color: #9ea2a8;
 }
 
 #HeatMapSlider .MuiSlider-markLabel {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   color: #fffffc;
-  font-size: calc(9px + 0.4vw);
+  font-size: calc(9px + 0.6vw);
 }
 
 @-webkit-keyframes shadow-pulse {
@@ -1360,20 +1354,21 @@ nav .logo {
 #Map .heatmap-toggle-div {
   position: absolute;
   display: inline-block;
-  left: 18.5%;
-  top: 8vh;
-  width: 12%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
+  left: 18.75%;
+  top: 5.5vh;
+  width: 13%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   z-index: 1;
-  padding: 0.5vh 1.5vh 0.2vh 1.2vh;
-  border-radius: 10px;
+  padding: 2vh 1.5vh 1vh 1.5vh;
+  min-height: 7.5vh;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 #Map .heatmap-toggle-div .heatmap-toggle-button {
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
   background: transparent;
   padding: 0.4vh 0.5vh 0vh 1vh;
   margin-left: 2px;
@@ -1391,19 +1386,20 @@ nav .logo {
   font-family: "Fira Sans Condensed", sans-serif;
   color: #fffffc;
   white-space: nowrap;
+  font-weight: 500;
 }
 
 #Map .marker-toggle-div {
   position: absolute;
   display: inline-block;
-  right: 18.5%;
-  top: 8vh;
-  width: 12%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.4)), to(rgba(7, 7, 7, 0.2)));
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.4), rgba(7, 7, 7, 0.2));
+  right: 18.75%;
+  top: 5.5vh;
+  width: 13%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(7, 7, 7, 0.7)), to(rgba(7, 7, 7, 0.6)));
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 0.7), rgba(7, 7, 7, 0.6));
   z-index: 1;
-  padding: 0.5vh 1.5vh 0.2vh 1.2vh;
-  border-radius: 10px;
+  padding: 2vh 1.5vh 1vh 1.5vh;
+  min-height: 7.5vh;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -1418,13 +1414,9 @@ nav .logo {
   font-weight: 700 !important;
 }
 
-#Map .marker-toggle-div .heatmap-filter {
-  display: inline-block;
-  padding: 0 0.5vh;
-}
-
 #Map .marker-toggle-div .MuiTypography-body1 {
   font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 500;
   color: #fffffc;
   white-space: nowrap;
 }

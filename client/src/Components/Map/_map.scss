@@ -51,17 +51,18 @@
   .heatmap-toggle-div {
     position: absolute;
     display: inline-block;
-    left: 18.5%;
-    top: 8vh;
-    width: 12%;
-    background: $background-gradient-very-light;
+    left: 18.75%;
+    top: 5.5vh;
+    width: 13%;
+    background: $background-gradient-light;
     z-index: 1;
-    padding: 0.5vh 1.5vh 0.2vh 1.2vh;
-    border-radius: 10px;
+    padding: 2vh 1.5vh 1vh 1.5vh;
+    min-height: 7.5vh;
     box-shadow: $map-shadow-header;
 
     .heatmap-toggle-button {
       font-family: $condensed-font;
+      font-weight: 700;
       background: transparent;
       padding: 0.4vh 0.5vh 0vh 1vh;
       margin-left: 2px;
@@ -79,19 +80,20 @@
       font-family: $condensed-font;
       color: $light-weight;
       white-space: nowrap;
+      font-weight: 500;
     }
   }
 
   .marker-toggle-div {
     position: absolute;
     display: inline-block;
-    right: 18.5%;
-    top: 8vh;
-    width: 12%;
-    background: $background-gradient-very-light;
+    right: 18.75%;
+    top: 5.5vh;
+    width: 13%;
+    background: $background-gradient-light;
     z-index: 1;
-    padding: 0.5vh 1.5vh 0.2vh 1.2vh;
-    border-radius: 10px;
+    padding: 2vh 1.5vh 1vh 1.5vh;
+    min-height: 7.5vh;
     box-shadow: $map-shadow-header;
 
     .heatmap-toggle-button {
@@ -104,13 +106,10 @@
       font-weight: 700 !important;
     }
 
-    .heatmap-filter {
-      display: inline-block;
-      padding: 0 0.5vh;
-    }
 
     .MuiTypography-body1 {
       font-family: $condensed-font;
+      font-weight: 500;
       color: $light-weight;
       white-space: nowrap;
     }

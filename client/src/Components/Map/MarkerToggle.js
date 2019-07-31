@@ -25,7 +25,7 @@ export default function SwitchLabels(props) {
             />
           }
           className='heatmap-toggle-button'
-          label='Toggle Markers'
+          label=' Markers'
           onChange={() => {
             props.toggleMarkers();
           }}

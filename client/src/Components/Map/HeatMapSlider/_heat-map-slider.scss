@@ -7,15 +7,15 @@
     display: inline-block;
     right: 0;
     left: 0;
-    width: 60vh;
-    top: 8vh;
+    width: 35%;
+    top: 5.5vh;
     margin: 0 auto;
+    min-height: 7.5vh;
     background: $background-gradient-light;
     z-index: 2;
-    padding: 2vh 1.5vh 1.25vh 1.5vh;
-    border-radius: 10px;
+    padding: 2vh 1.5vh 1vh 1.5vh;
     box-shadow: $map-shadow-header;
-    border: 1px solid $dark-quick-silver;
+
   }
 
   .slider-container {
@@ -25,16 +25,11 @@
   }
 
   .slider-style {
-    color: $orange;
-  }
-
-  .slider-title {
-    color: $light-weight;
-    font-size: $font-size-slider-title;
+    color: $quick-silver;
   }
 
   .MuiSlider-markLabel {
-    font-family: $title-font;
+    font-family: $condensed-font;
     color: $light-weight;
     font-size: $font-size-slider-label;
   }
