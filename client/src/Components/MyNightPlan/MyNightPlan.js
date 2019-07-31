@@ -52,7 +52,7 @@ class MyNightPlan extends Component {
                                   {this.props.nightList.reduce(
                                     (acc, cur) => acc + cur.current_hot_score,
                                     0
-                                  )}
+                                  )/this.props.nightList.length}
                                 </p>
                               </div>
                             </div>

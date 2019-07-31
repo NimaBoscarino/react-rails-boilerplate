@@ -4,6 +4,7 @@ class PopularTimes < ActiveRecord::Migration[5.2]
       t.integer :day_id
       t.integer :hour_id
       t.integer :busy_value
+      t.integer :hot_score
 
       t.timestamps
     end

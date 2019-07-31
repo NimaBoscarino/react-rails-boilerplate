@@ -2,6 +2,7 @@ import React from "react";
 import icon from '../../../global-assets/hotspot-score-icon-small.png';
 
 function HotSpotTripRating(props) {
+  console.log(props.places)
   return (
     <div className='hotspot-stat-box'>
      <div className='hotspot-title-div'>
@@ -10,9 +11,9 @@ function HotSpotTripRating(props) {
       </div>
       <h1 className='hotspot-stat-number glow'>
         {
-          props.places ?
-          props.places.reduce((acc, cur)=>
-            acc+cur.current_hot_score,0)
+          (props.places.length!==0) ?
+          (props.places.reduce((acc, cur)=>
+            acc+cur.current_hot_score,0))/(props.places.length)
             : 0
         }
       </h1>
@@ -21,14 +22,6 @@ function HotSpotTripRating(props) {
       </div>
     </div>
   );
-}
-
-function makeScore(place) {
-  const yelp = place.yelp_rating / 5 * 25
-  const google = place.rating / 5 * 25
-  const busy = place.popular_times[0].busy_value * 0.5
-
-  return Math.ceil(yelp + google + busy)
 }
 
 export default HotSpotTripRating;

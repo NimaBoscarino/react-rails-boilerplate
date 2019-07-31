@@ -11,6 +11,5 @@ class Place < ApplicationRecord
     has_many :yelp_photos, dependent: :destroy
     has_many :yelp_opening_hours, dependent: :destroy
     has_many :yelp_reviews, dependent: :destroy
-    has_many :hot_scores, dependent: :destroy
     belongs_to :neighbourhood
 end
