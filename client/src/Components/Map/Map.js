@@ -116,6 +116,7 @@ class Map extends Component {
     } else {
       val = val / 10 - 7;
     }
+    this.props.setHour(val + 1)
     this.setState({
       updatedHeatmap: this.updatedHeatmap[`${val}`]
     });
@@ -150,7 +151,6 @@ class Map extends Component {
       });
       this.updatedHeatmap = data;
       console.log(this.updatedHeatmap)
-
     });
   }
 
