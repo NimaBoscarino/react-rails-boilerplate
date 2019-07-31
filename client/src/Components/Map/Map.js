@@ -149,6 +149,8 @@ class Map extends Component {
         });
       });
       this.updatedHeatmap = data;
+      console.log(this.updatedHeatmap)
+
     });
   }
 
@@ -177,7 +179,7 @@ class Map extends Component {
         />
         <MarkerToggle toggleMarkers = {this.toggleMarkers}/>
         <HeatMapToggle toggleHeatmap={this.toggleHeatmap} />
-        <HeatMapSlider handleChange={this.handleSlider} />
+        {this.state.showHeatmap && <HeatMapSlider handleChange={this.handleSlider} />}
 
         <div className='d-flex justify-content-between h-100 w-100'>
           <GoogleMap

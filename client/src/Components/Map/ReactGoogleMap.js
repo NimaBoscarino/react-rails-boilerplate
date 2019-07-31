@@ -1,4 +1,10 @@
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, Polygon } from "react-google-maps";
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+  Polygon
+} from "react-google-maps";
 import HeatmapLayer from "react-google-maps/lib/components/visualization/HeatmapLayer";
 import React, { Component } from "react";
 import mapStyles from "./google-map-style.json";
@@ -25,10 +31,11 @@ class ReactGoogleMap extends Component {
       }));
 
     let GoogleMapExample;
-      let icon = {
-        url: "https://i.ibb.co/J757PNs/super-small-map-marker.png"
-      };
-      GoogleMapExample = GoogleMapExample = withScriptjs(withGoogleMap(props => (
+    let icon = {
+      url: "https://i.ibb.co/J757PNs/super-small-map-marker.png"
+    };
+    GoogleMapExample = GoogleMapExample = withScriptjs(
+      withGoogleMap(props => (
         <GoogleMap
           defaultCenter={{ lat: 49.2827, lng: -123.1207 }}
           defaultZoom={14}
@@ -42,7 +49,7 @@ class ReactGoogleMap extends Component {
                   label={`${element.name}`}
                   options={{
                     fillColor: "#000",
-                    fillOpacity: 0.4,
+                    fillOpacity: 0.1,
                     strokeColor: "#ff5a00",
                     strokeOpacity: 0.4,
                     strokeWeight: 2
@@ -53,23 +60,24 @@ class ReactGoogleMap extends Component {
                 />
               );
             })}
-            {this.props.showMarkers && (this.props.places &&
-          this.props.places
-          .map(place => {
-            return (
-              <Marker
-                key={place.id}
-                position={{ lat: place.lat, lng: place.long }}
-                icon={icon}
-                onClick={() => {
-                  this.props.updateSelection(place.id);
-                }}
-              />
-            );
-          }))}
-          {this.props.showHeatmap && (this.props.places && (
-          <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
-        ))}
+          {this.props.showMarkers &&
+            (this.props.places &&
+              this.props.places.map(place => {
+                return (
+                  <Marker
+                    key={place.id}
+                    position={{ lat: place.lat, lng: place.long }}
+                    icon={icon}
+                    onClick={() => {
+                      this.props.updateSelection(place.id);
+                    }}
+                  />
+                );
+              }))}
+          {this.props.showHeatmap &&
+            (this.props.places && (
+              <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
+            ))}
         </GoogleMap>
       )))
 
@@ -77,44 +85,46 @@ class ReactGoogleMap extends Component {
       const icon = {
         url: "https://i.ibb.co/jvB4mBH/marker.png"
       };
-      GoogleMapExample = withScriptjs(withGoogleMap(props => (
-        <GoogleMap
-          defaultCenter={this.props.centerNeighbourhood.center}
-          defaultZoom={14}
-          defaultOptions={{ styles: mapStyles }}>
-          <Polygon
-            paths={this.props.centerNeighbourhood.borderPoints}
-            key={this.props.centerNeighbourhood.id}
-            options={{
-              fillColor: "#ff5a00",
-              fillOpacity: 0.2,
-              strokeColor: "#ff5a00",
-              strokeOpacity: 0.2,
-              strokeWeight: 2
-            }}
-            onClick={() => {}}
-          />
-          {this.props.showMarkers && (this.props.places
-            .filter(
-              el => el.neighbourhood_id === this.props.centerNeighbourhood.id
-            )
-            .map(place => {
-              return (
-                <Marker
-                  key={place.id}
-                  position={{ lat: place.lat, lng: place.long }}
-                  icon={icon}
-                  onClick={() => {
-                    this.props.updateSelection(place.id);
-                  }}
-                />
-              );
-            }))}
-            {this.props.showHeatmap && (this.props.places && (
-              <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
-            ))}
-        </GoogleMap>
-      )));
+      GoogleMapExample = withScriptjs(
+        withGoogleMap(props => (
+          <GoogleMap
+            defaultCenter={this.props.centerNeighbourhood.center}
+            defaultZoom={16}
+            defaultOptions={{ styles: mapStyles }}>
+            <Polygon
+              paths={this.props.centerNeighbourhood.borderPoints}
+              key={this.props.centerNeighbourhood.id}
+              options={{
+                fillColor: "#ff5a00",
+                fillOpacity: 0.2,
+                strokeColor: "#ff5a00",
+                strokeOpacity: 0.2,
+                strokeWeight: 2
+              }}
+              onClick={() => {}}
+            />
+            {this.props.showMarkers &&
+              this.props.places
+                
+                .map(place => {
+                  return (
+                    <Marker
+                      key={place.id}
+                      position={{ lat: place.lat, lng: place.long }}
+                      icon={icon}
+                      onClick={() => {
+                        this.props.updateSelection(place.id);
+                      }}
+                    />
+                  );
+                })}
+            {this.props.showHeatmap &&
+              (this.props.places && (
+                <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
+              ))}
+          </GoogleMap>
+        ))
+      );
     }
     if (this.props.mapCenterPlace) {
       const currentSelection = {
@@ -124,53 +134,58 @@ class ReactGoogleMap extends Component {
       const onTheList = {
         url: "https://i.ibb.co/Sdt6P2G/hearted.png"
       };
-
-      GoogleMapExample = withScriptjs(withGoogleMap(props => (
-        <GoogleMap
-          defaultCenter={{
-            lat: this.props.centerPlace.lat,
-            lng: this.props.centerPlace.long
-          }}
-          defaultZoom={14}
-          defaultOptions={{ styles: mapStyles }}>
-          {this.props.showMarkers && (this.props.places
-            .filter(
-              el => el.neighbourhood_id === this.props.centerNeighbourhood.id
-            )
-            .map(place => {
-              let image = null;
-              if (place.id === this.props.centerPlace.id) {
-                image = currentSelection;
-              }
-              if (
-                this.props.selectionList.map(el => el.id).includes(place.id)
-              ) {
-                image = onTheList;
-              }
-              return (
-                <Marker
-                  key={place.id}
-                  position={{ lat: place.lat, lng: place.long }}
-                  icon={image && image}
-                  // label={`${place.rating}`}
-                  labelClass={".label-style"}
-                  onClick={() => {
-                    this.props.updateSelection(place.id);
-                  }}
-                />
-              );
-            }))}
-            {this.props.showHeatmap && (this.props.places && (
-              <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
-            ))}
-        </GoogleMap>
-      )));
+      const defaultIcon = {
+        url: "https://i.ibb.co/jvB4mBH/marker.png"
+      };
+      GoogleMapExample = withScriptjs(
+        withGoogleMap(props => (
+          <GoogleMap
+            defaultCenter={{
+              lat: this.props.centerPlace.lat,
+              lng: this.props.centerPlace.long
+            }}
+            defaultZoom={16}
+            defaultOptions={{ styles: mapStyles }}>
+            {this.props.showMarkers &&
+              this.props.places
+                .map(place => {
+                  let image = defaultIcon;
+                  if (place.id === this.props.centerPlace.id) {
+                    image = currentSelection;
+                  }
+                  if (
+                    this.props.selectionList.map(el => el.id).includes(place.id)
+                  ) {
+                    image = onTheList;
+                  }
+                  return (
+                    <Marker
+                      key={place.id}
+                      position={{ lat: place.lat, lng: place.long }}
+                      icon={image && image}
+                      // label={`${place.rating}`}
+                      labelClass={".label-style"}
+                      onClick={() => {
+                        this.props.updateSelection(place.id);
+                      }}
+                    />
+                  );
+                })}
+            {this.props.showHeatmap &&
+              (this.props.places && (
+                <HeatmapLayer data={heatMapData} options={{ radius: 20 }} />
+              ))}
+          </GoogleMap>
+        ))
+      );
     }
 
     return (
       <div className='map-container'>
         <GoogleMapExample
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_APIKEY}&v=3.exp&libraries=visualization`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
+            process.env.REACT_APP_GOOGLE_MAP_APIKEY
+          }&v=3.exp&libraries=visualization`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%`, width: "100%" }} />}
           mapElement={<div style={{ height: `100%` }} />}

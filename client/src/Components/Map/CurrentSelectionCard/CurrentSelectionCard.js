@@ -1,19 +1,12 @@
 import React, { Component } from "react";
 import CurrentSelectionModal from "./CurrentSelectionModal";
-import {
-  Button,
-} from "reactstrap";
+import { Button } from "reactstrap";
 
 import { MdPhone } from "react-icons/md";
-import {
-  FaYelp,
-  FaCreditCard
-} from "react-icons/fa";
+import { FaYelp, FaCreditCard } from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
 
-
 class CurrentSelectionCard extends Component {
-
   render() {
     return (
       <div id='CurrentSelectionCard'>
@@ -38,29 +31,32 @@ class CurrentSelectionCard extends Component {
                         />
                       </div>
                       <div className='col current-card-info'>
-                        <p className="current-address">
-                        {this.props.currentSelection.address}
+                      <p className='card-type info-p'><span className="titles">Tags: </span>
+                          {this.props.currentSelection.yelp_categories.map(
+                            category => {
+                              return category + " ";
+                            }
+                          )}
+                        </p>
+                        <p className='current-address info-p'><span className="titles">Address: </span>
+                          {this.props.currentSelection.address}
                         </p>
                         <p className='card-price info-p'>
-                        <FaCreditCard className='icon-carousel' />
-                        {this.props.currentSelection.yelp_price}
-                      </p>
-                      <p className='card-price info-p'>
-                        {this.props.currentSelection.yelp_categories.map((category)=>{return category + " "})}
-                      </p>
-                      <p className='card-phone info-p'>
-                        <MdPhone className='icon-carousel' />
-                        {this.props.currentSelection.yelp_display_phone}
-                      </p>
+                        <span className="titles">Price: </span> 
+                          {this.props.currentSelection.yelp_price}
+                        </p>
+          
+                        <p className='card-phone info-p'>
+                        <span className="titles">Phone: </span> 
+                          {this.props.currentSelection.yelp_display_phone}
+                        </p>
 
+                        <p className='card-average-wait info-p'>
+                        <span className="titles">Avg Time Spent: </span> 
+                          {this.props.currentSelection.time_spent_max} {" "} mins.
+                        </p>
 
-                        <a href={this.props.currentSelection.yelp_url} target='_blank'>
-                        {" "}
-                        <Button outline color='light' size='sm' block>
-                          <FaYelp className='yelp-icon' /> Read Yelp Reviews
-                        </Button>
-                      </a>
-
+               
                       </div>
                       <div className='col score-col'>
                       <p classname="hot-score">

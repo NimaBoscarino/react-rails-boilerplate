@@ -37,5 +37,9 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001",
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+  }
 }

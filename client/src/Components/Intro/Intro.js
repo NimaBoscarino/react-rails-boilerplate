@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Carousel from "./IntroCarousel";
 import HotSpotIcon from "../../global-assets/hotspot-marker.png";
-import { FaBroadcastTower } from "react-icons/fa";
+
 
 class Intro extends Component {
   render() {
@@ -27,9 +27,7 @@ class Intro extends Component {
                 <Carousel places={this.props.places} />
                 <p className='intro-summary'>
                   <h4 className='popular-now-title'>
-                    <span className='badge badge-pill badge-info live-icon'>
-                     <FaBroadcastTower />  POPULAR RIGHT NOW
-                    </span>{" "}
+               
                   
                   </h4>
                 </p>

@@ -24,7 +24,7 @@ class Api::PopularController < ApplicationController
         places= Place.select(:id, :lat, :long)
         arr=[]
         places.each{|place|
-            hot_scores = place.hot_scores.select(:hot_score, :hour_id).where(day_id:params[:day]).where("hour_id >= 17 OR hour_id <= 3")
+            hot_scores = place.popular_times.select(:busy_value, :hour_id).where(day_id:params[:day]).where("hour_id >= 17 OR hour_id <= 3")
             hot_scores_arr=[]
             hash=place.attributes
             hot_scores.each{|element| hot_scores_arr.push(element.attributes)}
