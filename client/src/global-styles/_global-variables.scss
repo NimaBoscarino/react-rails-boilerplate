@@ -27,25 +27,22 @@ $font-size-intro-card-hotspot-number: calc(14px + 5.5vw);
 $font-size-slider-title: calc(9px + 0.5vw);
 $font-size-slider-label: calc(9px + 0.4vw);
 
-
 // Current Selection Card ------
 
 $font-size-current-selection-p: calc(9px + 0.9vh);
 $font-size-current-selection-titles: calc(9px + 0.6vh);
-
-
+$font-size-current-hotscore-title: calc(10px + 20vh);
+$font-size-current-hotscore-number: calc(9px + 5vh);
 
 // Map - Font Sizes ------
 
 $font-size-hooder-header: calc(9px + 1.5vw);
-
 
 $font-size-filter-icon: calc(5px + 0.8vw);
 $font-size-filter-icon-button: calc(5px + 0.5vw);
 $font-size-filter-prompt: calc(5px + 0.6vw);
 $font-size-filter-buttons: calc(5px + 0.6vw);
 $font-size-filter-button-toolbar: calc(5px + 0.4vw);
-
 
 // My Night - Font Sizes ------
 
@@ -233,4 +230,3 @@ $background-gradient-drop-down: linear-gradient(
   rgba($quick-silver, 0.9),
   rgba($quick-silver, 1)
 );
-

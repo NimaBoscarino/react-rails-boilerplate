@@ -101,8 +101,16 @@
     }
   }
 
+  .current-address {
+    margin-top: -7px;
+  }
+
   .score-col {
-    text-align: left;
+    text-align: center;
+
+    .hot-score-title {
+      font-size: $font-size-current-hotscore-title;
+    }
   }
 
   .icon-plus {
@@ -114,4 +122,10 @@
   .see-images-button {
     margin-top: 5px;
   }
+
+  .hot-score-number {
+    font-size: $font-size-current-hotscore-number;
+    font-family: $title-font;
+  }
+  
 }

@@ -31,50 +31,40 @@ class CurrentSelectionCard extends Component {
                         />
                       </div>
                       <div className='col current-card-info'>
-                      <p className='card-type info-p'><span className="titles">Tags: </span>
+                        <p className='card-type info-p'>
+                          <span className='titles'>Tags: </span>
                           {this.props.currentSelection.yelp_categories.map(
                             category => {
                               return category + " ";
                             }
                           )}
                         </p>
-                        <p className='current-address info-p'><span className="titles">Address: </span>
+                        <p className='current-address info-p'>
+                          <span className='titles'>Address: </span>
+                        </p>
+                        <p className='current-address info-p'>
                           {this.props.currentSelection.address}
                         </p>
                         <p className='card-price info-p'>
-                        <span className="titles">Price: </span> 
+                          <span className='titles'>Price: </span>
                           {this.props.currentSelection.yelp_price}
                         </p>
-          
+
                         <p className='card-phone info-p'>
-                        <span className="titles">Phone: </span> 
+                          <span className='titles'>Phone: </span>
                           {this.props.currentSelection.yelp_display_phone}
                         </p>
 
                         <p className='card-average-wait info-p'>
-                        <span className="titles">Avg Time Spent: </span> 
-                          {this.props.currentSelection.time_spent_max} {" "} mins.
+                          <span className='titles'>Avg Time Spent: </span>
+                          {this.props.currentSelection.time_spent_max} mins.
                         </p>
-
-               
                       </div>
                       <div className='col score-col'>
-                      <p classname="hot-score">
-                          Current Hotspot Score:{"  "}
-                          <span classname="hot-score-number">   {this.props.currentSelection.current_hot_score}</span>
+                        <p classname='hot-score-title'>
+                          Current Hotspot Score:{"  "}{" "}
                         </p>
-                        <p classname="other-score">
-                          Google Score:{"  "}
-                          {this.props.currentSelection.rating} based on{" "}
-                          {this.props.currentSelection.rating_n} reviews
-                        </p>
-                        <p classname="other-score">
-                          Yelp Score:{"  "}
-                          {this.props.currentSelection.yelp_rating} based on{" "}
-                          {this.props.currentSelection.yelp_review_count}
-                        </p>
-                        <p>
-                          Hot Score:{"  "}
+                        <p classname='hot-score-number'>
                           {this.props.currentSelection.current_hot_score}
                         </p>
                       </div>

@@ -665,7 +665,6 @@ nav .logo {
 
 #Map .hood-sidebar {
   border-bottom: 5px #ffe80a solid;
-  border-right: 1px solid rgba(7, 7, 7, 0.6);
   position: absolute;
   overflow: scroll;
   margin-top: 7vh;
@@ -1015,8 +1014,16 @@ nav .logo {
   color: #070707;
 }
 
+#CurrentSelectionCard .current-address {
+  margin-top: -7px;
+}
+
 #CurrentSelectionCard .score-col {
-  text-align: left;
+  text-align: center;
+}
+
+#CurrentSelectionCard .score-col .hot-score-title {
+  font-size: calc(10px + 20vh);
 }
 
 #CurrentSelectionCard .icon-plus {
@@ -1027,6 +1034,11 @@ nav .logo {
 
 #CurrentSelectionCard .see-images-button {
   margin-top: 5px;
+}
+
+#CurrentSelectionCard .hot-score-number {
+  font-size: calc(9px + 5vh);
+  font-family: "Fira Sans", sans-serif;
 }
 
 #Map .map-header {
