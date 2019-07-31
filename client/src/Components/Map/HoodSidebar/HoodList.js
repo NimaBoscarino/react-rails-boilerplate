@@ -17,11 +17,6 @@ class HoodList extends Component {
     this.clickTogglePlaces = this.clickTogglePlaces.bind(this);
   }
 
-  makeScore(places) {
-    let thesePlaces = places.filter(place => place.neighbourhood_id === this.props.neighbourhood.id)
-    return Math.ceil(thesePlaces.reduce((acc,cur)=>acc+cur.current_hot_score,0)/thesePlaces.length);
-  }
-
   componentDidUpdate(oldProps) {
     if (oldProps.showOneHoodSide != this.props.showOneHoodSide) {
       this.setState({showListPlaces: this.props.showOneHoodSide})
@@ -41,6 +36,7 @@ class HoodList extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
         <li className='list-group-item hood-name-li'>
@@ -69,7 +65,7 @@ class HoodList extends Component {
             <p className='hotspot-score-number'>
               {
                 this.props.places &&
-                this.makeScore(this.props.places)
+                this.props.neighbourhood.averageHotScore
               }
             </p>
           </div>
