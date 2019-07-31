@@ -51,19 +51,26 @@
 
   .hotspot-icon-stats {
     display: inline-block;
-    width: 8%;
+    width: 7%;
+    margin-bottom: 0.5vh;
   }
   h5 {
     display: inline-block;
   }
 
+  .hotspot-icon-night-card {
+    display: inline-block;
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+  }
+
   .hotspot-score-title {
     display: inline-block;
-    font-size: $font-size-hotspot-score-title-large;
+    font-size: $font-size-hotspot-score-title-small !important;
     font-family: $title-font;
     padding: 0;
     margin: 0;
-    margin-bottom: -2.5vh;
+    margin-bottom: -1.5vh;
     font-weight: 700;
   }
 
@@ -116,6 +123,11 @@
     border-radius: 15px;
   }
 
+  .hotspot-icon-night-card {
+    display: inline-block;
+    width: 8%;
+  }
+
   .my-card-summary-row {
     background: $background-gradient-light;
     width: 95%;
@@ -127,7 +139,7 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    min-height: 18vh;
+    min-height: 20vh;
 
     .score-number-col {
       display: inline-block;
@@ -148,6 +160,7 @@
         font-size: $font-size-hotspot-number-my-night;
         padding: 0;
         margin: 0;
+        text-shadow: $text-shadow-title;
       }
     }
 
@@ -228,14 +241,13 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    min-height: 18vh;
+    min-height: 20vh;
 
     .best-times-title {
       font-family: $title-font;
       font-size: $font-size-best-time-title;
-
       margin: 0;
-      margin-top: 1.5vh;
+      margin-top: 2.5vh;
       margin-bottom: 0.5vh;
       color: $quick-silver;
     }

@@ -44,12 +44,12 @@ class MyNightPlan extends Component {
                       <div className='card-body card-text'>
                         <div className='row'>
                           <div className='col-4 chart-col'>
-                            <div className='col hotspot-score-col d-flex align-items-center'>
+                            <div className='col hotspot-score-col'>
                               <div className='row w-100'>
                               <div className='title-div'>
                               <img className='hotspot-icon-stats' src={icon} alt={""} />
                                 <h5 className='hotspot-score-title '>
-                                  Your HotSpot Score
+                                  Your Trip's HotSpot Score
                                 </h5>
                                 </div>
 

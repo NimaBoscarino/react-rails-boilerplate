@@ -57,17 +57,19 @@
         width: 100%;
         text-align: center;
         margin: 0 auto;
+        display: inline-block;
       }
 
       p.hotspot-score-number {
         display: block;
         margin: 0 auto;
         color: $white;
-        font-size: 50px;
+        font-size: $font-size-hotspot-score-large-bottom-stats-box !important;
         font-family: $title-font;
         font-weight: 700;
         font-size: $font-size-hotspot-number-stat-box;
         text-shadow: 8px 8px 4px black;
+        margin-top: -4vh;
       }
     }
 

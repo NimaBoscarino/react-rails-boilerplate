@@ -647,23 +647,25 @@ nav .logo {
 #Map .sidebar-button {
   font-family: "Fira Sans", sans-serif;
   margin-top: 1vh;
-  font-size: calc(12px + 0.4vw);
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffe80a), color-stop(#ff9a02), to(#ff5a00));
-  background: linear-gradient(to bottom, #ffe80a, #ff9a02, #ff5a00);
+  font-size: calc(10px + 0.6vw);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 232, 10, 0.8)), color-stop(rgba(255, 154, 2, 0.8)), to(rgba(255, 90, 0, 0.8)));
+  background: linear-gradient(to bottom, rgba(255, 232, 10, 0.8), rgba(255, 154, 2, 0.8), rgba(255, 90, 0, 0.8));
   display: inline-block;
   height: 4vh;
   font-weight: 700;
-  border: 1px transparent solid;
+  border: none;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
   color: #fffffc;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 #Map .sidebar-button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffe80a), color-stop(#ff9a02), to(#ff5a00));
+  background: linear-gradient(to bottom, #ffe80a, #ff9a02, #ff5a00);
   -webkit-box-shadow: none;
           box-shadow: none;
-  border: 1px transparent solid;
-  color: #100c08;
+  box-shadow: none;
 }
 
 #Map .icon-buttons {
@@ -2143,17 +2145,19 @@ nav .logo {
   width: 100%;
   text-align: center;
   margin: 0 auto;
+  display: inline-block;
 }
 
 #MyNightPlan .stat-div .hotspot-score-col p.hotspot-score-number {
   display: block;
   margin: 0 auto;
   color: #fffffc;
-  font-size: 50px;
+  font-size: calc(6px + 15vh) !important;
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   font-size: 10vw;
   text-shadow: 8px 8px 4px black;
+  margin-top: -4vh;
 }
 
 #MyNightPlan .stat-div .chart-container-div {
@@ -2256,20 +2260,27 @@ nav .logo {
 
 #MyNightPlan .hotspot-icon-stats {
   display: inline-block;
-  width: 8%;
+  width: 7%;
+  margin-bottom: 0.5vh;
 }
 
 #MyNightPlan h5 {
   display: inline-block;
 }
 
+#MyNightPlan .hotspot-icon-night-card {
+  display: inline-block;
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+}
+
 #MyNightPlan .hotspot-score-title {
   display: inline-block;
-  font-size: calc(6px + 2vh);
+  font-size: calc(6px + 1.2vh) !important;
   font-family: "Fira Sans", sans-serif;
   padding: 0;
   margin: 0;
-  margin-bottom: -2.5vh;
+  margin-bottom: -1.5vh;
   font-weight: 700;
 }
 
@@ -2322,6 +2333,11 @@ nav .logo {
   border-radius: 15px;
 }
 
+#MyNightPlan .hotspot-icon-night-card {
+  display: inline-block;
+  width: 8%;
+}
+
 #MyNightPlan .my-card-summary-row {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 12, 8, 0.7)), to(rgba(16, 12, 8, 0.6)));
   background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
@@ -2334,7 +2350,7 @@ nav .logo {
   width: 100%;
   padding: 0;
   margin: 0;
-  min-height: 18vh;
+  min-height: 20vh;
 }
 
 #MyNightPlan .my-card-summary-row .score-number-col {
@@ -2357,6 +2373,7 @@ nav .logo {
   font-size: 5.5vw;
   padding: 0;
   margin: 0;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 #MyNightPlan .my-card-summary-row .percent-sign {
@@ -2435,14 +2452,14 @@ nav .logo {
   width: 100%;
   padding: 0;
   margin: 0;
-  min-height: 18vh;
+  min-height: 20vh;
 }
 
 #MyNightPlan .best-times-card .best-times-title {
   font-family: "Fira Sans", sans-serif;
   font-size: calc(10px + 0.4vw);
   margin: 0;
-  margin-top: 1.5vh;
+  margin-top: 2.5vh;
   margin-bottom: 0.5vh;
   color: #9ea2a8;
 }

@@ -2,11 +2,8 @@ import React, { Component } from "react";
 import { Button, CardBody, CardTitle, Card, CardText } from "reactstrap";
 import { FiClock } from "react-icons/fi";
 import { MdPhone } from "react-icons/md";
-import {
-  FaMapMarkerAlt,
-  FaYelp,
-  FaCreditCard
-} from "react-icons/fa";
+import icon from "../../global-assets/hotspot-score-icon-small.png";
+import { FaMapMarkerAlt, FaYelp, FaCreditCard } from "react-icons/fa";
 
 function average(a, b) {
   return (a + b) / 2;
@@ -119,7 +116,15 @@ class MyNightPlanCards extends Component {
                     </div>
 
                     <div className='hotspot-col col'>
-                      <p className='hotspot-score-title'>HotScore Score</p>
+                      <div className='title-div'>
+                        <img
+                          className='hotspot-icon-night-card'
+                          src={icon}
+                          alt={""}
+                        />
+                        <p className='hotspot-score-title'>HotScore Score</p>
+                      </div>
+
                       <p className='hotspot-score-number'>
                         {this.props.place.current_hot_score}
                         <span className='percent-sign'>%</span>

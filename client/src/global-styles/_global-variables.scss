@@ -56,7 +56,9 @@ $font-size-my-night-title: calc(6px + 4vh);
 $font-size-my-night-intro: calc(6px + 1.5vh);
 $font-size-small-print: calc(6px + .5vh);
 $font-size-hotspot-score-title-large: calc(6px + 2vh);
+$font-size-hotspot-score-title-small: calc(6px + 1.2vh);
 $font-size-hotspot-score-title: calc(6px + 0.8vw);
+$font-size-hotspot-score-large-bottom-stats-box: calc(6px + 15vh);
 
 
 $font-arrow-icon: calc(18px + 1vw);
@@ -265,15 +267,10 @@ $background-buttons-brand-colors: linear-gradient(
 
 
 
-$background-buttons-brand-colors-hover: linear-gradient(
+$background-buttons-brand-colors-slight-opacity: linear-gradient(
   to bottom,
-  rgba($orange-red, 0.8),
+  rgba($bright-yellow, 0.8),
   rgba($orange, 0.8),
-  rgba($bright-yellow, 0.8)
+  rgba($orange-red, 0.8)
 );
 
-$bright-yellow: #ffe80a;
-$medium-yellow: #ffce00;
-$orange: #ff9a02;
-$orange-red: #ff5a00;
-$red: #ff0000;

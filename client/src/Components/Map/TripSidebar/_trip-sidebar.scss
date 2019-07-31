@@ -196,22 +196,22 @@
 
   .sidebar-button {
     font-family: $title-font;
-
     margin-top: 1vh;
-    font-size: $font-size-large;
-    background: $background-buttons-brand-colors;
+    font-size: $font-size-night-out-button;
+    background: $background-buttons-brand-colors-slight-opacity;
     display: inline-block;
     height: 4vh;
     font-weight: 700;
-    border: 1px transparent solid;
+    border: none;
     box-shadow: $button-shadows;
     color: $white;
+    text-shadow: $button-shadows;
   }
 
   .sidebar-button:hover {
+    background: $background-buttons-brand-colors;
     box-shadow: none;
-    border: 1px transparent solid;
-    color: $smoky-black;
+    box-shadow: none;
   }
 
   .icon-buttons {
