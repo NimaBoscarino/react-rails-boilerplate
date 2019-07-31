@@ -135,16 +135,16 @@ class Map extends Component {
 
   getHeatmapData() {
     axios.get(`api/popular/day/${this.props.day}`).then(response => {
-      const updatedPopularTimes = response.data.popular_times;
+      const updatedHotScores = response.data.hot_scores;
       const data = {};
-      updatedPopularTimes.forEach(place => {
-        place.popular_times.forEach(popular => {
-          if (!data[`${popular.hour_id}`]) {
-            data[`${popular.hour_id}`] = [];
+      updatedHotScores.forEach(place => {
+        place.hot_scores.forEach(hot => {
+          if (!data[`${hot.hour_id}`]) {
+            data[`${hot.hour_id}`] = [];
           }
-          data[`${popular.hour_id}`].push({
+          data[`${hot.hour_id}`].push({
             location: new google.maps.LatLng(place.lat, place.long),
-            weight: popular.busy_value
+            weight: hot.busy_value
           });
         });
       });
