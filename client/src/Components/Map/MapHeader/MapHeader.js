@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { ButtonToolbar, ButtonGroup, Button, Tooltip } from "reactstrap";
+import { ButtonToolbar, ButtonGroup, Button } from "reactstrap";
 import MapDayFilter from "./DropdownDays";
 import MapHourFilter from "../DropdownHours";
 import MapHoodFilter from "./DropdownHood";
 import { FaGlassCheers, FaPizzaSlice, FaMusic } from "react-icons/fa";
-import { FiFilter } from "react-icons/fi";
+
 
 class MapHeader extends Component {
   render() {
@@ -45,7 +45,7 @@ class MapHeader extends Component {
           <ButtonToolbar
             className='button-toolbar'
             aria-label='Toolbar with button groups'>
-            <FiFilter className='filter-icon-funnel' />
+       
             <ButtonGroup
               className='mr-2 filter-toolbar'
               aria-label='First group'>
