@@ -153,7 +153,7 @@ nav .logo {
 }
 
 #Intro .hotspot-logo-number {
-  width: 5vw;
+  width: 4.5vw;
   margin-bottom: 1vw;
 }
 
@@ -400,9 +400,9 @@ nav .logo {
   margin: 0 auto;
   -ms-flex-item-align: baseline;
       align-self: baseline;
-  height: 10vw;
-  margin-top: 8vw !important;
-  margin-bottom: 5vw !important;
+  height: 3vw;
+  margin-top: 1vw !important;
+  margin-bottom: 7vw !important;
 }
 
 #NightOutBuilder .night-out-intro-div {
