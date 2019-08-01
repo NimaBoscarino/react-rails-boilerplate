@@ -127,7 +127,7 @@ nav .logo {
 }
 
 #Intro .title-section .intro-title {
-  font-size: calc(32px + 2.4vw);
+  font-size: calc(32px + 1.8vw);
   font-weight: 700;
   font-family: "Fira Sans", sans-serif;
   color: #fffffc;
@@ -141,10 +141,11 @@ nav .logo {
   font-family: "Fira Sans", sans-serif;
   font-weight: 500;
   padding: 0 22%;
-  font-size: calc(14px + 0.8vw);
+  font-size: calc(12px + 0.7vw);
   color: #fffffc;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
-  line-height: 1.7;
+  line-height: 1.5;
+  margin-bottom: 0.5vw;
 }
 
 #Intro .hotspot-logo-div {
@@ -153,14 +154,14 @@ nav .logo {
 }
 
 #Intro .hotspot-logo-number {
-  width: 4.5vw;
+  width: 4vw;
   margin-bottom: 1vw;
 }
 
 #Intro .intro-carousel-div {
-  padding: 0vw 5vw 1vw 5vw;
+  padding: 0vw 1vw 1vw 1vw;
   color: #fffffc;
-  margin: 5vw auto 5vw auto;
+  margin: 1.5vw auto 1.5vw auto;
   width: 100%;
 }
 
@@ -191,6 +192,10 @@ nav .logo {
   border-radius: 20px;
 }
 
+#Intro .intro-carousel-div .intro-feature-card-div {
+  margin: 0vw;
+}
+
 #Intro .intro-carousel-div .intro-feature-card {
   text-align: left;
   display: block;
@@ -205,7 +210,7 @@ nav .logo {
 #Intro .intro-carousel-div .intro-feature-card .card-title {
   display: inline-block;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(9px + 1.2vw);
+  font-size: calc(9px + 1vw);
   font-weight: 700;
   width: 100%;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -218,7 +223,7 @@ nav .logo {
   color: #fffffc;
   display: block;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(8px + 1vw);
+  font-size: calc(8px + 0.6vw);
   font-weight: 300;
   width: 100%;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -230,7 +235,7 @@ nav .logo {
 #Intro .intro-carousel-div .intro-feature-card .card-hood {
   display: block;
   font-family: "Fira Sans", sans-serif;
-  font-size: calc(8px + 0.8vw);
+  font-size: calc(8px + 0.6vw);
   font-weight: 300;
   width: 100%;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -400,16 +405,16 @@ nav .logo {
   margin: 0 auto;
   -ms-flex-item-align: baseline;
       align-self: baseline;
-  height: 3vw;
-  margin-top: 1vw !important;
-  margin-bottom: 7vw !important;
+  height: 5vw;
+  margin-top: 0vw !important;
+  margin-bottom: 10vw !important;
 }
 
 #NightOutBuilder .night-out-intro-div {
   width: 100%;
   margin: 10vw auto;
   text-align: center;
-  padding: 0vh 2vh 2vh 2vh;
+  padding: 0vw 2vw 2vw 2vw;
 }
 
 #NightOutBuilder .build-night-button {
@@ -466,7 +471,7 @@ nav .logo {
   font-family: "Fira Sans", sans-serif;
   font-weight: 500;
   padding: 0 10%;
-  font-size: calc(14px + 0.8vw);
+  font-size: calc(12px + 0.7vw);
   color: #fffffc;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
   line-height: 1.5;
@@ -2009,14 +2014,14 @@ nav .logo {
 #AreaSelector .area-selector-hood {
   font-family: "Fira Sans", sans-serif;
   font-weight: 700;
-  font-size: calc(32px + 2.4vw);
+  font-size: calc(32px + 1.8vw);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #AreaSelector .area-selector-hood-description {
   margin-top: 15px;
   padding: 0 2%;
-  font-size: calc(14px + 0.8vw);
+  font-size: calc(12px + 0.7vw);
   color: white;
   line-height: 1.4;
 }

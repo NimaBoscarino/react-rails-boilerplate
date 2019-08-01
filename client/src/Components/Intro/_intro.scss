@@ -34,7 +34,8 @@
       font-size: $font-size-title-intro;
       color: $light-weight;
       text-shadow: $text-shadow-title;
-      line-height: 1.7;
+      line-height: 1.5;
+      margin-bottom: 0.5vw;
     }
   }
 
@@ -44,14 +45,14 @@
   }
 
   .hotspot-logo-number {
-    width: 4.5vw;
+    width: 4vw;
     margin-bottom: 1vw;
   }
 
   .intro-carousel-div {
-    padding: 0vw 5vw 1vw 5vw;
+    padding: 0vw 1vw 1vw 1vw;
     color: $light-weight;
-    margin: 5vw auto 5vw auto;
+    margin: 1.5vw auto 1.5vw auto;
     width: 100%;
 
     .radio-signal-icon {
@@ -73,6 +74,10 @@
       flex-direction: column;
       text-align: center;
       border-radius: 20px;
+    }
+
+    .intro-feature-card-div {
+      margin: 0vw;
     }
 
     .intro-feature-card {
@@ -264,16 +269,16 @@
   padding: 0 0 0 0;
   margin: 0 auto;
   align-self: baseline;
-  height: 3vw;
-  margin-top: 1vw !important;
-  margin-bottom: 7vw !important;
+  height: 5vw;
+  margin-top: 0vw !important;
+  margin-bottom: 10vw !important;
 
 
   .night-out-intro-div {
     width: 100%;
     margin: 10vw auto;
     text-align: center;
-    padding: 0vh 2vh 2vh 2vh;
+    padding: 0vw 2vw 2vw 2vw;
   }
 
   .build-night-button {
