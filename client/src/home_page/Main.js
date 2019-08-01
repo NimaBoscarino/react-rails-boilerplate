@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import MobileLandingPage from "../Components/MobileLandingPage/MobileLandingPage";
 import Intro from "../Components/Intro/Intro";
 import Map from "../Components/Map/Map";
 import MyNightPlan from "../Components/MyNightPlan/MyNightPlan";
@@ -184,6 +185,7 @@ class Main extends Component {
     return (
       <div className='App' style={sectionStyle}>
         <Nav />
+        <MobileLandingPage />
         <Intro
           places={this.state.places}
           neighbourhoods={this.state.neighbourhoods}

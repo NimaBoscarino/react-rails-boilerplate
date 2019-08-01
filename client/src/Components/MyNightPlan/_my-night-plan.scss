@@ -1,20 +1,17 @@
 @import "./my-night-stats";
 
 #MyNightPlan {
-  min-height: 10vh;
   width: 100%;
   padding: 0;
   margin: -2px auto;
 
   .my-night-card-container {
-    padding-left: 5vh;
-    padding-right: 5vh;
   }
 
   .my-night-container {
     width: 90%;
     margin: 0 auto;
-    padding: 4vh 5vh 4vh 5vh;
+    padding: 4vw 5vw 4vw 5vw;
     text-align: center;
     color: $light-weight;
   }
@@ -30,11 +27,11 @@
     text-shadow: $text-shadow-title;
     color: $light-weight;
     font-weight: 700;
-    padding-bottom: 1vh;
+    padding-bottom: 1vw;
   }
 
   .my-night-intro {
-    margin-top: 0.6vh;
+    margin-top: 0.6vw;
     font-family: $title-font;
     font-weight: 500;
     padding: 0 5%;
@@ -42,7 +39,7 @@
     color: $light-weight;
     text-shadow: $text-shadow-title;
     line-height: 1.5;
-    padding-bottom: 1.5vh;
+    padding-bottom: 1.5vw;
   }
 
   .title-div {
@@ -52,7 +49,7 @@
   .hotspot-icon-stats {
     display: inline-block;
     width: 7%;
-    margin-bottom: 0.5vh;
+    margin-bottom: 0.5vw;
   }
   h5 {
     display: inline-block;
@@ -70,7 +67,7 @@
     font-family: $title-font;
     padding: 0;
     margin: 0;
-    margin-bottom: -1.5vh;
+    margin-bottom: -1.5vw;
     font-weight: 700;
   }
 
@@ -79,12 +76,12 @@
     color: $accent-grey;
     line-height: 1.2;
     border-top: 1px $accent-grey solid;
-    padding-top: 1vh;
-    margin-right: 1.5vh;
-    margin-left: 1.5vh;
-    padding-right: 2vh;
-    padding-left: 2vh;
-    margin-top: -3vh;
+    padding-top: 1vw;
+    margin-right: 1.5vw;
+    margin-left: 1.5vw;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    margin-top: -1.5vw;
   }
 
   .my-night-title-card {
@@ -141,18 +138,18 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    min-height: 20vh;
+    min-height: 12.5vw;
 
     .score-number-col {
       display: inline-block;
       padding: 0;
       margin: 0;
-      margin-top: 1vh;
-      width: 20vh;
+      margin-top: 1vw;
+      width: 20vw;
       height: 100%;
       float: left;
       text-align: center;
-      padding-top: 1vh;
+      padding-top: 1vw;
       font-family: $title-font;
       text-shadow: $text-shadow-title;
 
@@ -173,13 +170,13 @@
     .details-col {
       display: inline-block;
       top: 0;
-      width: 30vh;
+      width: 30vw;
       height: 100%;
       float: left;
     }
 
     .my-card-summary-summary-div {
-      margin-top: 2vh;
+      margin-top: 2vw;
 
       .my-card-summary-summary-row {
         margin: 0 auto;
@@ -192,19 +189,6 @@
       width: 100%;
     }
 
-    .my-card-summary-button {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      padding-top: 20px;
-      padding-right: 5vh;
-      padding-left: 5vh;
-      font-family: $title-font;
-      background-color: transparent;
-      border: none;
-      width: 4vh;
-      box-shadow: none;
-    }
 
     .button-icon {
       font-size: $font-size-xxxl;
@@ -243,14 +227,14 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    min-height: 20vh;
+    min-height: 12.5vw;
 
     .best-times-title {
       font-family: $title-font;
       font-size: $font-size-best-time-title;
       margin: 0;
-      margin-top: 2.5vh;
-      margin-bottom: 0.5vh;
+      margin-top: 1vw;
+      margin-bottom: 0.5vw;
       color: $quick-silver;
     }
 
@@ -275,7 +259,7 @@
       color: $light-weight;
       padding: 0;
       margin: 0;
-      margin-top: -1.5vh;
+      margin-top: -1vw;
       text-shadow: $text-shadow-title;
     }
 
@@ -283,15 +267,15 @@
       font-family: $title-font;
       font-size: $font-size-average-time;
       padding: 0;
-      margin-top: -2vh;
-      margin-bottom: -2vh;
+      margin-top: -1vw;
+      margin-bottom: -1vw;
     }
   }
 
   .title-col {
     display: inline-block;
-    margin-left: 1.5vh;
-    margin-top: 1.5vh;
+    margin-left: 1.5vw;
+    margin-top: 1.5vw;
 
     .my-card-summary-title {
       display: block;
@@ -307,7 +291,7 @@
       font-family: $title-font;
       font-size: $font-size-hood-large;
       padding: 0;
-      margin-top: 0.1vh;
+      margin-top: 0.1vw;
     }
 
     .yelp-icon {
@@ -322,8 +306,8 @@
 
   .info-col {
     display: inline-block;
-    margin-left: 1.5vh;
-    margin-top: 1.5vh;
+    margin-left: 0.5vw;
+    margin-top: 0.5vw;
 
     .info-p {
       color: $light-weight;
@@ -335,7 +319,7 @@
 
     .icon-carousel {
       color: $quick-silver;
-      margin-right: 0.5vh;
+      margin-right: 0.5vw;
     }
 
     .card-address {
@@ -344,7 +328,7 @@
     }
 
     .card-price {
-      margin-top: 0.5vh;
+      margin-top: 1.2vw;
     }
   }
 
@@ -354,9 +338,9 @@
 
   .hotspot-col {
     display: inline-block;
-    margin-left: 1.5vh;
-    margin-right: 1.5vh;
-    margin-top: 1.5vh;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-top: 1.5vw;
     text-align: right;
 
     .hotspot-score-title {
@@ -364,7 +348,7 @@
       font-family: $title-font;
       padding: 0;
       margin: 0;
-      margin-bottom: -1.5vh;
+      margin-bottom: -1.5vw;
       font-weight: 700;
     }
 

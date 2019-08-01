@@ -27,7 +27,7 @@
     }
 
     .intro-summary {
-      margin-top: 0.2vh;
+      margin-top: 0.4vw;
       font-family: $title-font;
       font-weight: 500;
       padding: 0 22%;
@@ -40,46 +40,30 @@
 
   .hotspot-logo-div {
     margin: 0 auto;
-    margin-bottom: 1vh;
+    margin-bottom: 1vw;
   }
 
   .hotspot-logo-number {
-    width: 8vh;
-    margin-bottom: 3vh;
+    width: 5vw;
+    margin-bottom: 3vw;
   }
 
   .intro-carousel-div {
-    padding: 0vh 10vh 1vh 8vh;
+    padding: 0vw 10vw 1vw 8vw;
     color: $light-weight;
-    margin: 5vh auto 5vh auto;
+    margin: 5vw auto 5vw auto;
     width: 100%;
 
     .radio-signal-icon {
-      font-size: 2vh;
+      font-size: 1vw;
     }
 
     .badge-secondary {
       animation: shadow-pulse 1s infinite;
     }
 
-    .popular-now-title {
-      font-size: $font-size-title-popular-now;
-      font-family: $title-font;
-      color: $light-weight;
-      font-weight: 400;
-      padding-top: 0.5vh;
-      margin-top: 1vh;
-      margin-bottom: 2.5vh;
-    }
 
-    .live-icon {
-      background: $orange;
-      text-shadow: none;
-      font-size: $font-size-small-icon;
-      margin-right: 0.5vh;
-      max-width: 50%;
-      margin: 0 0 0 auto;
-    }
+
 
     .card {
       border: 1px solid $orange;
@@ -98,7 +82,7 @@
       width: 60%;
       background: $background-gradient-light;
       position: relative;
-      min-height: 20vh;
+      min-height: 12vw;
 
       .card-title {
         display: inline-block;
@@ -108,7 +92,7 @@
         width: 100%;
         text-shadow: $text-shadow-subtle;
         line-height: 1;
-        margin-top: 0.8vh;
+        margin-top: 0.8vw;
         vertical-align: middle;
       }
 
@@ -121,7 +105,7 @@
         width: 100%;
         text-shadow: $text-shadow-subtle;
         line-height: 1;
-        margin-top: 0.8vh;
+        margin-top: 0.6vw;
         text-transform: capitalize;
       }
 
@@ -247,11 +231,12 @@
           font-weight: 700;
           padding: 0;
           padding-top: 0.4vh;
-          padding-left: 2.5vh;
+          padding-left: .5vw;
           text-shadow: $map-shadow-header;
           line-height: 0.8;
           letter-spacing: 1px;
           color: $light-weight;
+          white-space: nowrap;
         }
 
         .total-reviews {

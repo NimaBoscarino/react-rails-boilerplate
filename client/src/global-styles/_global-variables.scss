@@ -9,17 +9,19 @@ sans-serif;
 
 // Intro Section------
 
-$font-size-main-title: calc(18px + 6vh);
-$font-size-title-intro: calc(14px + 0.7vw);
+$font-size-main-title: calc(32px + 2.4vw);
+$font-size-title-intro: calc(14px + 0.8vw);
 $font-size-title-popular-now: calc(12px + 0.4vw);
 $font-size-small-icon: calc(9px + 0.2vw);
-$font-size-percent-sign: calc(9px + 6vh);
+$font-size-percent-sign: calc(9px + 2vw);
+
+
 
 // Intro Card------
 
 $font-size-carousel-header: calc(9px + 1.2vw);
-$font-size-carousel-hood: calc(8px + 0.5vw);
-$font-size-carousel-type: calc(8px + 0.7vw);
+$font-size-carousel-hood: calc(8px + 0.8vw);
+$font-size-carousel-type: calc(8px + 1vw);
 $font-size-carousel-address: calc(7px + 0.4vw);
 $font-size-carousel-icons: calc(8px + 0.6vw);
 $font-size-intro-hotspot-title: calc(8px + 0.6vw);
@@ -31,6 +33,10 @@ $font-size-intro-card-hotspot-number: calc(14px + 5.5vw);
 
 $font-size-slider-title: calc(9px + 0.5vw);
 $font-size-slider-label: calc(9px + 0.6vw);
+
+// Hood Sidebar
+
+$font-size-hood-list: calc(11px + 0.4vw);
 
 // Current Selection Card ------
 
@@ -44,7 +50,7 @@ $font-size-current-selection-other-score: calc(9px + 0.7vh);
 
 // Map - Font Sizes ------
 
-$font-size-map-header-prompt: calc(9px + 2.5vh);
+$font-size-map-header-prompt: calc(9px + 1.2vw);
 
 $font-size-hooder-header: calc(9px + 2vw);
 
@@ -127,6 +133,11 @@ $font-size-hotspot-number-stat-box: 10vw;
 $font-size-hotspot-number-my-night: 5.5vw;
 
 $font-size-hotspot-percent: calc(7px + 3vh);
+
+// Mobile Landing Page ------
+
+$font-size-mobile-landing-page: calc(9px + 1vh);
+
 
 
 // Hood Sidebar Font Sizes ------

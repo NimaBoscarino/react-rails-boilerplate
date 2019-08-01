@@ -10,3 +10,68 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+@media screen and (min-width: 800px) {
+
+  #MobileLandingPage {
+    display: none !important;
+  }
+
+}
+
+
+@media screen and (max-width: 1000px) {
+
+
+  #MobileLandingPage {
+    display: flex !important;
+  }
+
+  #Intro {
+    display: none !important;
+  }
+
+  #Map {
+    display: none !important;
+  }
+
+  .planner-sidebar {
+    display: none !important;
+  }
+
+  #NightOutBuilder {
+    display: none !important;
+  }
+
+  #Footer {
+    margin: 0 !important;
+    margin-top: -10vh !important;
+    padding: 2vh 5vh !important;
+  }
+
+  .night-out-prompt-div {
+    display: none !important;
+  }
+
+  .footer-main-div {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .footer-row {
+    padding: 0;
+    margin: 0;
+  }
+
+  .logo-footer {
+    display: none !important;
+  }
+
+  .copy-text {
+    color: $smoky-black;
+  }
+
+
+}
