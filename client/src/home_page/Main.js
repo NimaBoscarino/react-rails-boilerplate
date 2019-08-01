@@ -69,6 +69,7 @@ class Main extends Component {
   }
 
   setHour(newTime) {
+    console.log(newTime)
     if (typeof newTime === "object") {
       let toPass = newTime.hour24;
       toPass++
@@ -77,6 +78,10 @@ class Main extends Component {
       }
       this.setState({hour: toPass})
     } else {
+      newTime++
+      if (newTime === 25) {
+        newTime = 1
+      }
       this.setState({hour: newTime})
     }
   }
