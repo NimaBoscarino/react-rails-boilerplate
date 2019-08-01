@@ -8,6 +8,8 @@
       background: $background-gradient-light;
     }
 
+
+
     h5.stats-title {
       padding: 0;
       color: $white;
@@ -58,6 +60,10 @@
         text-align: center;
         margin: 0 auto;
         display: inline-block;
+      }
+
+      .percent-sign-large {
+        font-size: $font-size-my-night-title;
       }
 
       p.hotspot-score-number {

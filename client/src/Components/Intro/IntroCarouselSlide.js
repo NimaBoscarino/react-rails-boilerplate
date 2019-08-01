@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import PlaceHolderPic from "../../global-assets/yaletown.jpg";
 import Icon from "../../global-assets/hotspot-score-icon-small.png";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { IoIosRadio } from "react-icons/io";
 
 function sum(a, b) {
   return a + b;
 }
+
 
 class IntroCarouselSlide extends Component {
   render() {
@@ -37,6 +39,7 @@ class IntroCarouselSlide extends Component {
                   <FaMapMarkerAlt className='icon-carousel hood-icon' />
                   {this.props.place.neighbourhood_name}
                 </p>
+                <h6><span className="badge badge-secondary"> LIVE  <IoIosRadio className='radio-signal-icon' />  </span></h6>
               </div>
 
               <div className='col hotspot-col '>

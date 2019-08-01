@@ -49,7 +49,7 @@ class MyNightPlan extends Component {
                               <div className='title-div'>
                               <img className='hotspot-icon-stats' src={icon} alt={""} />
                                 <h5 className='hotspot-score-title '>
-                                  Your Trip's HotSpot Score
+                                  Your Plan's HotSpot Score
                                 </h5>
                                 </div>
 
@@ -60,7 +60,7 @@ class MyNightPlan extends Component {
                                       0
                                     ) / this.props.nightList.length
                                   )}
-                                  <span className='percent-sign'>%</span>
+                                  <span className='percent-sign-large'>%</span>
                                 </p>
                                 <p className='hotspot-small-print '>
                                   Your HotSpot Score is provided for

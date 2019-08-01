@@ -1,7 +1,11 @@
-$display-font: "Lalezar", cursive;
-$title-font: "Fira Sans", sans-serif;
-$condensed-font: "Fira Sans Condensed", sans-serif;
-$body-font: "Roboto", sans-serif;
+$display-font: "Lalezar",
+cursive;
+$title-font: "Fira Sans",
+sans-serif;
+$condensed-font: "Fira Sans Condensed",
+sans-serif;
+$body-font: "Roboto",
+sans-serif;
 
 // Intro Section------
 
@@ -109,11 +113,11 @@ $font-size-icons: calc(20px + 0.2vw);
 
 // Shadows------
 
-$map-shadow-header: 1px 2px 2px rgba(0, 0, 0, 0.5);
+$map-shadow-header: 1px 1px 0px rgba(0, 0, 0, 0.5);
 $text-shadow-subtle: 1px 1px 1px rgba(0, 0, 0, 0.5);
 $text-shadow-title: 1px 2px 2px rgba(0, 0, 0, 0.4);
 $text-shadow-box: 0px 4px 4px rgba(0, 0, 0, 0.5);
-$button-shadows: 0px 1px 2px rgba(0, 0, 0, 0.5);
+$button-shadows: 1px 1px 0px rgba(0, 0, 0, 0.2);
 
 // Trip Planner Sidebar Font Sizes ------
 
@@ -122,7 +126,7 @@ $font-size-hotspot-number-large: 8vw;
 $font-size-hotspot-number-stat-box: 10vw;
 $font-size-hotspot-number-my-night: 5.5vw;
 
-$font-size-hotspot-percent: calc(7px + 4vh);
+$font-size-hotspot-percent: calc(7px + 3vh);
 
 
 // Hood Sidebar Font Sizes ------
@@ -177,100 +181,67 @@ $blue-green: #0fa3b1;
 
 // Background-Gradients -------
 
-$background-gradient-dark: linear-gradient(
-  to bottom,
+$background-gradient-dark: linear-gradient(to bottom,
   rgba($smoky-black, 1),
-  rgba($smoky-black, 0.9)
-);
+  rgba($smoky-black, 0.9));
 
-$background-gradient-black: linear-gradient(
-  to bottom,
+$background-gradient-black: linear-gradient(to bottom,
   rgba($smoky-black, 1),
-  rgba($smoky-black, 1)
-);
+  rgba($smoky-black, 1));
 
-$background-gradient-medium: linear-gradient(
-  to bottom,
+$background-gradient-medium: linear-gradient(to bottom,
   rgba($smoky-black, 0.9),
-  rgba($smoky-black, 0.8)
-);
+  rgba($smoky-black, 0.8));
 
-$background-gradient-light: linear-gradient(
-  to bottom,
+$background-gradient-light: linear-gradient(to bottom,
   rgba($smoky-black, 0.7),
-  rgba($smoky-black, 0.6)
-);
+  rgba($smoky-black, 0.6));
 
-$background-gradient-very-light: linear-gradient(
-  to bottom,
+$background-gradient-very-light: linear-gradient(to bottom,
   rgba($smoky-black, 0.4),
-  rgba($smoky-black, 0.2)
-);
+  rgba($smoky-black, 0.2));
 
-$background-gradient-blue-dark-map-header: linear-gradient(
-  to bottom,
+$background-gradient-blue-dark-map-header: linear-gradient(to bottom,
   rgba($dark-blue-gradient-top, 1),
-  rgba($dark-blue-gradient-top, 0.9)
-);
+  rgba($dark-blue-gradient-top, 0.9));
 
-$background-gradient-blue-dark: linear-gradient(
-  to bottom,
+$background-gradient-blue-dark: linear-gradient(to bottom,
   rgba($dark-blue-gradient-top, 1),
-  rgba($dark-blue-gradient-bottom, 0.9)
-);
+  rgba($dark-blue-gradient-bottom, 0.9));
 
-$background-gradient-blue-medium: linear-gradient(
-  to bottom,
-  rgba($dark-blue-gradient-top, 0.9) rgba($dark-blue-gradient-bottom, 0.8)
-);
+$background-gradient-blue-medium: linear-gradient(to bottom,
+  rgba($dark-blue-gradient-top, 0.9) rgba($dark-blue-gradient-bottom, 0.8));
 
-$background-gradient-blue-light: linear-gradient(
-  to bottom,
-  rgba($dark-blue-gradient-top, 0.7) rgba($dark-blue-gradient-bottom, 0.6)
-);
+$background-gradient-blue-light: linear-gradient(to bottom,
+  rgba($dark-blue-gradient-top, 0.7) rgba($dark-blue-gradient-bottom, 0.6));
 
-$background-gradient-very-light-blue: linear-gradient(
-  to bottom,
-  rgba($dark-blue-gradient-top, 0.6) rgba($dark-blue-gradient-bottom, 0.4)
-);
+$background-gradient-very-light-blue: linear-gradient(to bottom,
+  rgba($dark-blue-gradient-top, 0.6) rgba($dark-blue-gradient-bottom, 0.4));
 
-$background-gradient-build-night-button: linear-gradient(
-  to bottom,
+$background-gradient-build-night-button: linear-gradient(to bottom,
   rgba($smoky-black, 0.8),
-  rgba($smoky-black, 0.7)
-);
+  rgba($smoky-black, 0.7));
 
-$background-gradient-filter-buttons: linear-gradient(
-  to bottom,
+$background-gradient-filter-buttons: linear-gradient(to bottom,
   rgba($quick-silver, 0.5),
-  rgba($quick-silver, 0.3)
-);
+  rgba($quick-silver, 0.3));
 
-$background-gradient-heatmap-div-background: linear-gradient(
-  to bottom,
+$background-gradient-heatmap-div-background: linear-gradient(to bottom,
   rgba($quick-silver, 0.7),
-  rgba($quick-silver, 0.6)
-);
+  rgba($quick-silver, 0.6));
 
-$background-gradient-drop-down: linear-gradient(
-  to bottom,
+$background-gradient-drop-down: linear-gradient(to bottom,
   rgba($quick-silver, 0.9),
-  rgba($quick-silver, 1)
-);
+  rgba($quick-silver, 1));
 
-$background-buttons-brand-colors: linear-gradient(
-  to bottom,
+$background-buttons-brand-colors: linear-gradient(to bottom,
   rgba($bright-yellow, 1),
   rgba($orange, 1),
-  rgba($orange-red, 1)
-);
+  rgba($orange-red, 1));
 
 
 
-$background-buttons-brand-colors-slight-opacity: linear-gradient(
-  to bottom,
-  rgba($bright-yellow, 0.8),
-  rgba($orange, 0.8),
-  rgba($orange-red, 0.8)
-);
-
+$background-buttons-brand-colors-slight-opacity: linear-gradient(to bottom,
+  rgba($bright-yellow, 0.9),
+  rgba($orange, 0.9),
+  rgba($orange-red, 0.9));

@@ -49,25 +49,25 @@ nav .logo {
   height: 80vh;
 }
 
-@-webkit-keyframes shadow-pulse-live {
+@-webkit-keyframes shadow-pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.3);
-            box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.3);
+    -webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
   }
   100% {
-    -webkit-box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
-            box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
+    -webkit-box-shadow: 0 0 0 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 0 40px rgba(0, 0, 0, 0.2);
   }
 }
 
-@keyframes shadow-pulse-live {
+@keyframes shadow-pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.3);
-            box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.3);
+    -webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
   }
   100% {
-    -webkit-box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
-            box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
+    -webkit-box-shadow: 0 0 0 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 0 40px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -114,6 +114,15 @@ nav .logo {
   width: 100%;
 }
 
+#Intro .intro-carousel-div .radio-signal-icon {
+  font-size: 2vh;
+}
+
+#Intro .intro-carousel-div .badge-secondary {
+  -webkit-animation: shadow-pulse 1s infinite;
+          animation: shadow-pulse 1s infinite;
+}
+
 #Intro .intro-carousel-div .popular-now-title {
   font-size: calc(12px + 0.4vw);
   font-family: "Fira Sans", sans-serif;
@@ -134,7 +143,7 @@ nav .logo {
 }
 
 #Intro .intro-carousel-div .card {
-  border: 1px solid rgba(16, 12, 8, 0.6);
+  border: 1px solid #ff9a02;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
   display: -webkit-box;
@@ -314,7 +323,7 @@ nav .logo {
   font-weight: 700;
   padding-left: 0.5vh;
   margin-bottom: 0.5vh;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 #Intro .intro-carousel-div .intro-feature-card .hotspot-number-div {
@@ -332,7 +341,7 @@ nav .logo {
   padding: 0;
   padding-top: 0.4vh;
   padding-left: 2.5vh;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
   line-height: 0.8;
   letter-spacing: 1px;
   color: #fffffc;
@@ -371,26 +380,28 @@ nav .logo {
 }
 
 #NightOutBuilder .build-night-button {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffe80a), color-stop(#ff9a02), to(#ff5a00));
-  background: linear-gradient(to bottom, #ffe80a, #ff9a02, #ff5a00);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 232, 10, 0.9)), color-stop(rgba(255, 154, 2, 0.9)), to(rgba(255, 90, 0, 0.9)));
+  background: linear-gradient(to bottom, rgba(255, 232, 10, 0.9), rgba(255, 154, 2, 0.9), rgba(255, 90, 0, 0.9));
   font-family: "Fira Sans", sans-serif;
   font-size: calc(10px + 0.6vw);
   border: transparent 1px solid;
   position: relative;
-  font-weight: 700;
+  font-weight: 500;
   color: #fffffc;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
   border: none;
   margin-top: 5vh;
   padding: 0.8vh 2.5vh;
-  -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
   border-radius: 0.8vh;
   z-index: 2;
 }
 
 #NightOutBuilder .build-night-button:hover {
   font-family: "Fira Sans", sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffe80a), color-stop(#ff9a02), to(#ff5a00));
+  background: linear-gradient(to bottom, #ffe80a, #ff9a02, #ff5a00);
   color: #fffffc;
   padding: 0.8vh 2.5vh;
   -webkit-box-shadow: none;
@@ -407,7 +418,7 @@ nav .logo {
 #NightOutBuilder .map-icon {
   color: #fffffc;
   margin-right: 10px;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
 #NightOutBuilder .night-out-prompt-div {
@@ -510,8 +521,8 @@ nav .logo {
   background: -webkit-gradient(linear, left top, left bottom, from(#100c08), to(rgba(16, 12, 8, 0.9)));
   background: linear-gradient(to bottom, #100c08, rgba(16, 12, 8, 0.9));
   border: #ffce00 solid 1px;
-  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
 #Map .planner-sidebar .trip-name:hover {
@@ -648,16 +659,16 @@ nav .logo {
   font-family: "Fira Sans", sans-serif;
   margin-top: 1vh;
   font-size: calc(10px + 0.6vw);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 232, 10, 0.8)), color-stop(rgba(255, 154, 2, 0.8)), to(rgba(255, 90, 0, 0.8)));
-  background: linear-gradient(to bottom, rgba(255, 232, 10, 0.8), rgba(255, 154, 2, 0.8), rgba(255, 90, 0, 0.8));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 232, 10, 0.9)), color-stop(rgba(255, 154, 2, 0.9)), to(rgba(255, 90, 0, 0.9)));
+  background: linear-gradient(to bottom, rgba(255, 232, 10, 0.9), rgba(255, 154, 2, 0.9), rgba(255, 90, 0, 0.9));
   display: inline-block;
   height: 4vh;
-  font-weight: 700;
+  font-weight: 500;
   border: none;
-  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
   color: #fffffc;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
 #Map .sidebar-button:hover {
@@ -914,6 +925,17 @@ nav .logo {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+@-webkit-keyframes shadow-pulse-live {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(255, 232, 10, 0.8);
+            box-shadow: 0 0 0 0px rgba(255, 232, 10, 0.8);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 232, 10, 0);
+            box-shadow: 0 0 0 10px rgba(255, 232, 10, 0);
+  }
 }
 
 @keyframes shadow-pulse-live {
@@ -1192,7 +1214,7 @@ nav .logo {
   white-space: nowrap;
   line-height: 0.6;
   font-weight: 500;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 #Map .map-header .filter-box-div .btn-secondary {
@@ -1205,7 +1227,7 @@ nav .logo {
   font-weight: 700;
   line-height: 1;
   border-radius: 0;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 #Map .map-header .filter-box-div .drop-down-button {
@@ -1314,8 +1336,8 @@ nav .logo {
   background: linear-gradient(to bottom, rgba(16, 12, 8, 0.7), rgba(16, 12, 8, 0.6));
   z-index: 2;
   padding: 2vh 1.5vh 1vh 1.5vh;
-  -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
 
@@ -1333,17 +1355,6 @@ nav .logo {
   font-family: "Fira Sans Condensed", sans-serif;
   color: #fffffc;
   font-size: calc(9px + 0.6vw);
-}
-
-@-webkit-keyframes shadow-pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-  }
 }
 
 @keyframes shadow-pulse {
@@ -2148,6 +2159,10 @@ nav .logo {
   display: inline-block;
 }
 
+#MyNightPlan .stat-div .hotspot-score-col .percent-sign-large {
+  font-size: calc(6px + 4vh);
+}
+
 #MyNightPlan .stat-div .hotspot-score-col p.hotspot-score-number {
   display: block;
   margin: 0 auto;
@@ -2289,9 +2304,11 @@ nav .logo {
   color: #d6e5e3;
   line-height: 1.2;
   border-top: 1px #d6e5e3 solid;
-  padding-top: 0.8vh;
-  margin-right: 0.5vh;
-  margin-left: 0.5vh;
+  padding-top: 1vh;
+  margin-right: 1.5vh;
+  margin-left: 1.5vh;
+  padding-right: 2vh;
+  padding-left: 2vh;
   margin-top: -3vh;
 }
 
@@ -2377,7 +2394,7 @@ nav .logo {
 }
 
 #MyNightPlan .my-card-summary-row .percent-sign {
-  font-size: calc(7px + 4vh);
+  font-size: calc(7px + 3vh);
 }
 
 #MyNightPlan .my-card-summary-row .details-col {

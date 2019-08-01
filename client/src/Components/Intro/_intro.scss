@@ -1,12 +1,14 @@
 #Intro {
-  @keyframes shadow-pulse-live {
+  @keyframes shadow-pulse {
     0% {
-      box-shadow: 0 0 0 0px rgba(255, 206, 0, 0.3);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
     }
+
     100% {
-      box-shadow: 0 0 0 10px rgba(255, 206, 0, 0);
+      box-shadow: 0 0 0 40px rgba(0, 0, 0, 0.2);
     }
   }
+
 
   height: 80vh;
 
@@ -52,6 +54,14 @@
     margin: 5vh auto 5vh auto;
     width: 100%;
 
+    .radio-signal-icon {
+      font-size: 2vh;
+    }
+
+    .badge-secondary {
+      animation: shadow-pulse 1s infinite;
+    }
+
     .popular-now-title {
       font-size: $font-size-title-popular-now;
       font-family: $title-font;
@@ -72,7 +82,7 @@
     }
 
     .card {
-      border: 1px solid $light-smoky-black;
+      border: 1px solid $orange;
       box-shadow: $text-shadow-box !important;
       display: flex;
       justify-content: center;
@@ -280,12 +290,12 @@
   }
 
   .build-night-button {
-    background: $background-buttons-brand-colors;
+    background: $background-buttons-brand-colors-slight-opacity;
     font-family: $title-font;
     font-size: $font-size-night-out-button;
     border: transparent 1px solid;
     position: relative;
-    font-weight: 700;
+    font-weight: 500;
     color: $light-weight;
     text-shadow: $button-shadows;
     border: none;
@@ -298,6 +308,7 @@
 
   .build-night-button:hover {
     font-family: $title-font;
+    background: $background-buttons-brand-colors;
     color: $white;
     padding: 0.8vh 2.5vh;
     box-shadow: none;
