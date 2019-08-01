@@ -22,34 +22,34 @@
       font-family: $title-font;
       color: $light-weight;
       text-shadow: $text-shadow-title;
-      margin-bottom: 1vh;
+      margin-bottom: 0.5vw;
       line-height: 1;
     }
 
     .intro-summary {
-      margin-top: 0.4vw;
+      margin-top: 0.2vw;
       font-family: $title-font;
       font-weight: 500;
       padding: 0 22%;
       font-size: $font-size-title-intro;
       color: $light-weight;
       text-shadow: $text-shadow-title;
-      line-height: 1.5;
+      line-height: 1.7;
     }
   }
 
   .hotspot-logo-div {
     margin: 0 auto;
-    margin-bottom: 1vw;
+    margin-bottom: 0.5vw;
   }
 
   .hotspot-logo-number {
     width: 5vw;
-    margin-bottom: 3vw;
+    margin-bottom: 1vw;
   }
 
   .intro-carousel-div {
-    padding: 0vw 10vw 1vw 8vw;
+    padding: 0vw 5vw 1vw 5vw;
     color: $light-weight;
     margin: 5vw auto 5vw auto;
     width: 100%;
@@ -82,7 +82,7 @@
       width: 60%;
       background: $background-gradient-light;
       position: relative;
-      min-height: 12vw;
+      min-height: 10vw;
 
       .card-title {
         display: inline-block;
@@ -117,7 +117,7 @@
         width: 100%;
         text-shadow: $text-shadow-subtle;
         line-height: 1;
-        margin-top: 0.8vh;
+        margin-top: 0.6vw;
         text-transform: capitalize;
       }
 
@@ -140,8 +140,8 @@
         margin: 0;
         text-align: center;
         min-width: 40%;
-        padding-left: 1.5vh;
-        padding-right: 1.5vh;
+        padding-left: 1.5vw;
+        padding-right: 1.5vw;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -150,7 +150,7 @@
           color: $light-weight;
           padding: 0;
           margin: 0;
-          margin-bottom: 0.5vh;
+          margin-bottom: 0.5vw;
         }
 
         .card-score {
@@ -210,10 +210,10 @@
           display: inline-block;
           font-family: $title-font;
           font-size: $font-size-intro-hotspot-title;
-          margin-top: 0.4vh;
+          margin-top: 0.4vw;
           font-weight: 700;
-          padding-left: 0.5vh;
-          margin-bottom: 0.5vh;
+          padding-left: 0.5vw;
+          margin-bottom: 0.5vw;
           text-shadow: $map-shadow-header;
         }
       }
@@ -230,7 +230,7 @@
           font-family: $title-font;
           font-weight: 700;
           padding: 0;
-          padding-top: 0.4vh;
+          padding-top: 0.4vw;
           padding-left: .5vw;
           text-shadow: $map-shadow-header;
           line-height: 0.8;
@@ -243,7 +243,7 @@
           font-size: $font-size-intro-card-review-number;
           font-family: $title-font;
           padding: 0;
-          padding-bottom: 1.5vh;
+          padding-bottom: 1.5vw;
           margin: 0;
           line-height: 0.5;
           color: $quick-silver;
@@ -264,12 +264,14 @@
   padding: 0 0 0 0;
   margin: 0 auto;
   align-self: baseline;
-  height: 15vh;
-  margin-bottom: 15vh;
+  height: 10vw;
+  margin-top: 8vw !important;
+  margin-bottom: 5vw !important;
+
 
   .night-out-intro-div {
     width: 100%;
-    margin: 0 auto;
+    margin: 10vw auto;
     text-align: center;
     padding: 0vh 2vh 2vh 2vh;
   }
