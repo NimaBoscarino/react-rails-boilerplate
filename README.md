@@ -1,3 +1,7 @@
+## NOTE: This repo has not been updated in a while.
+
+You may find that the versions of React, Rails, and Ruby are _NOT_ the most current. Feel free to update this repo and make a PR with new versions. Also, please let me know if you run into any bugs.
+
 # React + Rails No-Fluff Boilerplate
 
 A boilerplate project for anyone interested in making a project that uses React and Rails.
