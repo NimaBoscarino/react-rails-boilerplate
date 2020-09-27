@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
     get '/data', to: 'tests#index'
     
-    resources :dogs
+    # resources :dogs
 
   end
 
@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     !request.xhr? && request.format.html?
   end
 
+  
 end
