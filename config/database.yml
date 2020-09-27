@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: rails_project_development
+  # database: rails_project_development
   pool: 5
   url: <%= ENV['DB_URL'] %>
 
