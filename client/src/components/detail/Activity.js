@@ -10,12 +10,19 @@ function Activity(props){
     const url = `/api/activities/${id}`
     console.log(props)
     axios.get(url)
-    .then(res=>console.log(res))
+    .then(res=>SetActivity(res.data))
     .catch(res=>console.log(res))
 
   },[])
+  console.log(activity)
   return(
-    <h1>hello hahahahhhah</h1>
+   <div>
+     <h1>{activity.title}</h1>
+     <h2>When:{activity.date}</h2>
+     <div>{activity.description}</div>
+     <div>spots remaining:{activity.max_number_of_participants}</div>
+     <img src={activity.image_url}></img>
+   </div>
   )
 }
 
