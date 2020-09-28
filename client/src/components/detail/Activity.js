@@ -16,18 +16,18 @@ function Activity(props){
   },[])
   console.log(activity)
   return(
-  <fragment>
+  <div>
    <div>
      <h1>{activity.title}</h1>
      <h2>{activity.date}</h2>
      <div>{activity.description}</div>
-     <img src={activity.image_url}></img>
+     <img src={activity.image_url} alt={activity.title}></img>
      <div>spots remaining:{activity.max_number_of_participants}</div>
      <div>price:${activity.price_per_person}</div>
    </div>
    <button>Join this activity</button>
    <button>Add to favs</button>
-   </fragment>
+  </div>
   )
 }
 
