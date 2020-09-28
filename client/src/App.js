@@ -16,9 +16,9 @@ function App (props){
       // handle success
       console.log(response.data) // The entire response from the Rails API
 
-      console.log(response.data.message) // Just the message
+      console.log(response.data[0]) // Just the message
       setState({
-        message: response.data.message
+        message: response.data[0].title
       });
     }) 
   }
