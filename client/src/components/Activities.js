@@ -5,7 +5,7 @@ import "../css/activities.css"
 
 function Activities(props){
 
-  const [state, setState] = useState({message:"click button to load data!"})
+  const [state, setState] = useState({message:"Find a activity nearby!"})
   const [activities, setActivities] = useState([])
 
   const fetchData = () => {
