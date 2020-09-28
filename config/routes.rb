@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do # /api/data
 
     get '/data', to: 'tests#index'
-    
+    get '/activities' to: 'Activities#index'
     # resources :dogs
 
   end

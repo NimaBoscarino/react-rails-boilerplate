@@ -11,7 +11,7 @@ function App (props){
   // }
  const [state, setState] = useState({message:"click button to load data!"})
   const fetchData = () => {
-    axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
+    axios.get('/api/activities') // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
       // handle success
       console.log(response.data) // The entire response from the Rails API
