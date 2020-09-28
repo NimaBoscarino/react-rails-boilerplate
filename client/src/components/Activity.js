@@ -3,7 +3,7 @@ import React from "react"
 function Activity(props){
   return (
     <div className='activity'>
-      <div class='activity-img'>
+      <div className='activity-img'>
         <img src={props.item.image_url}/>
       </div>
       <div className='activity-title'>

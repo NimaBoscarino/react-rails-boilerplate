@@ -1,6 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import axios from 'axios';
-
+import Activity from "./Activity"
 function Activities(props){
 
   const [state, setState] = useState({message:"click button to load data!"})
@@ -18,7 +18,12 @@ function Activities(props){
   }
 
   const activityList = activities.map(item=>{
-    return(<li key={item.id}>{item.title}</li>)
+    return(
+    <Activity 
+      key={item.id}
+      item={item} 
+    />
+    )
   })
 
   return (
