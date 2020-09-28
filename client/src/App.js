@@ -7,6 +7,7 @@ import NavigBar from './components/Navbar';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
 import Activity from './components/detail/Activity'
+import Bookings from './components/Bookings';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App(props) {
@@ -16,16 +17,14 @@ function App(props) {
       <NavigBar></NavigBar>
       <Banner></Banner>
 
-
       <Switch>
         <Route exact path='/' component={Activities} />
         <Route exact path='/activities/:id' component={Activity} />
-
+        <Route path='/api/bookings' component={Bookings}/>
       </Switch>
       <Footer></Footer>
     </Router>
   )
-
 }
 
 export default App;
