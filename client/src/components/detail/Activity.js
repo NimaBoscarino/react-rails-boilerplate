@@ -9,6 +9,9 @@ function Activity(props){
     const id = props.match.params.id;
     const url = `/api/activities/${id}`
     console.log(props)
+    axios.get(url)
+    .then(res=>console.log(res))
+    .catch(res=>console.log(res))
 
   },[])
   return(
