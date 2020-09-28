@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
     # get '/data', to: 'tests#index'
     resources  :activities
+    resources :booking only: [:create, :show, :destroy]
+
     # resources :dogs
 
   end
