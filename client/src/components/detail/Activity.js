@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'reactstrap';
+import { Button, Badge } from 'reactstrap';
 
 function Activity(props){
   const [activity, SetActivity]= useState({})
@@ -20,10 +20,12 @@ function Activity(props){
   <div>
    <div>
      <h1>{activity.title}</h1>
-     <h2>{activity.date}</h2>
+     <h4>{activity.date}</h4>
      <div>{activity.description}</div>
      <img src={activity.image_url} alt={activity.title}></img>
-     <div>spots remaining:{activity.max_number_of_participants}</div>
+     <div>
+       spots remaining:  <Badge color='info'>{activity.max_number_of_participants}</Badge>
+     </div>
      <div>price:${activity.price_per_person}</div>
    </div>
    <Button color='success'>Join this activity</Button>
