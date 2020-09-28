@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
 import Activities from './components/Activities';
+import Activity from './components/detail/Activity'
 
 function App (props){
   
