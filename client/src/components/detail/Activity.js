@@ -16,6 +16,7 @@ function Activity(props){
   },[])
   console.log(activity)
   return(
+  <fragment>
    <div>
      <h1>{activity.title}</h1>
      <h2>{activity.date}</h2>
@@ -24,6 +25,9 @@ function Activity(props){
      <div>spots remaining:{activity.max_number_of_participants}</div>
      <div>price:${activity.price_per_person}</div>
    </div>
+   <button>Join this activity</button>
+   <button>Add to favs</button>
+   </fragment>
   )
 }
 
