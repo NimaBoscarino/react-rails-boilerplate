@@ -18,10 +18,11 @@ function Activity(props){
   return(
    <div>
      <h1>{activity.title}</h1>
-     <h2>When:{activity.date}</h2>
+     <h2>{activity.date}</h2>
      <div>{activity.description}</div>
-     <div>spots remaining:{activity.max_number_of_participants}</div>
      <img src={activity.image_url}></img>
+     <div>spots remaining:{activity.max_number_of_participants}</div>
+     <div>price:${activity.price_per_person}</div>
    </div>
   )
 }
