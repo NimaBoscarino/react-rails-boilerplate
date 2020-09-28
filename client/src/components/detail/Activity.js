@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import axios from 'axios'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
 
 function Activity(props){
   const [activity, SetActivity]= useState({})
@@ -25,8 +26,8 @@ function Activity(props){
      <div>spots remaining:{activity.max_number_of_participants}</div>
      <div>price:${activity.price_per_person}</div>
    </div>
-   <button>Join this activity</button>
-   <button>Add to favs</button>
+   <Button color='success'>Join this activity</Button>
+   <Button color='warning'>Add to favs</Button>
   </div>
   )
 }
