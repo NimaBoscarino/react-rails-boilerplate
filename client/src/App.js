@@ -3,27 +3,20 @@ import axios from 'axios';
 import './App.css';
 
 function App (props){
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     message: 'Click the button to load data!'
-  //   }
-  // }
+  
  const [state, setState] = useState({message:"click button to load data!"})
   const fetchData = () => {
-    axios.get('/api/activities') // You can simply make your requests to "/api/whatever you want"
+    axios.get('/api/activities') 
     .then((response) => {
       // handle success
       console.log(response.data) // The entire response from the Rails API
-
-      console.log(response.data[0]) // Just the message
+      console.log(response.data[0]) //The first activity
       setState({
         message: response.data[0].title
       });
     }) 
   }
 
-  
     return (
       <div className="App">
         <h1>{ state.message }</h1>
