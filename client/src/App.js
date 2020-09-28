@@ -9,7 +9,7 @@ function App (props){
     return(
       <Switch>
         <Route exact path='/' component={Activities}/>
-
+        <Route exact path='/activities/:id' component={Activity}/>
         
       </Switch>
     )
