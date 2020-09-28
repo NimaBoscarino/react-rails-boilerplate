@@ -8,7 +8,7 @@ function App (props){
   
     return(
       <Switch>
-        <Route path='/' component={Activities}/>
+        <Route exact path='/' component={Activities}/>
 
         
       </Switch>
