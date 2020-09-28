@@ -1,0 +1,28 @@
+.activity{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  width:150px;
+  height:200px;
+  justify-content: center;
+  background-color:rgb(190, 189, 189);
+  border-radius: 10px;
+  font-weight:20px
+}
+.activity-title{
+  /* padding: 20px 0 10px 0; */
+  text-align: center;
+}
+
+.activity-img{
+ margin-left:auto;
+ margin-right:auto;
+ 
+
+}
+.activity-spot{
+  text-align: center;
+}
+.activity-link{
+  text-align: center;
+}

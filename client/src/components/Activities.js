@@ -1,6 +1,8 @@
 import React, {Fragment, useState} from 'react';
 import axios from 'axios';
 import Activity from "./Activity"
+import "../css/activities.css"
+
 function Activities(props){
 
   const [state, setState] = useState({message:"click button to load data!"})
@@ -35,9 +37,9 @@ function Activities(props){
         Render all activities 
       </button>       
     </div>
-    <div className='grid'>
-      <ul>{activityList}</ul>
-    </div>
+    
+      <ul className='grid'>{activityList}</ul>
+    
   </Fragment>
   )
 }
