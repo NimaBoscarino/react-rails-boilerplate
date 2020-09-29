@@ -21,8 +21,6 @@ function Activities(props) {
         setState({});
       })
   }
-  console.log(city)
-  console.log(priceRange)
 
   const inRange = (item)=>{
     const rangeArray = priceRange.split(" - ").map(item=> parseInt(item));
