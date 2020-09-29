@@ -22,6 +22,8 @@ function Activities(props) {
       })
   }
   console.log(city)
+  console.log(priceRange)
+  
   const activityList = activities.map(item => {
     if(item.city === city){
       return (
@@ -48,6 +50,18 @@ function Activities(props) {
           <Dropdown.Item onClick={()=>{setCity('Delta')}}>Delta</Dropdown.Item>
           <Dropdown.Item onClick={()=>{setCity('Victoria')}}>Victoria</Dropdown.Item>
           <Dropdown.Item onClick={()=>{setCity('Squamish')}}>Squamish</Dropdown.Item>
+        </Dropdown.Menu>
+     </Dropdown>
+
+     <Dropdown>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        {priceRange}
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          <Dropdown.Item onClick={()=>{setPriceRange("0 - 40")}}>0 - 40</Dropdown.Item>
+          <Dropdown.Item onClick={()=>{setPriceRange('41 - 80')}}>41 - 80</Dropdown.Item>
+          <Dropdown.Item onClick={()=>{setPriceRange('81 - 120')}}>81 - 120</Dropdown.Item>
+          <Dropdown.Item onClick={()=>{setPriceRange('121 - 160')}}>121 - 160</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
 
