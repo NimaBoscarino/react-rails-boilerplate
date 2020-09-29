@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  
   namespace :api do # /api/data
 
     # get '/data', to: 'tests#index'
-    resources  :activities
-    resources :booking, only: [:create, :show, :destroy]
-
+    resources :users
+    resources :activities
+    resources :bookings, only: [:show, :create, :destroy]
+    resources :favorites, only: [:show, :create, :destroy]
+    
     # resources :dogs
 
   end
