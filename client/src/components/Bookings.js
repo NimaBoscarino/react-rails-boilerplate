@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
-import { Table, Button } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 
 export default function Bookings() {
-  const [bookings, setBookings] = useState([]);
+  // const [bookings, setBookings] = useState([]);
 
-  useEffect(() => {
-    axios.get('/api/bookings')
-    .then(res => setBookings(res.data))
-    .catch(err => console.log(err.message))
-  }, [bookings.length])
-  
+  // useEffect(() => {
+  //   axios.get('/api/bookings')
+  //   .then(res => setBookings(res.data))
+  //   .catch(err => console.log(err.message))
+  // }, [bookings.length])
+
   return (
+    <>
     <Table striped bordered hover variant="dark">
       <thead>
         <tr>
@@ -42,5 +43,6 @@ export default function Bookings() {
         </tr>
       </tbody>
     </Table>
+    </>
   )
 }
