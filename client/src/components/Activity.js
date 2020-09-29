@@ -6,7 +6,7 @@ function Activity(props){
   return (
     <div className='activity'>
       <div className='activity-img'>
-        <img src={props.item.image_url}/>
+        <img src={props.item.image_url} alt={props.item.title}/>
       </div>
       <div className='activity-title'>
         {props.item.title}

@@ -6,6 +6,7 @@ import Activities from './components/Activities';
 import NavigBar from './components/Navbar';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
+import Activity from './components/detail/Activity'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App(props) {
@@ -15,9 +16,10 @@ function App(props) {
       <NavigBar></NavigBar>
       <Banner></Banner>
 
-      <Switch>
-        <Route path='/' component={Activities} />
 
+      <Switch>
+        <Route exact path='/' component={Activities} />
+        <Route exact path='/activities/:id' component={Activity} />
 
       </Switch>
       <Footer></Footer>
