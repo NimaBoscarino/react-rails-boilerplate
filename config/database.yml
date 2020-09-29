@@ -17,13 +17,13 @@
 development:
   adapter: postgresql
   encoding: unicode
-  # database: rails_project_development
+  database: rails_project_development
   pool: 5
-  url: <%= ENV['DB_URL'] %>
+  # url: <%= ENV['DB_URL'] %>
 
-  # username:
-  # password:
-  # timeout: 5000
+  username:
+  password:
+  timeout: 5000
  
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
