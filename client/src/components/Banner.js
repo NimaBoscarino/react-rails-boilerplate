@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../css/navbar.css"
 import "../css/banner.css"
 
-import { Jumbotron, Button, Form } from 'react-bootstrap';
+import { Jumbotron, Button } from 'react-bootstrap';
 
 export default function Banner() {
 

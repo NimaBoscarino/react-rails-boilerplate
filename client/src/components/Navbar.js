@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../css/navbar.css"
 
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Form, Button, FormControl } from 'react-bootstrap';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 
 export default function NavigBar() {
 
