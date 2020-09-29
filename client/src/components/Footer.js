@@ -14,7 +14,7 @@ export default function Footer() {
             ActivityGo
           </Navbar.Text>
           <Nav.Item>
-            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link eventKey="link-1">Contact Us</Nav.Link>
