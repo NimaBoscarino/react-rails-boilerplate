@@ -1,0 +1,13 @@
+.jumbotron {
+  background-image: url("");
+  background-size: cover;
+
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: Poppins, Helvetica Neue, sans-serif;
+}
+
