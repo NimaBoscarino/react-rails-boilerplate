@@ -7,6 +7,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+.app-button{
+  display:flex;
+  margin-left:280px;
+}
 
 .App-header {
   background-color: #282c34;
