@@ -24,7 +24,7 @@ function Activities(props) {
   console.log(city)
   console.log(priceRange)
 
-  const InRange = (item)=>{
+  const inRange = (item)=>{
     const rangeArray = priceRange.split(" - ").map(item=> parseInt(item));
     if(item.price_per_person>= rangeArray[0] && item.price_per_person <= rangeArray[1]){
       return true
@@ -32,7 +32,7 @@ function Activities(props) {
   }
   
   const activityList = activities.map(item => {
-    if(item.city === city && InRange(item)){
+    if(item.city === city && inRange(item)){
       return (
         <Activity
           key={item.id}
@@ -60,6 +60,7 @@ function Activities(props) {
         </Dropdown.Menu>
      </Dropdown>
 
+    {/* This is the dropdown menu for price range */}
      <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
         {priceRange}
