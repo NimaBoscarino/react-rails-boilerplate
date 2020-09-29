@@ -11,6 +11,7 @@ function Activities(props) {
   const [state, setState] = useState({ message: "Find a activity nearby!" })
   const [activities, setActivities] = useState([])
   const [city, setCity] = useState("City")
+  const [priceRange, setPriceRange] = useState('Price Range')
 
   const fetchData = () => {
     axios.get('/api/activities')
