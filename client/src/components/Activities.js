@@ -35,12 +35,11 @@ function Activities(props) {
   return (
     <Fragment>
 
-
+    {/* this is dropdwon for selecting city */}
      <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
         {city}
         </Dropdown.Toggle>
-
         <Dropdown.Menu>
           <Dropdown.Item onClick={()=>{setCity('Vancouver')}}>Vancouver</Dropdown.Item>
           <Dropdown.Item onClick={()=>{setCity('North Vancouver')}}> North Vancouver</Dropdown.Item>
