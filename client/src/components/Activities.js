@@ -10,8 +10,8 @@ function Activities(props) {
 
   const [state, setState] = useState({ message: "Find a activity nearby!" })
   const [activities, setActivities] = useState([])
-  const [city, setCity] = useState("City")
-  const [priceRange, setPriceRange] = useState('Price Range')
+  const [city, setCity] = useState("Choose Your City")
+  const [priceRange, setPriceRange] = useState('Your Ideal Price Range')
 
   const fetchData = () => {
     axios.get('/api/activities')
@@ -44,10 +44,12 @@ function Activities(props) {
 
   return (
     <Fragment>
-
+      <div className="App">
+        <h1>{state.message}</h1>
+    <div className='app-button'>
     {/* this is dropdwon for selecting city */}
      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown.Toggle variant="light" id="dropdown-basic">
         {city}
         </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -59,10 +61,9 @@ function Activities(props) {
           <Dropdown.Item onClick={()=>{setCity('Squamish')}}>Squamish</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
-
-    {/* This is the dropdown menu for price range */}
+     {/* This is the dropdown menu for price range */}
      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown.Toggle variant="light" id="dropdown-basic">
         {priceRange}
         </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -72,13 +73,10 @@ function Activities(props) {
           <Dropdown.Item onClick={()=>{setPriceRange('121 - 160')}}>121 - 160</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
-
-
-      <div className="App">
-        <h1>{state.message}</h1>
         <Button outline ='true'color='primary' onClick={fetchData} >
           Find Activities nearby
       </Button>
+      </div>
       </div>
 
       <ul className='grid'>{activityList}</ul>
