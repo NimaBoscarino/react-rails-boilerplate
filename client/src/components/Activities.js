@@ -50,7 +50,7 @@ function Activities(props) {
      </Dropdown>
       <div className="App">
         <h1>{state.message}</h1>
-        <Button outline color='primary' onClick={fetchData} >
+        <Button outline ='true'color='primary' onClick={fetchData} >
           Find Activities nearby
       </Button>
       </div>
