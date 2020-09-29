@@ -6,10 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+## USERS 
+User.destroy_all
+
+cc = User.create!(
+  first_name: 'Caia',
+  last_name: 'Chuang',
+  email: 'caiachuang@gmail.com',
+  password: '12345'
+)
+
+jc = User.create!(
+  first_name: 'Jenny',
+  last_name: 'Citherlet',
+  email: 'jennycith@gmail.com',
+  password: '12345'
+)
+
+js = User.create!(
+  first_name: 'Jeffrey',
+  last_name: 'Shao',
+  email: 'shaoyuhao970909@gmail.com',
+  password: '12345'
+)
+
+## ACTIVITIES
 Activity.destroy_all
 
-
-Activity.create!({
+act1 = Activity.create!({
   title:  'Wild Whales Vancouver',
   description: 'Wild Whales Vancouver is situated on Granville Island, a 5-10 minute taxi ride from most downtown hotels. The 50 bus will drop you off at the entrance to the Island or Granville Island Ferries and Aquabus will shuttle you across from various departure points along the seawall directly to Granville Island.',
   image_url: 'https://img.grouponcdn.com/pwa_test/2dVewtoksTr3YQJb58g33yRckrtJ/2d-669x446/v1/c700x420.jpg',
@@ -20,7 +44,7 @@ Activity.create!({
   date: "11/10/2020",
 })
 
-Activity.create!({
+act2 = Activity.create!({
   title:  'TAG Whistler',
   description: 'The Adventure Group is Whistler’s premier year-round activity operator representing the BEST of Whistler! Only moments from Whistler Village our team offers summer adventures including Whitewater Rafting, RZR Tours, Biking and Jet-Boating. Fly the world\'s most spectacular ziplines in Canada with Superfly Ziplines and swing from the trees in our Treetop Adventure course.',
   image_url: 'https://s3.amazonaws.com/lmpm-wordpress-media-store-prod/wp-content/uploads/sites/2/2019/11/whistler-ziplining-summer2.jpg',
@@ -31,7 +55,7 @@ Activity.create!({
   date: "11/11/2020",
 })
 
-Activity.create!({
+act3 = Activity.create!({
   title:  'False Creek',
   description: "Starting at Canada Place in downtown Vancouver's waterfront area, cyclists can head west towards Stanley Park along the seawall, watching as boats, seaplanes, and even cruise ships come and go from Vancouver's busy harbour. ",
   image_url: 'https://assets.simpleviewinc.com/simpleview/image/upload/crm/vancouverbc/36063825_1765144223565391_9176726802234605568_o0-2c0eef5f5056b3a_2c0ef07d-5056-b3a8-49f2dcf5a798010f.jpg',
@@ -547,3 +571,32 @@ Activity.create!({
   max_number_of_participants:16,
   date: "07/07/2020",
 })
+## BOOKINGS
+Booking.destroy_all
+
+cc.bookings.create!({
+  activity_id: act1.id,
+  number_of_participants: 2,
+  price_per_person: 10
+})
+
+cc.bookings.create!({
+  activity_id: act3.id,
+  number_of_participants: 5,
+  price_per_person: 27
+})
+
+cc.bookings.create!({
+  activity_id: act2.id,
+  number_of_participants: 3,
+  price_per_person: 85
+})
+
+# ## FAVORITES
+Favorite.destroy_all
+
+cc.favorites.create!(activity_id: act2.id)
+
+cc.favorites.create!(activity_id: act1.id)
+
+cc.favorites.create!(activity_id: act3.id)
