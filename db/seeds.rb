@@ -9,26 +9,32 @@
 ## USERS 
 User.destroy_all
 
-cc = User.create!(
-  first_name: 'Caia',
-  last_name: 'Chuang',
-  email: 'caiachuang@gmail.com',
+al = User.create!(
+  first_name: 'Andy',
+  last_name: 'Lindsay',
+  email: 'jstamos@lhl.com',
   password: '12345'
 )
+# cc = User.create!(
+#   first_name: 'Caia',
+#   last_name: 'Chuang',
+#   email: 'caiachuang@gmail.com',
+#   password: '12345'
+# )
 
-jc = User.create!(
-  first_name: 'Jenny',
-  last_name: 'Citherlet',
-  email: 'jennycith@gmail.com',
-  password: '12345'
-)
+# jc = User.create!(
+#   first_name: 'Jenny',
+#   last_name: 'Citherlet',
+#   email: 'jennycith@gmail.com',
+#   password: '12345'
+# )
 
-js = User.create!(
-  first_name: 'Jeffrey',
-  last_name: 'Shao',
-  email: 'shaoyuhao970909@gmail.com',
-  password: '12345'
-)
+# js = User.create!(
+#   first_name: 'Jeffrey',
+#   last_name: 'Shao',
+#   email: 'shaoyuhao970909@gmail.com',
+#   password: '12345'
+# )
 
 ## ACTIVITIES
 Activity.destroy_all
@@ -574,29 +580,29 @@ Activity.create!({
 ## BOOKINGS
 Booking.destroy_all
 
-cc.bookings.create!({
+al.bookings.create!({
   activity_id: act1.id,
   number_of_participants: 2,
   price_per_person: 10
 })
 
-cc.bookings.create!({
+al.bookings.create!({
   activity_id: act3.id,
   number_of_participants: 5,
   price_per_person: 27
 })
 
-cc.bookings.create!({
+al.bookings.create!({
   activity_id: act2.id,
   number_of_participants: 3,
   price_per_person: 85
 })
 
-# ## FAVORITES
+## FAVORITES
 Favorite.destroy_all
 
-cc.favorites.create!(activity_id: act2.id)
+al.favorites.create!(activity_id: act2.id)
 
-cc.favorites.create!(activity_id: act1.id)
+al.favorites.create!(activity_id: act1.id)
 
-cc.favorites.create!(activity_id: act3.id)
+al.favorites.create!(activity_id: act3.id)
