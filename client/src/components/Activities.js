@@ -17,25 +17,25 @@ function Activities(props) {
       .then((response) => {
         console.log(response) // The entire response from the Rails API
         setActivities(response.data) //The first activity
-        setState({
-          message: `All ${response.data.length} activities are rendered at this point`
-        });
+        setState({});
       })
   }
   console.log(city)
   const activityList = activities.map(item => {
-    return (
-      <Activity
-        key={item.id}
-        item={item}
-      />
-    )
+    if(item.city === city){
+      return (
+        <Activity
+          key={item.id}
+          item={item}
+        />
+      )
+    }
   })
 
   return (
     <Fragment>
 
-      
+
      <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
         {city}
