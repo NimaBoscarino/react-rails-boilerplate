@@ -4,11 +4,13 @@ import Activity from "./Activity"
 import "../css/activities.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap'
+import {UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'react-bootstrap'
 
 function Activities(props) {
 
   const [state, setState] = useState({ message: "Find a activity nearby!" })
   const [activities, setActivities] = useState([])
+  const [city, setCity] = useState("City")
 
   const fetchData = () => {
     axios.get('/api/activities')
