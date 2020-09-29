@@ -9,7 +9,7 @@
 }
 .app-button{
   display:flex;
-  margin-left:280px;
+  justify-content: center;
 }
 
 .App-header {
