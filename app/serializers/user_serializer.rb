@@ -3,5 +3,5 @@ class UserSerializer < ActiveModel::Serializer
   
   has_many :bookings
   has_many :favorites
-  has_many :users, through: :bookings
+  has_many :activities, through: :bookings
 end
