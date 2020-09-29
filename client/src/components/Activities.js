@@ -34,6 +34,8 @@ function Activities(props) {
 
   return (
     <Fragment>
+
+      
      <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
         {city}
@@ -48,6 +50,8 @@ function Activities(props) {
           <Dropdown.Item onClick={()=>{setCity('Squamish')}}>Squamish</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
+
+
       <div className="App">
         <h1>{state.message}</h1>
         <Button outline ='true'color='primary' onClick={fetchData} >
