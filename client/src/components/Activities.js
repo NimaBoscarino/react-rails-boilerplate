@@ -23,9 +23,16 @@ function Activities(props) {
   }
   console.log(city)
   console.log(priceRange)
+
+  const InRange = (item)=>{
+    const rangeArray = priceRange.split(" - ").map(item=> parseInt(item));
+    if(item.price_per_person>= rangeArray[0] && item.price_per_person <= rangeArray[1]){
+      return true
+    }
+  }
   
   const activityList = activities.map(item => {
-    if(item.city === city){
+    if(item.city === city && InRange(item)){
       return (
         <Activity
           key={item.id}
