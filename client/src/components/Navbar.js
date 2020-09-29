@@ -9,7 +9,7 @@ export default function NavigBar() {
   return (
     <>
 
-      <Navbar bg="dark" variant="dark">
+      <Navbar sticky="top" bg="dark" variant="dark">
         <Navbar.Brand>ActivityGo</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#favorite">My favorites</Nav.Link>
