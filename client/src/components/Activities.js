@@ -41,7 +41,7 @@ function Activities(props) {
 
         <Dropdown.Menu>
           <Dropdown.Item onClick={()=>{setCity('Vancouver')}}>Vancouver</Dropdown.Item>
-          <Dropdown.Item> onClick={()=>{setCity('North Vancouver')}}North Vancouver</Dropdown.Item>
+          <Dropdown.Item onClick={()=>{setCity('North Vancouver')}}> North Vancouver</Dropdown.Item>
           <Dropdown.Item onClick={()=>{setCity('Whistler')}}>Whistler</Dropdown.Item>
           <Dropdown.Item onClick={()=>{setCity('Delta')}}>Delta</Dropdown.Item>
           <Dropdown.Item onClick={()=>{setCity('Victoria')}}>Victoria</Dropdown.Item>
