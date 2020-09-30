@@ -9,7 +9,6 @@ export default function Banner() {
 
   return (
     <>
-
       <Jumbotron>
         <h1>Hi Friends</h1>
         <p>

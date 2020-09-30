@@ -57,25 +57,8 @@ function Activity(props) {
             <Button variant="info">Add to favorites</Button>{' '}
           </Col>
         </Row>
-
-
       </Container>
-      <br />
-      <br />
-      <div className='detail'>
-        <div>
-          <h1>{activity.title}</h1>
-          <div><h4>Date: {activity.date}</h4></div>
-          <div>{activity.description}</div>
-          <img src={activity.image_url} alt={activity.title}></img>
-          <div className='spots'>
-            Spots remaining:  <Badge color='info'>{activity.max_number_of_participants}</Badge>
-          </div>
-          <div className='pricetag'>Price per person:${activity.price_per_person}</div>
-        </div>
-        <Button variant="warning">Join this activity</Button>{' '}
-        <Button variant="info">Add to favorites</Button>{' '}
-      </div>
+
     </>
   )
 }
