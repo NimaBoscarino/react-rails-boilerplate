@@ -21,7 +21,7 @@ export default function Bookings() {
     .catch(err => console.log("bookings.js err: ", err))
   }, [])
   
-  const activityItems = activities.map(activity => {
+  const bookedItems = activities.map(activity => {
     return (
       <tr key={activity.id}>
         <td>{activity.title}</td>
@@ -46,7 +46,7 @@ export default function Bookings() {
           </tr>
         </thead>
         <tbody>
-          {activityItems}
+          {bookedItems}
         </tbody>
       </Table>
     </>

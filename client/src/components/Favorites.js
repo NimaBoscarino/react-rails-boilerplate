@@ -20,7 +20,7 @@ export default function Favorites() {
     .catch(err => console.log("favorites.js err: ", err))
   }, [])
   
-  const activityItems = activities.map(activity => {
+  const favoredItems = activities.map(activity => {
     return (
       <tr  key={activity.id}>
         <td>{activity.title}</td>
@@ -51,7 +51,7 @@ export default function Favorites() {
           </tr>
         </thead>
         <tbody>
-          {activityItems}
+          {favoredItems}
         </tbody>
       </Table>
     </>
