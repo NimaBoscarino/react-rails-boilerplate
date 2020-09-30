@@ -26,3 +26,11 @@
 .activity-link{
   text-align: center;
 }
+
+
+
+.card-img, .card-img-top {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    height: 210px;
+}
