@@ -5,23 +5,28 @@ import { Table, Button } from 'react-bootstrap';
 
 export default function Favorites() {
   const [favorites, setFavorites] = useState([]);
+  const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/users/')
-    .then(res => {
-      console.log(res.data[0].favorites)
-      setFavorites(res.data[0].favorites)
+    Promise.all([
+      Promise.resolve(axios.get('/api/users/1/favorites')),
+      Promise.resolve(axios.get('/api/activities/user/1'))
+    ])
+    .then(all => {
+      console.log(all)
+      setFavorites(all[0].data)
+      setActivities(all[1].data)
     })
     .catch(err => console.log("favorites.js err: ", err))
-  }, [favorites.length])
+  }, [])
   
-  const favoriteItems = favorites.map(favorite => {
+  const activityItems = activities.map(activity => {
     return (
-      <tr  key={favorite.id}>
-        <td>{favorite.user_id}</td>
-        <td>{favorite.activity_id}</td>
-        <td></td>
-        <td></td>
+      <tr  key={activity.id}>
+        <td>{activity.title}</td>
+        <td>status</td>
+        <td>{activity.max_number_of_participants}</td>
+        <td>{activity.date}</td>
         <td>
           <Button variant="success">Join</Button>
         </td>
@@ -37,8 +42,8 @@ export default function Favorites() {
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
-            <th>Title/User_id</th>
-            <th>Status/Activity_id</th>
+            <th>Activity Title</th>
+            <th>Status</th>
             <th>Spots Available</th>
             <th>Date</th>
             <th></th>
@@ -46,7 +51,7 @@ export default function Favorites() {
           </tr>
         </thead>
         <tbody>
-          {favoriteItems}
+          {activityItems}
         </tbody>
       </Table>
     </>

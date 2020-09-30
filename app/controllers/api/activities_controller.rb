@@ -9,8 +9,13 @@ class Api::ActivitiesController < ApplicationController
     render json: @activity
   end
 
-  def user_activities
+  def user_booked_activities
     activities = Activity.joins(:bookings).where(bookings: {user_id: 1})
+    render json: activities
+  end
+  
+  def user_favorited_activities
+    activities = Activity.joins(:favorites).where(favorites: {user_id: 1})
     render json: activities
   end
 end
