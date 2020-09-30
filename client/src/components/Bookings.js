@@ -23,7 +23,7 @@ export default function Bookings() {
   
   const activityItems = activities.map(activity => {
     return (
-      <tr  key={activity.id}>
+      <tr key={activity.id}>
         <td>{activity.title}</td>
         <td></td>
         <td>{activity.date}</td>
@@ -35,12 +35,11 @@ export default function Bookings() {
   })
   return (
     <>
-    <Banner></Banner>
-    <h2>Bookings: </h2>
+    <h2>Booked Activities</h2>
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
-            <th>Title</th>
+            <th>Activity Title</th>
             <th>Status</th>
             <th>Date</th>
             <th></th>
