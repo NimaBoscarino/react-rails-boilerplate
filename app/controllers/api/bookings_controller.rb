@@ -2,12 +2,15 @@ class Api::BookingsController < ApplicationController
   def index
     bookings = Booking.all
     render json: bookings
+    # bookings = Booking.all.includes(:activities)
+    # render json: bookings, include: ['acritities']
   end
 
   def show
-    booking = Booking.find_by(params [:user_id ])
+    booking = Booking.find_by(user_id: 1)
     render json: booking
-    # booking = Booking.find(params[:user_id])
+    # render json: BookingSerializer.new(booking, @options).serial
+    # render json: booking, include: ["activity", 'user']
   end
 
   # def create
@@ -24,6 +27,6 @@ class Api::BookingsController < ApplicationController
   #   booking = Booking.find(params[:id])
   #   booking.delete
   # end
-
+ 
 
 end

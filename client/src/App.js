@@ -20,8 +20,8 @@ function App(props) {
       <Banner></Banner>
 
       <Switch>
+        <Route exact path='/api/users/:id' component={Bookings}/>
         <Route exact path='/' component={Activities} />
-        <Route path='/api/bookings' component={Bookings}/>
         <Route exact path='/activities/:id' component={Activity} />
       </Switch>
 

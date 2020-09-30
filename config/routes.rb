@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
     # get '/data', to: 'tests#index'
     resources :activities
-    resources :users, param: :id do
-      resources :bookings#, only: [:show, :create, :destroy]
-      resources :favorites#, only: [:show, :create, :destroy]
-    end
+    resources :users, param: :id 
+    resources :bookings#, only: [:show, :create, :destroy]
+    resources :favorites#, only: [:show, :create, :destroy]
+    
     
     # resources :dogs
 

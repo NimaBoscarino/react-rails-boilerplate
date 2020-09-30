@@ -7,10 +7,11 @@ export default function Bookings() {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/users/1/bookings')
+    axios.get('/api/users/')
     .then(res => {
-      console.log(res)
-      setBookings(res.data)})
+      console.log(res.data[0].bookings)
+      setBookings(res.data[0].bookings)
+    })
     .catch(err => console.log("bookings.js err: ", err))
   }, [bookings.length])
   
@@ -28,8 +29,10 @@ export default function Bookings() {
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
-            <th>User_id</th>
-            <th>Activity_id</th>
+            <th>Title/User_id</th>
+            <th>Activity_id/Status</th>
+            <th>Date</th>
+            <th>Join/delete</th>
           </tr>
         </thead>
         <tbody>
