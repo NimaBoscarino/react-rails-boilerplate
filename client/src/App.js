@@ -22,6 +22,7 @@ function App() {
         <Route exact path='/api/favorites' component={Favorites}/>
         <Route exact path='/api/bookings' component={Bookings}/>
         <Route exact path='/' component={Activities} />
+        <Route path='/api/bookings' component={Bookings} />
         <Route exact path='/activities/:id' component={Activity} />
       </Switch>
 
