@@ -42,7 +42,8 @@ console.log(city);
   })
 
   return (
-    <Fragment>
+    
+    <>
       <div className="App">
         <h1>{state.message}</h1>
     <div className='app-button'>
@@ -81,7 +82,7 @@ console.log(city);
 
       <ul className='grid'>{activityList}</ul>
 
-    </Fragment>
+    </>
   )
 }
 
