@@ -46,6 +46,7 @@ console.log(city);
     <>
     <Banner>
     <h4>Enter your location and budget below and we will find an activity for you !</h4>
+    <div className='dropdown-button'>
     <Dropdown>
         <Dropdown.Toggle variant="light" id="dropdown-basic">
         {city}
@@ -59,7 +60,7 @@ console.log(city);
           <Dropdown.Item onClick={()=>{setCity('Squamish')}}>Squamish</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
-
+     
      <Dropdown>
         <Dropdown.Toggle variant="light" id="dropdown-basic">
         {priceRange}
@@ -71,6 +72,7 @@ console.log(city);
           <Dropdown.Item onClick={()=>{setPriceRange('$121 - $160')}}>$121 - $160</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
+     </div>
     </Banner>
       <div className="App">
         <h1>{state.message}</h1>

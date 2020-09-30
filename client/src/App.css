@@ -13,6 +13,9 @@
   margin-bottom: 50px;
   margin-top:50px;
 }
+.dropdown-button{
+  display:flex
+}
 
 .App-header {
   background-color: #282c34;
