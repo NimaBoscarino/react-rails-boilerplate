@@ -10,7 +10,7 @@ export default function NavigBar() {
     <>
 
       <Navbar sticky="top" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             alt="ActivityGo Logo"
             // <img src={require('/assets/ActivityGo_logo.png')} />
