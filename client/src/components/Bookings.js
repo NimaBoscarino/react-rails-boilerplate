@@ -44,7 +44,6 @@ export default function Bookings() {
         <tbody>
           {bookingItems}
         </tbody>
-    
       </Table>
     </>
   )

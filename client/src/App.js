@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -13,8 +12,7 @@ import Bookings from './components/Bookings';
 import Favorites from './components/Favorites';
 import Footer from './components/Footer';
 
-function App(props) {
-
+function App() {
   return (
     <Router>
       <NavigBar></NavigBar>

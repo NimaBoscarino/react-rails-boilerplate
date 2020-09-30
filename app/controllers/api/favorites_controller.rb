@@ -12,4 +12,11 @@ class Api::FavoritesController < ApplicationController
     # render json: FavoriteSerializer.new(favorite, @options).serial
     # render json: favorite, include: ["activity", 'user']
   end
+
+  def create
+  end
+  
+  def destroy
+  end
+
 end
