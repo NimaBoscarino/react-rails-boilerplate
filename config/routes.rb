@@ -5,14 +5,13 @@ Rails.application.routes.draw do
   namespace :api do # /api/data
 
     get '/activities/user/:user_id', to: 'activities#user_booked_activities'
-    get '/activities/user/:user_id', to: 'activities#user_favorited_activities'
+    get '/activities/user/:user_id', to: 'activities#user_favored_activities'
     # get '/data', to: 'tests#index'
     resources :activities 
 
-
     resources :users do
-      resources :bookings#, only: [:show, :create, :destroy]
-      resources :favorites#, only: [:show, :create, :destroy]
+      resources :bookings
+      resources :favorites
     end
 
   end
