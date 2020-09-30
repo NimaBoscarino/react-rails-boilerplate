@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import {Dropdown} from 'react-bootstrap'
 
 
-function Filter(props){
+function DropdownCity(props){
  
   
   return(
@@ -23,4 +23,4 @@ function Filter(props){
 
 }
 
-export default Filter
+export default DropdownCity
