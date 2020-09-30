@@ -172,7 +172,7 @@ Activity.create!({
 })
 
 Activity.create!({
-  title:  'The College of Piping and Celtic Performing Arts of Canada',
+  title:  'Piping and CelticArts',
   description: "Celtic culture comes alive at The College of Piping & Celtic Performing Arts of Canada! The College has developed a world-class reputation as an international school of excellence in Highland bagpiping, Scottish-style drumming, Highland dancing and Island step dancing.",
   image_url: 'https://collegeofpiping.com/wp-content/uploads/2019/07/carrousel_3.png',
   city: 'North Vancouver',
@@ -183,7 +183,7 @@ Activity.create!({
 })
 
 Activity.create!({
-  title:  'Eptek Art & Culture Centre',
+  title:  'Eptek Art',
   description: "Eptek Art & Culture Centre offers regional and Prince Edward Island exhibits year round. Showcases include themes ranging from history to art, including periodic displays of the permanent collection of paintings by the late Dr. Georgie Read Barton. Plan a visit to the Eptek Art & Culture Centre to sample the rich culture that Islanders and visitors alike find intriguing.",
   image_url: 'https://i1.wp.com/www.roadtripsandrollercoasters.com/wp-content/uploads/2018/06/36780859933_829cf88cf4_b.jpg?resize=1024%2C768&ssl=1',
   city: 'North Vancouver',

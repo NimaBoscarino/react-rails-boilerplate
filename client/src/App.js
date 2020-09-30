@@ -21,7 +21,7 @@ function App(props) {
 
       <Switch>
         <Route exact path='/' component={Activities} />
-        <Route path='/api/bookings' component={Bookings}/>
+        <Route path='/api/bookings' component={Bookings} />
         <Route exact path='/activities/:id' component={Activity} />
       </Switch>
 
