@@ -5,22 +5,27 @@ import { Table, Button } from 'react-bootstrap';
 
 export default function Bookings() {
   const [bookings, setBookings] = useState([]);
+  const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/users/')
-    .then(res => {
-      console.log(res.data[0].bookings)
-      setBookings(res.data[0].bookings)
+    Promise.all([
+      Promise.resolve(axios.get('/api/users/1/bookings')),
+      Promise.resolve(axios.get('/api/activities/user/1'))
+    ])
+    .then(all => {
+      console.log(all)
+      setBookings(all[0].data)
+      setActivities(all[1].data)
     })
     .catch(err => console.log("bookings.js err: ", err))
-  }, [bookings.length])
+  }, [])
   
-  const bookingItems = bookings.map(booking => {
+  const activityItems = activities.map(activity => {
     return (
-      <tr  key={booking.id}>
-        <td>{booking.user_id}</td>
-        <td>{booking.activity_id}</td>
+      <tr  key={activity.id}>
+        <td>{activity.title}</td>
         <td></td>
+        <td>{activity.date}</td>
         <td>
           <Button variant="danger">Cancel</Button> 
         </td>
@@ -33,14 +38,14 @@ export default function Bookings() {
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
-            <th>Title/User_id</th>
-            <th>Status/Activity_id</th>
+            <th>Title</th>
+            <th>Status</th>
             <th>Date</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          {bookingItems}
+          {activityItems}
         </tbody>
       </Table>
     </>
