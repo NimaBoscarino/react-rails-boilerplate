@@ -23,7 +23,7 @@ function Activities(props) {
   }
 
   const inRange = (item)=>{
-    const rangeArray = priceRange.split(" - ").map(item=> parseInt(item));
+    const rangeArray = priceRange.split(" - ").map(item=> parseInt(item.substring(1)));
     if(item.price_per_person>= rangeArray[0] && item.price_per_person <= rangeArray[1]){
       return true
     }
@@ -65,10 +65,10 @@ function Activities(props) {
         {priceRange}
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item onClick={()=>{setPriceRange("0 - 40")}}>0 - 40</Dropdown.Item>
-          <Dropdown.Item onClick={()=>{setPriceRange('41 - 80')}}>41 - 80</Dropdown.Item>
-          <Dropdown.Item onClick={()=>{setPriceRange('81 - 120')}}>81 - 120</Dropdown.Item>
-          <Dropdown.Item onClick={()=>{setPriceRange('121 - 160')}}>121 - 160</Dropdown.Item>
+          <Dropdown.Item onClick={()=>{setPriceRange("$0 - $40")}}>$0 - $40</Dropdown.Item>
+          <Dropdown.Item onClick={()=>{setPriceRange('$41 - $80')}}>$41 - $80</Dropdown.Item>
+          <Dropdown.Item onClick={()=>{setPriceRange('$81 - $120')}}>$81 - $120</Dropdown.Item>
+          <Dropdown.Item onClick={()=>{setPriceRange('$121 - $160')}}>$121 - $160</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
         <Button outline ='true'color='primary' onClick={fetchData} >
