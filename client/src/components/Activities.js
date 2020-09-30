@@ -8,7 +8,7 @@ import {Dropdown} from 'react-bootstrap'
 
 function Activities(props) {
 
-  const [state, setState] = useState({ message: "Find a activity nearby!" })
+  const [state, setState] = useState({ message: "Find An Activity Nearby!" })
   const [activities, setActivities] = useState([])
   const [city, setCity] = useState("Choose Your City")
   const [priceRange, setPriceRange] = useState('Your Ideal Price Range')
@@ -72,7 +72,7 @@ function Activities(props) {
         </Dropdown.Menu>
      </Dropdown>
         <Button outline ='true'color='primary' onClick={fetchData} >
-          Find Activities nearby
+          Search Activities
       </Button>
       </div>
       </div>
