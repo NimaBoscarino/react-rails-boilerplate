@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
-import { Table } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
 
 export default function Favorites() {
   const [favorites, setFavorites] = useState([]);
@@ -20,6 +20,14 @@ export default function Favorites() {
       <tr  key={favorite.id}>
         <td>{favorite.user_id}</td>
         <td>{favorite.activity_id}</td>
+        <td></td>
+        <td></td>
+        <td>
+          <Button variant="success">Join</Button>
+        </td>
+        <td>
+          <Button variant="danger">Delete</Button> 
+        </td>
       </tr>
     )
   })
@@ -30,13 +38,17 @@ export default function Favorites() {
         <thead>
           <tr>
             <th>Title/User_id</th>
-            <th>Activity_id/Status</th>
+            <th>Status/Activity_id</th>
+            <th>Spots Available</th>
             <th>Date</th>
-            <th>Join/delete</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {favoriteItems}
+          <td></td>
+          <td></td>
         </tbody>
       </Table>
     </>
