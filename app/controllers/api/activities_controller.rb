@@ -14,7 +14,7 @@ class Api::ActivitiesController < ApplicationController
     render json: activities
   end
   
-  def user_favorited_activities
+  def user_favored_activities
     activities = Activity.joins(:favorites).where(favorites: {user_id: 1})
     render json: activities
   end
