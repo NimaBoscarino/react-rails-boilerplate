@@ -13,7 +13,7 @@ export default function NavigBar() {
         <Navbar.Brand>ActivityGo</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#favorite">My favorites</Nav.Link>
-          <Nav.Link href="#bookings">My bookings</Nav.Link>
+          <Nav.Link href="/api/bookings">My bookings</Nav.Link>
 
         </Nav>
         <Navbar.Toggle />
