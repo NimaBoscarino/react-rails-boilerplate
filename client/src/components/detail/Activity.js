@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Badge } from 'react-bootstrap';
+import { Button, Badge, Row, Container, Col } from 'react-bootstrap';
+import "../detail/activity.css"
 
 function Activity(props) {
   const [activity, SetActivity] = useState({})
@@ -17,20 +18,65 @@ function Activity(props) {
   }, [])
   console.log(activity)
   return (
-    <div>
-      <div>
-        <h1>{activity.title}</h1>
-        <h4>{activity.date}</h4>
-        <div>{activity.description}</div>
-        <img src={activity.image_url} alt={activity.title}></img>
+    <>
+      <Container>
+
+        <Row>
+          <Col>
+            <div>
+              <h1>{activity.title}</h1>
+              <h4>Date: {activity.date}</h4>
+            </div>
+          </Col>
+          <Col>
+            <div className='image'><img src={activity.image_url} alt={activity.title}></img></div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <div className='description'>{activity.description}</div>
+          </Col>
+
+        </Row>
+
+      </Container>
+      <br />
+
+      <Container>
+
+        <Row>
+          <Col>
+            <div className='spots'>
+              Spots remaining:  <Badge color='info'>{activity.max_number_of_participants}</Badge>
+            </div>
+            <div className='pricetag'>Price per person:${activity.price_per_person}
+            </div>
+          </Col>
+          <Col>
+            <Button variant="warning">Join this activity</Button>{' '}
+            <Button variant="info">Add to favorites</Button>{' '}
+          </Col>
+        </Row>
+
+
+      </Container>
+      <br />
+      <br />
+      <div className='detail'>
         <div>
-          spots remaining:  <Badge color='info'>{activity.max_number_of_participants}</Badge>
+          <h1>{activity.title}</h1>
+          <div><h4>Date: {activity.date}</h4></div>
+          <div>{activity.description}</div>
+          <img src={activity.image_url} alt={activity.title}></img>
+          <div className='spots'>
+            Spots remaining:  <Badge color='info'>{activity.max_number_of_participants}</Badge>
+          </div>
+          <div className='pricetag'>Price per person:${activity.price_per_person}</div>
         </div>
-        <div>price:${activity.price_per_person}</div>
+        <Button variant="warning">Join this activity</Button>{' '}
+        <Button variant="info">Add to favorites</Button>{' '}
       </div>
-      <Button color='success'>Join this activity</Button>
-      <Button color='warning'>Add to favs</Button>
-    </div>
+    </>
   )
 }
 
