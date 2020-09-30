@@ -18,7 +18,7 @@ export default function Banner(props) {
         <br />
         <Button variant="primary">Login / Register</Button>{' '}
         <br /><br />
-        <h4>Enter your location and budget below and we will find an activity for you !</h4>
+       
         {props.children}
 
       </Jumbotron>

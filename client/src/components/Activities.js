@@ -45,6 +45,7 @@ console.log(city);
     
     <>
     <Banner>
+    <h4>Enter your location and budget below and we will find an activity for you !</h4>
     <Dropdown>
         <Dropdown.Toggle variant="light" id="dropdown-basic">
         {city}
@@ -74,7 +75,7 @@ console.log(city);
       <div className="App">
         <h1>{state.message}</h1>
     <div className='app-button'>
-      
+
         <Button outline ='true'color='primary' onClick={fetchData} >
           Search Activities
       </Button>
