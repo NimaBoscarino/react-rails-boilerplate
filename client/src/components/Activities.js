@@ -5,7 +5,7 @@ import "../css/activities.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap'
 import {Dropdown} from 'react-bootstrap'
-
+import Banner from './Banner'
 
 function Activities(props) {
 
@@ -44,11 +44,8 @@ console.log(city);
   return (
     
     <>
-      <div className="App">
-        <h1>{state.message}</h1>
-    <div className='app-button'>
-    {/* this is dropdwon for selecting city */}
-     <Dropdown>
+    <Banner>
+    <Dropdown>
         <Dropdown.Toggle variant="light" id="dropdown-basic">
         {city}
         </Dropdown.Toggle>
@@ -61,8 +58,7 @@ console.log(city);
           <Dropdown.Item onClick={()=>{setCity('Squamish')}}>Squamish</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
-     
-     {/* This is the dropdown menu for price range */}
+
      <Dropdown>
         <Dropdown.Toggle variant="light" id="dropdown-basic">
         {priceRange}
@@ -74,6 +70,11 @@ console.log(city);
           <Dropdown.Item onClick={()=>{setPriceRange('$121 - $160')}}>$121 - $160</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
+    </Banner>
+      <div className="App">
+        <h1>{state.message}</h1>
+    <div className='app-button'>
+      
         <Button outline ='true'color='primary' onClick={fetchData} >
           Search Activities
       </Button>
