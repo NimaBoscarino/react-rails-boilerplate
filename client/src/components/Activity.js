@@ -13,12 +13,13 @@ function Activity(props) {
           <Card.Text>
             {props.item.description.substring(0, 100,)}..
           </Card.Text>
-          <Link to={`/activities/${props.item.id}`}>
-            <Button variant="primary">More details</Button>
-          </Link>
+
           <Card.Text>
-            Spots remaining:{props.item.max_number_of_participants}
+            Spots remaining: {props.item.max_number_of_participants}
           </Card.Text>
+          <Link to={`/activities/${props.item.id}`}>
+            <Button variant="primary">View more details</Button>
+          </Link>
         </Card.Body>
       </Card>
 

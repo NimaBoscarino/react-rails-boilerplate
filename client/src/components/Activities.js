@@ -35,6 +35,7 @@ function Activities(props) {
       <div className="App">
         <h1>This is the index(or home) page of our App</h1>
         <h1>{state.message}</h1>
+
         <Button variant="primary" onClick={fetchData} >
           Find Activities nearby
       </Button>
@@ -45,7 +46,7 @@ function Activities(props) {
         </CardColumns>
       </Container>
 
-    </Fragment>
+    </Fragment >
   )
 }
 
