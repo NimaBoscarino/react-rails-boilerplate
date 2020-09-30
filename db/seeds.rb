@@ -306,7 +306,7 @@ Activity.create!({
 Activity.create!({
   title:  "Classic Cruises of Vancouver",
   description: "Classic Cruises of Vancouver is the local favorite for sailing and power boat tours and sunset harbor cruises. Enjoy breathtaking sailing and power boat tours offering spectacular views of  Vancouver Harbor, Narragansett Bay and the excitement of the Sailing Capital of Canada.",
-  image_url: 'https://lh3.googleusercontent.com/proxy/w4CeVylUMCDzqohH4SCqnc-JjMPdhoWATk-_MkqKf0I7XtCK_PGwEdRLq75zfSxHNVGrrzplmFbM5zxVXhG7u7PSaXZpR9pDpdhrDw4znf8Z874HWRDjVRy2dvLp_qqsDeJF2yzH',
+  image_url: 'https://ahoybc.com/wp-content/uploads/2015/03/SC-Harmony-Islands-AlbertNormandin.jpg',
   city: 'North Vancouver',
   address: '12 Marine Drive, North Vancouver, 1B7 V0N',
   price_per_person: 55,
@@ -337,7 +337,7 @@ Activity.create!({
 })
 
 Activity.create!({
-  title:  "International Tennis Hall of Fame",
+  title:  "International Tennis Hall",
   description: "Discover the history of tennis and its superstars through a diverse collection of memorabilia, art, video & more from the 12th century through today. The Museum is housed within stunning Victorian architecture and surrounded by grass tennis courts.",
   image_url: 'https://cdn.guestfolio.net/system/listing/images/000/012/991/default.jpg?1392281171',
   city: 'North Vancouver',
@@ -425,7 +425,7 @@ Activity.create!({
 })
 
 Activity.create!({
-  title:  "The Golden Mile Heritage Walks of Delta",
+  title:  "The Golden Mile Heritage",
   description: "It is a ‘must do’ activity in the city for history buffs and is also a wonderful way for visitors to orientate themselves around the important historical points of the city. With a registered professional tour guide learn about Delta’s history and heritage first hand. The Walk is approximately 2.5 hours duration.",
   image_url: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/71/23/37.jpg',
   city: 'Delta',
@@ -480,7 +480,7 @@ Activity.create!({
 })
 
 Activity.create!({
-  title:  "Jack Singer Hall & Arts Common",
+  title:  "Jack Singer Hall & Arts",
   description: "Come and see an orchestrated evening with the Vancouver Philharmonic Orchestra, special guests, concerts and the theatre! See the website for more information about special shows, the orchestra and dining options at Arts Commons, located in the heart of downtown at Olympic Plaza.",
   image_url: 'https://www.ticketcity.com/cdn-cgi/image/quality=70,format=auto,fit=cover,gravity=center/imglib/concert/51/66382/default.jpg',
   city: 'Vancouver',
