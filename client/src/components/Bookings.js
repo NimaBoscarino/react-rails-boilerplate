@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Banner from "./Banner"
 
-import { Table } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
 
 export default function Bookings() {
   const [bookings, setBookings] = useState([]);
@@ -21,6 +21,10 @@ export default function Bookings() {
       <tr  key={booking.id}>
         <td>{booking.user_id}</td>
         <td>{booking.activity_id}</td>
+        <td></td>
+        <td>
+          <Button variant="danger">Cancel</Button> 
+        </td>
       </tr>
     )
   })
@@ -32,14 +36,15 @@ export default function Bookings() {
         <thead>
           <tr>
             <th>Title/User_id</th>
-            <th>Activity_id/Status</th>
+            <th>Status/Activity_id</th>
             <th>Date</th>
-            <th>Join/delete</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {bookingItems}
         </tbody>
+    
       </Table>
     </>
   )
