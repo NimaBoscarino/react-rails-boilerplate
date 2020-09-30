@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   namespace :api do # /api/data
 
     # get '/data', to: 'tests#index'
-    resources :users
     resources :activities
-    resources :bookings, only: [:show, :create, :destroy]
-    resources :favorites, only: [:show, :create, :destroy]
+    resources :users, param: :id do
+      resources :bookings#, only: [:show, :create, :destroy]
+      resources :favorites#, only: [:show, :create, :destroy]
+    end
     
     # resources :dogs
 

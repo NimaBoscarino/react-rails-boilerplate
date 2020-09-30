@@ -7,8 +7,9 @@ export default function Bookings() {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/bookings')
+    axios.get('/api/users/1/bookings')
     .then(res => {
+      console.log(res)
       setBookings(res.data)})
     .catch(err => console.log("bookings.js err: ", err))
   }, [bookings.length])

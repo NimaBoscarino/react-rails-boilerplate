@@ -5,8 +5,8 @@ class Api::BookingsController < ApplicationController
   end
 
   def show
-    bookings = Booking.all
-    render json: bookings
+    booking = Booking.find_by(params [:user_id ])
+    render json: booking
     # booking = Booking.find(params[:user_id])
   end
 
