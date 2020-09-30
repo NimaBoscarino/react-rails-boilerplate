@@ -27,7 +27,17 @@ function Activity(props) {
               <h1>{activity.title}</h1>
               <h4>Date: {activity.date}</h4>
             </div>
+            <div className='spots'>
+              Spots remaining:  <Badge color='info'>{activity.max_number_of_participants}</Badge>
+            </div>
+            <div className='pricetag'>Price per person: ${activity.price_per_person}
+            </div>
+            <div className='CTA'>
+              <Button variant="warning">Join this activity</Button>{' '}
+              <Button variant="info">Add to favorites</Button>{' '}
+            </div>
           </Col>
+
           <Col>
             <div className='image'><img src={activity.image_url} alt={activity.title}></img></div>
           </Col>
@@ -39,24 +49,6 @@ function Activity(props) {
 
         </Row>
 
-      </Container>
-      <br />
-
-      <Container>
-
-        <Row>
-          <Col>
-            <div className='spots'>
-              Spots remaining:  <Badge color='info'>{activity.max_number_of_participants}</Badge>
-            </div>
-            <div className='pricetag'>Price per person:${activity.price_per_person}
-            </div>
-          </Col>
-          <Col>
-            <Button variant="warning">Join this activity</Button>{' '}
-            <Button variant="info">Add to favorites</Button>{' '}
-          </Col>
-        </Row>
       </Container>
 
     </>

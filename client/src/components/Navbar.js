@@ -24,7 +24,7 @@ export default function NavigBar() {
           <Button variant="outline-info">Sign Out</Button>
         </Navbar.Collapse>
       </Navbar>
-      <br />
+
 
     </>
   )

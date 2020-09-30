@@ -39,7 +39,9 @@ img{
 
 }
 .image img{
-  width: 400px;
+  width: 500px;
+  position: absolute;
+  right: 0;
 
 }
 
@@ -52,4 +54,8 @@ margin: 0 auto;
 .description{
   padding: 2rem 0rem;
 
+}
+
+.CTA{
+  padding: 1.5rem 0rem;
 }
