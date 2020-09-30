@@ -1,0 +1,65 @@
+.detail {
+  padding: 1rem 2rem;
+}
+
+img{
+  width: 20%;
+  height: 100%;
+}
+.detail img{
+  padding: .8rem 0rem;
+}
+
+.spots{
+  padding: .6rem 0rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: Poppins, Helvetica Neue, sans-serif;
+}
+.pricetag{
+  padding: .6rem 0rem;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: Poppins, Helvetica Neue, sans-serif;
+}
+
+.badge{
+  font-size: 100%;
+}
+
+.btn-warning {
+    margin-right: 20px;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: 20px;
+
+}
+.image img{
+  width: 500px;
+  position: absolute;
+  right: 10;
+
+}
+
+@media (min-width: 1200px) {
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+margin: 0 auto;
+}
+}
+
+.description{
+  padding: 2rem 0rem;
+
+}
+
+.CTA{
+  padding: 1.5rem 0rem;
+}
+
+.container h1{
+  padding-bottom: 1rem;
+}
