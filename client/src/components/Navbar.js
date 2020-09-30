@@ -10,7 +10,19 @@ export default function NavigBar() {
     <>
 
       <Navbar sticky="top" bg="dark" variant="dark">
-        <Navbar.Brand>ActivityGo</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <img
+            alt="ActivityGo Logo"
+            // <img src={require('/assets/ActivityGo_logo.png')} />
+            src={require('../assets/ActivityGo_logo.png')}
+            // {/* src="./assets/ActivityGo_logo.png" */}
+            width="50"
+            height=""
+            className="d-inline-block align-top"
+          />{' '}
+
+
+        </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#favorite">My favorites</Nav.Link>
           <Nav.Link href="/api/bookings">My bookings</Nav.Link>
