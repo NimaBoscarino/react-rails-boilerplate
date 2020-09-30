@@ -16,7 +16,7 @@ export default function Banner() {
           we will help you find something nearby. <br />Hurry and save your spot as they go quickly!
       </h4>
         <br />
-        <Button variant="primary">Login / Register ></Button>{' '}
+        <Button variant="primary">Login / Register</Button>{' '}
         <br /><br />
         <h4>Enter your location and budget below and we will find an activity for you !</h4>
 
