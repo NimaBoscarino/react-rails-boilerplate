@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap'
 import {Dropdown} from 'react-bootstrap'
 
+
 function Activities(props) {
 
   const [state, setState] = useState({ message: "Find An Activity Nearby!" })
@@ -21,7 +22,7 @@ function Activities(props) {
         setState({});
       })
   }
-
+console.log(city);
   const inRange = (item)=>{
     const rangeArray = priceRange.split(" - ").map(item=> parseInt(item.substring(1)));
     if(item.price_per_person>= rangeArray[0] && item.price_per_person <= rangeArray[1]){
@@ -59,6 +60,7 @@ function Activities(props) {
           <Dropdown.Item onClick={()=>{setCity('Squamish')}}>Squamish</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
+     
      {/* This is the dropdown menu for price range */}
      <Dropdown>
         <Dropdown.Toggle variant="light" id="dropdown-basic">
