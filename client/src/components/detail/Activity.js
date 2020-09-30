@@ -23,7 +23,7 @@ function Activity(props) {
 
         <Row>
           <Col>
-            <div>
+            <div className='info'>
               <h1>{activity.title}</h1>
               <h4>Date: {activity.date}</h4>
             </div>

@@ -59,3 +59,7 @@ margin: 0 auto;
 .CTA{
   padding: 1.5rem 0rem;
 }
+
+.container h1{
+  padding-bottom: 1rem;
+}
