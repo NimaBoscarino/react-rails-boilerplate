@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Activities from './components/Activities';
-import NavigBar from './components/Navbar';
-import Footer from './components/Footer';
-import Banner from './components/Banner';
-import Activity from './components/detail/Activity'
+import axios from 'axios';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+
+import NavigBar from './components/Navbar';
+import Banner from './components/Banner';
+import Activities from './components/Activities';
+import Activity from './components/detail/Activity'
+import Bookings from './components/Bookings';
+import Footer from './components/Footer';
 
 function App(props) {
 
@@ -16,16 +19,15 @@ function App(props) {
       <NavigBar></NavigBar>
       <Banner></Banner>
 
-
       <Switch>
         <Route exact path='/' component={Activities} />
+        <Route path='/api/bookings' component={Bookings}/>
         <Route exact path='/activities/:id' component={Activity} />
-
       </Switch>
+
       <Footer></Footer>
     </Router>
   )
-
 }
 
 export default App;
