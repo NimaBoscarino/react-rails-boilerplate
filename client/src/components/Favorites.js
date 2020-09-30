@@ -47,8 +47,6 @@ export default function Favorites() {
         </thead>
         <tbody>
           {favoriteItems}
-          <td></td>
-          <td></td>
         </tbody>
       </Table>
     </>

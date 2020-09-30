@@ -8,9 +8,6 @@ Rails.application.routes.draw do
     resources :users, param: :id 
     resources :bookings#, only: [:show, :create, :destroy]
     resources :favorites#, only: [:show, :create, :destroy]
-    
-    
-    # resources :dogs
 
   end
 
