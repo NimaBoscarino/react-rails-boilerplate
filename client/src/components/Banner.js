@@ -10,13 +10,14 @@ export default function Banner() {
   return (
     <>
       <Jumbotron>
-        <h1>Hi Friends</h1>
+        <h1>Hi Folks,</h1>
         <h4>
           Looking for something to do in your area? Enter your location and budget below and
           we will help you find something nearby. <br />Hurry and save your spot as they go quickly!
       </h4>
         <br />
-
+        <Button variant="primary">Login / Register ></Button>{' '}
+        <br /><br />
         <h4>Enter your location and budget below and we will find an activity for you !</h4>
 
       </Jumbotron>

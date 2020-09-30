@@ -21,7 +21,7 @@ export default function NavigBar() {
           <Navbar.Text>
             Signed in as: <a href="#login">John Doe</a>
           </Navbar.Text>
-          <Button variant="outline-info">Sign Out</Button>
+          <Button variant="info">Sign Out</Button>{' '}
         </Navbar.Collapse>
       </Navbar>
 
