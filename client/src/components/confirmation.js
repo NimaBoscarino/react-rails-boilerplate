@@ -25,6 +25,13 @@ function Confirmation(props){
       .catch(res => console.log(res))
 
   }, [])
+
+  const exception =(event)=>{
+     if(peopleSelected == 0 ){
+        event.preventDefault();
+     }
+  }
+
   const id = props.match.params.id
   const backLink = `/activities/${id}`
   console.log(maxPeople)
@@ -45,11 +52,12 @@ function Confirmation(props){
       }
     }
     />
-    {peopleSelected>maxPeople && <Alert variant='danger'>The selected spots exceeds the maximum number of participants</Alert>}
+    {peopleSelected>maxPeople && <Alert variant='danger' className='error-max'>The spots selected exceeds the maximum number of participants</Alert>}
+    {peopleSelected ==0 && <Alert variant='danger' className='error-min'>You must select at least one spot</Alert>}
     <h3 className='total-price'>Total price : ${price}</h3>
     <div className='button-group'>
       <Link to='/api/bookings'>
-        <Button variant="success">Confirm your booking</Button>{' '}
+        <Button variant="success" onClick={exception}>Confirm your booking</Button>{' '}
       </Link>
       <Link to ={backLink}>
         <Button variant="info">Cancel</Button>{' '}

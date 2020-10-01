@@ -34,3 +34,14 @@
   margin-top:30px;
   margin-bottom:30px
 }
+
+.error-max{
+  width:500px;
+  height:50px;
+  margin-left:300px;
+  margin-top:10px
+}
+.error-min{
+  width:300px;
+  margin-left:400px
+}
