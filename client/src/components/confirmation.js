@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import {Button} from "react-bootstrap"
+import {Button, Alert} from "react-bootstrap"
 import { Link } from 'react-router-dom'
 
 function Confirmation(props){
@@ -9,7 +9,7 @@ function Confirmation(props){
   const [individualPrice, setIndividualPrice] = useState(0)
   const [maxPeople, setMaxPeople] = useState(0)
   const [peopleSelected, setPeopleSelected] =useState(0)
-  
+
   useEffect(() => {
     const id = props.match.params.id;
     const url = `/api/activities/${id}`
@@ -41,7 +41,7 @@ function Confirmation(props){
       }
     }
     />
-   
+    {peopleSelected>maxPeople && <Alert variant='danger'>The selected spots exceeds the maximum number of participants</Alert>}
     <h3>The total price is $ {price}</h3>
 
     <Button variant="success">Confirm your booking</Button>{' '}
