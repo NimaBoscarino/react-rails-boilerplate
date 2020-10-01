@@ -6,3 +6,11 @@
 .navbar {
   padding: 20px !important;
 }
+
+.navbar-brand img{
+  width: 200px;
+}
+
+.nav-link{
+  font-size: 1.5rem;
+}

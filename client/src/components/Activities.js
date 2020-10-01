@@ -3,9 +3,10 @@ import axios from 'axios';
 import Activity from "./Activity"
 import "../css/activities.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap'
+// import { Button } from 'react-bootstrap'
 import {Dropdown} from 'react-bootstrap'
 import Banner from './Banner'
+import { Button, CardColumns, Container } from 'react-bootstrap'
 
 function Activities(props) {
 
@@ -72,19 +73,20 @@ console.log(city);
           <Dropdown.Item onClick={()=>{setPriceRange('$121 - $160')}}>$121 - $160</Dropdown.Item>
         </Dropdown.Menu>
      </Dropdown>
+     <Button variant="primary" onClick={fetchData} >
+          Find Activities nearby
+      </Button>
      </div>
+  
     </Banner>
       <div className="App">
         <h1>{state.message}</h1>
-    <div className='app-button'>
-
-        <Button outline ='true'color='primary' onClick={fetchData} >
-          Search Activities
-      </Button>
       </div>
-      </div>
-
-      <ul className='grid'>{activityList}</ul>
+      <Container>
+        <CardColumns>
+          {activityList}
+        </CardColumns>
+      </Container>
 
     </>
   )

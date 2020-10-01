@@ -6,3 +6,8 @@ img{
   width: 100px;
   height: 80px
 }
+
+.App {
+    text-align: center;
+    padding-bottom: 50px;
+}

@@ -11,17 +11,10 @@ export default function Footer() {
       <Navbar className="justify-content-center" bg="dark" variant="dark">
         <Nav className="justify-content-center" activeKey="/home">
           <Navbar.Text>
-            ActivityGo
+            ActivityGo ©2020
           </Navbar.Text>
-          <Nav.Item>
-            <Nav.Link href="/">Home</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="link-1">Contact Us</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="link-2">Privacy Policy</Nav.Link>
-          </Nav.Item>
+
+
           <Nav.Item>
 
           </Nav.Item>
