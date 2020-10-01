@@ -83,7 +83,7 @@ function Activities(props) {
 
       </Banner>
       <div className="App">
-        <h1>Let's go and find an activity !</h1>
+        <h1>Let's go!</h1>
       </div>
       <Container>
         <CardColumns>
