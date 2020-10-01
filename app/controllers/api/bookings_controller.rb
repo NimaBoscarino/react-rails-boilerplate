@@ -3,17 +3,17 @@ class Api::BookingsController < ApplicationController
     # bookings = Booking.all
     bookings = Booking.where(user_id: 1)
     render json: bookings
-    # bookings = Booking.all.includes(:activities)
-    # render json: bookings, include: ['acritities']
   end
 
   def show
     booking = Booking.where(user_id: 1)
     render json: booking
-    # render json: BookingSerializer.new(booking, @options).serial
-    # render json: booking, include: ["activity", 'user']
   end
 
+  def destroy
+    booking = Booking.where(params[:activity_id])
+    booking.delete
+  end
   # def create
   #   activity = Activity.finde_by(id: params[:activity_id])
 
@@ -23,8 +23,4 @@ class Api::BookingsController < ApplicationController
   #   )
   # end
   
-  # def destroy
-  #   booking = Booking.find(params[:id])
-  #   booking.delete
-  # end
 end

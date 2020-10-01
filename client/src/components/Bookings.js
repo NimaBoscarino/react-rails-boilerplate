@@ -6,7 +6,7 @@ import { Table, Button } from 'react-bootstrap';
 
 export default function Bookings() {
   const [bookings, setBookings] = useState([]);
-  const [activities, setActivities] = useState([]);
+  const [bookedActivities, setBookedActivities] = useState([]);
 
   useEffect(() => {
     Promise.all([
@@ -16,19 +16,43 @@ export default function Bookings() {
     .then(all => {
       console.log(all)
       setBookings(all[0].data)
-      setActivities(all[1].data)
+      setBookedActivities(all[1].data)
     })
     .catch(err => console.log("bookings.js err: ", err))
-  }, [])
+  }, [bookings.length])
   
-  const bookedItems = activities.map(activity => {
+  function CancelButton(props) {
     return (
-      <tr key={activity.id}>
-        <td>{activity.title}</td>
+      <Button variant="danger" 
+        onClick={props.onClick}
+      >
+        Cancel
+      </Button>)
+  }
+  
+  const bookedItems = bookedActivities.map(bookedActivity => {
+    // function findBookingId(bookings) {
+    //   booking
+      
+    // }
+
+    function cancelBooking(bookedActivityId) {
+      axios.delete(`/api/users/1/bookings/${bookedActivityId}`)
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log('err from cancel booking', err)
+        })
+    }
+
+    return (
+      <tr key={bookedActivity.id}>
+        <td>{bookedActivity.title}</td>
         <td></td>
-        <td>{activity.date}</td>
+        <td>{bookedActivity.date}</td>
         <td>
-          <Button variant="danger">Cancel</Button> 
+          <CancelButton onClick={cancelBooking} />
         </td>
       </tr>
     )
