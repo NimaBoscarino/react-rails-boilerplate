@@ -30,7 +30,7 @@ export default function Favorites() {
         <td>{activity.max_number_of_participants}</td>
         <td>{activity.date}</td>
         <td>
-          <Button variant="success">Join</Button>
+          <Button variant="warning">Join now</Button>{' '}
         </td>
         <td>
           <Button variant="danger">Delete</Button>
@@ -41,7 +41,7 @@ export default function Favorites() {
   })
   return (
     <>
-      <Container className="favorite-box">
+      <Container className="list-box">
         <h1>My Favorites </h1>
         <Table striped bordered hover variant="dark">
           <thead>

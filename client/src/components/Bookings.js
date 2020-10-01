@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Banner from "./Banner"
+import "../css/favorites.css"
 
-import { Table, Button } from 'react-bootstrap';
+import { Table, Button, Container } from 'react-bootstrap';
 
 export default function Bookings() {
   const [bookings, setBookings] = useState([]);
@@ -13,27 +14,27 @@ export default function Bookings() {
       Promise.resolve(axios.get('/api/users/1/bookings')),
       Promise.resolve(axios.get('/api/activities/user/1'))
     ])
-    .then(all => {
-      console.log(all)
-      setBookings(all[0].data)
-      setBookedActivities(all[1].data)
-    })
-    .catch(err => console.log("bookings.js err: ", err))
+      .then(all => {
+        console.log(all)
+        setBookings(all[0].data)
+        setBookedActivities(all[1].data)
+      })
+      .catch(err => console.log("bookings.js err: ", err))
   }, [bookings.length])
-  
+
   function CancelButton(props) {
     return (
-      <Button variant="danger" 
+      <Button variant="danger"
         onClick={props.onClick}
       >
         Cancel
       </Button>)
   }
-  
+
   const bookedItems = bookedActivities.map(bookedActivity => {
     // function findBookingId(bookings) {
     //   booking
-      
+
     // }
 
     function cancelBooking(bookedActivityId) {
@@ -59,20 +60,22 @@ export default function Bookings() {
   })
   return (
     <>
-    <h2>Booked Activities</h2>
-      <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>Activity Title</th>
-            <th>Status</th>
-            <th>Date</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {bookedItems}
-        </tbody>
-      </Table>
+      <Container className="list-box">
+        <h1>Booked Activities</h1>
+        <Table striped bordered hover variant="dark">
+          <thead>
+            <tr>
+              <th>Activity Title</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {bookedItems}
+          </tbody>
+        </Table>
+      </Container>
     </>
   )
 }
