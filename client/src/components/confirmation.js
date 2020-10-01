@@ -7,6 +7,8 @@ function Confirmation(props){
   const [title, setTitle] = useState('')
   const [price, setPrice] = useState(0)
   const [individualPrice, setIndividualPrice] = useState(0)
+  const [maxPeople, setMaxPeople] = useState(0)
+  const [peopleSelected, setPeopleSelected] =useState(0)
   
   useEffect(() => {
     const id = props.match.params.id;
@@ -16,7 +18,7 @@ function Confirmation(props){
         {setTitle(res.data.title)
         console.log(res)
         setIndividualPrice(res.data.price_per_person)
-        console.log(typeof price_per_person)
+        setMaxPeople(res.data.max_number_of_participants)
         })
         
       .catch(res => console.log(res))
@@ -24,7 +26,7 @@ function Confirmation(props){
   }, [])
   const id = props.match.params.id
   const backLink = `/activities/${id}`
-  
+  console.log(maxPeople)
   return(
     <>
     <h1>Awesome, let's have you booked in for</h1>
@@ -33,10 +35,13 @@ function Confirmation(props){
     <input type ='number' 
     min='1'
     placeholder='enter your spots'
-    onChange={event => 
-      setPrice(event.target.value * individualPrice)}
+    onChange={event => {
+       setPrice(event.target.value * individualPrice)
+       setPeopleSelected(event.target.value)
+      }
+    }
     />
-    
+   
     <h3>The total price is $ {price}</h3>
 
     <Button variant="success">Confirm your booking</Button>{' '}
