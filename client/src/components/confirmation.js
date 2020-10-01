@@ -48,9 +48,11 @@ function Confirmation(props){
     {peopleSelected>maxPeople && <Alert variant='danger'>The selected spots exceeds the maximum number of participants</Alert>}
     <h3 className='total-price'>Total price : ${price}</h3>
     <div className='button-group'>
-      <Button variant="success">Confirm your booking</Button>{' '}
+      <Link to='/api/bookings'>
+        <Button variant="success">Confirm your booking</Button>{' '}
+      </Link>
       <Link to ={backLink}>
-      <Button variant="info">Cancel</Button>{' '}
+        <Button variant="info">Cancel</Button>{' '}
       </Link>
     </div>
     </>
