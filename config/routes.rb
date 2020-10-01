@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
     get '/activities/user/:user_id', to: 'activities#user_booked_activities'
     get '/activities/user/:user_id', to: 'activities#user_favored_activities'
+    # delete 'users/:user_id/bookings/:activity_id', to: 'bookings#destroy'
     # get '/data', to: 'tests#index'
     resources :activities 
 
