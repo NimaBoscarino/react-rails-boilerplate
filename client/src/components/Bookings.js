@@ -31,21 +31,27 @@ export default function Bookings() {
       </Button>
       )
   }
+  
+  function findBookingIdByBookedActivityId(bookings, bookedActivityId) {
+    const result = bookings.filter(obj => obj.activity_id === bookedActivityId).id
+    console.log(result)
+    return result.id
+  }
 
   const bookedItems = bookedActivities.map(bookedActivity => {
-    // function findBookingId(bookings) {
-    //   booking
-
-    // }
+    const bookedActivityId = bookedActivity.id
 
     function cancelBooking(bookedActivityId) {
-      // axios.delete(`/api/users/1/bookings/${bookedActivityId}`)
-      //   .then(res => {
-      //     console.log(res)
-      //   })
-      //   .catch(err => {
-      //     console.log('err from cancel booking', err)
-      //   })
+
+      const bookingId = findBookingIdByBookedActivityId(bookings, bookedActivityId);
+
+      axios.delete(`/api/users/1/bookings/${bookingId}`)
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log('err from cancel booking', err)
+        })
     }
 
     return (
