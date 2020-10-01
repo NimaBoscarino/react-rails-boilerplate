@@ -1,10 +1,36 @@
 .confirm{
   margin-top:50px;
   margin-bottom:30px;
-  color:rgb(141, 140, 140)
+  /* color:rgb(141, 140, 140); */
+  text-align:center
 }
 
 .title{
   text-align: center;
   margin-bottom:50px;
+}
+.question-spot{
+  font-size: 25px;
+  font-weight:bold;
+  margin-left:280px;
+  
+}
+
+.input-spot{
+  margin-left:15px;
+  border:none;
+  width:150px;
+  height:40px;
+  
+}
+
+.total-price{
+  margin-top:20px;
+  text-align: center;
+}
+
+.button-group{
+  margin-left:435px;
+  margin-top:30px;
+  margin-bottom:30px
 }

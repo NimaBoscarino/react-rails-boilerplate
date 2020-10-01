@@ -30,12 +30,15 @@ function Confirmation(props){
   console.log(maxPeople)
   return(
     <>
-    <h1 className='confirm'>Awesome, let's have you booked in for</h1>
+    <h1 className='confirm'>Awesome, let's have you booked for activity of</h1>
     <h1 className='title'>{title}</h1>
-    <h3>How many spots you want to book?</h3>
-    <input type ='number' 
+    <span className='question-spot'>How many spots do you want to book?</span>
+    <input 
+    className='input-spot'
+    type ='number' 
     min='1'
     placeholder='enter your spots'
+    size='10px'
     onChange={event => {
        setPrice(event.target.value * individualPrice)
        setPeopleSelected(event.target.value)
@@ -43,12 +46,13 @@ function Confirmation(props){
     }
     />
     {peopleSelected>maxPeople && <Alert variant='danger'>The selected spots exceeds the maximum number of participants</Alert>}
-    <h3>The total price is $ {price}</h3>
-
-    <Button variant="success">Confirm your booking</Button>{' '}
-    <Link to ={backLink}>
+    <h3 className='total-price'>Total price : ${price}</h3>
+    <div className='button-group'>
+      <Button variant="success">Confirm your booking</Button>{' '}
+      <Link to ={backLink}>
       <Button variant="info">Cancel</Button>{' '}
-    </Link>
+      </Link>
+    </div>
     </>
   )
 
