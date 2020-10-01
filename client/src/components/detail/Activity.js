@@ -25,7 +25,7 @@ function Activity(props) {
           <Col>
             <div className='info'>
               <h1>{activity.title}</h1>
-              <h4>Date: {activity.date}</h4>
+              <div className='date'>Date: {activity.date}</div>
             </div>
             <div className='spots'>
               Spots remaining:  <Badge color='info'>{activity.max_number_of_participants}</Badge>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Activity from "./Activity"
 import "../css/activities.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap'
+import { Button, CardColumns, Container } from 'react-bootstrap'
 
 function Activities(props) {
 
@@ -35,14 +35,18 @@ function Activities(props) {
       <div className="App">
         <h1>This is the index(or home) page of our App</h1>
         <h1>{state.message}</h1>
-        <Button outline color='primary' onClick={fetchData} >
+
+        <Button variant="primary" onClick={fetchData} >
           Find Activities nearby
       </Button>
       </div>
+      <Container>
+        <CardColumns>
+          {activityList}
+        </CardColumns>
+      </Container>
 
-      <ul className='grid'>{activityList}</ul>
-
-    </Fragment>
+    </Fragment >
   )
 }
 
