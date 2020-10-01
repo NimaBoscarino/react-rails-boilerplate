@@ -13,7 +13,7 @@ export default function Bookings() {
       Promise.resolve(axios.get('/api/activities/user/1'))
     ])
     .then(all => {
-      console.log(all)
+       console.log(all)
       setBookings(all[0].data)
       setBookedActivities(all[1].data)
     })
