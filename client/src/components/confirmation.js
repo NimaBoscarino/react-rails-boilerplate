@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {Button, Alert} from "react-bootstrap"
 import { Link } from 'react-router-dom'
+import '../css/confirmation.css'
 
 function Confirmation(props){
   const [title, setTitle] = useState('')
@@ -29,8 +30,8 @@ function Confirmation(props){
   console.log(maxPeople)
   return(
     <>
-    <h1>Awesome, let's have you booked in for</h1>
-    <h2>{title}</h2>
+    <h1 className='confirm'>Awesome, let's have you booked in for</h1>
+    <h1 className='title'>{title}</h1>
     <h3>How many spots you want to book?</h3>
     <input type ='number' 
     min='1'
