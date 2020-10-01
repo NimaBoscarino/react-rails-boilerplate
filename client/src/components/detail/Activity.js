@@ -3,6 +3,7 @@ import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Badge, Row, Container, Col } from 'react-bootstrap';
 import "../detail/activity.css"
+import Banner from '../Banner'
 
 function Activity(props) {
   const [activity, SetActivity] = useState({})
@@ -19,6 +20,7 @@ function Activity(props) {
   console.log(activity)
   return (
     <>
+    <Banner></Banner>
       <Container>
 
         <Row>

@@ -7,6 +7,15 @@
   height: 40vmin;
   pointer-events: none;
 }
+.app-button{
+  display:flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top:50px;
+}
+.dropdown-button{
+  display:flex
+}
 
 .App-header {
   background-color: #282c34;

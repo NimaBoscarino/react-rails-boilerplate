@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import Banner from "./Banner"
 
 import { Table } from 'react-bootstrap';
 
@@ -24,6 +25,7 @@ export default function Bookings() {
   })
   return (
     <>
+    <Banner></Banner>
     <h2>Bookings: </h2>
       <Table striped bordered hover variant="dark">
         <thead>

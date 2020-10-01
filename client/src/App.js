@@ -17,7 +17,7 @@ function App(props) {
   return (
     <Router>
       <NavigBar></NavigBar>
-      <Banner></Banner>
+      
 
       <Switch>
         <Route exact path='/' component={Activities} />
