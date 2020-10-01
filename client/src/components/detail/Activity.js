@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Badge, Row, Container, Col } from 'react-bootstrap';
 import "../detail/activity.css"
 import Banner from '../Banner'
+import { Link } from 'react-router-dom';
 
 function Activity(props) {
   const [activity, SetActivity] = useState({})
@@ -35,7 +36,9 @@ function Activity(props) {
             <div className='pricetag'>Price per person: ${activity.price_per_person}
             </div>
             <div className='CTA'>
+              <Link to="/">
               <Button variant="warning">Join this activity</Button>{' '}
+              </Link>
               <Button variant="info">Add to favorites</Button>{' '}
             </div>
           </Col>

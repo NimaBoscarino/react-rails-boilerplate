@@ -23,6 +23,7 @@ function App() {
         <Route exact path='/api/bookings' component={Bookings}/>
         <Route exact path='/' component={Activities} />
         <Route exact path='/activities/:id' component={Activity} />
+        {/* <Route exact path="/activities/:id/confirmation" component={} */}
       </Switch>
 
       <Footer></Footer>
