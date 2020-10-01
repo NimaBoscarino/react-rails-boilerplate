@@ -24,7 +24,7 @@ export default function NavigBar() {
 
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#favorite">My favorites</Nav.Link>
+          <Nav.Link href="/api/favorites">My favorites</Nav.Link>
           <Nav.Link href="/api/bookings">My bookings</Nav.Link>
 
         </Nav>
