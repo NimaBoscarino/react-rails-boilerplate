@@ -37,7 +37,7 @@ function Confirmation(props){
   console.log(maxPeople)
   return(
     <>
-    <h1 className='confirm'>Awesome, let's have you booked for activity of</h1>
+    <h1 className='confirm'>Awesome, let's have you booked for</h1>
     <h1 className='title'>{title}</h1>
     <span className='question-spot'>How many spots do you want to book?</span>
     <input 
