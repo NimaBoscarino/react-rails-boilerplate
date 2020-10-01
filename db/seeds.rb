@@ -72,7 +72,7 @@ act3 = Activity.create!({
   date: "1/10/2021",
 })
 
-Activity.create!({
+act4 = Activity.create!({
   title:  'Capilano Canyon',
   description: "Just up the road from Capilano Suspension Bridge, Capilano River Regional Park features a 2.6 kilometre (1.6 mile) trail that winds through the canyon, passing streams and stunning views of the surrounding mountains. It only gains about 100 metres (329 feet) in elevation, so this trail is open to hikers of most fitness levels. The trail also passes through the Capilano Salmon Hatchery, a free attraction offering an up-close look at the migrating salmon in the river (8 am – dusk). ",
   image_url: 'https://hiltonsuggests.hilton.com/wp-content/uploads/2020/02/Capilano-Suspension-Bridge-Park-attractions-review.jpg',
@@ -83,7 +83,7 @@ Activity.create!({
   date: "06/09/2021",
 })
 
-Activity.create!({
+act5 = Activity.create!({
   title:  'Stanley Park',
   description: "Considered one of the greatest urban parks in the world, Stanley Park offers hikers of all ability levels a variety of outdoor treks. The paved seawall has separated lanes for walking and biking, allowing for a leisurely sightseeing stroll along the park’s coastline. The seawall, deservedly, draws thousands of visitors and locals on a daily basis, but there are numerous, quiet nature hikes through the central parts of the park. Work up a sweat with a 6 kilometre (3.7 mile) loop through temperate rainforest. The walking path passes the park’s gardens and Beaver Lake, and it hits the water near Third Beach.",
   image_url: 'https://images.dailyhive.com/20180808095258/shutterstock_725540002.jpg',
@@ -94,7 +94,7 @@ Activity.create!({
   date: "10/09/2020",
 })
 
-Activity.create!({
+act6 = Activity.create!({
   title:  'Bird Watching',
   description: "Located to the south of Vancouver in the suburb of Ladner, the George C. Reifel Migratory Bird Sanctuary is a fantastic spot to view migratory species as they rest on their journey north or south along the Pacific Flyway. Reifel offers 300 hectares (850 acres) of managed wetlands and natural marshes along the Fraser River Estuary. ",
   image_url: 'https://cdn.birdwatchingdaily.com/2020/01/magee-marsh-shutterstock_193706975.jpg',
@@ -116,7 +116,7 @@ Activity.create!({
   date: "09/06/2021",
 })
 
-Activity.create!({
+act7 = Activity.create!({
   title:  'Dead Lake',
   description: "This is our most popular day fly-out. Fantastic facilities, a beautiful beach, excellent season-long walleye and pike fishing, reasonable rates - what's not to love? The lake can accommodate the largest groups. There is an ADI outpost camp on the lake just in case the weather gets ugly with a beautiful beach for shore lunch!",
   image_url: 'https://images.squarespace-cdn.com/content/v1/57b9b98a29687f1ef5c622df/1477908742298-Z2KX2BLRPGTGC5RCJEGM/ke17ZwdGBToddI8pDm48kNub02L0uULUCOuILx7ZxY8UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcYApxGE1ZEVFHy9_t5q5kQLGegzyj9kger3C3iinxUowEpV9f-KiSqcIke-dO9nIh/flooded+trees+lake?format=1500w',
@@ -127,7 +127,7 @@ Activity.create!({
   date: "12/10/2020",
 })
 
-Activity.create!({
+act8 = Activity.create!({
   title:  'Hickson Lake',
   description: "Unbelievable lake trout fishing and scenery! Hickson Lake Outpost Camp is the closest trout fishing outpost camp to Thompson's Camps Otter Lake Resort. Surrounded on all sides by incredible Canadian Shield scenery and numerous Native American Rock Paintings, this outpost camp is the perfect location to kick back and relax.",
   image_url: 'https://live.staticflickr.com/7795/27638704875_f58b1f4853_b.jpg',
@@ -138,7 +138,7 @@ Activity.create!({
   date: "20/11/2020",
 })
 
-Activity.create!({
+act9 = Activity.create!({
   title:  'Scenic Flight',
   description: "Take a load off and enjoy the beautiful scenery with a view from up above. Look for the incredible Nistowiak falls on the rapid river and see the Holy Trinity Anglican Church, the oldest standing building in BC! Flight time is approximately 40 minutes with a 7:00 PM departure.",
   image_url: 'https://breakawayexperiences.com/content/images/thumbs/0011032_sea-to-sky-scenic-flight.jpeg',
@@ -149,7 +149,7 @@ Activity.create!({
   date: "12/10/2020",
 })
 
-Activity.create!({
+act10 = Activity.create!({
   title:  'Segway Tours',
   description: "Enjoy the sights along Summerside's Boardwalk and glide along on a guided Segway tour. There are daily one and two hour experiences departing from Spinnaker's Landing on the Waterfront. The Lighthouse is open and there's no better time to get out and try a Segway Personal Transporter.",
   image_url: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/70/04/df.jpg',
@@ -598,6 +598,24 @@ al.bookings.create!({
   price_per_person: 85
 })
 
+al.bookings.create!({
+  activity_id: act5.id,
+  number_of_participants: 8,
+  price_per_person: 10
+})
+
+al.bookings.create!({
+  activity_id: act6.id,
+  number_of_participants: 2,
+  price_per_person: 100
+})
+
+al.bookings.create!({
+  activity_id: act4.id,
+  number_of_participants: 10,
+  price_per_person: 47
+})
+
 ## FAVORITES
 Favorite.destroy_all
 
@@ -606,3 +624,17 @@ al.favorites.create!(activity_id: act2.id)
 al.favorites.create!(activity_id: act1.id)
 
 al.favorites.create!(activity_id: act3.id)
+
+al.favorites.create!(activity_id: act8.id)
+
+al.favorites.create!(activity_id: act5.id)
+
+al.favorites.create!(activity_id: act7.id)
+
+al.favorites.create!(activity_id: act10.id)
+
+al.favorites.create!(activity_id: act4.id)
+
+al.favorites.create!(activity_id: act9.id)
+
+al.favorites.create!(activity_id: act6.id)
