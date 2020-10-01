@@ -27,7 +27,8 @@ export default function Bookings() {
         onClick={props.onClick}
       >
         Cancel
-      </Button>)
+      </Button>
+      )
   }
   
   const bookedItems = bookedActivities.map(bookedActivity => {

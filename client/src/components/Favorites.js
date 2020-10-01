@@ -10,7 +10,7 @@ export default function Favorites() {
   useEffect(() => {
     Promise.all([
       Promise.resolve(axios.get('/api/users/1/favorites')),
-      Promise.resolve(axios.get('/activities/user/1/favored'))
+      Promise.resolve(axios.get('/api/activities/user/1/favored'))
     ])
     .then(all => {
       console.log(all)
@@ -20,13 +20,13 @@ export default function Favorites() {
     .catch(err => console.log("favorites.js err: ", err))
   }, [])
   
-  const favoredItems = activities.map(activity => {
+  const favoredItems = activities.map(favoredActivity => {
     return (
-      <tr  key={activity.id}>
-        <td>{activity.title}</td>
+      <tr  key={favoredActivity.id}>
+        <td>{favoredActivity.title}</td>
         <td>status</td>
-        <td>{activity.max_number_of_participants}</td>
-        <td>{activity.date}</td>
+        <td>{favoredActivity.max_number_of_participants}</td>
+        <td>{favoredActivity.date}</td>
         <td>
           <Button variant="success">Join</Button>
         </td>
