@@ -3,7 +3,7 @@ import React from 'react';
 import "../css/navbar.css"
 import "../css/banner.css"
 
-import { Jumbotron, Button } from 'react-bootstrap';
+import { Jumbotron, Button, Container, Row, Col } from 'react-bootstrap';
 
 export default function Banner(props) {
 
@@ -11,15 +11,17 @@ export default function Banner(props) {
     <>
       <Jumbotron>
         <h1>Hi Folks,</h1>
-        <h4>
-          Looking for something to do in your area? Enter your location and budget below and
-          we will help you find something nearby. <br />Hurry and save your spot as they go quickly!
+        <h5>Looking for something to do in your area?</h5>
+        <h4>Enter your location and budget below and
+          let us help you find something to do nearby. <br />Hurry and save your spot as they go quickly!
       </h4>
+
         <br />
-        <Button variant="primary">Login / Register</Button>{' '}
-        <br /><br />
-       
-        {props.children}
+        <Container fluid="md">
+          <Row>
+            <Col className="drop-field">{props.children}</Col>
+          </Row>
+        </Container>
 
       </Jumbotron>
       <br />

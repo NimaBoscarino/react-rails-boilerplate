@@ -11,3 +11,21 @@ img{
     text-align: center;
     padding-bottom: 50px;
 }
+#dropdown-basic{
+  background-color: #ffffff;
+  font-size: 1.3rem;
+  margin-left: 30px;
+}
+
+#search-button{
+  font-size: 1.3rem;
+  margin-left: 30px;
+}
+
+.search-box{
+  padding-top: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
