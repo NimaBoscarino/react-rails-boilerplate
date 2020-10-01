@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function Activity(props) {
   const [activity, SetActivity] = useState({})
-
+  
   useEffect(() => {
     const id = props.match.params.id;
     const url = `/api/activities/${id}`
@@ -18,6 +18,8 @@ function Activity(props) {
       .catch(res => console.log(res))
 
   }, [])
+  const id = props.match.params.id
+  const confirmationLink = `${id}/confirmation`
   console.log(activity)
   return (
     <>
@@ -36,7 +38,7 @@ function Activity(props) {
             <div className='pricetag'>Price per person: ${activity.price_per_person}
             </div>
             <div className='CTA'>
-              <Link to="/">
+              <Link to = {confirmationLink}>
               <Button variant="warning">Join this activity</Button>{' '}
               </Link>
               <Button variant="info">Add to favorites</Button>{' '}

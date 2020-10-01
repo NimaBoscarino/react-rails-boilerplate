@@ -11,6 +11,7 @@ import Activity from './components/detail/Activity'
 import Bookings from './components/Bookings';
 import Favorites from './components/Favorites';
 import Footer from './components/Footer';
+import Confirmation from './components/confirmation';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route exact path='/api/bookings' component={Bookings}/>
         <Route exact path='/' component={Activities} />
         <Route exact path='/activities/:id' component={Activity} />
-        {/* <Route exact path="/activities/:id/confirmation" component={} */}
+        <Route exact path="/activities/:id/confirmation" component={Confirmation}/>
       </Switch>
 
       <Footer></Footer>
