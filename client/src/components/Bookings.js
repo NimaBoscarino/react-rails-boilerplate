@@ -1,57 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Banner from "./Banner"
+import React from 'react';
+
 import "../css/favorites.css"
+
+import Banner from "./Banner"
+import useBookingData from '../hooks/useBookingData'
 
 import { Table, Button, Container } from 'react-bootstrap';
 
 export default function Bookings() {
-  const [bookings, setBookings] = useState([]);
-  const [bookedActivities, setBookedActivities] = useState([]);
-
-  useEffect(() => {
-    Promise.all([
-      Promise.resolve(axios.get('/api/users/1/bookings')),
-      Promise.resolve(axios.get('/api/activities/user/1/booked'))
-    ])
-      .then(all => {
-        console.log(all)
-        setBookings(all[0].data)
-        setBookedActivities(all[1].data)
-      })
-      .catch(err => console.log("bookings.js err: ", err))
-  }, [bookings.length])
-
-  function CancelButton(props) {
-    return (
-      <Button variant="danger"
-        onClick={props.onClick}
-      >
-        Cancel
-      </Button>
-      )
-  }
+  const { state, cancelBooking } = useBookingData();
+  const bookings = state.bookings;
+  const bookedActivities = state.bookedActivities;
   
-  function findBookingIdByBookedActivityId(bookings, bookedActivityId) {
-    const result = bookings.filter(obj => obj.activity_id === bookedActivityId).id
-    console.log(result)
-    return result.id
-  }
-
+  
   const bookedItems = bookedActivities.map(bookedActivity => {
     const bookedActivityId = bookedActivity.id
+    const bookingId = bookings.filter(obj => obj.activity_id === bookedActivityId)[0].id
 
-    function cancelBooking(bookedActivityId) {
-
-      const bookingId = findBookingIdByBookedActivityId(bookings, bookedActivityId);
-
-      axios.delete(`/api/users/1/bookings/${bookingId}`)
-        .then(res => {
-          console.log(res)
-        })
-        .catch(err => {
-          console.log('err from cancel booking', err)
-        })
+    function destroy(bookingId) {
+      cancelBooking(bookingId)
+      .then( console.log("booking cancelled"))
+      .catch(err => console.log("booking cancel err: ", err))
     }
 
     return (
@@ -60,7 +29,11 @@ export default function Bookings() {
         <td></td>
         <td>{bookedActivity.date}</td>
         <td>
-          <CancelButton onClick={cancelBooking} />
+          <Button variant="danger" 
+            onClick={() => destroy(bookingId)}
+          >
+            Cancel
+          </Button>
         </td>
       </tr>
     )
