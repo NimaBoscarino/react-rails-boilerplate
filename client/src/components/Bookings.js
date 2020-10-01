@@ -11,7 +11,7 @@ export default function Bookings() {
   useEffect(() => {
     Promise.all([
       Promise.resolve(axios.get('/api/users/1/bookings')),
-      Promise.resolve(axios.get('/api/activities/user/1'))
+      Promise.resolve(axios.get('/api/activities/user/1/booked'))
     ])
     .then(all => {
       console.log(all)
@@ -37,13 +37,13 @@ export default function Bookings() {
     // }
 
     function cancelBooking(bookedActivityId) {
-      axios.delete(`/api/users/1/bookings/${bookedActivityId}`)
-        .then(res => {
-          console.log(res)
-        })
-        .catch(err => {
-          console.log('err from cancel booking', err)
-        })
+      // axios.delete(`/api/users/1/bookings/${bookedActivityId}`)
+      //   .then(res => {
+      //     console.log(res)
+      //   })
+      //   .catch(err => {
+      //     console.log('err from cancel booking', err)
+      //   })
     }
 
     return (

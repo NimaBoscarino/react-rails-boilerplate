@@ -10,7 +10,7 @@ export default function Favorites() {
   useEffect(() => {
     Promise.all([
       Promise.resolve(axios.get('/api/users/1/favorites')),
-      Promise.resolve(axios.get('/api/activities/user/1'))
+      Promise.resolve(axios.get('/activities/user/1/favored'))
     ])
     .then(all => {
       console.log(all)
