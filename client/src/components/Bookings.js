@@ -22,11 +22,22 @@ export default function Bookings() {
       .then( console.log("booking cancelled"))
       .catch(err => console.log("booking cancel err: ", err))
     }
+    function getDate(){
+      let today = new Date();
+      let dd = String(today.getDate()).padStart(2, '0');
+      let mm = String(today.getMonth() + 1).padStart(2, '0');
+      let yyyy = today.getFullYear();
+      let currentDate = yyyy + '-' + mm + '-' + dd
+      return currentDate
+    }
 
     return (
       <tr key={bookedActivity.id}>
         <td>{bookedActivity.title}</td>
-        <td><Badge variant="success">Upcoming</Badge>{' '}</td>
+        {getDate()<bookedActivity.date?
+        <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
+        <td><Badge variant="danger">Expired</Badge>{' '}</td>
+        }
         <td>{bookedActivity.date}</td>
         <td>
           <Button variant="danger" 
