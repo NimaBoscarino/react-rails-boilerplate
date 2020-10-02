@@ -11,8 +11,8 @@ class Api::BookingsController < ApplicationController
   end
 
   def destroy
-    booking = Booking.where(params[:id])
-    booking.delete
+    booking = Booking.find(params[:id])  
+    booking.destroy
   end
   # def create
   #   activity = Activity.finde_by(id: params[:activity_id])
