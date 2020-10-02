@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <>
-      <Navbar className="justify-content-center" bg="dark" variant="dark">
+      <Navbar id="footer" className="justify-content-center" bg="dark" variant="dark">
         <Nav className="justify-content-center" activeKey="/home">
           <Navbar.Text>
             ActivityGo ©2020

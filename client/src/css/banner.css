@@ -11,11 +11,28 @@
   font-family: Poppins, Helvetica Neue, sans-serif;
 }
 
+.h3, h3 {
+  font-size: 1.6rem;
+  margin-bottom: .5rem;
+  font-weight: 400700;
+  line-height: 1.7;
+  font-family:  Helvetica Neue, sans-serif;
+}
+
 .h4, h4 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-bottom: .5rem;
   font-weight: 400;
   line-height: 1.7;
   font-family:  Helvetica Neue, sans-serif;
 }
+
+.h5, h5 {
+  font-size: 1.4rem;
+  margin-bottom: .5rem;
+  font-weight: 400;
+  line-height: 1.7;
+  font-family:  Helvetica Neue, sans-serif;
+}
+
 

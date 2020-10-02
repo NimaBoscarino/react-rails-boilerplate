@@ -13,9 +13,7 @@ export default function NavigBar() {
         <Navbar.Brand href="/">
           <img
             alt="ActivityGo Logo"
-            // <img src={require('/assets/ActivityGo_logo.png')} />
             src={require('../assets/ActivityGo_logo.png')}
-            // {/* src="./assets/ActivityGo_logo.png" */}
             width="50"
             height=""
             className="d-inline-block align-top"
