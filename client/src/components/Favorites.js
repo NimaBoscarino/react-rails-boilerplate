@@ -43,7 +43,7 @@ export default function Favorites() {
     <>
       <Container className="list-box">
         <h1>My Favorites </h1>
-        <Table striped bordered hover variant="dark">
+        <Table striped bordered hover >
           <thead>
             <tr>
               <th>Activity Title</th>

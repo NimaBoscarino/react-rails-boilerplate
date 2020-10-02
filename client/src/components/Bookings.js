@@ -62,7 +62,7 @@ export default function Bookings() {
     <>
       <Container className="list-box">
         <h1>Booked Activities</h1>
-        <Table striped bordered hover variant="dark">
+        <Table striped bordered hover>
           <thead>
             <tr>
               <th>Activity Title</th>
