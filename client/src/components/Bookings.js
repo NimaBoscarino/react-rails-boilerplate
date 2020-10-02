@@ -5,7 +5,7 @@ import "../css/favorites.css"
 import Banner from "./Banner"
 import useBookingData from '../hooks/useBookingData'
 
-import { Table, Button, Container } from 'react-bootstrap';
+import { Table, Button, Container, Badge } from 'react-bootstrap';
 
 export default function Bookings() {
   const { state, cancelBooking } = useBookingData();
@@ -26,7 +26,7 @@ export default function Bookings() {
     return (
       <tr key={bookedActivity.id}>
         <td>{bookedActivity.title}</td>
-        <td></td>
+        <td><Badge variant="success">Upcoming</Badge>{' '}</td>
         <td>{bookedActivity.date}</td>
         <td>
           <Button variant="danger" 
