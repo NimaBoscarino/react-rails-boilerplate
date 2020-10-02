@@ -1,7 +1,7 @@
 import React from 'react';
 
 import "../css/favorites.css"
-import { Table, Button, Container } from 'react-bootstrap';
+import { Table, Button, Container, Badge } from 'react-bootstrap';
 
 import useFavoriteData from '../hooks/useFavoriteData'
 
