@@ -13,13 +13,12 @@ export default function useBookingData() {
       Promise.resolve(axios.get('/api/activities/user/1/booked'))
     ])
     .then(all => {
-      // console.log(all)
       setState({
         bookings: all[0].data, 
         bookedActivities: all[1].data
       })
     })
-    .catch(err => console.log("bookings.js err: ", err))
+    .catch(err => console.log("useBookingData.js err: ", err))
 	}, [])
 	
 

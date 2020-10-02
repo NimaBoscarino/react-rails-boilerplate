@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import "../css/favorites.css"
+import React from 'react';
 
+import "../css/favorites.css"
 import { Table, Button, Container } from 'react-bootstrap';
 
+import useFavoriteData from '../hooks/useFavoriteData'
+
 export default function Favorites() {
-  const [favorites, setFavorites] = useState([]);
-  const [activities, setActivities] = useState([]);
+  const { state, cancelFavorite } = useFavoriteData();
+  const favorites = state.favorites;
+  const favoredActivities = state.favoredActivities;
 
-  useEffect(() => {
-    Promise.all([
-      Promise.resolve(axios.get('/api/users/1/favorites')),
-      Promise.resolve(axios.get('/api/activities/user/1/favored'))
-    ])
-      .then(all => {
-        console.log(all)
-        setFavorites(all[0].data)
-        setActivities(all[1].data)
-      })
-      .catch(err => console.log("favorites.js err: ", err))
-  }, [])
+  
+  const favoredItems = favoredActivities.map(favoredActivity => {
+    const favoredActivityId = favoredActivity.id
+    const favoriteId = favorites.filter(obj => obj.activity_id === favoredActivityId)[0].id
 
-  const favoredItems = activities.map(favoredActivity => {
+    function destroy(favoriteId) {
+      cancelFavorite(favoriteId)
+      .then( console.log("favorite cancelled"))
+      .catch(err => console.log("favorite cancel err: ", err))
+    }
+
     return (
       <tr key={favoredActivity.id}>
         <td>{favoredActivity.title}</td>
@@ -32,10 +31,11 @@ export default function Favorites() {
           <Button variant="warning">Join now</Button>{' '}
         </td>
         <td>
-          <Button variant="danger">Delete</Button>
+          <Button variant="danger" onClick={() => destroy(favoriteId)}>
+            Delete
+          </Button>
         </td>
       </tr>
-
     )
   })
   return (
