@@ -13,6 +13,8 @@ class Api::FavoritesController < ApplicationController
   end
   
   def destroy
+    favorite = Favorite.find(params[:id])
+    favorite.destroy
   end
 
 end

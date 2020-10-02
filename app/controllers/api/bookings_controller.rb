@@ -11,9 +11,7 @@ class Api::BookingsController < ApplicationController
   end
 
   def destroy
-    booking = Booking.find(params[:id])
-    puts booking.inspect
-  
+    booking = Booking.find(params[:id])  
     booking.destroy
   end
   # def create
