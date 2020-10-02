@@ -20,11 +20,22 @@ export default function Favorites() {
       .then( console.log("favorite cancelled"))
       .catch(err => console.log("favorite cancel err: ", err))
     }
+    function getDate(){
+      let today = new Date();
+      let dd = String(today.getDate()).padStart(2, '0');
+      let mm = String(today.getMonth() + 1).padStart(2, '0');
+      let yyyy = today.getFullYear();
+      let currentDate = yyyy + '-' + mm + '-' + dd
+      return currentDate
+    }
 
     return (
       <tr key={favoredActivity.id}>
         <td>{favoredActivity.title}</td>
-        <td>status</td>
+        {getDate()<favoredActivity.date?
+        <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
+        <td><Badge variant="danger">Expired</Badge>{' '}</td>
+        }
         <td>{favoredActivity.max_number_of_participants}</td>
         <td>{favoredActivity.date}</td>
         <td>
