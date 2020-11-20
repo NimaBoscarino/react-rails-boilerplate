@@ -1,4 +1,4 @@
-### My name is bart I am so great
+### My name is Bryn I am so great
 
 ## NOTE: This repo has not been updated in a while.
 
