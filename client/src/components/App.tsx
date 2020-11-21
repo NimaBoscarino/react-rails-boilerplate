@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
-import Navigation from './Navigation.tsx';
+import Navigation from './Navigation';
 
 export default function App() {
   const [message, setMessage] = useState('Message!!');
