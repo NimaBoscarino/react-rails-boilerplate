@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_001903) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
@@ -35,11 +35,5 @@ ActiveRecord::Schema.define(version: 2020_11_21_001903) do
   enable_extension "unaccent"
   enable_extension "uuid-ossp"
   enable_extension "xml2"
-
-  create_table "artists_musics", id: false, force: :cascade do |t|
-    t.bigint "artist_id", null: false
-    t.bigint "music_id", null: false
-    t.index ["music_id", "artist_id"], name: "index_artists_musics_on_music_id_and_artist_id", unique: true
-  end
 
 end
