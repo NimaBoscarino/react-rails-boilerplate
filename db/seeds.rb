@@ -9,19 +9,20 @@
 User.destroy_all
 User.create(
   customer_name: 'Chad',
-  email: "",
-  password: "",
-  height_cm: ,
-  weight: 
+  email: "chad@google.com",
+  password: "chadrocks",
+  height_cm: 160,
+  weight: 200
 )
 User.create(
   customer_name: 'Brad',
-  email: "",
-  password: "",
-  height_cm: ,
-  weight: 
+  email: "brad@google.com",
+  password: "bradrocks",
+  height_cm: 150,
+  weight: 210
 )
 
+Muscle.destroy_all
 Muscle.create(muscle_name: 'Traps', muscle_group: "Shoulders")
 Muscle.create(muscle_name: 'Hamstrings', muscle_group: "Legs")
 Muscle.create(muscle_name: 'Glutes', muscle_group: "Legs")
@@ -43,11 +44,6 @@ Muscle.create(muscle_name: 'Abs', muscle_group: "Core")
 Muscle.create(muscle_name: 'Oblique', muscle_group: "Core")
 Muscle.create(muscle_name: 'Delts', muscle_group: "Shoulders")
 Muscle.create(muscle_name: 'Chest', muscle_group: "Chest")
-
-
-
-
-Exercise_Muscle.create(exercise_id: 1, muscle_id: 1)
 
 Exercise.destroy_all
 Exercise.create(
@@ -133,6 +129,7 @@ Exercise.create(
   force: "push"
 )
 
+Workout_Session.destroy_all
 Workout_Session.create(
   user_id: 1,
   workout_date: Date.today

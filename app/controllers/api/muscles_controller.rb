@@ -1,12 +1,12 @@
-class Api::ExercisesController < ApplicationController
+class Api::MusclesController < ApplicationController
   def index
   # app.get('/farms', (req, res => ) {
   # const templateVars = {....}
   # })
-  @exercises = Exercise.all
+  @muscles = Muscle.all
   # render json: @exercises
   render :json => {
-      exercises: @exercises
+      muscles: @muscles
     }
   end
 
