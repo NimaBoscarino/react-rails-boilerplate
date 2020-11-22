@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_11_21_220109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
@@ -35,5 +35,57 @@ ActiveRecord::Schema.define(version: 0) do
   enable_extension "unaccent"
   enable_extension "uuid-ossp"
   enable_extension "xml2"
+
+  create_table "artists_musics", id: false, force: :cascade do |t|
+    t.bigint "artist_id", null: false
+    t.bigint "music_id", null: false
+    t.index ["music_id", "artist_id"], name: "index_artists_musics_on_music_id_and_artist_id", unique: true
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "exercise_name"
+    t.text "description"
+    t.string "video_url"
+    t.string "thumbnail_image_url"
+    t.boolean "upper_body"
+    t.boolean "lower_body"
+    t.string "force"
+  end
+
+  create_table "exercises_muscles", id: false, force: :cascade do |t|
+    t.bigint "exercise_id", null: false
+    t.bigint "muscle_id", null: false
+  end
+
+  create_table "muscles", force: :cascade do |t|
+    t.string "muscle_name"
+    t.string "muscle_group"
+  end
+
+  create_table "sets", force: :cascade do |t|
+    t.integer "user_exercise_for_session_id"
+    t.integer "reps"
+    t.integer "rpe"
+    t.integer "weight"
+  end
+
+  create_table "user_exercises_for_sessions", force: :cascade do |t|
+    t.integer "workout_session_id"
+    t.integer "exercise_id"
+    t.text "workout_notes"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "customer_name"
+    t.string "email"
+    t.string "password"
+    t.integer "height_cm"
+    t.integer "weight"
+  end
+
+  create_table "workout_sessions", force: :cascade do |t|
+    t.integer "user_id"
+    t.date "workout_date"
+  end
 
 end
