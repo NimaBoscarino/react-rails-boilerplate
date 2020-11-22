@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   namespace :api do # /api/data
 
     get '/data', to: 'tests#index'
-    get '/data/gains', to: 'exercises#index'
+    get '/exercises', to: 'exercises#index'
     
     resources :dogs
-    #resources :exercises
+    resources :exercises, only: [:index]
   end
 
  
