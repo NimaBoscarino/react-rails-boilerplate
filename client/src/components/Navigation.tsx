@@ -18,6 +18,7 @@ import {Home} from './Home/index';
 import {Today} from './Today/index';
 import {Insight} from './Insight/index';
 import {NewSession} from './NewSession/index';
+import '../styles/navigation.scss'
 
 export const Navigation = ():JSX.Element => {
   const [value, setValue] = useState<number>(0);
@@ -30,21 +31,22 @@ export const Navigation = ():JSX.Element => {
           setValue(newValue);
         }}
         showLabels
+        className="navigation-container"
       >
         <Link to="/home">
-        <BottomNavigationAction label="Today" icon={<AccessibilityOutlinedIcon />}/>
+        <BottomNavigationAction label="Today" icon={<AccessibilityOutlinedIcon fontSize="large"/>}/>
         </Link>
         <Link to="/today">
-          <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon />}/>
+          <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon fontSize="large"/>}/>
         </Link>
         <Link to="/new-session">
-          <BottomNavigationAction label="New Session" icon={<AddCircleOutlineOutlinedIcon />}/>
+          <BottomNavigationAction label="New Session" icon={<AddCircleOutlineOutlinedIcon fontSize="large"/>}/>
         </Link>
         <Link to="/calendar">
-          <BottomNavigationAction label="Calendar" icon={<EventOutlinedIcon />}/>
+          <BottomNavigationAction label="Calendar" icon={<EventOutlinedIcon fontSize="large"/>}/>
         </Link>
         <Link to="/insight">
-          <BottomNavigationAction label="Insight" icon={<InsertChartOutlinedOutlinedIcon />}/>
+          <BottomNavigationAction label="Insight" icon={<InsertChartOutlinedOutlinedIcon fontSize="large"/>}/>
         </Link>
 
       </BottomNavigation>
@@ -66,9 +68,6 @@ export const Navigation = ():JSX.Element => {
             <Insight/>
           </Route>
         </Switch>
-
     </Router>
-
-
   );
 }
