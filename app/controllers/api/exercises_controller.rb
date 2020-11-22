@@ -8,7 +8,7 @@ class Api::ExercisesController < ApplicationController
   puts @exercises.inspect
   # render json: @exercises
   render :json => {
-      message2: @exercises
+      exercises: @exercises
     }
   end
 

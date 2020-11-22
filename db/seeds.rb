@@ -7,7 +7,47 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-User.create(customer_name: 'Chad')
+User.create(
+  customer_name: 'Chad',
+  email: "",
+  password: "",
+  height_cm: ,
+  weight: 
+)
+User.create(
+  customer_name: 'Brad',
+  email: "",
+  password: "",
+  height_cm: ,
+  weight: 
+)
+
+Muscle.create(muscle_name: 'Traps', muscle_group: "Shoulders")
+Muscle.create(muscle_name: 'Hamstrings', muscle_group: "Legs")
+Muscle.create(muscle_name: 'Glutes', muscle_group: "Legs")
+Muscle.create(muscle_name: 'Quadriceps', muscle_group: "Legs")
+Muscle.create(muscle_name: 'Spinal Erectors', muscle_group: "Back")
+Muscle.create(muscle_name: 'Lats', muscle_group: "Back")
+Muscle.create(muscle_name: 'Forearms', muscle_group: "Arms")
+Muscle.create(muscle_name: 'Biceps', muscle_group: "Arms")
+Muscle.create(muscle_name: 'Calves', muscle_group: "Legs")
+Muscle.create(muscle_name: 'Upper Back', muscle_group: "Back")
+Muscle.create(muscle_name: 'Back', muscle_group: "Back")
+Muscle.create(muscle_name: 'Lower Back', muscle_group: "Back")
+Muscle.create(muscle_name: 'Triceps', muscle_group: "Arms")
+Muscle.create(muscle_name: 'Chest', muscle_group: "Chest")
+Muscle.create(muscle_name: 'Hips', muscle_group: "Core")
+Muscle.create(muscle_name: 'Shoulders', muscle_group: "Shoulders")
+Muscle.create(muscle_name: 'Pecs', muscle_group: "Chest")
+Muscle.create(muscle_name: 'Abs', muscle_group: "Core")
+Muscle.create(muscle_name: 'Oblique', muscle_group: "Core")
+Muscle.create(muscle_name: 'Delts', muscle_group: "Shoulders")
+Muscle.create(muscle_name: 'Chest', muscle_group: "Chest")
+
+
+
+
+Exercise_Muscle.create(exercise_id: 1, muscle_id: 1)
 
 Exercise.destroy_all
 Exercise.create(
@@ -91,4 +131,9 @@ Exercise.create(
   upper_body: true,
   lower_body: false,
   force: "push"
+)
+
+Workout_Session.create(
+  user_id: 1,
+  workout_date: Date.today
 )
