@@ -6,7 +6,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      message: 'Click the button to load data!'
+      message: 'Click the button to load data!',
+      message2: 'Exercises'
     }
   }
 
@@ -23,13 +24,30 @@ class App extends Component {
     }) 
   }
 
+  fetchInfo = () => {
+    axios.get('/api/data/gains') // You can simply make your requests to "/api/whatever you want"
+    .then((response) => {
+      // handle success
+      console.log(response.data) // The entire response from the Rails API
+
+      console.log(response.data.message2[0].exercise_name) // Just the message
+      this.setState({
+        message2: `Name: ${response.data.message2[0].exercise_name} Description: ${response.data.message2[0].description}`
+      });
+    }) 
+  }
+
   render() {
     return (
       <div className="App">
         <h1>{ this.state.message }</h1>
         <button onClick={this.fetchData} >
           Fetch Data
-        </button>        
+        </button>   
+        <h1>{ this.state.message2 }</h1>
+        <button onClick={this.fetchInfo} >
+          Fetch Info
+        </button>      
       </div>
     );
   }

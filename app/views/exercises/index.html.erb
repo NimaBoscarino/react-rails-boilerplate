@@ -1,0 +1,9 @@
+<h1>Hello World!!</h1>
+
+<h2>Here are My Exercises</h2>
+<% @exercises.each do |exercise| %>
+    <div>
+        <h2>Name:<%= exercise.exercise_name %></h2>
+        <h3>Description: <%= exercise.description %></h3>
+    </div>
+<% end %>
