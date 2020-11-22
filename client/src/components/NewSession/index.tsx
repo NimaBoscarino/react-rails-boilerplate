@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function NewSession() {
+export const NewSession = ():JSX.Element => {
   return(
     <h1>NewSession</h1>
   )

@@ -1,5 +1,4 @@
 import React,{ useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
@@ -14,22 +13,14 @@ import {
   Link
 } from "react-router-dom";
 
-import Calendar from './Calendar/index';
-import Home from './Home/index';
-import Today from './Today/index';
-import Insight from './Insight/index';
-import NewSession from './NewSession/index';
+import {Calendar} from './Calendar/index';
+import {Home} from './Home/index';
+import {Today} from './Today/index';
+import {Insight} from './Insight/index';
+import {NewSession} from './NewSession/index';
 
-
-const useStyles = makeStyles({
-  root: {
-    width: 500,
-  },
-});
-
-export default function Navigation() {
-  const classes = useStyles();
-  const [value, setValue] = useState(0);
+export const Navigation = ():JSX.Element => {
+  const [value, setValue] = useState<number>(0);
 
   return (
     <Router>
@@ -39,23 +30,23 @@ export default function Navigation() {
           setValue(newValue);
         }}
         showLabels
-        className={classes.root}
       >
-        <BottomNavigationAction label="Home" icon={<AccessibilityOutlinedIcon />}>
-          <Link to="/home"></Link>
-        </BottomNavigationAction>
-        <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon />}>
-          <Link to="/today"></Link>
-        </BottomNavigationAction>
-        <BottomNavigationAction label="New Session" icon={<AddCircleOutlineOutlinedIcon />}>
-          <Link to="/new-session"></Link>
-        </BottomNavigationAction>
-        <BottomNavigationAction label="Calendar" icon={<EventOutlinedIcon />}>
-          <Link to="/calendar"></Link>
-        </BottomNavigationAction>
-        <BottomNavigationAction label="Insight" icon={<InsertChartOutlinedOutlinedIcon />}>
-          <Link to="/insight"></Link>
-        </BottomNavigationAction>
+        <Link to="/home">
+        <BottomNavigationAction label="Today" icon={<AccessibilityOutlinedIcon />}/>
+        </Link>
+        <Link to="/today">
+          <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon />}/>
+        </Link>
+        <Link to="/new-session">
+          <BottomNavigationAction label="New Session" icon={<AddCircleOutlineOutlinedIcon />}/>
+        </Link>
+        <Link to="/calendar">
+          <BottomNavigationAction label="Calendar" icon={<EventOutlinedIcon />}/>
+        </Link>
+        <Link to="/insight">
+          <BottomNavigationAction label="Insight" icon={<InsertChartOutlinedOutlinedIcon />}/>
+        </Link>
+
       </BottomNavigation>
 
       <Switch>

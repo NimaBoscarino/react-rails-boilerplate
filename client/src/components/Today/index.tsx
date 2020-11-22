@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Today() {
+export const Today = ():JSX.Element => {
   return(
     <h1>Today</h1>
   )
