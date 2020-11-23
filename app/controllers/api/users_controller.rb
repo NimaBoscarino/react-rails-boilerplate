@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
     # render json: @exercises
     render :json => {
         users: @users
-      }
+    }
   end
 
   def new

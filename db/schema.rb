@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2020_11_21_220109) do
     t.integer "weight"
   end
 
-  create_table "workout_sessions", force: :cascade do |t|
+  create_table "workouts", force: :cascade do |t|
     t.integer "user_id"
     t.date "workout_date"
   end
