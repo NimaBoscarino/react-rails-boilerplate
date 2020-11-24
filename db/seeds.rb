@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-User.create(
+u1=User.create(
   customer_name: 'Chad',
   email: "chad@google.com",
   password: "chadrocks",
@@ -46,7 +46,7 @@ Muscle.create(muscle_name: 'Delts', muscle_group: "Shoulders")
 Muscle.create(muscle_name: 'Chest', muscle_group: "Chest")
 
 Exercise.destroy_all
-Exercise.create(
+e1=Exercise.create(
   exercise_name: 'Hang Clean',
   description: "A compound power pull, olympic lift, first component of clean and jerk,
                consisting of pulling a barbell onto your chest from the floor, then pushing
@@ -131,11 +131,14 @@ Exercise.create(
 
 Workout.destroy_all
 w1 = Workout.create(
-  user_id: 1,
+  user_id: u1.id,
   workout_date: Date.today
 )
-
-w1.workouts_exercises.create(
-  exercise_id: 1,
+Routine.destroy_all
+r1=Routine.create(
+  workout_id: w1.id,
+  exercise_id: e1.id,
   workout_notes: "YEAH BUDDY"
 )
+
+puts r1.inspect

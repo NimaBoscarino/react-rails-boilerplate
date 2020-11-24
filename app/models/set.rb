@@ -1,5 +1,5 @@
 class Set < ActiveRecord::Base
-  belongs_to :workout_exercise
+  belongs_to :routine
 
 
 end
