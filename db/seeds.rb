@@ -129,8 +129,8 @@ Exercise.create(
   force: "push"
 )
 
-Workout_Session.destroy_all
-Workout_Session.create(
+Workout.destroy_all
+w1 = Workout.create(
   user_id: 1,
   workout_date: Date.today
 )

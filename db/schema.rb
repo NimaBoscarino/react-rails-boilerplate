@@ -36,12 +36,6 @@ ActiveRecord::Schema.define(version: 2020_11_21_220109) do
   enable_extension "uuid-ossp"
   enable_extension "xml2"
 
-  create_table "artists_musics", id: false, force: :cascade do |t|
-    t.bigint "artist_id", null: false
-    t.bigint "music_id", null: false
-    t.index ["music_id", "artist_id"], name: "index_artists_musics_on_music_id_and_artist_id", unique: true
-  end
-
   create_table "exercises", force: :cascade do |t|
     t.string "exercise_name"
     t.text "description"
@@ -69,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_11_21_220109) do
     t.integer "weight"
   end
 
-  create_table "user_exercises_for_sessions", force: :cascade do |t|
+  create_table "user_exercises_for_workout", force: :cascade do |t|
     t.integer "workout_session_id"
     t.integer "exercise_id"
     t.text "workout_notes"
@@ -83,7 +77,7 @@ ActiveRecord::Schema.define(version: 2020_11_21_220109) do
     t.integer "weight"
   end
 
-  create_table "workout_sessions", force: :cascade do |t|
+  create_table "workouts", force: :cascade do |t|
     t.integer "user_id"
     t.date "workout_date"
   end

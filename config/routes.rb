@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get '/muscles', to: 'muscles#index'
 
     resources :dogs
-    resources :exercises, only: [:index]
+    resources :exercises, only: [:index, :show]
 
     #Gets login page
     get '/login', to: 'sessions#new'

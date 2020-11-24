@@ -10,10 +10,10 @@ class Api::ExercisesController < ApplicationController
     }
   end
 
-  # def show
-  #     puts params[:id]
-  #     @farm = Farm.find(params[:id])
-  #     @animals = @farm.animals
-  #     render json: @animals
-  # end
+  def show
+    @exercise = Exercise.find params[:id]
+    render :json => {
+      exercise: @exercise
+    }
+  end
 end
