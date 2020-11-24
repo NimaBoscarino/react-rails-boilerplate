@@ -3,5 +3,5 @@ class Routine < ActiveRecord::Base
   belongs_to :workout
   belongs_to :exercise
 
-  has_many :sets
+  has_many :setts
 end
