@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_010905) do
     t.string "customer_name"
     t.string "email"
     t.string "password"
-    t.integer "height_cm"
+    t.integer "height"
     t.integer "weight"
   end
 
