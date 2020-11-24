@@ -63,12 +63,6 @@ ActiveRecord::Schema.define(version: 2020_11_24_010905) do
     t.integer "weight"
   end
 
-  create_table "user_exercises_for_workout", force: :cascade do |t|
-    t.integer "workout_session_id"
-    t.integer "exercise_id"
-    t.text "workout_notes"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "customer_name"
     t.string "email"
@@ -80,6 +74,12 @@ ActiveRecord::Schema.define(version: 2020_11_24_010905) do
   create_table "workouts", force: :cascade do |t|
     t.integer "user_id"
     t.date "workout_date"
+  end
+
+  create_table "workouts_exercises", force: :cascade do |t|
+    t.integer "workout_session_id"
+    t.integer "exercise_id"
+    t.text "workout_notes"
   end
 
 end
