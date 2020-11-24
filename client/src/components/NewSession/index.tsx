@@ -1,7 +1,8 @@
 import React from 'react';
+import { ExerciseList } from './ExerciseList';
 
-export const NewSession = ():JSX.Element => {
+export const NewSession = () => {
   return(
-    <h1>NewSession</h1>
+    <ExerciseList/>
   )
 }
