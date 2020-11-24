@@ -1,20 +1,27 @@
 import React from 'react';
+import { IExercise } from "../../types/exercisesType";
+import  { ExerciseDialog }  from "./ExerciseDialog";
 
-interface IProps {
-  exercise_name: string;
-  description: string;
-  video_url: string;
-  thumbnail_image_url: string;
-  upper_body: boolean;
-  lower_body: boolean;
-  force: string
-}
+export const ExerciseListItem = (props: IExercise):React.ReactElement => {
+  const [open, setOpen] = React.useState(false);
 
-export const ExerciseListItem = (props: IProps):React.ReactElement => {
   return(
     <div>
-      <p>{props.exercise_name}</p>
-      <p>{props.description}</p>
+      <p onClick = {() => setOpen(true)}>{props.exercise_name}</p>
+
+      <ExerciseDialog 
+        id = {props.id}
+        key = {props.id}
+        exercise_name={props.exercise_name}
+        description = {props.description}
+        video_url = {props.video_url}
+        thumbnail_image_url = {props.thumbnail_image_url}
+        upper_body = {props.upper_body}
+        lower_body = {props.lower_body}
+        force = {props.force}
+        open = {open}
+        onClick = {() => setOpen(!open)}
+      />
     </div>
   )
 }

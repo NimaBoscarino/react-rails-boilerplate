@@ -1,21 +1,11 @@
-export const SET_EXERCISES = "SET_EXERCISES";
+import {IExercise, State} from '../types/exercisesType';
 
-interface IExercise  {
-  exercise_name: string;
-  description: string;
-  video_url?: string;
-  thumbnail_image_url?: string;
-  upper_body: boolean;
-  lower_body: boolean;
-  force: string
-}
-
-interface State {
-  exercises: IExercise[];
-}
+const SET_EXERCISES = "SET_EXERCISES";
+const SET_TERM = "SET_TERM";
 
 type Action = 
-  | {type: "SET_EXERCISES", exercises:[]};
+  | { type: "SET_EXERCISES", exercises: IExercise[] }
+  | { type: "SET_TERM", term: string };
 
 export const exercisesReducer = (state: State, action: Action):State => {
 
@@ -25,8 +15,16 @@ export const exercisesReducer = (state: State, action: Action):State => {
         ...state,
         exercises: action.exercises
       }
+    case SET_TERM:
+      return{
+        ...state,
+        term: action.term
+      }
     default:
-      throw new Error(`Tried to reduce with unsupported action type:  ${action.type}`);
+      // this will give you a type error 
+      // throw new Error(`Tried to reduce with unsupported action type:  ${action.type}`);
+      throw new Error('Tried to reduce with unsupported action type');
   }
 }
 
+export {SET_EXERCISES, SET_TERM};

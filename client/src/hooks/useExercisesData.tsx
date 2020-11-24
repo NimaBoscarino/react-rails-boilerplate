@@ -1,11 +1,20 @@
+import axios from 'axios';
 import React, {useEffect, useReducer} from 'react';
 import  {exercisesReducer, SET_EXERCISES} from '../reducers/exercisesReducer';
 
 const initialState = {
+  term: '',
   exercises: []
 }
-export const useApplicationData = () => {
+export const useExercisesData = () => {
   const [state, dispatch] = useReducer(exercisesReducer, initialState);
 
-  return {state}
+  useEffect(() => {
+    axios.get('/api/exercises')
+      .then(res => {
+        dispatch({type: SET_EXERCISES, exercises: res.data.exercises})
+      })
+  },[])
+
+  return {state, dispatch}
 }
