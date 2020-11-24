@@ -17,7 +17,7 @@ import {Calendar} from './Calendar/index';
 import {Home} from './Home/index';
 import {Today} from './Today/index';
 import {Insight} from './Insight/index';
-import {NewSession} from './NewSession/index';
+import {NewWorkout} from './NewWorkout/index';
 import '../styles/navigation.scss'
 
 export const Navigation = ():JSX.Element => {
@@ -39,8 +39,8 @@ export const Navigation = ():JSX.Element => {
         <Link to="/today">
           <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon fontSize="large"/>}/>
         </Link>
-        <Link to="/new-session">
-          <BottomNavigationAction label="New Session" icon={<AddCircleOutlineOutlinedIcon fontSize="large"/>}/>
+        <Link to="/new-workout">
+          <BottomNavigationAction label="New Workout" icon={<AddCircleOutlineOutlinedIcon fontSize="large"/>}/>
         </Link>
         <Link to="/calendar">
           <BottomNavigationAction label="Calendar" icon={<EventOutlinedIcon fontSize="large"/>}/>
@@ -58,8 +58,8 @@ export const Navigation = ():JSX.Element => {
           <Route path="/today">
             <Today/>
           </Route>
-          <Route path="/new-session">
-            <NewSession/>
+          <Route path="/new-workout">
+            <NewWorkout/>
           </Route>
           <Route path="/calendar">
             <Calendar/>

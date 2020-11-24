@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_220109) do
+ActiveRecord::Schema.define(version: 2020_11_24_035332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
@@ -56,30 +56,31 @@ ActiveRecord::Schema.define(version: 2020_11_21_220109) do
     t.string "muscle_group"
   end
 
+  create_table "routines", force: :cascade do |t|
+    t.integer "workout_id"
+    t.integer "exercise_id"
+    t.text "workout_notes"
+  end
+
   create_table "sets", force: :cascade do |t|
-    t.integer "user_exercise_for_session_id"
+    t.integer "workout_exercise_id"
     t.integer "reps"
     t.integer "rpe"
     t.integer "weight"
-  end
-
-  create_table "user_exercises_for_workout", force: :cascade do |t|
-    t.integer "workout_session_id"
-    t.integer "exercise_id"
-    t.text "workout_notes"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "customer_name"
     t.string "email"
     t.string "password"
-    t.integer "height_cm"
+    t.integer "height"
     t.integer "weight"
   end
 
   create_table "workouts", force: :cascade do |t|
     t.integer "user_id"
     t.date "workout_date"
+    t.string "workout_name"
   end
 
 end
