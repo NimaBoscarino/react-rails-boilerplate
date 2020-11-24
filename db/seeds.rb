@@ -134,3 +134,8 @@ w1 = Workout.create(
   user_id: 1,
   workout_date: Date.today
 )
+
+w1.workouts_exercises.create!(
+  exercise_id: 1,
+  workout_notes: "YEAH BUDDY"
+)
