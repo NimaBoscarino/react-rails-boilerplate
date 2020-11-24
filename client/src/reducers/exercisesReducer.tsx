@@ -1,10 +1,23 @@
 export const SET_EXERCISES = "SET_EXERCISES";
 
-type AppState = {};
+type Exercise = {
+  exercise_name: string;
+  description: string;
+  video_url: string;
+  thumbnail_image_url: string;
+  upper_body: boolean;
+  lower_body: boolean;
+  force: string
+}
+
+type State = {
+  exercises: Exercise[];
+}
+
 type Action = 
   | {type: "SET_EXERCISES", exercises:[]};
 
-export const reducer: AppState = (state: AppState, action: Action) => {
+export const exercisesReducer = (state: State, action: Action):State => {
 
   switch(action.type){
     case SET_EXERCISES:
