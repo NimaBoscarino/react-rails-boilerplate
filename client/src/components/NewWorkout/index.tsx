@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExerciseList } from './ExerciseList';
 
-export const NewSession = () => {
+export const NewWorkout = () => {
   return(
     <ExerciseList/>
   )
