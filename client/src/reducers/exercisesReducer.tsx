@@ -10,14 +10,14 @@ interface IExercise  {
   force: string
 }
 
-interface State  {
+interface State {
   exercises: IExercise[];
 }
 
 type Action = 
   | {type: "SET_EXERCISES", exercises:[]};
 
-export const exercisesReducer = (state: State, action: Action) => {
+export const exercisesReducer = (state: State, action: Action):State => {
 
   switch(action.type){
     case SET_EXERCISES:
