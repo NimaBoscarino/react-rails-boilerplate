@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Home = ():JSX.Element => {
+export const Home = ():React.ReactElement => {
   return(
     <h1>Home</h1>
   )

@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import {Navigation} from './Navigation';
 
-export const App = ():JSX.Element => {
+export const App = ():React.ReactElement => {
   return (
     <div className='App'>
       <Navigation />

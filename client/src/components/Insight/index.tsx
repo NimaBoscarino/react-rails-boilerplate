@@ -1,6 +1,7 @@
 import React from 'react';
 
-export const Insight = ():JSX.Element => {
+// React.ReactElement is used for all react components
+export const Insight = ():React.ReactElement => {
   return(
     <h1>Insight</h1>
   )

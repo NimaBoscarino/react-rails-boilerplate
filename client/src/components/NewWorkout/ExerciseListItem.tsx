@@ -10,7 +10,7 @@ interface IProps {
   force: string
 }
 
-export const ExerciseListItem = (props: IProps):JSX.Element => {
+export const ExerciseListItem = (props: IProps):React.ReactElement => {
   return(
     <div>
       <p>{props.exercise_name}</p>

@@ -85,7 +85,7 @@ interface IExercise {
   force: string
 }
 
-export const ExerciseList: React.FC = () => {
+export const ExerciseList = ():React.ReactElement => {
   return(
     <div>
       {exercises.map((exercise: IExercise) => 

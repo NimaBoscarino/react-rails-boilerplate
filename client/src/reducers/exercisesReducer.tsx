@@ -1,23 +1,23 @@
 export const SET_EXERCISES = "SET_EXERCISES";
 
-type Exercise = {
+interface IExercise  {
   exercise_name: string;
   description: string;
-  video_url: string;
-  thumbnail_image_url: string;
+  video_url?: string;
+  thumbnail_image_url?: string;
   upper_body: boolean;
   lower_body: boolean;
   force: string
 }
 
-type State = {
-  exercises: Exercise[];
+interface State  {
+  exercises: IExercise[];
 }
 
 type Action = 
   | {type: "SET_EXERCISES", exercises:[]};
 
-export const exercisesReducer = (state: State, action: Action):State => {
+export const exercisesReducer = (state: State, action: Action) => {
 
   switch(action.type){
     case SET_EXERCISES:
