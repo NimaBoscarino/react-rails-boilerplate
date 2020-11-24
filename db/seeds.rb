@@ -64,7 +64,7 @@ e2=Exercise.create(
                vigorously raise shoulders while keeping barbell close to thighs, jump upward
                 extending body. Flex elbows out to sides, pulling bar up to mid-chest height.",
   video_url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/barbellhighpull-1457038270.gif",
-  thumbnail_image_url: "https://s3.amazonaws.com/prod.skimble/assets/1273681/image_iphone.jpg",
+  thumbnail_image_url: "https://s3.amazonaws.com/prod.skimble/asSet/1273681/image_iphone.jpg",
   upper_body: true,
   lower_body: true,
   force: "pull"
@@ -289,32 +289,32 @@ em31 = Exercisemuscle.create(
 )
 
 #Sets
-Sets.destroy_all
-s1 = Sets.create(
+# Set.destroy_all
+s1 = Set.create(
   routine_id: r1,
   reps: 10,
-  RPE: 6, 
+  rpe: 6, 
   weight: 95
 )
 
-s2 = Sets.create(
+s2 = Set.create(
   routine_id: r1,
   reps:10,
-  RPE: 7,
+  rpe: 7,
   weight: 105
 )
 
-s3 = Sets.create(
+s3 = Set.create(
   routine_id: r1,
   reps:9,
-  RPE:9,
+  rpe:9,
   weight: 135
 )
 
 s4 = Set.create(
   routine_id:r1,
   reps:6,
-  RPE:9,
+  rpe:9,
   weight: 145
 )
 
