@@ -1,4 +1,4 @@
-class Set < ActiveRecord::Base
+class Sett < ActiveRecord::Base
   belongs_to :routine
 
 
