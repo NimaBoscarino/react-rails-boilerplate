@@ -64,7 +64,7 @@ e2=Exercise.create(
                vigorously raise shoulders while keeping barbell close to thighs, jump upward
                 extending body. Flex elbows out to sides, pulling bar up to mid-chest height.",
   video_url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/barbellhighpull-1457038270.gif",
-  thumbnail_image_url: "https://s3.amazonaws.com/prod.skimble/asSet/1273681/image_iphone.jpg",
+  thumbnail_image_url: "https://s3.amazonaws.com/prod.skimble/assets/1273681/image_iphone.jpg",
   upper_body: true,
   lower_body: true,
   force: "pull"
