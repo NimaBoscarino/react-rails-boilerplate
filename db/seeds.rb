@@ -11,14 +11,14 @@ User.create(
   customer_name: 'Chad',
   email: "chad@google.com",
   password: "chadrocks",
-  height_cm: 160,
+  height: 160,
   weight: 200
 )
 User.create(
   customer_name: 'Brad',
   email: "brad@google.com",
   password: "bradrocks",
-  height_cm: 150,
+  height: 150,
   weight: 210
 )
 
