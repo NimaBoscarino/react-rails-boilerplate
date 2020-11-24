@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_010905) do
+ActiveRecord::Schema.define(version: 2020_11_24_020120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_010905) do
     t.string "customer_name"
     t.string "email"
     t.string "password"
-    t.integer "height_cm"
+    t.integer "height"
     t.integer "weight"
   end
 
