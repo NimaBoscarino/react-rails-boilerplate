@@ -287,3 +287,34 @@ em31 = Exercisemuscle.create(
   exercise_id: e7.id,
   muscle_id: m17.id
 )
+
+#Sets
+Sets.destroy_all
+s1 = Sets.create(
+  routine_id: r1,
+  reps: 10,
+  RPE: 6, 
+  weight: 95
+)
+
+s2 = Sets.create(
+  routine_id: r1,
+  reps:10,
+  RPE: 7,
+  weight: 105
+)
+
+s3 = Sets.create(
+  routine_id: r1,
+  reps:9,
+  RPE:9,
+  weight: 135
+)
+
+s4 = Set.create(
+  routine_id:r1,
+  reps:6,
+  RPE:9,
+  weight: 145
+)
+
