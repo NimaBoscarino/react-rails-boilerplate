@@ -289,30 +289,31 @@ em31 = Exercisemuscle.create(
 )
 
 #Sets
-# Set.destroy_all
-s1 = Set.create(
-  routine_id: r1,
+Sett.destroy_all
+s1 = Sett.create(
+  routine_id: r1.id,
   reps: 10,
   rpe: 6, 
   weight: 95
 )
+puts s1.inspect
 
-s2 = Set.create(
-  routine_id: r1,
+s2 = Sett.create(
+  routine_id: r1.id,
   reps:10,
   rpe: 7,
   weight: 105
 )
 
-s3 = Set.create(
-  routine_id: r1,
+s3 = Sett.create(
+  routine_id: r1.id,
   reps:9,
   rpe:9,
   weight: 135
 )
 
-s4 = Set.create(
-  routine_id:r1,
+s4 = Sett.create(
+  routine_id:r1.id,
   reps:6,
   rpe:9,
   weight: 145
