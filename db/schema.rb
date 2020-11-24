@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_035332) do
+ActiveRecord::Schema.define(version: 2020_11_24_063952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(version: 2020_11_24_035332) do
   enable_extension "uuid-ossp"
   enable_extension "xml2"
 
+  create_table "exercisemuscles", force: :cascade do |t|
+    t.integer "exercise_id"
+    t.integer "muscle_id"
+  end
+
   create_table "exercises", force: :cascade do |t|
     t.string "exercise_name"
     t.text "description"
@@ -44,11 +49,6 @@ ActiveRecord::Schema.define(version: 2020_11_24_035332) do
     t.boolean "upper_body"
     t.boolean "lower_body"
     t.string "force"
-  end
-
-  create_table "exercises_muscles", id: false, force: :cascade do |t|
-    t.bigint "exercise_id", null: false
-    t.bigint "muscle_id", null: false
   end
 
   create_table "muscles", force: :cascade do |t|

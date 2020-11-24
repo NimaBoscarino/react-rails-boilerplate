@@ -23,27 +23,27 @@ User.create(
 )
 
 Muscle.destroy_all
-Muscle.create(muscle_name: 'Traps', muscle_group: "Shoulders")
-Muscle.create(muscle_name: 'Hamstrings', muscle_group: "Legs")
-Muscle.create(muscle_name: 'Glutes', muscle_group: "Legs")
-Muscle.create(muscle_name: 'Quadriceps', muscle_group: "Legs")
-Muscle.create(muscle_name: 'Spinal Erectors', muscle_group: "Back")
-Muscle.create(muscle_name: 'Lats', muscle_group: "Back")
-Muscle.create(muscle_name: 'Forearms', muscle_group: "Arms")
-Muscle.create(muscle_name: 'Biceps', muscle_group: "Arms")
-Muscle.create(muscle_name: 'Calves', muscle_group: "Legs")
-Muscle.create(muscle_name: 'Upper Back', muscle_group: "Back")
-Muscle.create(muscle_name: 'Back', muscle_group: "Back")
-Muscle.create(muscle_name: 'Lower Back', muscle_group: "Back")
-Muscle.create(muscle_name: 'Triceps', muscle_group: "Arms")
-Muscle.create(muscle_name: 'Chest', muscle_group: "Chest")
-Muscle.create(muscle_name: 'Hips', muscle_group: "Core")
-Muscle.create(muscle_name: 'Shoulders', muscle_group: "Shoulders")
-Muscle.create(muscle_name: 'Pecs', muscle_group: "Chest")
-Muscle.create(muscle_name: 'Abs', muscle_group: "Core")
-Muscle.create(muscle_name: 'Oblique', muscle_group: "Core")
-Muscle.create(muscle_name: 'Delts', muscle_group: "Shoulders")
-Muscle.create(muscle_name: 'Chest', muscle_group: "Chest")
+m1=Muscle.create(muscle_name: 'Traps', muscle_group: "Shoulders")
+m2=Muscle.create(muscle_name: 'Hamstrings', muscle_group: "Legs")
+m3=Muscle.create(muscle_name: 'Glutes', muscle_group: "Legs")
+m4=Muscle.create(muscle_name: 'Quadriceps', muscle_group: "Legs")
+m5=Muscle.create(muscle_name: 'Spinal Erectors', muscle_group: "Back")
+m6=Muscle.create(muscle_name: 'Lats', muscle_group: "Back")
+m7=Muscle.create(muscle_name: 'Forearms', muscle_group: "Arms")
+m8=Muscle.create(muscle_name: 'Biceps', muscle_group: "Arms")
+m9=Muscle.create(muscle_name: 'Calves', muscle_group: "Legs")
+m10=Muscle.create(muscle_name: 'Upper Back', muscle_group: "Back")
+m11=Muscle.create(muscle_name: 'Back', muscle_group: "Back")
+m12=Muscle.create(muscle_name: 'Lower Back', muscle_group: "Back")
+m13=Muscle.create(muscle_name: 'Triceps', muscle_group: "Arms")
+m14=Muscle.create(muscle_name: 'Chest', muscle_group: "Chest")
+m15=Muscle.create(muscle_name: 'Hips', muscle_group: "Core")
+m16=Muscle.create(muscle_name: 'Shoulders', muscle_group: "Shoulders")
+m17=Muscle.create(muscle_name: 'Pecs', muscle_group: "Chest")
+m18=Muscle.create(muscle_name: 'Abs', muscle_group: "Core")
+m19=Muscle.create(muscle_name: 'Oblique', muscle_group: "Core")
+m20=Muscle.create(muscle_name: 'Delts', muscle_group: "Shoulders")
+m21=Muscle.create(muscle_name: 'Chest', muscle_group: "Chest")
 
 Exercise.destroy_all
 e1=Exercise.create(
@@ -58,7 +58,7 @@ e1=Exercise.create(
   force: "pull"
 )
 
-Exercise.create(
+e2=Exercise.create(
   exercise_name: 'High Pull',
   description: "Pull bar up off floor by extending hips and knees. As bar reaches knees,
                vigorously raise shoulders while keeping barbell close to thighs, jump upward
@@ -70,7 +70,7 @@ Exercise.create(
   force: "pull"
 )
 
-Exercise.create(
+e3=Exercise.create(
   exercise_name: 'Front Squat',
   description: "Descend until knees and hips are fully bent or until thighs are just past parallel to floor.
                Knees travel outward in direction of toes. Extend knees and hips until legs are straight. 
@@ -82,7 +82,7 @@ Exercise.create(
   force: "push"
 )
 
-Exercise.create(
+e4=Exercise.create(
   exercise_name: 'Romanian Deadlift "RDL"',
   description: "Lower bar toward top of feet by bending hips while tracing front contour of legs through 
               downward motion. Gradually bend knees through descent and keep spine straight so back is near
@@ -96,7 +96,7 @@ Exercise.create(
   force: "pull"
 )
 
-Exercise.create(
+e5=Exercise.create(
   exercise_name: 'Push Press',
   description: "Dip body by bending knees, hips and ankles slightly. Explosively drive upward with legs,
                driving barbell up off shoulders, vigorously extending arms overhead. Return to shoulders 
@@ -108,7 +108,7 @@ Exercise.create(
   force: "push"
 )
 
-Exercise.create(
+e6=Exercise.create(
   exercise_name: 'Barbell Bench Press',
   description: "Lower weight to chest. Press bar upward until arms are extended. Repeat.",
   video_url: "https://images.squarespace-cdn.com/content/v1/54f9e84de4b0d13f30bba4cb/1529964186692-ZLBRMLV2GDRCTU2V3O9L/ke17ZwdGBToddI8pDm48kK3svdqmw2prsPjqjcUJoBVZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVG_Q82foFXlATZgWeZbKuDWu8UEUHkxgJke7CVwzRQ8vDFvbuqF0GUInBxxtVhBOn4/pause-bench.gif",
@@ -118,7 +118,7 @@ Exercise.create(
   force: "push"
 )
 
-Exercise.create(
+e7=Exercise.create(
   exercise_name: 'Cable Seated Fly',
   description: "Keeping elbows pointed high, bring cable attachments together in hugging motion with elbows
                in fixed position. Return to starting position until slight stretch. Repeat.",
@@ -141,4 +141,140 @@ r1=Routine.create(
   workout_notes: "YEAH BUDDY"
 )
 
-puts r1.inspect
+Exercisemuscle.destroy_all
+#Hang clean
+em1 = Exercisemuscle.create(
+  exercise_id: e1.id,
+  muscle_id: m1.id
+)
+em2 = Exercisemuscle.create(
+  exercise_id: e1.id,
+  muscle_id: m2.id
+)
+em3 = Exercisemuscle.create(
+  exercise_id: e1.id,
+  muscle_id: m3.id
+)
+em4 = Exercisemuscle.create(
+  exercise_id: e1.id,
+  muscle_id: m4.id
+)
+em5 = Exercisemuscle.create(
+  exercise_id: e1.id,
+  muscle_id: m5.id
+)
+em6 = Exercisemuscle.create(
+  exercise_id: e1.id,
+  muscle_id: m6.id
+)
+em7 = Exercisemuscle.create(
+  exercise_id: e1.id,
+  muscle_id: m7.id
+)
+em8 = Exercisemuscle.create(
+  exercise_id: e1.id,
+  muscle_id: m8.id
+)
+em9 = Exercisemuscle.create(
+  exercise_id: e1.id,
+  muscle_id: m9.id
+)
+
+#High pull
+em10 = Exercisemuscle.create(
+  exercise_id: e2.id,
+  muscle_id: m3.id
+)
+em11 = Exercisemuscle.create(
+  exercise_id: e2.id,
+  muscle_id: m2.id
+)
+em12 = Exercisemuscle.create(
+  exercise_id: e2.id,
+  muscle_id: m11.id
+)
+
+#Front squat
+em13 = Exercisemuscle.create(
+  exercise_id: e3.id,
+  muscle_id: m4.id
+)
+em14 = Exercisemuscle.create(
+  exercise_id: e3.id,
+  muscle_id: m10.id
+)
+
+#RDL
+em15 = Exercisemuscle.create(
+  exercise_id: e4.id,
+  muscle_id: m2.id
+)
+em16 = Exercisemuscle.create(
+  exercise_id: e4.id,
+  muscle_id: m3.id
+)
+em17 = Exercisemuscle.create(
+  exercise_id: e4.id,
+  muscle_id: m7.id
+)
+
+#Push press
+em18 = Exercisemuscle.create(
+  exercise_id: e5.id,
+  muscle_id: m3.id
+)
+em19 = Exercisemuscle.create(
+  exercise_id: e5.id,
+  muscle_id: m2.id
+)
+em20 = Exercisemuscle.create(
+  exercise_id: e5.id,
+  muscle_id: m4.id
+)
+em21 = Exercisemuscle.create(
+  exercise_id: e5.id,
+  muscle_id: m18.id
+)
+em22 = Exercisemuscle.create(
+  exercise_id: e5.id,
+  muscle_id: m20.id
+)
+em23 = Exercisemuscle.create(
+  exercise_id: e5.id,
+  muscle_id: m1.id
+)
+em24 = Exercisemuscle.create(
+  exercise_id: e5.id,
+  muscle_id: m13.id
+)
+em25 = Exercisemuscle.create(
+  exercise_id: e5.id,
+  muscle_id: m7.id
+)
+
+#6 barbell bench press
+em26 = Exercisemuscle.create(
+  exercise_id: e6.id,
+  muscle_id: m16.id
+)
+em27 = Exercisemuscle.create(
+  exercise_id: e6.id,
+  muscle_id: m17.id
+)
+em28 = Exercisemuscle.create(
+  exercise_id: e6.id,
+  muscle_id: m13.id
+)
+em29 = Exercisemuscle.create(
+  exercise_id: e6.id,
+  muscle_id: m4.id
+)
+em30 = Exercisemuscle.create(
+  exercise_id: e6.id,
+  muscle_id: m15.id
+)
+#Cable Seated Fly
+em31 = Exercisemuscle.create(
+  exercise_id: e7.id,
+  muscle_id: m17.id
+)
