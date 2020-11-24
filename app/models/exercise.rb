@@ -3,7 +3,7 @@ class Exercise < ActiveRecord::Base
   has_many :routines
   has_many :workouts, through: :routines
 
-  has_many :exercises_muscles
-  has_many :exercises, through: :exercises_muscles
+  has_many :exercisemuscles
+  has_many :exercises, through: :exercisemuscles
 
 end
