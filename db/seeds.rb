@@ -141,6 +141,15 @@ r1=Routine.create(
   workout_notes: "YEAH BUDDY"
 )
 
+r2=Routine.create(
+  workout_id: w1.id,
+  exercise_id: e2.id,
+)
+r3=Routine.create(
+  workout_id: w1.id,
+  exercise_id: e5.id,
+)
+
 Exercisemuscle.destroy_all
 #Hang clean
 em1 = Exercisemuscle.create(
@@ -278,3 +287,35 @@ em31 = Exercisemuscle.create(
   exercise_id: e7.id,
   muscle_id: m17.id
 )
+
+#Sets
+Sett.destroy_all
+s1 = Sett.create(
+  routine_id: r1.id,
+  reps: 10,
+  rpe: 6, 
+  weight: 95
+)
+puts s1.inspect
+
+s2 = Sett.create(
+  routine_id: r1.id,
+  reps:10,
+  rpe: 7,
+  weight: 105
+)
+
+s3 = Sett.create(
+  routine_id: r1.id,
+  reps:9,
+  rpe:9,
+  weight: 135
+)
+
+s4 = Sett.create(
+  routine_id:r1.id,
+  reps:6,
+  rpe:9,
+  weight: 145
+)
+
