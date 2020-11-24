@@ -141,6 +141,15 @@ r1=Routine.create(
   workout_notes: "YEAH BUDDY"
 )
 
+r2=Routine.create(
+  workout_id: w1.id,
+  exercise_id: e2.id,
+)
+r3=Routine.create(
+  workout_id: w1.id,
+  exercise_id: e5.id,
+)
+
 Exercisemuscle.destroy_all
 #Hang clean
 em1 = Exercisemuscle.create(
