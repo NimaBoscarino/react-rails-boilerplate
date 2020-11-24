@@ -1,0 +1,4 @@
+class RemoveNameAndReplace < ActiveRecord::Migration[5.2]
+  def change
+  end
+end
