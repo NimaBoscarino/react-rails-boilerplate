@@ -86,11 +86,6 @@ export const ExerciseDialog = (props:IProps):React.ReactElement => {
           lower_body = {props.lower_body}
           force = {props.force}
         />
-        {/* <DialogContent dividers>
-          <Typography gutterBottom>
-           {props.description}
-          </Typography>
-        </DialogContent> */}
         <DialogActions>
           <Button autoFocus onClick={props.onClick} color="primary">
             Add Exercise

@@ -13,10 +13,10 @@ import {
   Link
 } from "react-router-dom";
 
-import {Calendar} from './Calendar/index';
-import {Home} from './Home/index';
-import {Today} from './Today/index';
-import {Insight} from './Insight/index';
+import {Calendar} from './Calendar';
+import {Home} from './Home';
+import {Today} from './Today';
+import {Insight} from './Insight';
 import {NewWorkout} from './NewWorkout/index';
 import '../styles/navigation.scss'
 
@@ -34,7 +34,7 @@ export const Navigation = ():JSX.Element => {
         className="navigation-container"
       >
         <Link to="/home">
-        <BottomNavigationAction label="Today" icon={<AccessibilityOutlinedIcon fontSize="large"/>}/>
+        <BottomNavigationAction label="Home" icon={<AccessibilityOutlinedIcon fontSize="large"/>}/>
         </Link>
         <Link to="/today">
           <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon fontSize="large"/>}/>
