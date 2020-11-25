@@ -312,7 +312,7 @@ s1 = Sett.create(
   rpe: 6, 
   weight: 95
 )
-puts s1.inspect
+
 
 s2 = Sett.create(
   routine_id: r1.id,
