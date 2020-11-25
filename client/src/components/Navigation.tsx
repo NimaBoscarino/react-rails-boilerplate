@@ -34,7 +34,7 @@ export const Navigation = ():JSX.Element => {
         className="navigation-container"
       >
         <Link to="/home">
-        <BottomNavigationAction label="Today" icon={<AccessibilityOutlinedIcon fontSize="large"/>}/>
+        <BottomNavigationAction label="Home" icon={<AccessibilityOutlinedIcon fontSize="large"/>}/>
         </Link>
         <Link to="/today">
           <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon fontSize="large"/>}/>

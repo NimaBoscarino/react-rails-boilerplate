@@ -64,23 +64,17 @@ export const ExerciseTab = (props:any) => {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Typography gutterBottom>
-          <img src={props.thumbnail_image_url} alt="No image" width="250px" height="270px"/>
-          <br/>
-          {props.description}
-        </Typography>
+        <img src={props.thumbnail_image_url} alt="No image" width="250px" height="270px"/>
+        <br/>
+        {props.description}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Typography gutterBottom>
-          {props.force}
-        </Typography>
+        {props.force}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Typography gutterBottom>
-          <video width="250px" height="270px" autoPlay>
-            <source src={props.video_url} type="video/mp4"/>
-          </video>
-        </Typography>
+        <video width="250px" height="270px" autoPlay>
+          <source src={props.video_url} type="video/mp4"/>
+        </video>
       </TabPanel>
     </div>
   );
