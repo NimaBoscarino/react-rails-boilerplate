@@ -10,6 +10,6 @@ export interface IExercise {
 }
 
 export type State = {
-  term: string;
   exercises: IExercise[];
+  displayedExercises: IExercise[];
 }
