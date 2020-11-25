@@ -3,8 +3,8 @@ import React, {useEffect, useReducer} from 'react';
 import  {exercisesReducer, SET_EXERCISES} from '../reducers/exercisesReducer';
 
 const initialState = {
-  term: '',
-  exercises: []
+  exercises: [],
+  displayedExercises: []
 }
 export const useExercisesData = () => {
   const [state, dispatch] = useReducer(exercisesReducer, initialState);

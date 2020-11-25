@@ -1,11 +1,11 @@
 import {IExercise, State} from '../types/exercisesType';
 
 const SET_EXERCISES = "SET_EXERCISES";
-const SET_TERM = "SET_TERM";
+const SET_DISPLAYEDEXERCISES = "SET_DISPLAYEDEXERCISES";
 
 type Action = 
   | { type: "SET_EXERCISES", exercises: IExercise[] }
-  | { type: "SET_TERM", term: string };
+  | { type: "SET_DISPLAYEDEXERCISES", displayedExercises: IExercise[] }
 
 export const exercisesReducer = (state: State, action: Action):State => {
 
@@ -13,12 +13,12 @@ export const exercisesReducer = (state: State, action: Action):State => {
     case SET_EXERCISES:
       return{
         ...state,
-        exercises: action.exercises
+        exercises: action.exercises,
       }
-    case SET_TERM:
+    case SET_DISPLAYEDEXERCISES:
       return{
         ...state,
-        term: action.term
+        displayedExercises: action.displayedExercises
       }
     default:
       // this will give you a type error 
@@ -27,4 +27,4 @@ export const exercisesReducer = (state: State, action: Action):State => {
   }
 }
 
-export {SET_EXERCISES, SET_TERM};
+export {SET_EXERCISES, SET_DISPLAYEDEXERCISES };
