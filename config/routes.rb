@@ -16,6 +16,9 @@ Rails.application.routes.draw do
         get :exercises
       end
     end
+    resources :routines do
+        resources :setts
+    end
 
     #Gets login page
     get '/login', to: 'sessions#new'
