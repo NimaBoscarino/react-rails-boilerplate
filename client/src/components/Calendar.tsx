@@ -17,6 +17,7 @@ export const Calendar = ():React.ReactElement => {
   const handleDateChange = (date: Date | null) => {
     console.log(date);
     setSelectedDate(date);
+    //get api with date and user_id => all workouts for that user in that date
   };
 
   return (
