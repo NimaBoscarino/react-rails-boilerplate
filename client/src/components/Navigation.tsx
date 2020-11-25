@@ -16,7 +16,7 @@ import {
 import {Calendar} from './Calendar';
 import {Home} from './Home';
 import {Today} from './Today';
-import {Insight} from './Insight';
+import Insight from './Insight';
 import {NewWorkout} from './NewWorkout/index';
 import '../styles/navigation.scss'
 
