@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   namespace :api do # /api/data
 
-    get '/data', to: 'tests#index'
+    
     #get '/exercises', to: 'exercises#index'
-    get '/muscles', to: 'muscles#index'
+    
 
-    resources :dogs
+    resources :muscles, only: :index
     resources :exercises, only: [:index, :show]
     resources :workouts, except: [:new, :edit] do 
       member do
