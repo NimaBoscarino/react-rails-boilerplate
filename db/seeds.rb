@@ -134,13 +134,17 @@ w1 = Workout.create(
   user_id: u1.id,
   workout_date: Date.today
 )
+w2 = Workout.create(
+  user_id: u1.id,
+  workout_date: Date.today
+)
+
 Routine.destroy_all
 r1=Routine.create(
   workout_id: w1.id,
   exercise_id: e1.id,
   workout_notes: "YEAH BUDDY"
 )
-
 r2=Routine.create(
   workout_id: w1.id,
   exercise_id: e2.id,
@@ -148,6 +152,18 @@ r2=Routine.create(
 r3=Routine.create(
   workout_id: w1.id,
   exercise_id: e5.id,
+)
+r4=Routine.create(
+  workout_id: w2.id,
+  exercise_id: e4.id,
+)
+r5=Routine.create(
+  workout_id: w2.id,
+  exercise_id: e6.id,
+)
+r6=Routine.create(
+  workout_id: w2.id,
+  exercise_id: e7.id,
 )
 
 Exercisemuscle.destroy_all

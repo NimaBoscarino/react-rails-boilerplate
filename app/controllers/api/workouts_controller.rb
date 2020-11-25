@@ -32,15 +32,17 @@ class Api::WorkoutsController < ApplicationController
     #workout = current_user.workouts.find(params[:id])
     workout = Workout.find(params[:id])
     exercise = Exercise.find(params[:exercise_id])
-    routine = workout.routines.create(exercise: exercise)
-    render json: routine
+    workout.routines.create(exercise_id: exercise.id)
+    render json: workout.routines
   end
 
   def remove_exercise
     workout = Workout.find(params[:id])
-    routine = workout.routine.find(params[:workout_id])
+    #exercise = Exercise.find(params[:exercise_id])
+    routine = workout.routines.find(params[:routine_id])
     routine.destroy
-    redirect_to [:workouts]
+    render json: workout.routines
+    #redirect_to [:workouts]
   end
 
   def exercises
