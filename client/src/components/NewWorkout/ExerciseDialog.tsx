@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import {IExercise} from '../../types/exercisesType';
+import { ExerciseTab } from '../ExerciseTab';
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -44,6 +45,13 @@ const DialogTitle = withStyles(styles)((props: DialogTitleProps) => {
   );
 });
 
+const StyledDialog = withStyles({
+  paper:{
+    width:'100vw',
+    height:'80vh'
+  }
+})(Dialog);
+
 const DialogContent = withStyles((theme: Theme) => ({
   root: {
     padding: theme.spacing(2),
@@ -65,22 +73,30 @@ interface IProps extends IExercise {
 export const ExerciseDialog = (props:IProps):React.ReactElement => {
 
   return (
-    <div>
-      <Dialog onClose={props.onClick} aria-labelledby="customized-dialog-title" open={props.open}>
-        <DialogTitle id="customized-dialog-title" onClose={props.onClick}>
+    <div >
+      <StyledDialog  onClose={props.onClick} aria-labelledby="customized-dialog-title" open={props.open}>
+        <DialogTitle id={props.exercise_name} onClose={props.onClick}>
           {props.exercise_name}
         </DialogTitle>
-        <DialogContent dividers>
+        <ExerciseTab 
+          description = {props.description}
+          video_url = {props.video_url}
+          thumbnail_image_url = {props.thumbnail_image_url}
+          upper_body = {props.upper_body}
+          lower_body = {props.lower_body}
+          force = {props.force}
+        />
+        {/* <DialogContent dividers>
           <Typography gutterBottom>
            {props.description}
           </Typography>
-        </DialogContent>
+        </DialogContent> */}
         <DialogActions>
           <Button autoFocus onClick={props.onClick} color="primary">
             Add Exercise
           </Button>
         </DialogActions>
-      </Dialog>
+      </StyledDialog>
     </div>
   );
 }
