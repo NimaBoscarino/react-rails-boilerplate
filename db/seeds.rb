@@ -134,7 +134,7 @@ w2 = Workout.create(
 )
 w3 = Workout.create(
   user_id: u1.id,
-  workout_date: "2020-11-25"
+  workout_date: "2020-11-26"
 )
 w4 = Workout.create(
   user_id: u1.id,
