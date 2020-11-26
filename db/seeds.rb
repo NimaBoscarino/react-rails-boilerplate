@@ -132,9 +132,14 @@ e7=Exercise.create(
 Workout.destroy_all
 w1 = Workout.create(
   user_id: u1.id,
-  workout_date: Date.today
+  workout_date: "2020-11-22"
 )
 w2 = Workout.create(
+  user_id: u1.id,
+  workout_date: "2020-11-24"
+)
+
+w3 = Workout.create(
   user_id: u1.id,
   workout_date: Date.today
 )
@@ -335,3 +340,139 @@ s4 = Sett.create(
   weight: 145
 )
 
+#routine 2
+
+s5 = Sett.create(
+  routine_id: r2.id,
+  reps: 10,
+  rpe: 5, 
+  weight: 80
+)
+
+
+s6 = Sett.create(
+  routine_id: r2.id,
+  reps:10,
+  rpe: 7,
+  weight: 90
+)
+
+s7 = Sett.create(
+  routine_id: r2.id,
+  reps:10,
+  rpe:7,
+  weight: 100
+)
+
+s8 = Sett.create(
+  routine_id:r2.id,
+  reps:9,
+  rpe:8,
+  weight: 110
+)
+
+#routine 3
+s9 = Sett.create(
+  routine_id: r3.id,
+  reps: 10,
+  rpe: 5, 
+  weight: 80
+)
+
+
+s10 = Sett.create(
+  routine_id: r3.id,
+  reps:8,
+  rpe: 7,
+  weight: 90
+)
+
+s11 = Sett.create(
+  routine_id: r3.id,
+  reps:7,
+  rpe:9,
+  weight: 100
+)
+
+s12 = Sett.create(
+  routine_id:r3.id,
+  reps:5,
+  rpe:9,
+  weight: 110
+)
+
+#routine 4 RDL
+s13 = Sett.create(
+  routine_id: r4.id,
+  reps: 10,
+  rpe: 5, 
+  weight: 95
+)
+
+
+s14 = Sett.create(
+  routine_id: r4.id,
+  reps:12,
+  rpe: 6,
+  weight: 135
+)
+
+s15 = Sett.create(
+  routine_id: r4.id,
+  reps:10,
+  rpe:8,
+  weight: 155
+)
+
+s16 = Sett.create(
+  routine_id:r4.id,
+  reps:10,
+  rpe:8,
+  weight: 175
+)
+
+#routine 5 BB Bench
+s17 = Sett.create(
+  routine_id: r5.id,
+  reps: 12,
+  rpe: 5, 
+  weight: 95
+)
+
+
+s18 = Sett.create(
+  routine_id: r5.id,
+  reps:10,
+  rpe: 8,
+  weight: 135
+)
+
+s19 = Sett.create(
+  routine_id: r5.id,
+  reps:9,
+  rpe:9,
+  weight: 155
+)
+
+#routine 6 Cable seated fly
+s20 = Sett.create(
+  routine_id: r6.id,
+  reps: 12,
+  rpe: 7, 
+  weight: 80
+)
+
+
+s21 = Sett.create(
+  routine_id: r6.id,
+  reps:12,
+  rpe: 8,
+  weight: 90
+)
+
+s22 = Sett.create(
+  routine_id: r6.id,
+  reps:12,
+  rpe:8,
+  weight: 100
+)
