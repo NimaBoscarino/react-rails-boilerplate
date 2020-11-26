@@ -496,7 +496,7 @@ s22 = Sett.create(
   weight: 100
 )
 # Workout 3
-s1 = Sett.create(
+s23 = Sett.create(
   routine_id: r7.id,
   reps: 10,
   rpe: 6, 
@@ -504,21 +504,21 @@ s1 = Sett.create(
 )
 
 
-s2 = Sett.create(
+s24 = Sett.create(
   routine_id: r7.id,
   reps:10,
   rpe: 7,
   weight: 105
 )
 
-s3 = Sett.create(
+s25 = Sett.create(
   routine_id: r7.id,
   reps:9,
   rpe:9,
   weight: 135
 )
 
-s4 = Sett.create(
+s26 = Sett.create(
   routine_id:r7.id,
   reps:6,
   rpe:9,
@@ -527,7 +527,7 @@ s4 = Sett.create(
 
 #routine 2
 
-s5 = Sett.create(
+s27 = Sett.create(
   routine_id: r8.id,
   reps: 10,
   rpe: 5, 
@@ -535,21 +535,21 @@ s5 = Sett.create(
 )
 
 
-s6 = Sett.create(
+s28 = Sett.create(
   routine_id: r8.id,
   reps:10,
   rpe: 7,
   weight: 90
 )
 
-s7 = Sett.create(
+s29 = Sett.create(
   routine_id: r8.id,
   reps:10,
   rpe:7,
   weight: 100
 )
 
-s8 = Sett.create(
+s30 = Sett.create(
   routine_id:r8.id,
   reps:9,
   rpe:8,
@@ -557,7 +557,7 @@ s8 = Sett.create(
 )
 
 #routine 3
-s9 = Sett.create(
+s31 = Sett.create(
   routine_id: r9.id,
   reps: 10,
   rpe: 5, 
@@ -565,21 +565,21 @@ s9 = Sett.create(
 )
 
 
-s10 = Sett.create(
+s32 = Sett.create(
   routine_id: r9.id,
   reps:8,
   rpe: 7,
   weight: 90
 )
 
-s11 = Sett.create(
+s33 = Sett.create(
   routine_id: r9.id,
   reps:7,
   rpe:9,
   weight: 100
 )
 
-s12 = Sett.create(
+s34 = Sett.create(
   routine_id:r9.id,
   reps:5,
   rpe:9,
