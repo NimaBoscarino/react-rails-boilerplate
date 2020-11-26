@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
     
     #get '/exercises', to: 'exercises#index'
-    
 
     resources :muscles, only: :index
     resources :exercises, only: [:index, :show]
