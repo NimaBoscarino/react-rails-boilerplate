@@ -171,6 +171,20 @@ r6=Routine.create(
   exercise_id: e7.id,
 )
 
+r7=Routine.create(
+  workout_id: w3.id,
+  exercise_id: e1.id,
+  workout_notes: "YEAH BUDDY"
+)
+r8=Routine.create(
+  workout_id: w3.id,
+  exercise_id: e2.id,
+)
+r9=Routine.create(
+  workout_id: w3.id,
+  exercise_id: e5.id,
+)
+
 Exercisemuscle.destroy_all
 #Hang clean
 em1 = Exercisemuscle.create(
@@ -475,4 +489,94 @@ s22 = Sett.create(
   reps:12,
   rpe:8,
   weight: 100
+)
+# Workout 3
+s1 = Sett.create(
+  routine_id: r7.id,
+  reps: 10,
+  rpe: 6, 
+  weight: 95
+)
+
+
+s2 = Sett.create(
+  routine_id: r7.id,
+  reps:10,
+  rpe: 7,
+  weight: 105
+)
+
+s3 = Sett.create(
+  routine_id: r7.id,
+  reps:9,
+  rpe:9,
+  weight: 135
+)
+
+s4 = Sett.create(
+  routine_id:r7.id,
+  reps:6,
+  rpe:9,
+  weight: 155
+)
+
+#routine 2
+
+s5 = Sett.create(
+  routine_id: r8.id,
+  reps: 10,
+  rpe: 5, 
+  weight: 80
+)
+
+
+s6 = Sett.create(
+  routine_id: r8.id,
+  reps:10,
+  rpe: 7,
+  weight: 90
+)
+
+s7 = Sett.create(
+  routine_id: r8.id,
+  reps:10,
+  rpe:7,
+  weight: 100
+)
+
+s8 = Sett.create(
+  routine_id:r8.id,
+  reps:9,
+  rpe:8,
+  weight: 120
+)
+
+#routine 3
+s9 = Sett.create(
+  routine_id: r9.id,
+  reps: 10,
+  rpe: 5, 
+  weight: 80
+)
+
+
+s10 = Sett.create(
+  routine_id: r9.id,
+  reps:8,
+  rpe: 7,
+  weight: 90
+)
+
+s11 = Sett.create(
+  routine_id: r9.id,
+  reps:7,
+  rpe:9,
+  weight: 100
+)
+
+s12 = Sett.create(
+  routine_id:r9.id,
+  reps:5,
+  rpe:9,
+  weight: 120
 )
