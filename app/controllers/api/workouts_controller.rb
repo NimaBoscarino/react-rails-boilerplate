@@ -12,13 +12,15 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = Workout.new(workout_params)
-
-    if @workout.save
-      redirect_to [:workouts, :show], notice: 'Workout created!'
-    else
-      redirect_to [:workouts, :new]
-    end
+    @workout = Workout.create(workout_params)
+    render :json => {
+      workout: @workout
+    }
+    # if @workout.save
+    #   redirect_to [:workouts, :show], notice: 'Workout created!'
+    # else
+    #   redirect_to [:workouts, :new]
+    # end
   end
   
   def show
