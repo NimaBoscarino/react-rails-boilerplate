@@ -14,7 +14,7 @@ u1=User.create(
   height: 160,
   weight: 200
 )
-User.create(
+u2=User.create(
   customer_name: 'Brad',
   email: "brad@google.com",
   password: "bradrocks",
