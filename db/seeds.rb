@@ -144,6 +144,11 @@ w3 = Workout.create(
   workout_date: Date.today
 )
 
+w69= Workout.create(
+  user_id: u2.id,
+  workout_date:"1969-04-20"
+)
+
 Routine.destroy_all
 r1=Routine.create(
   workout_id: w1.id,
