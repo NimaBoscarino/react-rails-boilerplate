@@ -103,17 +103,50 @@ class Demo extends React.PureComponent {
             valueField="tvNews"
             argumentField="year"
           />
-          <LineSeries
+          {/* <LineSeries
             name="Church"
             valueField="church"
             argumentField="year"
-          />
-          <LineSeries
+          /> */}
+          {/* <LineSeries
             name="Military"
             valueField="military"
             argumentField="year"
+          /> */}
+          {/* <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} /> */}
+          <Title
+            text={`I am title ${'\n'}(Second line)`}
+            textComponent={TitleText}
           />
-          <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
+          <Animation />
+        </Chart>
+
+        <Chart
+          data={chartData}
+          className={classes.chart}
+        >
+          <ArgumentAxis tickFormat={format} />
+          <ValueAxis
+            max={50}
+            labelComponent={ValueLabel}
+          />
+
+          <LineSeries
+            name="TV news"
+            valueField="tvNews"
+            argumentField="year"
+          />
+          {/* <LineSeries
+            name="Church"
+            valueField="church"
+            argumentField="year"
+          /> */}
+          {/* <LineSeries
+            name="Military"
+            valueField="military"
+            argumentField="year"
+          /> */}
+          {/* <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} /> */}
           <Title
             text={`I am title ${'\n'}(Second line)`}
             textComponent={TitleText}
