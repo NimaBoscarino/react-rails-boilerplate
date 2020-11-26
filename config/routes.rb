@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     
     #get '/exercises', to: 'exercises#index'
     
-    resources :users, except: [:index] do
-      resources :display_workouts, only: [:index], controller: "users"
+    resources :users do
+      member do
+        get :display_workouts
+      end
     end
     resources :muscles, only: :index
     resources :exercises, only: [:index, :show]
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
     resources :routines do
         resources :setts
     end
-
+    resources :insights
     # #Gets login page
     # get '/login', to: 'sessions#new'
     # #Send login info to create session
