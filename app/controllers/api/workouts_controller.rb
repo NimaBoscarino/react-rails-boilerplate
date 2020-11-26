@@ -32,18 +32,19 @@ class Api::WorkoutsController < ApplicationController
     #workout = current_user.workouts.find(params[:id])
     workout = Workout.find(params[:id])
     exercise = Exercise.find(params[:exercise_id])
+    #Client side provides exercise_id
     workout.routines.create(exercise_id: exercise.id)
     render json: workout.routines
   end
 
-  def remove_exercise
-    workout = Workout.find(params[:id])
-    #exercise = Exercise.find(params[:exercise_id])
-    routine = workout.routines.find(params[:routine_id])
-    routine.destroy
-    render json: workout.routines
-    #redirect_to [:workouts]
-  end
+  # def remove_exercise
+  #   workout = Workout.find(params[:id])
+  #   #exercise = Exercise.find(params[:exercise_id])
+  #   routine = workout.routines.find(params[:routine_id])
+  #   routine.destroy
+  #   render json: workout.routines
+  #   #redirect_to [:workouts]
+  # end
 
   def exercises
     workout = Workout.find(params[:id])

@@ -12,9 +12,10 @@ Rails.application.routes.draw do
     resources :workouts, except: [:new, :edit] do 
       member do
         post :add_exercise
-        delete :remove_exercise
+        #delete "/remove_exercise/:id", to: "routines#destroy"
         get :exercises
       end
+      resources :remove_exercise, only: [:destroy], controller: "routines"
     end
     resources :routines do
         resources :setts
