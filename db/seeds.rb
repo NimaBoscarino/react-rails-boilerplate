@@ -57,7 +57,6 @@ e1=Exercise.create(
   lower_body: true,
   force: "pull"
 )
-
 e2=Exercise.create(
   exercise_name: 'High Pull',
   description: "Pull bar up off floor by extending hips and knees. As bar reaches knees,
@@ -69,7 +68,6 @@ e2=Exercise.create(
   lower_body: true,
   force: "pull"
 )
-
 e3=Exercise.create(
   exercise_name: 'Front Squat',
   description: "Descend until knees and hips are fully bent or until thighs are just past parallel to floor.
@@ -81,7 +79,6 @@ e3=Exercise.create(
   lower_body: true,
   force: "push"
 )
-
 e4=Exercise.create(
   exercise_name: 'Romanian Deadlift "RDL"',
   description: "Lower bar toward top of feet by bending hips while tracing front contour of legs through 
@@ -95,7 +92,6 @@ e4=Exercise.create(
   lower_body: true,
   force: "pull"
 )
-
 e5=Exercise.create(
   exercise_name: 'Push Press',
   description: "Dip body by bending knees, hips and ankles slightly. Explosively drive upward with legs,
@@ -107,7 +103,6 @@ e5=Exercise.create(
   lower_body: true,
   force: "push"
 )
-
 e6=Exercise.create(
   exercise_name: 'Barbell Bench Press',
   description: "Lower weight to chest. Press bar upward until arms are extended. Repeat.",
@@ -117,7 +112,6 @@ e6=Exercise.create(
   lower_body: false,
   force: "push"
 )
-
 e7=Exercise.create(
   exercise_name: 'Cable Seated Fly',
   description: "Keeping elbows pointed high, bring cable attachments together in hugging motion with elbows
@@ -132,18 +126,32 @@ e7=Exercise.create(
 Workout.destroy_all
 w1 = Workout.create(
   user_id: u1.id,
-  workout_date: "2020-11-22"
+  workout_date: "2020-11-23"
 )
 w2 = Workout.create(
   user_id: u1.id,
   workout_date: "2020-11-24"
 )
-
 w3 = Workout.create(
   user_id: u1.id,
-  workout_date: Date.today
+  workout_date: "2020-11-25"
 )
-
+w4 = Workout.create(
+  user_id: u1.id,
+  workout_date: "2020-11-27"
+)
+w5 = Workout.create(
+  user_id: u1.id,
+  workout_date: "2020-11-30"
+)
+w6 = Workout.create(
+  user_id: u1.id,
+  workout_date: "2020-12-01"
+)
+w7 = Workout.create(
+  user_id: u1.id,
+  workout_date: "2020-12-02"
+)
 w69= Workout.create(
   user_id: u2.id,
   workout_date:"1969-04-20"
@@ -153,7 +161,6 @@ Routine.destroy_all
 r1=Routine.create(
   workout_id: w1.id,
   exercise_id: e1.id,
-  workout_notes: "YEAH BUDDY"
 )
 r2=Routine.create(
   workout_id: w1.id,
@@ -173,13 +180,11 @@ r5=Routine.create(
 )
 r6=Routine.create(
   workout_id: w2.id,
-  exercise_id: e7.id,
+  exercise_id: e3.id,
 )
-
 r7=Routine.create(
   workout_id: w3.id,
-  exercise_id: e1.id,
-  workout_notes: "YEAH BUDDY"
+  exercise_id: e7.id,
 )
 r8=Routine.create(
   workout_id: w3.id,
@@ -187,7 +192,55 @@ r8=Routine.create(
 )
 r9=Routine.create(
   workout_id: w3.id,
-  exercise_id: e5.id,
+  exercise_id: e6.id,
+)
+r10=Routine.create(
+  workout_id: w4.id,
+  exercise_id: e4.id,
+)
+r11=Routine.create(
+  workout_id: w4.id,
+  exercise_id: e3.id,
+)
+r12=Routine.create(
+  workout_id: w4.id,
+  exercise_id: e7.id,
+)
+r13=Routine.create(
+  workout_id: w5.id,
+  exercise_id: e6.id,
+)
+r14=Routine.create(
+  workout_id: w5.id,
+  exercise_id: e1.id,
+)
+r15=Routine.create(
+  workout_id: w5.id,
+  exercise_id: e4.id,
+)
+r16=Routine.create(
+  workout_id: w6.id,
+  exercise_id: e3.id,
+)
+r17=Routine.create(
+  workout_id: w6.id,
+  exercise_id: e6.id,
+)
+r18=Routine.create(
+  workout_id: w6.id,
+  exercise_id: e4.id,
+)
+r19=Routine.create(
+  workout_id: w7.id,
+  exercise_id: e3.id,
+)
+r20=Routine.create(
+  workout_id: w7.id,
+  exercise_id: e2.id,
+)
+r21=Routine.create(
+  workout_id: w7.id,
+  exercise_id: e1.id,
 )
 
 Exercisemuscle.destroy_all
@@ -228,7 +281,6 @@ em9 = Exercisemuscle.create(
   exercise_id: e1.id,
   muscle_id: m9.id
 )
-
 #High pull
 em10 = Exercisemuscle.create(
   exercise_id: e2.id,
@@ -242,7 +294,6 @@ em12 = Exercisemuscle.create(
   exercise_id: e2.id,
   muscle_id: m11.id
 )
-
 #Front squat
 em13 = Exercisemuscle.create(
   exercise_id: e3.id,
@@ -252,7 +303,6 @@ em14 = Exercisemuscle.create(
   exercise_id: e3.id,
   muscle_id: m10.id
 )
-
 #RDL
 em15 = Exercisemuscle.create(
   exercise_id: e4.id,
@@ -266,7 +316,6 @@ em17 = Exercisemuscle.create(
   exercise_id: e4.id,
   muscle_id: m7.id
 )
-
 #Push press
 em18 = Exercisemuscle.create(
   exercise_id: e5.id,
@@ -300,8 +349,7 @@ em25 = Exercisemuscle.create(
   exercise_id: e5.id,
   muscle_id: m7.id
 )
-
-#6 barbell bench press
+#Barbell bench press
 em26 = Exercisemuscle.create(
   exercise_id: e6.id,
   muscle_id: m16.id
@@ -336,251 +384,394 @@ s1 = Sett.create(
   rpe: 6, 
   weight: 95
 )
-
-
 s2 = Sett.create(
   routine_id: r1.id,
   reps:10,
   rpe: 7,
   weight: 105
 )
-
 s3 = Sett.create(
   routine_id: r1.id,
   reps:9,
   rpe:9,
   weight: 135
 )
-
+#routine 2
 s4 = Sett.create(
-  routine_id:r1.id,
+  routine_id:r2.id,
   reps:6,
   rpe:9,
   weight: 145
 )
-
-#routine 2
-
 s5 = Sett.create(
   routine_id: r2.id,
   reps: 10,
   rpe: 5, 
   weight: 80
 )
-
-
 s6 = Sett.create(
   routine_id: r2.id,
   reps:10,
   rpe: 7,
   weight: 90
 )
-
+#routine 3
 s7 = Sett.create(
-  routine_id: r2.id,
+  routine_id: r3.id,
   reps:10,
   rpe:7,
   weight: 100
 )
-
 s8 = Sett.create(
-  routine_id:r2.id,
+  routine_id:r3.id,
   reps:9,
   rpe:8,
   weight: 110
 )
-
-#routine 3
 s9 = Sett.create(
   routine_id: r3.id,
   reps: 10,
   rpe: 5, 
   weight: 80
 )
-
-
+#routine 4 RDL
 s10 = Sett.create(
-  routine_id: r3.id,
+  routine_id: r4.id,
   reps:8,
   rpe: 7,
   weight: 90
 )
-
 s11 = Sett.create(
-  routine_id: r3.id,
+  routine_id: r4.id,
   reps:7,
   rpe:9,
   weight: 100
 )
-
 s12 = Sett.create(
-  routine_id:r3.id,
+  routine_id:r4.id,
   reps:5,
   rpe:9,
   weight: 110
 )
-
-#routine 4 RDL
+#routine 5 BBP
 s13 = Sett.create(
-  routine_id: r4.id,
-  reps: 10,
-  rpe: 5, 
-  weight: 95
-)
-
-
-s14 = Sett.create(
-  routine_id: r4.id,
-  reps:12,
-  rpe: 6,
-  weight: 135
-)
-
-s15 = Sett.create(
-  routine_id: r4.id,
-  reps:10,
-  rpe:8,
-  weight: 155
-)
-
-s16 = Sett.create(
-  routine_id:r4.id,
-  reps:10,
-  rpe:8,
-  weight: 175
-)
-
-#routine 5 BB Bench
-s17 = Sett.create(
   routine_id: r5.id,
   reps: 12,
   rpe: 5, 
   weight: 95
 )
-
-
-s18 = Sett.create(
+s14 = Sett.create(
   routine_id: r5.id,
   reps:10,
-  rpe: 8,
+  rpe: 6,
   weight: 135
 )
-
-s19 = Sett.create(
+s15 = Sett.create(
   routine_id: r5.id,
+  reps:10,
+  rpe:8,
+  weight: 155
+)
+#routine 6 FS
+s16 = Sett.create(
+  routine_id:r6.id,
+  reps:12,
+  rpe:8,
+  weight: 135
+)
+s17 = Sett.create(
+  routine_id: r6.id,
+  reps: 10,
+  rpe: 5, 
+  weight: 155
+)
+s18 = Sett.create(
+  routine_id: r6.id,
+  reps:10,
+  rpe: 8,
+  weight: 175
+)
+#routine 7
+s19 = Sett.create(
+  routine_id: r7.id,
   reps:9,
   rpe:9,
   weight: 155
 )
-
-#routine 6 Cable seated fly
 s20 = Sett.create(
-  routine_id: r6.id,
+  routine_id: r7.id,
+  reps:6,
+  rpe:9,
+  weight: 175
+)
+s21 = Sett.create(
+  routine_id: r7.id,
   reps: 12,
   rpe: 7, 
   weight: 80
 )
-
-
-s21 = Sett.create(
-  routine_id: r6.id,
+#routine 8
+s22 = Sett.create(
+  routine_id: r8.id,
   reps:12,
   rpe: 8,
   weight: 90
 )
-
-s22 = Sett.create(
-  routine_id: r6.id,
+s23 = Sett.create(
+  routine_id: r8.id,
   reps:12,
   rpe:8,
   weight: 100
 )
-# Workout 3
-s23 = Sett.create(
-  routine_id: r7.id,
-  reps: 10,
+s24 = Sett.create(
+  routine_id: r8.id,
+  reps:12,
+  rpe:8,
+  weight: 100
+)
+#routine 9 BBP
+s25 = Sett.create(
+  routine_id: r9.id,
+  reps: 12,
   rpe: 6, 
   weight: 95
 )
-
-
-s24 = Sett.create(
-  routine_id: r7.id,
+s26 = Sett.create(
+  routine_id: r9.id,
   reps:10,
   rpe: 7,
-  weight: 105
-)
-
-s25 = Sett.create(
-  routine_id: r7.id,
-  reps:9,
-  rpe:9,
   weight: 135
 )
-
-s26 = Sett.create(
-  routine_id:r7.id,
-  reps:6,
+s27 = Sett.create(
+  routine_id: r9.id,
+  reps:10,
   rpe:9,
   weight: 155
 )
-
-#routine 2
-
-s27 = Sett.create(
-  routine_id: r8.id,
-  reps: 10,
-  rpe: 5, 
-  weight: 80
-)
-
-
+#routine 10 RDL
 s28 = Sett.create(
-  routine_id: r8.id,
+  routine_id:r10.id,
   reps:10,
-  rpe: 7,
+  rpe:9,
   weight: 90
 )
-
 s29 = Sett.create(
-  routine_id: r8.id,
-  reps:10,
-  rpe:7,
-  weight: 100
-)
-
-s30 = Sett.create(
-  routine_id:r8.id,
-  reps:9,
-  rpe:8,
-  weight: 120
-)
-
-#routine 3
-s31 = Sett.create(
-  routine_id: r9.id,
+  routine_id: r10.id,
   reps: 10,
   rpe: 5, 
-  weight: 80
+  weight: 100
 )
-
-
+s30 = Sett.create(
+  routine_id: r10.id,
+  reps:10,
+  rpe: 7,
+  weight: 110
+)
+#routine 11 FS
+s31 = Sett.create(
+  routine_id: r11.id,
+  reps:12,
+  rpe:7,
+  weight: 95
+)
 s32 = Sett.create(
-  routine_id: r9.id,
+  routine_id:r11.id,
+  reps:10,
+  rpe:8,
+  weight: 155
+)
+s33 = Sett.create(
+  routine_id: r11.id,
+  reps: 10,
+  rpe: 5, 
+  weight: 175
+)
+#routine 12
+s34 = Sett.create(
+  routine_id: r12.id,
   reps:8,
   rpe: 7,
   weight: 90
 )
-
-s33 = Sett.create(
-  routine_id: r9.id,
+s35 = Sett.create(
+  routine_id: r12.id,
   reps:7,
   rpe:9,
   weight: 100
 )
-
-s34 = Sett.create(
-  routine_id:r9.id,
+s36 = Sett.create(
+  routine_id:r12.id,
+  reps:5,
+  rpe:9,
+  weight: 120
+)
+#routine 13 BBP
+s37 = Sett.create(
+  routine_id:r13.id,
+  reps:12,
+  rpe:9,
+  weight: 95
+)
+s38 = Sett.create(
+  routine_id:r13.id,
+  reps:10,
+  rpe:9,
+  weight: 135
+)
+s39 = Sett.create(
+  routine_id:r13.id,
+  reps:8,
+  rpe:9,
+  weight: 165
+)
+#routine 14
+s40 = Sett.create(
+  routine_id:r14.id,
+  reps:5,
+  rpe:9,
+  weight: 120
+)
+s41 = Sett.create(
+  routine_id:r14.id,
+  reps:5,
+  rpe:9,
+  weight: 120
+)
+s42 = Sett.create(
+  routine_id:r14.id,
+  reps:5,
+  rpe:9,
+  weight: 120
+)
+#routine 15 RDL
+s43 = Sett.create(
+  routine_id:r15.id,
+  reps:12,
+  rpe:9,
+  weight: 80
+)
+s44 = Sett.create(
+  routine_id:r15.id,
+  reps:10,
+  rpe:9,
+  weight: 100
+)
+s45 = Sett.create(
+  routine_id:r15.id,
+  reps:8,
+  rpe:9,
+  weight: 120
+)
+#routine 16 FS
+s46 = Sett.create(
+  routine_id:r16.id,
+  reps:12,
+  rpe:9,
+  weight: 115
+)
+s47 = Sett.create(
+  routine_id:r16.id,
+  reps:10,
+  rpe:9,
+  weight: 155
+)
+s48 = Sett.create(
+  routine_id:r16.id,
+  reps:6,
+  rpe:9,
+  weight: 195
+)
+#routine 17 BBP
+s49 = Sett.create(
+  routine_id:r17.id,
+  reps:12,
+  rpe:9,
+  weight: 95
+)
+s50 = Sett.create(
+  routine_id:r17.id,
+  reps:10,
+  rpe:9,
+  weight: 135
+)
+s51 = Sett.create(
+  routine_id:r17.id,
+  reps:6,
+  rpe:9,
+  weight: 175
+)
+#routine 18 RDL
+s52 = Sett.create(
+  routine_id:r18.id,
+  reps:10,
+  rpe:9,
+  weight: 100
+)
+s53 = Sett.create(
+  routine_id:r18.id,
+  reps:8,
+  rpe:9,
+  weight: 120
+)
+s54 = Sett.create(
+  routine_id:r18.id,
+  reps:6,
+  rpe:9,
+  weight: 130
+)
+#routine 19 FS
+s55 = Sett.create(
+  routine_id:r19.id,
+  reps:10,
+  rpe:9,
+  weight: 135
+)
+s56 = Sett.create(
+  routine_id:r19.id,
+  reps:10,
+  rpe:9,
+  weight: 155
+)
+s57 = Sett.create(
+  routine_id:r19.id,
+  reps:10,
+  rpe:9,
+  weight: 175
+)
+#routine 20
+s58 = Sett.create(
+  routine_id:r20.id,
+  reps:5,
+  rpe:9,
+  weight: 120
+)
+s59 = Sett.create(
+  routine_id:r20.id,
+  reps:5,
+  rpe:9,
+  weight: 120
+)
+s60 = Sett.create(
+  routine_id:r20.id,
+  reps:5,
+  rpe:9,
+  weight: 120
+)
+#routine 21
+s61 = Sett.create(
+  routine_id:r21.id,
+  reps:5,
+  rpe:9,
+  weight: 120
+)
+s62 = Sett.create(
+  routine_id:r21.id,
+  reps:5,
+  rpe:9,
+  weight: 120
+)
+s63 = Sett.create(
+  routine_id:r21.id,
   reps:5,
   rpe:9,
   weight: 120
