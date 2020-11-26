@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     #get '/exercises', to: 'exercises#index'
     
     resources :users do
-      resources :workouts, only: [:index]
+      resources :display_workouts, only: [:index], controller: "users"
     end
     resources :muscles, only: :index
     resources :exercises, only: [:index, :show]
@@ -23,16 +23,16 @@ Rails.application.routes.draw do
         resources :setts
     end
 
-    #Gets login page
-    get '/login', to: 'sessions#new'
-    #Send login info to create session
-    post '/login' => 'sessions#create'
-    #End session
-    get '/logout' => 'sessions#destroy'
+    # #Gets login page
+    # get '/login', to: 'sessions#new'
+    # #Send login info to create session
+    # post '/login' => 'sessions#create'
+    # #End session
+    # get '/logout' => 'sessions#destroy'
   
-    get '/users', to: 'users#index'
-    get '/signup' => 'users#new'
-    post '/users' => 'users#create'
+    # get '/users', to: 'users#index'
+    # get '/signup' => 'users#new'
+    # post '/users' => 'users#create'
   end
 
 
