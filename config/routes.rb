@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     
     #get '/exercises', to: 'exercises#index'
     
-    resources :users do
+    resources :users, except: [:index] do
       resources :display_workouts, only: [:index], controller: "users"
     end
     resources :muscles, only: :index
