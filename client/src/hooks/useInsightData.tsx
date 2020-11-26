@@ -1,4 +1,13 @@
 export const confidence = [
+  
+  //   // line of bench
+  // bench: [{year:2000, bench: 10}],
+  // // line of bench
+  // backSquat: [{day: , backSqaut: 10}],
+  // // line of bench
+  // RDL: [{year:2000, RDL: 10}],
+  // }
+
   {
     year: 1993, tvNews: 19, church: 29, military: 32,
   }, {
