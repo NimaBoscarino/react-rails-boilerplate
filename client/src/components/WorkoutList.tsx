@@ -6,20 +6,21 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
+import Filter1Icon from '@material-ui/icons/Filter1';
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
+
+import { useWorkoutData } from '../hooks/useWorkoutData'
+import { SET_WORKOUTS } from '../reducers/workoutReducer';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: '100vw',
-      backgroundColor:'#424242',
-      color:'#C7C7C7',
-      opacity:'1'
+      backgroundColor: theme.palette.background.paper,
     },
     nested: {
       paddingLeft: theme.spacing(4),
@@ -29,6 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const WorkoutList = ():React.ReactElement => {
   const classes = useStyles();
+  const { state, dispatch } = useWorkoutData();
   const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
@@ -46,21 +48,9 @@ export const WorkoutList = ():React.ReactElement => {
       }
       className={classes.root}
     >
-      <ListItem button>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
-        <ListItemText primary="Sent mail" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <DraftsIcon color="primary"/>
-        </ListItemIcon>
-        <ListItemText primary="Drafts" />
-      </ListItem>
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
-          <InboxIcon />
+          <FormatListBulletedIcon />
         </ListItemIcon>
         <ListItemText primary="Inbox" />
         {open ? <ExpandLess /> : <ExpandMore />}
@@ -69,9 +59,12 @@ export const WorkoutList = ():React.ReactElement => {
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder />
+              <Filter1Icon />
             </ListItemIcon>
             <ListItemText primary="Starred" />
+            <ListItemIcon>
+              <DeleteOutlineIcon style={{ fontSize: 30 }}/>
+            </ListItemIcon>
           </ListItem>
         </List>
       </Collapse>

@@ -15,7 +15,7 @@ import {
 
 import {Calendar} from './Calendar';
 import {Home} from './Home';
-import {Today} from './Today';
+import { WorkoutList } from './WorkoutList';
 import Insight from './Insight';
 import {NewWorkout} from './NewWorkout/index';
 import '../styles/navigation.scss'
@@ -56,7 +56,7 @@ export const Navigation = ():JSX.Element => {
             <Home/>
           </Route>
           <Route path="/today">
-            <Today/>
+            <WorkoutList/>
           </Route>
           <Route path="/new-workout">
             <NewWorkout/>
