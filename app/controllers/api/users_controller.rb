@@ -1,10 +1,10 @@
 class Api::UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @user = User.find(params[:id])
     # render json: @exercises
     render :json => {
-        users: @users
+        users: @user.workouts
     }
   end
 
