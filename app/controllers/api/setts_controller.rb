@@ -1,12 +1,12 @@
 class Api::SettsController < ApplicationController
 
   def index
-    routine = Routine.find(params[:routine_id])
+    routine = Routine.find_by(workout_id: 'workout_id from request body', exercise_id: 'exercise_id from request body')
     render json: routine.setts
   end
 
   def show
-    @routine = Routine.find params[:routine_id]
+    @routine = Routine.find(routine_params)
     @sett = @routine.setts.find(params[:id])
     render :json => {
       sett: @sett
@@ -14,21 +14,21 @@ class Api::SettsController < ApplicationController
   end
 
   def create
-    @routine = Routine.find params[:routine_id]
+    @routine = Routine.find(routine_params)
     @sett = @routine.setts.create(sett_params)
-    render json: @sett
+    render json: @routine.setts
   end
 
   def update
-    @routine = Routine.find params[:routine_id]
-    @sett = @routine.setts.find(params[:sett_id])
+    @routine = Routine.find(routine_params)
+    @sett = @routine.setts.find(params[:id])
   end
 
   def destroy
-    @routine = Routine.find params[:routine_id]
-    @sett = @routine.setts.find(params[:sett_id])
+    @routine = Routine.find(routine_params)
+    @sett = @routine.setts.find(params[:id])
     @sett.destroy
-    render json: routine.setts
+    render json: @routine.setts
   end
 
   private
