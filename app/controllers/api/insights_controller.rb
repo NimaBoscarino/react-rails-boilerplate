@@ -391,10 +391,48 @@ class Api::InsightsController < ApplicationController
     #   hash[@u]=@y
     #   hash
     # end
-    render json: max_date_day
+    #array is assumed to be an array of objects
+    def cooper(array)
+
+      #@z is results array
+      @z = []
+      #obj is object with key value pairs from max_date_day
+      array.each do |obj|
+        #if z is empty we add the first object 
+        if @z == []
+          @z.push(obj)
+          #if not we loop through @z
+          elsif @z != [] 
+            @z.each do |inOb|
+              #if dates match, do a force merge, which overwrites duplicate data
+              if obj["date"] == inOb["date"]
+                inOb.merge!(obj)
+                #if they don't match add that object into the @z array
+              elsif obj["date"]!=inOb["date"]
+                @z.push(obj)
+              end
+
+            end
+        
+        end 
+      end
+
+    
+    
+    
+    
+    #retun @z array of objects
+    @z
+    end
+
+    final_array = cooper(max_date_day)
+
+    render json: final_array
 
   end
 end
 
+# for each over each object in array
 
+# compare each object 
 
