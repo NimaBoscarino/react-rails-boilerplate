@@ -321,10 +321,15 @@ class Api::InsightsController < ApplicationController
 
         #uses Lander Formula for calculation
     def addMax(reps,weight)
-      (100 * weight) / (101.3 - 2.67123 * reps)
+      @a=(100 * weight) / (101.3 - 2.67123 * reps)
+      @a.floor()
     end
     max_by_day=all_export_ordered.flatten
-    max_added = max_by_day.map{|obj|obj[max]=addMax(obj.reps, obj.weight)}
+    #obj.store("max", (addMax(obj.reps, obj.weight)))
+    max_added = max_by_day.map do |obj| 
+      anotherHash={"max"=> addMax(obj.reps, obj.weight)}
+      obj.merge(anotherHash)
+      end
     render json: max_added
   end
 end
