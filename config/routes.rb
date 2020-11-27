@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
     
     #get '/exercises', to: 'exercises#index'
-    resources :homes
+    resources :homes, only: [:index]
 
-    resources :todays
+    resources :todays, only: [:index]
     
     resources :users do
       member do
@@ -24,10 +24,9 @@ Rails.application.routes.draw do
       end
       resources :remove_exercise, only: [:destroy], controller: "routines"
     end
-    resources :routines do
-        resources :setts
-    end
-    resources :insights
+    resources :setts, except: [:new, :edit]
+    resources :calendars, only: [:index]
+    resources :insights, only: [:index]
     # #Gets login page
     # get '/login', to: 'sessions#new'
     # #Send login info to create session
