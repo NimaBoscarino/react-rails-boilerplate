@@ -317,7 +317,7 @@ class Api::InsightsController < ApplicationController
         #  2020-11-30   |        165 |   12
         #  2020-11-24   |        155 |   12"
 
-    # render json: export.flatten
+   
 
         #uses Lander Formula for calculation
     def addMax(reps,weight)
@@ -327,7 +327,17 @@ class Api::InsightsController < ApplicationController
     max_by_day=all_export_ordered.flatten
     #obj.store("max", (addMax(obj.reps, obj.weight)))
     # max_added = max_by_day.map do {|obj| "max"= addMax(obj.reps, obj.weight)}
-    final_cunt = max_by_day.map{|obj| { "rep_max" => addMax(obj.reps, obj.weight), "exercise" => obj.exercise_id, "date" => obj.workout_date}}
-    render json: final_cunt
+    #gets converts reps, max into one rep max, by date asc
+    three_points= max_by_day.map{|obj| { "rep_max" => addMax(obj.reps, obj.weight), "exercise" => obj.exercise_id, "date" => obj.workout_date}}
+    #organize by date
+    max_date_day = three_points
+    render json: max_by_day.foreach
+
   end
 end
+
+
+for in loop
+results Array
+
+  loop through each object
