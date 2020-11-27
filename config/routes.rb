@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
     
     #get '/exercises', to: 'exercises#index'
+    resources :todays
     
     resources :users do
       member do
