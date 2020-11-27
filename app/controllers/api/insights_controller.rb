@@ -329,15 +329,72 @@ class Api::InsightsController < ApplicationController
     # max_added = max_by_day.map do {|obj| "max"= addMax(obj.reps, obj.weight)}
     #gets converts reps, max into one rep max, by date asc
     three_points= max_by_day.map{|obj| { "rep_max" => addMax(obj.reps, obj.weight), "exercise" => obj.exercise_id, "date" => obj.workout_date}}
-    #organize by date
-    max_date_day = three_points
-    render json: max_by_day.foreach
+    #organizes data so exercise ID is key, max in lbs is value, other key is date, exercise date value
+    max_date_day = three_points.map{|obj| { obj["exercise"] => obj["rep_max"], "date" => obj["date"]}}
+    ### now data from max_date_day looks like 
+  #   [
+  #     {
+  #         "3": 234,
+  #         "date": "2020-11-24"
+  #     },
+  #     {
+  #         "4": 125,
+  #         "date": "2020-11-24"
+  #     },
+  #     {
+  #         "6": 207,
+  #         "date": "2020-11-24"
+  #     },
+  #     {
+  #         "6": 207,
+  #         "date": "2020-11-25"
+  #     },
+  #     {
+  #         "3": 234,
+  #         "date": "2020-11-27"
+  #     },
+  #     {
+  #         "4": 147,
+  #         "date": "2020-11-27"
+  #     },
+  #     {
+  #         "4": 150,
+  #         "date": "2020-11-30"
+  #     },
+  #     {
+  #         "6": 206,
+  #         "date": "2020-11-30"
+  #     },
+  #     {
+  #         "3": 228,
+  #         "date": "2020-12-01"
+  #     },
+  #     {
+  #         "4": 152,
+  #         "date": "2020-12-01"
+  #     },
+  #     {
+  #         "6": 205,
+  #         "date": "2020-12-01"
+  #     },
+  #     {
+  #         "3": 234,
+  #         "date": "2020-12-02"
+  #     }
+  # ]
+    #   hash= Sett.new
+    #   @x = obj.rep_max
+    #   @y = obj.date
+    #   @z = obj.exercise
+    #   @u = "date"
+    #   hash[1]=@x
+    #   hash[@u]=@y
+    #   hash
+    # end
+    render json: max_date_day
 
   end
 end
 
 
-for in loop
-results Array
 
-  loop through each object
