@@ -421,14 +421,14 @@ class Api::InsightsController < ApplicationController
     
     
     
-    #retun @z array of objects
-    @z.each do |bob|
-      @z.each do |joe|
-        if bob["date"]==joe["date"]
-        bob.merge!(joe)
-        end
-      end
-    end
+    # #retun @z array of objects
+    # @z.each do |bob|
+    #   @z.each do |joe|
+    #     if bob["date"]==joe["date"]
+    #     bob.merge!(joe)
+    #     end
+    #   end
+    # end
 
     @z
     end
