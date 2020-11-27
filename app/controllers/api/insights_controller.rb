@@ -30,6 +30,29 @@ class Api::InsightsController < ApplicationController
       group by workouts.workout_date
       order by date
       ")
+    #   m returns something that looks like 
+    #   [
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-24",
+    #         "max_weight": 155
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-25",
+    #         "max_weight": 155
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-30",
+    #         "max_weight": 165
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-12-01",
+    #         "max_weight": 175
+    #     }
+    # ]
        export= m.map{|obj| Routine.where(setts:{weight: obj.max_weight}).where(workouts:{workout_date: obj.date}).where(exercise_id: exercise).joins("join setts on setts.routine_id=routines.id").joins("join workouts on workouts.id=routines.workout_id").select("workouts.workout_date, setts.weight, setts.reps")}
         # returns array of objects, max weight by date
     #    [
@@ -58,6 +81,20 @@ class Api::InsightsController < ApplicationController
     #         "reps": 6
     #     }
     # ]
+ #hardcoding goals, would need to add commas betweenw with split and concat
+ #1,2 in group by is a short cut for first two selects
+    gets_max = Sett.find_by_sql("
+      select workouts.workout_date as date, routines.exercise_id, max(setts.weight) as max_weight
+      from setts
+      join routines on routines.id=setts.routine_id
+      join workouts on workouts.id=routines.workout_id
+      where routines.exercise_id IN (3,4,6)
+      group by 1,2
+      order by date
+      ")
+      all_export= gets_max.map{|obj| Routine.where(setts:{weight: obj.max_weight}).where(workouts:{workout_date: obj.date}).where(exercise_id: obj.exercise_id).joins("join setts on setts.routine_id=routines.id").joins("join workouts on workouts.id=routines.workout_id").select("workouts.workout_date, setts.weight, setts.reps, routines.exercise_id")}
+ 
+
       sett_nick1 = Sett.find_by_sql("
       select workouts.workout_date, max(setts.weight) as max_weight, setts.reps as reps
       from setts
@@ -84,6 +121,7 @@ class Api::InsightsController < ApplicationController
         #  2020-11-30   |        165 |   12
         #  2020-11-24   |        155 |   12"
 
-    render json: export.flatten
+    # render json: export.flatten
+    render json: all_export
   end
 end
