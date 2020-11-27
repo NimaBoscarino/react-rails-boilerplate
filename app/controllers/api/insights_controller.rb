@@ -394,29 +394,97 @@ class Api::InsightsController < ApplicationController
     #array is assumed to be an array of objects
     def cooper(array)
 
-      #@z is results array
-      @z = []
-      #obj is object with key value pairs from max_date_day
-      array.each do |obj|
-        #if z is empty we add the first object 
-        if @z == []
-          @z.push(obj)
-          #if not we loop through @z
-        else
-            @z.each do |inOb|
-              #if dates match, do a force merge, which overwrites duplicate data
-              if obj["date"] == inOb["date"]
-                inOb.merge!(obj)
-                #if they don't match add that object into the @z array
-              elsif obj["date"]!=inOb["date"]
-                @z.push(obj)
-              end
+      # #@z is results array
+      # @z = []
+      # #obj is object with key value pairs from max_date_day
+      # array.each do |obj|
+      #   #if z is empty we add the first object 
+      #   if @z == []
+      #     @z.push(obj)
+      #     #if not we loop through @z
+      #   else
+      #       @z.each do |inOb|
+      #         #if dates match, do a force merge, which overwrites duplicate data
+      #         if obj["date"] == inOb["date"]
+      #           inOb.merge!(obj)
+      #           #if they don't match add that object into the @z array
+      #         elsif obj["date"]!=inOb["date"]
+      #           @z.push(obj)
+      #         end
 
-            end
+      #       end
         
-        end 
-      end
+      #   end 
+      # end
+      array.group_by{|object| object["date"]}.map do |k,v|
+        #^ shows what that return on line 425
+        values = v.map{|ob| ob.except("date")}.reduce(:merge)
 
+        {date: k}.merge(values)
+      end
+    #will return
+      #   {
+    #     "2020-11-24": [
+    #         {
+    #             "3": 234,
+    #             "date": "2020-11-24"
+    #         },
+    #         {
+    #             "4": 125,
+    #             "date": "2020-11-24"
+    #         },
+    #         {
+    #             "6": 207,
+    #             "date": "2020-11-24"
+    #         }
+    #     ],
+    #     "2020-11-25": [
+    #         {
+    #             "6": 207,
+    #             "date": "2020-11-25"
+    #         }
+    #     ],
+    #     "2020-11-27": [
+    #         {
+    #             "3": 234,
+    #             "date": "2020-11-27"
+    #         },
+    #         {
+    #             "4": 147,
+    #             "date": "2020-11-27"
+    #         }
+    #     ],
+    #     "2020-11-30": [
+    #         {
+    #             "4": 150,
+    #             "date": "2020-11-30"
+    #         },
+    #         {
+    #             "6": 206,
+    #             "date": "2020-11-30"
+    #         }
+    #     ],
+    #     "2020-12-01": [
+    #         {
+    #             "3": 228,
+    #             "date": "2020-12-01"
+    #         },
+    #         {
+    #             "4": 152,
+    #             "date": "2020-12-01"
+    #         },
+    #         {
+    #             "6": 205,
+    #             "date": "2020-12-01"
+    #         }
+    #     ],
+    #     "2020-12-02": [
+    #         {
+    #             "3": 234,
+    #             "date": "2020-12-02"
+    #         }
+    #     ]
+    # }
     
     
     
@@ -430,7 +498,7 @@ class Api::InsightsController < ApplicationController
     #   end
     # end
 
-    @z
+    
     end
 
     final_array = cooper(max_date_day)
