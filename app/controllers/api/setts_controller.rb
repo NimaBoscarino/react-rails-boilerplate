@@ -15,7 +15,8 @@ class Api::SettsController < ApplicationController
 
   def create
     @routine = Routine.find params[:routine_id]
-    @sett = @routine.setts.new(sett_params)
+    @sett = @routine.setts.create(sett_params)
+    render json: @sett
   end
 
   def update
