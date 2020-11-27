@@ -13,11 +13,11 @@ import {
   Link
 } from "react-router-dom";
 
-import {Calendar} from './Calendar';
-import {Home} from './Home';
-import { WorkoutList } from './WorkoutList';
+import { Calendar } from './Calendar';
+import { Home } from './Home';
 import Insight from './Insight';
-import {NewWorkout} from './NewWorkout/index';
+import { NewWorkout } from './NewWorkout/index';
+import { WorkoutListContainer } from './WorkoutListContainer';
 import '../styles/navigation.scss'
 
 export const Navigation = ():JSX.Element => {
@@ -56,7 +56,7 @@ export const Navigation = ():JSX.Element => {
             <Home/>
           </Route>
           <Route path="/today">
-            <WorkoutList/>
+            <WorkoutListContainer/>
           </Route>
           <Route path="/new-workout">
             <NewWorkout/>
