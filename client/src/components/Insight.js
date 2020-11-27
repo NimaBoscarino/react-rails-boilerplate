@@ -94,7 +94,8 @@ class Demo extends React.PureComponent {
         >
           <ArgumentAxis tickFormat={format} />
           <ValueAxis
-            max={50}
+            max={300}
+            min={100}
             labelComponent={ValueLabel}
           />
 
@@ -132,8 +133,8 @@ class Demo extends React.PureComponent {
           />
 
           <LineSeries
-            name="TV news"
-            valueField="tvNews"
+            name="Church"
+            valueField="church"
             argumentField="year"
           />
           {/* <LineSeries

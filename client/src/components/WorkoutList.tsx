@@ -6,15 +6,41 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
-import Filter1Icon from '@material-ui/icons/Filter1';
-import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-
-import { useWorkoutData } from '../hooks/useWorkoutData'
+import { WorkoutListItem } from './WorkoutListItem';
 import { SET_WORKOUTS } from '../reducers/workoutReducer';
+import { useWorkoutData } from '../hooks/useWorkoutData';
+import { Button } from '@material-ui/core';
+
+const workoutList = [
+  {
+    id: 1,
+    name:'workout one',
+    exercises: [{
+      name:'exercise one',
+      id: 1
+    },
+    {
+      name:'exercise two',
+      id: 2
+    }]
+  },
+  {
+    id: 2,
+    name:'workout two',
+    exercises: [{
+      name:'exercise one',
+      id: 1
+    },
+    {
+      name:'exercise two',
+      id: 2
+    }]
+  },
+]
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,44 +56,61 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const WorkoutList = ():React.ReactElement => {
   const classes = useStyles();
-  const { state, dispatch } = useWorkoutData();
   const [open, setOpen] = React.useState(true);
+  const { state, dispatch } = useWorkoutData();
+
+  // should fetch workout list for today, rely on state.workouts
+  // useEffect(() => {
+  //   effect
+  //   return () => {
+  //     cleanup
+  //   }
+  // }, [input])
 
   const handleClick = () => {
     setOpen(!open);
   };
 
   return (
-    <List
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-      subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
-          Nested List Items
-        </ListSubheader>
-      }
-      className={classes.root}
-    >
-      <ListItem button onClick={handleClick}>
-        <ListItemIcon>
-          <FormatListBulletedIcon />
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
+    <>
+    {
+      workoutList.map(workout => (
+        <List
+          component="nav"
+          aria-labelledby="nested-list-subheader"
+          // subheader={
+          //   <ListSubheader component="div" id="nested-list-subheader">
+          //     {workout.name}
+          //   </ListSubheader>
+          // }
+          className={classes.root}
+          key={workout.id}
+        >
+          <ListItem button onClick={handleClick}>
             <ListItemIcon>
-              <Filter1Icon />
+              <FormatListBulletedIcon />
             </ListItemIcon>
-            <ListItemText primary="Starred" />
-            <ListItemIcon>
-              <DeleteOutlineIcon style={{ fontSize: 30 }}/>
-            </ListItemIcon>
+            <ListItemText primary={workout.name} />
+            {open ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {
+                workout.exercises.map((exercise, index) => (
+                  <WorkoutListItem 
+                   name = {exercise.name}
+                   id = {exercise.id}
+                   index = {index}
+                   key = {exercise.id}
+                  />
+                ))
+              }
+            </List>
+          </Collapse>
+          <Button color="secondary">Add Exercise</Button>
         </List>
-      </Collapse>
-    </List>
+      ))
+    }
+    </>
   );
 }
