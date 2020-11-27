@@ -402,7 +402,7 @@ class Api::InsightsController < ApplicationController
         if @z == []
           @z.push(obj)
           #if not we loop through @z
-          elsif @z != [] 
+        else
             @z.each do |inOb|
               #if dates match, do a force merge, which overwrites duplicate data
               if obj["date"] == inOb["date"]
@@ -422,6 +422,14 @@ class Api::InsightsController < ApplicationController
     
     
     #retun @z array of objects
+    @z.each do |bob|
+      @z.each do |joe|
+        if bob["date"]==joe["date"]
+        bob.merge!(joe)
+        end
+      end
+    end
+
     @z
     end
 
