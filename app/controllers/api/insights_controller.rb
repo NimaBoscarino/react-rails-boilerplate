@@ -92,8 +92,204 @@ class Api::InsightsController < ApplicationController
       group by 1,2
       order by date
       ")
+      #returns below which is max repr by day for each exercise
+    #   [
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-24",
+    #         "exercise_id": 3,
+    #         "max_weight": 175
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-24",
+    #         "exercise_id": 4,
+    #         "max_weight": 110
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-24",
+    #         "exercise_id": 6,
+    #         "max_weight": 155
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-25",
+    #         "exercise_id": 6,
+    #         "max_weight": 155
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-27",
+    #         "exercise_id": 3,
+    #         "max_weight": 175
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-27",
+    #         "exercise_id": 4,
+    #         "max_weight": 110
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-30",
+    #         "exercise_id": 4,
+    #         "max_weight": 120
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-11-30",
+    #         "exercise_id": 6,
+    #         "max_weight": 165
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-12-01",
+    #         "exercise_id": 3,
+    #         "max_weight": 195
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-12-01",
+    #         "exercise_id": 4,
+    #         "max_weight": 130
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-12-01",
+    #         "exercise_id": 6,
+    #         "max_weight": 175
+    #     },
+    #     {
+    #         "id": null,
+    #         "date": "2020-12-02",
+    #         "exercise_id": 3,
+    #         "max_weight": 175
+    #     }
+    # ]
       all_export= gets_max.map{|obj| Routine.where(setts:{weight: obj.max_weight}).where(workouts:{workout_date: obj.date}).where(exercise_id: obj.exercise_id).joins("join setts on setts.routine_id=routines.id").joins("join workouts on workouts.id=routines.workout_id").select("workouts.workout_date, setts.weight, setts.reps, routines.exercise_id")}
- 
+      #result looks like 
+    #   [
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 3,
+    #             "workout_date": "2020-11-24",
+    #             "weight": 175,
+    #             "reps": 10
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 4,
+    #             "workout_date": "2020-11-24",
+    #             "weight": 110,
+    #             "reps": 5
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 6,
+    #             "workout_date": "2020-11-24",
+    #             "weight": 155,
+    #             "reps": 10
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 6,
+    #             "workout_date": "2020-11-25",
+    #             "weight": 155,
+    #             "reps": 10
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 3,
+    #             "workout_date": "2020-11-27",
+    #             "weight": 175,
+    #             "reps": 10
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 4,
+    #             "workout_date": "2020-11-27",
+    #             "weight": 110,
+    #             "reps": 10
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 4,
+    #             "workout_date": "2020-11-30",
+    #             "weight": 120,
+    #             "reps": 8
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 6,
+    #             "workout_date": "2020-11-30",
+    #             "weight": 165,
+    #             "reps": 8
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 3,
+    #             "workout_date": "2020-12-01",
+    #             "weight": 195,
+    #             "reps": 6
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 4,
+    #             "workout_date": "2020-12-01",
+    #             "weight": 130,
+    #             "reps": 6
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 6,
+    #             "workout_date": "2020-12-01",
+    #             "weight": 175,
+    #             "reps": 6
+    #         }
+    #     ],
+    #     [
+    #         {
+    #             "id": null,
+    #             "exercise_id": 3,
+    #             "workout_date": "2020-12-02",
+    #             "weight": 175,
+    #             "reps": 10
+    #         }
+    #     ]
+    # ]
+    gets_max_ordered = Sett.find_by_sql("
+      select workouts.workout_date as date, routines.exercise_id, max(setts.weight) as max_weight
+      from setts
+      join routines on routines.id=setts.routine_id
+      join workouts on workouts.id=routines.workout_id
+      where routines.exercise_id IN (3,4,6)
+      group by 1,2
+      order by 1,2
+      ")
+
+      all_export_ordered= gets_max_ordered.map{|obj| Routine.where(setts:{weight: obj.max_weight}).where(workouts:{workout_date: obj.date}).where(exercise_id: obj.exercise_id).joins("join setts on setts.routine_id=routines.id").joins("join workouts on workouts.id=routines.workout_id").select("workouts.workout_date, setts.weight, setts.reps, routines.exercise_id")}
 
       sett_nick1 = Sett.find_by_sql("
       select workouts.workout_date, max(setts.weight) as max_weight, setts.reps as reps
@@ -122,6 +318,13 @@ class Api::InsightsController < ApplicationController
         #  2020-11-24   |        155 |   12"
 
     # render json: export.flatten
-    render json: all_export
+
+        #uses Lander Formula for calculation
+    def addMax(reps,weight)
+      (100 * weight) / (101.3 - 2.67123 * reps)
+    end
+    max_by_day=all_export_ordered.flatten
+    max_added = max_by_day.map{|obj|obj[max]=addMax(obj.reps, obj.weight)}
+    render json: max_added
   end
 end
