@@ -3,6 +3,9 @@ class Api::InsightsController < ApplicationController
     #routine = Routine.all
     #sett = Sett.find_by_weight_and_reps.joins(:workouts, :routines).where(exercise_id: 6)
     exercise = 6
+    #4,6,3
+    goals_array = [3,4,6]
+
     sett = Sett.find_by_sql("
       select setts.weight, setts.reps, workouts.workout_date 
       from setts 
@@ -10,7 +13,7 @@ class Api::InsightsController < ApplicationController
       join workouts on workouts.id=routines.workout_id 
       where routines.exercise_id=#{exercise} 
       order by setts.weight desc")
-
+      found_set =Sett.where("exercise_id=?", params[:goals_array])
       sett_nick1 = Sett.find_by_sql("
       select workouts.workout_date, max(setts.weight) as max_weight, setts.reps as reps
       from setts
@@ -46,6 +49,6 @@ class Api::InsightsController < ApplicationController
         #  2020-11-30   |        165 |   12
         #  2020-11-24   |        155 |   12"
 
-    render json: sett
+    render json: found_set
   end
 end
