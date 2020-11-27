@@ -326,10 +326,8 @@ class Api::InsightsController < ApplicationController
     end
     max_by_day=all_export_ordered.flatten
     #obj.store("max", (addMax(obj.reps, obj.weight)))
-    max_added = max_by_day.map do |obj| 
-      anotherHash={"max"=> addMax(obj.reps, obj.weight)}
-      obj.merge(anotherHash)
-      end
-    render json: max_added
+    # max_added = max_by_day.map do {|obj| "max"= addMax(obj.reps, obj.weight)}
+    final_cunt = max_by_day.map{|obj| { "rep_max" => addMax(obj.reps, obj.weight), "exercise" => obj.exercise_id, "date" => obj.workout_date}}
+    render json: final_cunt
   end
 end
