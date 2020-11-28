@@ -9,11 +9,7 @@ import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import { WorkoutListItem } from './WorkoutListItem';
-import { Button } from '@material-ui/core';
 import { IWorkout } from '../types/workoutType';
-import { NewWorkout } from './NewWorkout';
-import { Redirect } from "react-router-dom";
 import { CollapseExerciseItem } from './CollapseExerciseItem';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -30,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [redirect, setRedirect] = React.useState(false);
 
   const handleClick = () => {

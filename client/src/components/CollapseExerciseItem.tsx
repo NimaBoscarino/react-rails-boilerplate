@@ -28,7 +28,7 @@ export const CollapseExerciseItem = (props: {
           ))
         }
       </List>
-      <Button color="secondary">Add Exercise</Button>
+      <Button color="primary">Add Exercise</Button>
     </Collapse>
     )
 }
