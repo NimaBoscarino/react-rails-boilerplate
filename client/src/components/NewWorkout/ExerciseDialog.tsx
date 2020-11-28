@@ -68,6 +68,7 @@ const DialogActions = withStyles((theme: Theme) => ({
 interface IProps extends IExercise {
   open: boolean;
   onClick: () => void;
+  addExercise: () => void;
 }
 
 export const ExerciseDialog = (props:IProps):React.ReactElement => {
@@ -79,15 +80,15 @@ export const ExerciseDialog = (props:IProps):React.ReactElement => {
           {props.exercise_name}
         </DialogTitle>
         <ExerciseTab 
-          description = {props.description}
-          video_url = {props.video_url}
-          thumbnail_image_url = {props.thumbnail_image_url}
-          upper_body = {props.upper_body}
-          lower_body = {props.lower_body}
-          force = {props.force}
+          description={props.description}
+          video_url={props.video_url}
+          thumbnail_image_url={props.thumbnail_image_url}
+          upper_body={props.upper_body}
+          lower_body={props.lower_body}
+          force={props.force}
         />
         <DialogActions>
-          <Button autoFocus onClick={props.onClick} color="primary">
+          <Button autoFocus onClick={props.addExercise} color="primary">
             Add Exercise
           </Button>
         </DialogActions>
