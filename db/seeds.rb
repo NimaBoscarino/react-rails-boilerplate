@@ -68,6 +68,7 @@ e2=Exercise.create(
   lower_body: true,
   force: "pull"
 )
+# remind nick to change front to back squat***
 e3=Exercise.create(
   exercise_name: 'Front Squat',
   description: "Descend until knees and hips are fully bent or until thighs are just past parallel to floor.
