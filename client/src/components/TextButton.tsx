@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     button:{
-      color:'#73CEC1'
+      color:'#707070'
     }
   }),
 );

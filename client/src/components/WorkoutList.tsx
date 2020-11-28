@@ -9,12 +9,11 @@ import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import { WorkoutListItem } from './WorkoutListItem';
-import { Button } from '@material-ui/core';
 import { IWorkout } from '../types/workoutType';
-import { NewWorkout } from './NewWorkout';
-import { Redirect } from "react-router-dom";
-import { CollapseExerciseItem } from './CollapseExerciseItem';
+import { Button } from '@material-ui/core';
+import Collapse from '@material-ui/core/Collapse';
+import { WorkoutListItem } from './WorkoutListItem';
+import { Redirect } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,20 +29,23 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [redirect, setRedirect] = React.useState(false);
+  const [workoutID, setWorkoutID] = React.useState(0);
 
   const handleClick = () => {
     setOpen(!open);
   };
 
-  const onChange = (workoutID:number) => {
+  const onChange = (selectedWorkoutID:number) => {
+    setWorkoutID(selectedWorkoutID);
     setRedirect(true);
   }
 
   return (
     <>
     {
+      redirect ? <Redirect to={{pathname: '/new-workout', state: {workoutID}}} /> :
       props.workouts.map(workout => (
         <List
           component="nav"
@@ -63,11 +65,22 @@ export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
             <ListItemText primary={workout.name} />
             {open ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
-          <CollapseExerciseItem 
-            workout={workout} 
-            open={open} 
-            redirect={redirect}
-          />
+          <Collapse in={open} timeout="auto" unmountOnExit>
+          {/* goes over each exercise */}
+            <List component="div" disablePadding>
+              {
+                workout.exercises.map((exercise, index) => (
+                  <WorkoutListItem 
+                    name = {exercise.exercise_name}
+                    id = {exercise.id}
+                    index = {index}
+                    key = {exercise.id}
+                  />
+                ))
+              }
+            </List>
+          <Button color="primary" onClick={() => onChange(workout.id)}>Add Exercise</Button>
+        </Collapse>
         </List>
       ))
     }
