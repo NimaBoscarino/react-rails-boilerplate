@@ -37,8 +37,7 @@ export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
     setOpen(!open);
   };
 
-  const onChange = () => {
-    //setWorkoutID(workoutID);
+  const onChange = (workoutID:number) => {
     setRedirect(true);
   }
 
@@ -68,7 +67,6 @@ export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
             workout={workout} 
             open={open} 
             redirect={redirect}
-            onChange={onChange}
           />
         </List>
       ))
