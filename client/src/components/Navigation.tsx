@@ -32,7 +32,8 @@ export const Navigation = ():JSX.Element => {
         }}
         showLabels
         className="navigation-container"
-      >
+       > 
+       {/* renders the hyperlink */}
         <Link to="/home">
         <BottomNavigationAction label="Home" icon={<AccessibilityOutlinedIcon fontSize="large"/>}/>
         </Link>
@@ -48,24 +49,25 @@ export const Navigation = ():JSX.Element => {
         <Link to="/insight">
           <BottomNavigationAction label="Insight" icon={<InsertChartOutlinedOutlinedIcon fontSize="large"/>}/>
         </Link>
-
       </BottomNavigation>
-
+        {/* switch changes view to path */}
       <Switch>
-          <Route path="/home">
-            <Home/>
-          </Route>
-          <Route path="/today">
-            <WorkoutListContainer/>
-          </Route>
-          <Route path="/new-workout" render={props => <NewWorkout {...props}/>} />
-          <Route path="/calendar">
-            <Calendar/>
-          </Route>
-          <Route path="/insight">
-            <Insight/>
-          </Route>
-        </Switch>
+        {/* for this path */}
+        <Route path="/home">
+          {/* render this component */}
+          <Home/>
+        </Route>
+        <Route path="/today">
+          <WorkoutListContainer/>
+        </Route>
+        <Route path="/new-workout" render={props => <NewWorkout {...props}/>} />
+        <Route path="/calendar">
+          <Calendar/>
+        </Route>
+        <Route path="/insight">
+          <Insight/>
+        </Route>
+      </Switch>
     </Router>
   );
 }

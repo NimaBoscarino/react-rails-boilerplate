@@ -10,8 +10,7 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 import { withStyles } from '@material-ui/core/styles';
 import { Animation } from '@devexpress/dx-react-chart';
-
-import { confidence as data } from '../hooks/useInsightData';
+import axios from 'axios';
 
 const format = () => tick => tick;
 const legendStyles = () => ({
@@ -42,9 +41,9 @@ const legendLabelBase = ({ classes, ...restProps }) => (
 const legendItemBase = ({ classes, ...restProps }) => (
   <Legend.Item className={classes.item} {...restProps} />
 );
-const Root = withStyles(legendStyles, { name: 'LegendRoot' })(legendRootBase);
-const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(legendLabelBase);
-const Item = withStyles(legendItemStyles, { name: 'LegendItem' })(legendItemBase);
+// const Root = withStyles(legendStyles, { name: 'LegendRoot' })(legendRootBase);
+// const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(legendLabelBase);
+// const Item = withStyles(legendItemStyles, { name: 'LegendItem' })(legendItemBase);
 const demoStyles = () => ({
   chart: {
     paddingRight: '20px',
@@ -74,16 +73,29 @@ const TitleText = withStyles(titleStyles)(({ classes, ...props }) => (
 ));
 
 class Demo extends React.PureComponent {
+
   constructor(props) {
     super(props);
 
     this.state = {
-      data,
+      insight:[]
     };
   }
 
+  componentDidMount() {
+    axios.get("api/insights")
+      .then(
+        (res) => {
+          console.log(res.data);
+          this.setState({
+            insight: res.data,
+          });
+        })
+        .catch(err => console.log(err));
+  }
+
   render() {
-    const { data: chartData } = this.state;
+    const { insight: chartData } = this.state;
     const { classes } = this.props;
 
     return (
@@ -92,17 +104,19 @@ class Demo extends React.PureComponent {
           data={chartData}
           className={classes.chart}
         >
-          <ArgumentAxis tickFormat={format} />
+          <ArgumentAxis 
+            tickFormat={format} 
+          />
           <ValueAxis
             max={300}
-            min={100}
+            min={0}
             labelComponent={ValueLabel}
           />
 
           <LineSeries
-            name="TV news"
-            valueField="tvNews"
-            argumentField="year"
+            name="Front Squat"
+            valueField="3"
+            argumentField="date"
           />
           {/* <LineSeries
             name="Church"
@@ -116,7 +130,7 @@ class Demo extends React.PureComponent {
           /> */}
           {/* <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} /> */}
           <Title
-            text={`I am title ${'\n'}(Second line)`}
+            text={`Front Squat ${'\n'}(Second line)`}
             textComponent={TitleText}
           />
           <Animation />
@@ -133,23 +147,33 @@ class Demo extends React.PureComponent {
           />
 
           <LineSeries
-            name="Church"
-            valueField="church"
-            argumentField="year"
+            name="RDL"
+            valueField="4"
+            argumentField="date"
           />
-          {/* <LineSeries
-            name="Church"
-            valueField="church"
-            argumentField="year"
-          /> */}
-          {/* <LineSeries
-            name="Military"
-            valueField="military"
-            argumentField="year"
-          /> */}
-          {/* <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} /> */}
           <Title
-            text={`I am title ${'\n'}(Second line)`}
+            text={`RDL ${'\n'}(Second line)`}
+            textComponent={TitleText}
+          />
+          <Animation />
+        </Chart>
+
+        <Chart
+          data={chartData}
+          className={classes.chart}
+        >
+          <ArgumentAxis tickFormat={format} />
+          <ValueAxis
+            max={50}
+            labelComponent={ValueLabel}
+          />
+          <LineSeries
+            name="Bar Bell Bench Press"
+            valueField="6"
+            argumentField="date"
+          />
+          <Title
+            text={`Bar Bell Bench Press${'\n'}(Second line)`}
             textComponent={TitleText}
           />
           <Animation />

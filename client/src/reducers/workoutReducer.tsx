@@ -4,12 +4,12 @@ import { IExercise } from '../types/exercisesType';
 const ADD_WORKOUT = "ADD_WORKOUT";
 const SET_EXERCISES = "SET_EXERCISES";
 const SET_WORKOUTS = "SET_WORKOUTS";
-
+// specifies child subtypes based on parent type ie:set exercises will have exercises of type IExercise...
 type Action = 
   | { type: "SET_EXERCISES", exercises: IExercise[], workout_id: number }
   | { type: "SET_WORKOUTS", workouts: IWorkout[] }
   | { type: "ADD_WORKOUT", workout: IWorkout}
-
+// how reducer is defined
 export const workoutReducer = (state: State, action: Action):State => {
   let workouts = [];
   switch(action.type){

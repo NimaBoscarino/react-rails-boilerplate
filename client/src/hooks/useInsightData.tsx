@@ -1,13 +1,4 @@
 export const confidence = [
-  
-  //   // line of bench
-  // bench: [{year:2000, bench: 10}],
-  // // line of bench
-  // backSquat: [{day: , backSqaut: 10}],
-  // // line of bench
-  // RDL: [{year:2000, RDL: 10}],
-  // }
-
   {
     year: 1993, tvNews: 19, church: 29, military: 32,
   }, {
@@ -36,3 +27,24 @@ export const confidence = [
   //   year: 2018, tvNews: 10, church: 20, military: 43,
   // },
 ];
+
+import React, { useEffect } from 'react';
+import axios from 'axios';
+
+const useInsightData = ():any => {
+  let insight:any = [];
+  let test:any = [];
+
+  axios.get('/api/insights')
+  .then(res => {
+    insight = [...res.data];
+    test = res.data
+  })
+  .catch(err => console.log(err))
+  
+  console.log('..............');
+  console.log(insight);
+  console.log(test);
+  // why insight is empty ????
+  return insight;
+}

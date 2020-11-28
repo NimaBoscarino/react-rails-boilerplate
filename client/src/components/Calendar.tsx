@@ -9,7 +9,7 @@ import {
 } from '@material-ui/pickers';
 
 export const Calendar = ():React.ReactElement => {
-
+  //what if as the defualt we just show today or most recent workout
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(
     new Date('2020-11-25'),
   );
