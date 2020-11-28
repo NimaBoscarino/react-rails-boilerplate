@@ -3,8 +3,9 @@ import { ExerciseList } from './ExerciseList';
 import { SearchBar } from '../SearchBar';
 import { useExercisesData } from '../../hooks/useExercisesData';
 
-export const NewWorkout = ():React.ReactElement => {
+export const NewWorkout = (props:Object):React.ReactElement => {
   const { state, dispatch } = useExercisesData();
+  console.log(props);
 
   const filterExercises = (value: string) => {
     if(!value) {

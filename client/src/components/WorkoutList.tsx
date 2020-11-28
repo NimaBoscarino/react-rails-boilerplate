@@ -11,36 +11,10 @@ import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import { WorkoutListItem } from './WorkoutListItem';
-import { SET_WORKOUTS } from '../reducers/workoutReducer';
-import { useWorkoutData } from '../hooks/useWorkoutData';
 import { Button } from '@material-ui/core';
-
-const workoutList = [
-  {
-    id: 1,
-    name:'workout one',
-    exercises: [{
-      name:'exercise one',
-      id: 1
-    },
-    {
-      name:'exercise two',
-      id: 2
-    }]
-  },
-  {
-    id: 2,
-    name:'workout two',
-    exercises: [{
-      name:'exercise one',
-      id: 1
-    },
-    {
-      name:'exercise two',
-      id: 2
-    }]
-  },
-]
+import { IWorkout } from '../types/workoutType';
+import { NewWorkout } from './NewWorkout';
+import { Redirect } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -54,27 +28,23 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const WorkoutList = ():React.ReactElement => {
+export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
-  const { state, dispatch } = useWorkoutData();
-
-  // should fetch workout list for today, rely on state.workouts
-  // useEffect(() => {
-  //   effect
-  //   return () => {
-  //     cleanup
-  //   }
-  // }, [input])
+  const [redirect, setRedirect] = React.useState(false);
 
   const handleClick = () => {
     setOpen(!open);
   };
 
+  const test = () => {
+    setRedirect(true);
+  }
+
   return (
     <>
     {
-      workoutList.map(workout => (
+      props.workouts.map(workout => (
         <List
           component="nav"
           aria-labelledby="nested-list-subheader"
@@ -86,6 +56,8 @@ export const WorkoutList = ():React.ReactElement => {
           className={classes.root}
           key={workout.id}
         >
+        redirect ? <Redirect 
+          to={{pathname: '/new-workout', state: {workoutID: workout.id}}} /> : 
           <ListItem button onClick={handleClick}>
             <ListItemIcon>
               <FormatListBulletedIcon />
@@ -98,7 +70,7 @@ export const WorkoutList = ():React.ReactElement => {
               {
                 workout.exercises.map((exercise, index) => (
                   <WorkoutListItem 
-                   name = {exercise.name}
+                   name = {exercise.exercise_name}
                    id = {exercise.id}
                    index = {index}
                    key = {exercise.id}
@@ -106,8 +78,8 @@ export const WorkoutList = ():React.ReactElement => {
                 ))
               }
             </List>
+            <Button color="secondary" onClick={test}>Add Exercise</Button>
           </Collapse>
-          <Button color="secondary">Add Exercise</Button>
         </List>
       ))
     }

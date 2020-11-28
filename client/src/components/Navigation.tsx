@@ -58,9 +58,7 @@ export const Navigation = ():JSX.Element => {
           <Route path="/today">
             <WorkoutListContainer/>
           </Route>
-          <Route path="/new-workout">
-            <NewWorkout/>
-          </Route>
+          <Route path="/new-workout" render={props => <NewWorkout {...props}/>} />
           <Route path="/calendar">
             <Calendar/>
           </Route>

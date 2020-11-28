@@ -6,20 +6,19 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
-import { Route } from 'react-router-dom';
-import { NewWorkout } from './NewWorkout';
 
 export const NewWorkoutDialog = (
-  props: { open: boolean, onClick: () => void}):React.ReactElement => {
+  props: { open: boolean, 
+           onClick: () => void, 
+           changeState: (value:string) => void, 
+           userId: number,
+          }):React.ReactElement => {
   
   const [ value, setValue] = useState('');
-  
-  const addWorkout = (value:string):void => {
-    console.log(value);
+
+  const addWorkout = ():void => {
     props.onClick();
-    <Route path="/new-workout">
-      <NewWorkout/>
-    </Route>
+    props.changeState(value);
   }
 
   return (
@@ -44,7 +43,7 @@ export const NewWorkoutDialog = (
           <Button onClick={props.onClick} color="primary">
             Cancel
           </Button>
-          <Button onClick={() => addWorkout(value)} color="primary">
+          <Button onClick={addWorkout} color="primary">
             Add
           </Button>
         </DialogActions>

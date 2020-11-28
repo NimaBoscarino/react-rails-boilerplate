@@ -1,12 +1,14 @@
-export interface IWorkoutExercise {
-  name: string,
-  id: number
-}
+import {IExercise} from './exercisesType';
+
+// export interface IWorkoutExercise {
+//   name: string,
+//   id: number
+// }
 
 export interface IWorkout {
   id: number,
   name: string,
-  exercises: IWorkoutExercise[]
+  exercises: IExercise[]
 } 
 
 export type State = {

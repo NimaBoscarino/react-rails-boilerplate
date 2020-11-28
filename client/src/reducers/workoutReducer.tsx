@@ -1,11 +1,14 @@
-import { State, IWorkoutExercise, IWorkout } from '../types/workoutType';
+import { State, IWorkout } from '../types/workoutType';
+import { IExercise } from '../types/exercisesType';
 
-const SET_WORKOUTS = "SET_WORKOUTS";
+const ADD_WORKOUT = "ADD_WORKOUT";
 const SET_EXERCISES = "SET_EXERCISES";
+const SET_WORKOUTS = "SET_WORKOUTS";
 
 type Action = 
-  | { type: "SET_EXERCISES", exercises: IWorkoutExercise[], workout_id: number }
-  | { type: "SET_WORKOUTS", workout: IWorkout }
+  | { type: "SET_EXERCISES", exercises: IExercise[], workout_id: number }
+  | { type: "SET_WORKOUTS", workouts: IWorkout[] }
+  | { type: "ADD_WORKOUT", workout: IWorkout}
 
 export const workoutReducer = (state: State, action: Action):State => {
   let workouts = [];
@@ -24,12 +27,17 @@ export const workoutReducer = (state: State, action: Action):State => {
         ...state,
         workouts
       }
-    case SET_WORKOUTS:
+    case ADD_WORKOUT:
       workouts = [...state.workouts];
       workouts.push(action.workout);
       return {
         ...state,
         workouts
+      }
+    case SET_WORKOUTS:
+      return {
+        ...state,
+        workouts: action.workouts
       }
       
     default:
