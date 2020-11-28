@@ -6,6 +6,8 @@ has_many :routines
 
 has_many :exercises, through: :routines
 
+has_many :setts, through: :routines
+
 def with_exercises
   {id: id,
     name: workout_name,

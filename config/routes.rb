@@ -24,7 +24,13 @@ Rails.application.routes.draw do
       end
       resources :remove_exercise, only: [:destroy], controller: "routines"
     end
-    resources :setts, except: [:new, :edit]
+    
+    get '/setts/:workout_id/:exercise_id', to: 'setts#index'
+    post '/setts/:workout_id/:exercise_id', to: 'setts#create'
+    get '/setts/:workout_id/:exercise_id/:id', to: 'setts#show'
+    put '/setts/:workout_id/:exercise_id/:id', to: 'setts#update'
+    delete '/setts/:workout_id/:exercise_id/:id', to: 'setts#destroy'
+
     resources :calendars, only: [:index]
     resources :insights, only: [:index]
     # #Gets login page
