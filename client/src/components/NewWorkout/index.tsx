@@ -42,7 +42,7 @@ export const NewWorkout = (props:any):React.ReactElement => {
         severity={'info'}
       />
       <Alerts 
-        message={"Error! Couldn't add exercise."} 
+        message={"Error! Couldn't add exercise. Please add a workout first."} 
         open={errorAlert}
         onChange={onErrorChange}
         severity={'error'}

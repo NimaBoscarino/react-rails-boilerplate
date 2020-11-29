@@ -6,6 +6,8 @@ import EventOutlinedIcon from '@material-ui/icons/EventOutlined';
 import InsertChartOutlinedOutlinedIcon from '@material-ui/icons/InsertChartOutlinedOutlined';
 import AssignmentOutlinedIcon from '@material-ui/icons/AssignmentOutlined';
 import AccessibilityOutlinedIcon from '@material-ui/icons/AccessibilityOutlined';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import {
   BrowserRouter as Router,
   Switch,
@@ -34,13 +36,13 @@ export const Navigation = ():JSX.Element => {
        > 
        {/* renders the hyperlink */}
         <Link to="/home">
-        <BottomNavigationAction label="Home" icon={<AccessibilityOutlinedIcon fontSize="large"/>}/>
+        <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon fontSize="large"/>}/>
         </Link>
         <Link to="/today">
           <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon fontSize="large"/>}/>
         </Link>
         <Link to="/new-workout">
-          <BottomNavigationAction label="New Workout" icon={<AddCircleOutlineOutlinedIcon fontSize="large"/>}/>
+          <BottomNavigationAction label="New Workout" icon={<FitnessCenterIcon fontSize="large"/>}/>
         </Link>
         <Link to="/calendar">
           <BottomNavigationAction label="Calendar" icon={<EventOutlinedIcon fontSize="large"/>}/>

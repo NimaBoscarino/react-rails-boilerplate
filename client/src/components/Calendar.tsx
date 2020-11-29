@@ -117,6 +117,7 @@ export const Calendars = () => {
                 index = {index}
                 key = {exercise.id}
                 deletable={false}
+                workoutID={workout.id}
               />
             ))
           }
