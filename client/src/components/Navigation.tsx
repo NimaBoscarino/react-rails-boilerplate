@@ -13,7 +13,7 @@ import {
   Link
 } from "react-router-dom";
 
-import { Calendar } from './Calendar';
+import { Calendars } from './Calendar';
 import { Home } from './Home';
 import Insight from './Insight';
 import { NewWorkout } from './NewWorkout/index';
@@ -30,7 +30,6 @@ export const Navigation = ():JSX.Element => {
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
-        showLabels
         className="navigation-container"
        > 
        {/* renders the hyperlink */}
@@ -62,7 +61,7 @@ export const Navigation = ():JSX.Element => {
         </Route>
         <Route path="/new-workout" render={props => <NewWorkout {...props}/>} />
         <Route path="/calendar">
-          <Calendar/>
+          <Calendars/>
         </Route>
         <Route path="/insight">
           <Insight/>
