@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHomeData } from '../hooks/useHomeData';
 import { Progress } from 'antd';
+import {IDay, IMax, State} from '../types/maxRepsType';
 
 const colorCode = (sum:number):"success"|"normal"|"exception"|"active" => {
   let status:"success"|"normal"|"exception"|"active" = "success";
@@ -20,6 +21,8 @@ const sliceDate = (date:string):string => {
   return result;
 }
 
+
+
 export const Home = ():React.ReactElement => {
   const weeklyWorkouts = useHomeData();
   console.log(weeklyWorkouts);
@@ -32,11 +35,11 @@ export const Home = ():React.ReactElement => {
       <Progress type="circle" percent={day["sum"]} width={50} status={colorCode(day["sum"])} format={() => `${sliceDate(day.workout_date)}`} />
       ))}
       </div>
-      <div>
+      {/* <div>
       {placeholder.map((day:any) => (
       <Progress percent={50} status={colorCode(day["sum"])}  />
       ))}
-      </div>
+      </div> */}
     </>
   )
 }
