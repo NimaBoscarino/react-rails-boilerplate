@@ -34,3 +34,5 @@ export const homeReducer = (state: State, action: Action):State => {
       throw new Error('Tried to reduce with unsupported action type');
   }
 }
+
+export {SET_HOME, SET_GOALS};
