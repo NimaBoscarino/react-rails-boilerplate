@@ -31,6 +31,11 @@ export const Home = ():React.ReactElement => {
       <Progress type="circle" percent={day["sum"]} width={50} status={colorCode(day["sum"])} format={() => `${sliceDate(day.workout_date)}`} />
       ))}
       </div>
-      </>
+      <div>
+      {placeholder.map((day:any) => (
+      <Progress percent={50} status={colorCode(day["sum"])}  />
+      ))}
+      </div>
+    </>
   )
 }
