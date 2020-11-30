@@ -21,7 +21,9 @@ const sliceDate = (date:string):string => {
   return result;
 }
 
-
+const getPercentMax = (max:number):number => {
+  
+}
 
 export const Home = ():React.ReactElement => {
   const weeklyWorkouts = useHomeData();
