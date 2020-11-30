@@ -1,189 +1,208 @@
-import * as React from 'react';
-import Paper from '@material-ui/core/Paper';
-import {
-  Chart,
-  ArgumentAxis,
-  ValueAxis,
-  LineSeries,
-  Title,
-} from '@devexpress/dx-react-chart-material-ui';
-import { withStyles } from '@material-ui/core/styles';
-import { Animation } from '@devexpress/dx-react-chart';
+import React from 'react';
+import {Line} from 'react-chartjs-2';
 import axios from 'axios';
-
-const format = () => tick => tick;
-// const legendStyles = () => ({
-//   root: {
-//     display: 'flex',
-//     margin: 'auto',
-//     flexDirection: 'row',
-//   },
-// });
-// const legendLabelStyles = theme => ({
-//   label: {
-//     paddingTop: theme.spacing(1),
-//     whiteSpace: 'nowrap',
-//   },
-// });
-// const legendItemStyles = () => ({
-//   item: {
-//     flexDirection: 'column',
-//   },
-// });
-
-// const legendRootBase = ({ classes, ...restProps }) => (
-//   <Legend.Root {...restProps} className={classes.root} />
-// );
-// const legendLabelBase = ({ classes, ...restProps }) => (
-//   <Legend.Label className={classes.label} {...restProps} />
-// );
-// const legendItemBase = ({ classes, ...restProps }) => (
-//   <Legend.Item className={classes.item} {...restProps} />
-// );
-// const Root = withStyles(legendStyles, { name: 'LegendRoot' })(legendRootBase);
-// const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(legendLabelBase);
-// const Item = withStyles(legendItemStyles, { name: 'LegendItem' })(legendItemBase);
-const demoStyles = () => ({
-  chart: {
-    paddingRight: '20px',
-  },
-  lastChart: {
-    paddingRight: '20px',
-    marginBottom: '90px'
-  },
-  title: {
-    whiteSpace: 'pre',
-  },
-});
-
-const ValueLabel = (props) => {
-  const { text } = props;
-  return (
-    <ValueAxis.Label
-      {...props}
-      text={`${text}lb`}
-    />
-  );
-};
-
-const titleStyles = {
-  title: {
-    whiteSpace: 'pre',
-  },
-};
-const TitleText = withStyles(titleStyles)(({ classes, ...props }) => (
-  <Title.Text {...props} className={classes.title} />
-));
-
-class Demo extends React.PureComponent {
+export default class Insight extends React.Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      insight:[]
-    };
+      benchPress: {
+        labels: [],
+        datasets: [
+          {
+          label: 'Bench Press',
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor: '#862AFE',
+          borderColor: '#9E5DFF',
+          borderWidth: 2,
+          data: []
+          }
+        ]
+      },
+      backSquat: {
+        labels: [],
+        datasets: [
+          {
+            label: 'Back Squat',
+            fill: false,
+            lineTension: 0.5,
+            backgroundColor: '#862AFE',
+            borderColor: '#9E5DFF',
+            borderWidth: 2,
+            data: []
+          }
+        ]
+      },
+      RDL:{
+        labels: [],
+        datasets: [
+          {
+            label: 'RDL',
+            fill: false,
+            lineTension: 0.5,
+            backgroundColor: '#862AFE',
+            borderColor: '#9E5DFF',
+            borderWidth: 2,
+            data: []
+          }
+        ]
+      }
+    }
   }
 
   componentDidMount() {
     axios.get("api/insights")
       .then(
         (res) => {
-          console.log(res.data);
+
+          // bench press labels and data, 6 means 'Bench Press', 3 means 'Back Squat',
+          // 4 means 'RDL'
+          const labelsBenchPress = res.data.flatMap(item => 
+            item[6] ? item.date.slice(5) : []
+          );
+          const dataBenchPress = res.data.flatMap(item => 
+           item[6] ? item[6] : []
+          )
+          const datasetsBenchPress = this.state.benchPress.datasets.map(
+            item => {
+              return {
+                ...item,
+                data: dataBenchPress,
+              }})
+          // back squat labels and data
+          const labelsBackSquat = res.data.flatMap(item => 
+            item[3] ? item.date.slice(5) : []
+          );
+          const dataBackSquat = res.data.flatMap(item => 
+           item[3] ? item[3] : []
+          )
+          const datasetsBackSquat = this.state.backSquat.datasets.map(
+            item => {
+              return {
+                ...item,
+                data: dataBackSquat,
+              }})
+          // RDL labels and data
+          const labelsRDL = res.data.flatMap(item => 
+            item[4] ? item.date.slice(5) : []
+          );
+          const dataRDL = res.data.flatMap(item => 
+           item[4] ? item[4] : []
+          )
+          const datasetsRDL = this.state.RDL.datasets.map(
+            item => {
+              return {
+                ...item,
+                data: dataRDL,
+              }})
+          // update the state
           this.setState({
-            insight: res.data,
-          });
+           ...this.state,
+           benchPress: {
+             ...this.state.benchPress,
+             labels: labelsBenchPress,
+             datasets: datasetsBenchPress
+           },
+           backSquat: {
+             ...this.state.backSquat,
+             labels: labelsBackSquat,
+             datasets: datasetsBackSquat
+           },
+           RDL: {
+             ...this.state.RDL,
+             labels: labelsRDL,
+             datasets: datasetsRDL
+           }
+          })
         })
         .catch(err => console.log(err));
   }
 
   render() {
-    const { insight: chartData } = this.state;
-    const { classes } = this.props;
-
     return (
-      <Paper>
-        <Chart
-          data={chartData}
-          className={classes.chart}
-        >
-          <ArgumentAxis 
-            tickFormat={format} 
-          />
-          <ValueAxis
-            max={300}
-            min={0}
-            labelComponent={ValueLabel}
-          />
-
-          <LineSeries
-            name="Front Squat"
-            valueField="3"
-            argumentField="date"
-          />
-          {/* <LineSeries
-            name="Church"
-            valueField="church"
-            argumentField="year"
-          /> */}
-          {/* <LineSeries
-            name="Military"
-            valueField="military"
-            argumentField="year"
-          /> */}
-          {/* <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} /> */}
-          <Title
-            text={`Front Squat ${'\n'}(Second line)`}
-            textComponent={TitleText}
-          />
-          <Animation />
-        </Chart>
-
-        <Chart
-          data={chartData}
-          className={classes.chart}
-        >
-          <ArgumentAxis tickFormat={format} />
-          <ValueAxis
-            max={50}
-            labelComponent={ValueLabel}
-          />
-
-          <LineSeries
-            name="RDL"
-            valueField="4"
-            argumentField="date"
-          />
-          <Title
-            text={`RDL ${'\n'}(Second line)`}
-            textComponent={TitleText}
-          />
-          <Animation />
-        </Chart>
-
-        <Chart
-          data={chartData}
-          className={classes.lastChart}
-        >
-          <ArgumentAxis tickFormat={format} />
-          <ValueAxis
-            max={50}
-            labelComponent={ValueLabel}
-          />
-          <LineSeries
-            name="Bar Bell Bench Press"
-            valueField="6"
-            argumentField="date"
-          />
-          <Title
-            text={`Bar Bell Bench Press${'\n'}(Second line)`}
-            textComponent={TitleText}
-          />
-          <Animation />
-        </Chart>
-      </Paper>
+      <>
+      <div style={{height:30 + 'vh'}}>
+        <Line
+          data={this.state.benchPress}
+          options={{
+            title:{
+              display:true,
+              text:'Bench Press Last 10 days',
+              fontSize:20
+            },
+            legend:{
+              display:true,
+              position:'bottom'
+            },
+            responsive:true,
+            scales: {
+              yAxes: [{
+                  ticks: {
+                      callback: (item) => `${item}lb`
+                  }
+              }]
+          },
+          maintainAspectRatio: false
+          }}
+        />
+      </div>
+      <div style={{height:30 + 'vh'}}>
+      <Line
+        data={this.state.backSquat}
+        options={{
+          title:{
+            display:true,
+            text:'Back Squat Last 10 days',
+            fontSize:20
+          },
+          legend:{
+            display:true,
+            position:'bottom'
+          },
+          responsive:true,
+          scales: {
+            yAxes: [{
+                ticks: {
+                    // suggestedMin: 200,
+                    // suggestedMax: 250
+                    callback: (item) => `${item}lb`
+                }
+            }]
+        },
+        maintainAspectRatio: false
+        }}
+      />
+    </div>
+    <div style={{height:30 + 'vh'}}>
+    <Line
+      data={this.state.RDL}
+      options={{
+        title:{
+          display:true,
+          text:'RDL Last 10 days',
+          fontSize:20
+        },
+        legend:{
+          display:true,
+          position:'bottom'
+        },
+        responsive:true,
+        scales: {
+          yAxes: [{
+              ticks: {
+                  // suggestedMin: 200,
+                  // suggestedMax: 250
+                  callback: (item) => `${item}lb`
+              }
+          }]
+      },
+      maintainAspectRatio: false
+      }}
+    />
+  </div>
+  </>
     );
   }
 }
-
-export default withStyles(demoStyles, { name: 'Demo' })(Demo);
