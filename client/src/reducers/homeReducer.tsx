@@ -1,6 +1,9 @@
 const SET_HOME = 'SET_HOME';
+const SET_GOALS = 'SET_GOALS';
 
-type Action = {type: 'SET_HOME', allDays: []}
+type Action = 
+| {type: 'SET_HOME', allDays: []}
+| {type: 'SET_GOALS', currentProgress: []}
 
 interface IDay {
   workout_date:string,
