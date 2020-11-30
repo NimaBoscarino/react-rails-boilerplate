@@ -23,6 +23,7 @@ const sliceDate = (date:string):string => {
 export const Home = ():React.ReactElement => {
   const weeklyWorkouts = useHomeData();
   console.log(weeklyWorkouts);
+
   return(
     <>
     <h1>This Weeks Gains</h1>
