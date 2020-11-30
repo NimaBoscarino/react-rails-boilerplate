@@ -6,7 +6,7 @@ const intialState = {
   allDays:[],
   currentProgress:[]
 }
-export const useHomeData = ():any => {
+export const useHomeData = () => {
   
   const [state, dispatch] = useReducer(homeReducer, intialState);
 
