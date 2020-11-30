@@ -83,6 +83,7 @@ export const WorkoutList = (
                       in={workout.id === selectedWorkoutID} 
                       timeout="auto" 
                       unmountOnExit
+                      key={index}
                     >
                     <WorkoutListItem 
                       name={exercise.exercise_name}
