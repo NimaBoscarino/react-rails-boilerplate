@@ -7,7 +7,7 @@ import { WorkoutList } from './WorkoutList';
 import axios from 'axios';
 
 export const WorkoutListContainer = ():React.ReactElement => {
-
+  
   const { state, dispatch } = useWorkoutData();
   const [open, setOpen] = React.useState(false);
 
@@ -46,7 +46,7 @@ export const WorkoutListContainer = ():React.ReactElement => {
     <>
     <h3>Today's Workout list</h3>
     {/* reminder is just a notification you have no workouts */}
-    { hasWorkouts ? <WorkoutList workouts={state.workouts} /> : <Reminder/> }
+    { hasWorkouts ? <WorkoutList workouts={state.workouts} dispatch={dispatch} /> : <Reminder/> }
     <TextButton 
       text='Add New Workout' 
       onClick={openDialog}

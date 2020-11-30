@@ -44,6 +44,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  nav: {
+    backgroundColor: '#2EFF00',
+  },
+  indicator: {
+    backgroundColor: 'white',
+  }
 }));
 
 export const ExerciseTab = (props:any) => {
@@ -56,8 +62,14 @@ export const ExerciseTab = (props:any) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+      <AppBar position="static" className={classes.nav}>
+        <Tabs 
+          value={value} 
+          onChange={handleChange} 
+          classes={{
+            indicator: classes.indicator
+          }}
+        >
           <Tab label="Description" {...a11yProps(0)} />
           <Tab label="About" {...a11yProps(1)} />
           <Tab label="Video" {...a11yProps(2)} />

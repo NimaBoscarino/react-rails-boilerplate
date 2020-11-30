@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
@@ -27,11 +27,14 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
+export const WorkoutList = (
+  props:{workouts:IWorkout[], 
+    dispatch:(action:any)=>void}):React.ReactElement => {
+  
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const [redirect, setRedirect] = React.useState(false);
-  const [workoutID, setWorkoutID] = React.useState(0);
+  const [open, setOpen] = useState(false);
+  const [redirect, setRedirect] = useState(false);
+  const [workoutID, setWorkoutID] = useState(0);
 
   const handleClick = () => {
     setOpen(!open);
@@ -76,6 +79,8 @@ export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
                     index={index}
                     key={exercise.id}
                     deletable={true}
+                    workoutID={workout.id}
+                    dispatch={props.dispatch}
                   />
                 ))
               }
