@@ -70,12 +70,12 @@ e2=Exercise.create(
 )
 # remind nick to change front to back squat***
 e3=Exercise.create(
-  exercise_name: 'Front Squat',
+  exercise_name: 'Back Squat',
   description: "Descend until knees and hips are fully bent or until thighs are just past parallel to floor.
                Knees travel outward in direction of toes. Extend knees and hips until legs are straight. 
                Return and repeat.",
-  video_url: "https://thumbs.gfycat.com/SadSpeedyCentipede-max-1mb.gif",
-  thumbnail_image_url: "https://legionathletics.com/wp-content/uploads/2019/05/front-squat-featured.jpg",
+  video_url: "http://traininggifs.com/wp-content/uploads/2018/11/barbell-squat-straight-down.gif",
+  thumbnail_image_url: "https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg",
   upper_body: false,
   lower_body: true,
   force: "push"
