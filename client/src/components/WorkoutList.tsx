@@ -32,12 +32,16 @@ export const WorkoutList = (
     dispatch:(action:any)=>void}):React.ReactElement => {
   
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [selectedWorkoutID, setSelectedWorkoutID] = useState(0);
   const [redirect, setRedirect] = useState(false);
   const [workoutID, setWorkoutID] = useState(0);
 
-  const handleClick = () => {
-    setOpen(!open);
+  const handleClick = (workoutID:number) => {
+    if(workoutID === selectedWorkoutID){
+      setSelectedWorkoutID(0)
+    } else{
+      setSelectedWorkoutID(workoutID)
+    }
   };
 
   const onChange = (selectedWorkoutID:number) => {
@@ -61,32 +65,39 @@ export const WorkoutList = (
           className={classes.root}
           key={workout.id}
         > 
-          <ListItem button onClick={handleClick}>
+          <ListItem button onClick={() => handleClick(workout.id)}>
             <ListItemIcon>
               <FormatListBulletedIcon />
             </ListItemIcon>
             <ListItemText primary={workout.name} />
-            {open ? <ExpandLess /> : <ExpandMore />}
+            {workout.id === selectedWorkoutID ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
-          <Collapse in={open} timeout="auto" unmountOnExit>
+
+        
           {/* goes over each exercise */}
             <List component="div" disablePadding>
               {
-                workout.exercises.map((exercise, index) => (
-                  <WorkoutListItem 
-                    name={exercise.exercise_name}
-                    id={exercise.id}
-                    index={index}
-                    key={exercise.id}
-                    deletable={true}
-                    workoutID={workout.id}
-                    dispatch={props.dispatch}
-                  />
-                ))
+                workout.exercises.map((exercise, index) => {
+                  return (
+                    <Collapse 
+                      in={workout.id === selectedWorkoutID} 
+                      timeout="auto" 
+                      unmountOnExit
+                    >
+                    <WorkoutListItem 
+                      name={exercise.exercise_name}
+                      id={exercise.id}
+                      index={index}
+                      key={exercise.id}
+                      deletable={true}
+                      workoutID={workout.id}
+                      dispatch={props.dispatch}
+                    />
+                   </Collapse>
+                  )})
               }
             </List>
           <Button color="primary" onClick={() => onChange(workout.id)}>Add Exercise</Button>
-        </Collapse>
         </List>
       ))
     }
