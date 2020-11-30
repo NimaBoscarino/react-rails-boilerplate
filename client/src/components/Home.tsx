@@ -1,15 +1,16 @@
 import React from 'react';
-
+import { useHomeData } from '../hooks/useHomeData';
 import { Progress } from 'antd';
 
 
 export const Home = ():React.ReactElement => {
+  const weeklyWorkouts = useHomeData();
+  console.log(weeklyWorkouts);
   return(
+      weeklyWorkouts.map((day:any) => (
     <>
-      <h1>Home</h1>
-      <Progress type="circle" percent={30} width={80} />
-      <Progress type="circle" percent={70} width={80} status="exception" />
-      <Progress type="circle" percent={100} width={80} />
+      <Progress type="circle" percent={day["sum"]} width={80} format={() => `${day.workout_date}`} />
     </>
+  ))
   )
 }
