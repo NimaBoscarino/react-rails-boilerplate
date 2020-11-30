@@ -1,3 +1,5 @@
+import {IDay, IMax, IState} from '../types/maxRepsType';
+
 const SET_HOME = 'SET_HOME';
 const SET_GOALS = 'SET_GOALS';
 
