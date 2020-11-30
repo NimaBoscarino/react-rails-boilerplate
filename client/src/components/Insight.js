@@ -143,8 +143,21 @@ export default class Insight extends React.Component {
                       callback: (item) => `${item}lb`
                   }
               }]
+              // y: {
+              //   min: 200,
+              //   max: 250
+              // }
           },
-          maintainAspectRatio: false
+          maintainAspectRatio: false,
+            animation: {
+              tension: {
+                  duration: 1000,
+                  easing: 'linear',
+                  from: 1,
+                  to: 0,
+                  loop: true
+              }
+            },
           }}
         />
       </div>
