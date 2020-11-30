@@ -7,9 +7,12 @@ import {
   LineSeries,
   Title,
 } from '@devexpress/dx-react-chart-material-ui';
+import { ArgumentScale } from '@devexpress/dx-react-chart';
 import { withStyles } from '@material-ui/core/styles';
 import { Animation } from '@devexpress/dx-react-chart';
 import axios from 'axios';
+//not sure what this does, if anything
+import {scaleBand} from '@devexpress/dx-chart-core';
 
 const format = () => tick => tick;
 // const legendStyles = () => ({
@@ -111,11 +114,19 @@ class Demo extends React.PureComponent {
             tickFormat={format} 
           />
           <ValueAxis
-            max={300}
-            min={0}
+            max={500}
+            
             labelComponent={ValueLabel}
           />
-
+          {/* <ArgumentScale
+            factory={()=>{
+               let range=[0,300]
+              
+            } }
+          /> */}
+          {/* <ArgumentScale
+            factory={scaleBand}
+          /> */}
           <LineSeries
             name="Front Squat"
             valueField="3"
