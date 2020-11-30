@@ -4,7 +4,7 @@ const SET_HOME = 'SET_HOME';
 const SET_GOALS = 'SET_GOALS';
 
 type Action = 
-| {type: 'SET_HOME',allDays:IDay[]}
+| {type: 'SET_HOME', allDays:IDay[]}
 | {type: 'SET_GOALS', currentProgress:IMax[]}
 
 // interface IDay {
