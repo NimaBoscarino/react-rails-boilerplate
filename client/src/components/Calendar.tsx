@@ -1,4 +1,4 @@
-import { Calendar } from 'antd';
+import { Calendar, Badge } from 'antd';
 import React, { useEffect, useState } from 'react';
 import '../styles/calendar.scss';
 import 'antd/dist/antd.css';
@@ -51,6 +51,16 @@ export const Calendars = () => {
   const [workouts, setWorkouts] = useState(intialWorkout);
   const [selectedWorkoutID, setSelectedWorkoutID] = useState(0);
   const classes = useStyles();
+  
+  function dateCellRender(value:any) {
+    let activeDate = allWorkouts.map(
+      workout => workout.date
+    )
+
+    if(activeDate.includes(value.format().slice(0,10))){
+      return <Badge color='#1990FF' />
+    }
+  }
 
   const handleClick = (workoutID:number) => {
     if(workoutID === selectedWorkoutID){
@@ -93,6 +103,7 @@ export const Calendars = () => {
         fullscreen={false} 
         mode={'month'} 
         onSelect={onSelect}
+        dateCellRender={dateCellRender}
       />
     </div>
     {workouts.length ? <><br/><ListItemText primary={'Workouts For Selected Day: '} /></> : <></>}
@@ -115,7 +126,12 @@ export const Calendars = () => {
         <List component="div" disablePadding>
           {
             workout.exercises.map((exercise, index) => (
-              <Collapse in={workout.id === selectedWorkoutID} timeout="auto" unmountOnExit>
+              <Collapse 
+                in={workout.id === selectedWorkoutID} 
+                timeout="auto" 
+                unmountOnExit
+                key={index}
+                >
               <WorkoutListItem 
                 name = {exercise.exercise_name}
                 id = {exercise.id}

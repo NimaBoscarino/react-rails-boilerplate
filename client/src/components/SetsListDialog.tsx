@@ -53,7 +53,7 @@ export const SetsListDialog = (props: IProps):React.ReactElement => {
         {
           sets.length ? 
             sets.map(set => (
-              <DialogContentText>
+              <DialogContentText key={set.id}>
                 Weight: {set.weight}LB  Reps: {set.reps}  RPE: {set.rpe}
               </DialogContentText>
             )) : 

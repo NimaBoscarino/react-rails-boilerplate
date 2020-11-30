@@ -3,3 +3,16 @@
   border: 1px solid #f0f0f0;
   border-radius: 2px;
 }
+.events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+}
+.events .ant-badge-status {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
