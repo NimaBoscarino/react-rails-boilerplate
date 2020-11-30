@@ -49,12 +49,16 @@ export const Calendars = () => {
   const intialWorkout:IWorkout[] = [];
   const allWorkouts = useCalendarData();
   const [workouts, setWorkouts] = useState(intialWorkout);
-  const [open, setOpen] = useState(false);
+  const [selectedWorkoutID, setSelectedWorkoutID] = useState(0);
   const classes = useStyles();
 
-  const handleClick = () => {
-    setOpen(!open);
-  }
+  const handleClick = (workoutID:number) => {
+    if(workoutID === selectedWorkoutID){
+      setSelectedWorkoutID(0)
+    } else{
+      setSelectedWorkoutID(workoutID)
+    }
+  };
 
   useEffect(() => {
     console.log('useEffect');
@@ -99,18 +103,19 @@ export const Calendars = () => {
       className={classes.root}
       key={workout.id}
       > 
-      <ListItem button onClick={handleClick}>
+      <ListItem button onClick={() => handleClick(workout.id)}>
         <ListItemIcon>
           <FormatListBulletedIcon />
         </ListItemIcon>
         <ListItemText primary={workout.name} />
-        {open ? <ExpandLess /> : <ExpandMore />}
+        {workout.id === selectedWorkoutID ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      
       {/* goes over each exercise */}
         <List component="div" disablePadding>
           {
             workout.exercises.map((exercise, index) => (
+              <Collapse in={workout.id === selectedWorkoutID} timeout="auto" unmountOnExit>
               <WorkoutListItem 
                 name = {exercise.exercise_name}
                 id = {exercise.id}
@@ -120,10 +125,11 @@ export const Calendars = () => {
                 workoutID={workout.id}
                 dispatch={()=>{}}
               />
+              </Collapse>
             ))
           }
         </List>
-      </Collapse>
+     
       </List>
        ) : <>
         <br/>

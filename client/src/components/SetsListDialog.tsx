@@ -25,13 +25,7 @@ interface ISet {
 
 export const SetsListDialog = (props: IProps):React.ReactElement => {
 
-  const [sets, setSets] = useState<ISet[]>([{
-    id:1,
-    routine_id:1,
-    weight:1,
-    reps:1,
-    rpe:1
-  }]);
+  const [sets, setSets] = useState<ISet[]>([]);
 
   useEffect(() => {
     console.log('useEffect');
@@ -43,6 +37,7 @@ export const SetsListDialog = (props: IProps):React.ReactElement => {
         setSets(res.data)
         console.log('axios done');
         console.log(sets);
+        
       })
       .catch(err => console.log(err));
     
@@ -54,24 +49,19 @@ export const SetsListDialog = (props: IProps):React.ReactElement => {
     <div>
       <Dialog open={props.open} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Sets List</DialogTitle>
-        {sets.length ? sets.map(set => {
-          console.log('sets map');
-          console.log(sets);
-          <DialogContent>
-           <DialogContentText>
-            weight: {set.weight}
-           </DialogContentText>
-           <DialogContentText>
-            reps: {set.reps}
-           </DialogContentText>
-           <DialogContentText>
-            rpe: {set.rpe}
-           </DialogContentText>
-         </DialogContent>
-        }) : 
-        <DialogContentText>
-          There are no sets for current exercise.
-        </DialogContentText>}
+        <DialogContent>
+        {
+          sets.length ? 
+            sets.map(set => (
+              <DialogContentText>
+                Weight: {set.weight}LB  Reps: {set.reps}  RPE: {set.rpe}
+              </DialogContentText>
+            )) : 
+            <DialogContentText>
+              There are no sets for current exercise.
+            </DialogContentText>
+        }
+        </DialogContent>
         <DialogActions>
           <Button onClick={props.onClick} color="primary">
             Close
