@@ -118,6 +118,7 @@ export const Calendars = () => {
                 key = {exercise.id}
                 deletable={false}
                 workoutID={workout.id}
+                dispatch={()=>{}}
               />
             ))
           }

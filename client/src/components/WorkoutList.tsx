@@ -14,7 +14,6 @@ import { Button } from '@material-ui/core';
 import Collapse from '@material-ui/core/Collapse';
 import { WorkoutListItem } from './WorkoutListItem';
 import { Redirect } from 'react-router-dom';
-import { SetsListDialog } from './SetsListDialog';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,20 +27,18 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
+export const WorkoutList = (
+  props:{workouts:IWorkout[], 
+    dispatch:(action:any)=>void}):React.ReactElement => {
+  
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const [showSetsList, setShowSetsList] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const [workoutID, setWorkoutID] = useState(0);
 
   const handleClick = () => {
     setOpen(!open);
   };
-
-  const changeShowSetsList = () => {
-    setShowSetsList(!showSetsList);
-  }
 
   const onChange = (selectedWorkoutID:number) => {
     setWorkoutID(selectedWorkoutID);
@@ -76,7 +73,6 @@ export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
             <List component="div" disablePadding>
               {
                 workout.exercises.map((exercise, index) => (
-                  <>
                   <WorkoutListItem 
                     name={exercise.exercise_name}
                     id={exercise.id}
@@ -84,19 +80,8 @@ export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
                     key={exercise.id}
                     deletable={true}
                     workoutID={workout.id}
-                    onClick={changeShowSetsList}
+                    dispatch={props.dispatch}
                   />
-                  { showSetsList ? 
-                    <SetsListDialog 
-                      open={showSetsList}
-                      id={1}
-                      weight={1}
-                      reps={1}
-                      rpe={1}
-                      onClick={changeShowSetsList}
-                    /> : <></>
-                  }
-                  </>
                 ))
               }
             </List>
