@@ -10,7 +10,8 @@ import { FilterIcon } from './FilterIcon';
 interface IProp {
   name: string,
   id: number,
-  index: number
+  index: number,
+  deletable: boolean
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -35,7 +36,7 @@ export const WorkoutListItem = (props:IProp):React.ReactElement => {
       </ListItemIcon>
       <ListItemText primary={props.name}/>
       <ListItemIcon>
-        <DeleteOutlineIcon style={{ fontSize: 30 }}/>
+        {props.deletable ? <DeleteOutlineIcon style={{ fontSize: 30 }}/> : <></>}
       </ListItemIcon>
     </ListItem>
   )

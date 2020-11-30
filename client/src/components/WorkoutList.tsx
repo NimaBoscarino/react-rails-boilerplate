@@ -71,10 +71,11 @@ export const WorkoutList = (props:{workouts:IWorkout[]}):React.ReactElement => {
               {
                 workout.exercises.map((exercise, index) => (
                   <WorkoutListItem 
-                    name = {exercise.exercise_name}
-                    id = {exercise.id}
-                    index = {index}
-                    key = {exercise.id}
+                    name={exercise.exercise_name}
+                    id={exercise.id}
+                    index={index}
+                    key={exercise.id}
+                    deletable={true}
                   />
                 ))
               }
