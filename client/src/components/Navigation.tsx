@@ -36,7 +36,7 @@ export const Navigation = ():JSX.Element => {
        > 
        {/* renders the hyperlink */}
         <Link to="/home">
-        <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon fontSize="large"/>}/>
+        <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon style={{ fontSize: 35 }} />}/>
         </Link>
         <Link to="/today">
           <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon fontSize="large"/>}/>
