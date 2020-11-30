@@ -3,7 +3,8 @@ import axios from 'axios';
 import { homeReducer } from '../reducers/homeReducer';
 
 const intialState = {
-  allDays:[]
+  allDays:[],
+  currentProgress:[]
 }
 export const useHomeData = ():any => {
   
