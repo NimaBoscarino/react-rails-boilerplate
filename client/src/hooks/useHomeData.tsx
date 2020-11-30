@@ -17,6 +17,12 @@ export const useHomeData = ():any => {
         dispatch({type:'SET_HOME', allDays:res.data})
       })
       .catch(err => console.log(err))
+      //gets insight API call to get current one rep maximum
+     axios.get("api/insights")
+      .then(res => {
+        dispatch({type:'SET_HOME', allDays:res.data})
+      })
+      .catch(err => console.log(err))
 
 }, [])
   console.log('..............');
