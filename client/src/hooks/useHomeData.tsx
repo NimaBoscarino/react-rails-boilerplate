@@ -20,7 +20,7 @@ export const useHomeData = () => {
       //gets insight API call to get current one rep maximum
      axios.get("api/insights")
       .then(res => {
-        dispatch({type:'SET_HOME', allDays:res.data})
+        dispatch({type:'SET_GOALS', currentProgress:res.data})
       })
       .catch(err => console.log(err))
 
