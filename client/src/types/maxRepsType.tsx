@@ -14,6 +14,6 @@ export interface IDay {
 }
 
 export interface State {
-  alldays:IDay[],
+  allDays:IDay[],
   currentProgress:IMax[]
 }
