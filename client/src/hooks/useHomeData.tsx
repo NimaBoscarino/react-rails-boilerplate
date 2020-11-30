@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 import axios from 'axios';
-import { homeReducer } from '../reducers/homeReducer';
+import { homeReducer, SET_GOALS, SET_HOME } from '../reducers/homeReducer';
 
 const intialState = {
   allDays:[],
