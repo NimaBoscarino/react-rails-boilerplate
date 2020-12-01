@@ -123,6 +123,116 @@ e7=Exercise.create(
   lower_body: false,
   force: "push"
 )
+##
+e8=Exercise.create(
+  exercise_name: 'Split Jerk',
+  description: "The barbell is driven from shoulders to arms length over head. The lift is complete when feet are in line and bar is under control.",
+  video_url: "https://thumbs.gfycat.com/ExhaustedDisfiguredBighornedsheep-small.gif",
+  thumbnail_image_url: "http://blog.thewodlife.com.au/wp-content/uploads/2019/01/athlete-performing-split-jerk-768x402.jpg",
+  upper_body: true,
+  lower_body: true,
+  force: "push"
+)
+
+e9=Exercise.create(
+  exercise_name: 'Snatch',
+  description: "The snatch is one coordinated, continuous movement executed with speed. The grip should be wide enough to allow for full squat with bar at arms length over head. Hook grip is used by advanced lifters to maintain grip during snatch. Do not jerk weight from floor; arise steadily then accelerate.",
+  video_url: "https://thumbs.gfycat.com/VeneratedHomelyHorsechestnutleafminer-size_restricted.gif",
+  thumbnail_image_url: "http://www.strongheartsfitness.com/wp-content/uploads/2016/01/1camilleSnatch-1024x682.jpg",
+  upper_body: true,
+  lower_body: true,
+  force: "pull"
+)
+e10=Exercise.create(
+  exercise_name: 'Military Press',
+  description: "Press bar upward until arms are extended overhead. Lower to front of neck and repeat. Feet may be positioned shoulder width apart or one foot in front of other with forward leg slightly bent .",
+  video_url: "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/how-to-do-the-military-press.gif?resize=480:*",
+  thumbnail_image_url: "https://legionathletics.com/wp-content/mfl-uploads/2019/02/increase-military-press.jpg",
+  upper_body: true,
+  lower_body: false,
+  force: "push"
+)
+e11=Exercise.create(
+  exercise_name: 'Dumbbell Upright Row',
+  description: "Pull dumbells to neck with elbows leading. Allow wrists to flex as bar rises. Lower and repeat.",
+  video_url: "https://i.pinimg.com/originals/5f/2a/91/5f2a91500595e19454060e273251adde.gif",
+  thumbnail_image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIC98bkWTcC8-lTIij28KV2fzpxmKDQ1ZJ2Q&usqp=CAU",
+  upper_body: true,
+  lower_body: false,
+  force: "pull"
+)
+e12=Exercise.create(
+  exercise_name: 'Dumbbell Fly',
+  description: "Lower dumbbells to sides until chest muscles are stretched with elbows fixed in slightly bent position. Bring dumbbells together in wide hugging motion until dumbbells are nearly together. Repeat.",
+  video_url: "https://i.makeagif.com/media/4-26-2015/KTZtjN.gif",
+  thumbnail_image_url: "https://s3.amazonaws.com/prod.skimble/assets/1267729/image_iphone.jpg",
+  upper_body: true,
+  lower_body: false,
+  force: "push"
+)
+e13=Exercise.create(
+  exercise_name: 'Skull Crusher',
+  description: "Lower bar to forehead by bending elbows. Extend arms and repeat.",
+  video_url: "https://i.makeagif.com/media/10-08-2015/2uuf48.gif",
+  thumbnail_image_url: "https://www.fitfatherproject.com/wp-content/uploads/2019/08/SkullKrushersNT.png",
+  upper_body: true,
+  lower_body: false,
+  force: "push"
+)
+e14=Exercise.create(
+  exercise_name: 'Bicep Curls',
+  description: "With elbows to side, raise bar until forearms are vertical. Lower until arms are fully extended. Repeat.",
+  video_url: "https://thumbs.gfycat.com/FelineSaltyBat-small.gif",
+  thumbnail_image_url: "https://www.muscleandfitness.com/wp-content/uploads/2014/09/Muscular-Bodybuilder-Doing-Biceps-Workout-With-A-Bicep-Curl.jpg?quality=86&strip=all",
+  upper_body: true,
+  lower_body: false,
+  force: "pull"
+)
+e15=Exercise.create(
+  exercise_name: 'Dumbbell Kickback',
+  description: "Kneel over bench with arm supporting body. Grasp dumbbell. Position upper arm parallel to floor. Extend arm until it is straight. Return and repeat. Continue with opposite arm.",
+  video_url: "https://i.pinimg.com/originals/9f/06/a4/9f06a4d64c2e9c8e69dc4c3c6d8d0f08.gif",
+  thumbnail_image_url: "https://fitstop24.com/media/tricep-kickbacks_2.jpg.400x330_q95_crop-%2C_filters-detail.jpg",
+  upper_body: true,
+  lower_body: false,
+  force: "push"
+)
+e16=Exercise.create(
+  exercise_name: 'Dumbbell Triceps Extension',
+  description: "With elbows over head, lower forearm behind upper arm by flexing elbows. Flex wrists at bottom to avoid hitting dumbbell on back of neck. Raise dumbbell over head by extending elbows while hyperextending wrists. Return and repeat.",
+  video_url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/dumbbelloverheadtricepsextension-1456956005.gif",
+  thumbnail_image_url: "https://hips.hearstapps.com/vidthumb/brightcove/57893ed7e694aa370d883017/thumb_1468612312.png",
+  upper_body: true,
+  lower_body: false,
+  force: "push"
+)
+e17=Exercise.create(
+  exercise_name: 'Barbell Sumo Deadlift',
+  description: "Pull bar up by driving feet outward, while pulling chest up. Extend knees when bar passes knees. At top of lift, when torso is upright, drive shoulders back and chest up. Return weight to floor by bending hips back and knees pointed outward, while keeping chest high and back straight. Repeat.",
+  video_url: "https://thumbs.gfycat.com/ImportantTartBeauceron-small.gif",
+  thumbnail_image_url: "https://barbend.com/wp-content/uploads/2017/05/Sumo-DL-1.jpg",
+  upper_body: false,
+  lower_body: true,
+  force: "pull"
+)
+e18=Exercise.create(
+  exercise_name: 'Dumbbell Lunge',
+  description: "Lunge forward with first leg. Land on heel then forefoot. Lower body by flexing knee and hip of front leg until knee of rear leg is almost in contact with floor. Return to original standing position by forcibly extending hip and knee of forward leg. Repeat by alternating lunge with opposite leg.",
+  video_url: "https://i.imgur.com/ygy5ie3.gif",
+  thumbnail_image_url: "https://cdn.muscleandstrength.com/sites/default/files/dumbbell-walking-lunge.jpg",
+  upper_body: false,
+  lower_body: true,
+  force: "push"
+)
+e19=Exercise.create(
+  exercise_name: 'Seated Leg Press',
+  description: "Extend knees and hips until knees are fully extended. Return until hips are completely flexed. Repeat.",
+  video_url: "https://media1.tenor.com/images/1c2b8ebbeb29f6c474bed7b5287c5937/tenor.gif?itemid=13985833",
+  thumbnail_image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Muscle_Strengthening_at_the_Gym_-_Seated_Leg_Press.webm/320px--Muscle_Strengthening_at_the_Gym_-_Seated_Leg_Press.webm.jpg",
+  upper_body: false,
+  lower_body: true,
+  force: "push"
+)
 
 Workout.destroy_all
 w1 = Workout.create(
