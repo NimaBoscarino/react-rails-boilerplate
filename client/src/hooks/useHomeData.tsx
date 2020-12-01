@@ -27,5 +27,5 @@ export const useHomeData = () => {
 }, [])
   console.log('..............');
 
-  return state.allDays;
+  return state;
 }
