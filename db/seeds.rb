@@ -576,19 +576,19 @@ s13 = Sett.create(
   routine_id: r5.id,
   reps: 12,
   rpe: 5, 
-  weight: 95
+  weight: 65
 )
 s14 = Sett.create(
   routine_id: r5.id,
   reps:10,
   rpe: 6,
-  weight: 135
+  weight: 75
 )
 s15 = Sett.create(
   routine_id: r5.id,
   reps:10,
   rpe:8,
-  weight: 155
+  weight: 85
 )
 #routine 6 FS
 s16 = Sett.create(
@@ -652,19 +652,19 @@ s25 = Sett.create(
   routine_id: r9.id,
   reps: 12,
   rpe: 6, 
-  weight: 95
+  weight: 75
 )
 s26 = Sett.create(
   routine_id: r9.id,
   reps:10,
   rpe: 7,
-  weight: 135
+  weight: 90
 )
 s27 = Sett.create(
   routine_id: r9.id,
   reps:10,
   rpe:9,
-  weight: 155
+  weight: 105
 )
 #routine 10 RDL
 s28 = Sett.create(
@@ -728,19 +728,19 @@ s37 = Sett.create(
   routine_id:r13.id,
   reps:12,
   rpe:9,
-  weight: 95
+  weight: 85
 )
 s38 = Sett.create(
   routine_id:r13.id,
   reps:10,
   rpe:9,
-  weight: 135
+  weight: 100
 )
 s39 = Sett.create(
   routine_id:r13.id,
   reps:8,
   rpe:9,
-  weight: 165
+  weight: 120
 )
 #routine 14
 s40 = Sett.create(
@@ -804,19 +804,19 @@ s49 = Sett.create(
   routine_id:r17.id,
   reps:10,
   rpe:9,
-  weight: 95
+  weight: 90
 )
 s50 = Sett.create(
   routine_id:r17.id,
   reps:8,
   rpe:9,
-  weight: 135
+  weight: 105
 )
 s51 = Sett.create(
   routine_id:r17.id,
-  reps:6,
+  reps:8,
   rpe:9,
-  weight: 175
+  weight: 125
 )
 #routine 18 RDL
 s52 = Sett.create(
