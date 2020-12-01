@@ -1,11 +1,9 @@
 import React,{ useState } from 'react';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import EventOutlinedIcon from '@material-ui/icons/EventOutlined';
 import InsertChartOutlinedOutlinedIcon from '@material-ui/icons/InsertChartOutlinedOutlined';
 import AssignmentOutlinedIcon from '@material-ui/icons/AssignmentOutlined';
-import AccessibilityOutlinedIcon from '@material-ui/icons/AccessibilityOutlined';
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import {
@@ -17,8 +15,8 @@ import {
 
 import { Calendars } from './Calendar';
 import { Home } from './Home';
-import Insight from './Insight';
-import { NewWorkout } from './NewWorkout/index';
+import Insight from './Insight.js';
+import { Exercises } from './ExercisesListContainer';
 import { WorkoutListContainer } from './WorkoutListContainer';
 import '../styles/navigation.scss'
 
@@ -41,27 +39,24 @@ export const Navigation = ():JSX.Element => {
         <Link to="/today">
           <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon fontSize="large" style={{ fill:'#FEFFFF' }}/>}/>
         </Link>
-        <Link to="/new-workout">
+        <Link to="/exercise">
           <BottomNavigationAction label="Exercise" icon={<FitnessCenterIcon fontSize="large" style={{ fill:'#FEFFFF' }}/>}/>
         </Link>
         <Link to="/calendar">
-          <BottomNavigationAction label="Calendar" icon={<EventOutlinedIcon fontSize="large" style={{ fill:'#FEFFFF' }}/>}/>
+          <BottomNavigationAction label="History" icon={<EventOutlinedIcon fontSize="large" style={{ fill:'#FEFFFF' }}/>}/>
         </Link>
         <Link to="/insight">
           <BottomNavigationAction label="Insight" icon={<InsertChartOutlinedOutlinedIcon fontSize="large" style={{ fill:'#FEFFFF' }}/>}/>
         </Link>
       </BottomNavigation>
-        {/* switch changes view to path */}
       <Switch>
-        {/* for this path */}
         <Route path="/home">
-          {/* render this component */}
           <Home/>
         </Route>
         <Route path="/today">
           <WorkoutListContainer/>
         </Route>
-        <Route path="/new-workout" render={props => <NewWorkout {...props}/>} />
+        <Route path="/exercise" render={props => <Exercises {...props}/>} />
         <Route path="/calendar">
           <Calendars/>
         </Route>

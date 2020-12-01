@@ -1,6 +1,9 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 import axios from 'axios';
+import { Title } from './Title'
+import '../styles/insight.scss'
+
 export default class Insight extends React.Component {
 
   constructor(props) {
@@ -122,7 +125,8 @@ export default class Insight extends React.Component {
 
   render() {
     return (
-      <>
+      <div className='insight-container'>
+      <Title text={'INSIGHT'} />
       <div style={{height:30 + 'vh'}}>
         <Line
           data={this.state.benchPress}
@@ -178,8 +182,8 @@ export default class Insight extends React.Component {
           scales: {
             yAxes: [{
                 ticks: {
-                    // suggestedMin: 200,
-                    // suggestedMax: 250
+                    suggestedMin: 100,
+                    suggestedMax: 350,
                     callback: (item) => `${item}lb`
                 }
             }]
@@ -215,7 +219,7 @@ export default class Insight extends React.Component {
       }}
     />
   </div>
-  </>
+  </div>
     );
   }
 }

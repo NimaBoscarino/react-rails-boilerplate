@@ -1,7 +1,9 @@
 .site-calendar-demo-card {
   width: 100vw;
-  border: 1px solid #f0f0f0;
   border-radius: 2px;
+  .ant-picker-calendar-header{
+    padding: 0;
+  }
 }
 .events {
   list-style: none;

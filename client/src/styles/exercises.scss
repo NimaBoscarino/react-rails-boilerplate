@@ -1,0 +1,44 @@
+.exercise-list-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar-container{
+  display: flex;
+  align-items:flex-end;
+  width: 90vw;
+  margin-bottom: 1rem;
+  background-color: #D1D1D1;
+  border-radius: 5px;
+  height: 36px;
+}
+
+.MuiFormControl-root{
+  width: 100vw;
+}
+
+.outter-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-bottom: 1px solid #AFAFAF;
+  width: 90vw;
+  margin-bottom: .3rem;
+  .exercise-name-container{
+    display: flex;
+    justify-content: space-between;
+    .exercise-name{
+      font-size: 1.2rem;
+      &:hover{
+        background-color: #D1D1D1;
+      }
+    }
+  }
+  .force{
+    color:#6E6E6E;
+    font-size: 1.1rem;
+  }
+}
+
