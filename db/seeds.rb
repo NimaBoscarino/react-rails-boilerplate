@@ -835,7 +835,7 @@ s54 = Sett.create(
   routine_id:r18.id,
   reps:9,
   rpe:9,
-  weight: 130
+  weight: 135
 )
 #routine 19 FS
 s55 = Sett.create(
