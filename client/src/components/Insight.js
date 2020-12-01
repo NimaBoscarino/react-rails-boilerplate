@@ -182,8 +182,8 @@ export default class Insight extends React.Component {
           scales: {
             yAxes: [{
                 ticks: {
-                    suggestedMin: 100,
-                    suggestedMax: 350,
+                    // suggestedMin: 100,
+                    // suggestedMax: 350,
                     callback: (item) => `${item}lb`
                 }
             }]
