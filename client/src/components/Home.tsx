@@ -96,6 +96,7 @@ export const Home = ():React.ReactElement => {
       {/* all goals currely hardcoded */}
       <br/>
       <br/>
+      <h2>Goal: One Rep Max</h2>
       <h3>Bench Press Goal: 275</h3>
       <p>Currently lifting: {getOneRepMaxBench(currentProgress)}</p>
       <Progress percent={bpConverter(getOneRepMaxBench(currentProgress))} status="active" />

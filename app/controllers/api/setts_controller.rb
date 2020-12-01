@@ -1,8 +1,5 @@
 class Api::SettsController < ApplicationController
-
   def index
-    # Post.where("sha LIKE ?", "%#{short_sha}%")
-    #routine = Routine.where("routine.workout_id LIKE ?", "%#{workout_id}%").where("routine.exercise_id LIKE ?", "%#{exercise_id}%")
     routine = Routine.find_by(workout_id: params[:workout_id], exercise_id: params[:exercise_id])
     render json: routine.setts
   end

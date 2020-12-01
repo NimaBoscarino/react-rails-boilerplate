@@ -1,12 +1,7 @@
 class Api::UsersController < ApplicationController
-
   def index
-    #@user = User.find(params[:id])
     @user = User.all
-    # render json: @exercises
-    render :json => {
-        users: @user
-    }
+    render json: {users: @user}
   end
 
   def display_workouts
