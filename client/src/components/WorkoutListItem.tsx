@@ -9,6 +9,7 @@ import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import { NewSetsDialog } from './NewSetsDialog';
 import axios from 'axios';
 import { SetsListDialog } from './SetsListDialog';
+import { DeleteConfirmDialog } from './DeleteConfirmDailog';
 
 
 interface IProp {
@@ -35,15 +36,20 @@ const useStyles = makeStyles((theme: Theme) =>
 export const WorkoutListItem = (props:IProp):React.ReactElement => {
   
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [showNewSets, setShowNewSets] = useState(false);
   const [showSetsList, setShowSetsList] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
-  const onClick = () => {
-    setOpen(!open);
+  const showNewSetsDialog = () => {
+    setShowNewSets(!showNewSets);
   }
 
   const showSetsListDialog = () => {
     setShowSetsList(!showSetsList)
+  }
+
+  const showDeleteConfirmDialog = () => {
+    setShowDeleteConfirm(!showDeleteConfirm);
   }
 
   const deleteExercise = () => {
@@ -71,24 +77,30 @@ export const WorkoutListItem = (props:IProp):React.ReactElement => {
       <ListItemIcon>
         {props.deletable ? 
           <>
-          <EditOutlinedIcon onClick={onClick} style={{ fontSize: 28, marginRight:10 }}/>
-          <DeleteOutlineIcon style={{ fontSize: 30 }} onClick={deleteExercise}/> 
+          <EditOutlinedIcon onClick={showNewSetsDialog} style={{ fontSize: 28, marginRight:10 }}/>
+          <DeleteOutlineIcon style={{ fontSize: 30 }} onClick={showDeleteConfirmDialog}/> 
           </>
           : <></>}
-          {open ? 
+          {showDeleteConfirm &&
+            <DeleteConfirmDialog 
+              showDeleteConfirm={showDeleteConfirm}
+              onCancel={showDeleteConfirmDialog}
+              onConfirm={deleteExercise}
+            />}
+          {showNewSets && 
           <NewSetsDialog
-            open={open}
-            onClick={onClick}
+            open={showNewSets}
+            onClick={showNewSetsDialog}
             exerciseID={props.id}
             workoutID={props.workoutID}
-           /> : <></>}
-          { showSetsList ? 
+           />}
+          { showSetsList &&
             <SetsListDialog 
               open={showSetsList}
               workoutID={props.workoutID}
               exerciseID={props.id}
               onClick={showSetsListDialog}
-            /> : <></>}
+            />}
       </ListItemIcon>
     </ListItem>
   )

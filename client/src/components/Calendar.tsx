@@ -14,6 +14,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import { WorkoutListItem } from './WorkoutListItem';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { Title } from './Title';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -98,12 +99,14 @@ export const Calendars = () => {
 
   return (
     <>
+    <Title text="HISTORY" />
     <div className="site-calendar-demo-card">
       <Calendar 
         fullscreen={false} 
         mode={'month'} 
         onSelect={onSelect}
         dateCellRender={dateCellRender}
+        className="calendar"
       />
     </div>
     {workouts.length ? <><br/><ListItemText primary={'Workouts For Selected Day: '} /></> : <></>}

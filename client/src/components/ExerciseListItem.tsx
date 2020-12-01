@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React from 'react';
-import { IExercise } from "../../types/exercisesType";
+import { IExercise } from "../types/exercisesType";
 import  { ExerciseDialog }  from "./ExerciseDialog";
+import '../styles/exercises.scss'
 
 interface IProps extends IExercise{
-  selectedWorkout:number,
+  selectedWorkout:number | null,
   openSuccessAlert:()=>void,
   openErrorAlert:()=>void
 }
@@ -13,12 +14,10 @@ export const ExerciseListItem = (props: IProps):React.ReactElement => {
   const [open, setOpen] = React.useState(false);
 
   const addExercise = () => {
-    console.log(props.id);
-    console.log(props.selectedWorkout);
+ 
     axios
       .post(`/api/workouts/${props.selectedWorkout}/add_exercise?exercise_id=${props.id}`)
       .then(res => {
-        console.log(res.data)
         setOpen(!open);
         props.openSuccessAlert();
       })
@@ -31,8 +30,14 @@ export const ExerciseListItem = (props: IProps):React.ReactElement => {
 
   return(
     <div>
-      <p onClick = {() => setOpen(true)}>{props.exercise_name}</p>
-
+      <div className='outter-container'>
+        <div className='exercise-name-container'>
+          <span className='exercise-name' onClick = {() => setOpen(true)}>
+            {props.exercise_name} ({props.lower_body ? 'Lower Body' : 'Upper Body'})
+          </span>
+        </div>
+        <span className='force'>{props.force}</span>
+      </div>
       <ExerciseDialog 
         id={props.id}
         key={props.id}
