@@ -5,8 +5,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import { TextButton } from './TextButton';
+import '../styles/setsDialog.scss'
 
 interface IProps {
   open: boolean, 
@@ -70,12 +71,20 @@ export const NewSetsDialog = (props: IProps):React.ReactElement => {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={props.onClick} color="primary">
+          {/* <Button onClick={props.onClick} color="primary">
             Cancel
           </Button>
           <Button onClick={saveSets} color="primary">
             Save
-          </Button>
+          </Button> */}
+          <TextButton 
+            text={'CANCEL'}
+            onClick={props.onClick}
+          />
+          <TextButton 
+            onClick={saveSets}
+            text={'SAVE'}
+          />
         </DialogActions>
       </Dialog>
     </div>

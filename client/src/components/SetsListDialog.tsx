@@ -7,6 +7,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import { TextButton } from './TextButton';
 
 interface IProps {
   workoutID:number,
@@ -63,9 +64,10 @@ export const SetsListDialog = (props: IProps):React.ReactElement => {
         }
         </DialogContent>
         <DialogActions>
-          <Button onClick={props.onClick} color="primary">
-            Close
-          </Button>
+          <TextButton 
+            onClick={props.onClick}
+            text={'CLOSE'}
+          />
           {/* <Button onClick={props.onClick} color="primary">
             Finish All Sets
           </Button> */}

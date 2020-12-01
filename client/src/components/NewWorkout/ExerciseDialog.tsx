@@ -10,6 +10,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import {IExercise} from '../../types/exercisesType';
 import { ExerciseTab } from '../ExerciseTab';
+import { TextButton } from '../TextButton';
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -88,9 +89,13 @@ export const ExerciseDialog = (props:IProps):React.ReactElement => {
           force={props.force}
         />
         <DialogActions>
-          <Button autoFocus onClick={props.addExercise} color="primary">
+          {/* <Button autoFocus onClick={props.addExercise} color="primary">
             Add Exercise
-          </Button>
+          </Button> */}
+          <TextButton 
+            onClick={props.addExercise}
+            text={'ADD EXERCISE'}
+          />
         </DialogActions>
       </StyledDialog>
     </div>

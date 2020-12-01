@@ -45,10 +45,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   nav: {
-    backgroundColor: '#2EFF00',
+    backgroundColor: '#1990FF',
   },
   indicator: {
-    backgroundColor: 'white',
+    backgroundColor: '#9E5DFF',
   }
 }));
 

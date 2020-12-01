@@ -9,17 +9,30 @@ const useStyles = makeStyles((theme: Theme) =>
         margin: theme.spacing(1),
       },
     },
-    button:{
-      color:'#707070'
+    textPrimary: {
+      color:'#1990FF'
+    },
+    textSecondary: {
+      color: '#9E5DFF'
     }
   }),
 );
 
 export const TextButton = (props:{text:string, onClick: () => void}):React.ReactElement => {
   const classes = useStyles();
+  const isPrimary = props.text === 'Add New Workout' ? false : true;
+ 
   return (
-    <div className={classes.root}>
-      <Button className={classes.button} onClick={props.onClick} color="primary">{props.text}</Button>
-    </div>
+    <>
+    {
+      isPrimary ?  
+      <div className={classes.root}>
+        <Button className={classes.textPrimary} onClick={props.onClick}>{props.text}</Button>
+      </div> : 
+      <div className={classes.root}>
+        <Button className={classes.textSecondary} onClick={props.onClick}>{props.text}</Button>
+      </div>
+    }
+   </>
   );
 }

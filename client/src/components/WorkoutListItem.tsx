@@ -1,15 +1,14 @@
-import React, { useReducer, useState } from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import { FilterIcon } from './FilterIcon';
-import BorderColorOutlinedIcon from '@material-ui/icons/BorderColorOutlined';
+import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import { NewSetsDialog } from './NewSetsDialog';
 import axios from 'axios';
 import { SetsListDialog } from './SetsListDialog';
-import { workoutReducer } from '../reducers/workoutReducer';
 
 
 interface IProp {
@@ -72,7 +71,7 @@ export const WorkoutListItem = (props:IProp):React.ReactElement => {
       <ListItemIcon>
         {props.deletable ? 
           <>
-          <BorderColorOutlinedIcon onClick={onClick} style={{ fontSize: 24, marginRight:10 }}/>
+          <EditOutlinedIcon onClick={onClick} style={{ fontSize: 28, marginRight:10 }}/>
           <DeleteOutlineIcon style={{ fontSize: 30 }} onClick={deleteExercise}/> 
           </>
           : <></>}
