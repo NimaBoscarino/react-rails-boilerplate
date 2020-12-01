@@ -98,6 +98,7 @@ export const Home = ():React.ReactElement => {
       <br/>
       <h2>Goal: One Rep Max</h2>
       <h3>Bench Press Goal: 240</h3>
+      {/* go over wording as number represent current pr,not what currently lifting */}
       <p>Currently lifting: {getOneRepMaxBench(currentProgress)}</p>
       <Progress percent={bpConverter(getOneRepMaxBench(currentProgress))} status="active" />
       <br/>
