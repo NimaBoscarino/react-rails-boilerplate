@@ -783,13 +783,13 @@ s45 = Sett.create(
 #routine 16 FS
 s46 = Sett.create(
   routine_id:r16.id,
-  reps:12,
+  reps:10,
   rpe:9,
   weight: 115
 )
 s47 = Sett.create(
   routine_id:r16.id,
-  reps:10,
+  reps:8,
   rpe:9,
   weight: 155
 )
@@ -802,13 +802,13 @@ s48 = Sett.create(
 #routine 17 BBP
 s49 = Sett.create(
   routine_id:r17.id,
-  reps:12,
+  reps:10,
   rpe:9,
   weight: 95
 )
 s50 = Sett.create(
   routine_id:r17.id,
-  reps:10,
+  reps:8,
   rpe:9,
   weight: 135
 )
