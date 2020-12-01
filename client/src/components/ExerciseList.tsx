@@ -1,10 +1,10 @@
 import React from 'react';
 import {ExerciseListItem} from './ExerciseListItem';
-import {IExercise} from '../../types/exercisesType';
+import {IExercise} from '../types/exercisesType';
 
 interface IProps {
   exercises:IExercise[],
-  selectedWorkout:number,
+  selectedWorkout:number | null,
   openSuccessAlert:() => void,
   openErrorAlert:() => void
 }

@@ -6,14 +6,16 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       '& > *': {
-        margin: theme.spacing(1),
+        margin: theme.spacing(0),
       },
     },
     textPrimary: {
-      color:'#1990FF'
+      color:'#1990FF',
     },
     textSecondary: {
-      color: '#9E5DFF'
+      color: '#9E5DFF',
+      fontSize:'1.2rem',
+      marginTop: '2rem'
     }
   }),
 );

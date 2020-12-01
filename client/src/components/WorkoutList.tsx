@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme: Theme) =>
     nested: {
       paddingLeft: theme.spacing(4),
     },
+    resize: {
+      fontSize: '1.2rem',
+    }
   }),
 );
 
@@ -52,7 +55,7 @@ export const WorkoutList = (
   return (
     <>
     {
-      redirect ? <Redirect to={{pathname: '/new-workout', state: {workoutID}}} /> :
+      redirect ? <Redirect to={{pathname: '/exercise', state: {workoutID}}} /> :
       props.workouts.map(workout => (
         <List
           component="nav"
@@ -69,13 +72,11 @@ export const WorkoutList = (
             <ListItemIcon>
               <FormatListBulletedIcon />
             </ListItemIcon>
-            <ListItemText primary={workout.name} />
+            <ListItemText classes={{primary:classes.resize}} primary={workout.name} />
             {workout.id === selectedWorkoutID ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
 
-        
-          {/* goes over each exercise */}
-            <List component="div" disablePadding>
+          {workout.exercises.length ? <List component="div" disablePadding>
               {
                 workout.exercises.map((exercise, index) => {
                   return (
@@ -97,7 +98,8 @@ export const WorkoutList = (
                    </Collapse>
                   )})
               }
-            </List>
+            </List> : <ListItemText primary={`Haven't add any exercises yet.`} />}
+            
           <TextButton  
             onClick={() => onChange(workout.id)}
             text='ADD EXERCISE' 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
@@ -8,9 +7,9 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
-import {IExercise} from '../../types/exercisesType';
-import { ExerciseTab } from '../ExerciseTab';
-import { TextButton } from '../TextButton';
+import {IExercise} from '../types/exercisesType';
+import { ExerciseTab } from './ExerciseTab';
+import { TextButton } from './TextButton';
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -89,9 +88,6 @@ export const ExerciseDialog = (props:IProps):React.ReactElement => {
           force={props.force}
         />
         <DialogActions>
-          {/* <Button autoFocus onClick={props.addExercise} color="primary">
-            Add Exercise
-          </Button> */}
           <TextButton 
             onClick={props.addExercise}
             text={'ADD EXERCISE'}

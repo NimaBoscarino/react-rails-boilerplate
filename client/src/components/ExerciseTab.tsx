@@ -71,8 +71,8 @@ export const ExerciseTab = (props:any) => {
           }}
         >
           <Tab label="Description" {...a11yProps(0)} />
-          <Tab label="About" {...a11yProps(1)} />
-          <Tab label="Video" {...a11yProps(2)} />
+          {/* <Tab label="About" {...a11yProps(1)} /> */}
+          <Tab label="Video" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -80,10 +80,10 @@ export const ExerciseTab = (props:any) => {
         <br/>
         {props.description}
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      {/* <TabPanel value={value} index={1}>
         {props.force}
-      </TabPanel>
-      <TabPanel value={value} index={2}>
+      </TabPanel> */}
+      <TabPanel value={value} index={1}>
         <video width="250px" height="270px" autoPlay>
           <source src={props.video_url} type="video/mp4"/>
         </video>

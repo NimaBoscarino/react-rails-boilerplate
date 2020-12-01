@@ -5,6 +5,7 @@ import { NewWorkoutDialog } from './NewWorkoutDialog';
 import { Reminder } from './Reminder';
 import { WorkoutList } from './WorkoutList';
 import axios from 'axios';
+import { Title } from './Title'
 
 export const WorkoutListContainer = ():React.ReactElement => {
   
@@ -44,6 +45,7 @@ export const WorkoutListContainer = ():React.ReactElement => {
     
   return(
     <>
+    <Title text={'WORKOUTS'} />
     {/* reminder is just a notification you have no workouts */}
     { hasWorkouts ? <WorkoutList workouts={state.workouts} dispatch={dispatch} /> : <Reminder/> }
     <TextButton 

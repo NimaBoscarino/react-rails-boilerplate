@@ -2,6 +2,8 @@ import React from 'react';
 import { useHomeData } from '../hooks/useHomeData';
 import { Progress } from 'antd';
 import {IDay, IMax, State} from '../types/maxRepsType';
+import { Title } from './Title';
+
 //color code chagnes weeklyc ircle color based on total reps by day
 const colorCode = (sum:number):"success"|"normal"|"exception"|"active" => {
   let status:"success"|"normal"|"exception"|"active" = "success";
@@ -72,14 +74,11 @@ const rdlConverter = (num:number) => {
   return result;
 }
 
+
 const tPCConverter = (num:number) => {
   let result = Math.round(num / 10);
   return result;
 }
-
-
-
-
 export const Home = ():React.ReactElement => {
   const {allDays, currentProgress} = useHomeData();
   console.log(allDays);
@@ -87,7 +86,7 @@ export const Home = ():React.ReactElement => {
 
   return(
     <>
-    <h1>This Weeks Gains</h1>
+    <Title text={'WELCOME GAINS'} />
     <div>
       {allDays.map((day:any) => (
       <Progress type="circle" percent={day["sum"]} width={50} status={colorCode(day["sum"])} format={() => `${sliceDate(day.workout_date)}`} />
