@@ -44,7 +44,6 @@ export const WorkoutListContainer = ():React.ReactElement => {
     
   return(
     <>
-    <h3>Today's Workout list</h3>
     {/* reminder is just a notification you have no workouts */}
     { hasWorkouts ? <WorkoutList workouts={state.workouts} dispatch={dispatch} /> : <Reminder/> }
     <TextButton 

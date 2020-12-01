@@ -10,10 +10,10 @@ import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import { IWorkout } from '../types/workoutType';
-import { Button } from '@material-ui/core';
 import Collapse from '@material-ui/core/Collapse';
 import { WorkoutListItem } from './WorkoutListItem';
 import { Redirect } from 'react-router-dom';
+import { TextButton } from './TextButton';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -98,7 +98,10 @@ export const WorkoutList = (
                   )})
               }
             </List>
-          <Button color="primary" onClick={() => onChange(workout.id)}>Add Exercise</Button>
+          <TextButton  
+            onClick={() => onChange(workout.id)}
+            text='ADD EXERCISE' 
+          />
         </List>
       ))
     }

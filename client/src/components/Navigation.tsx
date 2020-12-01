@@ -36,19 +36,19 @@ export const Navigation = ():JSX.Element => {
        > 
        {/* renders the hyperlink */}
         <Link to="/home">
-        <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon style={{ fontSize: 35 }} />}/>
+        <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon style={{ fontSize: 35, fill:'#FEFFFF' }} />}/>
         </Link>
         <Link to="/today">
-          <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon fontSize="large"/>}/>
+          <BottomNavigationAction label="Today" icon={<AssignmentOutlinedIcon fontSize="large" style={{ fill:'#FEFFFF' }}/>}/>
         </Link>
         <Link to="/new-workout">
-          <BottomNavigationAction label="New Workout" icon={<FitnessCenterIcon fontSize="large"/>}/>
+          <BottomNavigationAction label="Exercise" icon={<FitnessCenterIcon fontSize="large" style={{ fill:'#FEFFFF' }}/>}/>
         </Link>
         <Link to="/calendar">
-          <BottomNavigationAction label="Calendar" icon={<EventOutlinedIcon fontSize="large"/>}/>
+          <BottomNavigationAction label="Calendar" icon={<EventOutlinedIcon fontSize="large" style={{ fill:'#FEFFFF' }}/>}/>
         </Link>
         <Link to="/insight">
-          <BottomNavigationAction label="Insight" icon={<InsertChartOutlinedOutlinedIcon fontSize="large"/>}/>
+          <BottomNavigationAction label="Insight" icon={<InsertChartOutlinedOutlinedIcon fontSize="large" style={{ fill:'#FEFFFF' }}/>}/>
         </Link>
       </BottomNavigation>
         {/* switch changes view to path */}

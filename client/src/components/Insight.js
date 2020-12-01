@@ -133,7 +133,7 @@ export default class Insight extends React.Component {
               fontSize:20
             },
             legend:{
-              display:true,
+              display:false,
               position:'bottom'
             },
             responsive:true,
@@ -171,7 +171,7 @@ export default class Insight extends React.Component {
             fontSize:20
           },
           legend:{
-            display:true,
+            display:false,
             position:'bottom'
           },
           responsive:true,
@@ -198,7 +198,7 @@ export default class Insight extends React.Component {
           fontSize:20
         },
         legend:{
-          display:true,
+          display:false,
           position:'bottom'
         },
         responsive:true,
