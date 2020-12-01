@@ -1,7 +1,5 @@
 class Api::InsightsController < ApplicationController
   def index
-    #routine = Routine.all
-    #sett = Sett.find_by_weight_and_reps.joins(:workouts, :routines).where(exercise_id: 6)
     exercise = 6
     #4,6,3
     goals_array = [3,4,6]
