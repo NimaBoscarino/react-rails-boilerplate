@@ -6,9 +6,15 @@ function getRequestsbyArtists(requests, artist_id) {
   })
 }
 
-function getRequestsbyFinishState(requests) {
+function getFinishedRequests(requests) {
   return requests.filter((request) => {
     return request.actual_finish_date  
+  })
+}
+
+function getUnFinishedRequests(requests) {
+  return requests.filter((request) => {
+    return request.actual_finish_date === null
   })
 }
 
@@ -24,6 +30,6 @@ function getRequestsbyUser(requests, user_id) {
   })
 }
 
-// console.log(getRequestsbyUser(requests_for_test, 1))
+console.log(getUnFinishedRequests(requests_for_test))
 
-module.exports = {getRequestsbyArtists, getRequestsbyFinishState, getRequestsbyCategory,getRequestsbyUser}
+module.exports = {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser}
