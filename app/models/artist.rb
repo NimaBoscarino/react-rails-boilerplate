@@ -19,7 +19,15 @@ class Artist < ApplicationRecord
     
   end
 
-  # def avg_stars
-  #   reviews.average(:star).round(2).to_f
-  # end
+  def self.authenticate_with_credentials(email, password)
+    artist = Artist.find_by_email(email)
+  
+   if artist && artist.authenticate(password)
+    artist
+   else
+   nil
+   end
+  end
+
+ 
 end

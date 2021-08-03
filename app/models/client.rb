@@ -15,8 +15,18 @@ class Client < ApplicationRecord
   
   def remove_whitespace
     
+
     self.email = self.email.strip unless self.email.nil?
     
   end
   
+  def self.authenticate_with_credentials(email, password)
+    client = Client.find_by_email(email)
+  
+   if client && client.authenticate(password)
+    client
+   else
+   nil
+   end
+  end
 end
