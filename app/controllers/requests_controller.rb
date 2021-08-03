@@ -1,0 +1,2 @@
+class RequestsController < ApplicationController
+end
