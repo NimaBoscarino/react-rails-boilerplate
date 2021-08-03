@@ -14,7 +14,6 @@ class Client < ApplicationRecord
   
   
   def remove_whitespace
-    
 
     self.email = self.email.strip unless self.email.nil?
     

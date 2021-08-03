@@ -7,7 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require_relative '../lib/populator_fix.rb'
 
-Client.populate 10 do |c|
+puts "Starting seeds..."
+
+puts "Creating categories..."
+cat1 = Category.find_or_create_by! name: 'Painting'
+cat2 = Category.find_or_create_by! name: 'Sculpture'
+cat3 = Category.find_or_create_by! name: 'Illustration'
+
+ArtistCategory.destroy_all
+Client.destroy_all
+Artist.destroy_all
+
+puts "Creating Clients..."
+Client.populate 6 do |c|
   c.first_name = Faker::Name.first_name
    c.last_name = Faker::Name.last_name
    c.email = Faker::Internet.email
@@ -16,7 +28,7 @@ Client.populate 10 do |c|
      c.image = Faker::SlackEmoji.people
     c.bio = Faker::Lorem.sentence(word_count:5, supplemental: true)
 end
-
+puts "Creating Artists..."
 Artist.populate 10 do |c|
   c.first_name = Faker::Name.first_name
    c.last_name = Faker::Name.last_name
@@ -26,3 +38,19 @@ Artist.populate 10 do |c|
      c.image = Faker::SlackEmoji.people
     c.bio = Faker::Lorem.sentence(word_count:5, supplemental: true)
 end
+"Fetching all artists"
+artists = Artist.all
+
+
+"Fetching all categories"
+categories = Category.all
+
+puts "Creating Artist_Category table..."
+
+20.times do 
+  ArtistCategory.create(
+    artist: artists.sample,
+    category: categories.sample
+  )
+end
+
