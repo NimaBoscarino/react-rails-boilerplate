@@ -2,7 +2,9 @@ class Api::ClientsController < ApplicationController
   
   def index
     @clients = Client.all
-    render json: @clients
+      render :json => {
+        message: @clients
+      }
   end
 
   def create

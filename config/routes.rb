@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     resources :clients
     resources :artists
     resources :categories
-    resources :artists_categories
+    resources :comments
+    resources :reviews
     
   end
   
