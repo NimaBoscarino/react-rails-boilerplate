@@ -5,7 +5,18 @@ class Api::ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.new(client_params)
+    @artist = Artist.new(artist_params)
+    if @artist.save
+      session[:artist_id] = @artist.id
+      
+    else
+      
+    end
+  end
+
+  def destroy
+    @artist = Artist.find(params[:id])
+    @artist.destroy
   end
 
 
