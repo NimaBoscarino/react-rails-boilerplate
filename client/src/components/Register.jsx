@@ -27,8 +27,20 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    height: '100vh',
+    width: '160vh'
+  },
+  image: {
+    backgroundImage: 'url(https://source.unsplash.com/hrx1RkibJu8)',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(8, 4),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -52,6 +64,8 @@ export default function Register() {
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
+      <Grid item xs={false} sm={4} md={7} className={classes.image} />
+      
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           

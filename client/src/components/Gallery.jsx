@@ -11,7 +11,10 @@ const Gallery = () => {
   }));
 
   return (
-    <div><Carousel images={images} style={{ height: 500, width: 800 }} /></div>
+    <div><h2>Gallery</h2>
+    <div><Carousel images={images} 
+    style={{ height: 375, width: 750 }} /></div>
+    </div>
    
   );
 };

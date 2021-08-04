@@ -29,6 +29,7 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
+    width: '160vh'
   },
   image: {
     backgroundImage: 'url(https://source.unsplash.com/hrx1RkibJu8)',
