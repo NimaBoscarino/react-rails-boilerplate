@@ -98,7 +98,7 @@ export default function Login() {
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label="Sign in with Artist Account"
             />
             <Button
               type="submit"

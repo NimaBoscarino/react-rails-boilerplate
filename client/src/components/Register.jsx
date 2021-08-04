@@ -124,7 +124,7 @@ export default function Register() {
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                label="Register this account as an artist."
               />
             </Grid>
           </Grid>

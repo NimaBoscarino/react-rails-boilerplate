@@ -15,10 +15,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
+  
   },
   imageList: {
     width: 605,
     height: 500,
+    
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
@@ -33,24 +35,24 @@ const useStyles = makeStyles((theme) => ({
  
   const itemData = [
     {
-      img: 'url(https://unsplash.com/photos/5rsNohd8bY8)',
-      title: 'Image',
-      author: 'author',
+      img: 'url(https://unsplash.com/photos/5rsNohd8bY8.jpg)',
+      title: 'title 1',
+      author: 'author 1',
     },
     {
-    img: 'url(https://unsplash.com/photos/J1MznmEvxpk)',
-    title: 'Image',
-    author: 'author',
+    img: 'url(https://unsplash.com/photos/J1MznmEvxpk.jpg)',
+    title: 'title 2',
+    author: 'author 2',
     },
   {
-    img: 'url(https://unsplash.com/photos/TF3g66Jhs50)',
-    title: 'Image',
-    author: 'author',
+    img: 'url(https://unsplash.com/photos/TF3g66Jhs50.jpg)',
+    title: 'title 3',
+    author: 'author 3',
     },
     {
-      img: 'url(https://unsplash.com/photos/8xUShy6U1I8)',
-      title: 'Image',
-      author: 'author',
+      img: 'url(https://unsplash.com/photos/8xUShy6U1I8.jpg)',
+      title: 'title 4',
+      author: 'author 4',
   },
   ];
  
@@ -70,7 +72,7 @@ export default function Gallery() {
               title={item.title}
               subtitle={<span>by: {item.author}</span>}
               actionIcon={
-                <IconButton aria-label={`info about ${item.title}`} className={classes.icon}>
+                <IconButton aria-label={`info about ${item.author}`} className={classes.icon}>
                   <InfoIcon />
                 </IconButton>
               }
