@@ -12,38 +12,18 @@ function App() {
   const [open, setOpen] = useState(false);
   const node = useRef();
   const menuId = "main-menu";
-
-  // useOnClickOutside(node, () => setOpen(false));
-
-  //     console.log(response.data.message) // Just the message
-  //     this.setState({
-  //       message: response.data.message
-  //     });
-  //   })
-  // }
-
-  // render() {
-  //   return (
-  //     <div className="App">
-  //       <h1>{ this.state.message }</h1>
-  //       <button onClick={this.fetchData} >
-  //         Fetch Data
-  //       </button>        
-  //     </div>
-  //   );
-  // }
   
   return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyles />
-        <div ref={node}>
-          <FocusLock disabled={!open}>
-            <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-            <Menu open={open} setOpen={setOpen} id={menuId} />
-          </FocusLock>
-        </div>
-        <div className="router">
+          <div ref={node}>
+            <FocusLock disabled={!open}>
+              <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+              <Menu open={open} setOpen={setOpen} id={menuId} />
+            </FocusLock>
+          </div>
+          <div className="router">
         <Router>
       
         <Switch>
