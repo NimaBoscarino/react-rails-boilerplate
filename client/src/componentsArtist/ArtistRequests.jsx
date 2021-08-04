@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import DashboardUneditable from "./DashboardUneditable.jsx"
 import FilterBar from "./FilterBar.jsx";
 
@@ -42,6 +43,7 @@ export default function Dashboard(props) {
         index = {index}
         acceptRequest = {acceptRequest}
         acceptedTag = {acceptedTag}
+        hidden = ""
       />
     )
   })

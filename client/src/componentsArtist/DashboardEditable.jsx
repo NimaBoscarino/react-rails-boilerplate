@@ -5,7 +5,7 @@ import Requests from "./ArtistRequests.jsx";
 
 
 export default function DashboardEditable(props) {
-  const {id, image, name, description, index, price, expected_finish_date,  updateContent, updateRequest, finishRequest} = props 
+  const {id, image, name, description, index, price, expected_finish_date, actual_finish_date,  updateContent, button1Request, button2Request, button3Request, button1, button2, button3, hidden} = props 
 
   return (
     <article className="request" key={id}>
@@ -25,9 +25,12 @@ export default function DashboardEditable(props) {
         <input name="image URL" value={image} onChange={(event) => updateContent(event.target.value, "image", index)}/>
       </form>
 
+      <p>{actual_finish_date}</p>
+
       <footer>
-        <Button onClick={updateRequest} name="Update"/>
-        <Button onClick={finishRequest(index)} name="Finish"/>
+        <Button onClick={() => button1Request(index)} name={button1}/>
+        <Button onClick={() => button2Request(index)} name={button2}/>
+        <Button onClick={() => button3Request(index)} name={button3} hidden={hidden}/>
       </footer>
     </article>
   )

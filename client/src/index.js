@@ -7,7 +7,9 @@ import ArtistAccount from "./componentsArtist/ArtistAccount.jsx"
 import FilterBar from "./componentsArtist/FilterBar.jsx"
 
 import UserGallery from "./componentsUser/UserGallery.jsx"
+import Payment from "./componentsUser/Payment.jsx"
 import UserCommission from "./componentsUser/UserCommission"
+import UserAccount from "./componentsUser/UserAccount.jsx"
 
 import * as serviceWorker from './serviceWorker';
 
