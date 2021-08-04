@@ -9,7 +9,6 @@ class Client < ApplicationRecord
   validates :email, presence: true, uniqueness: {case_sensitive: false}
   validates :phone_number, presence: true
   validates :password, presence: true, length: { in: 8..20}
-  validates :password_confirmation, presence: true
   before_validation :remove_whitespace, :only => [:email]
   
   

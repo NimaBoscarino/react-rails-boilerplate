@@ -8,15 +8,36 @@ class Api::ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
     if @artist.save
       session[:artist_id] = @artist.id
-      
+      # redirect_to '/gallery'
     else
-      
+      render json: {error: @artist.errors.messages}
+      # redirect_to '/register'
     end
   end
 
+  def show
+    @artist = Artist.find(params[:id])
+      render json: @artist
+  end
+
+  def update
+    @artist = Artist.find(params[:id])
+    
+    if @artist.update(artist_params)
+      render json: @artist
+    else
+      render json: {error: @artist.errors.messages}
+    end
+  end
+
+
   def destroy
     @artist = Artist.find(params[:id])
-    @artist.destroy
+   if @artist.destroy
+      head :no_content
+   else
+    render json: {error: @artist.errors.messages}
+   end
   end
 
 
@@ -24,7 +45,7 @@ class Api::ArtistsController < ApplicationController
 
   private
 
-def client_params
+def artist_params
   params.require(:artist).permit(
     :first_name,
     :last_name,

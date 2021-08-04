@@ -4,21 +4,42 @@ class Api::ClientsController < ApplicationController
     @clients = Client.all
       render json: @clients
   end
-
+  
   def create
     @client = Client.new(client_params)
-   
+    
     if @client.save
       session[:client_id] = @client.id
-      
+      # redirect_to '/gallery'
     else
-      
+      render json: {error: @client.errors.messages}
+      # redirect_to '/register'
+    end
+  end
+
+  def show
+    @client = Client.find(params[:id])
+      render json: @client
+  end
+
+  def update
+    @client = Client.find(params[:id])
+    
+    if @client.update(client_params)
+      render json: @client
+    else
+      render json: {error: @client.errors.messages}
     end
   end
 
   def destroy
     @client = Client.find(params[:id])
-    @client.destroy
+    if  @client.destroy
+      head :no_content
+   else
+    render json: {error: @artist.errors.messages}
+   end
+  
   end
 
 
@@ -30,7 +51,7 @@ def client_params
     :last_name,
     :email,
     :password,
-    :password_confirmation,
+    # :password_confirmation,
     :phone_number
   )
 end
