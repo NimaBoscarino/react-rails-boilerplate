@@ -5,6 +5,7 @@ import App from './App';
 import ArtistRequests from "./componentsArtist/ArtistRequests.jsx"
 import ArtistAccount from "./componentsArtist/ArtistAccount.jsx"
 import FilterBar from "./componentsArtist/FilterBar.jsx"
+import Button from "./componentsArtist/Button.jsx"
 
 import UserGallery from "./componentsUser/UserGallery.jsx"
 import Payment from "./componentsUser/Payment.jsx"
@@ -13,7 +14,7 @@ import UserAccount from "./componentsUser/UserAccount.jsx"
 
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<ArtistRequests />, document.getElementById('root'));
+ReactDOM.render(<Button />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

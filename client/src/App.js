@@ -20,7 +20,7 @@ class App extends Component {
       this.setState({
         message: response.data.message
       });
-    }) 
+    })
   }
 
   render() {
