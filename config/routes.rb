@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :comments
     resources :reviews
     resources :requests
+    resources :messages
     
   end
   

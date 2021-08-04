@@ -5,9 +5,7 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      message: "Click the button to load data!",
-    };
+    this.state = {};
   }
 
   fetchData = () => {
@@ -30,6 +28,7 @@ class App extends Component {
       axios.get("/api/reviews"),
       axios.get("/api/comments"),
       axios.get("/api/requests"),
+      axios.get("/api/messages"),
     ]).then((response) => {
       const clients = response[0].data;
       const artists = response[1].data;
@@ -37,14 +36,16 @@ class App extends Component {
       const reviews = response[3].data;
       const comments = response[4].data;
       const requests = response[5].data;
-      this.setState((prev) => ({
+      const messages = response[6].data;
+      this.setState({
         clients,
         artists,
         categories,
         reviews,
         comments,
         requests,
-      }));
+        messages,
+      });
     });
   };
 
