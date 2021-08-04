@@ -1,27 +1,20 @@
-import React from "react";
+import React from 'react';
+import Carousel from 'react-gallery-carousel';
+import 'react-gallery-carousel/dist/index.css';
 
-function Gallery() {
+
+
+
+const Gallery = () => {
+  const images = [9, 8, 7, 6, 5].map((number) => ({
+    src: `https://placedog.net/${number}00/${number}00?id=${number}`
+  }));
+
   return (
-    <div className="gallery">
-      <div class="container">
-        <div class="row align-items-center my-5">
-          <div class="col-lg-7">
-            <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">Gallery</h1>
-            <p>
-              Pictures and shit go here
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div><Carousel images={images} style={{ height: 500, width: 800 }} /></div>
+   
   );
-}
+};
 
 export default Gallery;
+

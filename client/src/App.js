@@ -8,10 +8,10 @@ function App() {
         <Navigation />
         <Switch>
           <Route path="/" exact component={() => <Home />} />
-          <Route path="/about" exact component={() => <About />} />
-          <Route path="/gallery" exact component={() => <Gallery />} />
-          <Route path="/login" exact component={() => <Login />} />
-          <Route path="/register" exact component={() => <Register />} />
+          <Route path="/about" component={() => <About />} />
+          <Route path="/gallery" ><Gallery/></Route>
+          <Route path="/login" component={() => <Login />} />
+          <Route path="/register" component={() => <Register />} />
         </Switch>
         <Footer />
       </Router>
