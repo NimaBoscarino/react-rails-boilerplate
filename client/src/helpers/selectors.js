@@ -19,9 +19,13 @@ function getUnFinishedRequests(requests) {
 }
 
 function getRequestsbyCategory(requests, category_id) {
-  return requests.filter((request) => {
-    return request.category_id === category_id; 
-  })
+  if (category_id === 0) {
+    return requests
+  } else {
+    return requests.filter((request) => {
+      return request.category_id === category_id; 
+    })
+  }
 }
 
 function getRequestsbyUser(requests, user_id) {

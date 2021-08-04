@@ -20,9 +20,9 @@ export default function DashboardEditable(props) {
       
       <form>
         <input name="description" value={description} onChange={(event) => updateContent(event.target.value, "description", index)} />
-        <input name="expected_finish_date" value={expected_finish_date} onChange={(event) => updateContent(event.target.value, "description", index)}/>
-        <input name="price" value={price} onChange={(event) => updateContent(event.target.value, "description", index)}/>
-        <input name="image URL" value={image} onChange={(event) => updateContent(event.target.value, "description", index)}/>
+        <input name="expected_finish_date" value={expected_finish_date} onChange={(event) => updateContent(event.target.value, "expected_finish_date", index)}/>
+        <input name="price" value={price} onChange={(event) => updateContent(event.target.value, "price", index)}/>
+        <input name="image URL" value={image} onChange={(event) => updateContent(event.target.value, "image", index)}/>
       </form>
 
       <footer>
