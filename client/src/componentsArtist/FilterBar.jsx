@@ -1,7 +1,14 @@
 import React from "react";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 export default function FilterBar (props) {
+  const options = [
+    'ALL Categories', 'Guitar', 'Art', 'Handycraft'
+  ];
+  const defaultOption = options[0];
+  
   return (
-    <p>test2</p>
+    <Dropdown options={options} onChange={props.onSelect} value={defaultOption} placeholder="Select an option" />
   )
 }
