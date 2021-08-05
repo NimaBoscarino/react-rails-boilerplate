@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import axios from 'axios';
 
 import Button from "../componentsArtist/Button"
-import DashboardEditable from "../componentsArtist/DashboardEditable.jsx"
-import DashboardUneditable from "../componentsArtist/DashboardUneditable.jsx"
+import DashboardEditArtist from "../componentsArtist/DashboardEditArtist.jsx"
+import DashboardShowArtist from "../componentsArtist/DashboardShowArtist.jsx"
 import Payment from "./Payment.jsx"
 
 const {requests_for_test, artists_for_test, users_for_test} = require("../testingData")
@@ -54,7 +54,7 @@ export default function Dashboard(props) {
     if (request.client_id === 1 && request.actual_finish_date === null && request.start_date === null) {
       return (
         <div>
-          <DashboardEditable 
+          <DashboardEditArtist 
             id={request.id}
             image={request.image}
             name={request.name}
@@ -84,7 +84,7 @@ export default function Dashboard(props) {
   const dashboardInProcess = requestState.map((request, index) => {
     if (request.client_id === 1 && request.actual_finish_date === null && request.start_date) {
       return (
-        <DashboardUneditable 
+        <DashboardShowArtist 
           id={request.id}
           image={request.image}
           name={request.name}
@@ -102,7 +102,7 @@ export default function Dashboard(props) {
   const dashboardFinished = requestState.map((request, index) => {
     if (request.client_id === 1 && request.actual_finish_date) {
       return (
-        <DashboardUneditable 
+        <DashboardShowArtist 
           id={request.id}
           image={request.image}
           name={request.name}

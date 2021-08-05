@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button.jsx"
 import axios from 'axios';
-import Requests from "./ArtistRequests.jsx";
-import "./DashboardUneditable.css"
+import "./DashboardShowArtist.css"
 
 export default function Dashboard(props) {
   const {id, image, name, description, price, expected_finish_date,  actual_finish_date, index, acceptRequest, acceptedTag, hidden} = props 

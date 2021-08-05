@@ -7,7 +7,7 @@ export default function Dashboard(props) {
 
   // const dashboard = requests_for_test.map((request, index) => {
   //   return (
-  //     <DashboardUneditable 
+  //     <DashboardShowArtist 
   //       request = {request}
   //       index = {index}
   //       acceptRequest = {acceptRequest}

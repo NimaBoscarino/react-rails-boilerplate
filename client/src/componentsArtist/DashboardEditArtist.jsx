@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import axios from 'axios';
 
 import Button from "./Button.jsx"
-import "./DashboardEditable.css"
+import "./DashboardEditArtist.css"
 
 
-export default function DashboardEditable(props) {
+export default function DashboardEditArtist(props) {
   const {id, image, name, description, index, price, expected_finish_date, actual_finish_date,  updateContent, button1Request, button2Request, button3Request, button1, button2, button3, hidden} = props 
 
   return (

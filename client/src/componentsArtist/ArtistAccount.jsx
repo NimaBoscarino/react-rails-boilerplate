@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
-import DashboardEditable from "./DashboardEditable.jsx"
-import DashboardUneditable from "./DashboardUneditable.jsx"
+import DashboardEditArtist from "./DashboardEditArtist.jsx"
+import DashboardShowArtist from "./DashboardShowArtist.jsx"
 
 const {requests_for_test, artists_for_test, users_for_test} = require("../testingData")
 const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser} = require("../helpers/selectors")
@@ -47,7 +47,7 @@ export default function Dashboard(props) {
   const dashboardToFinish = requestState.map((request, index) => {
     if (request.artist_id === 1 && request.actual_finish_date === null) {
       return (
-        <DashboardEditable 
+        <DashboardEditArtist 
           id={request.id}
           image={request.image}
           name={request.name}
@@ -71,7 +71,7 @@ export default function Dashboard(props) {
   const dashboardFinished = requestState.map((request, index) => {
     if (request.artist_id === 1 && request.actual_finish_date) {
       return (
-        <DashboardUneditable 
+        <DashboardShowArtist 
           id={request.id}
           image={request.image}
           name={request.name}

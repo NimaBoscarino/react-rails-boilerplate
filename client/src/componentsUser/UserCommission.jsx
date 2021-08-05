@@ -3,7 +3,7 @@ import Button from "../componentsArtist/Button.jsx"
 import axios from 'axios';
 
 
-export default function DashboardEditable(props) {
+export default function DashboardEditArtist(props) {
   const commisionInstance = {
     image: '',
     description: '',

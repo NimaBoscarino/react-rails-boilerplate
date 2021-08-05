@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import DashboardUneditable from "./DashboardUneditable.jsx"
+import DashboardShowArtist from "./DashboardShowArtist.jsx"
 import FilterBar from "./FilterBar.jsx";
 
 const {requests_for_test, artists_for_test, users_for_test, categories_for_test} = require("../testingData")
@@ -33,7 +33,7 @@ export default function Dashboard(props) {
   const dashboard = requestState.map((request, index) => {
     {request.artist_id ? acceptedTag = "Accepted" : acceptedTag = null}
     return (
-      <DashboardUneditable 
+      <DashboardShowArtist 
         id={request.id}
         image={request.image}
         name={request.name}
