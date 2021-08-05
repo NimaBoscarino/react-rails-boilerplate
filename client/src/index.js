@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import ArtistRequests from "./componentsArtist/ArtistRequests.jsx"
-import ArtistAccount from "./componentsArtist/ArtistAccount.jsx"
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import ArtistRequests from "./componentsArtist/ArtistRequests.jsx";
+import ArtistAccount from "./componentsArtist/ArtistAccount.jsx";
+import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<ArtistAccount />, document.getElementById('root'));
+ReactDOM.render(<ArtistAccount />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
