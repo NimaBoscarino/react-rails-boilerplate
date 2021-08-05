@@ -6,8 +6,9 @@ import ArtistRequests from "./componentsArtist/ArtistRequests.jsx";
 import ArtistAccount from "./componentsArtist/ArtistAccount.jsx";
 import * as serviceWorker from "./serviceWorker";
 import UserAccount from "./componentsUser/UserAccount.jsx";
+import UserCommission from "./componentsUser/UserCommission";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<UserCommission />, document.getElementById("root"));
 
 // import FilterBar from "./componentsArtist/FilterBar.jsx"
 // import Button from "./componentsArtist/Button.jsx"
