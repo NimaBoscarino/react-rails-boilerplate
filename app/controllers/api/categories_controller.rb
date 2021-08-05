@@ -36,7 +36,7 @@ class Api::CategoriesController < ApplicationController
     if @category.destory
       head :no_content
     else
-      render json: json: {error: @category.errors.messages}
+      render json: {error: @category.errors.messages}
     end
   end
 
