@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
-import Button from "./Button.jsx"
 import DashboardEditable from "./DashboardEditable.jsx"
 import DashboardUneditable from "./DashboardUneditable.jsx"
 
