@@ -7,7 +7,7 @@ import ArtistAccount from "./componentsArtist/ArtistAccount.jsx";
 import * as serviceWorker from "./serviceWorker";
 import UserAccount from "./componentsUser/UserAccount.jsx";
 
-ReactDOM.render(<ArtistAccount />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // import FilterBar from "./componentsArtist/FilterBar.jsx"
 // import Button from "./componentsArtist/Button.jsx"

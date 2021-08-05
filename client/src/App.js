@@ -22,33 +22,39 @@ function App() {
   const [open, setOpen] = useState(false);
   const node = useRef();
   const menuId = "main-menu";
-
+  console.log("Promise me something");
+  axios.get("/api/data").then((response) => console.log(response));
   Promise.all([
-    axios.get("/api/clients"),
+    axios.get("api/clients"),
     axios.get("/api/artists"),
     axios.get("/api/categories"),
     axios.get("/api/reviews"),
     axios.get("/api/comments"),
     axios.get("/api/requests"),
     axios.get("/api/messages"),
-  ]).then((response) => {
-    const clients = response[0].data;
-    const artists = response[1].data;
-    const categories = response[2].data;
-    const reviews = response[3].data;
-    const comments = response[4].data;
-    const requests = response[5].data;
-    const messages = response[6].data;
-    this.setState({
-      clients,
-      artists,
-      categories,
-      reviews,
-      comments,
-      requests,
-      messages,
+  ])
+    .then((response) => {
+      const clients = response[0].data;
+      const artists = response[1].data;
+      const categories = response[2].data;
+      const reviews = response[3].data;
+      const comments = response[4].data;
+      const requests = response[5].data;
+      const messages = response[6].data;
+      console.log(
+        "this is state",
+        clients,
+        artists,
+        categories,
+        reviews,
+        comments,
+        requests,
+        messages
+      );
+    })
+    .catch((error) => {
+      console.log(error);
     });
-  });
 
   return (
     <ThemeProvider theme={theme}>
