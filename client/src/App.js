@@ -7,14 +7,20 @@ import { Burger, Menu } from './components';
 import FocusLock from 'react-focus-lock';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import {Home, About, Gallery, Login, Register } from "./components";
+// import {ArtistRequests, ArtistAccount} from "./componentsArtist";
+// import {UserCommission, UserAccount} from "./componentsUser";
+
+import ArtistRequests from "./componentsArtist/ArtistRequests.jsx"
+import ArtistAccount from "./componentsArtist/ArtistAccount.jsx"
+import UserCommission from "./componentsUser/UserCommission"
+import UserAccount from "./componentsUser/UserAccount.jsx"
+
 
 function App() {
   const [open, setOpen] = useState(false);
   const node = useRef();
   const menuId = "main-menu";
-
-  useOnClickOutside(node, () => setOpen(false));
-
+  
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -25,55 +31,25 @@ function App() {
             <Menu open={open} setOpen={setOpen} id={menuId} />
           </FocusLock>
         </div>
+
         <div className="router">
-        <Router>
-      
-        <Switch>
-        <Route path="/" exact component={() => <Home />} />
-          <Route path="/about" component={() => <About />} />
-          <Route path="/gallery" ><Gallery/></Route>
-          <Route path="/login" component={() => <Login />} />
-          <Route path="/register" component={() => <Register />} />
-        </Switch>
-      
-      </Router>
-        </div>
-        <div>
-      
-        </div>
-        
+          <Router>
+            <Switch>
+              <Route path="/" exact component={() => <Home />} />
+                <Route path="/about" component={() => <About />} />
+                <Route path="/gallery" ><Gallery/></Route>
+                <Route path="/login" component={() => <Login />} />
+                <Route path="/register" component={() => <Register />} />
+                <Route path="/ArtistRequests" component={() => <ArtistRequests />} />
+                <Route path="/ArtistAccount" component={() => <ArtistAccount />} />
+                <Route path="/UserCommission" component={() => <UserCommission />} />
+                <Route path="/UserAccount" component={() => <UserAccount />} />
+              </Switch>          
+          </Router>
+        </div>        
       </>
     </ThemeProvider>
   );
 }
 
 export default App;
-
-
-/*import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { theme } from './theme';
-import { Navigation, Footer, Home, About, Gallery, Login, Register, Menu } from "./components";
-function App() {
-  const [open, setOpen] = useState(false)
-  return (
-    
-    <div className="App">
-      <Router>
-        <Navigation />
-        <Switch>
-          <Route path="/" exact component={() => <Home />} />
-          <Route path="/about" component={() => <About />} />
-          <Route path="/gallery" ><Gallery/></Route>
-          <Route path="/login" component={() => <Login />} />
-          <Route path="/register" component={() => <Register />} />
-        </Switch>
-        <Footer />
-      </Router>
-    </div>
-    
-    
-  );
-}
-
-export default App; */
