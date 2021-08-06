@@ -1,4 +1,4 @@
-.request_editable_dashboard{
+.request_edit_dashboard{
   margin: 5%;
   display: flex;
   flex-direction: column;
@@ -9,32 +9,32 @@
   border-radius: 10px;
 }
 
-.request_editable_dashboard:hover{
+.request_edit_dashboard:hover{
   box-shadow: 10px 10px 5px grey;
 }
 
-.request_editable_dashboard_header{
+.request_edit_dashboard_header{
   margin-left: 5%;
   margin-right: 5%;
 }
 
-.request_editable_dashboard_h2{
+.request_edit_dashboard_h2{
   width: 30%;
   margin: auto;
 }
 
-.request_editable_dashboard_img{
+.request_edit_dashboard_img{
   width: 90%;
   margin: 5%
 
 }
 
-.request_editable_form{
+.request_edit_form{
   width: 90%;
   margin: 5%;
 }
 
-.request_editable_input{
+.request_edit_input{
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -89,7 +89,7 @@
   background-color: lightblue;
 }
 
-.request_editable_footer{
+.request_edit_footer{
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 5%;
