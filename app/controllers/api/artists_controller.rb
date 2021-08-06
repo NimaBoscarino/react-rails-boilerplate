@@ -1,6 +1,17 @@
 class Api::ArtistsController < ApplicationController
   def index
     @artists = Artist.all
+    #  artists = []
+    # @artists.each do |artist|
+    #   artistHash = artist[:id] 
+    #   artistHash = { }
+    #   @artistReviews = Review.artistreview(artist[:id])
+    #   ids = []
+    # @artistReviews.each do |rev| ids.push rev[:id] end
+    
+    #   artistHash["reviews"] = ids
+    #   artists.push artistHash
+    # end
     render json: @artists
   end
 
@@ -45,7 +56,7 @@ class Api::ArtistsController < ApplicationController
 
   private
 
-def artist_params
+  def artist_params
   params.require(:artist).permit(
     :first_name,
     :last_name,
@@ -54,5 +65,6 @@ def artist_params
     :password_confirmation,
     :phone_number
   )
-end
+  end
+
 end

@@ -1,6 +1,18 @@
 class Api::RequestsController < ApplicationController
   def index
     @requests = Request.all
+    # requests = []
+    # @requests.each do |request|
+    #   requestHash = request[:id] 
+    #   requestHash = { }
+    #   @requestComments = Comment.requestComment(request[:id])
+    #   ids = []
+    # @requestComments.each do |r| ids.push r[:id] end
+    
+    #   requestHash["comments"] = ids
+    #   requests.push requestHash
+    # end
+
       render json: @requests
   end
   

@@ -15,6 +15,9 @@ cat2 = Category.find_or_create_by! name: 'Sculpture'
 cat3 = Category.find_or_create_by! name: 'Illustration'
 
 ArtistCategory.destroy_all
+Comment.destroy_all
+Review.destroy_all
+Request.destroy_all
 Client.destroy_all
 Artist.destroy_all
 
@@ -45,12 +48,50 @@ artists = Artist.all
 "Fetching all categories"
 categories = Category.all
 
+"Fetching all clients"
+clients = Client.all
+
 puts "Creating Artist_Category table..."
 
-20.times do 
-  ArtistCategory.create(
-    artist: artists.sample,
-    category: categories.sample
-  )
+
+ArtistCategory.populate 10 do |a| 
+
+    a.artist_id =  artists.sample
+    a.category_id = categories.sample
+
+end
+
+puts "Created ArtistCategory"
+
+Review.populate 10 do |r|
+    r.title = Faker::Alphanumeric.alpha(number: 5)
+    r.star = Faker::Number.between(from: 1, to: 5)
+    r.artist_id = artists.sample
+    r.client_id = clients.sample
+end
+
+"Creating Requests"
+
+Request.populate 10 do |r|
+  r.name = Faker::Lorem.word
+  r.description = Faker::Lorem.sentence(word_count: 10)
+  r.price = 50
+  r.start_date = DateTime.now
+  r.client_id = clients.sample
+  r.artist_id = artists.sample
+  r.category_id = categories.sample
+
+end
+
+"Fetching all requests"
+requests = Request.all
+
+"Creating Comments"
+
+Comment.populate 10 do |c|
+    c.title = Faker::Lorem.word
+    c.content = Faker::Lorem.sentence(word_count: 3, supplemental: true)
+    c.client_id = clients.sample
+    c.request_id = requests.sample
 end
 

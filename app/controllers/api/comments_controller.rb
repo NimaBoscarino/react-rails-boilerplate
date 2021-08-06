@@ -1,4 +1,5 @@
 class Api::CommentsController < ApplicationController
+
   def index
     @comments = Comment.all
       render json: @comments
@@ -40,12 +41,12 @@ class Api::CommentsController < ApplicationController
 
   private
 
-def comment_params
+  def comment_params
   params.require(:comment).permit(
     :title,
     :content,
     :request_id,
     :client_id
   )
-end
+  end
 end
