@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from 'axios';
 
 import Button from "../componentsArtist/Button"
-import DashboardEditArtist from "../componentsArtist/DashboardEditArtist.jsx"
+import DashboardEditUser from "../componentsUser/DashboardEditUser"
 import DashboardShowArtist from "../componentsArtist/DashboardShowArtist.jsx"
-import Payment from "./Payment.jsx"
+
 
 const {requests_for_test, artists_for_test, users_for_test} = require("../testingData")
 const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser} = require("../helpers/selectors")
@@ -44,17 +44,11 @@ export default function Dashboard(props) {
     // axios.post("/artist_request", requestCopy)
   }
 
-  const paidRequest = function(index) {
-    alert("paid the request")
-    
-    // axios.post("/artist_request", requestCopy)
-  }
-
+  let tag;
   const dashboardToPay = requestState.map((request, index) => {
     if (request.client_id === 1 && request.actual_finish_date === null && request.start_date === null) {
       return (
-        <div>
-          <DashboardEditArtist 
+          <DashboardEditUser 
             id={request.id}
             image={request.image}
             name={request.name}
@@ -66,17 +60,10 @@ export default function Dashboard(props) {
             updateContent={updateContent}
             button1Request={updateRequest}
             button2Request={rejectRequest}
-            button3Request={payRequest}
+            payRequest={payRequest}
             button1 = "Update"
             button2 = "Reject"
-            button3 = "Confirm and Pay"
-            hidden = "TRUE"
           />
-          <Payment 
-            index={index}
-            payRequest = {payRequest}
-          />
-        </div>
       )
     }
   })
@@ -94,6 +81,7 @@ export default function Dashboard(props) {
           actual_finish_date = {request.actual_finish_date}
           index={index}
           hidden = "TRUE"
+          tag="in process"
         />
       )
     }
@@ -112,6 +100,7 @@ export default function Dashboard(props) {
           actual_finish_date = {request.actual_finish_date}
           index={index}
           hidden = "TRUE"
+          tag ="finished"
         />
       )
     }

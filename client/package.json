@@ -9,6 +9,7 @@
     "prop-types": "^15.7.1",
     "react": "^16.8.6",
     "react-bootstrap": "^1.6.1",
+    "react-datepicker": "^4.1.1",
     "react-dom": "^16.8.6",
     "react-dropdown": "^1.9.2",
     "react-focus-lock": "^2.5.2",

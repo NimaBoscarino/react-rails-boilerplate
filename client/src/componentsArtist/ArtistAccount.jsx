@@ -81,6 +81,7 @@ export default function Dashboard(props) {
           actual_finish_date = {request.actual_finish_date}
           index={index}
           hidden = "TRUE"
+          tag="finished"
         />
       )
     }

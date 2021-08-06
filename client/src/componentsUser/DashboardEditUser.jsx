@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
-import Button from "./Button.jsx"
-import "./DashboardEditArtist.css"
+import Button from "../componentsArtist/Button"
+import Payment from "./Payment.jsx"
+import "./DashboardShowUser.css"
 
 
 export default function DashboardEditArtist(props) {
-  const {id, image, name, description, index, price, expected_finish_date, actual_finish_date,  updateContent, button1Request, button2Request, button3Request, button1, button2, button3, hidden} = props 
+  const {id, image, name, description, index, price, expected_finish_date, actual_finish_date,  updateContent, button1Request, button2Request, button1, button2, payRequest} = props 
 
   return (
     <article className="request_edit_dashboard" key={id}>
@@ -41,10 +42,15 @@ export default function DashboardEditArtist(props) {
         
       </form>
 
+      <p>{actual_finish_date}</p>
+
       <footer className="request_edit_footer">
         <Button onClick={() => button1Request(index)} name={button1}/>
         <Button onClick={() => button2Request(index)} name={button2}/>
-        <Button onClick={() => button3Request(index)} name={button3} hidden={hidden}/>
+        <Payment 
+            index={index}
+            payRequest = {payRequest}
+          />
       </footer>
     </article>
   )

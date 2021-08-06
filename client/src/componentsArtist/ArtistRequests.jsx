@@ -29,9 +29,20 @@ export default function Dashboard(props) {
   const requests = getUnFinishedRequests(requests_for_test)
   const [requestState, setrequestState] = useState(requests)
   
-  let acceptedTag;
+  let tag;
+  let hidden = ""
+
   const dashboard = requestState.map((request, index) => {
-    {request.artist_id ? acceptedTag = "Accepted" : acceptedTag = null}
+    if (request.artist_id && request.start_date) {
+      tag = "accepted"
+      hidden = "true"
+    } else if (request.artist_id && !request.start_date) {
+      tag = "in process"
+      hidden = "true"
+    } else {
+      tag = null
+    }
+
     return (
       <DashboardShowArtist 
         id={request.id}
@@ -42,8 +53,8 @@ export default function Dashboard(props) {
         expected_finish_date={request.expected_finish_date}
         index = {index}
         acceptRequest = {acceptRequest}
-        acceptedTag = {acceptedTag}
-        hidden = ""
+        tag = {tag}
+        hidden = {hidden}
       />
     )
   })

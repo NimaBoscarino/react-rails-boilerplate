@@ -14,7 +14,7 @@ export default function PaymentInputs(props) {
   } = usePaymentInputs();
 
   return (
-    <Popup trigger={<button> Trigger</button>} position="right center">
+    <Popup trigger={<button> Confirm and Pay</button>} position="right center">
       <div>
         <PaymentInputsWrapper {...wrapperProps}>
           <svg {...getCardImageProps({ images })} />
