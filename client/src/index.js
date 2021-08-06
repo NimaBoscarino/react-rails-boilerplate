@@ -14,4 +14,4 @@ import ArtistRequests from "./componentsArtist/ArtistRequests.jsx"
 import ArtistAccount from "./componentsArtist/ArtistAccount.jsx"
 
 
-ReactDOM.render(<UserCommission />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
