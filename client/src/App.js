@@ -23,7 +23,7 @@ function App() {
   const node = useRef();
   const menuId = "main-menu";
   console.log("Promise me something");
-  axios.get("/api/data").then((response) => console.log(response));
+
   Promise.all([
     axios.get("api/clients"),
     axios.get("/api/artists"),
@@ -41,16 +41,17 @@ function App() {
       const comments = response[4].data;
       const requests = response[5].data;
       const messages = response[6].data;
-      console.log(
-        "this is state",
+
+      const data = {
         clients,
         artists,
         categories,
         reviews,
         comments,
         requests,
-        messages
-      );
+      };
+
+      console.log(data);
     })
     .catch((error) => {
       console.log(error);

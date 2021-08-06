@@ -32,7 +32,7 @@ export default function Dashboard(props) {
     setrequestState(requestCopy)
     // axios.post("/artist_request", requestCopy)
   }
-  
+  // index = 
   const payRequest = function(index) {
     alert("paying the request")
     const day = new Date();
@@ -49,7 +49,7 @@ export default function Dashboard(props) {
     
     // axios.post("/artist_request", requestCopy)
   }
-
+//Dashboard 
   const dashboardToPay = requestState.map((request, index) => {
     if (request.client_id === 1 && request.actual_finish_date === null && request.start_date === null) {
       return (
