@@ -11,7 +11,7 @@ const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequ
 
 export default function Dashboard(props) {
   const [requestState, setrequestState] = useState(requests_for_test)
-
+//Update the state 
   const updateContent = function(value, key, index) {
     const requestCopy = [...requestState]
     requestCopy[index][key] = value;
@@ -32,7 +32,7 @@ export default function Dashboard(props) {
     setrequestState(requestCopy)
     // axios.post("/artist_request", requestCopy)
   }
-  
+  // index = 
   const payRequest = function(index) {
     alert("paying the request")
     const day = new Date();

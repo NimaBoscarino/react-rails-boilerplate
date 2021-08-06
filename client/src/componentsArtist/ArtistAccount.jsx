@@ -10,6 +10,7 @@ const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequ
 export default function Dashboard(props) {
   // const requests = getRequestsbyArtists(requests_for_test, 1)
   // change 1 to the actual artist_id
+  //All request data imported from TestData.js
   const [requestState, setrequestState] = useState(requests_for_test)
 
   const updateContent = function(value, key, index) {
@@ -17,7 +18,7 @@ export default function Dashboard(props) {
     requestCopy[index][key] = value;
     setrequestState(requestCopy)
   }
-
+//FN to post update
   const updateRequest = function(index) {
     alert("updating")
     const requestCopy = [...requestState]
@@ -25,6 +26,7 @@ export default function Dashboard(props) {
     // axios.post("/artist_request", requestCopy)
   }
 
+//FN 
   const finishRequest = function(index) {
     alert("finishing the request")
     const day = new Date();
@@ -35,6 +37,7 @@ export default function Dashboard(props) {
     // axios.post("/artist_request", requestCopy)
   }
   
+  //Fn if artist denies this request after he already accepts it
   const denyRequest = function(index) {
     alert("deny this request")
     const requestCopy = [...requestState]
@@ -67,7 +70,7 @@ export default function Dashboard(props) {
       )
     }
   })
-
+  //dashboard to show all the requests of a single artist
   const dashboardFinished = requestState.map((request, index) => {
     if (request.artist_id === 1 && request.actual_finish_date) {
       return (
