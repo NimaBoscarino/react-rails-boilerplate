@@ -42,6 +42,18 @@ function App() {
       const requests = response[5].data;
       const messages = response[6].data;
 
+      const filterTableById = function (table, Id, column) {
+        const filteredComments = comments.filter((com) => com[column] === Id);
+        //const filteredArray = filteredComments.map((com) => com.id);
+        return filteredComments;
+      };
+      console.log(
+        "this is filtered ---",
+        filterTableById(comments, 53, "request_id")
+      );
+
+      // const clientsWithComments
+
       const data = {
         clients,
         artists,
