@@ -44,23 +44,33 @@ function App() {
 
       const filterTableById = function (table, Id, column) {
         const filteredComments = comments.filter((com) => com[column] === Id);
-        //const filteredArray = filteredComments.map((com) => com.id);
-        return filteredComments;
+        const filteredArray = filteredComments.map((com) => com.id);
+        return filteredArray;
       };
-      console.log(
-        "this is filtered ---",
-        filterTableById(comments, 53, "request_id")
-      );
 
-      // const clientsWithComments
+      const requestsWithComments = requests.map((request) => ({
+        ...request,
+        comments: filterTableById(comments, request.id, "request_id"),
+      }));
+
+      const artistsWithReviews = artists.map((artist) => ({
+        ...artists,
+        reviews: filterTableById(reviews, artist.id, "artist_id"),
+      }));
+
+      // const categoriesWithArtistsAndRequests = categories.map((category) => ({
+      //   ...categories,
+      //   artists: filterTableById(artists, category.id, "category_id"),
+      //   requests: filterTableById(requests, category.id, "category_id"),
+      // }));
 
       const data = {
         clients,
-        artists,
-        categories,
+        artistsWithReviews,
+        requestsWithComments,
         reviews,
         comments,
-        requests,
+        categories,
       };
 
       console.log(data);
