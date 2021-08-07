@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import {stateContext} from '../helpers/stateProvider.js';
 import { makeStyles } from '@material-ui/core/styles';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
@@ -36,33 +37,36 @@ const useStyles = makeStyles((theme) => ({
   //import image from 'path/to/image.jpg';
   //[etc...]
  
-  const itemData = [
-    {
-      img: 'url(https://unsplash.com/photos/5rsNohd8bY8.jpg)',
-      title: 'title 1',
-      author: 'author 1',
-    },
-    {
-    img: 'url(https://unsplash.com/photos/J1MznmEvxpk.jpg)',
-    title: 'title 2',
-    author: 'author 2',
-    },
-  {
-    img: 'https://unsplash.com/photos/TF3g66Jhs50.jpg',
-    title: 'title 3',
-    author: 'author 3',
-    },
-    {
-      img: 'url(https://unsplash.com/photos/8xUShy6U1I8.jpg)',
-      title: 'title 4',
-      author: 'author 4',
-  },
-  ];
+  // const itemData = [
+  //   {
+  //     img: 'url(https://unsplash.com/photos/5rsNohd8bY8.jpg)',
+  //     title: 'title 1',
+  //     author: 'author 1',
+  //   },
+  //   {
+  //   img: 'url(https://unsplash.com/photos/J1MznmEvxpk.jpg)',
+  //   title: 'title 2',
+  //   author: 'author 2',
+  //   },
+  // {
+  //   img: 'url(https://unsplash.com/photos/TF3g66Jhs50.jpg)',
+  //   title: 'title 3',
+  //   author: 'author 3',
+  //   },
+  //   {
+  //     img: 'url(https://unsplash.com/photos/8xUShy6U1I8.jpg)',
+  //     title: 'title 4',
+  //     author: 'author 4',
+  // },
+  // ];
  
-export default function Gallery(props) {
+export default function Gallery() {
   const classes = useStyles();
 
-  console.log(props.data)
+
+  const {data , setData} = useContext(stateContext);
+
+  console.log('This is data', data.requests)
 
   return (
     <div className={classes.root}>
@@ -70,7 +74,7 @@ export default function Gallery(props) {
         <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div"><h3>Gallery</h3></ListSubheader>
         </ImageListItem>
-        {props.data.requests.map((item) => (
+        {data.requests.map((item) => (
           <ImageListItem key={item.id}>
             <img src={item.image} alt={item.name} />
             <ImageListItemBar
