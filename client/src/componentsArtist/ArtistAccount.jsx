@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from 'axios';
 
 import DashboardEditArtist from "./DashboardEditArtist.jsx"
 import DashboardShowArtist from "./DashboardShowArtist.jsx"

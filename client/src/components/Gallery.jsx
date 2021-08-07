@@ -7,10 +7,6 @@ import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-//import itemData from './itemData';
-
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,33 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
- // The example data is structured as follows:
  
-  //import image from 'path/to/image.jpg';
-  //[etc...]
- 
-  // const itemData = [
-  //   {
-  //     img: 'url(https://unsplash.com/photos/5rsNohd8bY8.jpg)',
-  //     title: 'title 1',
-  //     author: 'author 1',
-  //   },
-  //   {
-  //   img: 'url(https://unsplash.com/photos/J1MznmEvxpk.jpg)',
-  //   title: 'title 2',
-  //   author: 'author 2',
-  //   },
-  // {
-  //   img: 'url(https://unsplash.com/photos/TF3g66Jhs50.jpg)',
-  //   title: 'title 3',
-  //   author: 'author 3',
-  //   },
-  //   {
-  //     img: 'url(https://unsplash.com/photos/8xUShy6U1I8.jpg)',
-  //     title: 'title 4',
-  //     author: 'author 4',
-  // },
-  // ];
  
 export default function Gallery() {
   const classes = useStyles();
@@ -94,3 +64,30 @@ export default function Gallery() {
 }
 
 
+// The example data is structured as follows:
+ 
+  //import image from 'path/to/image.jpg';
+  //[etc...]
+ 
+  // const itemData = [
+  //   {
+  //     img: 'url(https://unsplash.com/photos/5rsNohd8bY8.jpg)',
+  //     title: 'title 1',
+  //     author: 'author 1',
+  //   },
+  //   {
+  //   img: 'url(https://unsplash.com/photos/J1MznmEvxpk.jpg)',
+  //   title: 'title 2',
+  //   author: 'author 2',
+  //   },
+  // {
+  //   img: 'url(https://unsplash.com/photos/TF3g66Jhs50.jpg)',
+  //   title: 'title 3',
+  //   author: 'author 3',
+  //   },
+  //   {
+  //     img: 'url(https://unsplash.com/photos/8xUShy6U1I8.jpg)',
+  //     title: 'title 4',
+  //     author: 'author 4',
+  // },
+  // ];

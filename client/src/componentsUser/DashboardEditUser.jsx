@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import axios from 'axios';
+import React from "react";
+
 
 import Button from "../componentsArtist/Button"
 import Payment from "./Payment.jsx"
@@ -15,7 +15,7 @@ export default function DashboardEditArtist(props) {
         <h2 className="request_edit_dashboard_h2">{name}</h2>
         <img 
           className="request_edit_dashboard_img"
-          src={image}
+          src={image} alt={name}
         />
       </header>
       

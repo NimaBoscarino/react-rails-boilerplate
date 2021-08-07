@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "./Button.jsx"
 import Tag from "./Tag.jsx"
-import axios from 'axios';
 import "./DashboardShowArtist.css"
 
 export default function Dashboard(props) {
