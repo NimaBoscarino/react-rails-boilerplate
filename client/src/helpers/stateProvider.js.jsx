@@ -23,27 +23,45 @@ export default function StateProvider(props) {
       axios.get("/api/messages"),
     ])
       .then((response) => {
-        const clients = response[0].data;
-        const artists = response[1].data;
-        const categories = response[2].data;
-        const reviews = response[3].data;
-        const comments = response[4].data;
-        const requests = response[5].data;
-        const messages = response[6].data;
+        const clientsApi = response[0].data;
+        const artistsApi = response[1].data;
+        const categoriesApi = response[2].data;
+        const reviewsApi = response[3].data;
+        const commentsApi = response[4].data;
+        const requestsApi = response[5].data;
+        const messagesApi = response[6].data;
 
 
-        console.log("Categories" , categories)
-        const requestsWithComments = requests.map((request) => ({
+        const clients = {}
+        const artists = {}
+        const requests = {}
+        const categories = {}
+        const reviews = {}
+        const comments = {}
+        const messages = {}
+
+        const requestsWithComments = requestsApi.map((request) => ({
           ...request,
-          comments: filterTableById(comments, request.id, "request_id"),
+          comments: filterTableById(commentsApi, request.id, "request_id"),
         }));
 
-        const artistsWithReviews = artists.map((artist) => ({
-          ...artists,
-          reviews: filterTableById(reviews, artist.id, "artist_id"),
+        const artistsWithReviews = artistsApi.map((artist) => ({
+          ...artist,
+          reviews: filterTableById(reviewsApi, artist.id, "artist_id"),
         }));
+        
+        clientsApi.map((client)=> clients[client.id] = client)
+        artistsWithReviews.map((client)=> artists[client.id] = client)
+        requestsWithComments.map((client)=> requests[client.id] = client)
+        categoriesApi.map((client)=> categories[client.id] = client)
+        reviewsApi.map((client)=> reviews[client.id] = client)
+        commentsApi.map((client)=> comments[client.id] = client)
+        messagesApi.map((client)=> messages[client.id] = client)
 
-        setData((prev) => ({ ...prev, requests: requestsWithComments }));
+
+
+
+        setData((prev) => ({ ...prev, clients, artists, requests: requestsApi, categories, reviews, comments, messages}));
       })
       .catch((error) => {
         console.log(error);

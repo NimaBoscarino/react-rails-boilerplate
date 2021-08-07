@@ -66,7 +66,7 @@ export default function Gallery() {
 
   const {data , setData} = useContext(stateContext);
 
-  console.log('This is data', data.requests)
+  console.log('DATA', data)
 
   return (
     <div className={classes.root}>

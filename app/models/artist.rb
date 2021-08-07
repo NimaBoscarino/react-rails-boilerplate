@@ -33,7 +33,7 @@ class Artist < ApplicationRecord
     # return 0 unless reviews.size.positive?
 
     avg = :reviews.average(:star).to_f.round(2) * 100
-    update_column(:average_score, avg)
+    update_column(:rating, avg)
   end
 
  

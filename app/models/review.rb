@@ -5,4 +5,5 @@ class Review < ApplicationRecord
   def self.artistreview(artist_id)
     reviews = Review.where(artist_id: artist_id)
   end
+
 end
