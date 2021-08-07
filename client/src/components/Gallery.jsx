@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     author: 'author 2',
     },
   {
-    img: 'url(https://unsplash.com/photos/TF3g66Jhs50.jpg)',
+    img: 'https://unsplash.com/photos/TF3g66Jhs50.jpg',
     title: 'title 3',
     author: 'author 3',
     },
@@ -59,8 +59,10 @@ const useStyles = makeStyles((theme) => ({
   },
   ];
  
-export default function Gallery() {
+export default function Gallery(props) {
   const classes = useStyles();
+
+  console.log(props.data)
 
   return (
     <div className={classes.root}>
@@ -68,14 +70,14 @@ export default function Gallery() {
         <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div"><h3>Gallery</h3></ListSubheader>
         </ImageListItem>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img}>
-            <img src={item.img} alt={item.title} />
+        {props.data.requests.map((item) => (
+          <ImageListItem key={item.id}>
+            <img src={item.image} alt={item.name} />
             <ImageListItemBar
-              title={item.title}
-              subtitle={<span>by: {item.author}</span>}
+              title={item.name}
+              subtitle={<span>by: {item.artist_id}</span>}
               actionIcon={
-                <IconButton aria-label={`info about ${item.author}`} className={classes.icon}>
+                <IconButton aria-label={`info about ${item.artist_id}`} className={classes.icon}>
                   <InfoIcon />
                 </IconButton>
               }
