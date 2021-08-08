@@ -75,6 +75,7 @@ end
 Request.populate 10 do |r|
   r.name = Faker::Lorem.word
   r.description = Faker::Lorem.sentence(word_count: 10)
+
   r.price = 50
   r.start_date = DateTime.now
   r.client_id = clients.sample

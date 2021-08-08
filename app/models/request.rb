@@ -5,8 +5,12 @@ class Request < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
+  # Is the art started when the artist requests it?
   # validates :start_date, presence: true
-  # validate :finish_date_validation
+  # validates :expected_finish_date,
+  #          date: {after: :start_date}
+  
+
   validates :price, presence: true
 
   # def finish_date_validation
