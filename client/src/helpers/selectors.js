@@ -34,6 +34,37 @@ function getRequestsbyUser(requests, user_id) {
   })
 }
 
-console.log(getUnFinishedRequests(requests_for_test))
+function findUserbyUserId (users, user_id){
+  return users.filter((user) => {
+    return user.id === user_id;
+  })
+}
 
-module.exports = {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser}
+function getRequestsbyStatus(requests, status) {
+  if (status === "All") {
+    return requests
+  } else if (status === "Unaccepted") {
+    return requests.filter((request) => {
+      return !request.artist_id && !request.start_date;
+    }) 
+  } else if (status === "Accepted") {
+    return requests.filter((request) => {
+      return request.artist_id && !request.start_date;
+    }) 
+  } else if (status === "In Process") {
+    return requests.filter((request) => {
+      return request.artist_id && request.start_date;
+    }) 
+  }
+}
+
+function findArtistbyArtistId (artists, artist_id){
+  return artists.filter((artist) => {
+    return artist.id === artist_id;
+  })
+}
+
+
+console.log(findArtistbyArtistId(artists_for_test, 1))
+
+module.exports = {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser,findUserbyUserId, getRequestsbyStatus, findArtistbyArtistId}

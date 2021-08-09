@@ -1,0 +1,32 @@
+.ArtistAccount_div{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  top: 10px;
+  margin: 0;
+
+}
+
+.ArtistAccount_div_detail{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ArtistAccount_div_h3{
+  display: flex;
+  justify-content: center;
+
+  outline: black;
+  outline-style: double;
+
+  color: black;
+}
+
+.ArtistAccount_div_dashboards {
+  display: flex;
+}
+
+
+

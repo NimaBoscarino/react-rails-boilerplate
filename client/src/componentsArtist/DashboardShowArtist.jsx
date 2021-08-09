@@ -5,14 +5,13 @@ import axios from 'axios';
 import "./DashboardShowArtist.css"
 
 export default function Dashboard(props) {
-  const {id, image, name, description, price, expected_finish_date,  actual_finish_date, index, acceptRequest, tag, hidden} = props 
+  const {id, image, name, description, price, expected_finish_date,  actual_finish_date, index, acceptRequest, tag, hidden, client} = props 
 
   return (
     <article className="request_show_dashboard" key={id}>
       
       <header className="request_show_dashboard_header">
         <div className="request_show_Tag">
-          {/* <Tag tag="null"></Tag> */}
           <Tag tag={tag}></Tag>
           <h2 className="request_show_dashboard_h2">{name}</h2>
         </div>
@@ -27,6 +26,16 @@ export default function Dashboard(props) {
         <div className="request_show_details">
           <label>Description: </label>
           <span>{description}</span>
+        </div>
+
+        <div className="request_show_details">
+          <label>Client Name: </label>
+          <span>{client.name}</span>
+        </div>
+
+        <div className="request_show_details">
+          <label>Client Contact: </label>
+          <span>{client.contact}</span>
         </div>
 
         {actual_finish_date ? (
