@@ -5,7 +5,7 @@ const requests_for_test = [
     image:
       "https://cdn.mos.cms.futurecdn.net/Ge25ccbyKQ76Et9bBjFnxk-1024-80.jpg.webp",
     description: "made by maple wood",
-    start_date: "2021-01-01",
+    start_date: null,
     expected_finish_date: "2021-02-01",
     actual_finish_date: null,
     price: 20,

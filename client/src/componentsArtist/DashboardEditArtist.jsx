@@ -2,23 +2,38 @@ import React, { useState } from "react";
 import axios from 'axios';
 
 import Button from "./Button.jsx"
+import Tag from "./Tag.jsx"
 import "./DashboardEditArtist.css"
 
 
 export default function DashboardEditArtist(props) {
-  const {id, image, name, description, index, price, expected_finish_date, actual_finish_date,  updateContent, button1Request, button2Request, button3Request, button1, button2, button3, hidden} = props 
+  const {id, image, name, description, index, price, expected_finish_date, actual_finish_date,  updateContent, button1Request, button2Request, button3Request, button1, button2, button3, hidden, client, tag} = props 
 
   return (
     <article className="request_edit_dashboard" key={id}>
       <header className="request_edit_dashboard_header">
-        <h2 className="request_edit_dashboard_h2">{name}</h2>
+        <div className="request_edit_Tag">
+          <Tag tag={tag}></Tag>
+          <h2 className="request_edit_dashboard_h2">{name}</h2>
+        </div>
+
         <img 
           className="request_edit_dashboard_img"
           src={image}
         />
       </header>
-      
+
       <form className="request_edit_form">
+        <div className="request_show_details">
+          <label>Client Name: </label>
+          <span>{client.name}</span>
+        </div>
+
+        <div className="request_show_details">
+          <label>Client Contact: </label>
+          <span>{client.contact}</span>
+        </div>
+
         <div className="request_edit_input">
           <label for="input_description">Description: </label>
           <input type="text" name="description" value={description} id="input_description" onChange={(event) => updateContent(event.target.value, "description", index)} />
@@ -43,7 +58,7 @@ export default function DashboardEditArtist(props) {
 
       <footer className="request_edit_footer">
         <Button onClick={() => button1Request(index)} name={button1}/>
-        <Button onClick={() => button2Request(index)} name={button2}/>
+        {button2? (<Button onClick={() => button2Request(index)} name={button2}/>):(<p></p>)}
         <Button onClick={() => button3Request(index)} name={button3} hidden={hidden}/>
       </footer>
     </article>

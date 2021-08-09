@@ -1,12 +1,15 @@
 .request_show_dashboard{
-  margin: 5%;
+  margin: 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30%;
+  width: 29%;
 
   border-style: solid;
   border-radius: 10px;
+  border-color: black;
+
+  background-color: white;
 }
 
 .request_show_dashboard:hover{

@@ -3,22 +3,27 @@ import axios from 'axios';
 
 import Button from "../componentsArtist/Button"
 import Payment from "./Payment.jsx"
+import Tag from "../componentsArtist/Tag.jsx"
 import "./DashboardShowUser.css"
 
 
-export default function DashboardEditArtist(props) {
-  const {id, image, name, description, index, price, expected_finish_date, actual_finish_date,  updateContent, button1Request, button2Request, button1, button2, payRequest} = props 
+export default function DashboardEditUser(props) {
+  const {id, image, name, description, index, price, expected_finish_date, actual_finish_date,  updateContent, button1Request, button2Request, button1, button2, payRequest, tag, client} = props 
 
   return (
     <article className="request_edit_dashboard" key={id}>
       <header className="request_edit_dashboard_header">
-        <h2 className="request_edit_dashboard_h2">{name}</h2>
+        <div className="request_edit_Tag">
+          <Tag tag={tag}></Tag>
+          <h2 className="request_edit_dashboard_h2">{name}</h2>
+        </div>
+
         <img 
           className="request_edit_dashboard_img"
           src={image}
         />
       </header>
-      
+
       <form className="request_edit_form">
         <div className="request_edit_input">
           <label for="input_description">Description: </label>
@@ -39,7 +44,20 @@ export default function DashboardEditArtist(props) {
           <label for="input_imageURL">Upload your Image: </label>
           <input type="text" name="image URL" value={image} id="input_imageURL" onChange={(event) => updateContent(event.target.value, "image", index)}/>
         </div>
-        
+
+        {client ? (
+        <>
+        <div className="request_show_details">
+          <label>Artist Name: </label>
+          <span>{client.name}</span>
+        </div> 
+
+        <div className="request_show_details">
+          <label>Artist Contact: </label>
+          <span>{client.contact}</span>
+        </div>
+        </>
+        ) : (<p></p>)}  
       </form>
 
       <p>{actual_finish_date}</p>
@@ -47,10 +65,11 @@ export default function DashboardEditArtist(props) {
       <footer className="request_edit_footer">
         <Button onClick={() => button1Request(index)} name={button1}/>
         <Button onClick={() => button2Request(index)} name={button2}/>
+        {client ? (
         <Payment 
             index={index}
             payRequest = {payRequest}
-          />
+        />) : (<p></p>)}
       </footer>
     </article>
   )

@@ -34,6 +34,7 @@ function App() {
     axios.get("/api/messages"),
   ])
     .then((response) => {
+      // console.log(response)
       const clients = response[0].data;
       const artists = response[1].data;
       const categories = response[2].data;
@@ -42,21 +43,21 @@ function App() {
       const requests = response[5].data;
       const messages = response[6].data;
 
-      const filterTableById = function (table, Id, column) {
-        const filteredComments = comments.filter((com) => com[column] === Id);
-        const filteredArray = filteredComments.map((com) => com.id);
-        return filteredArray;
-      };
+      // const filterTableById = function (table, Id, column) {
+      //   const filteredComments = comments.filter((com) => com[column] === Id);
+      //   const filteredArray = filteredComments.map((com) => com.id);
+      //   return filteredArray;
+      // };
 
-      const requestsWithComments = requests.map((request) => ({
-        ...request,
-        comments: filterTableById(comments, request.id, "request_id"),
-      }));
+      // const requestsWithComments = requests.map((request) => ({
+      //   ...request,
+      //   comments: filterTableById(comments, request.id, "request_id"),
+      // }));
 
-      const artistsWithReviews = artists.map((artist) => ({
-        ...artists,
-        reviews: filterTableById(reviews, artist.id, "artist_id"),
-      }));
+      // const artistsWithReviews = artists.map((artist) => ({
+      //   ...artists,
+      //   reviews: filterTableById(reviews, artist.id, "artist_id"),
+      // }));
 
       // const categoriesWithArtistsAndRequests = categories.map((category) => ({
       //   ...categories,
@@ -64,16 +65,17 @@ function App() {
       //   requests: filterTableById(requests, category.id, "category_id"),
       // }));
 
-      const data = {
-        clients,
-        artistsWithReviews,
-        requestsWithComments,
-        reviews,
-        comments,
-        categories,
-      };
+      // const data = {
+      //   clients,
+      //   artistsWithReviews,
+      //   requestsWithComments,
+      //   reviews,
+      //   comments,
+      //   categories,
+      // };
 
-      console.log(data);
+      // console.log(clients)
+      // console.log(data);
     })
     .catch((error) => {
       console.log(error);
