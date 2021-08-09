@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import {stateContext} from '../helpers/stateProvider.js';
+import {stateContext} from '../helpers/stateProvider.jsx';
 import { makeStyles } from '@material-ui/core/styles';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
@@ -7,6 +7,7 @@ import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
+import Comment from './comment.js.jsx';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,8 +15,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
-  
+    backgroundColor: theme.palette.background.paper, 
   },
   imageList: {
     width: 605,
@@ -38,6 +38,8 @@ export default function Gallery() {
 
   console.log('DATA', data)
 
+  // console.log(Object.keys(data.comments))
+
   return (
     <div className={classes.root}>
       <ImageList rowHeight={250} className={classes.imageList}>
@@ -59,6 +61,10 @@ export default function Gallery() {
           </ImageListItem>
         ))}
       </ImageList>
+      <div>
+        <Comment />
+      </div>
+     
     </div>
   );
 }

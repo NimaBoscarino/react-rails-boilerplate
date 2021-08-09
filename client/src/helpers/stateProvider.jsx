@@ -3,7 +3,15 @@ import axios from 'axios';
 
 export default function StateProvider(props) {
   const [data, setData] = useState({
-    requests: [],
+    artists : {},
+    clients : {},
+    requests : [],
+    commentsApi : [],
+    reviews : [],
+    messages: [],
+    
+
+
   });
 
   const filterTableById = function (table, Id, column) {
@@ -61,12 +69,12 @@ export default function StateProvider(props) {
 
 
 
-        setData((prev) => ({ ...prev, clients, artists, requests: requestsApi, categories, reviews, comments, messages}));
+        setData((prev) => ({ ...prev, clients, artists, requests: requestsApi, categories, reviews, commentsApi, messages}));
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [setData]);
+  }, []);
 
   const dataProvider = { data, setData};
   return (

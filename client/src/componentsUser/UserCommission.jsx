@@ -2,20 +2,30 @@ import React, { useState } from "react";
 import Button from "../componentsArtist/Button.jsx"
 import axios from 'axios';
 import DatePicker from "react-datepicker";
-import UserCommission from "./UserCommission.css"
+import "./UserCommission.css"
 import "react-datepicker/dist/react-datepicker.css";
 
 
 export default function DashboardEditArtist(props) {
-  const commisionInstance = {
+  const commisionInstance = {};
+  console.log(commission )
+  
+  const [commission, setCommission] = useState({
     name: '',
     image: '',
     description: '',
-    expected_finish_date: '',
     price: 0,
-  };
+    start_date: '',
+    expected_finish_date: '',
+    actual_finish_date: '',
+    artist_id: ''
+  })
   
-  const [commission, setCommission] = useState(commisionInstance)
+  
+  
+  
+  
+  
   const [startDate, setStartDate] = useState(new Date());
 
   function updateContent(value, key) {

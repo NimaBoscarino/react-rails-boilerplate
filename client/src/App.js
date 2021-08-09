@@ -6,7 +6,7 @@ import { theme } from "./theme";
 import { Burger, Menu } from "./components";
 import FocusLock from "react-focus-lock";
 import { Home, About, Gallery, Login, Register } from "./components";
-import StateProvider from "./helpers/stateProvider.js";
+import StateProvider from "./helpers/stateProvider.jsx";
 // import { useOnClickOutside } from "./hooks";
 // import {ArtistRequests, ArtistAccount} from "./componentsArtist";
 // import {UserCommission, UserAccount} from "./componentsUser";
@@ -17,12 +17,6 @@ import UserCommission from "./componentsUser/UserCommission";
 import UserAccount from "./componentsUser/UserAccount.jsx";
 // import axios from "axios";
 import "./App.css";
-
-// const categoriesWithArtistsAndRequests = categories.map((category) => ({
-//   ...categories,
-//   artists: filterTableById(artists, category.id, "category_id"),
-//   requests: filterTableById(requests, category.id, "category_id"),
-// }));
 
 function App() {
   const [open, setOpen] = useState(false);
