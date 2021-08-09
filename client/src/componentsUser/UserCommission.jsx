@@ -11,8 +11,11 @@ export default function DashboardEditArtist(props) {
   // console.log(request )
   const [startDate, setStartDate] = useState(new Date());
   
+ 
+  
   const [request, setRequest] = useState({
-    name: '', 
+    name: '',
+    image: '',
     description: '',
     price: 50,
     start_date: "",
@@ -26,12 +29,10 @@ export default function DashboardEditArtist(props) {
   
   function updateContent(value, key) {
     const requestCopy = {...request}
-    // console.log(requestCopy)
+    // console.log(commissionCopy)
     requestCopy[key] = value;
-    // console.log(requestCopy)
+    // console.log(commissionCopy)
     setRequest(requestCopy)
-
-
   }
 
 console.log("This is request" ,request)
