@@ -74,7 +74,7 @@ end
 
 "Creating Requests"
 
-Request.populate 10 do |r|
+Request.populate 20 do |r|
   r.name = Faker::Lorem.word
   r.description = Faker::Lorem.sentence(word_count: 10)
 
