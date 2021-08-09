@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require_relative '../lib/populator_fix.rb'
 
+
+
+
 puts "Starting seeds..."
 
 puts "Creating categories..."
@@ -64,7 +67,6 @@ end
 puts "Created ArtistCategory"
 
 Review.populate 10 do |r|
-    r.title = Faker::Alphanumeric.alpha(number: 5)
     r.star = Faker::Number.between(from: 1, to: 5)
     r.artist_id = artists.sample
     r.client_id = clients.sample

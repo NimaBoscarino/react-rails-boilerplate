@@ -1,4 +1,3 @@
-import React from "react";
 
 export default function Dashboard(props) {
   // function acceptRequest(value, key, index) {
