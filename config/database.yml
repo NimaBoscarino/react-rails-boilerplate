@@ -17,10 +17,8 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: postgres://ukpnepnz:A_HFzQ5H9mV62H4-P_eYxMHj7S0yCdzd@chunee.db.elephantsql.com/ukpnepnz
-  pool: 5
-  username: ukpnepnz
-  password: qpDEjU50MDz_TBYzvvFq6aXmmfoM60_I
+  database: rails_project_development
+  pool: 5,
   timeout: 5000
 
   # Connect on a TCP socket. Omitted by default since the client uses a

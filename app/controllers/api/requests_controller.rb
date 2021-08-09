@@ -1,18 +1,6 @@
 class Api::RequestsController < ApplicationController
   def index
     @requests = Request.all
-    # requests = []
-    # @requests.each do |request|
-    #   requestHash = request[:id] 
-    #   requestHash = { }
-    #   @requestComments = Comment.requestComment(request[:id])
-    #   ids = []
-    # @requestComments.each do |r| ids.push r[:id] end
-    
-    #   requestHash["comments"] = ids
-    #   requests.push requestHash
-    # end
-
       render json: @requests
   end
   
@@ -22,10 +10,12 @@ class Api::RequestsController < ApplicationController
   
   def create
     @request = Request.new(request_params)
-
+    p "this is request_params"
+    p request_params
     if @request.save 
       # redirect_to '/gallery'
     else
+      p 'this was not saved'
       render json: {error: @request.errors.messages}
       # redirect_to '/create request page'
     end
@@ -61,11 +51,16 @@ class Api::RequestsController < ApplicationController
     params.require(:request).permit(
       :name, 
       :description,
+      :start_date,
       :expected_finish_date,
+      :actual_finish_date,
       :price,
-      :artist_id,
       :client_id,
-      :category_id
+      :artist_id,
+      :category_id,
+      :image
+      
+   
     )
   end
 end
