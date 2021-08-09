@@ -36,9 +36,17 @@ export default function DashboardEditArtist(props) {
     setCommission(commissionCopy)
   }
 
-  const submitcommission = function() {
-    alert("submit your request")
-    // axios.put("/artist_request", requestCopy)
+console.log("This is request" ,request)
+  const submitRequest = function() {
+    // alert("submit your request")
+    axios.post("/api/requests", request).then((response)=> {
+      console.log("This is response" , response)
+
+      
+
+    }).catch((error) => {
+      console.log('Error', error)
+    })
   }
 
   return (
@@ -55,8 +63,8 @@ export default function DashboardEditArtist(props) {
         <label for="user_commision_price">Budget ($): </label>
         <input name="price" value={commission.price} id="user_commision_price" type="number" onChange={(event) => updateContent(event.target.value, "price")}/>
         
-        <label for="user_commision_imageURL">Support Img: </label>
-        <input name="image URL" value={commission.image} id="user_commision_imageURL" onChange={(event) => updateContent(event.target.value, "image")}/>
+        <label htmlFor="user_commision_imageURL">Support Img: </label>
+        <input name="image URL" value={request.image} id="user_commision_imageURL" onChange={(event) => updateContent(event.target.value, "image")}/>
 
         <label for="user_commision_description">Description: </label>
         <input name="description" value={commission.description} id="user_commision_description" onChange={(event) => updateContent(event.target.value, "description")} />
