@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from "react";
+import axios from 'axios';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -58,7 +59,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function Register() {
+  const [user, setUser] = useState({
+    first_name: 'test',
+    last_name:'test',
+    email: '',
+    password: "",
+    phone_number: '',
+  })
+
+  function updateContent(value, key) {
+    const userCopy = {...user}
+    userCopy[key] = value;
+    console.log("This is user1" ,userCopy)
+    setUser(userCopy)
+  }
+
+  let identity = "clients"
+  const register = function() {
+    // alert("submit your user")
+    axios.post(`/api/${identity}`, user).then((response)=> {
+      console.log("This is response" , response)
+    }).catch((error) => {
+      console.log('Error', error)
+    })
+  }
+
+  const registerArtist = function() {
+    // alert("submit your user")
+    axios.post("/api/artists", user).then((response)=> {
+      console.log("This is response" , response)
+    }).catch((error) => {
+      console.log('Error', error)
+    })
+  }
+
   const classes = useStyles();
 
   return (
@@ -78,12 +114,14 @@ export default function Register() {
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="fname"
-                name="firstName"
+                name="first_name"
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
-                label="First Name"
+                id="first_name"
+                label="first_name"
+                value={user.first_name}
+                onChange={(event) => updateContent(event.target.value, "first_name")}
                 autoFocus
               />
             </Grid>
@@ -92,12 +130,15 @@ export default function Register() {
                 variant="outlined"
                 required
                 fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
+                id="last_name"
+                label="last_name"
+                name="last_name"
+                value={user.last_name}
+                onChange={(event) => updateContent(event.target.value, "last_name")}
                 autoComplete="lname"
               />
             </Grid>
+
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -106,6 +147,8 @@ export default function Register() {
                 id="email"
                 label="Email Address"
                 name="email"
+                value={user.email}
+                onChange={(event) => updateContent(event.target.value, "email")}
                 autoComplete="email"
               />
             </Grid>
@@ -117,26 +160,51 @@ export default function Register() {
                 name="password"
                 label="Password"
                 type="password"
+                value={user.password}
                 id="password"
+                onChange={(event) => updateContent(event.target.value, "password")}
                 autoComplete="current-password"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="phone_number"
+                label="phone_number"
+                type="phone_number"
+                id="phone_number"
+                value={user.phone_number}
+                onChange={(event) => updateContent(event.target.value, "phone_number")}
+                autoComplete="phone_number"
               />
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                 label="Register this account as an artist."
+                onChange={() => {
+                  if (identity === "clients") {
+                    identity = "artists"
+                } else {
+                  identity = "clients"
+                }}}
               />
             </Grid>
           </Grid>
+
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={() => {register()}}
           >
             Sign Up
           </Button>
+
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="#" variant="body2">

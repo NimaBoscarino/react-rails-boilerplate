@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from "react";
+import axios from 'axios';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -58,8 +59,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function Login() {
   const classes = useStyles();
+
+  const [user, setUser] = useState({
+    email: '',
+    password: "",
+  })
+
+  function updateContent(value, key) {
+    const userCopy = {...user}
+    userCopy[key] = value;
+    setUser(userCopy)
+  }
+
+  let identity = "client"
+  const login = function() {
+    alert("submit your user")
+    axios.post(`login_${identity}`, user).then((response)=> {
+      console.log("This is response" , response)
+    }).catch((error) => {
+      console.log('Error', error)
+    })
+  }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -82,6 +105,8 @@ export default function Login() {
               id="email"
               label="Email Address"
               name="email"
+              value={user.email}
+              onChange={(event) => updateContent(event.target.value, "email")}
               autoComplete="email"
               autoFocus
             />
@@ -93,12 +118,22 @@ export default function Login() {
               name="password"
               label="Password"
               type="password"
+              value={user.password}
               id="password"
+              onChange={(event) => updateContent(event.target.value, "password")}
               autoComplete="current-password"
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Sign in with Artist Account"
+              onChange={() => {
+                if (identity === "client") {
+                  identity = "artist"
+                  console.log(identity)
+              } else {
+                identity = "client"
+                console.log(identity)
+              }}}
             />
             <Button
               type="submit"
@@ -106,9 +141,11 @@ export default function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={() => {login()}}
             >
               Sign In
             </Button>
+
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">

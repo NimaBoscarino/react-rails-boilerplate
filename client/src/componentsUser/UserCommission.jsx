@@ -7,12 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 
 export default function DashboardEditArtist(props) {
-  // const commisionInstance = {};
-  // console.log(request )
   const [startDate, setStartDate] = useState(new Date());
-  
- 
-  
   const [request, setRequest] = useState({
     name: '',
     image: '',
@@ -23,36 +18,25 @@ export default function DashboardEditArtist(props) {
     actual_finish_date: "",
     client_id: 25,
     category_id: 1
-
   })
 
-  
   function updateContent(value, key) {
     const requestCopy = {...request}
-    // console.log(commissionCopy)
     requestCopy[key] = value;
-    // console.log(commissionCopy)
+    console.log("This is request1" ,requestCopy)
     setRequest(requestCopy)
   }
 
-console.log("This is request" ,request)
+  console.log("This is request2" ,request)
   const submitRequest = function() {
     // alert("submit your request")
     axios.post("/api/requests", request).then((response)=> {
       console.log("This is response" , response)
-
-      
-
     }).catch((error) => {
       console.log('Error', error)
     })
   }
   
-
-
-
- 
-
   return (
     <article className="commission_article">
       <form className="commision_user_form">
@@ -72,6 +56,13 @@ console.log("This is request" ,request)
 
         <label htmlFor="user_commision_description">Description: </label>
         <input name="description" value={request.description} id="user_commision_description" onChange={(event) => updateContent(event.target.value, "description")} />
+
+        <label for="user_commision_category">Category:</label>
+        <select id="user_commision_category" name="user_commision_category" onChange={(event) => updateContent(event.target.value, "ategory_id")}>
+          <option value="1">Guitar</option>
+          <option value="2">Art</option>
+          <option value="3">HandyCraft</option>
+        </select>
       </form>
 
       <footer className="commission_show_footer">

@@ -1,6 +1,7 @@
 import React from "react";
 import { bool } from "prop-types";
 import { StyledMenu } from "./Menu.styled";
+import Cookies from 'js-cookie'
 
 const Menu = ({ open, ...props }) => {
   const isHidden = open ? true : false;
@@ -8,6 +9,7 @@ const Menu = ({ open, ...props }) => {
 
   return (
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
+      {console.log(Cookies.get("client_id"))}
       <a href="/" tabIndex={tabIndex}>
         <span aria-hidden="true"> 🏠</span>
         Home
