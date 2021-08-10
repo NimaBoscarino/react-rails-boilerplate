@@ -59,8 +59,6 @@ class Api::RequestsController < ApplicationController
       :artist_id,
       :category_id,
       :image
-      
-   
     )
   end
 end
