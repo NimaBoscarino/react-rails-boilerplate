@@ -69,7 +69,7 @@ export default function StateProvider(props) {
 
 
 
-        setData((prev) => ({ ...prev, clients, artists, requests: requestsApi, categories, reviews, commentsApi, messages}));
+        setData((prev) => ({ ...prev, clients, artists, requests, categories, reviews, commentsApi, messages}));
       })
       .catch((error) => {
         console.log(error);

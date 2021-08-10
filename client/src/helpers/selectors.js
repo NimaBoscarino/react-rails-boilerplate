@@ -68,7 +68,7 @@ function findArtistbyArtistId(artists, artist_id) {
   });
 }
 
-console.log(findArtistbyArtistId(artists_for_test, 1));
+// console.log(findArtistbyArtistId(artists_for_test, 1));
 
 module.exports = {
   getRequestsbyArtists,
