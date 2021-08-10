@@ -27,20 +27,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
- 
  
 export default function Gallery() {
   const classes = useStyles();
-
-
   const {data , setData} = useContext(stateContext);
-
   console.log('DATA', data)
 
-  // console.log(Object.keys(data.comments))
-
   return (
+    <div className="gallery">
     <div className={classes.root}>
       <ImageList rowHeight={250} className={classes.imageList}>
         <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
@@ -61,10 +55,10 @@ export default function Gallery() {
           </ImageListItem>
         ))}
       </ImageList>
-      <div>
+      {/* <div>
         <Comment />
-      </div>
-     
+      </div> */}
+    </div>
     </div>
   );
 }

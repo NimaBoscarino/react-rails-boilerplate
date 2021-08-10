@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import Cookies from 'universal-cookie';
+import { Redirect } from "react-router-dom";
+
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,6 +16,8 @@ import Grid from '@material-ui/core/Grid';
 //import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+
+const {requests_for_test, artists_for_test, users_for_test} = require("../testingData")
 
 function Copyright() {
   return (
@@ -62,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
   const classes = useStyles();
-
   const [user, setUser] = useState({
     email: '',
     password: "",
@@ -74,17 +78,45 @@ export default function Login() {
     setUser(userCopy)
   }
 
+  function findUserbyEmail(users, email) {
+    return users.filter((user) => {
+      return user.email === email;
+    });
+  }
+  
+  const cookies = new Cookies();
   let identity = "client"
   const login = function() {
-    alert("submit your user")
-    axios.post(`login_${identity}`, user).then((response)=> {
-      console.log("This is response" , response)
-    }).catch((error) => {
-      console.log('Error', error)
-    })
+    if (identity === "client") {
+      alert("login Client")
+      // change the user_for_test
+      let loginClient = findUserbyEmail(users_for_test, user.email)[0]
+      cookies.set('user_id', loginClient.id, { path: '/' });
+      cookies.set('identity', 'client', { path: '/' });
+
+      axios.post(`login_${identity}`, user).then((response)=> {
+        console.log("This is response", response)
+      }).catch((error) => {
+        console.log('Error', error)
+      })
+      
+    } else {
+      alert("login Artist")
+      // change the artist_for_test
+      let loginArtist = findUserbyEmail(artists_for_test, user.email)[0]
+      cookies.set('user_id', loginArtist.id, { path: '/' });
+      cookies.set('identity', 'artist', { path: '/' });
+
+      axios.post(`login_${identity}`, user).then((response)=> {
+        console.log("This is response", response)
+      }).catch((error) => {
+        console.log('Error', error)
+      })
+    }
   }
 
   return (
+    <div className="login">
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
@@ -165,5 +197,6 @@ export default function Login() {
         </div>
       </Grid>
     </Grid>
+    </div>
   );
 }

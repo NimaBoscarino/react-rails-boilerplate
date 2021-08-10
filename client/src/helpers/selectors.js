@@ -6,7 +6,7 @@ const {
 
 function getRequestsbyArtists(requests, artist_id) {
   return requests.filter((request) => {
-    return request.artist_id === artist_id;
+    return request.artist_id == artist_id;
   });
 }
 
@@ -27,20 +27,27 @@ function getRequestsbyCategory(requests, category_id) {
     return requests;
   } else {
     return requests.filter((request) => {
-      return request.category_id === category_id;
+      return request.category_id == category_id;
     });
   }
 }
 
 function getRequestsbyUser(requests, user_id) {
   return requests.filter((request) => {
-    return request.client_id === user_id;
+    return request.client_id == user_id;
   });
 }
 
 function findUserbyUserId(users, user_id) {
   return users.filter((user) => {
-    return user.id === user_id;
+    console.log(user.id == user_id)
+    return user.id == user_id;
+  });
+}
+
+function findUserbyEmail(users, email) {
+  return users.filter((user) => {
+    return user.email === email;
   });
 }
 
@@ -64,11 +71,13 @@ function getRequestsbyStatus(requests, status) {
 
 function findArtistbyArtistId(artists, artist_id) {
   return artists.filter((artist) => {
-    return artist.id === artist_id;
+    return artist.id == artist_id;
   });
 }
 
-console.log(findArtistbyArtistId(artists_for_test, 1));
+
+
+// console.log(findArtistbyArtistId(artists_for_test, 1));
 
 module.exports = {
   getRequestsbyArtists,
@@ -77,6 +86,7 @@ module.exports = {
   getRequestsbyCategory,
   getRequestsbyUser,
   findUserbyUserId,
+  findUserbyEmail,
   getRequestsbyStatus,
   findArtistbyArtistId,
 };

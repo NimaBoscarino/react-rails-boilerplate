@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import Cookies from 'universal-cookie';
+
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,6 +15,8 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
+const {requests_for_test, artists_for_test, users_for_test} = require("../testingData")
 
 function Copyright() {
   return (
@@ -76,28 +80,55 @@ export default function Register() {
     setUser(userCopy)
   }
 
-  let identity = "clients"
-  const register = function() {
-    // alert("submit your user")
-    axios.post(`/api/${identity}`, user).then((response)=> {
-      console.log("This is response" , response)
-    }).catch((error) => {
-      console.log('Error', error)
-    })
+  function findUserbyEmail(users, email) {
+    return users.filter((user) => {
+      return user.email === email;
+    });
   }
 
-  const registerArtist = function() {
-    // alert("submit your user")
-    axios.post("/api/artists", user).then((response)=> {
-      console.log("This is response" , response)
-    }).catch((error) => {
-      console.log('Error', error)
-    })
+  const cookies = new Cookies();
+  let identity = "client"
+  const register = function() {
+    if (identity === "client") {
+      let loginClient = findUserbyEmail(users_for_test, user.email)[0]
+      cookies.set('user_id', loginClient.id, { path: '/' });
+      cookies.set('identity', 'client', { path: '/' });
+
+      axios.post(`login_${identity}`, user).then((response)=> {
+        console.log("This is response", response)
+      }).catch((error) => {
+        console.log('Error', error)
+      })
+      
+      // axios.post(`/api/${identity}`, user).then((response)=> {
+      //   console.log("This is response" , response)
+      // }).catch((error) => {
+      //   console.log('Error', error)
+      // })
+    } else {
+      let loginArtist = findUserbyEmail(artists_for_test, user.email)[0]
+      cookies.set('user_id', loginArtist.id, { path: '/' });
+      cookies.set('identity', 'artist', { path: '/' });
+
+      axios.post(`login_${identity}`, user).then((response)=> {
+        console.log("This is response", response)
+      }).catch((error) => {
+        console.log('Error', error)
+      })
+
+      // axios.post(`/api/${identity}`, user).then((response)=> {
+      //   console.log("This is response" , response)
+      // }).catch((error) => {
+      //   console.log('Error', error)
+      // })
+    }
+
   }
 
   const classes = useStyles();
 
   return (
+    <div className="register">
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
@@ -218,5 +249,6 @@ export default function Register() {
         <Copyright />
       </Box>
     </Container>
+    </div>
   );
 }
