@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     !request.xhr? && request.format.html?
   end
 
-  # post '/login_artist' => 'sessions#create_artist'
+  post '/login_artist' => 'sessions#create_artist'
   post '/login_client' => 'sessions#create_client'
   post '/logout' => 'sessions#destroy'
   

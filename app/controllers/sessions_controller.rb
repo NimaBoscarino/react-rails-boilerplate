@@ -10,10 +10,11 @@ class SessionsController < ApplicationController
       p "xxxxxxxx"
       session[:artist_id] = artist.id
       session[:identity] = "artist"
-      redirect_to "/gallery"
+      render json: {artist}
+      # redirect_to "/gallery"
     else
-      p "yyyyyyyyy"
-      redirect_to "/gallery"
+      render json: {error: @artist.errors.messages}
+      # redirect_to "/gallery"
     end
   end
 
