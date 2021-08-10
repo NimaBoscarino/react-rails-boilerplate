@@ -4,7 +4,7 @@ import 'react-dropdown/style.css';
 
 export default function FilterBar (props) {
   const options = props.options;
-  console.log (options)
+  // console.log (options)
   const defaultOption = options[0];
   
   return (
