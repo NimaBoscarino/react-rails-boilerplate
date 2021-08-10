@@ -40,8 +40,8 @@ export default function Gallery() {
         <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div"><h3>Gallery</h3></ListSubheader>
         </ImageListItem>
-        {data.requests.map((item) => (
-          <ImageListItem key={item.id}>
+        {Object.entries(data.requests).map((id,item) => (
+          <ImageListItem key={id}>
             <img src={item.image} alt={item.name} />
             <ImageListItemBar
               title={item.name}
