@@ -27,7 +27,7 @@ export default function Dashboard(props) {
           <span>{description}</span>
         </div>
 
-        <div className="request_show_details">
+        {/* <div className="request_show_details">
           <label>Client Name: </label>
           <span>{client.name}</span>
         </div>
@@ -35,7 +35,7 @@ export default function Dashboard(props) {
         <div className="request_show_details">
           <label>Client Contact: </label>
           <span>{client.contact}</span>
-        </div>
+        </div> */}
 
         {actual_finish_date ? (
         <div className="request_show_details">

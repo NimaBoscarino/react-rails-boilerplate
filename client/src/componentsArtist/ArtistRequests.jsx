@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, {useState, useContext, useEffect} from "react";
+import {stateContext} from '../helpers/stateProvider.jsx';
 
 import DashboardShowArtist from "./DashboardShowArtist.jsx"
 import FilterBar from "./FilterBar.jsx";
+import useData from "../hooks/useData.js";
 
 import "./ArtistRequests.css"
 
@@ -9,6 +11,18 @@ const {requests_for_test, artists_for_test, users_for_test, categories_for_test}
 const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus} = require("../helpers/selectors")
 
 export default function Dashboard(props) {
+  const {data} = useData()
+  console.log(data)
+
+  // const {data , setData} = useContext(stateContext);
+  const requests = getUnFinishedRequests(requests_for_test)
+  const [requestState, setrequestState] = useState(requests)
+  
+  // useEffect(() => {
+  //   setrequestState(requests)
+  // }, [data])
+
+
   function acceptRequest(index) {
     alert("this is working")
     const requestCopy = [...requestState]
@@ -35,8 +49,7 @@ export default function Dashboard(props) {
     setrequestState(requestsofCategory)
   }
 
-  const requests = getUnFinishedRequests(requests_for_test)
-  const [requestState, setrequestState] = useState(requests)
+
   
   let tag = null;
   let hidden = "";
@@ -44,6 +57,7 @@ export default function Dashboard(props) {
 
   const dashboard_unaccepted = requestState.map((request, index) => {
     if (!request.artist_id && !request.start_date) {
+      console.log(2)
       client = findUserbyUserId(users_for_test, request.client_id)[0]
       console.log(client)
   
@@ -68,6 +82,8 @@ export default function Dashboard(props) {
 
   })
 
+  console.log(1)
+  
   const dashboard_accepted = requestState.map((request, index) => {
     if (request.artist_id && !request.start_date) {
       tag = "accepted"

@@ -40,7 +40,6 @@ function getRequestsbyUser(requests, user_id) {
 
 function findUserbyUserId(users, user_id) {
   return users.filter((user) => {
-    console.log(user.id == user_id)
     return user.id == user_id;
   });
 }
