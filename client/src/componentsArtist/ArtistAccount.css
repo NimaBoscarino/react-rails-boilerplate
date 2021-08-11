@@ -1,34 +1,29 @@
-.ArtistAccount_div{
+.ArtistAccount_div {
   display: flex;
-  flex-direction: column;
+  flex-flow: row-wrap;
   width: 100%;
   position: relative;
   top: 10px;
   margin: 0;
- 
-
 }
 
-.ArtistAccount_div_detail{
+.ArtistAccount_div_detail {
   width: 100%;
   display: flex;
   flex-direction: column;
-  
-  
 }
 
-.ArtistAccount_div_h3{
+.ArtistAccount_div_h3 {
   display: flex;
   justify-content: center;
   margin-left: 200px;
   margin-top: 10px;
   margin-right: 200px;
-  color:rgb(42, 233, 144);
+  color: rgb(42, 233, 144);
 
-
-  border: 12px outset rgba(28,110,164,0.7);
+  border: 12px outset rgba(28, 110, 164, 0.7);
   border-radius: 17px;
-  background-color: rgb(124, 124, 196)
+  background-color: rgb(124, 124, 196);
 
   /*box-sizing: border-box;
 	width: 60%; height: 100px;
@@ -50,6 +45,3 @@
   display: flex;
   flex-wrap: wrap;
 }
-
-
-
