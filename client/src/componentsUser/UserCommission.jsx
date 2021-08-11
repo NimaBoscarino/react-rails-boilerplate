@@ -44,7 +44,9 @@ export default function DashboardEditArtist(props) {
   
   return (
     <div className="col-lg-6 col-md-4  commission_article">
+
       <form className="commision_user_form">
+        <h1> Make A REQUEST</h1>
         <label htmlFor="user_commision_name">REQUEST TITLE: </label>
         <input className="form-control" name="user_commision_name" value={request.name} id="user_commision_name" onChange={(event) => updateContent(event.target.value, "name")}/>
 
