@@ -74,9 +74,20 @@ function findArtistbyArtistId(artists, artist_id) {
   });
 }
 
+function findRequestIndex(requests, request_id){
+  let indexValue
+  requests.forEach((request, index)=>{
+    if (request.id == request_id) {
+      indexValue = index
+      return
+    }
+  })
+  return indexValue
+}
 
 
-// console.log(findArtistbyArtistId(artists_for_test, 1));
+
+// console.log(findRequestIndex(requests_for_test, 1));
 
 module.exports = {
   getRequestsbyArtists,
@@ -88,4 +99,5 @@ module.exports = {
   findUserbyEmail,
   getRequestsbyStatus,
   findArtistbyArtistId,
+  findRequestIndex,
 };
