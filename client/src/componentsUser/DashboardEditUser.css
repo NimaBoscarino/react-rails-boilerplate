@@ -7,6 +7,9 @@
 
   border-style: solid;
   border-radius: 10px;
+  border-width: 10px;
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
+  background-color: rgb(248, 244, 124);;
 }
 
 .request_edit_dashboard:hover{
@@ -32,6 +35,7 @@
 .request_edit_form{
   width: 90%;
   margin: 5%;
+  background-color: rgb(231, 238, 198);
 }
 
 .request_edit_input{

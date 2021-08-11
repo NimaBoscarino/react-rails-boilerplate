@@ -11,7 +11,6 @@ const Menu = ({ open, ...props }) => {
 
   const isHidden = open ? true : false;
   const tabIndex = isHidden ? 0 : -1;
-
   const cookies = new Cookies();
 
   const user_id = cookies.get('user_id')

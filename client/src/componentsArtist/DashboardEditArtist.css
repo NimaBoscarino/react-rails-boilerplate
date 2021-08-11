@@ -8,8 +8,11 @@
   border-style: solid;
   border-radius: 10px;
   border-color: black;
+  border-width: 10px;
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
+  
 
-  background-color: white;
+  background-color: rgb(248, 244, 124);
 }
 
 .request_edit_dashboard:hover{
@@ -62,7 +65,7 @@
 }
 #input_description:focus {
   border: 3px solid #ccc;
-  background-color: lightblue;
+  background-color:rgb(41, 92, 150);
 }
 
 #input_expected_finish_date {

@@ -1,0 +1,36 @@
+.about{
+  color: hsl(350, 90%, 30%);
+  font-family: cursive;
+  background-image: url("https://images.pexels.com/photos/1084406/pexels-photo-1084406.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=600");
+  
+
+}
+
+.abouttitle{
+  margin-top: 50px;
+  font-weight: 1000000;
+  font-family: cursive; 
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  
+  
+}
+
+.aboutinfo{
+  font-weight: 1000000;
+  font-family: cursive; 
+  overflow: hidden;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  
+  padding: 100px;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  
+
+}
