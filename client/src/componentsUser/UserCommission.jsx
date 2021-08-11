@@ -4,7 +4,11 @@ import axios from 'axios';
 import DatePicker from "react-datepicker";
 import "./UserCommission.css"
 import "react-datepicker/dist/react-datepicker.css";
+import Cookies from 'universal-cookie';
 
+const cookies = new Cookies();
+const user_id = cookies.get('user_id')
+const user_identity = cookies.get('identity')
 
 export default function DashboardEditArtist(props) {
   const [startDate, setStartDate] = useState(new Date());
@@ -16,20 +20,19 @@ export default function DashboardEditArtist(props) {
     start_date: "",
     expected_finish_date: "",
     actual_finish_date: "",
-    client_id: 25,
+    client_id: user_id,
     category_id: 1
   })
 
   function updateContent(value, key) {
     const requestCopy = {...request}
     requestCopy[key] = value;
-    console.log("This is request1" ,requestCopy)
     setRequest(requestCopy)
   }
 
   console.log("This is request2" ,request)
   const submitRequest = function() {
-    // alert("submit your request")
+    alert("submit your request")
     axios.post("/api/requests", request).then((response)=> {
       console.log("This is response" , response)
     }).catch((error) => {

@@ -5,12 +5,12 @@ const requests_for_test = [
     image:
       "https://cdn.mos.cms.futurecdn.net/Ge25ccbyKQ76Et9bBjFnxk-1024-80.jpg.webp",
     description: "made by maple wood",
-    start_date: "saf",
+    start_date: null,
     expected_finish_date: "2021-08-31",
-    actual_finish_date: "null",
+    actual_finish_date: null,
     price: 20,
     client_id: 1,
-    artist_id: 1,
+    artist_id: null,
     category_id: 1,
   },
   {
@@ -146,7 +146,7 @@ const requests_for_test = [
     id: 10,
     name: "guitar",
     image:
-      "https://cdn.shopify.com/s/files/1/3098/9898/products/fender-squier-classic-vibe-50s-telecaster-maple-fingerboard-guitar-butterscotch-blonde-0374030550-item-type-solid-body-guitars-manufacturer-price-500-999-998_1024x1024@2x.jpg?v=1604003778",
+      "https://cdn.shopify.com/s/files/1/3098/9898/products/esp-v-50-blk-ltd-electric-guitar-black-item-type-solid-body-guitars-manufacturer-on-sale-price-250-499-fleet-pro-sound_279_1024x1024@2x.jpg?v=1606346733",
     description: "made by maple wood",
     start_date: "2021-01-01",
     expected_finish_date: "2021-02-01",
@@ -271,6 +271,10 @@ const categories_for_test = [
     id: 2,
     name: "Art",
   },
+  {
+    id: 3,
+    name: "HandyCraft"
+  }
 ];
 
 module.exports = {

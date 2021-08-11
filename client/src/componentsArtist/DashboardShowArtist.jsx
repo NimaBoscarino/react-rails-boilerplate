@@ -27,15 +27,15 @@ export default function Dashboard(props) {
           <span>{description}</span>
         </div>
 
-        {/* <div className="request_show_details">
+        <div className="request_show_details">
           <label>Client Name: </label>
-          <span>{client.name}</span>
+          <span>{client.first_name} {client.last_name}</span>
         </div>
 
         <div className="request_show_details">
           <label>Client Contact: </label>
-          <span>{client.contact}</span>
-        </div> */}
+          <span>{client.phone_number}</span>
+        </div>
 
         {actual_finish_date ? (
         <div className="request_show_details">
@@ -55,7 +55,7 @@ export default function Dashboard(props) {
       </div>
 
       <footer className="request_show_footer">
-        <Button onClick={() => acceptRequest(index)} name="Accept" hidden={hidden}/>
+        <Button onClick={() => acceptRequest(index, id)} name="Accept" hidden={hidden}/>
       </footer>
     </article>
   )

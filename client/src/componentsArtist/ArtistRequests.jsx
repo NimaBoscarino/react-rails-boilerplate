@@ -1,35 +1,47 @@
 import React, {useState, useContext, useEffect} from "react";
+import axios from "axios";
 import {stateContext} from '../helpers/stateProvider.jsx';
 
 import DashboardShowArtist from "./DashboardShowArtist.jsx"
 import FilterBar from "./FilterBar.jsx";
 import useData from "../hooks/useData.js";
+import Cookies from 'universal-cookie';
 
 import "./ArtistRequests.css"
 
 const {requests_for_test, artists_for_test, users_for_test, categories_for_test} = require("../testingData")
-const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus} = require("../helpers/selectors")
+const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus, findRequestIndex} = require("../helpers/selectors")
 
 export default function Dashboard(props) {
   const {data} = useData()
-  console.log(data)
 
   // const {data , setData} = useContext(stateContext);
-  const requests = getUnFinishedRequests(requests_for_test)
+  const requests = getUnFinishedRequests(data.requestsApi)
   const [requestState, setrequestState] = useState(requests)
   
-  // useEffect(() => {
-  //   setrequestState(requests)
-  // }, [data])
+  useEffect(() => {
+    setrequestState(requests)
+  }, [data])
 
 
-  function acceptRequest(index) {
-    alert("this is working")
+  function acceptRequest(index, id) {
+    alert("this is working")    
+    console.log(id)
     const requestCopy = [...requestState]
-    requestCopy[index]["artist_id"] = 1;
-    // 1 needs to be changed to the logged in artist_id
+    requestCopy[index]["artist_id"] = Number(user_id);
     setrequestState(requestCopy)
-    // axios.put("/artist_request", requests)
+
+    // put request to backend 
+    const updateRequest = [...data.requestsApi]
+    const updateRequest_id = findRequestIndex(updateRequest, id)
+    // console.log(updateRequest_id)
+    // console.log(requestCopy[index])
+
+    axios.put(`/api/requests/${requestCopy[index].id}`, requestCopy[index])
+    .then((response) => {
+      console.log(response)
+    })
+    .catch((error) => {console.log(error)})
   }
 
   function filterbyCategory(requests, e) {
@@ -49,17 +61,17 @@ export default function Dashboard(props) {
     setrequestState(requestsofCategory)
   }
 
-
-  
   let tag = null;
   let hidden = "";
   let client;
+  const cookies = new Cookies();
+  const user_id = cookies.get('user_id')
+  const user_identity = cookies.get('identity')
+
 
   const dashboard_unaccepted = requestState.map((request, index) => {
     if (!request.artist_id && !request.start_date) {
-      console.log(2)
-      client = findUserbyUserId(users_for_test, request.client_id)[0]
-      console.log(client)
+      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
   
       return (
         <DashboardShowArtist 
@@ -81,15 +93,12 @@ export default function Dashboard(props) {
     }
 
   })
-
-  console.log(1)
   
   const dashboard_accepted = requestState.map((request, index) => {
     if (request.artist_id && !request.start_date) {
       tag = "accepted"
       hidden = "true"
-      client = findUserbyUserId(users_for_test, request.client_id)[0]
-      console.log(client)
+      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
   
       return (
         <DashboardShowArtist 
@@ -115,8 +124,7 @@ export default function Dashboard(props) {
     if (request.artist_id && request.start_date) {
       tag = "in process"
       hidden = "true"
-      client = findUserbyUserId(users_for_test, request.client_id)[0]
-      console.log(client)
+      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
   
       return (
         <DashboardShowArtist 
