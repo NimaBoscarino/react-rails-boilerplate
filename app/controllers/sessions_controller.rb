@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 
   end
 
+<<<<<<< HEAD
   def create_artist
     artist = Artist.find_by_email(params[:email])
     p artist
@@ -27,6 +28,21 @@ class SessionsController < ApplicationController
       redirect_to "/gallery"
     else
       redirect_to "/gallery"
+=======
+  def create
+    
+    if client && client = Client.authenticate_with_credentials(params[:email],params[:password])
+      session[:client_id] = client.id
+      
+    else
+     
+    end
+    if artist && artist = Artist.authenticate_with_credentials(params[:email],params[:password])
+      session[:artist_id] = artist.id
+     
+    else
+    
+>>>>>>> master
     end
   end
 
