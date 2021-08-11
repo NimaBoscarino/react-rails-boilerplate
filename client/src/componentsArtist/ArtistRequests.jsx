@@ -44,11 +44,11 @@ export default function Dashboard(props) {
     .catch((error) => {console.log(error)})
   }
 
-  const {data , setData} = useContext(stateContext);
+  // const {data , setData} = useContext(stateContext);
 
-  console.log('DATA ---' , data)
+  // console.log('DATA ---' , data)
 
-  const requests = getUnFinishedRequests(requests_for_test)
+  // const requests = getUnFinishedRequests(requests_for_test)
   // const [requestState, setrequestState] = useState(requests)
 
   function acceptRequest(request) {
@@ -61,7 +61,7 @@ export default function Dashboard(props) {
      const requests = {...data.requests,  id : acceptedRequest}
 
       
-      setData((prev)=> ({...prev, requests : requests }))
+      // setData((prev)=> ({...prev, requests : requests }))
     }).catch((error) => {console.log(error)})
   }
 
