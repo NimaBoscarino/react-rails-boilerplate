@@ -7,6 +7,7 @@ import DashboardEditArtist from "./DashboardEditArtist.jsx"
 import DashboardShowArtist from "./DashboardShowArtist.jsx"
 import "./ArtistAccount.css"
 
+
 const {requests_for_test, artists_for_test, users_for_test} = require("../testingData")
 const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus, findArtistbyUserId, findRequestIndex} = require("../helpers/selectors")
 
@@ -121,7 +122,7 @@ export default function Dashboard(props) {
       client = findUserbyUserId(data.clientsApi, request.client_id)[0]
       dashboardFinished_exist = true
       return (
-        <DashboardShowArtist 
+        <DashboardShowArtist
           id={request.id}
           image={request.image}
           name={request.name}
