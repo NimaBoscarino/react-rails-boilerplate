@@ -43,7 +43,7 @@ function App() {
                 <Route path="/gallery">
                   <Gallery />
                 </Route>
-                <Route path="/login" component={() => <Login />} />
+                <Route path="/login" exact component={() => <Login />} />
                 <Route path="/register" component={() => <Register />} />
                 <Route
                   path="/ArtistRequests"

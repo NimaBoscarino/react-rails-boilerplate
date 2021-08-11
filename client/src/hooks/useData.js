@@ -40,8 +40,8 @@ export default function useData(props) {
       axios.get("/api/messages"),
     ])
       .then((response) => {
-        const clientsApi = response[0].data;
-        const artistsApi = response[1].data;
+        const artistsApi = response[0].data;
+        const clientsApi = response[1].data;
         const categoriesApi = response[2].data;
         const reviewsApi = response[3].data;
         const commentsApi = response[4].data;

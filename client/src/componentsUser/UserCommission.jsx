@@ -32,12 +32,13 @@ export default function DashboardEditArtist(props) {
   }
 
   const submitRequest = function() {
-    alert("submit your request")
-    axios.post("/api/requests", request).then((response)=> {
-      console.log("This is response" , response)
-    }).catch((error) => {
-      console.log('Error', error)
-    })
+    if (window.confirm('Are you sure you want to submit the request?')) {
+      axios.post("/api/requests", request).then((response)=> {
+        console.log("This is response" , response)
+      }).catch((error) => {
+        console.log('Error', error)
+      })
+    }
   }
   
   return (

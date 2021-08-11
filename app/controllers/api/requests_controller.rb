@@ -6,8 +6,6 @@ class Api::RequestsController < ApplicationController
   
   def create
     @request = Request.new(request_params)
-    p "this is request_params"
-    p request_params
     if @request.save 
       # redirect_to '/gallery'
     else

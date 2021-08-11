@@ -45,7 +45,7 @@ export default function Gallery() {
       <div className={classes.root}>
         <ImageList rowHeight={250} className={classes.imageList}>
           {requests.map((item) => {
-            console.log(item)
+            console.log(data.clientsApi)
             let artistName = findArtistbyArtistId(data.artistsApi, item.artist_id)[0]
             return(
               <ImageListItem key={item.id}>

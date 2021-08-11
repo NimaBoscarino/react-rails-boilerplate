@@ -63,8 +63,8 @@ export default function DashboardEditUser(props) {
       <p>{actual_finish_date}</p>
 
       <footer className="request_edit_footer">
-        <Button onClick={() => button1Request(index, id)} name={button1}/>
-        <Button onClick={() => button2Request(index, id)} name={button2}/>
+        <Button onClick={() => button1Request(index)} name={button1}/>
+        <Button onClick={() => button2Request(index)} name={button2}/>
         {client ? (
         <Payment 
             index={index}
