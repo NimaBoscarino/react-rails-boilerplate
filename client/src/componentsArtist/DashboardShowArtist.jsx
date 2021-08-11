@@ -17,7 +17,7 @@ export default function Dashboard(props) {
         </div>
 
         <img 
-          className="request_show_dashboard_img"
+          className="img-thumbnail request_show_dashboard_img"
           src={image}
         />
       </header>

@@ -29,11 +29,17 @@ export default function Dashboard(props) {
   }
 
   function filterbyCategory(requests, e) {
-    const categories = ['ALL Categories', 'Guitar', 'Art', 'Handycraft']
+   
     const category_id = categories.indexOf(e.label)
+    // alert("this is Filtering Category")
+    const categories = ['ALL Categories', 'Guitar', 'Art', 'Handycraft']
+   
+
     const requestsofCategory = getRequestsbyCategory(requests, category_id)
     setrequestState(requestsofCategory)
   }
+
+  
 
   function filterbyStatus(requests, e) {
     const requestsofCategory = getRequestsbyStatus(requests, e.label)

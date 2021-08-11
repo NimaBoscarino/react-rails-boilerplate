@@ -20,12 +20,11 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper, 
+    backgroundColor: theme.palette.background.black, 
   },
   imageList: {
     width: 905,
     height: 500,
-    
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
@@ -45,7 +44,6 @@ export default function Gallery() {
       <div className={classes.root}>
         <ImageList rowHeight={250} className={classes.imageList}>
           {requests.map((item) => {
-            console.log(data.clientsApi)
             let artistName = findArtistbyArtistId(data.artistsApi, item.artist_id)[0]
             return(
               <ImageListItem key={item.id}>

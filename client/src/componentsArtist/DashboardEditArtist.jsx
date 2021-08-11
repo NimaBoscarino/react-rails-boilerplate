@@ -17,7 +17,7 @@ export default function DashboardEditArtist(props) {
         </div>
 
         <img 
-          className="request_edit_dashboard_img"
+          className="img-thumbnail rounded request_edit_dashboard_img"
           src={image}
         />
       </header>
@@ -45,12 +45,12 @@ export default function DashboardEditArtist(props) {
         
         <div className="request_edit_input">
           <label for="input_price">Price: </label>
-          <input type="text" name="price" value={price} id="input_price" onChange={(event) => updateContent(event.target.value, "price", index)}/>
+          <input className= "img-thumbnail" type="text" name="price" value={price} id="input_price" onChange={(event) => updateContent(event.target.value, "price", index)}/>
         </div>
 
         <div className="request_edit_input">
           <label for="input_imageURL">Upload your Image: </label>
-          <input type="text" name="image URL" value={image} id="input_imageURL" onChange={(event) => updateContent(event.target.value, "image", index)}/>
+          <input type="text" className= "img-thumbnail" name="image URL" value={image} id="input_imageURL" onChange={(event) => updateContent(event.target.value, "image", index)}/>
         </div>
         
       </form>
