@@ -6,6 +6,7 @@ import "./UserCommission.css"
 import "react-datepicker/dist/react-datepicker.css";
 import Cookies from 'universal-cookie';
 
+// set up cookies, and request cookies 
 const cookies = new Cookies();
 const user_id = cookies.get('user_id')
 const user_identity = cookies.get('identity')
@@ -30,14 +31,14 @@ export default function DashboardEditArtist(props) {
     setRequest(requestCopy)
   }
 
-  console.log("This is request2" ,request)
   const submitRequest = function() {
-    alert("submit your request")
-    axios.post("/api/requests", request).then((response)=> {
-      console.log("This is response" , response)
-    }).catch((error) => {
-      console.log('Error', error)
-    })
+    if (window.confirm('Are you sure you want to submit the request?')) {
+      axios.post("/api/requests", request).then((response)=> {
+        console.log("This is response" , response)
+      }).catch((error) => {
+        console.log('Error', error)
+      })
+    }
   }
   
   return (

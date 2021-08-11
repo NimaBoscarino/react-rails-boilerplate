@@ -1,61 +1,68 @@
-import React, { useState } from "react";
+import React, {useState, useContext, useEffect} from "react";
+import axios from "axios";
+import Cookies from 'universal-cookie';
 
+import useData from "../hooks/useData.js";
 import DashboardEditArtist from "./DashboardEditArtist.jsx"
 import DashboardShowArtist from "./DashboardShowArtist.jsx"
 import "./ArtistAccount.css"
 
 const {requests_for_test, artists_for_test, users_for_test} = require("../testingData")
-const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus, findArtistbyUserId} = require("../helpers/selectors")
+const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus, findArtistbyUserId, findRequestIndex} = require("../helpers/selectors")
 
 export default function Dashboard(props) {
-  // const requests = getRequestsbyArtists(requests_for_test, 1)
-  // change 1 to the actual artist_id
-  //All request data imported from TestData.js
-  const [requestState, setrequestState] = useState(requests_for_test)
+  const {data, updateRequestBackend, deleteRequestBackend} = useData()
+  const [requestState, setrequestState] = useState(data.requestsApi)
+  useEffect(() => {
+    setrequestState(data.requestsApi)
+  }, [data])
+  console.log(requestState)
 
   const updateContent = function(value, key, index) {
     const requestCopy = [...requestState]
     requestCopy[index][key] = value;
     setrequestState(requestCopy)
   }
-//FN to post update
-  const updateRequest = function(index) {
-    alert("updating")
-    const requestCopy = [...requestState]
-    setrequestState(requestCopy)
-    // axios.post("/artist_request", requestCopy)
-  }
 
-//FN 
+  //Update the the content in backend
+  const updateRequest = function(index) {
+    updateRequestBackend(requestState, index)
+  }
+  
+  //Update the finish date in backend
   const finishRequest = function(index) {
-    alert("finishing the request")
-    const day = new Date();
-    const today = day.toDateString().slice(4)
-    const requestCopy = [...requestState]
-    requestCopy[index]["actual_finish_date"] = today;
-    setrequestState(requestCopy)
-    // axios.post("/artist_request", requestCopy)
+    if (window.confirm('Are you sure the request is finished?')) {
+      const day = new Date();
+      const today = day.toDateString().slice(4)
+      const requestCopy = [...requestState]
+      requestCopy[index]["actual_finish_date"] = today;
+      setrequestState(requestCopy)
+
+      updateRequestBackend(requestState, index)
+    }
   }
   
   //Fn if artist denies this request after he already accepts it
   const denyRequest = function(index) {
-    alert("deny this request")
-    const requestCopy = [...requestState]
-    requestCopy[index]["artist_id"] = null;
-    setrequestState(requestCopy)
-    console.log(requestCopy)
-    // axios.post("/artist_request", requestCopy)
+    if (window.confirm('Are you sure you want to reject the request?')) {
+      const requestCopy = [...requestState]
+      requestCopy[index]["artist_id"] = null;
+      setrequestState(requestCopy)
+      updateRequestBackend(requestState, index)
+    }
   }
-
 
   let client;
   let dashboardToPay_exist = false;
   let dashboardToFinish_exist = false;
   let dashboardFinished_exist = false;
+  const cookies = new Cookies();
+  const user_id = cookies.get('user_id')
+  const user_identity = cookies.get('identity')
 
   const dashboardToPay = requestState.map((request, index) => {
-    if (request.artist_id === 1 && request.start_date === null) {
-      client = findUserbyUserId(users_for_test, request.client_id)[0]
+    if (request.artist_id == user_id && !request.start_date) {
+      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
       dashboardToPay_exist = true
       return (
         <DashboardEditArtist 
@@ -82,8 +89,8 @@ export default function Dashboard(props) {
   })
 
   const dashboardToFinish = requestState.map((request, index) => {
-    if (request.artist_id === 1 && request.start_date && request.actual_finish_date === null) {
-      client = findUserbyUserId(users_for_test, request.client_id)[0]
+    if (request.artist_id == user_id && request.start_date && !request.actual_finish_date) {
+      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
       dashboardToFinish_exist = true
       return (
         <DashboardEditArtist 
@@ -110,8 +117,8 @@ export default function Dashboard(props) {
   })
   //dashboard to show all the requests of a single artist
   const dashboardFinished = requestState.map((request, index) => {
-    if (request.artist_id === 1 && request.actual_finish_date) {
-      client = findUserbyUserId(users_for_test, request.client_id)[0]
+    if (request.artist_id == user_id && request.actual_finish_date) {
+      client = findUserbyUserId(data.clientsApi, request.client_id)[0]
       dashboardFinished_exist = true
       return (
         <DashboardShowArtist 
@@ -172,10 +179,6 @@ export default function Dashboard(props) {
           </div>
         </div>
         ): (<p></p>)}
-        
-
-
-
 
       </div>
     </main>

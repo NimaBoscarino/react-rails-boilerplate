@@ -25,12 +25,12 @@ export default function DashboardEditArtist(props) {
       <form className="request_edit_form">
         <div className="request_show_details">
           <label>Client Name: </label>
-          <span>{client.name}</span>
+          <span>{client.first_name} {client.last_name}</span>
         </div>
 
         <div className="request_show_details">
           <label>Client Contact: </label>
-          <span>{client.contact}</span>
+          <span>{client.phone_number}</span>
         </div>
 
         <div className="request_edit_input">
@@ -56,9 +56,9 @@ export default function DashboardEditArtist(props) {
       </form>
 
       <footer className="request_edit_footer">
-        <Button onClick={() => button1Request(index)} name={button1}/>
+        <Button onClick={() => button1Request(index, id)} name={button1}/>
         {button2? (<Button onClick={() => button2Request(index)} name={button2}/>):(<p></p>)}
-        <Button onClick={() => button3Request(index)} name={button3} hidden={hidden}/>
+        <Button onClick={() => button3Request(index, id)} name={button3} hidden={hidden}/>
       </footer>
     </article>
   )

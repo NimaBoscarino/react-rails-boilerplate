@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, {useState, useContext, useEffect} from "react";
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
-import Button from "../componentsArtist/Button"
+import useData from "../hooks/useData.js";
 import DashboardEditUser from "../componentsUser/DashboardEditUser"
 import DashboardShowUser from "../componentsUser/DashboardShowUser"
-
+import Button from "../componentsArtist/Button"
 
 const {requests_for_test, artists_for_test, users_for_test} = require("../testingData")
-const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus, findArtistbyArtistId} = require("../helpers/selectors")
+const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus, findArtistbyArtistId, findRequestIndex} = require("../helpers/selectors")
 
 export default function Dashboard(props) {
-  const [requestState, setrequestState] = useState(requests_for_test)
-//Update the state 
+  const {data, updateRequestBackend, deleteRequestBackend} = useData()
+  const [requestState, setrequestState] = useState(data.requestsApi)
+  useEffect(() => {
+    setrequestState(data.requestsApi)
+  }, [data])
+
+  //Update the state and input content
   const updateContent = function(value, key, index) {
     const requestCopy = [...requestState]
     requestCopy[index][key] = value;
@@ -19,43 +25,45 @@ export default function Dashboard(props) {
   }
 
   const updateRequest = function(index) {
-    alert("updating")
-    const requestCopy = [...requestState]
-    setrequestState(requestCopy)
-    // axios.post("/artist_request", requestCopy)
+    updateRequestBackend(requestState, index)
   }
 
   const rejectRequest = function(index) {
-    alert("reject the request")
     const requestCopy = [...requestState]
     requestCopy[index]["client_id"] = null;
     setrequestState(requestCopy)
-    // axios.post("/artist_request", requestCopy)
+
+    deleteRequestBackend(requestCopy, index)
   }
-  // index = 
+  
   const payRequest = function(index) {
-    alert("paying the request")
     const day = new Date();
     const today = day.toDateString().slice(4)
+
     const requestCopy = [...requestState]
     requestCopy[index]["start_date"] = today;
     setrequestState(requestCopy)
-    // axios.post("/artist_request", requestCopy)
+    // backend update
+    updateRequestBackend(requestCopy, index)
   }
 
-  let tag;
   let artist;
   let dashboardSubmitted_exist = false;
   let dashboardToPay_exist = false;
   let dashboardInProcess_exist = false;
   let dashboardFinished_exist = false;
+  const cookies = new Cookies();
+  const user_id = cookies.get('user_id')
+  const user_identity = cookies.get('identity')
 
   const dashboardSubmitted = requestState.map((request, index) => {
-    if (request.client_id === 1 && request.actual_finish_date === null && request.start_date === null && request.artist_id === null) {
-      artist = findArtistbyArtistId(artists_for_test, request.artist_id)[0]
+    if (request.client_id == user_id && request.actual_finish_date === null && request.start_date === null && request.artist_id === null) {
+      artist = findArtistbyArtistId(data.artistsApi, request.artist_id)[0]
       dashboardSubmitted_exist = true
+
       return (
           <DashboardEditUser 
+            key={request.id}
             id={request.id}
             image={request.image}
             name={request.name}
@@ -77,11 +85,12 @@ export default function Dashboard(props) {
   })
 
   const dashboardToPay = requestState.map((request, index) => {
-    if (request.client_id === 1 && request.actual_finish_date === null && request.start_date === null && request.artist_id) {
-      artist = findArtistbyArtistId(artists_for_test, request.artist_id)[0]
+    if (request.client_id == user_id && request.actual_finish_date === null && request.start_date === null && request.artist_id) {
+      artist = findArtistbyArtistId(data.artistsApi, request.artist_id)[0]
       dashboardToPay_exist = true
       return (
           <DashboardEditUser 
+            key={request.id}
             id={request.id}
             image={request.image}
             name={request.name}
@@ -104,11 +113,13 @@ export default function Dashboard(props) {
   })
 
   const dashboardInProcess = requestState.map((request, index) => {
-    if (request.client_id === 1 && request.actual_finish_date === null && request.start_date) {
-      artist = findArtistbyArtistId(artists_for_test, request.artist_id)[0]
+    if (request.client_id == user_id && request.actual_finish_date === null && request.start_date) {
+      artist = findArtistbyArtistId(data.artistsApi, request.artist_id)[0]
       dashboardInProcess_exist = true
+
       return (
         <DashboardShowUser 
+          key={request.id}
           id={request.id}
           image={request.image}
           name={request.name}
@@ -126,11 +137,13 @@ export default function Dashboard(props) {
   })  
 
   const dashboardFinished = requestState.map((request, index) => {
-    if (request.client_id === 1 && request.actual_finish_date) {
-      artist = findArtistbyArtistId(artists_for_test, request.artist_id)[0]
+    if (request.client_id == user_id && request.actual_finish_date) {
+      artist = findArtistbyArtistId(data.artistsApi, request.artist_id)[0]
       dashboardFinished_exist = true
+
       return (
-        <DashboardShowUser 
+        <DashboardShowUser           
+          key={request.id}
           id={request.id}
           image={request.image}
           name={request.name}
@@ -152,8 +165,6 @@ export default function Dashboard(props) {
       <nav className="ArtistRequests_nav">
         <h2>My Account</h2>
       </nav>
-
-
 
       <div className="ArtistAccount_div">
         {dashboardSubmitted_exist ? (        
@@ -200,12 +211,6 @@ export default function Dashboard(props) {
           
         </div>
         ) : (<p></p>)}        
-
-
-
-
-
-
       </div>
     </main>
   )

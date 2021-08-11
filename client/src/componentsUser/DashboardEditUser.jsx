@@ -49,12 +49,12 @@ export default function DashboardEditUser(props) {
         <>
         <div className="request_show_details">
           <label>Artist Name: </label>
-          <span>{client.name}</span>
+          <span>{client.first_name} {client.last_name}</span>
         </div> 
 
         <div className="request_show_details">
           <label>Artist Contact: </label>
-          <span>{client.contact}</span>
+          <span>{client.phone_number}</span>
         </div>
         </>
         ) : (<p></p>)}  
