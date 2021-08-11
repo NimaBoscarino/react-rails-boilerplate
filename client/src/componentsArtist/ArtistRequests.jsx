@@ -29,7 +29,7 @@ export default function Dashboard(props) {
   }
 
   function filterbyCategory(requests, e) {
-   
+   console.log(e)
     const category_id = categories.indexOf(e.label)
     // alert("this is Filtering Category")
     const categories = ['ALL Categories', 'Guitar', 'Art', 'Handycraft']

@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie';
 import useData from "../hooks/useData.js";
 import DashboardEditArtist from "./DashboardEditArtist.jsx"
 import DashboardShowArtist from "./DashboardShowArtist.jsx"
+import "./ArtistAccount.css"
 
 
 const {requests_for_test, artists_for_test, users_for_test} = require("../testingData")

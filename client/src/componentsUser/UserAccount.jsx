@@ -1,6 +1,5 @@
 import React, {useState, useContext, useEffect} from "react";
 import axios from 'axios';
-import '../componentsArtist/ArtistAccount.css'
 import Cookies from 'universal-cookie';
 import useData from "../hooks/useData.js";
 import DashboardEditUser from "../componentsUser/DashboardEditUser"
