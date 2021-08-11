@@ -1,16 +1,25 @@
-.commission_article{
+.commission_article {
+  size: 100%;
   display: flex;
-  flex-direction: column;
+  align-content: center;
+  padding-top: 75px;
+  padding-left: 50px;
+  font-family: "Bungee Inline", cursive;
+  font-size: 1em;
 }
 
-.commision_user_form{
+.commission_article label {
+  font-size: 1.5em;
+}
+
+.commision_user_form {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 75%;
   margin: auto;
 }
 
-.commission_show_footer{
+.commission_show_footer {
   margin: auto;
   margin-top: 1%;
 }
