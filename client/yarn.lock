@@ -208,6 +208,13 @@
   "resolved" "https://registry.npmjs.org/@babel/helper-plugin-utils/-/helper-plugin-utils-7.14.5.tgz"
   "version" "7.14.5"
 
+"@babel/helper-regex@^7.10.5":
+  "integrity" "sha512-68kdUAzDrljqBrio7DYAEgCoJHxppJOERHOgOrDN7WjOzP0ZQ1LsSDRXcemzVZaLvjaJsJEESb6qt+znNuENDg=="
+  "resolved" "https://registry.npmjs.org/@babel/helper-regex/-/helper-regex-7.10.5.tgz"
+  "version" "7.10.5"
+  dependencies:
+    "lodash" "^4.17.19"
+
 "@babel/helper-remap-async-to-generator@^7.14.5":
   "integrity" "sha512-rLQKdQU+HYlxBwQIj8dk4/0ENOUEhA/Z0l4hN8BexpvmSMN9oA9EagjnhnDpNsRdWCfjwa4mn/HyBXO9yhQP6A=="
   "resolved" "https://registry.npmjs.org/@babel/helper-remap-async-to-generator/-/helper-remap-async-to-generator-7.14.5.tgz"
@@ -8931,10 +8938,10 @@
   dependencies:
     "@babel/runtime" "^7.12.13"
 
-"react-datepicker@^4.1.1":
-  "integrity" "sha512-vtZIA7MbUrffRw1CHiyOGtmTO/tTdZGr5BYaiRucHMTb6rCqA8TkaQhzX6tTwMwP8vV38Khv4UWohrJbiX1rMw=="
-  "resolved" "https://registry.npmjs.org/react-datepicker/-/react-datepicker-4.1.1.tgz"
-  "version" "4.1.1"
+"react-datepicker@^4.2.0":
+  "integrity" "sha512-TR6vqqnGP2DDqrAtSrLseoN4fjkcQEOChwmMITpU45TiPey8eUhvI1TiGf4PFPQ1hvZshljH48De6nJMmiTf9g=="
+  "resolved" "https://registry.npmjs.org/react-datepicker/-/react-datepicker-4.2.0.tgz"
+  "version" "4.2.0"
   dependencies:
     "@popperjs/core" "^2.9.2"
     "classnames" "^2.2.6"

@@ -170,7 +170,7 @@ export default function Dashboard(props) {
         {dashboardSubmitted_exist ? (        
         <div className="ArtistAccount_div_detail">
           <div className="ArtistAccount_div_h3">
-            <h3>Request Submitted, Wait to be Accepted</h3>
+            <h3>Submitted Commission Status:</h3>
           </div>
           <div className="ArtistAccount_div_dashboards">
             {dashboardSubmitted}
@@ -181,7 +181,7 @@ export default function Dashboard(props) {
         {dashboardToPay_exist ? (        
         <div className="ArtistAccount_div_detail">
           <div className="ArtistAccount_div_h3">
-            <h3>Request to Confirm and Pay</h3>
+            <h3>Commission Confirmation and Payment:</h3>
           </div>
           <div className="ArtistAccount_div_dashboards">
             {dashboardToPay}
@@ -192,7 +192,7 @@ export default function Dashboard(props) {
         {dashboardInProcess_exist ? (        
         <div className="ArtistAccount_div_detail">
           <div className="ArtistAccount_div_h3">
-            <h3>Request in Process</h3>
+            <h3>Commissions Being Made:</h3>
           </div>
           <div className="ArtistAccount_div_dashboards">
             {dashboardInProcess}
@@ -203,7 +203,7 @@ export default function Dashboard(props) {
         {dashboardFinished_exist ? (        
         <div className="ArtistAccount_div_detail">
           <div className="ArtistAccount_div_h3">
-            <h3>Request You Have Finished</h3>
+            <h3>Completed Commissions:</h3>
           </div>
           <div className="ArtistAccount_div_dashboards">
             {dashboardFinished}

@@ -40,7 +40,7 @@ export default function Dashboard(props) {
 
         {actual_finish_date ? (
         <div className="request_show_details">
-          <label>Finsihed on: </label>
+          <label>Finished on: </label>
           <span>{actual_finish_date}</span>
         </div>) : (
         <div className="request_show_details">
