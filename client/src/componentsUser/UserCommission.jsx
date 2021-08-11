@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect, useHistory } from "react-router-dom";
 import Button from "../componentsArtist/Button.jsx"
 import axios from 'axios';
 import DatePicker from "react-datepicker";
@@ -24,6 +25,7 @@ export default function DashboardEditArtist(props) {
     client_id: user_id,
     category_id: 1
   })
+  let history = useHistory();
 
   function updateContent(value, key) {
     const requestCopy = {...request}
@@ -35,6 +37,7 @@ export default function DashboardEditArtist(props) {
     if (window.confirm('Are you sure you want to submit the request?')) {
       axios.post("/api/requests", request).then((response)=> {
         console.log("This is response" , response)
+        history.push("/UserAccount");
       }).catch((error) => {
         console.log('Error', error)
       })

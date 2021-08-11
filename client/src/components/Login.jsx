@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -71,6 +71,7 @@ export default function Login() {
     email: '',
     password: "",
   })
+  let history = useHistory();
 
   function updateContent(value, key) {
     const userCopy = {...user}
@@ -88,24 +89,23 @@ export default function Login() {
   let identity = "client"
   const login = function() {
     if (identity === "client") {
-      alert("login Client")
-      // change the user_for_test
       let loginClient = findUserbyEmail(users_for_test, user.email)[0]
       cookies.set('user_id', loginClient.id, { path: '/' });
       cookies.set('identity', 'client', { path: '/' });
-
-      axios.post(`login_${identity}`, user).then((response)=> {
+      
+      history.push("/gallery");
+      axios.post(`login_${identity}`, user)
+      .then((response)=> {
         console.log("This is response", response)
       }).catch((error) => {
         console.log('Error', error)
       })
       
     } else {
-      alert("login Artist")
-      // change the artist_for_test
       let loginArtist = findUserbyEmail(artists_for_test, user.email)[0]
       cookies.set('user_id', loginArtist.id, { path: '/' });
       cookies.set('identity', 'artist', { path: '/' });
+      history.push("/gallery");
 
       axios.post(`login_${identity}`, user).then((response)=> {
         console.log("This is response", response)

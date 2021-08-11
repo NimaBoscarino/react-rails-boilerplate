@@ -99,12 +99,6 @@ export default function Register() {
       }).catch((error) => {
         console.log('Error', error)
       })
-      
-      // axios.post(`/api/${identity}`, user).then((response)=> {
-      //   console.log("This is response" , response)
-      // }).catch((error) => {
-      //   console.log('Error', error)
-      // })
     } else {
       let loginArtist = findUserbyEmail(artists_for_test, user.email)[0]
       cookies.set('user_id', loginArtist.id, { path: '/' });
@@ -115,12 +109,6 @@ export default function Register() {
       }).catch((error) => {
         console.log('Error', error)
       })
-
-      // axios.post(`/api/${identity}`, user).then((response)=> {
-      //   console.log("This is response" , response)
-      // }).catch((error) => {
-      //   console.log('Error', error)
-      // })
     }
 
   }
