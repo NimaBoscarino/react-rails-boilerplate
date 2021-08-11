@@ -7,10 +7,13 @@ class Api::ClientsController < ApplicationController
   
   def create
     @client = Client.new(client_params)
-    
+    p "xxxxxxxxx"
     if @client.save
+      p "yyyyyyyy"
+      p @client
       session[:client_id] = @client.id
-      # redirect_to '/gallery'
+      session[:identity] = "client"
+      redirect_to '/gallery'
     else
       render json: {error: @client.errors.messages}
       # redirect_to '/register'

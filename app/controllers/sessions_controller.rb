@@ -3,6 +3,32 @@ class SessionsController < ApplicationController
 
   end
 
+<<<<<<< HEAD
+  def create_artist
+    artist = Artist.find_by_email(params[:email])
+    p artist
+    if artist && params[:password]
+      p "xxxxxxxx"
+      session[:artist_id] = artist.id
+      session[:identity] = "artist"
+      render json: {artist}
+      # redirect_to "/gallery"
+    else
+      render json: {error: @artist.errors.messages}
+      # redirect_to "/gallery"
+    end
+  end
+
+  def create_client
+    client = Client.find_by_email(params[:email])
+    if client && client = Client.authenticate_with_credentials(params[:email],params[:password])
+      session[:client_id] = client.id
+      session[:identity] = "client"
+      # redirect_to "/"
+      redirect_to "/gallery"
+    else
+      redirect_to "/gallery"
+=======
   def create
     
     if client && client = Client.authenticate_with_credentials(params[:email],params[:password])
@@ -16,6 +42,7 @@ class SessionsController < ApplicationController
      
     else
     
+>>>>>>> master
     end
   end
 
@@ -25,3 +52,6 @@ class SessionsController < ApplicationController
   
   end
 end
+
+# jerri@gibson-beahan.net
+# dzyplwzuaf

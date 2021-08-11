@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext } from "react";
 import axios from 'axios';
 
-export default function StateProvider(props) {
+export default function useData(props) {
   const [data, setData] = useState({
     artistsApi : [],
     clientsApi : [],
@@ -70,12 +70,5 @@ export default function StateProvider(props) {
       });
   }, []);
 
-  const dataProvider = { data, setData};
-  return (
-    <stateContext.Provider value={dataProvider}>
-      {props.children}
-    </stateContext.Provider>
-  )
+  return {data}
 };
-
-export const stateContext = createContext();

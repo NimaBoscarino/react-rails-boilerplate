@@ -23,8 +23,6 @@ function App() {
   const node = useRef();
   const menuId = "main-menu";
 
-  console.log("Re-render check");
-
   return (
     <StateProvider>
       <ThemeProvider theme={theme}>
