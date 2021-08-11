@@ -4,14 +4,8 @@ class Api::RequestsController < ApplicationController
       render json: @requests
   end
   
-  def update 
-    @request = Request.find(params[:id])
-  end
-  
   def create
     @request = Request.new(request_params)
-    p "this is request_params"
-    p request_params
     if @request.save 
       # redirect_to '/gallery'
     else
@@ -28,7 +22,6 @@ class Api::RequestsController < ApplicationController
 
   def update 
     @request = Request.find(params[:id])
-
     if @request.update(request_params)
       render json: @request
     else
@@ -59,8 +52,6 @@ class Api::RequestsController < ApplicationController
       :artist_id,
       :category_id,
       :image
-      
-   
     )
   end
 end

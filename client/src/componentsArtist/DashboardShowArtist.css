@@ -1,12 +1,17 @@
 .request_show_dashboard{
-  margin: 5%;
+  margin: 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30%;
+  width: 29%;
 
   border-style: solid;
   border-radius: 10px;
+  border-color: black;
+  border-width: 10px;
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
+
+  background-color: rgb(151, 151, 216);
 }
 
 .request_show_dashboard:hover{
@@ -16,6 +21,7 @@
 .request_show_dashboard_header{
   margin-left: 5%;
   margin-right: 5%;
+  color: rgb(185, 66, 10)
 }
 
 .request_show_Tag {
@@ -28,6 +34,7 @@
 
 .request_show_dashboard_h2{
   width: 30%;
+  font-family: 'Patrick Hand SC', cursive;
 }
 
 .request_show_dashboard_img{

@@ -1,0 +1,54 @@
+.home {
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.about {
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px
+}
+
+.gallery_h2{
+  margin-left: 100px;
+  padding-top: 20px;
+}
+
+.gallery_img{
+  padding: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+}
+
+.register{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.logout{
+  margin-top: 20%;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-style: hidden;
+  background-color: #2B93E5;
+  color: #DFCAF5;
+  font-weight: bold;
+}
+
+.logout:hover {
+  color: #343078;
+}

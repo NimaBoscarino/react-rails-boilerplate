@@ -5,22 +5,22 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   background: ${({ theme }) => theme.primaryLight};
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};
   height: 100vh;
   text-align: left;
-  padding: 2rem;
+  padding: 1rem;
   position: absolute;
   z-index: 999;
   top: 0;
   left: 0;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   @media (max-width: ${({ theme }) => theme.mobile}) {
       width: 100%;
     }
   a {
-    font-size: 0.75rem;
+    font-size: 1rem;
     text-transform: uppercase;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     font-weight: bold;
     letter-spacing: 0.1rem;
     color: ${({ theme }) => theme.primaryDark};

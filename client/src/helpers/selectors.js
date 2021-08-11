@@ -6,7 +6,7 @@ const {
 
 function getRequestsbyArtists(requests, artist_id) {
   return requests.filter((request) => {
-    return request.artist_id === artist_id;
+    return request.artist_id == artist_id;
   });
 }
 
@@ -27,18 +27,67 @@ function getRequestsbyCategory(requests, category_id) {
     return requests;
   } else {
     return requests.filter((request) => {
-      return request.category_id === category_id;
+      return request.category_id == category_id;
     });
   }
 }
 
 function getRequestsbyUser(requests, user_id) {
   return requests.filter((request) => {
-    return request.client_id === user_id;
+    return request.client_id == user_id;
   });
 }
 
-// console.log(getUnFinishedRequests(requests_for_test))
+function findUserbyUserId(users, user_id) {
+  return users.filter((user) => {
+    return user.id == user_id;
+  });
+}
+
+function findUserbyEmail(users, email) {
+  return users.filter((user) => {
+    return user.email === email;
+  });
+}
+
+function getRequestsbyStatus(requests, status) {
+  if (status === "All") {
+    return requests;
+  } else if (status === "Unaccepted") {
+    return requests.filter((request) => {
+      return !request.artist_id && !request.start_date;
+    });
+  } else if (status === "Accepted") {
+    return requests.filter((request) => {
+      return request.artist_id && !request.start_date;
+    });
+  } else if (status === "In Process") {
+    return requests.filter((request) => {
+      return request.artist_id && request.start_date;
+    });
+  }
+}
+
+function findArtistbyArtistId(artists, artist_id) {
+  return artists.filter((artist) => {
+    return artist.id == artist_id;
+  });
+}
+
+function findRequestIndex(requests, request_id){
+  let indexValue
+  requests.forEach((request, index)=>{
+    if (request.id == request_id) {
+      indexValue = index
+      return
+    }
+  })
+  return indexValue
+}
+
+
+
+// console.log(findRequestIndex(requests_for_test, 1));
 
 module.exports = {
   getRequestsbyArtists,
@@ -46,4 +95,9 @@ module.exports = {
   getUnFinishedRequests,
   getRequestsbyCategory,
   getRequestsbyUser,
+  findUserbyUserId,
+  findUserbyEmail,
+  getRequestsbyStatus,
+  findArtistbyArtistId,
+  findRequestIndex,
 };

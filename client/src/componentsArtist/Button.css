@@ -1,3 +1,22 @@
 button{
-  color: blue
+  
+    display:inline-block;
+    padding:0.46em 1.6em;
+    border:0.1em solid rgb(244, 232, 70);
+    margin:0 0.2em 0.2em 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(60, 17, 109);
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    background-color:#f8b8e5;
+    text-align:center;
+    transition: all 0.15s;
+    }
+    button:hover{
+    text-shadow: 0 0 2em rgba(255,255,255,1);
+    color: rgb(20, 194, 238);
+    border-color: rgb(20, 194, 238);
 }

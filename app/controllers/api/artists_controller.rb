@@ -18,7 +18,10 @@ class Api::ArtistsController < ApplicationController
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
+      p @artist
+      p "aaaaaaaaa"
       session[:artist_id] = @artist.id
+      session[:identity] = "artist"
       # redirect_to '/gallery'
     else
       render json: {error: @artist.errors.messages}
@@ -62,7 +65,7 @@ class Api::ArtistsController < ApplicationController
     :last_name,
     :email,
     :password,
-    :password_confirmation,
+    # :password_confirmation,
     :phone_number
   )
   end

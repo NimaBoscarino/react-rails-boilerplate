@@ -1,32 +1,47 @@
 .request_edit_dashboard{
-  margin: 5%;
+  margin: 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30%;
+  width: 29%;
 
   border-style: solid;
   border-radius: 10px;
+  border-color: black;
+  border-width: 10px;
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
+  
+
+  background-color: rgb(248, 244, 124);
 }
 
 .request_edit_dashboard:hover{
   box-shadow: 10px 10px 5px grey;
 }
 
+
+
 .request_edit_dashboard_header{
   margin-left: 5%;
   margin-right: 5%;
 }
 
+.request_edit_Tag {
+  display: flex;
+}
+
+#w3-container_finishTag{
+  margin-left: -30%
+}
+
 .request_edit_dashboard_h2{
   width: 30%;
-  margin: auto;
+  margin-left: -5%;
 }
 
 .request_edit_dashboard_img{
   width: 90%;
   margin: 5%
-
 }
 
 .request_edit_form{
@@ -50,7 +65,7 @@
 }
 #input_description:focus {
   border: 3px solid #ccc;
-  background-color: lightblue;
+  background-color:rgb(41, 92, 150);
 }
 
 #input_expected_finish_date {
