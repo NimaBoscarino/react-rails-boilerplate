@@ -1,11 +1,11 @@
 import React, {useState, useContext, useEffect} from "react";
 import axios from "axios";
+import useData from "../hooks/useData.js";
+import Cookies from 'universal-cookie';
 
 import DashboardEditArtist from "./DashboardEditArtist.jsx"
 import DashboardShowArtist from "./DashboardShowArtist.jsx"
 import "./ArtistAccount.css"
-import useData from "../hooks/useData.js";
-import Cookies from 'universal-cookie';
 
 const {requests_for_test, artists_for_test, users_for_test} = require("../testingData")
 const {getRequestsbyArtists, getFinishedRequests, getUnFinishedRequests, getRequestsbyCategory,getRequestsbyUser, findUserbyUserId, getRequestsbyStatus, findArtistbyUserId, findRequestIndex} = require("../helpers/selectors")
