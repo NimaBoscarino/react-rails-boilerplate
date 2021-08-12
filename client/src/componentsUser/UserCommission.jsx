@@ -36,9 +36,9 @@ export default function DashboardEditArtist(props) {
 
   const submitRequest = function() {
     if (window.confirm('Are you sure you want to submit the request?')) {
+      history.push("/UserAccount");
       axios.post("/api/requests", request).then((response)=> {
         console.log("This is response" , response)
-        history.push("/UserAccount");
       }).catch((error) => {
         console.log('Error', error)
       })
