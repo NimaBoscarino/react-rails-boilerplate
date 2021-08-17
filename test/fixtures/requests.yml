@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  image: MyString
+  description: MyString
+  start_date: 2021-08-02
+  expected_finish_date: 2021-08-02
+  actual_finish_date: 2021-08-02
+  price: 1
+  client: one
+  artist: one
+  category: one
+
+two:
+  name: MyString
+  image: MyString
+  description: MyString
+  start_date: 2021-08-02
+  expected_finish_date: 2021-08-02
+  actual_finish_date: 2021-08-02
+  price: 1
+  client: two
+  artist: two
+  category: two

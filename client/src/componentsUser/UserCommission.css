@@ -1,0 +1,22 @@
+.commission_article{
+  display: flex;
+  flex-direction: column;
+}
+
+.commision_user_form{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+}
+
+.commission_show_footer{
+  margin: auto;
+  margin-top: 1%;
+}
+
+#user_commision_price::before {
+  content: "$";
+  padding: 0 5px;
+  text-align: center;
+}

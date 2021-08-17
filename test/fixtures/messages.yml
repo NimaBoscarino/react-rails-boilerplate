@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client_sender?: false
+  content: MyString
+  artist: one
+  client: one
+
+two:
+  client_sender?: false
+  content: MyString
+  artist: two
+  client: two
