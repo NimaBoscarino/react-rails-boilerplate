@@ -44,6 +44,17 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+  # Unsplash.configure do |config|
+  #   config.application_access_key = "Phdeiu6nqMMORPbZvfQPEX0L3ca94mfQX4brUmHUax4"
+  #   config.application_secret = "bfJ3_w6AoQImpiVXmCdEtPq0Dm7rDaIqCG1V7zvlo3o"
+  #   config.application_redirect_uri = "https://final_project.com/oauth/callback"
+  #   config.utm_source = "final_project"
+  
+  #   # optional:
+  #   config.logger = MyCustomLogger.new
+  # end
+
+
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
