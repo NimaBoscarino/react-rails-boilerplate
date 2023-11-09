@@ -1,6 +1,6 @@
-## NOTE: This repo has not been updated in a while.
+# Last update
 
-You may find that the versions of React, Rails, and Ruby are _NOT_ the most current. Feel free to update this repo and make a PR with new versions. Also, please let me know if you run into any bugs.
+This project was last updated on _09-11-2023_.
 
 # React + Rails No-Fluff Boilerplate
 
