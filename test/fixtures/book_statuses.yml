@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  fave_books: false
+  user: one
+  book: one
+
+two:
+  status: MyString
+  fave_books: false
+  user: two
+  book: two

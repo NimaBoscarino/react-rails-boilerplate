@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1
+  review: MyString
+  time_spent: 1
+  book: one
+  user: one
+
+two:
+  rating: 1
+  review: MyString
+  time_spent: 1
+  book: two
+  user: two

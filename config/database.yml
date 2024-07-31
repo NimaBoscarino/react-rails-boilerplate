@@ -4,13 +4,13 @@ connection: &connection
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: <PG_USERNAME>
-  password: <PG_PASSWORD>
+  username: finals
+  password: password
   timeout: 5000
 
 development:
   <<: *connection
-  database: rails_development
+  database: readr_database
 
 test:
   <<: *connection
